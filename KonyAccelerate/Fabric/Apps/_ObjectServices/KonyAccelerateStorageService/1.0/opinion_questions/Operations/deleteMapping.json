@@ -1,0 +1,48 @@
+{
+  "operationConfig" : {
+    "name" : "deleteopinion_questions3375",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "referencingEndpoint" : "default",
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "opcode" : "delete",
+    "relationshipHierarchyMapping" : {
+      "children" : [ {
+        "children" : [ ],
+        "name" : "opinion_answers",
+        "actions" : {
+          "delete" : true
+        },
+        "selected" : false
+      }, {
+        "children" : [ {
+          "children" : [ ],
+          "name" : "opinion_answers",
+          "actions" : {
+            "delete" : true
+          },
+          "selected" : false
+        } ],
+        "name" : "opinion_options",
+        "actions" : {
+          "delete" : true
+        },
+        "selected" : false
+      } ],
+      "name" : "opinion_questions",
+      "actions" : {
+        "delete" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

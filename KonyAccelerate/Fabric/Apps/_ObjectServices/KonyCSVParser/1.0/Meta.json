@@ -1,0 +1,12 @@
+{
+  "jars" : [ {
+    "name" : "KonyEventsServices.jar",
+    "type" : "jar"
+  } ],
+  "config" : {
+    "metadataSecurity" : "public",
+    "offline" : false,
+    "uploadCache" : false,
+    "conflict_policy" : "none"
+  }
+}

@@ -1,0 +1,59 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizUserWidget",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_children_": [],
+    "_height_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "45%"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 1,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_percent_": true,
+    "_skin_": "s98231a0fe6f48d3b1fbe820c32218eb",
+    "_top_": {
+        "type": "string",
+        "value": "45%"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "clipbounds": true,
+    "containerweight": 0,
+    "data": {
+        "onLoginFailure": "AS_UWI_j7f038a6352244d39e78302c0ecffcd0",
+        "onLoginSuccess": "AS_UWI_cd1d5bbf76d24a82a366b67f8ef22bb6"
+    },
+    "enablescrolling": true,
+    "id": "linkedinlogin",
+    "info": null,
+    "isvisible": true,
+    "kuid": "eb6f21957a984be9a945cfe1ddbb72f8",
+    "layouttype": 2,
+    "masterType": 1,
+    "name": "kony.ui.UserWidgetInstance",
+    "parent": "frmLogin",
+    "pf": "frmLogin",
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "sourceUserWidget": "d944b51f86154f499d5b2df18bd5f81a",
+    "wType": "UserWidgetInstance"
+}

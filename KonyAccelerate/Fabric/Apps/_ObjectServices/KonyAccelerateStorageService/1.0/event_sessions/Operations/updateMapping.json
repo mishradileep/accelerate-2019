@@ -1,0 +1,170 @@
+{
+  "operationConfig" : {
+    "name" : "updateevent_sessions9432",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "referencingEndpoint" : "default",
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "opcode" : "update",
+    "relationshipHierarchyMapping" : {
+      "children" : [ {
+        "children" : [ ],
+        "name" : "event_inner_location",
+        "actions" : {
+          "create" : true,
+          "update" : true,
+          "partialupdate" : true,
+          "delete" : true
+        },
+        "selected" : true
+      }, {
+        "children" : [ {
+          "children" : [ ],
+          "name" : "forum_discussion",
+          "actions" : {
+            "create" : true,
+            "update" : true,
+            "partialupdate" : true,
+            "delete" : true
+          },
+          "selected" : true
+        } ],
+        "name" : "forum",
+        "actions" : {
+          "create" : true,
+          "update" : true,
+          "partialupdate" : true,
+          "delete" : true
+        },
+        "selected" : true
+      }, {
+        "children" : [ ],
+        "name" : "location",
+        "actions" : {
+          "create" : true,
+          "update" : true,
+          "partialupdate" : true,
+          "delete" : true
+        },
+        "selected" : true
+      }, {
+        "children" : [ {
+          "children" : [ ],
+          "name" : "opinion_answers",
+          "actions" : {
+            "create" : true,
+            "update" : true,
+            "partialupdate" : true,
+            "delete" : true
+          },
+          "selected" : true
+        }, {
+          "children" : [ {
+            "children" : [ ],
+            "name" : "opinion_answers",
+            "actions" : {
+              "create" : true,
+              "update" : true,
+              "partialupdate" : true,
+              "delete" : true
+            },
+            "selected" : true
+          }, {
+            "children" : [ {
+              "children" : [ ],
+              "name" : "opinion_answers",
+              "actions" : {
+                "create" : true,
+                "update" : true,
+                "partialupdate" : true,
+                "delete" : true
+              },
+              "selected" : true
+            } ],
+            "name" : "opinion_options",
+            "actions" : {
+              "create" : true,
+              "update" : true,
+              "partialupdate" : true,
+              "delete" : true
+            },
+            "selected" : true
+          } ],
+          "name" : "opinion_questions",
+          "actions" : {
+            "create" : true,
+            "update" : true,
+            "partialupdate" : true,
+            "delete" : true
+          },
+          "selected" : true
+        } ],
+        "name" : "opinions",
+        "actions" : {
+          "create" : true,
+          "update" : true,
+          "partialupdate" : true,
+          "delete" : true
+        },
+        "selected" : true
+      }, {
+        "children" : [ ],
+        "name" : "participation",
+        "actions" : {
+          "create" : true,
+          "update" : true,
+          "partialupdate" : true,
+          "delete" : true
+        },
+        "selected" : true
+      }, {
+        "children" : [ ],
+        "name" : "presenter",
+        "actions" : {
+          "create" : true,
+          "update" : true,
+          "partialupdate" : true,
+          "delete" : true
+        },
+        "selected" : true
+      }, {
+        "children" : [ ],
+        "name" : "session_material",
+        "actions" : {
+          "create" : true,
+          "update" : true,
+          "partialupdate" : true,
+          "delete" : true
+        },
+        "selected" : true
+      }, {
+        "children" : [ ],
+        "name" : "user_event_session",
+        "actions" : {
+          "create" : true,
+          "update" : true,
+          "partialupdate" : true,
+          "delete" : true
+        },
+        "selected" : true
+      } ],
+      "name" : "event_sessions",
+      "actions" : {
+        "create" : true,
+        "update" : true,
+        "partialupdate" : true,
+        "delete" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

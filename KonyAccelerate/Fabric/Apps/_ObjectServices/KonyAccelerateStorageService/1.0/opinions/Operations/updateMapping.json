@@ -1,0 +1,90 @@
+{
+  "operationConfig" : {
+    "name" : "updateopinions7795",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "public",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "referencingEndpoint" : "default",
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "opcode" : "update",
+    "relationshipHierarchyMapping" : {
+      "children" : [ {
+        "actionsAllSelected" : true,
+        "children" : [ ],
+        "name" : "opinion_answers",
+        "actions" : {
+          "create" : true,
+          "update" : true,
+          "partialupdate" : true,
+          "delete" : true
+        },
+        "actionsPartiallySelected" : false,
+        "selected" : true
+      }, {
+        "actionsAllSelected" : true,
+        "children" : [ {
+          "actionsAllSelected" : true,
+          "children" : [ ],
+          "name" : "opinion_answers",
+          "actions" : {
+            "create" : true,
+            "update" : true,
+            "partialupdate" : true,
+            "delete" : true
+          },
+          "actionsPartiallySelected" : false,
+          "selected" : true
+        }, {
+          "actionsAllSelected" : true,
+          "children" : [ {
+            "actionsAllSelected" : true,
+            "children" : [ ],
+            "name" : "opinion_answers",
+            "actions" : {
+              "create" : true,
+              "update" : true,
+              "partialupdate" : true,
+              "delete" : true
+            },
+            "actionsPartiallySelected" : false,
+            "selected" : true
+          } ],
+          "name" : "opinion_options",
+          "actions" : {
+            "create" : true,
+            "update" : true,
+            "partialupdate" : true,
+            "delete" : true
+          },
+          "actionsPartiallySelected" : false,
+          "selected" : true
+        } ],
+        "name" : "opinion_questions",
+        "actions" : {
+          "create" : true,
+          "update" : true,
+          "partialupdate" : true,
+          "delete" : true
+        },
+        "actionsPartiallySelected" : false,
+        "selected" : true
+      } ],
+      "name" : "opinions",
+      "actions" : {
+        "create" : true,
+        "update" : true,
+        "partialupdate" : true,
+        "delete" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

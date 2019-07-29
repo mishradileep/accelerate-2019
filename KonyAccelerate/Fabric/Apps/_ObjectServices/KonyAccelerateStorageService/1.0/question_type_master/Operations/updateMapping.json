@@ -1,0 +1,70 @@
+{
+  "operationConfig" : {
+    "name" : "updatequestion_type_master5623",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "referencingEndpoint" : "default",
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "opcode" : "update",
+    "relationshipHierarchyMapping" : {
+      "children" : [ {
+        "children" : [ {
+          "children" : [ ],
+          "name" : "opinion_answers",
+          "actions" : {
+            "create" : true,
+            "update" : true,
+            "partialupdate" : true,
+            "delete" : true
+          },
+          "selected" : true
+        }, {
+          "children" : [ {
+            "children" : [ ],
+            "name" : "opinion_answers",
+            "actions" : {
+              "create" : true,
+              "update" : true,
+              "partialupdate" : true,
+              "delete" : true
+            },
+            "selected" : true
+          } ],
+          "name" : "opinion_options",
+          "actions" : {
+            "create" : true,
+            "update" : true,
+            "partialupdate" : true,
+            "delete" : true
+          },
+          "selected" : true
+        } ],
+        "name" : "opinion_questions",
+        "actions" : {
+          "create" : true,
+          "update" : true,
+          "partialupdate" : true,
+          "delete" : true
+        },
+        "selected" : true
+      } ],
+      "name" : "question_type_master",
+      "actions" : {
+        "create" : true,
+        "update" : true,
+        "partialupdate" : true,
+        "delete" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

@@ -1,0 +1,173 @@
+{
+    "classname": "googlelogin",
+    "definitions": {
+        "apis": {
+            "custom": [],
+            "passthrough": []
+        },
+        "events": {
+            "custom": [
+                {
+                    "group": "General",
+                    "kuid": "ie9f5e224e454e299f7440f01a5872c2",
+                    "paramList": [
+                        {
+                            "name": "response"
+                        }
+                    ],
+                    "propertyIndex": 1,
+                    "propertyKey": "onLoginSuccess",
+                    "pw": {
+                        "displayName": "onLoginSuccess",
+                        "uiRepresentation": "Label-Label-Button-Button"
+                    },
+                    "srcWgtKUID": "fc826ba9f2664485a39f672d0443281e",
+                    "type": "event"
+                },
+                {
+                    "group": "General",
+                    "kuid": "hced5373470a4f4383c2fb3f252f5c4f",
+                    "paramList": [
+                        {
+                            "name": "response"
+                        }
+                    ],
+                    "propertyIndex": 1,
+                    "propertyKey": "onLoginFailure",
+                    "pw": {
+                        "displayName": "onLoginFailure",
+                        "uiRepresentation": "Label-Label-Button-Button"
+                    },
+                    "srcWgtKUID": "fc826ba9f2664485a39f672d0443281e",
+                    "type": "event"
+                }
+            ],
+            "passthrough": []
+        },
+        "groups": {
+            "apis": [],
+            "events": [],
+            "properties": [],
+            "widgets": []
+        },
+        "properties": {
+            "custom": [
+                {
+                    "access": "Write",
+                    "defaultValue": "http://googlelogin",
+                    "group": "General",
+                    "kuid": "e18c4a5637ae4402b19fee126da367a5",
+                    "originalPropertyKey": "redirectUrlAndroid",
+                    "propertyIndex": 3,
+                    "propertyKey": "redirectUrlAndroid",
+                    "pw": {
+                        "displayName": "Redirect URL Android",
+                        "uiRepresentation": "Label-Textbox"
+                    },
+                    "srcWgtKUID": "fc826ba9f2664485a39f672d0443281e",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "access": "Write",
+                    "defaultValue": "googlelogin://",
+                    "group": "General",
+                    "kuid": "eb557ffd0eaf425f84de44d4c92c8aa3",
+                    "originalPropertyKey": "redirectURLIos",
+                    "propertyIndex": 4,
+                    "propertyKey": "redirectURLIos",
+                    "pw": {
+                        "displayName": "Redirect URL IOS",
+                        "uiRepresentation": "Label-Textbox"
+                    },
+                    "srcWgtKUID": "fc826ba9f2664485a39f672d0443281e",
+                    "type": "string",
+                    "value": ""
+                }
+            ],
+            "passthrough": [
+                {
+                    "access": "Enable",
+                    "group": "General",
+                    "kuid": "c8839a67822247eca7f23d9b5d718936",
+                    "originalPropertyKey": "imageScaleMode",
+                    "propertyIndex": 1,
+                    "propertyKey": "logoScaleMode",
+                    "pw": {
+                        "access": "readwrite",
+                        "category": "widget",
+                        "dependentKeysKUIDs": null,
+                        "displayName": "Icon Scale Mode",
+                        "srcWidget": "imgGoogle",
+                        "type": "enum",
+                        "uiRepresentation": "Label-Combobox",
+                        "wType": "Image"
+                    },
+                    "srcWgtKUID": "e0b811ed884a411e99976a5dfbdaf5c5"
+                },
+                {
+                    "access": "Enable",
+                    "group": "General",
+                    "kuid": "bcf788db0ada49c6be4fc41ae32e40f0",
+                    "originalPropertyKey": "src",
+                    "propertyIndex": 2,
+                    "propertyKey": "iconSource",
+                    "pw": {
+                        "access": "readwrite",
+                        "category": "widget",
+                        "dependentKeysKUIDs": null,
+                        "displayName": "Icon Source",
+                        "srcWidget": "imgGoogle",
+                        "type": "string",
+                        "uiConfig": {
+                            "Button": {
+                                "dataRetrieverId": "Imagelist",
+                                "dataUpdaterId": "Imagelist",
+                                "popupId": "Imagelist",
+                                "type": "ImageEditBtn"
+                            },
+                            "Label": {}
+                        },
+                        "uiRepresentation": "Label-Label-Button",
+                        "wType": "Image"
+                    },
+                    "srcWgtKUID": "e0b811ed884a411e99976a5dfbdaf5c5"
+                },
+                {
+                    "access": "Enable",
+                    "group": "General",
+                    "kuid": "j7d6acef75d74198af99d1430507fdee",
+                    "originalPropertyKey": "src",
+                    "propertyIndex": 5,
+                    "propertyKey": "iconFocusSource",
+                    "pw": {
+                        "access": "readwrite",
+                        "category": "widget",
+                        "dependentKeysKUIDs": null,
+                        "displayName": "Icon Focus Source",
+                        "srcWidget": "imgFocusGoogle",
+                        "type": "string",
+                        "uiConfig": {
+                            "Button": {
+                                "dataRetrieverId": "Imagelist",
+                                "dataUpdaterId": "Imagelist",
+                                "popupId": "Imagelist",
+                                "type": "ImageEditBtn"
+                            },
+                            "Label": {}
+                        },
+                        "uiRepresentation": "Label-Label-Button",
+                        "wType": "Image"
+                    },
+                    "srcWgtKUID": "h2b2023a55c44dea833ac4aa0667e42f"
+                }
+            ]
+        },
+        "widgets": {
+            "expose": [],
+            "passthrough": []
+        }
+    },
+    "namespace": "com.konymp",
+    "version": "1.0.0"
+}

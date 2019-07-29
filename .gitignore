@@ -1,0 +1,26 @@
+# Ignore all dot files/folders
+.*
+
+
+# Ignore all files with .xml and .properties extensions in workspace and projects
+*.xml
+*.properties
+
+# Ignore jssrc folder from all the projects in workspace
+/Demo/jssrc/
+temp/
+webapps/
+konyplugins.xml
+
+# Exclude the files required for Build automation of the projects
+!build.xml
+!projectprop.xml
+!projectProperties.json
+!HeadlessBuild.properties
+!testng.xml
+!sgconfig.properties
+!pom.xml
+
+
+# Exclude this file from ignoring
+!/.gitignore

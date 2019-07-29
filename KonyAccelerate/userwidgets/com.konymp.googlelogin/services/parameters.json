@@ -1,0 +1,35 @@
+[{
+
+"name": "myclient_id",
+
+"displayName": "Client Id",
+
+"defaultValue":"Enter_Client_Id" ,
+
+"type": "String",
+
+"serviceName": "reusableGoogleLogin",
+
+"serviceType": "idprovider" ,
+
+"readOnly": false
+
+},
+
+{
+	"name": "myclient_secret",
+
+	"displayName": "Client Secret",
+
+	"defaultValue":"Enter_Client_Secret" ,
+
+	"type": "String",
+
+	"serviceName": "reusableGoogleLogin",
+
+	"serviceType": "idprovider" ,
+
+	"readOnly": false
+
+}
+]

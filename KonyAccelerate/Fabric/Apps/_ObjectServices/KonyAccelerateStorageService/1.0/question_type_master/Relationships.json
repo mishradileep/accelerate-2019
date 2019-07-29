@@ -1,0 +1,13 @@
+[ {
+  "sourceObject" : "question_type_master",
+  "targetObject" : "opinion_questions",
+  "relationshipKeys" : [ {
+    "sourceField" : "question_type_id",
+    "targetField" : "question_type",
+    "etag" : "86e43af4-8bc2-4ae4-821f-1b5253749369"
+  } ],
+  "name" : "question_type_master_opinion_questions",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+} ]

@@ -1,0 +1,13 @@
+[ {
+  "sourceObject" : "session_track_master",
+  "targetObject" : "event_sessions",
+  "relationshipKeys" : [ {
+    "sourceField" : "trackId",
+    "targetField" : "session_track_id",
+    "etag" : "e1ee0681-a620-4bcc-bb76-5131fe4c31f1"
+  } ],
+  "name" : "session_track_master_event_sessions",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+} ]
