@@ -30,8 +30,7 @@
     },
     "canUpdateUI": true,
     "children": [
-        "linkedinlogin",
-        "googlelogin"
+        "flxBackground"
     ],
     "containerweight": 100,
     "controllerInfo": {

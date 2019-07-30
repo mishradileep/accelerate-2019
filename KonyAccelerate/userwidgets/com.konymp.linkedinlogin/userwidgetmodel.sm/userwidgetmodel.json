@@ -28,11 +28,7 @@
     "device": "GalaxyS5",
     "displayorientation": 3,
     "enabledforidletimeout": false,
-    "globalUserWidgetRefs": [
-        "ucee0e1a291b4f39883da92e8d6edf40",
-        "uce68e23d2d14feb8a00fa7dd540dc85",
-        "uffb2b30be724a5b9b85a0bd71ea2829"
-    ],
+    "globalUserWidgetRefs": [],
     "id": "userwidgetmodel",
     "info": null,
     "initdone": false,
