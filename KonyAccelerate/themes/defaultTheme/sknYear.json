@@ -1,6 +1,6 @@
 {
   "android": {
-    "font_name": "default"
+    "font_name": "Karbon Medium"
   },
   "androidwearos": {
     "font_name": "default"
@@ -23,7 +23,7 @@
     "font_name": "System"
   },
   "iphone": {
-    "font_name": "System"
+    "font_name": "Karbon Regular"
   },
   "isDefaultSkin": false,
   "kiosk": {
