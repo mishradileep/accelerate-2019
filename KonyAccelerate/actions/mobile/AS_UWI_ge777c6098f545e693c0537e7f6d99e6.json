@@ -10,7 +10,7 @@
         "actions": [{
             "id": "ADD_SNIPPET_onLoginFailure_af5ca35fe657453ca2347536e6c5e093",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "alert(\"login failed\");",
+            "codeSnippet": "kony.print(\"login failed\");",
             "callbackType": null
         }]
     }

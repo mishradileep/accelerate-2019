@@ -11,6 +11,6 @@ define({
     /** onLoginFailure defined for linkedinlogin **/
     AS_UWI_ge777c6098f545e693c0537e7f6d99e6: function AS_UWI_ge777c6098f545e693c0537e7f6d99e6(response) {
         var self = this;
-        alert("login failed");
+        kony.print("login failed");
     }
 });
