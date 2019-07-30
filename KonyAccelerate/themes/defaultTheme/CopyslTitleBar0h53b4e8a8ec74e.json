@@ -1,0 +1,14 @@
+{
+    "background_color": "1a1a1aff",
+    "bg_type": "one",
+    "font_color": "ffffff",
+    "font_name": "Helvetica",
+    "font_size": "100",
+    "font_weight": "normal",
+    "iphone": {
+        "font_name": "Poppins-Regular"
+    },
+    "isDefaultSkin": false,
+    "kuid": "sed4747e08b34dc7a856ca419f57aa81",
+    "wType": "TitleBar"
+}
