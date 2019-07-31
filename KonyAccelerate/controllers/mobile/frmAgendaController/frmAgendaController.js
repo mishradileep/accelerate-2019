@@ -1,3 +1,4 @@
+//This is a controller file where the business logic for the form "frmAgenda" is implemented
 define({
 
     devHeight: null,
