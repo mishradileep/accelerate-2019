@@ -7,7 +7,7 @@ define({
      */
     formPreshowAction: function() {
         let eventData = kony.store.getItem("accelerateEventData");
-      	if(eventData !== null && eventData !== undefined){
+      	if(!kony.sdk.isNullOrUndefined(eventData)){
           let eventLocationData = eventData.hasOwnProperty("eventLocationData") ? eventData.eventLocationData : null;
           if (eventLocationData !== null) {
               let hotelName = eventLocationData.hasOwnProperty("location") ? eventLocationData.location : "";
