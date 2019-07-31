@@ -98,6 +98,7 @@
     "needappmenu": false,
     "paddinginpixel": false,
     "platform": "iphone",
+    "preshow": "AS_Form_cec28ae2140c401eb14a472e93b84937",
     "prevDevice": "Pixel2XL",
     "prevPlatform": "android",
     "retaincontentalignment": false,

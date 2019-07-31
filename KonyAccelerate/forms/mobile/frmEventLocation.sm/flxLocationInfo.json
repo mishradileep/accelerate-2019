@@ -37,7 +37,8 @@
     "canUpdateUI": true,
     "children": [
         "lblHotelName",
-        "lblHotelInfo"
+        "lblHotelInfo",
+        "lblHotelPhone"
     ],
     "clipbounds": true,
     "containerweight": 100,

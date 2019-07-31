@@ -1,6 +1,8 @@
 var eventConstants = {
   OBJECT_SERVICE_NAME : "KonyAccelerateStorageService",
   WIFI_OBJECT_NAME : "wifi_info",
+  EVENT_LOCATION_OBJECT_NAME : "location",
+  EVENT_OBJECT_NAME : "event",
   CONNECTION_ERROR_TYPE : "ConnectionError",
   CONNECTION_MESSAGE_STRING : "Please make sure your device is connected to a WiFi / Cellular Network",
   NETWORK_ERROR_TYPE : "NETWORK_ERROR_TYPE",

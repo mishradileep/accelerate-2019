@@ -6,6 +6,10 @@
         "type": "ref",
         "value": "preferred"
     },
+    "_left_": {
+        "type": "string",
+        "value": "10%"
+    },
     "_margin_": [
         1,
         1,
@@ -18,15 +22,15 @@
         0,
         0
     ],
-    "_skin_": "s59dafa54a374350bb3d1fb42e22113f",
+    "_skin_": "sf0c8ee1ba3a4b48a9726e7c6b285075",
     "_text_": "",
     "_top_": {
         "type": "string",
-        "value": "8%"
+        "value": "2%"
     },
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "80%"
     },
     "_wrapping_": 2,
     "android": {
@@ -42,7 +46,7 @@
     },
     "containerweight": 100,
     "contentalignment": 5,
-    "id": "lblHotelName",
+    "id": "lblHotelPhone",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,7 +60,7 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "e57e81ae09da4fe0b3c3906fd22c4ad0",
+    "kuid": "d5a793808aec41e2b37566b765c61ba7",
     "name": "kony.ui.Label",
     "parent": "flxLocationInfo",
     "pf": "frmEventLocation",
