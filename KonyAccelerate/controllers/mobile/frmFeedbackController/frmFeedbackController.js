@@ -1,20 +1,20 @@
 define({
 
-    //Type your controller code here 
     selectedImage: "starselected.png",
     unselectedImage: "starunselected.png",
-    objectServiceL: "KonyAccelerateStorageService",
+    objectService: "KonyAccelerateStorageService",
     dataModelObject: "opinion_answers",
     ratingQuestionId: "11",
     feedbackQuestionId: "12",
     opinion_id: 18,
     /**
      * @function onClickOfRatingPrompt
-     * @scope private
      * @description this function is invoked to toggle the selected and unselected images.
      * @param eventObject - contains the info of the widget which is clicked.
+     * @private
      */
     onClickOfRatingPrompt: function(eventObject) {
+      	kony.print("Entering frmFeedbackController : onClickOfRatingPrompt function");
         var id = eventObject.id;
         var index = parseInt(id[id.length - 1]);
         this.index = index + 1;
@@ -25,17 +25,18 @@ define({
                 this.view["imgRating" + iterate].src = this.unselectedImage;
             }
         }
-
+		kony.print("Exiting frmFeedbackController : onClickOfRatingPrompt function");
     },
     /**
-     * @function onClickOfRatingPrompt
-     * @scope private
+     * @function onClickOfSubmitButton
      * @description this function is invoked to toggle the selected and unselected images.
      * @param eventObject - contains the info of the widget which is clicked.
+     * @private
      */
     onClickOfSubmitButton: function() {
-        var currentUserInfo=kony.store.getItem("currentUserInfo");
-      	var userId=currentUserInfo.user_id;
+      	kony.print("Entering frmFeedbackController : onClickOfSubmitButton function");
+        var currentUserInfo = kony.store.getItem("currentUserInfo");
+        var userId = currentUserInfo.user_id;
         if (kony.sdk.isNullOrUndefined(this.index)) {
             this.index = 0;
         }
@@ -58,74 +59,31 @@ define({
         var batch = {
             "records": feedbacks
         };
-        this.createRecord(this.objectServiceL, this.dataModelObject, batch, this.successInStoreFeedback.bind(this), this.failInStoreFeedback.bind(this));
-
+        createRecord(this.objectService, this.dataModelObject, batch, this.successInStoreFeedback.bind(this), this.failInStoreFeedback.bind(this));
+      	kony.print("Exiting frmFeedbackController : onClickOfSubmitButton function");
     },
-    /**
-     * @function createRecord
-     * @scope private
-     * @description this is generic function to make POST operation to kony storage objects.
-     * @param objectService {String} - Name of Kony Object Service.
-     * @param dataModelObject {String} - Name of Kony dataObject.
-     * @param record {Object}- JSONArray which is used as batch to create records.
-     * @param successCallback {Callback} - SuccessCallback to be invoked when the operation is successful.
-     * @param errorCallback {Callback}- FailureCallback to be invoked when the operation fails.
-     */
-    createRecord: function(objectService, dataModelObject, record, successCallback, errorCallback) {
-        try {
 
-            var sdkClient = new kony.sdk.getCurrentInstance();
-            var objectInstance;
-            if (Object.keys(sdkClient).length !== 0) {
-                objectInstance = sdkClient.getObjectService(objectService, {
-                    "access": "online"
-                });
-            }
-            if (objectInstance === null || objectInstance === undefined) {
-                kony.application.dismissLoadingScreen();
-                throw {
-                    "error": "ConnectionError",
-                    "message": "Please connect app to MF"
-                };
-
-            }
-            var dataObject = new kony.sdk.dto.DataObject(dataModelObject);
-
-            dataObject.setRecord(record);
-
-            var options = {
-                "dataObject": dataObject,
-                "headers": {
-                    "Content-Type": "application/json"
-                },
-            };
-            if (kony.net.isNetworkAvailable(constants.NETWORK_TYPE_ANY)) {
-                objectInstance.create(options, successCallback, errorCallback);
-            }
-        } catch (exception) {
-            kony.application.dismissLoadingScreen();
-            konymp.logger.error(JSON.stringify(exception), konymp.logger.EXCEPTION);
-            throw exception;
-        }
-    },
     /**
      * @function successInStoreFeedback
-     * @scope private
      * @description this function is the success callback of the createRecord function
      * @param response - contains the info of the response object.
+     * @private
      */
     successInStoreFeedback: function(response) {
+      	kony.print("Entering frmFeedbackController : successInStoreFeedback function");
         alert("success in storing feedback");
+      	kony.print("Exiting frmFeedbackController : successInStoreFeedback function");
     },
     /**
      * @function failInStoreFeedback
-     * @scope private
      * @description this function is the failure callback for the createRecord function.
      * @param error - contains the info of the error object.
+     * @private
      */
     failInStoreFeedback: function(error) {
+      	kony.print("Entering frmFeedbackController : failInStoreFeedback function");
         alert("failure in storing the feedback");
+      	kony.print("Exiting frmFeedbackController : failInStoreFeedback function");
     }
-
 
 });
