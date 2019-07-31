@@ -1,6 +1,6 @@
 {
   "android": {
-    "font_name": "Karbon Semibold"
+    "font_name": "SF Pro Display"
   },
   "androidwearos": {
     "font_name": "default"
@@ -23,7 +23,7 @@
     "font_name": "System"
   },
   "iphone": {
-    "font_name": "Karbon Semibold"
+    "font_name": "SF Pro Display"
   },
   "isDefaultSkin": false,
   "kiosk": {

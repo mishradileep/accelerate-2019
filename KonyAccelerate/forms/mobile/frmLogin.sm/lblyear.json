@@ -6,10 +6,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "5%"
-    },
     "_margin_": [
         1,
         1,
@@ -22,6 +18,10 @@
         0,
         0
     ],
+    "_right_": {
+        "type": "string",
+        "value": "10%"
+    },
     "_skin_": "s5a0823020ba431a85411bba6dc2c8e9",
     "_text_": "2019",
     "_width_": {
@@ -55,7 +55,7 @@
         }
     },
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "fb2e8e39eefc4b0ab440b3aa29d65ca7",
     "name": "kony.ui.Label",
     "parent": "flxTitle",

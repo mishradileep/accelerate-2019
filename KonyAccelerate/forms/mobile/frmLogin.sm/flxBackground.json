@@ -38,8 +38,7 @@
     "children": [
         "flxLogoContainer",
         "flxTitle",
-        "flxEventDates",
-        "linkedinlogin"
+        "flxEventDates"
     ],
     "clipbounds": true,
     "containerweight": 100,
