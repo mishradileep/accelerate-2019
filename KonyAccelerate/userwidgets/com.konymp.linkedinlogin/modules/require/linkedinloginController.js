@@ -41,7 +41,7 @@ define(['com/konymp/linkedinlogin/constants'],function(constantsLocal) {
             this.view.centerY = "50%";
             this.view.flxMain.isVisible = false;
             this.view.forceLayout();
-            this.invokeIdentityService("LinkedinLogin");
+            this.invokeIdentityService(eventConstants.PROVIDER_NAME);
         },
       	 /**
          * @function invokeIdentityService
@@ -192,7 +192,7 @@ define(['com/konymp/linkedinlogin/constants'],function(constantsLocal) {
         successInFetchingEmailId: function(response) {
           konymp.logger.trace("---------------Entering "+constantsLocal.COMPONENT_NAME+" :successInFetchingEmailId function---------------", konymp.logger.FUNCTION_ENTRY);
             this._currentUserInfo.mail = response["handle~"][0].emailAddress;
-            this.createEntryInUserStorage("KonyEventService2", "users", this._currentUserInfo, this.userInfoSaved.bind(this), this.userInfoSavingFailed.bind(this));
+            createRecord(constantsLocal.OBJECT_SERVICE_NAME,constantsLocal.USERS, this._currentUserInfo, this.userInfoSaved.bind(this), this.userInfoSavingFailed.bind(this));
           	konymp.logger.trace("---------------Exiting "+constantsLocal.COMPONENT_NAME+" :successInFetchingEmailId function---------------", konymp.logger.FUNCTION_EXIT);
         },
         /**
@@ -257,51 +257,6 @@ define(['com/konymp/linkedinlogin/constants'],function(constantsLocal) {
           	konymp.logger.trace("---------------Exiting "+constantsLocal.COMPONENT_NAME+" :userInfoSavingFailed function---------------", konymp.logger.FUNCTION_EXIT);
         },
         /**
-         * @function createEntryInUserStorage
-         * @description Genric function to invoke storage objects and create record in it.
-         * @param {String} objectServiceName - Object serivce need to be invoked
-         * @param {String} dataModelObject - DataModel need to be invoked
-         * @param {Object} record - info which need to be inserted into kony storage objects
-         * @callback successCallback
-         * @callback failureCallback
-         * @private
-         */
-        createEntryInUserStorage: function(objectServiceName, dataModelObject, record, successCallback, errorCallback) {
-          	konymp.logger.trace("---------------Entering "+constantsLocal.COMPONENT_NAME+" :successInFetchingUserAttributes function---------------", konymp.logger.FUNCTION_ENTRY);
-            try {
-                var sdkClient = new kony.sdk.getCurrentInstance();
-                var objectInstance;
-                if (Object.keys(sdkClient).length !== 0) {
-                    objectInstance = sdkClient.getObjectService(objectService, {
-                        "access": "online"
-                    });
-                }
-                if (objectInstance === null || objectInstance === undefined) {
-                    throw {
-                        "error": "ConnectionError",
-                        "message": "Please connect app to MF"
-                    };
-
-                }
-                var dataObject = new kony.sdk.dto.DataObject(dataModelObject);
-
-                dataObject.setRecord(record);
-
-                var options = {
-                    "dataObject": dataObject,
-                    "headers": {
-                        "Content-Type": "application/json"
-                    },
-                };
-                if (kony.net.isNetworkAvailable(constants.NETWORK_TYPE_ANY)) {
-                    objectInstance.create(options, successCallback, errorCallback);
-                }
-            } catch (exception) {
-                konymp.logger.error(JSON.stringify(exception), konymp.logger.EXCEPTION);
-                throw exception;
-            }
-        },
-        /**
          * @function findUserIdExists
          * @description Query function 
          * @param {String} email - which need to searched in Kony storage objects
@@ -309,8 +264,11 @@ define(['com/konymp/linkedinlogin/constants'],function(constantsLocal) {
          */
         findUserIdExistsOrNot: function(email) {
           	konymp.logger.trace("---------------Entering "+constantsLocal.COMPONENT_NAME+" :findUserIdExistsOrNot function---------------", konymp.logger.FUNCTION_ENTRY);
-            odataUrl = "$filter=mail eq '" + email + "' and ((SoftDeleteFlag ne true) or (SoftDeleteFlag eq null))";
-            this.fetchData(constantsLocal.OBJECT_SERVICE_NAME,constantsLocal.USERS, null, odataUrl, this.userIdRetrieveSuccess.bind(this), this.userIdRetrieveFailed.bind(this));
+            var odataUrl = "mail eq '" + email + "' and ((SoftDeleteFlag ne true) or (SoftDeleteFlag eq null))";
+          	var queryparam={
+              "$filter":odataUrl,
+            };
+            fetchObjectData(constantsLocal.OBJECT_SERVICE_NAME,constantsLocal.USERS, queryparam, this.userIdRetrieveSuccess.bind(this), this.userIdRetrieveFailed.bind(this));
           	konymp.logger.trace("---------------Exiting "+constantsLocal.COMPONENT_NAME+" :findUserIdExistsOrNot function---------------", konymp.logger.FUNCTION_EXIT);
         },
         /**
@@ -336,56 +294,6 @@ define(['com/konymp/linkedinlogin/constants'],function(constantsLocal) {
           	konymp.logger.trace("---------------Entering "+constantsLocal.COMPONENT_NAME+" :userIdRetrieveFailed function---------------", konymp.logger.FUNCTION_ENTRY);
             this.failureWrapper(error);
           	konymp.logger.trace("---------------Exiting "+constantsLocal.COMPONENT_NAME+" :userIdRetrieveFailed function---------------", konymp.logger.FUNCTION_EXIT);
-        },
-        /**
-         * @function fetchData
-         * @description Genric function to invoke Storage Object  service
-         * @private
-         * @param {String} objectService
-         * @param {String} dataModelObject
-         * @param {String} queryParams
-         * @param {String} odataUrl
-         * @callback successCallback
-         * @callback failureCallback
-         */
-        fetchData: function(objectService, dataModelObject, queryParams, odataUrl, successCallback, errorCallback) {
-            konymp.logger.debug("fetchData", konymp.logger.FUNCTION_ENTRY);
-            try {
-
-                var sdkClient = new kony.sdk.getCurrentInstance();
-                var objectInstance;
-                if (Object.keys(sdkClient).length !== 0) {
-                    objectInstance = sdkClient.getObjectService(objectService, {
-                        "access": "online"
-                    });
-                }
-                if (objectInstance === null || objectInstance === undefined) {
-                    throw {
-                        "error": "ConnectionError",
-                        "message": "Please connect app to MF"
-                    };
-
-                }
-                var dataObject = new kony.sdk.dto.DataObject(dataModelObject);
-                if (!kony.sdk.isNullOrUndefined(odataUrl)) {
-                    dataObject.odataUrl = odataUrl;
-                }
-
-                var options = {
-                    "dataObject": dataObject,
-                    "headers": {
-                        "Content-Type": "application/json"
-                    },
-                    "queryParams": queryParams
-                };
-                if (kony.net.isNetworkAvailable(constants.NETWORK_TYPE_ANY)) {
-                    objectInstance.fetch(options, successCallback, errorCallback);
-                }
-            } catch (exception) {
-                konymp.logger.error(JSON.stringify(exception), konymp.logger.EXCEPTION);
-                throw exception;
-            }
-            konymp.logger.debug("fetchData", konymp.logger.FUNCTION_EXIT);
         },
         /**
          * @function invokeIntegrationService

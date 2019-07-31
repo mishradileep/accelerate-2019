@@ -28,13 +28,13 @@
 
 	        }
 	        var dataObject = new kony.sdk.dto.DataObject(dataModelObject);
-	        var options = {
-	            "dataObject": dataObject,
-	            "headers": {
-	                "Content-Type": "application/json"
-	            },
-	            "queryParams": queryParams
-	        };
+	         var options = {
+               		"dataObject": dataObject,
+                    "headers": {
+                        "Content-Type": "application/json"
+                    },
+                    "queryParams": queryParams
+                };
 	        if (kony.net.isNetworkAvailable(constants.NETWORK_TYPE_ANY)) {
 	            objectInstance.fetch(options, successCallback, errorCallback);
 	        } else {
@@ -49,3 +49,46 @@
 	    }
 
 	}
+/**
+     * @function createRecord
+     * @scope private
+     * @description this is generic function to make POST operation to kony storage objects.
+     * @param objectService {String} - Name of Kony Object Service.
+     * @param dataModelObject {String} - Name of Kony dataObject.
+     * @param record {Object}- JSONArray which is used as batch to create records.
+     * @param successCallback {Callback} - SuccessCallback to be invoked when the operation is successful.
+     * @param errorCallback {Callback}- FailureCallback to be invoked when the operation fails.
+     */
+    function createRecord(objectService, dataModelObject, record, successCallback, errorCallback) {
+        try {
+            var sdkClient = new kony.sdk.getCurrentInstance();
+            var objectInstance;
+            if (Object.keys(sdkClient).length !== 0) {
+                objectInstance = sdkClient.getObjectService(objectService, {
+                    "access": "online"
+                });
+            }
+            if (objectInstance === null || objectInstance === undefined) {
+                kony.application.dismissLoadingScreen();
+                throw {
+                    "error": "ConnectionError",
+                    "message": "Please connect app to MF"
+                };
+
+            }
+            var dataObject = new kony.sdk.dto.DataObject(dataModelObject);
+            dataObject.setRecord(record);
+            var options = {
+                "dataObject": dataObject,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+            };
+            if (kony.net.isNetworkAvailable(constants.NETWORK_TYPE_ANY)) {
+                objectInstance.create(options, successCallback, errorCallback);
+            }
+        } catch (exception) {
+            kony.application.dismissLoadingScreen();
+            throw exception;
+        }
+    }
