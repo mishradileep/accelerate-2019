@@ -35,12 +35,11 @@ define(['com/konymp/linkedinlogin/constants'],function(constantsLocal) {
             this._centerX = this.view.centerX;
             this._centerY = this.view.centerY;
             this.view.zIndex = 10;
-            this.view.left = "0%";
-            this.view.top = "0%";
+            this.view.flxIdentity.isVisible = true;
             this.view.height = "100%";
             this.view.width = "100%";
+            this.view.centerY = "50%";
             this.view.flxMain.isVisible = false;
-            this.view.flxIdentity.isVisible = true;
             this.view.forceLayout();
             this.invokeIdentityService("LinkedinLogin");
         },

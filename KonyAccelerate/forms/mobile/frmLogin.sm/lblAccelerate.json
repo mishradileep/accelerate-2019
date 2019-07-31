@@ -6,10 +6,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "7%"
-    },
     "_margin_": [
         1,
         1,
@@ -23,7 +19,7 @@
         0
     ],
     "_skin_": "sa7cb7dcacd64cf58cbc6442d0d565e6",
-    "_text_": "A C C E L E R A T E ",
+    "_text_": "A C C E L E R A T E  2019",
     "_width_": {
         "type": "ref",
         "value": "preferred"
@@ -36,6 +32,10 @@
         }
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "centery": {
         "type": "string",
         "value": "50%"

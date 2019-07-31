@@ -33,7 +33,7 @@
     },
     "centery": {
         "type": "string",
-        "value": "50%"
+        "value": "70%"
     },
     "children": [
         "flxIdentity",
