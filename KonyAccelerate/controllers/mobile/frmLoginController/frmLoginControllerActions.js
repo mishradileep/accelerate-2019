@@ -6,7 +6,7 @@ define({
     AS_UWI_f5b772abfeca4d809b68f66f91b61a75: function AS_UWI_f5b772abfeca4d809b68f66f91b61a75(response) {
         var self = this;
         this.fetchEventData();
-        var ntf = new kony.mvc.Navigation("frmEventList");
+        var ntf = new kony.mvc.Navigation("frmAgenda");
         ntf.navigate();
     },
     /** onLoginFailure defined for linkedinlogin **/

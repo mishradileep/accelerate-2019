@@ -7,20 +7,22 @@ define({
      */
     formPreshowAction: function() {
         let eventData = kony.store.getItem("accelerateEventData");
-        let eventLocationData = eventData.hasOwnProperty("eventLocationData") ? eventData.eventLocationData : null;
-        if (eventLocationData !== null) {
-            let hotelName = eventLocationData.hasOwnProperty("location") ? eventLocationData.location : "";
-            let addressLine1 = eventLocationData.hasOwnProperty("addressLine1") ? eventLocationData.addressLine1 : "";
-            let cityName = eventLocationData.hasOwnProperty("cityname") ? eventLocationData.cityname : "";
-            let pincode = eventLocationData.hasOwnProperty("pincode") ? eventLocationData.pincode : "";
-            let countryName = eventLocationData.hasOwnProperty("country_name") ? eventLocationData.country_name : "";
-            let completeAddress = addressLine1 + ", " + cityName + ", " + pincode + ", " + countryName;
-            let phoneNumber = eventLocationData.hasOwnProperty("phone_number") ? eventLocationData.phone_number : "";
-            let coOrdinatesInfo = this.getCoordinates(eventLocationData);
-            this.setEventData(hotelName, completeAddress, phoneNumber, coOrdinatesInfo);
-        } else {
-            kony.print("Event Location Data is null");
-            return;
+      	if(eventData !== null && eventData !== undefined){
+          let eventLocationData = eventData.hasOwnProperty("eventLocationData") ? eventData.eventLocationData : null;
+          if (eventLocationData !== null) {
+              let hotelName = eventLocationData.hasOwnProperty("location") ? eventLocationData.location : "";
+              let addressLine1 = eventLocationData.hasOwnProperty("addressLine1") ? eventLocationData.addressLine1 : "";
+              let cityName = eventLocationData.hasOwnProperty("cityname") ? eventLocationData.cityname : "";
+              let pincode = eventLocationData.hasOwnProperty("pincode") ? eventLocationData.pincode : "";
+              let countryName = eventLocationData.hasOwnProperty("country_name") ? eventLocationData.country_name : "";
+              let completeAddress = addressLine1 + ", " + cityName + ", " + pincode + ", " + countryName;
+              let phoneNumber = eventLocationData.hasOwnProperty("phone_number") ? eventLocationData.phone_number : "";
+              let coOrdinatesInfo = this.getCoordinates(eventLocationData);
+              this.setEventData(hotelName, completeAddress, phoneNumber, coOrdinatesInfo);
+          } else {
+              kony.print("Event Location Data is null");
+              return;
+          }
         }
     },
     /**

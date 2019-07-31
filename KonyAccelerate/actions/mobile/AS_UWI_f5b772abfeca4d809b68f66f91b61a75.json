@@ -16,8 +16,8 @@
         }, {
             "id": "NAVIGATE_TO_FORM___i94f6b6075d74fdd97dcdd34bd41984c",
             "type": "NAVIGATE_TO_FORM",
-            "formId": "frmEventList",
-            "formKUID": "a2ed5b03bdcb40658617c25c964f058f",
+            "formId": "frmAgenda",
+            "formKUID": "g7d71a566dee45ffa15745fbce32e657",
             "mappings": {},
             "mappingsOrder": [],
             "parentId": "",

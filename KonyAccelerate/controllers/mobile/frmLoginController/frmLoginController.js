@@ -21,7 +21,6 @@ define({
      * 	@private
      */
     eventDataFetchSuccess: function(successResponse) {
-        alert("Success");
         let records = (successResponse.hasOwnProperty("records")) ? successResponse.records : null;
         if (records !== null) {
             let eventData = records[0];
@@ -34,7 +33,7 @@ define({
                 "wifiInformation": wifiInformation,
                 "eventLocationData": eventLocationData
             };
-           // kony.store.setItem("accelerateEventData", accelerateEventData);
+           kony.store.setItem("accelerateEventData", accelerateEventData);
         }
 
     },
@@ -45,9 +44,8 @@ define({
      * 	@private
      */
     eventDataFetchFailure: function(failureResponse) {
-      	alert("Failure");
         kony.print(JSON.stringify(failureResponse));
-        //kony.store.setItem("accelerateEventData",{});
+        kony.store.setItem("accelerateEventData",null);
     },
     /**
      *	@function formatInnerLocationData
