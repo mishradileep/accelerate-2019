@@ -49,6 +49,8 @@
 	    }
 
 	}
+
+
 /**
      * @function createRecord
      * @description this is generic function to make POST operation to kony storage objects.
@@ -70,10 +72,10 @@
             }
             if (objectInstance === null || objectInstance === undefined) {
                 kony.application.dismissLoadingScreen();
-                throw {
-                    "error": "ConnectionError",
-                    "message": "Please connect app to MF"
-                };
+            throw {
+	                "error": eventConstants.NETWORK_ERROR_TYPE,
+	                "message": eventConstants.CONNECTION_MESSAGE_STRING
+	            };
 
             }
             var dataObject = new kony.sdk.dto.DataObject(dataModelObject);
@@ -89,6 +91,6 @@
             }
         } catch (exception) {
             kony.application.dismissLoadingScreen();
-            throw exception;
+            kony.print("Exception in Create Service" + exception.message);
         }
     }

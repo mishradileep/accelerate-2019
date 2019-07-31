@@ -85,6 +85,24 @@
                         "wType": "Image"
                     },
                     "srcWgtKUID": "a4c9415fb024431e9e9027c08a1315fd"
+                },
+                {
+                    "access": "Enable",
+                    "defaultSkinKUID": "s7af066e56d642a782c09640ae0c4a07",
+                    "group": "General",
+                    "kuid": "bdeb146f7d724c2ca66222d5eff0ba9d",
+                    "originalPropertyKey": "skin",
+                    "propertyIndex": 3,
+                    "propertyKey": "sknHeader",
+                    "pw": {
+                        "access": "readwrite",
+                        "category": "skin",
+                        "dependentKeysKUIDs": null,
+                        "displayName": "Header Skin",
+                        "srcWidget": "lblHeaderText",
+                        "wType": "Label"
+                    },
+                    "srcWgtKUID": "eca13d68df0047cd942249e338308f31"
                 }
             ]
         },
