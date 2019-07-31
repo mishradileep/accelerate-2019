@@ -30,8 +30,8 @@
     },
     "canUpdateUI": true,
     "children": [
-        "linkedinlogin",
-        "googlelogin"
+        "flxBackground",
+        "linkedinlogin"
     ],
     "containerweight": 100,
     "controllerInfo": {
@@ -47,6 +47,7 @@
     "device": "iPhoneXS",
     "displayorientation": 1,
     "enabledforidletimeout": false,
+    "enablescrolling": false,
     "id": "frmLogin",
     "info": null,
     "initdone": false,

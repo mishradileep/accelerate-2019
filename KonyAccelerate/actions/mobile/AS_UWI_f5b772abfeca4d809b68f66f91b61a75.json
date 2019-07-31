@@ -1,0 +1,25 @@
+{
+    "AS_UWI_f5b772abfeca4d809b68f66f91b61a75": {
+        "id": "AS_UWI_f5b772abfeca4d809b68f66f91b61a75",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "name": "response",
+            "datatype": "collection"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM__onLoginSuccess_f7a405305b3243feaa6737860e47a814",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmEventList",
+            "formKUID": "a2ed5b03bdcb40658617c25c964f058f",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": "",
+            "navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"onLoginSuccess\",\n        \"widgetId\": \"linkedinlogin\"\n    }\n}",
+            "isCustomInput": false
+        }]
+    }
+}

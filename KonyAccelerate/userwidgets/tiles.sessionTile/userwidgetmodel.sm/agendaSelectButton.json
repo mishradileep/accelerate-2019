@@ -1,0 +1,59 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "130dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "20dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_right_": {
+        "type": "number",
+        "value": "20"
+    },
+    "_skin_": "s9e22066d1d8496d8a53d9d232764f15",
+    "_text_": "Button",
+    "_top_": {
+        "type": "string",
+        "value": "12dp"
+    },
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "contentalignment": 5,
+    "displaytext": false,
+    "focusskin": "s9e22066d1d8496d8a53d9d232764f15",
+    "id": "agendaSelectButton",
+    "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
+    "iscustomlayout": false,
+    "isvisible": false,
+    "kuid": "ba57454e69ae4c03bfba02e74cd88da1",
+    "name": "kony.ui.Button",
+    "onclick": "AS_Button_jdc837c9579d4b6d9d6566d890e49232",
+    "parent": "sessionTile",
+    "pf": "userwidgetmodel",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "showprogressindicator": false,
+    "wType": "Button",
+    "zindex": 1
+}

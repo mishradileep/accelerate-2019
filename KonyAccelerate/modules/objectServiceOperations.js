@@ -28,13 +28,13 @@
 
 	        }
 	        var dataObject = new kony.sdk.dto.DataObject(dataModelObject);
-	        var options = {
-	            "dataObject": dataObject,
-	            "headers": {
-	                "Content-Type": "application/json"
-	            },
-	            "queryParams": queryParams
-	        };
+	         var options = {
+               		"dataObject": dataObject,
+                    "headers": {
+                        "Content-Type": "application/json"
+                    },
+                    "queryParams": queryParams
+                };
 	        if (kony.net.isNetworkAvailable(constants.NETWORK_TYPE_ANY)) {
 	            objectInstance.fetch(options, successCallback, errorCallback);
 	        } else {
@@ -50,15 +50,16 @@
 
 	}
 
+
 /**
      * @function createRecord
-     * @scope private
      * @description this is generic function to make POST operation to kony storage objects.
      * @param objectService {String} - Name of Kony Object Service.
      * @param dataModelObject {String} - Name of Kony dataObject.
      * @param record {Object}- JSONArray which is used as batch to create records.
      * @param successCallback {Callback} - SuccessCallback to be invoked when the operation is successful.
      * @param errorCallback {Callback}- FailureCallback to be invoked when the operation fails.
+     * @public
      */
     function createRecord(objectService, dataModelObject, record, successCallback, errorCallback) {
         try {
@@ -71,16 +72,14 @@
             }
             if (objectInstance === null || objectInstance === undefined) {
                 kony.application.dismissLoadingScreen();
-                throw {
-                    "error": "ConnectionError",
-                    "message": "Please connect app to MF"
-                };
+            throw {
+	                "error": eventConstants.NETWORK_ERROR_TYPE,
+	                "message": eventConstants.CONNECTION_MESSAGE_STRING
+	            };
 
             }
             var dataObject = new kony.sdk.dto.DataObject(dataModelObject);
-
             dataObject.setRecord(record);
-
             var options = {
                 "dataObject": dataObject,
                 "headers": {
@@ -92,7 +91,6 @@
             }
         } catch (exception) {
             kony.application.dismissLoadingScreen();
-            konymp.logger.error(JSON.stringify(exception), konymp.logger.EXCEPTION);
-            throw exception;
+            kony.print("Exception in Create Service" + exception.message);
         }
     }

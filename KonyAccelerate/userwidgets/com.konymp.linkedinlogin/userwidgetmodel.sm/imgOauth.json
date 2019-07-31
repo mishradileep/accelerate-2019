@@ -5,11 +5,11 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "100%"
+        "value": "30dp"
     },
     "_left_": {
         "type": "string",
-        "value": "0%"
+        "value": "15dp"
     },
     "_margin_": [
         0,
@@ -24,16 +24,16 @@
         0
     ],
     "_skin_": "s7bf3232485740248cc1443f4519b12b",
-    "_src_": "reusablelogin_linkedin_1.png",
-    "_top_": {
-        "type": "string",
-        "value": "0%"
-    },
+    "_src_": "linkedinlogo.png",
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "30dp"
     },
     "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "context": {
         "channel": "mobile",

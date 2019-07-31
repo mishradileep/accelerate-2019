@@ -6,6 +6,6 @@ var eventConstants = {
   NETWORK_ERROR_TYPE : "NETWORK_ERROR_TYPE",
   GENERIC_EXCEPTION_MESSAGE : "Exception occured while fetching the object data",
   ACCESS_TYPE_ONLINE : "online",
-  DATA_MODEL_OPINION_ANSWERS:"opinion_answers"
-  
+  DATA_MODEL_OPINION_ANSWERS:"opinion_answers",
+  IDENTITY_PROVIDER_NAME:"LinkedinLogin"
 };
