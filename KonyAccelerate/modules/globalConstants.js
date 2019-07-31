@@ -5,5 +5,7 @@ var eventConstants = {
   CONNECTION_MESSAGE_STRING : "Please make sure your device is connected to a WiFi / Cellular Network",
   NETWORK_ERROR_TYPE : "NETWORK_ERROR_TYPE",
   GENERIC_EXCEPTION_MESSAGE : "Exception occured while fetching the object data",
-  ACCESS_TYPE_ONLINE : "online"
+  ACCESS_TYPE_ONLINE : "online",
+  DATA_MODEL_OPINION_ANSWERS:"opinion_answers"
+  
 };

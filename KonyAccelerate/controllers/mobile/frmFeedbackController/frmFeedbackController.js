@@ -2,8 +2,6 @@ define({
 
     selectedImage: "starselected.png",
     unselectedImage: "starunselected.png",
-    objectService: "KonyAccelerateStorageService",
-    dataModelObject: "opinion_answers",
     ratingQuestionId: "11",
     feedbackQuestionId: "12",
     opinion_id: 18,
@@ -59,7 +57,7 @@ define({
         var batch = {
             "records": feedbacks
         };
-        createRecord(this.objectService, this.dataModelObject, batch, this.successInStoreFeedback.bind(this), this.failInStoreFeedback.bind(this));
+        createRecord(eventConstants.OBJECT_SERVICE_NAME,eventConstants.DATA_MODEL_OPINION_ANSWERS, batch, this.successInStoreFeedback.bind(this), this.failInStoreFeedback.bind(this));
       	kony.print("Exiting frmFeedbackController : onClickOfSubmitButton function");
     },
 
