@@ -41,7 +41,7 @@ define(['com/konymp/linkedinlogin/constants'],function(constantsLocal) {
             this.view.centerY = "50%";
             this.view.flxMain.isVisible = false;
             this.view.forceLayout();
-            this.invokeIdentityService(eventConstants.PROVIDER_NAME);
+            this.invokeIdentityService(eventConstants.IDENTITY_PROVIDER_NAME);
         },
       	 /**
          * @function invokeIdentityService

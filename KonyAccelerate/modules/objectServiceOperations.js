@@ -51,13 +51,13 @@
 	}
 /**
      * @function createRecord
-     * @scope private
      * @description this is generic function to make POST operation to kony storage objects.
      * @param objectService {String} - Name of Kony Object Service.
      * @param dataModelObject {String} - Name of Kony dataObject.
      * @param record {Object}- JSONArray which is used as batch to create records.
      * @param successCallback {Callback} - SuccessCallback to be invoked when the operation is successful.
      * @param errorCallback {Callback}- FailureCallback to be invoked when the operation fails.
+     * @public
      */
     function createRecord(objectService, dataModelObject, record, successCallback, errorCallback) {
         try {
