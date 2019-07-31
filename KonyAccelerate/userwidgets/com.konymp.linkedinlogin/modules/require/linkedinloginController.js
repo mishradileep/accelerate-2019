@@ -199,7 +199,7 @@ define(['com/konymp/linkedinlogin/constants'],function(constantsLocal) {
          * @function failureInFetchingEmailId
          * @description Error Callback function 
          * @param {Object} error - gives the error status
-         * @private
+         * @privateob
          */
         failureInFetchingEmailId: function(error) {
           konymp.logger.trace("---------------Entering "+constantsLocal.COMPONENT_NAME+" :failureInFetchingEmailId function---------------", konymp.logger.FUNCTION_ENTRY);

@@ -1,57 +1,42 @@
 define({
-
+  
     /**
      * @function formPreshowAction
      * @descripiton This function is invoked in the pre show of the form which is used to fetch the event data
      * @private
      */
     formPreshowAction: function() {
-        let queryParams = {
-            "$filter": "(SoftDeleteFlag ne true) or (SoftDeleteFlag eq null)"
-        };
-        kony.application.showLoadingScreen("", "Fetching the event data");
-        fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.EVENT_LOCATION_OBJECT_NAME, queryParams,
-            this.eventLocationFetchSuccess.bind(this), this.eventLocationFetchFailure.bind(this));
+        let eventData = kony.store.getItem("accelerateEventData");
+        let eventLocationData = eventData.hasOwnProperty("eventLocationData") ? eventData.eventLocationData : null;
+        if (eventLocationData !== null) {
+            let hotelName = eventLocationData.hasOwnProperty("location") ? eventLocationData.location : "";
+            let addressLine1 = eventLocationData.hasOwnProperty("addressLine1") ? eventLocationData.addressLine1 : "";
+            let cityName = eventLocationData.hasOwnProperty("cityname") ? eventLocationData.cityname : "";
+            let pincode = eventLocationData.hasOwnProperty("pincode") ? eventLocationData.pincode : "";
+            let countryName = eventLocationData.hasOwnProperty("country_name") ? eventLocationData.country_name : "";
+            let completeAddress = addressLine1 + ", " + cityName + ", " + pincode + ", " + countryName;
+            let phoneNumber = eventLocationData.hasOwnProperty("phone_number") ? eventLocationData.phone_number : "";
+            let coOrdinatesInfo = this.getCoordinates(eventLocationData);
+            this.setEventData(hotelName, completeAddress, phoneNumber, coOrdinatesInfo);
+        } else {
+            kony.print("Event Location Data is null");
+            return;
+        }
     },
-
-
     /**
-     * @function eventLocationFetchSuccess
-     * @descripiton This function is invoked in the success of the event location fetch operation
-     * @param successResponse The success response of the event location object
+     * @function getCoordinates
+     * @descripiton This function is used to construct the coOrdinates Information
+     * @param eventLocationData The complete information about the event
      * @private
      */
-    eventLocationFetchSuccess: function(successResponse) {
-        kony.application.dismissLoadingScreen();
-        kony.print("Event Location Fetch success" + JSON.stringify(successResponse));
-        let eventLocationInfo = successResponse.records[0];
-        let hotelName = eventLocationInfo.hasOwnProperty("location") ? eventLocationInfo.location : "";
-        let addressLine1 = eventLocationInfo.hasOwnProperty("addressLine1") ? eventLocationInfo.addressLine1 : "";
-        let cityName = eventLocationInfo.hasOwnProperty("cityname") ? eventLocationInfo.cityname : "";
-        let pincode = eventLocationInfo.hasOwnProperty("pincode") ? eventLocationInfo.pincode : "";
-        let phoneNumber = eventLocationInfo.hasOwnProperty("phone_number") ? eventLocationInfo.phone_number : "";
-        let countryName = eventLocationInfo.hasOwnProperty("country_name") ? eventLocationInfo.country_name : "";
-        let latitude = eventLocationInfo.hasOwnProperty("latitude") ? eventLocationInfo.latitude : "";
-        let longitude = eventLocationInfo.hasOwnProperty("longitude") ? eventLocationInfo.longitude : "";
-        let completeAddress = addressLine1 + ", " + cityName + ", " + pincode + ", " + countryName;
-        let coOrdinatesInfo = {
-            "latitude": latitude,
-            "longitude": longitude
-        };
-        this.setEventData(hotelName, completeAddress, phoneNumber, coOrdinatesInfo);
+    getCoordinates: function(eventLocationData) {
+        let coOrdinatesInfo = {};
+        let latitude = eventLocationData.hasOwnProperty("latitude") ? eventLocationData.latitude : "";
+        let longitude = eventLocationData.hasOwnProperty("longitude") ? eventLocationData.longitude : "";
+        coOrdinatesInfo.latitude = latitude;
+        coOrdinatesInfo.longitude = longitude;
+        return coOrdinatesInfo;
     },
-
-    /**
-     * @function eventLocationFetchFailure
-     * @descripiton This function is invoked in the failure of the event location fetch operation
-     * @param successResponse The failure response of the event location object
-     * @private
-     */
-    eventLocationFetchFailure: function(failureResponse) {
-        kony.application.dismissLoadingScreen();
-        kony.print("Exception occured in fetching the location of the event");
-    },
-
     /**
      * @function setEventData
      * @descripiton This function is used to map the fetched data to the form UI elements
@@ -69,8 +54,6 @@ define({
         this.setDataToMap(hotelName, completeAddress, coOrdinatesInfo);
         kony.print("Mapping the event location data to UI elements completed");
     },
-
-
     /**
      * @function setDataToMap
      * @descripiton This function is used to set the event location in the map widget

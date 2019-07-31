@@ -8,7 +8,13 @@
         }],
         "language": "js",
         "actions": [{
-            "id": "NAVIGATE_TO_FORM__onLoginSuccess_f7a405305b3243feaa6737860e47a814",
+            "id": "ADD_SNIPPET__cb86d61ab2e242dea2fa4eee50194637",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.fetchEventData();",
+            "parentId": null,
+            "callbackType": null
+        }, {
+            "id": "NAVIGATE_TO_FORM___i94f6b6075d74fdd97dcdd34bd41984c",
             "type": "NAVIGATE_TO_FORM",
             "formId": "frmEventList",
             "formKUID": "a2ed5b03bdcb40658617c25c964f058f",

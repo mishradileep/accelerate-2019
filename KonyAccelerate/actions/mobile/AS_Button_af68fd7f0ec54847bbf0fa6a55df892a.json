@@ -16,8 +16,8 @@
         "actions": [{
             "id": "NAVIGATE_TO_FORM___c8c62966e81448fcacb1245172d468e1",
             "type": "NAVIGATE_TO_FORM",
-            "formId": "frmWifiInfo",
-            "formKUID": "jec7a8f26da3470699013344b9d3e7d7",
+            "formId": "frmEventLocation",
+            "formKUID": "b233cd75fbcc4f82ba304248e6216bc6",
             "mappings": {},
             "mappingsOrder": [],
             "parentId": "",
