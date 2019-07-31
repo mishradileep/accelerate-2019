@@ -1,22 +1,22 @@
 [
     {
-        "name": "myclient_id",
-        "displayName": "Client Id",
         "defaultValue": "Enter Client Id",
-        "type": "String",
+        "displayName": "Client Id",
+        "name": "myclient_id",
+        "readOnly": false,
         "serviceName": "reusableLinkedinLogin",
         "serviceType": "idprovider",
-        "readOnly": false,
+        "type": "String",
         "value": "866t0lj8wpask1"
     },
     {
-        "name": "myclient_secret",
-        "displayName": "Client Secret",
         "defaultValue": "Enter Client Secret",
-        "type": "String",
+        "displayName": "Client Secret",
+        "name": "myclient_secret",
+        "readOnly": false,
         "serviceName": "reusableLinkedinLogin",
         "serviceType": "idprovider",
-        "readOnly": false,
+        "type": "String",
         "value": "C4ESBpzWDobgDSCk"
     }
 ]

@@ -5,11 +5,7 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "100%"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "0%"
+        "value": "50dp"
     },
     "_margin_": [
         0,
@@ -23,35 +19,39 @@
         0,
         0
     ],
-    "_skin_": "scadd3eeeebb4f71b0ad7becc74f5c8a",
-    "_src_": "clear_input_icon_1_1.png",
-    "_top_": {
-        "type": "string",
-        "value": "0%"
-    },
+    "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
+    "_src_": "kony.png",
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "140dp"
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "uw858f02cb0f4e415d838e3f01d910342c",
-        "platform": "android",
-        "templateType": "userwidgets",
+        "formID": "frmLogin",
+        "platform": "iphone",
+        "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "imgClose",
-    "imagescalemode": 1,
+    "id": "imgKonyLogo",
+    "imagescalemode": 0,
     "info": null,
+    "invokedProperty": "src",
+    "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "42e5fc9ba13b4ef79e6526a7ca76017d",
+    "kuid": "c4a7865f8c9f4c5582b0657d1f861431",
     "name": "kony.ui.Image2",
-    "parent": "flxClose",
-    "pf": "userwidgetmodel",
+    "parent": "flxLogoContainer",
+    "pf": "frmLogin",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
     "srcType": 1,
     "wType": "Image",
     "widgetalignment": 5,
-    "zindex": 101
+    "zindex": 1
 }

@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "100%"
+        "value": "8%"
     },
     "_left_": {
         "type": "string",
@@ -15,7 +15,6 @@
         0,
         0
     ],
-    "_needleInAHayStack_": true,
     "_orientation_": 6,
     "_padding_": [
         0,
@@ -24,7 +23,7 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s6d9d98abe944885ba213d1af5b071fa",
+    "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
     "_top_": {
         "type": "string",
         "value": "0%"
@@ -36,35 +35,28 @@
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "50%"
-    },
-    "centery": {
-        "type": "string",
-        "value": "50%"
-    },
     "children": [
-        "brwsrIdentity",
-        "flxClose"
+        "lblAccelerate",
+        "lblyear"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxIdentity",
+    "id": "flxTitle",
     "info": null,
-    "iphone": {
-        "render": true
-    },
-    "isvisible": false,
-    "kuid": "41bdeb77fa7a4492b06bb25ba67007dc",
-    "layouttype": 2,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "i00c4e9d7a6649dd8937dd8e786a6776",
+    "layouttype": 3,
     "name": "kony.ui.FlexContainer",
-    "parent": "linkedinlogin",
-    "pf": "userwidgetmodel",
+    "parent": "flxBackground",
+    "pf": "frmLogin",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainflowhorizontalalignment": false,
     "snapgridsize": 10,
     "snaptogrid": true,
     "wType": "FlexContainer",
     "widgetalignment": 1,
-    "zindex": 3
+    "zindex": 1
 }
