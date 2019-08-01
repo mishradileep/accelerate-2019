@@ -7,7 +7,7 @@ define({
                     result or else it will fetch the wifi info 
         * @private
     */
-    formPostShowAction: function() {
+    formWifiInfoPostShowAction: function() {
         let accelerateEventData = kony.store.getItem("accelerateEventData");
         if (!kony.sdk.isNullOrUndefined(accelerateEventData)) {
             let wifiInformation = accelerateEventData.wifiInformation;
@@ -22,13 +22,14 @@ define({
         }
       	
     },
+  
     /**
-     * @function wifiFetchSuccess
+     * @function wifiInfoFetchSuccess
      * @description This function is invoked in the success of wifi object and used to set the data to form
      * @param successResponse The success response of the wifi object
      * @private
      */
-    wifiFetchSuccess: function(successResponse) {
+    wifiInfoFetchSuccess: function(successResponse) {
         let wifiInfo = successResponse.hasOwnProperty("records") ? successResponse.records : null;
         if (wifiInfo !== null) {
             let wifiData = wifiInfo[0];
@@ -39,19 +40,21 @@ define({
           	this.view.flxWifiImageContainer.isVisible = true;
           	this.animateWifiCard("62%");
         } else {
-            kony.print("Unable to fetch Wifi Info");
+            kony.print("Wifi Info is empty in the success response");
         }
     },
+  
     /**
-     * @function wifiFetchFailure
+     * @function wifiInfoFetchFailure
      * @description This function is invoked in the failure of wifi object and used to set the data to form
      * @param failureResponse The failure response of the wifi object
      * @private
      */
-    wifiFetchFailure: function(failureResponse) {
+    wifiInfoFetchFailure: function(failureResponse) {
         kony.print(eventConstants.GENERIC_EXCEPTION_MESSAGE);
         kony.print("Exception occured is" + JSON.stringify(failureResponse));
     },
+  
     /**
      * @function animateWifiCard
      * @description This function is used to animate the wifi card from bottom to top
