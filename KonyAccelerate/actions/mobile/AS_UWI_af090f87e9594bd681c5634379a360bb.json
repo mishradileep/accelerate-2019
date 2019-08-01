@@ -1,6 +1,6 @@
 {
-    "AS_Form_cf489b0ecd8f47ffbea4f99593800e5c": {
-        "id": "AS_Form_cf489b0ecd8f47ffbea4f99593800e5c",
+    "AS_UWI_af090f87e9594bd681c5634379a360bb": {
+        "id": "AS_UWI_af090f87e9594bd681c5634379a360bb",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -14,9 +14,9 @@
         },
         "language": "js",
         "actions": [{
-            "id": "ADD_SNIPPET__jfa342d2a4a241c993cbcf7db229cabc",
+            "id": "ADD_SNIPPET__ff97b46098ba4b9a9b536f0656dc40d5",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.formWifiInfoPostShowAction();",
+            "codeSnippet": "this.animateOutOnClose();",
             "parentId": null,
             "callbackType": null
         }]
