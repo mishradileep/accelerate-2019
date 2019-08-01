@@ -1,11 +1,8 @@
-//This is a controller file where the business logic for the form "frmAgenda" is implemented
 define({
-
     devHeight: null,
     thisCard: null,
     thisCardIndex: null,
     cardFrameRel: null,
-
     /**
      * @function frmAgendaPreshow
      * @description The function is invoked in the form preshow action which is used to setup the UI
@@ -17,22 +14,22 @@ define({
         this.view.referenceAgenda.isVisible = false;
         this.view.referenceSession.isVisible = false;
         this.view.postShow = this.frmAgendaPostshow;
-        this.view.sessionContentContainer.top = "100%"
+        this.view.sessionContentContainer.top = "100%";
         this.view.buttonBack.isVisible = false;
         this.view.imageBack.opacity = 0;
         this.view.buttonBack.onClick = this.frmAgendaSessionClose;
         this.view.detailsScroller.onScrolling = this.detailsScrollerOnScrolling;
         this.view.filterAll.onClick = function(eventobject) {
             self.agendaFilter(eventobject);
-        }
+        };
         this.view.filterDBX.onClick = function(eventobject) {
             self.agendaFilter(eventobject);
-        }
+        };
         this.view.filterQuantum.onClick = function(eventobject) {
             self.agendaFilter(eventobject);
-        }
+        };
         this.view.sessionTileAnim.anchorPoint = {
-            "x": .5,
+            "x": 0.5,
             "y": 0
         };
         //this.view.sessionTile.tileBGImageKony.anchorPoint={"x":1,"y":.5};
@@ -72,36 +69,34 @@ define({
      * @private
      */
     frmAgendaSetAgendaTiles: function() {
-
         this.view.sessionTile1.tilebg.skin = "agendaTileSkinKony";
-        this.view.sessionTile1.tileBGImageKony.src = "agendatilekony.png"
+        this.view.sessionTile1.tileBGImageKony.src = "agendatilekony.png";
         this.view.sessionTile2.tilebg.skin = "agendaTileSkinDBX";
-        this.view.sessionTile2.tileBGImageKony.src = "agendatiledbx.png"
+        this.view.sessionTile2.tileBGImageKony.src = "agendatiledbx.png";
         this.view.sessionTile3.tilebg.skin = "agendaTileSkinQuantum";
-        this.view.sessionTile3.tileBGImageKony.src = "agendatilequantum.png"
+        this.view.sessionTile3.tileBGImageKony.src = "agendatilequantum.png";
         this.view.sessionTile4.tilebg.skin = "agendaTileSkinDBX";
-        this.view.sessionTile4.tileBGImageKony.src = "agendatiledbx.png"
+        this.view.sessionTile4.tileBGImageKony.src = "agendatiledbx.png";
         this.view.sessionTile5.tilebg.skin = "agendaTileSkinKony";
-        this.view.sessionTile5.tileBGImageKony.src = "agendatilekony.png"
+        this.view.sessionTile5.tileBGImageKony.src = "agendatilekony.png";
         this.view.sessionTile6.tilebg.skin = "agendaTileSkinDBX";
-        this.view.sessionTile6.tileBGImageKony.src = "agendatiledbx.png"
+        this.view.sessionTile6.tileBGImageKony.src = "agendatiledbx.png";
         this.view.sessionTile7.tilebg.skin = "agendaTileSkinQuantum";
-        this.view.sessionTile7.tileBGImageKony.src = "agendatilequantum.png"
+        this.view.sessionTile7.tileBGImageKony.src = "agendatilequantum.png";
         this.view.sessionTile8.tilebg.skin = "agendaTileSkinDBX";
-        this.view.sessionTile8.tileBGImageKony.src = "agendatiledbx.png"
+        this.view.sessionTile8.tileBGImageKony.src = "agendatiledbx.png";
         this.view.sessionTile9.tilebg.skin = "agendaTileSkinKony";
-        this.view.sessionTile9.tileBGImageKony.src = "agendatilekony.png"
+        this.view.sessionTile9.tileBGImageKony.src = "agendatilekony.png";
         this.view.sessionTile10.tilebg.skin = "agendaTileSkinDBX";
-        this.view.sessionTile10.tileBGImageKony.src = "agendatiledbx.png"
+        this.view.sessionTile10.tileBGImageKony.src = "agendatiledbx.png";
         this.view.sessionTile11.tilebg.skin = "agendaTileSkinQuantum";
-        this.view.sessionTile11.tileBGImageKony.src = "agendatilequantum.png"
+        this.view.sessionTile11.tileBGImageKony.src = "agendatilequantum.png";
         this.view.sessionTile12.tilebg.skin = "agendaTileSkinDBX";
-        this.view.sessionTile12.tileBGImageKony.src = "agendatiledbx.png"
+        this.view.sessionTile12.tileBGImageKony.src = "agendatiledbx.png";
         this.view.sessionTile13.tilebg.skin = "agendaTileSkinKony";
-        this.view.sessionTile13.tileBGImageKony.src = "agendatilekony.png"
+        this.view.sessionTile13.tileBGImageKony.src = "agendatilekony.png";
         this.view.sessionTile14.tilebg.skin = "agendaTileSkinDBX";
-        this.view.sessionTile14.tileBGImageKony.src = "agendatiledbx.png"
-
+        this.view.sessionTile14.tileBGImageKony.src = "agendatiledbx.png";
     },
 
     /**
@@ -111,7 +106,7 @@ define({
      * @private
      */
     frmAgendaSessionSelect: function(eventobject) {
-      	this.setSpeakerProfile(eventobject);
+        this.setSpeakerProfile(eventobject);
         egLoggerClear();
         var self = this;
         this.thisCard = eventobject;
@@ -127,22 +122,18 @@ define({
         egLogger("cardFrameRel = " + this.cardFrameRel);
         this.view.sessionTileAnim.top = this.cardFrameRel;
         this.view.sessionTileAnim.left = "0%";
-        var animDuration = .8
-        var animHalf = animDuration * .5;
+        var animDuration = 0.8;
+        var animHalf = animDuration * 0.5;
         var bgImageScale = kony.ui.makeAffineTransform();
         bgImageScale.scale(1.47, 1.47);
         var allCards = this.view.sessionTiles.widgets();
         var cardDelay = 0;
         var cardIndexFound = false;
-
         for (i = 0; i < allCards.length; i++) {
             currentCard = allCards[i];
-
-            egLogger("operating on " + currentCard.id)
-
+            egLogger("operating on " + currentCard.id);
             currentCard.animate(
                 kony.ui.createAnimation({
-                    //0:{left:0,"stepConfig":{}},
                     100: {
                         opacity: 0,
                         "stepConfig": {}
@@ -154,12 +145,11 @@ define({
                 }, {
                     animationEnd: function() {}
                 });
-            cardDelay = cardDelay + .1
+            cardDelay = cardDelay + 0.1;
         }
 
         this.view.headerContainer.animate(
             kony.ui.createAnimation({
-                //0:{left:0,"stepConfig":{}},
                 100: {
                     top: "-131dp",
                     "stepConfig": {}
@@ -192,7 +182,6 @@ define({
 
                     self.view.sessionTileAnim.addAgendaContainer.animate(
                         kony.ui.createAnimation({
-                            //0:{left:0,"stepConfig":{}},
                             100: {
                                 opacity: 1,
                                 "stepConfig": {}
@@ -224,7 +213,6 @@ define({
 
         this.view.sessionTileAnim.sessionLocationIcon.animate(
             kony.ui.createAnimation({
-                //0:{left:0,"stepConfig":{}},
                 100: {
                     opacity: 0,
                     "stepConfig": {}
@@ -238,7 +226,6 @@ define({
             });
         this.view.sessionTileAnim.sessionTimeIcon.animate(
             kony.ui.createAnimation({
-                //0:{left:0,"stepConfig":{}},
                 100: {
                     opacity: 0,
                     "stepConfig": {}
@@ -252,7 +239,6 @@ define({
 
                     self.view.sessionTileAnim.tileBGImageKony.animate(
                         kony.ui.createAnimation({
-                            //50:{transform:"100%dp","stepConfig":{}},
                             100: {
                                 transform: bgImageScale,
                                 "stepConfig": {}
@@ -260,7 +246,7 @@ define({
                         }), {
                             delay: 0,
                             fillMode: kony.anim.FILL_MODE_FORWARDS,
-                            duration: animHalf * .5
+                            duration: animHalf * 0.5
                         }, {
                             animationEnd: function() {}
                         });
@@ -427,15 +413,15 @@ define({
     frmAgendaSessionClose: function() {
         var self = this;
         egLogger("this.thisCard = " + this.thisCard.id);
-        var animDuration = .8
-        var animHalf = animDuration * .5;
+        var animDuration = 0.8;
+        var animHalf = animDuration * 0.5;
         var bgImageScale = kony.ui.makeAffineTransform();
         bgImageScale.scale(1, 1);
         var allCards = this.view.sessionTiles.widgets();
-        var cardDelay = 0
+        var cardDelay = 0;
         for (i = 0; i < allCards.length; i++) {
             currentCard = allCards[i];
-            egLogger("operating on " + currentCard.id)
+            egLogger("operating on " + currentCard.id);
             currentCard.animate(
                 kony.ui.createAnimation({
                     //0:{left:0,"stepConfig":{}},
@@ -450,7 +436,7 @@ define({
                 }, {
                     animationEnd: function() {}
                 });
-            cardDelay = cardDelay + .1
+            cardDelay = cardDelay + 0.1;
         }
         this.view.headerContainer.animate(
             kony.ui.createAnimation({
@@ -521,7 +507,7 @@ define({
             }), {
                 delay: animDuration,
                 fillMode: kony.anim.FILL_MODE_FORWARDS,
-                duration: animHalf * .5
+                duration: animHalf * 0.5
             }, {
                 animationEnd: function() {}
             });
@@ -679,11 +665,11 @@ define({
         var tileScale = kony.ui.makeAffineTransform();
         tileScale.scale(1, 1);
         if (scrollPosY < 0) {
-            tileScale.scale(1 + (scrollPosY * -.002), 1 + (scrollPosY * -.002))
+            tileScale.scale(1 + (scrollPosY * -0.002), 1 + (scrollPosY * -0.002));
             self.view.sessionTileAnim.transform = tileScale;
         } else {
-            self.view.sessionTileAnim.top = scrollPosY * -.3;
-            self.view.imageBack.opacity = (1 - (scrollPosY * .01));
+            self.view.sessionTileAnim.top = scrollPosY * -0.3;
+            self.view.imageBack.opacity = (1 - (scrollPosY * 0.01));
         }
 
     },
@@ -696,22 +682,22 @@ define({
      */
     agendaFilter: function(eventobject) {
         var self = this;
-        var leftPos = "0%"
-        var buttonText = "ALL"
-        var targetSkin = "filterSkinAll"
+        var leftPos = "0%";
+        var buttonText = "ALL";
+        var targetSkin = "filterSkinAll";
         var destColor = "";
         if (eventobject.id == "filterAll") {
-            leftPos = "0%"
-            buttonText = "ALL"
+            leftPos = "0%";
+            buttonText = "ALL";
             targetSkin = "filterSkinAll";
-            destColor = "1F232900"
+            destColor = "1F232900";
         } else if (eventobject.id == "filterDBX") {
-            leftPos = "33.33%"
+            leftPos = "33.33%";
             buttonText = "DBX";
             targetSkin = "filterSkinDBX";
             destColor = "4B3A6600";
         } else {
-            leftPos = "66.66%"
+            leftPos = "66.66%";
             buttonText = "QUANTUM";
             targetSkin = "filterSkinQuantum";
             destColor = "14334500";
@@ -727,7 +713,7 @@ define({
             }), {
                 delay: 0,
                 fillMode: kony.anim.FILL_MODE_FORWARDS,
-                duration: .22
+                duration: 0.22
             }, {
                 animationEnd: function() {}
             });
@@ -751,7 +737,7 @@ define({
             }), {
                 delay: 0,
                 fillMode: kony.anim.FILL_MODE_FORWARDS,
-                duration: .1
+                duration: 0.1
             }, {
                 animationEnd: function() {
 
@@ -768,7 +754,7 @@ define({
                         }), {
                             delay: 0,
                             fillMode: kony.anim.FILL_MODE_FORWARDS,
-                            duration: .1
+                            duration: 0.1
                         }, {
                             animationEnd: function() {}
                         });
@@ -776,113 +762,114 @@ define({
                 }
             });
     },
-  
-  /**
+
+    /**
      *	@function setData
      * 	@description This function is used to create the session tile at run time and add it to the view
      *	@param sessions {Object} - list of all sessions from the backend
      * 	@private
      */
-  setData:function(sessions){
-    this.sessionsList=sessions;
-    var sessionCount=sessions.length;
-    for(var index=0;index<sessionCount;index++){
-      var id =eventConstants.SESSION_TILE_ID+index;
-      var sessionObj= sessions[index];
-      var sessionTile;
-      if(index==0){
-        sessionTile=this.createSessionTile(id,"131dp");
-      }
-      else{
-        sessionTile=this.createSessionTile(id,"0dp");
-      }
-      this.view.sessionTiles.add(sessionTile);
-      this.view[id].setTitleData(sessionObj);
-      if(!kony.sdk.isNullOrUndefined(sessionObj.presenter)){
-        this.view[id].onClick=this.frmAgendaSessionSelect.bind(this);
-      }
-      
-    }
-  },
-  /**
+    setData: function(sessions) {
+        this.sessionsList = sessions;
+        var sessionCount = sessions.length;
+        for (var index = 0; index < sessionCount; index++) {
+            var id = eventConstants.SESSION_TILE_ID + index;
+            var sessionObj = sessions[index];
+            var sessionTile;
+            if (index == 0) {
+                sessionTile = this.createSessionTile(id, "131dp");
+            } else {
+                sessionTile = this.createSessionTile(id, "0dp");
+            }
+            this.view.sessionTiles.add(sessionTile);
+            this.view[id].setTitleData(sessionObj);
+            if (!kony.sdk.isNullOrUndefined(sessionObj.presenter)) {
+                this.view[id].onClick = this.frmAgendaSessionSelect.bind(this);
+            }
+
+        }
+    },
+    /**
      *	@function createSessionTile
      * 	@description This function is invoked to get the dynamic instance of the session tile component
      *	@param id {String} - id of the component
      *	@param top {String} - top of the component
      * 	@private
      */
-  createSessionTile:function(id,top){
-      var sessionTile = new tiles.sessionTile({
-                "autogrowMode": kony.flex.AUTOGROW_NONE,
-                "clipBounds": false,
-                "height": "152dp",
-                "id": id,
-                "isVisible": true,
-                "layoutType": kony.flex.FREE_FORM,
-                "left": "0dp",
-                "masterType": constants.MASTER_TYPE_DEFAULT,
-                "isModalContainer": false,
-                "skin": "CopyslFbox0j4c69221be4c47",
-                "top": top,
-                "width": "100%",
-                "zIndex": 1,
-                "overrides": {
-                    "sessionLocationIcon": {
-                        "src": "agendatilelocationicon.png"
-                    },
-                    "sessionTile": {
-                        "bottom": "viz.val_cleared",
-                        "height": "152dp",
-                        "isVisible": true,
-                        "left": "0dp",
-                        "top": "0dp",
-                        "width": "100%"
-                    },
-                    "sessionTimeIcon": {
-                        "src": "agendatiletimeicon.png"
-                    },
-                    "tileBGImageKony": {
-                        "isVisible": true,
-                        "src": "agendatilekony.png"
-                    }
+    createSessionTile: function(id, top) {
+        var sessionTile = new tiles.sessionTile({
+            "autogrowMode": kony.flex.AUTOGROW_NONE,
+            "clipBounds": false,
+            "height": "152dp",
+            "id": id,
+            "isVisible": true,
+            "layoutType": kony.flex.FREE_FORM,
+            "left": "0dp",
+            "masterType": constants.MASTER_TYPE_DEFAULT,
+            "isModalContainer": false,
+            "skin": "CopyslFbox0j4c69221be4c47",
+            "top": top,
+            "width": "100%",
+            "zIndex": 1,
+            "overrides": {
+                "sessionLocationIcon": {
+                    "src": "agendatilelocationicon.png"
+                },
+                "sessionTile": {
+                    "bottom": "viz.val_cleared",
+                    "height": "152dp",
+                    "isVisible": true,
+                    "left": "0dp",
+                    "top": "0dp",
+                    "width": "100%"
+                },
+                "sessionTimeIcon": {
+                    "src": "agendatiletimeicon.png"
+                },
+                "tileBGImageKony": {
+                    "isVisible": true,
+                    "src": "agendatilekony.png"
                 }
-            }, {
-                "retainFlowHorizontalAlignment": false,
-                "overrides": {}
-            }, {
-                "overrides": {}
-            });
-    return sessionTile;
-  },
-  /**
+            }
+        }, {
+            "retainFlowHorizontalAlignment": false,
+            "overrides": {}
+        }, {
+            "overrides": {}
+        });
+        return sessionTile;
+    },
+    /**
      *	@function setSpeakerProfile
      * 	@description This function is used to set the speaker info to the UI Elements
      *	@param eventObject {Obejct} -traverses the Speaker_master data and fiiter the speaker from it.
      * 	@private
      */
-  setSpeakerProfile:function(eventObject){
-    var id=eventObject.id;
-    var len=id.length;
-    var startIndex=eventConstants.SESSION_TILE_ID.length;
-    var sessionIndex= id.substring(startIndex,len);
-    var sessionObject=this.sessionsList[sessionIndex];
-    var speakerList=sessionObject["presenter"];
-    var speakers_master=kony.store.getItem("master_speakers");
-    for(var speakerIndex=0; speakerIndex<speakerList.length; speakerIndex++){
-      var speakerObject=speakerList[speakerIndex];
-      for(var index=0;index<speakers_master.length;index++){
-        if(speakerObject.master_speaker_id==speakers_master[index].speaker_id){
-          var speakerBio=speakers_master[index];
-          this.view["speakerName"+speakerIndex].text=speakerBio.speaker_name;
-          this.view["speakerDesignation"+speakerIndex].text=speakerBio.speaker_title;
-          this.view["speakerDescription"+speakerIndex].text=speakerBio.speaker_bio;
-          this.view["imgSpeaker"+speakerIndex].src=speakerBio.speaker_profile_pic;
-          this.view["ratingTile"+speakerIndex].setSpeakerProfileInRating(speakerBio);
+    setSpeakerProfile: function(eventObject) {
+        var id = eventObject.id;
+        var len = id.length;
+        var startIndex = eventConstants.SESSION_TILE_ID.length;
+        var sessionIndex = id.substring(startIndex, len);
+        var sessionObject = this.sessionsList[sessionIndex];
+        var speakerList = sessionObject["presenter"];
+        var speakers_master = kony.store.getItem("master_speakers");
+      	if(kony.sdk.isNullOrUndefined(speakers_master)){
+          this.view.flxSpeaker1.isVisible=false;
+          this.view.flxSpeaker1.isVisible=false;
+          return;
         }
-      }
-      
+        for (var speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
+            var speakerObject = speakerList[speakerIndex];
+            for (var index = 0; index < speakers_master.length; index++) {
+                if (speakerObject.master_speaker_id == speakers_master[index].speaker_id) {
+                    var speakerBio = speakers_master[index];
+                    this.view["speakerName" + speakerIndex].text = speakerBio.speaker_name;
+                    this.view["speakerDesignation" + speakerIndex].text = speakerBio.speaker_title;
+                    this.view["speakerDescription" + speakerIndex].text = speakerBio.speaker_bio;
+                    this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
+                    this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
+                }
+            }
+        }
     }
-  }
- 
-  
 });

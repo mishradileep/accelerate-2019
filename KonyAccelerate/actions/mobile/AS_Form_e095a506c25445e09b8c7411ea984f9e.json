@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__g27689a162344fc390a575476c98e2d2",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "//this.formPreShowAction();\n",
+            "codeSnippet": "this.formPreShowAction();",
             "parentId": null,
             "callbackType": null
         }]
