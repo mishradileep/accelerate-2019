@@ -108,7 +108,7 @@ define({
         this.view.lblHotelInfo.text = completeAddress;
         this.view.lblHotelPhone.text = phoneNumber;
         this.setDataToMap(hotelName, completeAddress, coOrdinatesInfo);
-      	this.animateLocationCard("23%");
+      	this.animateLocationCard("23%",false);
         kony.print("Mapping the event location data to UI elements completed");
     },
   
@@ -139,6 +139,10 @@ define({
         this.view.mapEventLocation.addPin(locationPin);
         this.view.mapEventLocation.navigateTo(0, false);
     },
+  	
+  	onCloseButtonClick : function(){
+      this.animateLocationCard("100%", true)
+    },
   
   	 /**
      * @function animateLocationCard
@@ -146,7 +150,7 @@ define({
      * @param finalTop The top position of the flex
      * @private
      */
-  	animateLocationCard: function(finalTop) {
+  	animateLocationCard: function(finalTop,isClose) {
         this.view.flxMapContainer.animate(
             kony.ui.createAnimation({
                 100: {
@@ -159,8 +163,9 @@ define({
                 duration: 0.5
             }, {
                 animationEnd: function() {
-
-
+					if(isClose){
+                      new kony.mvc.Navigation("frmMore").navigate();
+                    }
                 }
             });
     },

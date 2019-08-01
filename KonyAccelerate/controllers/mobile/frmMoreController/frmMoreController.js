@@ -28,6 +28,7 @@ define({
           // naviaget to clicked form on slideOut after last menu item slides out.
           if ((menuWidgets.length - 1) == currentItemIdex &&
              'slideOut' == slideType) {
+            let formName = "";
             switch(eventObj.id) {
               case 'flxMenuWifi':
                 new kony.mvc.Navigation('frmWifiInfo').navigate();
