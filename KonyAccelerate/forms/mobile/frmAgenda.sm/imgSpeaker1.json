@@ -3,13 +3,17 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_base64_": null,
+    "_bottom_": {
+        "type": "number",
+        "value": "123"
+    },
     "_height_": {
         "type": "string",
-        "value": "52dp"
+        "value": "153dp"
     },
     "_left_": {
         "type": "string",
-        "value": "171dp"
+        "value": "-23dp"
     },
     "_margin_": [
         0,
@@ -24,36 +28,29 @@
         0
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "speakerratingtomhogan.png",
-    "_top_": {
-        "type": "string",
-        "value": "0dp"
-    },
+    "_src_": "bioburley.png",
     "_width_": {
         "type": "string",
-        "value": "67dp"
+        "value": "200dp"
     },
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "50%"
-    },
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "uwu832698bf85f49909353cdbc90b35eec",
-        "templateType": "userwidgets",
+        "formID": "frmAgenda",
+        "platform": "iphone",
+        "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "ratingSpeakerImage",
+    "id": "imgSpeaker1",
     "imagescalemode": 1,
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "gd6c719314ad4eeca6a03fe884e3d0e5",
+    "kuid": "g5e4a99c52b64b5cbc28fe1eace012e6",
     "name": "kony.ui.Image2",
-    "parent": "flxImage",
-    "pf": "userwidgetmodel",
+    "parent": "flxSpeaker2",
+    "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,

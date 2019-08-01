@@ -5,15 +5,15 @@
     "_base64_": null,
     "_bottom_": {
         "type": "number",
-        "value": "123"
+        "value": "118"
     },
     "_height_": {
         "type": "string",
-        "value": "153dp"
+        "value": "169dp"
     },
     "_left_": {
         "type": "string",
-        "value": "-23dp"
+        "value": "-33dp"
     },
     "_margin_": [
         0,
@@ -28,10 +28,10 @@
         0
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "bioburley.png",
+    "_src_": "biotom.png",
     "_width_": {
         "type": "string",
-        "value": "200dp"
+        "value": "235dp"
     },
     "canUpdateUI": true,
     "containerweight": 100,
@@ -42,14 +42,15 @@
         "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "CopyImage0hba7b581c1684e",
+    "id": "imgSpeaker0",
     "imagescalemode": 1,
     "info": null,
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "g5e4a99c52b64b5cbc28fe1eace012e6",
+    "kuid": "f175e999cf044670a1312e7dca40aadd",
     "name": "kony.ui.Image2",
-    "parent": "CopyFlexContainer0d4f672ee0d0246",
+    "parent": "flxSpeaker1",
     "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

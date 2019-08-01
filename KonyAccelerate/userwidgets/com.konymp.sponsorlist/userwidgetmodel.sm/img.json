@@ -3,17 +3,13 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_base64_": null,
-    "_bottom_": {
-        "type": "number",
-        "value": "118"
-    },
     "_height_": {
         "type": "string",
-        "value": "169dp"
+        "value": "150dp"
     },
     "_left_": {
         "type": "string",
-        "value": "-33dp"
+        "value": "10dp"
     },
     "_margin_": [
         0,
@@ -28,29 +24,32 @@
         0
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "biotom.png",
+    "_src_": "https://volumeplay.s3.amazonaws.com/accelerate2019/microsoft.png",
+    "_top_": {
+        "type": "string",
+        "value": "4dp"
+    },
     "_width_": {
         "type": "string",
-        "value": "235dp"
+        "value": "343dp"
     },
     "canUpdateUI": true,
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "frmAgenda",
-        "platform": "iphone",
-        "templateType": "forms",
+        "formID": "uwu8ad44f493584f5293d0fa6177073d73",
+        "templateType": "userwidgets",
         "topLevelBox": null
     },
-    "id": "Image0e41d331fb2cd4d",
+    "id": "img",
     "imagescalemode": 1,
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "f175e999cf044670a1312e7dca40aadd",
+    "kuid": "ba85c45474a24de4a09a497f73a7eb40",
     "name": "kony.ui.Image2",
-    "parent": "FlexContainer0a5ca89449fd543",
-    "pf": "frmAgenda",
+    "parent": "flxSlides",
+    "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,

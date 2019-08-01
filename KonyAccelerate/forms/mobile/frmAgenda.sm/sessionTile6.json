@@ -129,6 +129,7 @@
                 "srcKUID": "fb318ff0d30b4e7e887e5c06ff43ab8d",
                 "wType": "FlexContainer"
             },
+            "isVisible": false,
             "left": {
                 "Default": {
                     "type": "string",

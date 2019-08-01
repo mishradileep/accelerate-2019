@@ -6,10 +6,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "12dp"
-    },
     "_margin_": [
         1,
         1,
@@ -22,11 +18,11 @@
         0,
         0
     ],
-    "_skin_": "sc9230a95e6942568b50d9f03a2ed427",
-    "_text_": "Burley Kawasaki",
+    "_skin_": "s658beac28714e5f83c1dd431959f59a",
+    "_text_": "Gold Sponsor",
     "_top_": {
         "type": "string",
-        "value": "16dp"
+        "value": "10dp"
     },
     "_width_": {
         "type": "ref",
@@ -40,9 +36,13 @@
         }
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
-    "contentalignment": 4,
-    "id": "CopyLabel0j5396aaae47645",
+    "contentalignment": 5,
+    "id": "lblTitle",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,17 +56,14 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "i7e83ed1cdd94ac08252a0fd535dcc9d",
+    "kuid": "ga78b040a5fe488ab6ecafbf3696b711",
     "name": "kony.ui.Label",
-    "parent": "CopyFlexContainer0ib0764c8855248",
-    "pf": "frmAgenda",
+    "parent": "sponsorlist",
+    "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},
     "tooltip": "",
-    "vizProps": {
-        "hide": false
-    },
     "wType": "Label",
     "zindex": 1
 }

@@ -27,7 +27,7 @@
         "value": "12"
     },
     "_skin_": "sc619b02348e4985899130b8cd4ce228",
-    "_text_": "Burley is the Executive Vice President of Products….",
+    "_text_": "Thomas E. Hogan has been at the forefront of innovation...",
     "_top_": {
         "type": "string",
         "value": "67dp"
@@ -42,7 +42,7 @@
     "canUpdateUI": true,
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "CopyLabel0fa0041e41eb045",
+    "id": "speakerDescription0",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,9 +56,9 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "f8e6fd3fec3e496381f90bb16d55bc50",
+    "kuid": "h0891700ef0b4e98bb9f3b07eecb650d",
     "name": "kony.ui.Label",
-    "parent": "CopyFlexContainer0ib0764c8855248",
+    "parent": "speaker1Bio",
     "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
