@@ -3,11 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "56%"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "0%"
+        "value": "300dp"
     },
     "_margin_": [
         0,
@@ -23,35 +19,34 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "scb411d0f5aa40369a9e4550680f0502",
-    "_top_": {
-        "type": "string",
-        "value": "8%"
-    },
+    "_skin_": "s080523800924f9aaa22eb932b462163",
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "300dp"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [
-        "flxWifiCircle1",
-        "flxWifiCircle2",
-        "flxWifiCircle3",
-        "flxWifiCircle4"
-    ],
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "children": [],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxWifiImageContainer",
+    "id": "flxWifiCircle1",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": false,
-    "kuid": "e6dc8e2a25d247398c12dfac64c1a6e4",
+    "isvisible": true,
+    "kuid": "a078a33764e54f7ba6fe67434229d5f6",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxMainContainer",
+    "parent": "flxWifiImageContainer",
     "pf": "frmWifiInfo",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

@@ -45,6 +45,18 @@ define({
     });
   },
 
+  /** @function menuAnimateSlideOut
+   *  @description Slide Out menu items one by one and navigate to eventObj form.
+   *  @param eventObj
+   *	Menu item object. So that we can get clicked item and navigate to target form.
+   *
+   *  @return
+   *	void
+   */
+  menuAnimateSlideOut: function(eventObj) {
+    this.menuAnimateSlide('slideOut', eventObj);
+  },
+  
   /** @function menuBindOnClick
    *  @description binds click even with each individual menu item.
    */
@@ -52,7 +64,7 @@ define({
     var self = this;
     let menuWidgets = this.view.flxMoreWrapper.widgets();
     menuWidgets.forEach(function(currentMenu, index){
-      currentMenu.onClick = self.menuAnimateSlide.bind('slideOut', self);
+      currentMenu.onClick = self.menuAnimateSlideOut.bind(self);
     });
   },
 

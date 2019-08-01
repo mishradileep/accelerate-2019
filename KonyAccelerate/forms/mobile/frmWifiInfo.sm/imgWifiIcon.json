@@ -5,11 +5,7 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "35%"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "152dp"
+        "value": "40dp"
     },
     "_margin_": [
         0,
@@ -24,17 +20,17 @@
         0
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "wifi.png",
-    "_top_": {
-        "type": "string",
-        "value": "25%"
-    },
+    "_src_": "wifiicon.png",
     "_width_": {
         "type": "string",
-        "value": "52%"
+        "value": "40dp"
     },
     "canUpdateUI": true,
     "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
         "type": "string",
         "value": "50%"
     },
@@ -46,15 +42,15 @@
         "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "imgWifiLogo",
+    "id": "imgWifiIcon",
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "a027bafd03fb4fab9284837adb9b293d",
+    "kuid": "c1a692bf28264a41a5ea6d3091c31fb7",
     "name": "kony.ui.Image2",
-    "parent": "flxWifiImageContainer",
+    "parent": "flxWifiCircle4",
     "pf": "frmWifiInfo",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
