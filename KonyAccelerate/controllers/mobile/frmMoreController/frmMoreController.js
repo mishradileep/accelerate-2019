@@ -39,6 +39,7 @@ define({
               default:
                 // code block
             }
+            new kony.mvc.Navigation(formName).navigate();
           }
         }}
       );
