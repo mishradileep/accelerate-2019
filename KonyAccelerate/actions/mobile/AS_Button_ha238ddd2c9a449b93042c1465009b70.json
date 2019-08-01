@@ -1,6 +1,6 @@
 {
-    "AS_AppEvents_c081992218f44bf89cef587f76549c96": {
-        "id": "AS_AppEvents_c081992218f44bf89cef587f76549c96",
+    "AS_Button_ha238ddd2c9a449b93042c1465009b70": {
+        "id": "AS_Button_ha238ddd2c9a449b93042c1465009b70",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -8,10 +8,9 @@
         }],
         "language": "js",
         "actions": [{
-            "id": "ADD_SNIPPET__a79d86ccd8e347d9a1ffefe3d72dab51",
+            "id": "ADD_SNIPPET_onClick_a0defe1e81e0460681add76ca1cf0dff",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "//appPreShow();",
-            "parentId": null,
+            "codeSnippet": "this.menuAnimateSlideIn();",
             "callbackType": null
         }]
     }
