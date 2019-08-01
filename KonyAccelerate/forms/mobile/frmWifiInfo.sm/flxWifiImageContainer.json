@@ -36,7 +36,10 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "imgWifiLogo"
+        "flxWifiCircle1",
+        "flxWifiCircle2",
+        "flxWifiCircle3",
+        "flxWifiCircle4"
     ],
     "clipbounds": true,
     "containerweight": 100,

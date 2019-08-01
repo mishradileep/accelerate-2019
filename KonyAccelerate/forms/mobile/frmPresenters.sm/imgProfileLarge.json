@@ -5,11 +5,11 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "35%"
+        "value": "222dp"
     },
     "_left_": {
         "type": "string",
-        "value": "152dp"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -24,38 +24,34 @@
         0
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "wifi.png",
+    "_src_": "biotom.png",
     "_top_": {
         "type": "string",
-        "value": "25%"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "52%"
+        "value": "100%"
     },
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "50%"
-    },
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "frmWifiInfo",
+        "formID": "frmPresenters",
         "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "imgWifiLogo",
+    "id": "imgProfileLarge",
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "a027bafd03fb4fab9284837adb9b293d",
+    "kuid": "b1cab81dbab448f2a6bf7dcd739b034f",
     "name": "kony.ui.Image2",
-    "parent": "flxWifiImageContainer",
-    "pf": "frmWifiInfo",
+    "parent": "flxImagelargeView",
+    "pf": "frmPresenters",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,

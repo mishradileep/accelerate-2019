@@ -143,7 +143,8 @@
                 "kuid": "f510c7ea56a0402896628f0b204abf6e",
                 "srcKUID": "ba3ca6db33f645c697fefd341f143be1",
                 "wType": "Image"
-            }
+            },
+            "src": "menuagendaactive_1.png"
         },
         "menuImageMore": {
             "__events__": {},
@@ -151,7 +152,8 @@
                 "kuid": "jd557bf37207407bb2f28246dec39199",
                 "srcKUID": "b914a739c4ef4bec840524a4d77f1076",
                 "wType": "Image"
-            }
+            },
+            "src": "menumoreinactive_1.png"
         },
         "menuImageMySchedule": {
             "__events__": {},
@@ -159,7 +161,8 @@
                 "kuid": "d62a041c009a4caa9430e89e944d0b5c",
                 "srcKUID": "c252d8278fd1465f9cf1377b1b0de8a2",
                 "wType": "Image"
-            }
+            },
+            "src": "menuscheduleinactive_1.png"
         },
         "menuImagePresenters": {
             "__events__": {},
@@ -167,7 +170,8 @@
                 "kuid": "e78c2b32e925463e8d301c1f73a01cbd",
                 "srcKUID": "fd16a35bd75847eabe6456460ba15929",
                 "wType": "Image"
-            }
+            },
+            "src": "menupresentersinactive_1.png"
         },
         "menuLabelAgenda": {
             "__events__": {},
@@ -208,6 +212,9 @@
                 "kuid": "b20f6716af734b6f8b5b9648b539a39a",
                 "srcKUID": "f5fdcbc491394b349bf721f20eac9eaa",
                 "wType": "FlexContainer"
+            },
+            "zIndex": {
+                "Default": 1
             }
         }
     },
@@ -230,5 +237,5 @@
     "snaptogrid": true,
     "sourceUserWidget": "f5fdcbc491394b349bf721f20eac9eaa",
     "wType": "UserWidgetInstance",
-    "zindex": 40
+    "zindex": 1
 }

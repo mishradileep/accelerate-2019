@@ -1,0 +1,53 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "40dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s1a7c8bcebc2456b99a679699bc72df6",
+    "_text_": "Navigate to wifi",
+    "_top_": {
+        "type": "string",
+        "value": "157dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "300dp"
+    },
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "contentalignment": 5,
+    "displaytext": true,
+    "focusskin": "s9502514e11d48069838bf3afd8c680d",
+    "id": "CopyButton0a2fc6c73472a40",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "edbb0c76aa1d4350ac1b0f2f3202119c",
+    "name": "kony.ui.Button",
+    "onclick": "AS_Button_e0728edd4bd5441290b145eb6a59dbb9",
+    "parent": "frmEventList",
+    "pf": "frmEventList",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "wType": "Button",
+    "zindex": 1
+}

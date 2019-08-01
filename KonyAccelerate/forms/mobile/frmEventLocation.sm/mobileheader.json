@@ -40,7 +40,8 @@
     "clipbounds": true,
     "containerweight": 0,
     "data": {
-        "headerTitle": "LOCATION"
+        "headerTitle": "LOCATION",
+        "onCloseClick": "AS_UWI_gceaa217dccb4829bad812dbcacc7414"
     },
     "enablescrolling": true,
     "id": "mobileheader",

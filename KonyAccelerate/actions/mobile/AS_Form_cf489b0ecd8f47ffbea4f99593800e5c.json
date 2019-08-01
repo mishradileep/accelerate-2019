@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__jfa342d2a4a241c993cbcf7db229cabc",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.formPostShowAction();",
+            "codeSnippet": "this.formWifiInfoPostShowAction();",
             "parentId": null,
             "callbackType": null
         }]

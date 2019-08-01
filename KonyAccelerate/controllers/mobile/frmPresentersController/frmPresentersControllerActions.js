@@ -7,5 +7,15 @@ define({
         var self = this;
         var ntf = new kony.mvc.Navigation("frmAgenda");
         ntf.navigate();
+    },
+    /** onClick defined for flxImageClose **/
+    AS_FlexContainer_c50b28a0f60548fea182742bf878a959: function AS_FlexContainer_c50b28a0f60548fea182742bf878a959(eventobject) {
+        var self = this;
+        this.onClickOfCloseSpeakerDetails();
+    },
+    /** init defined for frmPresenters **/
+    AS_Form_aa402fd47759406593de6f69a7fb821c: function AS_Form_aa402fd47759406593de6f69a7fb821c(eventobject) {
+        var self = this;
+        this.setFilteronClick();
     }
 });

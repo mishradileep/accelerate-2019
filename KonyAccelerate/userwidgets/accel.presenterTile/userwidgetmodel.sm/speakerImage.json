@@ -36,7 +36,7 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "48.52%"
+        "value": "50%"
     },
     "containerweight": 100,
     "context": {

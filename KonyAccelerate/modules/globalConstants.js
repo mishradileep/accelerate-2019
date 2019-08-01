@@ -11,4 +11,5 @@ var eventConstants = {
   DATA_MODEL_OPINION_ANSWERS:"opinion_answers",
   IDENTITY_PROVIDER_NAME:"LinkedinLogin",
   SESSION_TILE_ID:"tile"
+  PRESENTER_OBJECT_NAME : "speakers_master"
 };
