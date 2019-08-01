@@ -10,7 +10,8 @@ define({
     */
   onNavigate : function() {
     var presenterSessionData = kony.store.getItem("presenterSessionData");
-    this.view.presenterScroll.removeAll();      
+    this.view.presenterScroll.removeAll();   
+
     if(!kony.sdk.isNullOrUndefined(presenterSessionData)) {
       this.processPresenterSessionData(presenterSessionData);
     } else {
@@ -25,18 +26,23 @@ define({
     }
 
   },
-  
+
+  /**
+    	* @function  setFilteronClick
+        * @description This function is used to set Filter Click Action
+        * @private
+    */
   setFilteronClick : function(){
     var self = this;
-     this.view.filterAll.onClick = function(eventobject) {
-            self.spekerFilter(eventobject);
-        };
-        this.view.filterDBX.onClick = function(eventobject) {
-            self.spekerFilter(eventobject);
-        };
-        this.view.filterQuantum.onClick = function(eventobject) {
-            self.spekerFilter(eventobject);
-        };
+    this.view.filterAll.onClick = function(eventobject) {
+      self.speakerFilter(eventobject);
+    };
+    this.view.filterDBX.onClick = function(eventobject) {
+      self.speakerFilter(eventobject);
+    };
+    this.view.filterQuantum.onClick = function(eventobject) {
+      self.speakerFilter(eventobject);
+    };
   },
 
   /**
@@ -86,7 +92,6 @@ define({
     }
   },
 
-
   /**
      * @function setPresenterList
      * @description This function is used to create the PresenterTile dynamically
@@ -114,8 +119,6 @@ define({
     this.view.presenterScroll.add(presenterTile);
   },
 
-
-
   /**
      * @function onClickOfPresenter
      * @description This function is invoked on click of speaker tile
@@ -128,15 +131,13 @@ define({
     this.view.speakerTitle.text = presenter.speaker_title;
     this.view.speakerInfo.text = presenter.speaker_bio;
     this.view.imgProfileLarge.src = presenter.speaker_profile_pic;
-    
+
     if(!kony.sdk.isNullOrUndefined(presenter.sessionsList)) {
-          //To do..
-    	  //this.createSessions(JSON.parse(presenter.sessionsList));
+      //To do..
+      //this.createSessions(JSON.parse(presenter.sessionsList));
     }
     this.view.presenterDetail.isVisible = true;
   },
-
-
 
   /**
      * @function onClickOfCloseSpeakerDetails
@@ -146,150 +147,148 @@ define({
   onClickOfCloseSpeakerDetails : function(){
     this.view.presenterDetail.isVisible = false;
   },
-  
-  
-   /**
+
+
+  /**
      * @function createSessions
      * @description To do..
      * @private
      */
   createSessions : function(sessions){
-    alert(JSON.stringify(sessions));
     this.view.flexSessions.removeAll();
     for(var index=0; index<sessions.length; index++) {
       var id = "sessiontile"+sessions[index].session_id;
       this.creacreateSessionTile(id, "20dp",sessions[index]);
     }
   },
-  
-  
+
+
   /**
      * @function createSessionTile
      * @description To do..
      * @private
      */
   createSessionTile:function(id,top,data){
-      var sessionTile = new tiles.sessionTile({
-                "autogrowMode": kony.flex.AUTOGROW_NONE,
-                "clipBounds": false,
-                "height": "152dp",
-                "id": id,
-                "isVisible": true,
-                "layoutType": kony.flex.FREE_FORM,
-                "left": "0dp",
-                "masterType": constants.MASTER_TYPE_DEFAULT,
-                "isModalContainer": false,
-                "skin": "CopyslFbox0j4c69221be4c47",
-                "top": top,
-                "width": "100%",
-                "zIndex": 1,
-                "overrides": {
-                    "sessionLocationIcon": {
-                        "src": "agendatilelocationicon.png"
-                    },
-                    "sessionTile": {
-                        "bottom": "viz.val_cleared",
-                        "height": "152dp",
-                        "isVisible": true,
-                        "left": "0dp",
-                        "top": "0dp",
-                        "width": "100%"
-                    },
-                    "sessionTimeIcon": {
-                        "src": "agendatiletimeicon.png"
-                    },
-                    "tileBGImageKony": {
-                        "isVisible": true,
-                        "src": "agendatilekony.png"
-                    }
-                }
-            }, {
-                "retainFlowHorizontalAlignment": false,
-                "overrides": {}
-            }, {
-                "overrides": {}
-            });
+    var sessionTile = new tiles.sessionTile({
+      "autogrowMode": kony.flex.AUTOGROW_NONE,
+      "clipBounds": false,
+      "height": "152dp",
+      "id": id,
+      "isVisible": true,
+      "layoutType": kony.flex.FREE_FORM,
+      "left": "0dp",
+      "masterType": constants.MASTER_TYPE_DEFAULT,
+      "isModalContainer": false,
+      "skin": "CopyslFbox0j4c69221be4c47",
+      "top": top,
+      "width": "100%",
+      "zIndex": 1,
+      "overrides": {
+        "sessionLocationIcon": {
+          "src": "agendatilelocationicon.png"
+        },
+        "sessionTile": {
+          "bottom": "viz.val_cleared",
+          "height": "152dp",
+          "isVisible": true,
+          "left": "0dp",
+          "top": "0dp",
+          "width": "100%"
+        },
+        "sessionTimeIcon": {
+          "src": "agendatiletimeicon.png"
+        },
+        "tileBGImageKony": {
+          "isVisible": true,
+          "src": "agendatilekony.png"
+        }
+      }
+    }, {
+      "retainFlowHorizontalAlignment": false,
+      "overrides": {}
+    }, {
+      "overrides": {}
+    });
     sessionTile.setTitleData(data)
     this.view.presenterDetail.add(sessionTile);
   },
-  
-     /**
+
+  /**
      * @function spekerFilter
      * @description The function is used to animate and change the speaker filter based on the track selected
      * @param eventobject The event object or the widget info of the tab which is selected
      * @private
      */
-    spekerFilter: function(eventobject) {
-        var self = this;
-        var leftPos = "0%";
-        var buttonText = "ALL";
-        var targetSkin = "filterSkinAll";
-        var destColor = "";
-        if (eventobject.id == "filterAll") {
-            leftPos = "0%";
-            buttonText = "ALL";
-            targetSkin = "filterSkinAll";
-            destColor = "1F232900";
-        } else if (eventobject.id == "filterDBX") {
-            leftPos = "33.33%";
-            buttonText = "DBX";
-            targetSkin = "filterSkinDBX";
-            destColor = "4B3A6600";
-        } else {
-            leftPos = "66.66%";
-            buttonText = "QUANTUM";
-            targetSkin = "filterSkinQuantum";
-            destColor = "14334500";
-        }
-      
-      this.view.filterWidget.animate(
-            kony.ui.createAnimation({
-                //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
-                100: {
-                    left: leftPos,
-                    "stepConfig": {}
-                }
-            }), {
-                delay: 0,
-                fillMode: kony.anim.FILL_MODE_FORWARDS,
-                duration: .22
-            }, {
-                animationEnd: function() {}
-            });
-      
-        this.view.filterButton.animate(
-            kony.ui.createAnimation({
-                100: {
-                    opacity: 0,
-                    "stepConfig": {}
-                }
-            }), {
-                delay: 0,
-                fillMode: kony.anim.FILL_MODE_FORWARDS,
-                duration: .1
-            }, {
-                animationEnd: function() {
-
-                    self.view.filterButton.text = buttonText;
-                    self.view.filterButton.skin = targetSkin;
-
-                    self.view.filterButton.animate(
-                        kony.ui.createAnimation({
-                            100: {
-                                opacity: 1,
-                                "stepConfig": {}
-                            }
-                        }), {
-                            delay: 0,
-                            fillMode: kony.anim.FILL_MODE_FORWARDS,
-                            duration: .1
-                        }, {
-                            animationEnd: function() {}
-                        });
-
-                }
-            });
+  speakerFilter: function(eventobject) {
+    var self = this;
+    var leftPos = "0%";
+    var buttonText = "ALL";
+    var targetSkin = "filterSkinAll";
+    var destColor = "";
+    if (eventobject.id == "filterAll") {
+      leftPos = "0%";
+      buttonText = "ALL";
+      targetSkin = "filterSkinAll";
+      destColor = "1F232900";
+    } else if (eventobject.id == "filterDBX") {
+      leftPos = "33.33%";
+      buttonText = "DBX";
+      targetSkin = "filterSkinDBX";
+      destColor = "4B3A6600";
+    } else {
+      leftPos = "66.66%";
+      buttonText = "QUANTUM";
+      targetSkin = "filterSkinQuantum";
+      destColor = "14334500";
     }
+
+    this.view.filterWidget.animate(
+      kony.ui.createAnimation({
+        100: {
+          left: leftPos,
+          "stepConfig": {}
+        }
+      }), {
+        delay: 0,
+        fillMode: kony.anim.FILL_MODE_FORWARDS,
+        duration: .22
+      }, {
+        animationEnd: function() {}
+      });
+
+    this.view.filterButton.animate(
+      kony.ui.createAnimation({
+        100: {
+          opacity: 0,
+          "stepConfig": {}
+        }
+      }), {
+        delay: 0,
+        fillMode: kony.anim.FILL_MODE_FORWARDS,
+        duration: .1
+      }, {
+        animationEnd: function() {
+
+          self.view.filterButton.text = buttonText;
+          self.view.filterButton.skin = targetSkin;
+
+          self.view.filterButton.animate(
+            kony.ui.createAnimation({
+              100: {
+                opacity: 1,
+                "stepConfig": {}
+              }
+            }), {
+              delay: 0,
+              fillMode: kony.anim.FILL_MODE_FORWARDS,
+              duration: .1
+            }, {
+              animationEnd: function() {}
+            });
+
+        }
+      });
+  }
 
 
 });
