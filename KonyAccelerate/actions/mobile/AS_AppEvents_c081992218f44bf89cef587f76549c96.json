@@ -7,12 +7,6 @@
             "name": "eventobject"
         }],
         "language": "js",
-        "actions": [{
-            "id": "ADD_SNIPPET__a79d86ccd8e347d9a1ffefe3d72dab51",
-            "type": "ADD_SNIPPET",
-            "codeSnippet": "//appPreShow();",
-            "parentId": null,
-            "callbackType": null
-        }]
+        "actions": []
     }
 }

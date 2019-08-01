@@ -2,9 +2,9 @@ define({
     /*
       This is an auto generated file and any modifications to it may result in corruption of the action sequence.
     */
-    /** preShow defined for frmWifiInfo **/
-    AS_Form_e095a506c25445e09b8c7411ea984f9e: function AS_Form_e095a506c25445e09b8c7411ea984f9e(eventobject) {
+    /** postShow defined for frmWifiInfo **/
+    AS_Form_cf489b0ecd8f47ffbea4f99593800e5c: function AS_Form_cf489b0ecd8f47ffbea4f99593800e5c(eventobject) {
         var self = this;
-        this.formPreShowAction();
+        this.formPostShowAction();
     }
 });
