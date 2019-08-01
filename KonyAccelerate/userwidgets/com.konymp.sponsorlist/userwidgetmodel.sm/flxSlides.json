@@ -1,9 +1,9 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
-        "type": "number",
-        "value": "0"
+    "_height_": {
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
@@ -23,35 +23,33 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s45f548c0d2840d6a285e0a2f6eeac4c",
+    "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
     "_top_": {
         "type": "string",
-        "value": "126dp"
+        "value": "2dp"
     },
     "_width_": {
         "type": "string",
         "value": "100%"
     },
     "allboxes": [],
-    "autogrowmode": 0,
+    "autogrowmode": 1,
     "canUpdateUI": true,
     "children": [
-        "CopyLabel0b615942f900d4a",
-        "CopyLabel0i5a2955030824d",
-        "CopyLabel0eb0b46e3cec14b"
+        "img"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "FlexContainer0be04e1572e974d",
+    "id": "flxSlides",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "c903c60059f345d094847adefe6b3b54",
+    "kuid": "a3a67deef22444b8b97ea459eb7fdb30",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "FlexContainer0a5ca89449fd543",
-    "pf": "frmAgenda",
+    "parent": "sponsorlist",
+    "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,

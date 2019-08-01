@@ -23,10 +23,10 @@
         0
     ],
     "_skin_": "sc9230a95e6942568b50d9f03a2ed427",
-    "_text_": "EVP of Products",
+    "_text_": "Thomas E. Hogan",
     "_top_": {
         "type": "string",
-        "value": "37dp"
+        "value": "16dp"
     },
     "_width_": {
         "type": "ref",
@@ -42,7 +42,7 @@
     "canUpdateUI": true,
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "CopyLabel0g63853dc83484e",
+    "id": "speakerName0",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,9 +56,9 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "f795cc5994644ea2bb109c58a873af8c",
+    "kuid": "a1f9ef3ebc9e408e8ef38ee785c2cf34",
     "name": "kony.ui.Label",
-    "parent": "CopyFlexContainer0ib0764c8855248",
+    "parent": "speaker1Bio",
     "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

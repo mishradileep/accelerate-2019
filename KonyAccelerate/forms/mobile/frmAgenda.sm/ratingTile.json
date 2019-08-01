@@ -65,6 +65,14 @@
     "clipbounds": true,
     "containerweight": 0,
     "dataDiffs": {
+        "flxImage": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "i4a6300d2c7948b68b8cee1a1e023940",
+                "srcKUID": "h67a308f3b59488eb283c4ddf4465d9d",
+                "wType": "FlexContainer"
+            }
+        },
         "ratingBubble1": {
             "__events__": {},
             "__info__": {

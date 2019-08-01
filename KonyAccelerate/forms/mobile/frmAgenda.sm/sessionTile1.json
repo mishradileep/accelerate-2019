@@ -145,6 +145,7 @@
                     "value": "152dp"
                 }
             },
+            "isVisible": false,
             "left": {
                 "Default": {
                     "type": "string",

@@ -22,15 +22,15 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "number",
-        "value": "12"
-    },
-    "_skin_": "sc619b02348e4985899130b8cd4ce228",
-    "_text_": "Thomas E. Hogan has been at the forefront of innovation...",
+    "_skin_": "sc9230a95e6942568b50d9f03a2ed427",
+    "_text_": "CEO",
     "_top_": {
         "type": "string",
-        "value": "67dp"
+        "value": "37dp"
+    },
+    "_width_": {
+        "type": "ref",
+        "value": "preferred"
     },
     "_wrapping_": 2,
     "android": {
@@ -42,7 +42,7 @@
     "canUpdateUI": true,
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "CopyLabel0eb0b46e3cec14b",
+    "id": "speakerDesignation0",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,9 +56,9 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "h0891700ef0b4e98bb9f3b07eecb650d",
+    "kuid": "ec10a22985bc41c5859c61d8a65b7196",
     "name": "kony.ui.Label",
-    "parent": "FlexContainer0be04e1572e974d",
+    "parent": "speaker1Bio",
     "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

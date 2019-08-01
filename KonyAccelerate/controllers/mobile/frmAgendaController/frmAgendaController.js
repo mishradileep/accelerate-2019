@@ -14,7 +14,6 @@ define({
     frmAgendaPreshow: function() {
         var self = this;
         this.addActionToSessionTiles();
-        //this.view.tileOuterCopy.isVisible=false;
         this.view.referenceAgenda.isVisible = false;
         this.view.referenceSession.isVisible = false;
         this.view.postShow = this.frmAgendaPostshow;
@@ -112,6 +111,7 @@ define({
      * @private
      */
     frmAgendaSessionSelect: function(eventobject) {
+      	this.setSpeakerProfile(eventobject);
         egLoggerClear();
         var self = this;
         this.thisCard = eventobject;
@@ -775,5 +775,114 @@ define({
 
                 }
             });
+    },
+  
+  /**
+     *	@function setData
+     * 	@description This function is used to create the session tile at run time and add it to the view
+     *	@param sessions {Object} - list of all sessions from the backend
+     * 	@private
+     */
+  setData:function(sessions){
+    this.sessionsList=sessions;
+    var sessionCount=sessions.length;
+    for(var index=0;index<sessionCount;index++){
+      var id =eventConstants.SESSION_TILE_ID+index;
+      var sessionObj= sessions[index];
+      var sessionTile;
+      if(index==0){
+        sessionTile=this.createSessionTile(id,"131dp");
+      }
+      else{
+        sessionTile=this.createSessionTile(id,"0dp");
+      }
+      this.view.sessionTiles.add(sessionTile);
+      this.view[id].setTitleData(sessionObj);
+      if(!kony.sdk.isNullOrUndefined(sessionObj.presenter)){
+        this.view[id].onClick=this.frmAgendaSessionSelect.bind(this);
+      }
+      
     }
+  },
+  /**
+     *	@function createSessionTile
+     * 	@description This function is invoked to get the dynamic instance of the session tile component
+     *	@param id {String} - id of the component
+     *	@param top {String} - top of the component
+     * 	@private
+     */
+  createSessionTile:function(id,top){
+      var sessionTile = new tiles.sessionTile({
+                "autogrowMode": kony.flex.AUTOGROW_NONE,
+                "clipBounds": false,
+                "height": "152dp",
+                "id": id,
+                "isVisible": true,
+                "layoutType": kony.flex.FREE_FORM,
+                "left": "0dp",
+                "masterType": constants.MASTER_TYPE_DEFAULT,
+                "isModalContainer": false,
+                "skin": "CopyslFbox0j4c69221be4c47",
+                "top": top,
+                "width": "100%",
+                "zIndex": 1,
+                "overrides": {
+                    "sessionLocationIcon": {
+                        "src": "agendatilelocationicon.png"
+                    },
+                    "sessionTile": {
+                        "bottom": "viz.val_cleared",
+                        "height": "152dp",
+                        "isVisible": true,
+                        "left": "0dp",
+                        "top": "0dp",
+                        "width": "100%"
+                    },
+                    "sessionTimeIcon": {
+                        "src": "agendatiletimeicon.png"
+                    },
+                    "tileBGImageKony": {
+                        "isVisible": true,
+                        "src": "agendatilekony.png"
+                    }
+                }
+            }, {
+                "retainFlowHorizontalAlignment": false,
+                "overrides": {}
+            }, {
+                "overrides": {}
+            });
+    return sessionTile;
+  },
+  /**
+     *	@function setSpeakerProfile
+     * 	@description This function is used to set the speaker info to the UI Elements
+     *	@param eventObject {Obejct} -traverses the Speaker_master data and fiiter the speaker from it.
+     * 	@private
+     */
+  setSpeakerProfile:function(eventObject){
+    var id=eventObject.id;
+    var len=id.length;
+    var startIndex=eventConstants.SESSION_TILE_ID.length;
+    var sessionIndex= id.substring(startIndex,len);
+    var sessionObject=this.sessionsList[sessionIndex];
+    var speakerList=sessionObject["presenter"];
+    var speakers_master=kony.store.getItem("master_speakers");
+    for(var speakerIndex=0; speakerIndex<speakerList.length; speakerIndex++){
+      var speakerObject=speakerList[speakerIndex];
+      for(var index=0;index<speakers_master.length;index++){
+        if(speakerObject.master_speaker_id==speakers_master[index].speaker_id){
+          var speakerBio=speakers_master[index];
+          this.view["speakerName"+speakerIndex].text=speakerBio.speaker_name;
+          this.view["speakerDesignation"+speakerIndex].text=speakerBio.speaker_title;
+          this.view["speakerDescription"+speakerIndex].text=speakerBio.speaker_bio;
+          this.view["imgSpeaker"+speakerIndex].src=speakerBio.speaker_profile_pic;
+          this.view["ratingTile"+speakerIndex].setSpeakerProfileInRating(speakerBio);
+        }
+      }
+      
+    }
+  }
+ 
+  
 });

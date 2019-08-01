@@ -23,7 +23,7 @@
         0
     ],
     "_skin_": "sc9230a95e6942568b50d9f03a2ed427",
-    "_text_": "CEO",
+    "_text_": "EVP of Products",
     "_top_": {
         "type": "string",
         "value": "37dp"
@@ -42,7 +42,7 @@
     "canUpdateUI": true,
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "CopyLabel0i5a2955030824d",
+    "id": "speakerDesignation1",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,9 +56,9 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ec10a22985bc41c5859c61d8a65b7196",
+    "kuid": "f795cc5994644ea2bb109c58a873af8c",
     "name": "kony.ui.Label",
-    "parent": "FlexContainer0be04e1572e974d",
+    "parent": "speaker2Bio",
     "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

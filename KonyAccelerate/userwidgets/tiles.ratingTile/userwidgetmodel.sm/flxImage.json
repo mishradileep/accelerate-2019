@@ -1,11 +1,9 @@
 {
-    "@class": "com.kony.gen.viz.model.component.KVizImage2",
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "52dp"
+        "value": "50dp"
     },
     "_left_": {
         "type": "string",
@@ -17,47 +15,51 @@
         0,
         0
     ],
+    "_orientation_": 6,
     "_padding_": [
         0,
         0,
         0,
         0
     ],
-    "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "speakerratingtomhogan.png",
+    "_percent_": true,
+    "_skin_": "s778b4ed33264075b0acb70b4d1bdbd6",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "2dp"
     },
     "_width_": {
         "type": "string",
-        "value": "67dp"
+        "value": "50dp"
     },
+    "allboxes": [],
+    "autogrowmode": 0,
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
         "value": "50%"
     },
+    "children": [
+        "ratingSpeakerImage"
+    ],
+    "clipbounds": true,
     "containerweight": 100,
-    "context": {
-        "channel": "mobile",
-        "formID": "uwu832698bf85f49909353cdbc90b35eec",
-        "templateType": "userwidgets",
-        "topLevelBox": null
-    },
-    "id": "ratingSpeakerImage",
-    "imagescalemode": 1,
+    "enablescrolling": true,
+    "id": "flxImage",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "gd6c719314ad4eeca6a03fe884e3d0e5",
-    "name": "kony.ui.Image2",
-    "parent": "flxImage",
+    "kuid": "h67a308f3b59488eb283c4ddf4465d9d",
+    "layouttype": 2,
+    "name": "kony.ui.FlexContainer",
+    "parent": "ratingSpeakerContainer",
     "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "srcType": 1,
-    "wType": "Image",
-    "widgetalignment": 5,
+    "retainflowhorizontalalignment": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "wType": "FlexContainer",
+    "widgetalignment": 1,
     "zindex": 1
 }

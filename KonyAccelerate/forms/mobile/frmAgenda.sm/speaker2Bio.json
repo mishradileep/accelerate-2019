@@ -1,13 +1,13 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_height_": {
-        "type": "string",
-        "value": "485dp"
+    "_bottom_": {
+        "type": "number",
+        "value": "0"
     },
     "_left_": {
         "type": "string",
-        "value": "0%"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -23,10 +23,10 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s5e5278c8850469bac4c5b0fff2d31e8",
+    "_skin_": "s45f548c0d2840d6a285e0a2f6eeac4c",
     "_top_": {
         "type": "string",
-        "value": "100%"
+        "value": "126dp"
     },
     "_width_": {
         "type": "string",
@@ -36,36 +36,28 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "CopyFlexContainer0a95fcd86c47e42",
-        "FlexContainer0fdd0ce2f316148",
-        "Image0a48001e7e05547",
-        "Label0c15d6a3069eb44",
-        "CopyLabel0f74c659ce7754e",
-        "CopyLabel0he0b8d5a22fc4f",
-        "flxSpeaker1",
-        "flxSpeaker2"
+        "speakerName1",
+        "speakerDesignation1",
+        "speakerDescription1"
     ],
-    "clipbounds": false,
+    "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "sessionContentContainer",
+    "id": "speaker2Bio",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "dd81f21cdabc4a0b8138fe2d038cd15e",
+    "kuid": "i8516e18f4634e109e2433c2ec1e100e",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "detailsScroller",
+    "parent": "flxSpeaker2",
     "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "vizProps": {
-        "hide": false
-    },
     "wType": "FlexContainer",
     "widgetalignment": 1,
-    "zindex": 20
+    "zindex": 1
 }
