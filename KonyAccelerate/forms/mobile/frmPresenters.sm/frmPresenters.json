@@ -117,6 +117,7 @@
     "needappmenu": false,
     "paddinginpixel": false,
     "platform": "iphone",
+    "preshow": "AS_Form_b4d8869f1b9144b382033feab30520d6",
     "prevDevice": "iPhoneXS",
     "prevPlatform": "iphone",
     "retaincontentalignment": false,
