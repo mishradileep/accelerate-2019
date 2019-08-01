@@ -114,6 +114,7 @@ define({
         this.view.detailsScroller.left = "0%";
         this.view.sessionTileAnim.tilebg.skin = this.thisCard.tilebg.skin;
         this.view.sessionTileAnim.sessionTitle.text = this.thisCard.sessionTitle.text;
+      	this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
         this.view.sessionTileAnim.sessionLocation.text = this.thisCard.sessionLocation.text;
         this.view.sessionTileAnim.tileBGImageKony.src = this.thisCard.tileBGImageKony.src;
         var cardFrame = this.thisCard.frame.y;
@@ -786,7 +787,6 @@ define({
             if (!kony.sdk.isNullOrUndefined(sessionObj.presenter)) {
                 this.view[id].onClick = this.frmAgendaSessionSelect.bind(this);
             }
-
         }
     },
     /**

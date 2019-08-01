@@ -50,6 +50,5 @@ define(function() {
             var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
             return hours + ":" + minutes + ":" + " " + am_pm;
         }
-
     };
 });
