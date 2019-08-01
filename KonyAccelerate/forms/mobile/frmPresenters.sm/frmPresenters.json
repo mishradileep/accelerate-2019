@@ -1,6 +1,7 @@
 {
     "@class": "com.kony.gen.viz.model.container.KVizScrollFlexForm",
     "DNDConfig": null,
+    "_init_": "AS_Form_aa402fd47759406593de6f69a7fb821c",
     "_margin_": [
         0,
         0,
@@ -37,7 +38,8 @@
     "canUpdateUI": true,
     "children": [
         "masterContainer",
-        "menuMain"
+        "menuMain",
+        "presenterDetail"
     ],
     "containerweight": 100,
     "controllerInfo": {
