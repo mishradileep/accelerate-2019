@@ -48,7 +48,7 @@
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "fc618f41f11d42ba89203968ec704ff4",
-    "layouttype": 4,
+    "layouttype": 2,
     "name": "kony.ui.FlexContainer",
     "parent": "frmEventLocation",
     "pf": "frmEventLocation",

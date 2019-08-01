@@ -15,7 +15,7 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "se1f0be9643045db990c117065cc2aa5",
+    "_skin_": "s7b5af4c4fb440e6877e25b21d5c2b77",
     "_title_": null,
     "addWidgetsdone": false,
     "allboxes": [],
@@ -98,7 +98,7 @@
     "needappmenu": false,
     "paddinginpixel": false,
     "platform": "iphone",
-    "preshow": "AS_Form_cec28ae2140c401eb14a472e93b84937",
+    "postshow": "AS_Form_bfce2f089c604b4fba5b7b75af925a13",
     "prevDevice": "Pixel2XL",
     "prevPlatform": "android",
     "retaincontentalignment": false,

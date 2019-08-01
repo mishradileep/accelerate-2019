@@ -28,16 +28,18 @@ define({
           // naviaget to clicked form on slideOut after last menu item slides out.
           if ((menuWidgets.length - 1) == currentItemIdex &&
              'slideOut' == slideType) {
+            let formName = "";
             switch(eventObj.id) {
               case 'flxMenuWifi':
-                new kony.mvc.Navigation('frmWifiInfo').navigate();
+                formName = "frmWifiInfo";
                 break;
-              case y:
-                // code block
+              case "flxMenuLocation":
+                formName = "frmEventLocation";
                 break;
               default:
                 // code block
             }
+            new kony.mvc.Navigation(formName).navigate();
           }
         }}
       );
