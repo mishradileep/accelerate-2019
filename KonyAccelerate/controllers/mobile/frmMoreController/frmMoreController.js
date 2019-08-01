@@ -31,10 +31,10 @@ define({
             let formName = "";
             switch(eventObj.id) {
               case 'flxMenuWifi':
-                new kony.mvc.Navigation('frmWifiInfo').navigate();
+                formName = "frmWifiInfo";
                 break;
-              case y:
-                // code block
+              case "flxMenuLocation":
+                formName = "frmEventLocation";
                 break;
               default:
                 // code block
