@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__ff7f522002434892a03105ff7df0dd5c",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.menuAnimateSlideIn();",
+            "codeSnippet": "this.menuAnimateSlide('slideIn');",
             "parentId": null,
             "callbackType": null
         }]

@@ -1,43 +1,33 @@
 define({ 
 
- //Type your controller code here 
+  // Animation duration in seconds.
+  animationDuration : 0.2,
+
   /** @function moreMenuAnimate
-   *  		    Slide in menu items one by one
+   *  @description Slide in menu items one by one. Called on form postShow
+   *  @param slideType
+   *	Animation direction. possible values 'slideIn', 'slideOut'
+   *  @param eventObj
+   *	Menu item object. So that we can get clicked item and navigate to target form.
+   *
+   *  @return
+   *	void
    */
-  animationDuration : 0.5,
-  menuAnimateSlideIn: function(){
+  menuAnimateSlide: function(slideType, eventObj) {
     var self = this;
+    let leftAnimateTo = slideType == 'slideIn' ? '10%' : '-80%';
     let menuWidgets = this.view.flxMoreWrapper.widgets();
     let delayThrashold = 0;
     menuWidgets.forEach(function(currentMenu, index){
       let currentItemIdex = index;
       currentMenu.animate(
         kony.ui.createAnimation({
-          0:{left:"-80%","stepConfig":{}},
-          100:{left:"10%","stepConfig":{}}}),
-        {delay:delayThrashold,fillMode:kony.anim.FILL_MODE_FORWARDS,duration:self.animationDuration},
-        {animationEnd: function() {}}
-      );
-      delayThrashold = delayThrashold + 0.2;
-    });
-  },
-  /** @function menuAnimateSlideOut
-   *  		    Slide Out menu items one by one
-   */
-  menuAnimateSlideOut: function(eventObj){
-    var self = this;
-    let menuWidgets = this.view.flxMoreWrapper.widgets();
-    let delayThrashold = 0;
-    menuWidgets.forEach(function(currentMenu, index){
-      let currentItemIdex = index;
-      currentMenu.animate(
-        kony.ui.createAnimation({
-          0:{left:"10%","stepConfig":{}},
-          100:{left:"-80%","stepConfig":{}}}),
+          100:{left:leftAnimateTo,"stepConfig":{}}}),
         {delay:delayThrashold,fillMode:kony.anim.FILL_MODE_FORWARDS,duration:self.animationDuration},
         {animationEnd: function() {
-
-          if ((menuWidgets.length - 1) == currentItemIdex) {
+          // naviaget to clicked form on slideOut after last menu item slides out.
+          if ((menuWidgets.length - 1) == currentItemIdex &&
+             'slideOut' == slideType) {
             switch(eventObj.id) {
               case 'flxMenuWifi':
                 new kony.mvc.Navigation('frmWifiInfo').navigate();
@@ -49,25 +39,33 @@ define({
                 // code block
             }
           }
-          
         }}
       );
-      delayThrashold = delayThrashold + 0.2;
+      delayThrashold = delayThrashold + 0.05;
     });
-    
   },
-  
+
+  /** @function menuBindOnClick
+   *  @description binds click even with each individual menu item.
+   */
   menuBindOnClick: function() {
     var self = this;
     let menuWidgets = this.view.flxMoreWrapper.widgets();
     menuWidgets.forEach(function(currentMenu, index){
-      currentMenu.onClick = self.menuBindOnClickAction.bind(self);
+      currentMenu.onClick = self.menuAnimateSlide.bind('slideOut', self);
     });
   },
-  
-  menuBindOnClickAction: function(eventObj){
-    var self = this;
-    self.menuAnimateSlideOut(eventObj);
-    
+
+  /** @function slideMenusBVR
+   *  @description Slide all aenu items BVR.
+   *
+   *  @return
+   *	void
+   */
+  slideMenusBVR: function() {
+    let menuWidgets = this.view.flxMoreWrapper.widgets();
+    menuWidgets.forEach(function(currentMenu, index){
+      currentMenu.left = '-80%';
+    });
   }
  });
