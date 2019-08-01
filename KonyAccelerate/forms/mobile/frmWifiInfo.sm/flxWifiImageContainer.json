@@ -26,7 +26,7 @@
     "_skin_": "scb411d0f5aa40369a9e4550680f0502",
     "_top_": {
         "type": "string",
-        "value": "-1%"
+        "value": "8%"
     },
     "_width_": {
         "type": "string",
@@ -44,7 +44,7 @@
     "id": "flxWifiImageContainer",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "e6dc8e2a25d247398c12dfac64c1a6e4",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
