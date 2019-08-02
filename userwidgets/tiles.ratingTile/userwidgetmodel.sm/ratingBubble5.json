@@ -6,10 +6,6 @@
         "type": "string",
         "value": "32dp"
     },
-    "_left_": {
-        "type": "string",
-        "value": "135dp"
-    },
     "_margin_": [
         6,
         6,
@@ -22,8 +18,12 @@
         0,
         0
     ],
+    "_right_": {
+        "type": "number",
+        "value": "0"
+    },
     "_skin_": "s1909e0aaedb4dd7ab7f31b186b29978",
-    "_text_": "2",
+    "_text_": "5",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -33,24 +33,24 @@
         "value": "32dp"
     },
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "27.75%"
-    },
     "centery": {
         "type": "string",
-        "value": "50.00%"
+        "value": "50%"
     },
     "containerweight": 100,
     "contentalignment": 5,
+    "disabledSkins": {
+        "focusSkin": "s9502514e11d48069838bf3afd8c680d"
+    },
     "displaytext": true,
-    "focusskin": "s9502514e11d48069838bf3afd8c680d",
+    "focusskin": null,
     "id": "ratingBubble5",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ecb39acca5ae4187a588e5b888c5f425",
+    "kuid": "e828035953c74c4abcd74820c9262851",
     "name": "kony.ui.Button",
+    "onclick": "AS_Button_g5425c4028f84c99816d1ae497717dc8",
     "parent": "ratingBubbles",
     "pf": "userwidgetmodel",
     "retaincontentalignment": false,

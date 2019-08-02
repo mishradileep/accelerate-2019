@@ -26,7 +26,7 @@
     "_skin_": "s8cfed1dd1554bce93596b5c3af28ea0",
     "_top_": {
         "type": "string",
-        "value": "665dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
@@ -40,6 +40,7 @@
         "ratingTile",
         "ratingTile0",
         "ratingTile1",
+        "ratingTile2",
         "CopyLabel0dbbb83fd6a0946",
         "RichText0iafa4953069e46"
     ],

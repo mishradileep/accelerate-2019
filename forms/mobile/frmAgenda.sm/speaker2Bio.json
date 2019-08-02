@@ -50,7 +50,7 @@
     "kuid": "i8516e18f4634e109e2433c2ec1e100e",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxSpeaker2",
+    "parent": "flxSpeaker1",
     "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

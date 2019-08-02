@@ -76,12 +76,28 @@
         "ratingBubble1": {
             "__events__": {},
             "__info__": {
+                "kuid": "d901dbb010bb4a54b8b42a66687aa18e",
+                "srcKUID": "cce7f6d436bf46f995e0f3344995b97e",
+                "wType": "Button"
+            }
+        },
+        "ratingBubble2": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "c2fcd79e830a451ca1c6836b7f58a59e",
+                "srcKUID": "ecb39acca5ae4187a588e5b888c5f425",
+                "wType": "Button"
+            }
+        },
+        "ratingBubble3": {
+            "__events__": {},
+            "__info__": {
                 "kuid": "f76b9f264d744782a6dc0054406482de",
                 "srcKUID": "j835dc8d1f3f48ef8db270554caf4184",
                 "wType": "Button"
             }
         },
-        "ratingBubble2": {
+        "ratingBubble4": {
             "__events__": {},
             "__info__": {
                 "kuid": "a72d19dbfe53457da29834452c3d32a1",
@@ -89,27 +105,11 @@
                 "wType": "Button"
             }
         },
-        "ratingBubble3": {
+        "ratingBubble5": {
             "__events__": {},
             "__info__": {
                 "kuid": "b6ba20be15574ff2b1edf3faed400ec7",
                 "srcKUID": "e828035953c74c4abcd74820c9262851",
-                "wType": "Button"
-            }
-        },
-        "ratingBubble4": {
-            "__events__": {},
-            "__info__": {
-                "kuid": "d901dbb010bb4a54b8b42a66687aa18e",
-                "srcKUID": "cce7f6d436bf46f995e0f3344995b97e",
-                "wType": "Button"
-            }
-        },
-        "ratingBubble5": {
-            "__events__": {},
-            "__info__": {
-                "kuid": "c2fcd79e830a451ca1c6836b7f58a59e",
-                "srcKUID": "ecb39acca5ae4187a588e5b888c5f425",
                 "wType": "Button"
             }
         },

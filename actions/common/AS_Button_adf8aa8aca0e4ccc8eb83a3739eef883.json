@@ -1,0 +1,23 @@
+{
+    "AS_Button_adf8aa8aca0e4ccc8eb83a3739eef883": {
+        "id": "AS_Button_adf8aa8aca0e4ccc8eb83a3739eef883",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "uwu832698bf85f49909353cdbc90b35eec",
+            "type": "userwidgets",
+            "KUID": "u832698bf85f49909353cdbc90b35eec"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__h30800e80ef4479488a6d4070310b0e8",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.setFocusOnClick(eventobject);",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}
