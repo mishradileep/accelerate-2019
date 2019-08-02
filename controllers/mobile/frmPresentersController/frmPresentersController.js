@@ -9,7 +9,8 @@ define({
         * @private
     */
   onNavigate : function() {
-    var presenterSessionData = null;//kony.store.getItem("presenterSessionData");
+    var presenterSessionData = null;
+    //To Do Handle the offline data -- kony.store.getItem("presenterSessionData");
     this.view.presenterScroll.removeAll();   
 
     if(!kony.sdk.isNullOrUndefined(presenterSessionData)) {
