@@ -258,7 +258,7 @@
     "camerasettings": "",
     "category": "app",
     "chat": "false",
-    "cloud_account_guid": "90508382-0b7b-4825-b4f6-3cf5a2ffed31",
+    "cloud_account_guid": "aafb8ef7-f5bb-406d-a4f3-a1b3b79d9109",
     "cloud_env_GUID": "4436d28a-65d4-4459-9bb8-795efe213ac6",
     "codeGeneration": "false",
     "contacts": "false",
@@ -268,7 +268,7 @@
     },
     "createdVizVersion": "8.4.21",
     "createdgaversion": "8.4.21",
-    "currentgaversion": "8.4.21",
+    "currentgaversion": "8.4.25",
     "deeplinkkey": "None",
     "defaultlocalekey": "en_US",
     "defaulttheme": "defaultTheme",
@@ -400,7 +400,7 @@
             "version": "1.0"
         }
     },
-    "konyVizVersion": "8.4.21",
+    "konyVizVersion": "8.4.25",
     "lastmodifiedtime": "1562231476148",
     "location": "false",
     "mangoapptitlekey": ",,,,,,",
