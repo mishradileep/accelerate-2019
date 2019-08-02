@@ -38,6 +38,7 @@
     "context": {
         "channel": "mobile",
         "formID": "frmAgenda",
+        "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null
     },

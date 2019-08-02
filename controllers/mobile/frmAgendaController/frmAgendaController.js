@@ -106,7 +106,7 @@ define({
      * @private
      */
     frmAgendaSessionSelect: function(eventobject) {
-        this.setSpeakerProfile(eventobject);
+        //this.setSpeakerProfile(eventobject);
         egLoggerClear();
         var self = this;
         this.thisCard = eventobject;
@@ -115,7 +115,7 @@ define({
         this.view.sessionTileAnim.tilebg.skin = this.thisCard.tilebg.skin;
         this.view.sessionTileAnim.sessionTitle.text = this.thisCard.sessionTitle.text;
         this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
-        this.view.CopyLabel0f74c659ce7754e.text = this.view[eventobject.id].sessionData.session_desc;
+        //this.view.CopyLabel0f74c659ce7754e.text = this.view[eventobject.id].sessionData.session_desc;
         this.view.sessionTileAnim.sessionLocation.text = this.thisCard.sessionLocation.text;
         this.view.sessionTileAnim.tileBGImageKony.src = this.thisCard.tileBGImageKony.src;
         var cardFrame = this.thisCard.frame.y;

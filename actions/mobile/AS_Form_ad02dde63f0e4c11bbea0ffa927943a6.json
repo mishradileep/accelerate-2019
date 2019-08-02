@@ -20,65 +20,11 @@
             "parentId": null,
             "callbackType": null
         }, {
-            "id": "INVOKE_OBJECT_SERVICE__eb711de5df11475b9d13d3504b2609b1",
-            "type": "INVOKE_OBJECT_SERVICE",
-            "inputparams": null,
-            "httpheaders": null,
-            "httpconfigs": null,
-            "isasynchronous": null,
-            "isoffline": null,
-            "isobject": true,
-            "mappings": {},
-            "mappingsOrder": [],
-            "serviceconfig": {
-                "servicename": "KonyAccelerateStorageService",
-                "type": "objectsvcs",
-                "objectname": "speakers_master",
-                "serviceid": "2802ac63-512a-493e-864b-9b67df972890",
-                "methodname": "get"
-            },
-            "parentId": null,
-            "callbackType": null,
-            "enableMappingEditor": true
-        }, {
-            "id": "ADD_SNIPPET__bfe86f7cb30a4bb1b5f6329d5aa1d15c",
-            "type": "ADD_SNIPPET",
-            "codeSnippet": "kony.store.setItem(\"master_speakers\",speakers_master.records);",
-            "parentId": "INVOKE_OBJECT_SERVICE__eb711de5df11475b9d13d3504b2609b1",
-            "callbackType": "Callback"
-        }, {
-            "id": "INVOKE_OBJECT_SERVICE__ea029f0600df4431909ac24c16083c57",
-            "type": "INVOKE_OBJECT_SERVICE",
-            "inputparams": null,
-            "httpheaders": null,
-            "httpconfigs": null,
-            "isasynchronous": null,
-            "isoffline": null,
-            "isobject": true,
-            "mappings": {},
-            "mappingsOrder": [],
-            "serviceconfig": {
-                "servicename": "KonyAccelerateStorageService",
-                "type": "objectsvcs",
-                "objectname": "event_sessions",
-                "serviceid": "2802ac63-512a-493e-864b-9b67df972890",
-                "methodname": "get"
-            },
-            "parentId": null,
-            "callbackType": null,
-            "enableMappingEditor": true
-        }, {
             "id": "ADD_SNIPPET__f759dd8704de4f509e419d4086d9f9a9",
             "type": "ADD_SNIPPET",
             "codeSnippet": "this.frmAgendaPreshow();",
             "parentId": null,
             "callbackType": null
-        }, {
-            "id": "ADD_SNIPPET__ad14027beebc4a2889e6957fd58bac4e",
-            "type": "ADD_SNIPPET",
-            "codeSnippet": "self.setData(event_sessions.records);",
-            "parentId": "INVOKE_OBJECT_SERVICE__ea029f0600df4431909ac24c16083c57",
-            "callbackType": "Callback"
         }]
     }
 }
