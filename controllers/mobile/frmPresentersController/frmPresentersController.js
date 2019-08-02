@@ -9,7 +9,8 @@ define({
         * @private
     */
   onNavigate : function() {
-    var presenterSessionData = kony.store.getItem("presenterSessionData");
+    var presenterSessionData = null;
+    //To Do Handle the offline data -- kony.store.getItem("presenterSessionData");
     this.view.presenterScroll.removeAll();   
 
     if(!kony.sdk.isNullOrUndefined(presenterSessionData)) {
@@ -133,8 +134,7 @@ define({
     this.view.imgProfileLarge.src = presenter.speaker_profile_pic;
 
     if(!kony.sdk.isNullOrUndefined(presenter.sessionsList)) {
-      //To do..
-      //this.createSessions(JSON.parse(presenter.sessionsList));
+      this.createSessions(JSON.parse(presenter.sessionsList));
     }
     this.view.presenterDetail.isVisible = true;
   },
@@ -158,7 +158,7 @@ define({
     this.view.flexSessions.removeAll();
     for(var index=0; index<sessions.length; index++) {
       var id = "sessiontile"+sessions[index].session_id;
-      this.creacreateSessionTile(id, "20dp",sessions[index]);
+      this.createSessionTile(id, "0dp",sessions[index]);
     }
   },
 
@@ -210,7 +210,7 @@ define({
       "overrides": {}
     });
     sessionTile.setTitleData(data)
-    this.view.presenterDetail.add(sessionTile);
+    this.view.flexSessions.add(sessionTile);
   },
 
   /**

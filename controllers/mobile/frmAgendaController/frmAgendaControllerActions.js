@@ -2,6 +2,16 @@ define({
     /*
       This is an auto generated file and any modifications to it may result in corruption of the action sequence.
     */
+    /** onClick defined for buttonDay1 **/
+    AS_Button_a9f3bd45b4474ace87f56bf052c0efbd: function AS_Button_a9f3bd45b4474ace87f56bf052c0efbd(eventobject) {
+        var self = this;
+        this.onClickOfEventDate(eventobject);
+    },
+    /** onClick defined for buttonDay2 **/
+    AS_Button_g1ddf2107e184ec5bfc820886c5577dd: function AS_Button_g1ddf2107e184ec5bfc820886c5577dd(eventobject) {
+        var self = this;
+        this.onClickOfEventDate(eventobject);
+    },
     /** onClick defined for menuButtonPresenters **/
     AS_Button_f524c1d44b6d4a61af563b83cef56b3a: function AS_Button_f524c1d44b6d4a61af563b83cef56b3a(eventobject) {
         var self = this;
@@ -52,15 +62,5 @@ define({
         event_sessions_inputparam["httpconfig"] = event_sessions_httpconfigs;
         KonyAccelerateStorageService$event_sessions$get = mfobjectsecureinvokerasync(event_sessions_inputparam, "KonyAccelerateStorageService", "event_sessions", INVOKE_OBJECT_SERVICE__ea029f0600df4431909ac24c16083c57_Callback);
         this.frmAgendaPreshow();
-    },
-    /** onClick defined for buttonDay1 **/
-    AS_Button_a9f3bd45b4474ace87f56bf052c0efbd: function AS_Button_a9f3bd45b4474ace87f56bf052c0efbd(eventobject) {
-        var self = this;
-        this.onClickOfEventDate(eventobject);
-    },
-    /** onClick defined for buttonDay2 **/
-    AS_Button_g1ddf2107e184ec5bfc820886c5577dd: function AS_Button_g1ddf2107e184ec5bfc820886c5577dd(eventobject) {
-        var self = this;
-        this.onClickOfEventDate(eventobject);
     }
 });

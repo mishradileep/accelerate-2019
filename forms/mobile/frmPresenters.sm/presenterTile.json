@@ -103,7 +103,26 @@
                 "srcKUID": "c61c8d81be734d32b1ecaa439c8ab6e1",
                 "wType": "Image"
             },
-            "src": "speakerjj.png"
+            "height": {
+                "Default": {
+                    "type": "string",
+                    "value": "486dp"
+                }
+            },
+            "imageScaleMode": 1,
+            "src": "https://s3.amazonaws.com/volumeplay/accelerate2019/speakerth.png?AWSAccessKeyId=AKIA3IFOPJKDSH7UIUYI&Expires=1573537999&Signature=LMuYdNOYvD0yQsZpYdmZ%2BrXrBEU%3D&0=0",
+            "top": {
+                "Default": {
+                    "type": "string",
+                    "value": "-10dp"
+                }
+            },
+            "width": {
+                "Default": {
+                    "type": "string",
+                    "value": "349dp"
+                }
+            }
         },
         "speakerInfo": {
             "__events__": {},
