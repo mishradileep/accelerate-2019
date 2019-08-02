@@ -155,7 +155,7 @@
                 "srcKUID": "b914a739c4ef4bec840524a4d77f1076",
                 "wType": "Image"
             },
-            "src": "menumoreinactive.png"
+            "src": "more_inactive.png"
         },
         "menuImageMySchedule": {
             "__events__": {},

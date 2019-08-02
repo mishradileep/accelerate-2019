@@ -146,7 +146,7 @@
                 "srcKUID": "ba3ca6db33f645c697fefd341f143be1",
                 "wType": "Image"
             },
-            "src": "menuagendaactive_1.png"
+            "src": "agenda_inactive_icon.png"
         },
         "menuImageMore": {
             "__events__": {},
@@ -155,7 +155,7 @@
                 "srcKUID": "b914a739c4ef4bec840524a4d77f1076",
                 "wType": "Image"
             },
-            "src": "menumoreinactive.png"
+            "src": "more_inactive.png"
         },
         "menuImageMySchedule": {
             "__events__": {},

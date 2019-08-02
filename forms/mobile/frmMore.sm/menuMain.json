@@ -145,7 +145,8 @@
                 "kuid": "j17ae8acab3f44059d6e65e29b7bb6b6",
                 "srcKUID": "ba3ca6db33f645c697fefd341f143be1",
                 "wType": "Image"
-            }
+            },
+            "src": "agenda_inactive_icon.png"
         },
         "menuImageMore": {
             "__events__": {},
