@@ -24,6 +24,7 @@ define({
         function INVOKE_OBJECT_SERVICE__eb711de5df11475b9d13d3504b2609b1_Callback(speakers_master) {
             kony.store.setItem("master_speakers", speakers_master.records);
         }
+        this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = "menuLabelSkinActive";
         if (speakers_master_inputparam == undefined) {
             var speakers_master_inputparam = {};
         }

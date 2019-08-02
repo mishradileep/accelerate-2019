@@ -14,6 +14,12 @@
         },
         "language": "js",
         "actions": [{
+            "id": "ADD_SNIPPET__d86e2ccdf810457cb5fc6f23a83630f4",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = \"menuLabelSkinActive\";",
+            "parentId": null,
+            "callbackType": null
+        }, {
             "id": "INVOKE_OBJECT_SERVICE__eb711de5df11475b9d13d3504b2609b1",
             "type": "INVOKE_OBJECT_SERVICE",
             "inputparams": null,

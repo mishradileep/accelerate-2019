@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__e7970610162f48f2bb8b00120ce2ae56",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.view.presenterScroll.showFadingEdges = false;",
+            "codeSnippet": "this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = \"menuLabelSkinActive\";\nthis.view.presenterScroll.showFadingEdges = false;",
             "parentId": null,
             "callbackType": null
         }]

@@ -21,6 +21,13 @@ define({
     /** preShow defined for frmPresenters **/
     AS_Form_b4d8869f1b9144b382033feab30520d6: function AS_Form_b4d8869f1b9144b382033feab30520d6(eventobject) {
         var self = this;
+        this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = "menuLabelSkinActive";
         this.view.presenterScroll.showFadingEdges = false;
+    },
+    /** onClick defined for menuButtonMore **/
+    AS_Button_bfa8793a99494b479d36e4179effd5d3: function AS_Button_bfa8793a99494b479d36e4179effd5d3(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmMore");
+        ntf.navigate();
     }
 });
