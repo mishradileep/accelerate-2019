@@ -133,7 +133,7 @@ define({
             focusImage: "focusImage.png",
             //focus image will be shown while map pin selected
             desc: completeAddress,
-            showCallout: true,
+            showCallout: false,
             meta: {
                 color: "green",
                 label: "A"

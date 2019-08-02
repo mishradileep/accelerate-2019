@@ -41,7 +41,7 @@
         "flxWifiCircle3",
         "flxWifiCircle4"
     ],
-    "clipbounds": true,
+    "clipbounds": false,
     "containerweight": 100,
     "enablescrolling": true,
     "id": "flxWifiImageContainer",
