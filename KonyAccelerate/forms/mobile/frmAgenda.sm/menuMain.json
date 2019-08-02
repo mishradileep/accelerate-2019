@@ -81,7 +81,9 @@
             }
         },
         "menuButtonMore": {
-            "__events__": {},
+            "__events__": {
+                "onClick": "AS_Button_c57dd333f3fb41cea4389a8152a19989"
+            },
             "__info__": {
                 "kuid": "b059c0fadbf24bd5a2bd509fe1fb5cc1",
                 "srcKUID": "h7b0c6a01d054846a58b3b1035156512",
@@ -97,7 +99,9 @@
             }
         },
         "menuButtonPresenters": {
-            "__events__": {},
+            "__events__": {
+                "onClick": "AS_Button_f524c1d44b6d4a61af563b83cef56b3a"
+            },
             "__info__": {
                 "kuid": "d0cb2039578d4562b288dbd4966c2516",
                 "srcKUID": "ce637f2ce0714d179c79c378584d73eb",

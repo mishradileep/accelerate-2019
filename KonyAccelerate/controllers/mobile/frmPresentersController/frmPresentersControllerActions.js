@@ -17,5 +17,10 @@ define({
     AS_Form_aa402fd47759406593de6f69a7fb821c: function AS_Form_aa402fd47759406593de6f69a7fb821c(eventobject) {
         var self = this;
         this.setFilteronClick();
+    },
+    /** preShow defined for frmPresenters **/
+    AS_Form_b4d8869f1b9144b382033feab30520d6: function AS_Form_b4d8869f1b9144b382033feab30520d6(eventobject) {
+        var self = this;
+        this.view.presenterScroll.showFadingEdges = false;
     }
 });

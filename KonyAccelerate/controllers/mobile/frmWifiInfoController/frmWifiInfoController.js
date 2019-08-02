@@ -15,6 +15,10 @@ define({
       let wifiPassword = (wifiInformation.hasOwnProperty("wifi_password")) ? wifiInformation.wifi_password : "";
       this.view.lblNetworkName.text = wifiUserName;
       this.view.lblPasswordValue.text = wifiPassword;
+      this.view.flxWifiImageContainer.isVisible = true;
+      this.animateWifiCircles(this.view.flxWifiCircle1, 0, 3);
+      this.animateWifiCircles(this.view.flxWifiCircle2, 0, 3);
+      this.animateWifiCircles(this.view.flxWifiCircle3, 0, 3);
       this.animateWifiCard("62%");
     } else {
       fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.WIFI_OBJECT_NAME, {}, this.wifiInfoFetchSuccess.bind(this), this.wifiInfoFetchFailure.bind(this));

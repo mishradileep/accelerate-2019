@@ -39,5 +39,17 @@ define({
         event_sessions_inputparam["httpconfig"] = event_sessions_httpconfigs;
         KonyAccelerateStorageService$event_sessions$get = mfobjectsecureinvokerasync(event_sessions_inputparam, "KonyAccelerateStorageService", "event_sessions", INVOKE_OBJECT_SERVICE__ea029f0600df4431909ac24c16083c57_Callback);
         this.frmAgendaPreshow();
+    },
+    /** onClick defined for menuButtonPresenters **/
+    AS_Button_f524c1d44b6d4a61af563b83cef56b3a: function AS_Button_f524c1d44b6d4a61af563b83cef56b3a(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmPresenters");
+        ntf.navigate();
+    },
+    /** onClick defined for menuButtonMore **/
+    AS_Button_c57dd333f3fb41cea4389a8152a19989: function AS_Button_c57dd333f3fb41cea4389a8152a19989(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmMore");
+        ntf.navigate();
     }
 });

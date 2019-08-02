@@ -10,6 +10,6 @@ var eventConstants = {
   ACCESS_TYPE_ONLINE : "online",
   DATA_MODEL_OPINION_ANSWERS:"opinion_answers",
   IDENTITY_PROVIDER_NAME:"LinkedinLogin",
-  SESSION_TILE_ID:"tile"
+  SESSION_TILE_ID:"tile",
   PRESENTER_OBJECT_NAME : "speakers_master"
 };
