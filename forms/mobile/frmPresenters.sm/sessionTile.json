@@ -45,7 +45,7 @@
     "_tabrcandroid_": {},
     "_top_": {
         "type": "string",
-        "value": "30dp"
+        "value": "20dp"
     },
     "_vizProps_": {
         "hidewidgethierarchy": false
@@ -141,7 +141,7 @@
             "top": {
                 "Default": {
                     "type": "string",
-                    "value": "30dp"
+                    "value": "20dp"
                 }
             }
         },

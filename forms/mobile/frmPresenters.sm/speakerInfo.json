@@ -32,6 +32,7 @@
     "android": {
         "textStyle": {
             "letterSpacing": 0,
+            "lineSpacing": 2,
             "strikeThrough": false
         }
     },
@@ -52,6 +53,10 @@
     "iphone": {
         "psp": {
             "wrapping": 2
+        },
+        "textStyle": {
+            "letterSpacing": 1,
+            "lineSpacing": 2
         }
     },
     "iscustomlayout": false,

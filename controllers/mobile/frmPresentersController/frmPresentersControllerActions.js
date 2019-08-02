@@ -8,6 +8,12 @@ define({
         var ntf = new kony.mvc.Navigation("frmAgenda");
         ntf.navigate();
     },
+    /** onClick defined for menuButtonMore **/
+    AS_Button_bfa8793a99494b479d36e4179effd5d3: function AS_Button_bfa8793a99494b479d36e4179effd5d3(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmMore");
+        ntf.navigate();
+    },
     /** onClick defined for flxImageClose **/
     AS_FlexContainer_c50b28a0f60548fea182742bf878a959: function AS_FlexContainer_c50b28a0f60548fea182742bf878a959(eventobject) {
         var self = this;
@@ -23,11 +29,5 @@ define({
         var self = this;
         this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = "menuLabelSkinActive";
         this.view.presenterScroll.showFadingEdges = false;
-    },
-    /** onClick defined for menuButtonMore **/
-    AS_Button_bfa8793a99494b479d36e4179effd5d3: function AS_Button_bfa8793a99494b479d36e4179effd5d3(eventobject) {
-        var self = this;
-        var ntf = new kony.mvc.Navigation("frmMore");
-        ntf.navigate();
     }
 });

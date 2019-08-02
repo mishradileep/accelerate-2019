@@ -2,6 +2,12 @@ define({
     /*
       This is an auto generated file and any modifications to it may result in corruption of the action sequence.
     */
+    /** onCloseClick defined for mobileheader **/
+    AS_UWI_c84631f591f04e81b34a77e13c8fc71f: function AS_UWI_c84631f591f04e81b34a77e13c8fc71f(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmMore");
+        ntf.navigate();
+    },
     /** onTouchStart defined for imgRating0 **/
     AS_Image_e1854f44ba4d4900b6e5a3fd933ac634: function AS_Image_e1854f44ba4d4900b6e5a3fd933ac634(eventobject, x, y) {
         var self = this;
@@ -31,11 +37,5 @@ define({
     AS_Button_a784acf9798e43f3bce0235c6e621c36: function AS_Button_a784acf9798e43f3bce0235c6e621c36(eventobject) {
         var self = this;
         this.onClickOfSubmitButton();
-    },
-    /** onCloseClick defined for mobileheader **/
-    AS_UWI_c84631f591f04e81b34a77e13c8fc71f: function AS_UWI_c84631f591f04e81b34a77e13c8fc71f(eventobject) {
-        var self = this;
-        var ntf = new kony.mvc.Navigation("frmMore");
-        ntf.navigate();
     }
 });

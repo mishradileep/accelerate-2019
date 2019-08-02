@@ -5,11 +5,11 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "222dp"
+        "value": "20dp"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "127dp"
     },
     "_margin_": [
         0,
@@ -24,16 +24,20 @@
         0
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "biotom.png",
+    "_src_": "teardrop.png",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "-2dp"
     },
     "_width_": {
         "type": "string",
-        "value": "500dp"
+        "value": "50dp"
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "context": {
         "channel": "mobile",
@@ -42,15 +46,15 @@
         "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "imgProfileLarge",
-    "imagescalemode": 2,
+    "id": "imgTearDrop",
+    "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "b1cab81dbab448f2a6bf7dcd739b034f",
+    "kuid": "g67d5de8848c41669ce15b70b95a1cbc",
     "name": "kony.ui.Image2",
-    "parent": "flxImagelargeView",
+    "parent": "presenterDetail",
     "pf": "frmPresenters",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
