@@ -39,7 +39,8 @@
             },
             "parentId": null,
             "callbackType": null,
-            "enableMappingEditor": true
+            "enableMappingEditor": true,
+            "disabled": true
         }, {
             "id": "ADD_SNIPPET__bfe86f7cb30a4bb1b5f6329d5aa1d15c",
             "type": "ADD_SNIPPET",
@@ -66,7 +67,8 @@
             },
             "parentId": null,
             "callbackType": null,
-            "enableMappingEditor": true
+            "enableMappingEditor": true,
+            "disabled": true
         }, {
             "id": "ADD_SNIPPET__f759dd8704de4f509e419d4086d9f9a9",
             "type": "ADD_SNIPPET",

@@ -33,7 +33,8 @@
             },
             "parentId": null,
             "callbackType": null,
-            "enableMappingEditor": true
+            "enableMappingEditor": true,
+            "disabled": true
         }, {
             "id": "ADD_SNIPPET__af457ae6544643b98ffe8c9c3a0f145d",
             "type": "ADD_SNIPPET",

@@ -27,7 +27,6 @@ define({
     /** preShow defined for frmAgenda **/
     AS_Form_ad02dde63f0e4c11bbea0ffa927943a6: function AS_Form_ad02dde63f0e4c11bbea0ffa927943a6(eventobject) {
         var self = this;
-
         function INVOKE_OBJECT_SERVICE__ea029f0600df4431909ac24c16083c57_Callback(event_sessions) {
             self.setData(event_sessions.records);
         }

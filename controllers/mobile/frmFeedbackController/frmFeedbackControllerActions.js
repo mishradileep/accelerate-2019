@@ -42,5 +42,10 @@ define({
     AS_Form_a1cf4001256a46a3899335a635dbdbd6: function AS_Form_a1cf4001256a46a3899335a635dbdbd6(eventobject) {
         var self = this;
         this.animateFeedbackFields();
+    },
+    /** onCloseClick defined for mobileheader **/
+    AS_UWI_e3f54a029a9e478d99edffe3d44eba13: function AS_UWI_e3f54a029a9e478d99edffe3d44eba13(eventobject) {
+        var self = this;
+        this.closeFeedbackForm();
     }
 });

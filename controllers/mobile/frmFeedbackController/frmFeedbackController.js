@@ -5,6 +5,7 @@ define({
     ratingQuestionId: "11",
     feedbackQuestionId: "12",
     opinion_id: 18,
+  	animDuration : 0.2,
     /**
      * @function onClickOfRatingPrompt
      * @description this function is invoked to toggle the selected and unselected images.
@@ -12,7 +13,7 @@ define({
      * @private
      */
     onClickOfRatingPrompt: function(eventObject) {
-      	kony.print("Entering frmFeedbackController : onClickOfRatingPrompt function");
+        kony.print("Entering frmFeedbackController : onClickOfRatingPrompt function");
         var id = eventObject.id;
         var index = parseInt(id[id.length - 1]);
         this.index = index + 1;
@@ -23,7 +24,7 @@ define({
                 this.view["imgRating" + iterate].src = this.unselectedImage;
             }
         }
-		kony.print("Exiting frmFeedbackController : onClickOfRatingPrompt function");
+        kony.print("Exiting frmFeedbackController : onClickOfRatingPrompt function");
     },
     /**
      * @function onClickOfSubmitButton
@@ -32,7 +33,7 @@ define({
      * @private
      */
     onClickOfSubmitButton: function() {
-      	kony.print("Entering frmFeedbackController : onClickOfSubmitButton function");
+        kony.print("Entering frmFeedbackController : onClickOfSubmitButton function");
         var currentUserInfo = kony.store.getItem("currentUserInfo");
         var userId = currentUserInfo.user_id;
         if (kony.sdk.isNullOrUndefined(this.index)) {
@@ -57,8 +58,8 @@ define({
         var batch = {
             "records": feedbacks
         };
-        createRecord(eventConstants.OBJECT_SERVICE_NAME,eventConstants.DATA_MODEL_OPINION_ANSWERS, batch, this.successInStoreFeedback.bind(this), this.failInStoreFeedback.bind(this));
-      	kony.print("Exiting frmFeedbackController : onClickOfSubmitButton function");
+        createRecord(eventConstants.OBJECT_SERVICE_NAME, eventConstants.DATA_MODEL_OPINION_ANSWERS, batch, this.successInStoreFeedback.bind(this), this.failInStoreFeedback.bind(this));
+        kony.print("Exiting frmFeedbackController : onClickOfSubmitButton function");
     },
 
     /**
@@ -68,9 +69,9 @@ define({
      * @private
      */
     successInStoreFeedback: function(response) {
-      	kony.print("Entering frmFeedbackController : successInStoreFeedback function");
+        kony.print("Entering frmFeedbackController : successInStoreFeedback function");
         alert("success in storing feedback");
-      	kony.print("Exiting frmFeedbackController : successInStoreFeedback function");
+        kony.print("Exiting frmFeedbackController : successInStoreFeedback function");
     },
     /**
      * @function failInStoreFeedback
@@ -79,19 +80,174 @@ define({
      * @private
      */
     failInStoreFeedback: function(error) {
-      	kony.print("Entering frmFeedbackController : failInStoreFeedback function");
+        kony.print("Entering frmFeedbackController : failInStoreFeedback function");
         alert("failure in storing the feedback");
-      	kony.print("Exiting frmFeedbackController : failInStoreFeedback function");
+        kony.print("Exiting frmFeedbackController : failInStoreFeedback function");
     },
-  
-  
-  	animateFeedbackFields : function(){
-      var self = this;
-      this.view.flxFeedbackPrompt.animate(
-      kony.ui.createAnimation(
-        {100:{"top":"100dp"}}),
-      {delay: 0, fillMode: kony.anim.FILL_MODE_FORWARDS, duration: 0.5},
-      {animationEnd: function() {}});
-    }
 
+    /** 
+    	* @function animateFeedbackFields
+        * @description This function is used to animate all the feedback fields
+        				from bottom to top one after another
+        * @private
+    */
+    animateFeedbackFields: function() {
+        var self = this;
+        this.animateFeedbackPrompt("100dp", false);
+    },
+
+    /** 
+    	* @function closeFeedbackForm
+        * @description This function is used to animate all the feedback fields
+        				from top to bottom one after another at the time of form close
+        * @private
+    */
+    closeFeedbackForm: function() {
+        var self = this;
+        this.animateSubmitButton("100%", true);
+    },
+
+    /** 
+    	* @function animateFeedbackPrompt
+        * @description This function is used to animate the feedback prompt 
+        				container to a desired position with the animations 
+                        (top to bottom and bottom to top) depending upon the flag
+        * @param finalTop The final top position to which the widget needs to be animated
+        * @param isClose The flag to indicate the navigation (in/out) to the form
+        * @private
+    */
+    animateFeedbackPrompt: function(finalTop, isClose) {
+        var self = this;
+        this.view.flxFeedbackPrompt.animate(
+            kony.ui.createAnimation({
+                100: {
+                    "top": finalTop
+                }
+            }), {
+                delay: 0,
+                fillMode: kony.anim.FILL_MODE_FORWARDS,
+                duration: this.animDuration
+            }, {
+                animationEnd: function() {
+                    if (!isClose)
+                        self.animateRatingContainer("220dp", isClose);
+                    else
+                        new kony.mvc.Navigation("frmMore").navigate();
+                }.bind(self)
+            });
+    },
+
+    /** 
+    	* @function animateRatingContainer
+        * @description This function is used to animate the rating 
+        				container to a desired position with the animations 
+                        (top to bottom and bottom to top) depending upon the flag
+        * @param finalTop The final top position to which the widget needs to be animated
+        * @param isClose The flag to indicate the navigation (in/out) to the form
+        * @private
+    */
+    animateRatingContainer: function(finalTop, isClose) {
+        this.view.flxRating.animate(
+            kony.ui.createAnimation({
+                100: {
+                    "top": finalTop
+                }
+            }), {
+                delay: 0,
+                fillMode: kony.anim.FILL_MODE_FORWARDS,
+                duration: this.animDuration
+            }, {
+                animationEnd: function() {
+                    if (!isClose)
+                        this.animateCommentsLabel("285dp", isClose);
+                    else
+                        this.animateFeedbackPrompt("100%", isClose);
+                }.bind(this)
+            });
+    },
+
+    /** 
+    	* @function animateCommentsLabel
+        * @description This function is used to animate the comments label 
+        			     to a desired position with the animations 
+                        (top to bottom and bottom to top) depending upon the flag
+        * @param finalTop The final top position to which the widget needs to be animated
+        * @param isClose The flag to indicate the navigation (in/out) to the form
+        * @private
+    */
+    animateCommentsLabel: function(finalTop, isClose) {
+        this.view.lblShowComments.animate(
+            kony.ui.createAnimation({
+                100: {
+                    "top": finalTop
+                }
+            }), {
+                delay: 0,
+                fillMode: kony.anim.FILL_MODE_FORWARDS,
+                duration: this.animDuration
+            }, {
+                animationEnd: function() {
+                    if (!isClose)
+                        this.animateCommentsArea("325dp", isClose);
+                    else
+                        this.animateRatingContainer("100%", isClose);
+                }.bind(this)
+            });
+    },
+
+    /** 
+    	* @function animateCommentsArea
+        * @description This function is used to animate the comments text area 
+        			     to a desired position with the animations 
+                        (top to bottom and bottom to top) depending upon the flag
+        * @param finalTop The final top position to which the widget needs to be animated
+        * @param isClose The flag to indicate the navigation (in/out) to the form
+        * @private
+    */
+    animateCommentsArea: function(finalTop, isClose) {
+        this.view.txtAreaComments.animate(
+            kony.ui.createAnimation({
+                100: {
+                    "top": finalTop
+                }
+            }), {
+                delay: 0,
+                fillMode: kony.anim.FILL_MODE_FORWARDS,
+                duration: this.animDuration
+            }, {
+                animationEnd: function() {
+                    if (!isClose)
+                        this.animateSubmitButton("510dp", isClose);
+                    else
+                        this.animateCommentsLabel("100%", isClose);
+                }.bind(this)
+            });
+    },
+
+    /** 
+    	* @function animateSubmitButton
+        * @description This function is used to animate the submit button
+        			     to a desired position with the animations 
+                        (top to bottom and bottom to top) depending upon the flag
+        * @param finalTop The final top position to which the widget needs to be animated
+        * @param isClose The flag to indicate the navigation (in/out) to the form
+        * @private
+    */
+    animateSubmitButton: function(finalTop, isClose) {
+        this.view.btnSubmit.animate(
+            kony.ui.createAnimation({
+                100: {
+                    "top": finalTop
+                }
+            }), {
+                delay: 0,
+                fillMode: kony.anim.FILL_MODE_FORWARDS,
+                duration: this.animDuration
+            }, {
+                animationEnd: function() {
+                    if (isClose)
+                        this.animateCommentsArea("100%", isClose);
+                }.bind(this)
+            });
+    }
 });
