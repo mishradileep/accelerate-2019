@@ -51,7 +51,7 @@
     "kuid": "c6320d185c7c42919e1ffe0d0ba94242",
     "name": "kony.ui.Image2",
     "ontouchstart": "AS_Image_c4592423e7034f488d9427abeeb3ab99",
-    "parent": "flxRating",
+    "parent": "flxRatingWrapper",
     "pf": "frmFeedback",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

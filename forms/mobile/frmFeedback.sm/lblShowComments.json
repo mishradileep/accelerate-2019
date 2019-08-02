@@ -22,7 +22,7 @@
     "_text_": "Please share your comments",
     "_top_": {
         "type": "string",
-        "value": "10dp"
+        "value": "100%"
     },
     "_width_": {
         "type": "ref",

@@ -82,6 +82,16 @@ define({
       	kony.print("Entering frmFeedbackController : failInStoreFeedback function");
         alert("failure in storing the feedback");
       	kony.print("Exiting frmFeedbackController : failInStoreFeedback function");
+    },
+  
+  
+  	animateFeedbackFields : function(){
+      var self = this;
+      this.view.flxFeedbackPrompt.animate(
+      kony.ui.createAnimation(
+        {100:{"top":"100dp"}}),
+      {delay: 0, fillMode: kony.anim.FILL_MODE_FORWARDS, duration: 0.5},
+      {animationEnd: function() {}});
     }
 
 });

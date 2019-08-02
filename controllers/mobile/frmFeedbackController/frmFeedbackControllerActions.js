@@ -37,5 +37,10 @@ define({
     AS_Button_a784acf9798e43f3bce0235c6e621c36: function AS_Button_a784acf9798e43f3bce0235c6e621c36(eventobject) {
         var self = this;
         this.onClickOfSubmitButton();
+    },
+    /** postShow defined for frmFeedback **/
+    AS_Form_a1cf4001256a46a3899335a635dbdbd6: function AS_Form_a1cf4001256a46a3899335a635dbdbd6(eventobject) {
+        var self = this;
+        this.animateFeedbackFields();
     }
 });
