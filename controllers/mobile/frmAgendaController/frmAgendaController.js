@@ -839,6 +839,7 @@ define({
         });
         return sessionTile;
     },
+  
     /**
      *	@function setSpeakerProfile
      * 	@description This function is used to set the speaker info to the UI Elements
@@ -871,5 +872,36 @@ define({
                 }
             }
         }
+    },
+  
+  	/**
+     *	@function onClickOfEventDate
+     * 	@description This function is invoked when the event date is clicked
+     *	@param eventObject {Object} - Event object of the button
+     * 	@private
+     */
+  	onClickOfEventDate : function(eventobject){
+      let buttonText = eventobject.text;
+      this.changeButtonSkins(buttonText);
+    },
+  
+  	/**
+     *	@function changeButtonSkins
+     * 	@description This function is used to change the button skins
+     *	@param buttonText Text of the button which is clicked
+     * 	@private
+     */
+  	changeButtonSkins : function(buttonText){
+      if(buttonText === "4TH SEP"){
+        this.view.buttonDay1.skin = "sknButtonActive";
+        this.view.buttonDay1.focusSkin = "sknButtonActive";
+        this.view.buttonDay2.skin = "sknButtonInActive";
+        this.view.buttonDay2.focusSkin = "sknButtonActive";
+      }else{
+        this.view.buttonDay2.skin = "sknButtonActive";
+        this.view.buttonDay2.focusSkin = "sknButtonActive";
+        this.view.buttonDay1.skin = "sknButtonInActive";
+        this.view.buttonDay1.focusSkin = "sknButtonActive";
+      }
     }
 });
