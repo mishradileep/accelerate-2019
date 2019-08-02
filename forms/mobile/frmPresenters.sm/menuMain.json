@@ -82,7 +82,9 @@
             }
         },
         "menuButtonMore": {
-            "__events__": {},
+            "__events__": {
+                "onClick": "AS_Button_bfa8793a99494b479d36e4179effd5d3"
+            },
             "__info__": {
                 "kuid": "c0bc9be7c0f04b71996497df44197429",
                 "srcKUID": "h7b0c6a01d054846a58b3b1035156512",
@@ -153,7 +155,7 @@
                 "srcKUID": "b914a739c4ef4bec840524a4d77f1076",
                 "wType": "Image"
             },
-            "src": "menumoreinactive_1.png"
+            "src": "menumoreinactive.png"
         },
         "menuImageMySchedule": {
             "__events__": {},
@@ -171,7 +173,7 @@
                 "srcKUID": "fd16a35bd75847eabe6456460ba15929",
                 "wType": "Image"
             },
-            "src": "menupresentersinactive_1.png"
+            "src": "presentersactive.png"
         },
         "menuLabelAgenda": {
             "__events__": {},

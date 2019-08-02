@@ -59,7 +59,6 @@
     "_winphone10_": {},
     "_winphone8_": {},
     "areflexpropsreferenced": false,
-    "autogrowmode": 0,
     "canUpdateUI": true,
     "clipbounds": true,
     "containerweight": 0,
@@ -67,25 +66,25 @@
         "FlexContainer0a1a5ea125dd043": {
             "__events__": {},
             "__info__": {
-                "kuid": "a4d673ee82ca40a08334dea8a6a55f5a",
+                "kuid": "h268fbe7fc43458eb38e8c700ea50c91",
                 "srcKUID": "b5f68210650748a09a67a77356c63d3a",
                 "wType": "FlexContainer"
             }
         },
         "menuButtonAgenda": {
-            "__events__": {},
+            "__events__": {
+                "onClick": "AS_Button_a59dde3129db4e05b6365241c99a4d9f"
+            },
             "__info__": {
-                "kuid": "ddea25e5dc8f42e4a70e28031df9d3c4",
+                "kuid": "h48144ce1fa1469b95942c6787359794",
                 "srcKUID": "j6228e12de0a4ad089565baee9b26d5d",
                 "wType": "Button"
             }
         },
         "menuButtonMore": {
-            "__events__": {
-                "onClick": "AS_Button_c57dd333f3fb41cea4389a8152a19989"
-            },
+            "__events__": {},
             "__info__": {
-                "kuid": "b059c0fadbf24bd5a2bd509fe1fb5cc1",
+                "kuid": "eadf8288206e4b60928c44eef54d31ac",
                 "srcKUID": "h7b0c6a01d054846a58b3b1035156512",
                 "wType": "Button"
             }
@@ -93,17 +92,17 @@
         "menuButtonMySchedule": {
             "__events__": {},
             "__info__": {
-                "kuid": "ef953bf2fc5a4bf48fe74a2f4453adec",
+                "kuid": "c94d054d03b040e9a777d1181109d61d",
                 "srcKUID": "jd94bce423a4453c96ed47769f0e9468",
                 "wType": "Button"
             }
         },
         "menuButtonPresenters": {
             "__events__": {
-                "onClick": "AS_Button_f524c1d44b6d4a61af563b83cef56b3a"
+                "onClick": "AS_Button_i003e17d991a4679949d76870ba75c70"
             },
             "__info__": {
-                "kuid": "d0cb2039578d4562b288dbd4966c2516",
+                "kuid": "da726f6b79a54fb98b1f517561d2b366",
                 "srcKUID": "ce637f2ce0714d179c79c378584d73eb",
                 "wType": "Button"
             }
@@ -111,7 +110,7 @@
         "menuContainerAgenda": {
             "__events__": {},
             "__info__": {
-                "kuid": "b897b82aea4345619a9fdfef1c562c4e",
+                "kuid": "cd91cf9fee3c48e79a29cce7480aa182",
                 "srcKUID": "fc2481a695734f90a103d417e2c40b67",
                 "wType": "FlexContainer"
             }
@@ -119,7 +118,7 @@
         "menuContainerMore": {
             "__events__": {},
             "__info__": {
-                "kuid": "c881d81c2f98455aaab7ec2b75f35004",
+                "kuid": "d0bf909cf2fe452fafcc622d9beefb78",
                 "srcKUID": "fab8eeff3d3a4978901edf64060316c6",
                 "wType": "FlexContainer"
             }
@@ -127,7 +126,7 @@
         "menuContainerMySchedule": {
             "__events__": {},
             "__info__": {
-                "kuid": "d4ce435d35eb476197e3b8b1bd970e54",
+                "kuid": "f94df1252db9489a99abcfe80bd75ac8",
                 "srcKUID": "da4b1b3b965b437c9977b0cb6dce4d78",
                 "wType": "FlexContainer"
             }
@@ -135,7 +134,7 @@
         "menuContainerPresenters": {
             "__events__": {},
             "__info__": {
-                "kuid": "c5c7b9f714014312a4dc1e5ca6c4366d",
+                "kuid": "g7b54de3310b4c4ab4aacb1cf8cf296c",
                 "srcKUID": "f7b7d76d9cbc4364958b6c2ef4f3eec4",
                 "wType": "FlexContainer"
             }
@@ -143,7 +142,7 @@
         "menuImageAgenda": {
             "__events__": {},
             "__info__": {
-                "kuid": "ff0a86cdde554fa18612b46cf1f4bf08",
+                "kuid": "j17ae8acab3f44059d6e65e29b7bb6b6",
                 "srcKUID": "ba3ca6db33f645c697fefd341f143be1",
                 "wType": "Image"
             }
@@ -151,16 +150,16 @@
         "menuImageMore": {
             "__events__": {},
             "__info__": {
-                "kuid": "f8735c6a282c4ad5832d17de65f3cd36",
+                "kuid": "c6f6fe7f418541d49b8fec18e5ddb0e7",
                 "srcKUID": "b914a739c4ef4bec840524a4d77f1076",
                 "wType": "Image"
             },
-            "src": "menumoreinactive.png"
+            "src": "moreactive.png"
         },
         "menuImageMySchedule": {
             "__events__": {},
             "__info__": {
-                "kuid": "e79d86dd5bf344b5911cfab4ca569f4f",
+                "kuid": "iaaf119662f341d4a972b96ea5f7e9d7",
                 "srcKUID": "c252d8278fd1465f9cf1377b1b0de8a2",
                 "wType": "Image"
             }
@@ -168,7 +167,7 @@
         "menuImagePresenters": {
             "__events__": {},
             "__info__": {
-                "kuid": "i960ab8a8d814902a26f47ee1bdb43d0",
+                "kuid": "a121ee2231eb4f999f32abf7efae9a18",
                 "srcKUID": "fd16a35bd75847eabe6456460ba15929",
                 "wType": "Image"
             }
@@ -176,7 +175,7 @@
         "menuLabelAgenda": {
             "__events__": {},
             "__info__": {
-                "kuid": "jc3157a865f44731a5adc8894493fbc1",
+                "kuid": "aea6d30dde7c4f51879065c7a12685d8",
                 "srcKUID": "aca697485c144d3aa964957e43226550",
                 "wType": "Label"
             }
@@ -184,7 +183,7 @@
         "menuLabelMore": {
             "__events__": {},
             "__info__": {
-                "kuid": "g303227ce40743b1985461ed13813518",
+                "kuid": "jd9b8d0ee6f543af9e7ccd25f39fd8c6",
                 "srcKUID": "ba734a47ffe2494896f0cbcec6d864dd",
                 "wType": "Label"
             }
@@ -192,7 +191,7 @@
         "menuLabelMySchedule": {
             "__events__": {},
             "__info__": {
-                "kuid": "id2e760126eb4e7081cbafdaff70ac99",
+                "kuid": "aff1f49eb0b847fdbdd3bf457966d262",
                 "srcKUID": "cd71219af5e947a8b0a25e18669f0ba7",
                 "wType": "Label"
             }
@@ -200,7 +199,7 @@
         "menuLabelPresenters": {
             "__events__": {},
             "__info__": {
-                "kuid": "j54dc0941cfb45f0b7d3f2612971ed98",
+                "kuid": "c8c50622125143df82def1ea849916bf",
                 "srcKUID": "g1852b11bef94086ac089da8e86605a6",
                 "wType": "Label"
             }
@@ -209,9 +208,15 @@
             "__events__": {},
             "__info__": {
                 "isRoot": true,
-                "kuid": "e62a3e9eb0024ca09d1d344456936f83",
+                "kuid": "hda4d4ea024f44d1ae6b670f11be29eb",
                 "srcKUID": "f5fdcbc491394b349bf721f20eac9eaa",
                 "wType": "FlexContainer"
+            },
+            "bottom": {
+                "Default": {
+                    "type": "number",
+                    "value": "0"
+                }
             }
         }
     },
@@ -221,12 +226,12 @@
     "iscustomlayout": false,
     "isdatareferenced": false,
     "isvisible": true,
-    "kuid": "e62a3e9eb0024ca09d1d344456936f83",
+    "kuid": "hda4d4ea024f44d1ae6b670f11be29eb",
     "layouttype": 2,
     "masterType": 0,
     "name": "kony.ui.UserWidgetInstance",
-    "parent": "frmAgenda",
-    "pf": "frmAgenda",
+    "parent": "frmMore",
+    "pf": "frmMore",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,

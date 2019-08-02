@@ -31,5 +31,11 @@ define({
     AS_Button_a784acf9798e43f3bce0235c6e621c36: function AS_Button_a784acf9798e43f3bce0235c6e621c36(eventobject) {
         var self = this;
         this.onClickOfSubmitButton();
+    },
+    /** onCloseClick defined for mobileheader **/
+    AS_UWI_c84631f591f04e81b34a77e13c8fc71f: function AS_UWI_c84631f591f04e81b34a77e13c8fc71f(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmMore");
+        ntf.navigate();
     }
 });
