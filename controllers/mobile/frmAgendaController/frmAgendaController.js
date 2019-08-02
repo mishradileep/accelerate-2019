@@ -114,8 +114,8 @@ define({
         this.view.detailsScroller.left = "0%";
         this.view.sessionTileAnim.tilebg.skin = this.thisCard.tilebg.skin;
         this.view.sessionTileAnim.sessionTitle.text = this.thisCard.sessionTitle.text;
-      	this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
-      	this.view.CopyLabel0f74c659ce7754e.text= this.view[eventobject.id].sessionData.session_desc;
+        this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
+        this.view.CopyLabel0f74c659ce7754e.text = this.view[eventobject.id].sessionData.session_desc;
         this.view.sessionTileAnim.sessionLocation.text = this.thisCard.sessionLocation.text;
         this.view.sessionTileAnim.tileBGImageKony.src = this.thisCard.tileBGImageKony.src;
         var cardFrame = this.thisCard.frame.y;
@@ -772,7 +772,7 @@ define({
      * 	@private
      */
     setData: function(sessions) {
-      	this.view.sessionTiles.removeAll();
+        this.view.sessionTiles.removeAll();
         this.sessionsList = sessions;
         var sessionCount = sessions.length;
         for (var index = 0; index < sessionCount; index++) {
@@ -841,7 +841,7 @@ define({
         });
         return sessionTile;
     },
-  
+
     /**
      *	@function setSpeakerProfile
      * 	@description This function is used to set the speaker info to the UI Elements
@@ -856,14 +856,14 @@ define({
         var sessionObject = this.sessionsList[sessionIndex];
         var speakerList = sessionObject["presenter"];
         var speakers_master = kony.store.getItem("master_speakers");
-      	if(kony.sdk.isNullOrUndefined(speakerList)){
-          this.view.CopyLabel0he0b8d5a22fc4f.isVisible=false;
-          this.view.flxSpeaker0.isVisible=false;
-          this.view.flxSpeaker1.isVisible=false;
-          this.view.flxSpeaker2.isVisible=false;
-          return;
+        if (kony.sdk.isNullOrUndefined(speakerList)) {
+            this.view.CopyLabel0he0b8d5a22fc4f.isVisible = false;
+            this.view.flxSpeaker0.isVisible = false;
+            this.view.flxSpeaker1.isVisible = false;
+            this.view.flxSpeaker2.isVisible = false;
+            return;
         }
-      var speakerIndex;
+        var speakerIndex;
         for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
             var speakerObject = speakerList[speakerIndex];
             for (var index = 0; index < speakers_master.length; index++) {
@@ -878,38 +878,39 @@ define({
             }
         }
     },
-  
-  	/**
+
+    /**
      *	@function onClickOfEventDate
      * 	@description This function is invoked when the event date is clicked
      *	@param eventObject {Object} - Event object of the button
      * 	@private
      */
-  	onClickOfEventDate : function(eventobject){
-      let buttonText = eventobject.text;
-      this.changeButtonSkins(buttonText);
+    onClickOfEventDate: function(eventobject) {
+        let buttonText = eventobject.text;
+        this.changeButtonSkins(buttonText);
     },
-  
-  	/**
+
+    /**
      *	@function changeButtonSkins
      * 	@description This function is used to change the button skins
      *	@param buttonText Text of the button which is clicked
      * 	@private
      */
-  	changeButtonSkins : function(buttonText){
-      if(buttonText === "4TH SEP"){
-        this.view.buttonDay1.skin = "sknButtonActive";
-        this.view.buttonDay1.focusSkin = "sknButtonActive";
-        this.view.buttonDay2.skin = "sknButtonInActive";
-        this.view.buttonDay2.focusSkin = "sknButtonActive";
-      }else{
-        this.view.buttonDay2.skin = "sknButtonActive";
-        this.view.buttonDay2.focusSkin = "sknButtonActive";
-        this.view.buttonDay1.skin = "sknButtonInActive";
-        this.view.buttonDay1.focusSkin = "sknButtonActive";
-      for(speakerIndex;speakerIndex<3;speakerIndex++){
-        this.view["flxSpeaker"+speakerIndex].isVisible=false;
-        this.view["ratingTile" + speakerIndex].isVisible=false;
-      }
+    changeButtonSkins: function(buttonText) {
+        if (buttonText === "4TH SEP") {
+            this.view.buttonDay1.skin = "sknButtonActive";
+            this.view.buttonDay1.focusSkin = "sknButtonActive";
+            this.view.buttonDay2.skin = "sknButtonInActive";
+            this.view.buttonDay2.focusSkin = "sknButtonActive";
+        } else {
+            this.view.buttonDay2.skin = "sknButtonActive";
+            this.view.buttonDay2.focusSkin = "sknButtonActive";
+            this.view.buttonDay1.skin = "sknButtonInActive";
+            this.view.buttonDay1.focusSkin = "sknButtonActive";
+            for (speakerIndex; speakerIndex < 3; speakerIndex++) {
+                this.view["flxSpeaker" + speakerIndex].isVisible = false;
+                this.view["ratingTile" + speakerIndex].isVisible = false;
+            }
+        }
     }
 });
