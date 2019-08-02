@@ -877,11 +877,10 @@ define({
                 }
             }
         }
-      	for (speakerIndex; speakerIndex < 3; speakerIndex++) {
-               this.view["flxSpeaker" + speakerIndex].isVisible = false;
-               this.view["ratingTile" + speakerIndex].isVisible = false;
-            }
-      
+        for (speakerIndex; speakerIndex < 3; speakerIndex++) {
+            this.view["flxSpeaker" + speakerIndex].isVisible = false;
+            this.view["ratingTile" + speakerIndex].isVisible = false;
+        }
     },
 
     /**
