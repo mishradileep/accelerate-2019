@@ -877,6 +877,11 @@ define({
                 }
             }
         }
+      	for (speakerIndex; speakerIndex < 3; speakerIndex++) {
+               this.view["flxSpeaker" + speakerIndex].isVisible = false;
+               this.view["ratingTile" + speakerIndex].isVisible = false;
+            }
+      
     },
 
     /**
@@ -907,10 +912,6 @@ define({
             this.view.buttonDay2.focusSkin = "sknButtonActive";
             this.view.buttonDay1.skin = "sknButtonInActive";
             this.view.buttonDay1.focusSkin = "sknButtonActive";
-            for (speakerIndex; speakerIndex < 3; speakerIndex++) {
-                this.view["flxSpeaker" + speakerIndex].isVisible = false;
-                this.view["ratingTile" + speakerIndex].isVisible = false;
-            }
         }
     }
 });
