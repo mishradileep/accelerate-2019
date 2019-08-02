@@ -38,8 +38,8 @@
     "bounces": true,
     "canUpdateUI": true,
     "children": [
-        "feedbackMaster",
-        "sessionContentContainer"
+        "sessionContentContainer",
+        "feedbackMaster"
     ],
     "clipbounds": true,
     "containerweight": 100,
@@ -52,7 +52,7 @@
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "ife28c26431749cf8732d9d72bde4862",
-    "layouttype": 2,
+    "layouttype": 4,
     "name": "kony.ui.FlexScrollContainer",
     "pagingenabled": false,
     "parent": "frmAgenda",

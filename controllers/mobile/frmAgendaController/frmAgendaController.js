@@ -115,6 +115,7 @@ define({
         this.view.sessionTileAnim.tilebg.skin = this.thisCard.tilebg.skin;
         this.view.sessionTileAnim.sessionTitle.text = this.thisCard.sessionTitle.text;
       	this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
+      	this.view.CopyLabel0f74c659ce7754e.text= this.view[eventobject.id].sessionData.session_desc;
         this.view.sessionTileAnim.sessionLocation.text = this.thisCard.sessionLocation.text;
         this.view.sessionTileAnim.tileBGImageKony.src = this.thisCard.tileBGImageKony.src;
         var cardFrame = this.thisCard.frame.y;
@@ -771,6 +772,7 @@ define({
      * 	@private
      */
     setData: function(sessions) {
+      	this.view.sessionTiles.removeAll();
         this.sessionsList = sessions;
         var sessionCount = sessions.length;
         for (var index = 0; index < sessionCount; index++) {
@@ -854,12 +856,15 @@ define({
         var sessionObject = this.sessionsList[sessionIndex];
         var speakerList = sessionObject["presenter"];
         var speakers_master = kony.store.getItem("master_speakers");
-      	if(kony.sdk.isNullOrUndefined(speakers_master)){
+      	if(kony.sdk.isNullOrUndefined(speakerList)){
+          this.view.CopyLabel0he0b8d5a22fc4f.isVisible=false;
+          this.view.flxSpeaker0.isVisible=false;
           this.view.flxSpeaker1.isVisible=false;
-          this.view.flxSpeaker1.isVisible=false;
+          this.view.flxSpeaker2.isVisible=false;
           return;
         }
-        for (var speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
+      var speakerIndex;
+        for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
             var speakerObject = speakerList[speakerIndex];
             for (var index = 0; index < speakers_master.length; index++) {
                 if (speakerObject.master_speaker_id == speakers_master[index].speaker_id) {
@@ -902,6 +907,9 @@ define({
         this.view.buttonDay2.focusSkin = "sknButtonActive";
         this.view.buttonDay1.skin = "sknButtonInActive";
         this.view.buttonDay1.focusSkin = "sknButtonActive";
+      for(speakerIndex;speakerIndex<3;speakerIndex++){
+        this.view["flxSpeaker"+speakerIndex].isVisible=false;
+        this.view["ratingTile" + speakerIndex].isVisible=false;
       }
     }
 });

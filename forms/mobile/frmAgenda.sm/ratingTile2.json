@@ -45,7 +45,7 @@
     "_tabrcandroid_": {},
     "_top_": {
         "type": "string",
-        "value": "19dp"
+        "value": "8dp"
     },
     "_vizProps_": {
         "hide": false,
@@ -68,7 +68,7 @@
         "flxImage": {
             "__events__": {},
             "__info__": {
-                "kuid": "i4a6300d2c7948b68b8cee1a1e023940",
+                "kuid": "c273b87cce4b419f94c2f4b144d0cb03",
                 "srcKUID": "h67a308f3b59488eb283c4ddf4465d9d",
                 "wType": "FlexContainer"
             }
@@ -76,7 +76,7 @@
         "ratingBubble1": {
             "__events__": {},
             "__info__": {
-                "kuid": "bb0fcfcc75fd4652a4404219a706f466",
+                "kuid": "abccc96ee5274a22886c8dc01c7eb060",
                 "srcKUID": "cce7f6d436bf46f995e0f3344995b97e",
                 "wType": "Button"
             }
@@ -84,7 +84,7 @@
         "ratingBubble2": {
             "__events__": {},
             "__info__": {
-                "kuid": "f2ab1f1a6b7c40e0836562b43fad9cde",
+                "kuid": "f6dcf86640a44b6fbbb98ce7e30c1746",
                 "srcKUID": "ecb39acca5ae4187a588e5b888c5f425",
                 "wType": "Button"
             }
@@ -92,7 +92,7 @@
         "ratingBubble3": {
             "__events__": {},
             "__info__": {
-                "kuid": "f590a12f3f314d0193bb4030593ed5f7",
+                "kuid": "h2b169de3d53415f97a46d67a5260b2e",
                 "srcKUID": "j835dc8d1f3f48ef8db270554caf4184",
                 "wType": "Button"
             }
@@ -100,7 +100,7 @@
         "ratingBubble4": {
             "__events__": {},
             "__info__": {
-                "kuid": "c71eaac4bc7c4d7da4e9eb8f661b717a",
+                "kuid": "hb15ffa3fbfe4cad8071b596c8719ca1",
                 "srcKUID": "d834a6be1cb2450fa69bea43c9ce006e",
                 "wType": "Button"
             }
@@ -108,7 +108,7 @@
         "ratingBubble5": {
             "__events__": {},
             "__info__": {
-                "kuid": "f85df7092f29480c8af86c5a74cb61df",
+                "kuid": "f2c5d2c893504356a90529af9f97f1e6",
                 "srcKUID": "e828035953c74c4abcd74820c9262851",
                 "wType": "Button"
             }
@@ -116,7 +116,7 @@
         "ratingBubbles": {
             "__events__": {},
             "__info__": {
-                "kuid": "dd92ebc5d77f486598a91a16e8d3dda6",
+                "kuid": "h7a0c75ab5b048e89670905f5780b6fc",
                 "srcKUID": "ga3983ff25394797945fdfdbeb501d81",
                 "wType": "FlexContainer"
             }
@@ -124,7 +124,7 @@
         "ratingHighestLabel": {
             "__events__": {},
             "__info__": {
-                "kuid": "h571b0ec73624f7cb2893b98c43f737d",
+                "kuid": "f9007d6fa35c4afba924e78f3a52f832",
                 "srcKUID": "f20924522d2543b78bd552331bff1879",
                 "wType": "Label"
             }
@@ -132,7 +132,7 @@
         "ratingLeastLabel": {
             "__events__": {},
             "__info__": {
-                "kuid": "aaacb0c5152b43b0b80e3c0bc69b655f",
+                "kuid": "fa34c9400af948c0a92a46be877cdf74",
                 "srcKUID": "a99746b8f37d44a687f5c4eb2ffb8038",
                 "wType": "Label"
             }
@@ -140,7 +140,7 @@
         "ratingMidLabel": {
             "__events__": {},
             "__info__": {
-                "kuid": "b890865e787049fe87bf49b15bc6b8a2",
+                "kuid": "h327ba0102944a2ca3d0f9794403b23e",
                 "srcKUID": "e3c200e8743b404cb8e348918d1a00d9",
                 "wType": "Label"
             }
@@ -148,49 +148,51 @@
         "ratingQuestionLabel": {
             "__events__": {},
             "__info__": {
-                "kuid": "f8fa7ab37a024fc59787b078745afedf",
+                "kuid": "c349097731fd42bdac3c8ee07f4127ae",
                 "srcKUID": "e57a7cf4e4844f1a9e52632bf731df04",
                 "wType": "Label"
-            }
+            },
+            "isVisible": false
         },
         "ratingSpeakerContainer": {
             "__events__": {},
             "__info__": {
-                "kuid": "fa77c3910861427892861e3b7a58c0bf",
+                "kuid": "dc2f2126e55548e3b5306196bf59a20d",
                 "srcKUID": "a06dd308b60749d6ae4b20732a77b438",
                 "wType": "FlexContainer"
-            },
-            "isVisible": false
+            }
         },
         "ratingSpeakerImage": {
             "__events__": {},
             "__info__": {
-                "kuid": "ad73351f454c4d12bbf5a68e49f3f471",
+                "kuid": "de989fc9a1014ae2be8d205eebd3d94a",
                 "srcKUID": "gd6c719314ad4eeca6a03fe884e3d0e5",
                 "wType": "Image"
             },
-            "src": "speakerratingtomhogan.png"
+            "src": "speakerratingburley.png"
         },
         "ratingSpeakerName": {
             "__events__": {},
             "__info__": {
-                "kuid": "dd2611ee9af342779f60b350532d6d3a",
+                "kuid": "d027047271ee4c6c9e135a1f3d1a62a6",
                 "srcKUID": "ef500bc54c7e4a7a9889e464869eee58",
                 "wType": "Label"
-            }
+            },
+            "text": "Burley Kawasaki"
         },
         "ratingSpeakerTitle": {
             "__events__": {},
             "__info__": {
-                "kuid": "j913ae1e4bf34ae0a1f765ba0e508653",
+                "kuid": "gd701bf6fd7c454fbd3030b57dc47412",
                 "srcKUID": "ia1eb74e62e94d0fbeb19a4232a1da82",
                 "wType": "Label"
-            }
+            },
+            "text": "Executive Vice President of Products"
         },
         "ratingSystemLabels": {
             "__events__": {},
             "__info__": {
-                "kuid": "b43c37dc3c9c4f72960108157369cc7f",
+                "kuid": "fd3aeab4dd864640bfc046ca66aa437a",
                 "srcKUID": "c72185f1ccea4a3b8268eb502c4f3f8b",
                 "wType": "FlexContainer"
             }
@@ -199,7 +201,7 @@
             "__events__": {},
             "__info__": {
                 "isRoot": true,
-                "kuid": "he1f39ab95b74b08afbe4740d6ab9c21",
+                "kuid": "f04e8437b9b840a38e0ac1b1fe2f5209",
                 "srcKUID": "d9e410e5244c45bebe9f80f079b7c0aa",
                 "wType": "FlexContainer"
             },
@@ -212,19 +214,19 @@
             "top": {
                 "Default": {
                     "type": "string",
-                    "value": "19dp"
+                    "value": "8dp"
                 }
             }
         }
     },
     "enablescrolling": true,
-    "id": "ratingTile",
+    "id": "ratingTile2",
     "info": null,
     "iscustomlayout": false,
     "isdatareferenced": false,
     "issegmentchild": false,
     "isvisible": true,
-    "kuid": "he1f39ab95b74b08afbe4740d6ab9c21",
+    "kuid": "f04e8437b9b840a38e0ac1b1fe2f5209",
     "layouttype": 4,
     "masterType": 0,
     "name": "kony.ui.UserWidgetInstance",

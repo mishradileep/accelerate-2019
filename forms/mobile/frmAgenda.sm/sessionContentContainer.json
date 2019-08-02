@@ -2,8 +2,8 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "string",
-        "value": "485dp"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
@@ -33,7 +33,7 @@
         "value": "100%"
     },
     "allboxes": [],
-    "autogrowmode": 0,
+    "autogrowmode": 1,
     "canUpdateUI": true,
     "children": [
         "CopyFlexContainer0a95fcd86c47e42",
@@ -43,6 +43,7 @@
         "CopyLabel0f74c659ce7754e",
         "CopyLabel0he0b8d5a22fc4f",
         "flxSpeaker1",
+        "flxSpeaker0",
         "flxSpeaker2"
     ],
     "clipbounds": false,

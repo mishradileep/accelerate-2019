@@ -2,12 +2,12 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "string",
-        "value": "36dp"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
-        "value": "88dp"
+        "value": "0%"
     },
     "_margin_": [
         0,
@@ -23,40 +23,33 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
+    "_right_": {
+        "type": "string",
+        "value": "24dp"
+    },
+    "_skin_": "s7e0e0b8157442868d6f801fe4e71b94",
     "_top_": {
         "type": "string",
-        "value": "10dp"
-    },
-    "_width_": {
-        "type": "string",
-        "value": "83.11%"
+        "value": "0dp"
     },
     "allboxes": [],
-    "autogrowmode": 0,
+    "autogrowmode": 1,
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "50%"
-    },
     "children": [
-        "ratingBubble3",
-        "ratingBubble4",
-        "ratingBubble5",
-        "ratingBubble1",
-        "ratingBubble2"
+        "imgSpeaker1",
+        "speaker2Bio"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "ratingBubbles",
+    "id": "speaker",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ga3983ff25394797945fdfdbeb501d81",
+    "kuid": "g4a23b8511ec46c4abc2570254577931",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "ratingTile",
+    "parent": "userwidgetmodel",
     "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
