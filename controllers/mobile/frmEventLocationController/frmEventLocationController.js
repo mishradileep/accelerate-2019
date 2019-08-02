@@ -129,8 +129,8 @@ define({
             lat: coordinatesInfo.latitude,
             lon: coordinatesInfo.longitude,
             name: hotelName,
-            image: "defaultImage.png",
-            focusImage: "focusImage.png",
+            image: "map_location_icon.png",
+            focusImage: "map_location_icon.png",
             //focus image will be shown while map pin selected
             desc: completeAddress,
             showCallout: false,
