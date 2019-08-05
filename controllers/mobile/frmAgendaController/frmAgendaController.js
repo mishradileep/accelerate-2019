@@ -12,7 +12,7 @@ define({
         var self = this;
       	this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = "menuLabelSkinActive";
       	this.setData(accelerateSessionData.eventSessionData.records);
-        this.addActionToSessionTiles();
+        //this.addActionToSessionTiles();
         this.view.referenceAgenda.isVisible = false;
         this.view.referenceSession.isVisible = false;
         this.view.postShow = this.frmAgendaPostshow;
@@ -36,7 +36,7 @@ define({
         };
         //this.view.sessionTile.tileBGImageKony.anchorPoint={"x":1,"y":.5};
         globalPreshow();
-        this.frmAgendaSetAgendaTiles();
+        //this.frmAgendaSetAgendaTiles();
         this.view.feedbackMaster.opacity = 0;
     },
 
