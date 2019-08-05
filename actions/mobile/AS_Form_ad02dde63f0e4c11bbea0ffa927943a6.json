@@ -16,17 +16,14 @@
         "actions": [{
             "id": "ADD_SNIPPET__d86e2ccdf810457cb5fc6f23a83630f4",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = \"menuLabelSkinActive\";\n",
+            "codeSnippet": "this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = \"menuLabelSkinActive\";",
             "parentId": null,
             "callbackType": null,
             "disabled": true
         }, {
             "id": "INVOKE_OBJECT_SERVICE__eb711de5df11475b9d13d3504b2609b1",
             "type": "INVOKE_OBJECT_SERVICE",
-            "inputparams": {
-                "$filter": "\"(SoftDeleteFlag ne true) or (SoftDeleteFlag eq null)\"",
-                "$expand": "\"presenter\""
-            },
+            "inputparams": null,
             "httpheaders": null,
             "httpconfigs": null,
             "isasynchronous": null,
@@ -54,11 +51,7 @@
         }, {
             "id": "INVOKE_OBJECT_SERVICE__ea029f0600df4431909ac24c16083c57",
             "type": "INVOKE_OBJECT_SERVICE",
-            "inputparams": {
-                "$filter": "\"(SoftDeleteFlag ne true) or (SoftDeleteFlag eq null)\"",
-                "$orderby": "\"session_start_date\"",
-                "$expand": "\"presenter,session_material\""
-            },
+            "inputparams": null,
             "httpheaders": null,
             "httpconfigs": null,
             "isasynchronous": null,
@@ -82,8 +75,7 @@
             "type": "ADD_SNIPPET",
             "codeSnippet": "this.frmAgendaPreshow();",
             "parentId": null,
-            "callbackType": null,
-            "disabled": false
+            "callbackType": null
         }, {
             "id": "ADD_SNIPPET__ad14027beebc4a2889e6957fd58bac4e",
             "type": "ADD_SNIPPET",
