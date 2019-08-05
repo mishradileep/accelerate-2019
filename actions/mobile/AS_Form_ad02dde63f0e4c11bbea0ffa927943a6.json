@@ -76,7 +76,7 @@
         }, {
             "id": "ADD_SNIPPET__ad14027beebc4a2889e6957fd58bac4e",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "self.setData(event_sessions.records);",
+            "codeSnippet": "self.setData(event_sessions.records);\n",
             "parentId": "INVOKE_OBJECT_SERVICE__ea029f0600df4431909ac24c16083c57",
             "callbackType": "Callback"
         }]

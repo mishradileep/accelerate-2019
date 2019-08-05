@@ -132,7 +132,8 @@ define({
     this.view.speakerTitle.text = presenter.speaker_title;
     this.view.speakerInfo.text = presenter.speaker_bio;
     this.view.imgProfileLarge.src = presenter.speaker_profile_pic;
-
+	var imgWidth =kony.os.deviceInfo().screenWidth;
+    this.view.imgProfileLarge.height = imgWidth * 0.68+"dp";
     if(!kony.sdk.isNullOrUndefined(presenter.sessionsList)) {
       this.createSessions(JSON.parse(presenter.sessionsList));
     }

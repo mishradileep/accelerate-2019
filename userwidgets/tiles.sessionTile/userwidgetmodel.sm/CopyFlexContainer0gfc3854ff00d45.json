@@ -50,7 +50,7 @@
     "id": "CopyFlexContainer0gfc3854ff00d45",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "hf22216092614064847a76e1ddcdb063",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",

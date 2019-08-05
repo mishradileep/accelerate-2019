@@ -3,13 +3,9 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_base64_": null,
-    "_bottom_": {
-        "type": "number",
-        "value": "123"
-    },
     "_height_": {
         "type": "string",
-        "value": "153dp"
+        "value": "159dp"
     },
     "_left_": {
         "type": "string",
@@ -29,9 +25,13 @@
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
     "_src_": "bioburley.png",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_width_": {
         "type": "string",
-        "value": "200dp"
+        "value": "235dp"
     },
     "canUpdateUI": true,
     "containerweight": 100,

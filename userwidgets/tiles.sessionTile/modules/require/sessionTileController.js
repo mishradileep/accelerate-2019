@@ -3,6 +3,12 @@ define(function() {
     return {
       
         sessionData: null,
+      	sessionTrackId:null,
+      	startDate:null,
+      	endDate:null,
+      	isAddedToMySchedule:null,
+      	myScheduleIndicatorImage:"added.png",
+      	agendaIndicatorImage:"add.png",
         /**
          *	@function setTitleData
          * 	@description This function is used to set the data to the session tile
@@ -14,10 +20,13 @@ define(function() {
             var sessionNameLength = data.session_name.length;
             this.view.sessionTitle.text = sessionNameLength > 28 ? data.session_name.substring(0, 25) + "..." : data.session_name;
             this.view.sessionLocation.text = data.hasOwnProperty("session_location") ? data.session_location : "";
+          	this.startDate=data.session_start_date;
+          	this.endDate=data.session_end_date;
             this.view.sessionTime.text = this.formatDate(data.session_start_date) + " to " + this.formatDate(data.session_end_date);
             if (kony.sdk.isNullOrUndefined(data.session_track_id)) {
                 return;
             }
+          	this.sessionTrackId= data.session_track_id;
             switch (data.session_track_id) {
                 case 1:
                     this.view.tilebg.skin = "agendaTileSkinQuantum";
@@ -35,6 +44,12 @@ define(function() {
                     this.view.tilebg.skin = "";
                     this.view.tileBGImageKony.src = "";
             }
+          if(data.isAddedToMySchedule===true){
+            this.view.imgStatus.src=this.myScheduleIndicatorImage;
+          }
+          else{
+            this.view.imgStatus.src=this.agendaIndicatorImage;
+          }
         },
         /**
          *	@function formatDate
@@ -49,6 +64,11 @@ define(function() {
             hours = hours < 10 ? "0" + hours : hours;
             var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
             return hours + ":" + minutes + ":" + " " + am_pm;
-        }
+        },
+      sessionToMySchedule:function(){
+        this.isAddedToMySchedule=true;
+        this.sessionData.isAddedToMySchedule=true;
+        this.view.imgStatus.src=this.myScheduleIndicatorImage;
+      }
     };
 });

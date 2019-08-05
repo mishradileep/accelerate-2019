@@ -27,7 +27,7 @@ define(function() {
           this.view["ratingBubble"+index].skin=this.view["ratingBubble"+this.previousSelectedIndex].skin;
           this.view["ratingBubble"+this.previousSelectedIndex].skin=skin;
         }
-        this.previousSelectedIndex=this.selectedIndex;
+        this.previousSelectedIndex=index;
         this.selectedIndex=index;
       }
      

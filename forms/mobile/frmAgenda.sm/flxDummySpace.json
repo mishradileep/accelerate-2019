@@ -1,10 +1,9 @@
 {
-    "@class": "com.kony.gen.viz.model.component.KVizRichText",
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "160dp"
+        "value": "20dp"
     },
     "_left_": {
         "type": "string",
@@ -16,46 +15,49 @@
         0,
         0
     ],
+    "_orientation_": 6,
     "_padding_": [
         0,
         0,
         0,
         0
     ],
+    "_percent_": true,
     "_right_": {
         "type": "string",
         "value": "25dp"
     },
-    "_skin_": "s7b0d6aa13fd4c5399b9254af97e0910",
-    "_text_": "RichText",
+    "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
     "_top_": {
         "type": "string",
-        "value": "6dp"
+        "value": "10dp"
     },
     "_width_": {
         "type": "string",
-        "value": "86%"
+        "value": "80%"
     },
-    "_wrapping_": 2,
+    "allboxes": [],
+    "autogrowmode": 0,
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "50.36%"
-    },
+    "children": [],
+    "clipbounds": true,
     "containerweight": 100,
-    "contentalignment": 4,
-    "id": "RichText0iafa4953069e46",
+    "enablescrolling": true,
+    "id": "flxDummySpace",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": false,
-    "kuid": "dc2fa314139646dfb54545715a32e553",
-    "linkskin": "s0d7974023eb449381a5ae8e7fea1fe3",
-    "name": "kony.ui.RichText",
+    "isvisible": true,
+    "kuid": "f705ff4bf8284098bb406b3c881f9bba",
+    "layouttype": 2,
+    "name": "kony.ui.FlexContainer",
     "parent": "feedbackMaster",
     "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "wType": "RichText",
-    "widgetalignment": 5,
+    "retainflowhorizontalalignment": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "wType": "FlexContainer",
+    "widgetalignment": 1,
     "zindex": 1
 }

@@ -3,12 +3,12 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "string",
-        "value": "60dp"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
-        "value": "165dp"
+        "value": "20dp"
     },
     "_margin_": [
         1,
@@ -22,11 +22,11 @@
         0,
         0
     ],
-    "_skin_": "s23fa5a890be4926b62d8759ce5df6e8",
-    "_text_": "Would you like to share any specific feedback with us?",
+    "_skin_": "sc69ee84ccf14101904afaf26a4d9b8b",
+    "_text_": "How to create an API center",
     "_top_": {
         "type": "string",
-        "value": "40dp"
+        "value": "20dp"
     },
     "_width_": {
         "type": "string",
@@ -40,13 +40,9 @@
         }
     },
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "50.00%"
-    },
     "containerweight": 100,
-    "contentalignment": 5,
-    "id": "CopyLabel0dbbb83fd6a0946",
+    "contentalignment": 4,
+    "id": "lblFIleName",
     "info": null,
     "ipad": {
         "psp": {
@@ -60,10 +56,10 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "c5c069898345467b80df098039c2f3d3",
+    "kuid": "b5e62e81db61405080d468f95e9a22d0",
     "name": "kony.ui.Label",
-    "parent": "feedbackMaster",
-    "pf": "frmAgenda",
+    "parent": "presentation",
+    "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},

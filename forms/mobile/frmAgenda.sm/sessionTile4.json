@@ -104,6 +104,14 @@
                 "wType": "Button"
             }
         },
+        "imgStatus": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "hffaaebfa85248dd80baf2a67ef71a21",
+                "srcKUID": "f6da9eb310a74ca0ab593ced7ca6fb55",
+                "wType": "Image"
+            }
+        },
         "sessionLocation": {
             "__events__": {},
             "__info__": {

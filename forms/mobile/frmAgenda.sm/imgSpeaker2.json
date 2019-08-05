@@ -3,13 +3,9 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_base64_": null,
-    "_bottom_": {
-        "type": "number",
-        "value": "118"
-    },
     "_height_": {
         "type": "string",
-        "value": "169dp"
+        "value": "159dp"
     },
     "_left_": {
         "type": "string",
@@ -29,6 +25,10 @@
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
     "_src_": "biotom.png",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_width_": {
         "type": "string",
         "value": "235dp"
@@ -38,6 +38,7 @@
     "context": {
         "channel": "mobile",
         "formID": "frmAgenda",
+        "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null
     },

@@ -31,7 +31,7 @@
     },
     "_width_": {
         "type": "string",
-        "value": "500dp"
+        "value": "100%"
     },
     "canUpdateUI": true,
     "containerweight": 100,
@@ -43,7 +43,7 @@
         "topLevelBox": null
     },
     "id": "imgProfileLarge",
-    "imagescalemode": 2,
+    "imagescalemode": 0,
     "info": null,
     "invokedProperty": "src",
     "iscustomlayout": false,
