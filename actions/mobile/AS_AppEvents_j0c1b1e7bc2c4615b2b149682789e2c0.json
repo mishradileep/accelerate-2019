@@ -8,9 +8,9 @@
         }],
         "language": "js",
         "actions": [{
-            "id": "ADD_SNIPPET__g6fdc6dbecae4ad5b7f189b111638e3b",
+            "id": "ADD_SNIPPET__d4bfbadcf0cf4e618c6be55766560095",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "fetchEventData();",
+            "codeSnippet": "syncEventData();",
             "parentId": null,
             "callbackType": null
         }]
