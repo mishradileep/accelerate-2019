@@ -10,7 +10,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__ccfe68ae5bea453eae5a240dd0b9f459",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "var appEventData = accelerateEventData.eventdata;\nvar updatedData = {\n  \"data\":\"Sample Test\"\n} \naccelerateEventData.eventdata = updatedData;\nalert(accelerateEventData.eventdata);",
+            "codeSnippet": "",
             "parentId": null,
             "callbackType": null
         }]

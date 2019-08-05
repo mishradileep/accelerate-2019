@@ -3,10 +3,9 @@ define({
       This is an auto generated file and any modifications to it may result in corruption of the action sequence.
     */
     /** onCloseClick defined for mobileheader **/
-    AS_UWI_c84631f591f04e81b34a77e13c8fc71f: function AS_UWI_c84631f591f04e81b34a77e13c8fc71f(eventobject) {
+    AS_UWI_e3f54a029a9e478d99edffe3d44eba13: function AS_UWI_e3f54a029a9e478d99edffe3d44eba13(eventobject) {
         var self = this;
-        var ntf = new kony.mvc.Navigation("frmMore");
-        ntf.navigate();
+        this.animateSubmitButton("100%", true);
     },
     /** onTouchStart defined for imgRating0 **/
     AS_Image_e1854f44ba4d4900b6e5a3fd933ac634: function AS_Image_e1854f44ba4d4900b6e5a3fd933ac634(eventobject, x, y) {
@@ -41,11 +40,6 @@ define({
     /** postShow defined for frmFeedback **/
     AS_Form_a1cf4001256a46a3899335a635dbdbd6: function AS_Form_a1cf4001256a46a3899335a635dbdbd6(eventobject) {
         var self = this;
-        this.animateFeedbackFields();
-    },
-    /** onCloseClick defined for mobileheader **/
-    AS_UWI_e3f54a029a9e478d99edffe3d44eba13: function AS_UWI_e3f54a029a9e478d99edffe3d44eba13(eventobject) {
-        var self = this;
-        this.closeFeedbackForm();
+        this.animateFeedbackPrompt("100dp", false);
     }
 });

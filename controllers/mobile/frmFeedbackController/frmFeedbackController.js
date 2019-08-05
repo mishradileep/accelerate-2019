@@ -5,7 +5,7 @@ define({
     ratingQuestionId: "11",
     feedbackQuestionId: "12",
     opinion_id: 18,
-  	animDuration : 0.2,
+    animDuration: 0.2,
     /**
      * @function onClickOfRatingPrompt
      * @description this function is invoked to toggle the selected and unselected images.
@@ -83,28 +83,6 @@ define({
         kony.print("Entering frmFeedbackController : failInStoreFeedback function");
         alert("failure in storing the feedback");
         kony.print("Exiting frmFeedbackController : failInStoreFeedback function");
-    },
-
-    /** 
-    	* @function animateFeedbackFields
-        * @description This function is used to animate all the feedback fields
-        				from bottom to top one after another
-        * @private
-    */
-    animateFeedbackFields: function() {
-        var self = this;
-        this.animateFeedbackPrompt("100dp", false);
-    },
-
-    /** 
-    	* @function closeFeedbackForm
-        * @description This function is used to animate all the feedback fields
-        				from top to bottom one after another at the time of form close
-        * @private
-    */
-    closeFeedbackForm: function() {
-        var self = this;
-        this.animateSubmitButton("100%", true);
     },
 
     /** 

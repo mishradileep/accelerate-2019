@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__e2ca89663d304b35999b5c03b7f52e71",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.animateFeedbackFields();",
+            "codeSnippet": "this.animateFeedbackPrompt(\"100dp\", false);",
             "parentId": null,
             "callbackType": null
         }]

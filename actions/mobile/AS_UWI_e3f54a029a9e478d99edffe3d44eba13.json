@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__a8bd91b09b9843c9899bd0a56edb332d",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.closeFeedbackForm();",
+            "codeSnippet": "this.animateSubmitButton(\"100%\", true);",
             "parentId": null,
             "callbackType": null
         }]
