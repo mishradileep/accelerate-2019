@@ -86,7 +86,9 @@
     "apmserviceresponse": "false",
     "apmtouchorclick": "",
     "appEvents": {
-        "mobile": {}
+        "mobile": {
+            "postappinit": "AS_AppEvents_j0c1b1e7bc2c4615b2b149682789e2c0"
+        }
     },
     "appaddrkey": "",
     "appidkey": "KonyAccelerate",
@@ -715,7 +717,7 @@
     "spawindows480basefontsize": "12",
     "spawindowstabbasefontsize": "17",
     "splashlogokey": "",
-    "startupformkey": "c820372cbf2642d7b0202ef79409f861",
+    "startupformkey": "g7d71a566dee45ffa15745fbce32e657",
     "statusBarHidden": "false",
     "statusBarStyle": "STATUS_BAR_STYLE_DEFAULT",
     "support64bit": "false",

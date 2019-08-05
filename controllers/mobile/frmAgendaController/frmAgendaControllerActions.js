@@ -43,6 +43,10 @@ define({
             "access": "online",
             "CRUD_TYPE": "get"
         };
+        var odataParams = [];
+        odataParams.push("$filter=" + "(SoftDeleteFlag ne true) or (SoftDeleteFlag eq null)");
+        odataParams.push("$expand=" + "presenter");
+        speakers_master_inputparam["options"]["odataurl"] = odataParams.join("&");
         var speakers_master_httpheaders = {};
         speakers_master_inputparam["httpheaders"] = speakers_master_httpheaders;
         var speakers_master_httpconfigs = {};
@@ -56,6 +60,11 @@ define({
             "access": "online",
             "CRUD_TYPE": "get"
         };
+        var odataParams = [];
+        odataParams.push("$filter=" + "(SoftDeleteFlag ne true) or (SoftDeleteFlag eq null)");
+        odataParams.push("$orderby=" + "session_start_date");
+        odataParams.push("$expand=" + "presenter,session_material");
+        event_sessions_inputparam["options"]["odataurl"] = odataParams.join("&");
         var event_sessions_httpheaders = {};
         event_sessions_inputparam["httpheaders"] = event_sessions_httpheaders;
         var event_sessions_httpconfigs = {};
