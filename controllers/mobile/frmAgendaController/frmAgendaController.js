@@ -10,6 +10,8 @@ define({
      */
     frmAgendaPreshow: function() {
         var self = this;
+      	this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = "menuLabelSkinActive";
+      	this.setData(accelerateSessionData.eventSessionData.records);
         this.addActionToSessionTiles();
         this.view.referenceAgenda.isVisible = false;
         this.view.referenceSession.isVisible = false;
