@@ -16,7 +16,7 @@ define(function() {
       this.view.speakerTitle.text = presenterObject.speaker_title;
       this.view.speakerInfo.text = presenterObject.shortBio;
       this.view.speakerImage.src = presenterObject.speaker_profile_pic;
-      var tracks = presenterObject.tracks ? JSON.parse(presenterObject.tracks) : [];
+      var tracks = presenterObject.tracks ? (presenterObject.tracks) : [];
       this.setTracks(tracks);
     },
 
