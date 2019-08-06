@@ -9,6 +9,8 @@ define({
         * @private
     */
   onNavigate : function() {
+    this.filtersSelected = [];
+    this.initializeFilter();
     var presenterSessionData = null;
     //To Do Handle the offline data -- kony.store.getItem("presenterSessionData");
     this.view.presenterScroll.removeAll();   
@@ -35,13 +37,13 @@ define({
     */
   setFilteronClick : function(){
     var self = this;
-    this.view.filterAll.onClick = function(eventobject) {
+    this.view.flxFilterKeynote.onClick = function(eventobject) {
       self.speakerFilter(eventobject);
     };
-    this.view.filterDBX.onClick = function(eventobject) {
+    this.view.flxFilterQuantum.onClick = function(eventobject) {
       self.speakerFilter(eventobject);
     };
-    this.view.filterQuantum.onClick = function(eventobject) {
+    this.view.flxFilterDBX.onClick = function(eventobject) {
       self.speakerFilter(eventobject);
     };
   },
@@ -183,111 +185,117 @@ define({
       "top": top,
       "width": "100%",
       "zIndex": 1,
-      "overrides": {
-        "sessionLocationIcon": {
-          "src": "agendatilelocationicon.png"
-        },
-        "sessionTile": {
-          "bottom": "viz.val_cleared",
-          "height": "152dp",
-          "isVisible": true,
-          "left": "0dp",
-          "top": "0dp",
-          "width": "100%"
-        },
-        "sessionTimeIcon": {
-          "src": "agendatiletimeicon.png"
-        },
-        "tileBGImageKony": {
-          "isVisible": true,
-          "src": "agendatilekony.png"
-        }
-      }
+      "overrides": {}
     }, {
       "retainFlowHorizontalAlignment": false,
       "overrides": {}
     }, {
       "overrides": {}
     });
-    sessionTile.setTitleData(data)
+    sessionTile.setTitleData(data);
     this.view.flexSessions.add(sessionTile);
   },
 
   /**
      * @function spekerFilter
-     * @description The function is used to animate and change the speaker filter based on the track selected
+     * @description The function is used to switch the skins from unselected to selected and vice versa
      * @param eventobject The event object or the widget info of the tab which is selected
      * @private
      */
   speakerFilter: function(eventobject) {
-    var self = this;
-    var leftPos = "0%";
-    var buttonText = "ALL";
-    var targetSkin = "filterSkinAll";
-    var destColor = "";
-    if (eventobject.id == "filterAll") {
-      leftPos = "0%";
-      buttonText = "ALL";
-      targetSkin = "filterSkinAll";
-      destColor = "1F232900";
-    } else if (eventobject.id == "filterDBX") {
-      leftPos = "33.33%";
-      buttonText = "DBX";
-      targetSkin = "filterSkinDBX";
-      destColor = "4B3A6600";
-    } else {
-      leftPos = "66.66%";
-      buttonText = "QUANTUM";
-      targetSkin = "filterSkinQuantum";
-      destColor = "14334500";
+    var lblName,imgName,selectedFilter;
+   switch (eventobject.id){
+     case "flxFilterKeynote" :
+       lblName = "lblKeynote";
+       imgName = "imgTickKeynote";
+       selectedFilter = eventConstants.KEYNOTE;
+       break;
+     case "flxFilterQuantum" :
+       lblName = "lblQuantum";
+       imgName = "imgTickQuantum";
+       selectedFilter = eventConstants.QUANTUM;
+       break;
+     case "flxFilterDBX" :
+       lblName = "lblDBX";
+       imgName = "imgTickDBX";
+       selectedFilter = eventConstants.DBX;
+       break;
+   }
+    
+   if(eventobject.skin === "sknflxfilterunselected"){
+     this.view[eventobject.id].skin = "sknflxfilterselected";
+     this.view[lblName].skin = "sknlblfilterselected";
+     this.view[imgName].src = "tickactive.png";
+     this.filtersSelected.push(selectedFilter);
+   } else {
+     this.view[eventobject.id].skin = "sknflxfilterunselected";
+     this.view[lblName].skin = "sknlblfilterunselected";
+     this.view[imgName].src = "tickinactive.png";
+     var index = this.filtersSelected.indexOf(selectedFilter);
+	 if (index > -1) {
+  		this.filtersSelected.splice(index, 1);
+	 }
+   }
+   if(this.filtersSelected.length>0) {
+		this.showFilteredResults();     
+   }else{
+     this.showAllPresenters();
+   }
+  },
+  
+   /**
+     * @function showFilteredResults
+     * @description The function is used to filter the speakers based on the filter seleted and toggle the visibility
+     * @private
+     */
+  showFilteredResults : function(){
+    var presenters = this.view.presenterScroll.widgets();
+    for(var index=0; index<presenters.length; index++) {
+     var isPresenterIntrack = false;
+     var tracks = this.view[presenters[index].id].getTracks();
+     for(var filterIndex =0; filterIndex<this.filtersSelected.length; filterIndex++) {
+       if(tracks[this.filtersSelected[filterIndex]]) {
+         isPresenterIntrack = true;
+         break;
+       }
+     }
+     this.view[presenters[index].id].isVisible = isPresenterIntrack;
     }
-
-    this.view.filterWidget.animate(
-      kony.ui.createAnimation({
-        100: {
-          left: leftPos,
-          "stepConfig": {}
-        }
-      }), {
-        delay: 0,
-        fillMode: kony.anim.FILL_MODE_FORWARDS,
-        duration: .22
-      }, {
-        animationEnd: function() {}
-      });
-
-    this.view.filterButton.animate(
-      kony.ui.createAnimation({
-        100: {
-          opacity: 0,
-          "stepConfig": {}
-        }
-      }), {
-        delay: 0,
-        fillMode: kony.anim.FILL_MODE_FORWARDS,
-        duration: .1
-      }, {
-        animationEnd: function() {
-
-          self.view.filterButton.text = buttonText;
-          self.view.filterButton.skin = targetSkin;
-
-          self.view.filterButton.animate(
-            kony.ui.createAnimation({
-              100: {
-                opacity: 1,
-                "stepConfig": {}
-              }
-            }), {
-              delay: 0,
-              fillMode: kony.anim.FILL_MODE_FORWARDS,
-              duration: .1
-            }, {
-              animationEnd: function() {}
-            });
-
-        }
-      });
+  },
+  
+  /**
+     * @function showAllPresenters
+     * @description The function is used to set the visibility on to all the presenters if there is no filter
+     * @private
+     */
+  showAllPresenters : function(){
+    var presenters = this.view.presenterScroll.widgets();
+    for(var index=0; index<presenters.length; index++) {
+     this.view[presenters[index].id].isVisible = true;
+    }
+  },
+  
+    /**
+     * @function initializeFilter
+     * @description The function is used to initialize the filters
+     * @private
+     */
+  initializeFilter : function(){
+    
+    //Reset DBX filter
+    this.view.lblDBX.skin = "sknlblfilterunselected";
+    this.view.flxFilterDBX.skin = "sknflxfilterunselected";
+    this.view.imgTickDBX.src = "tickinactive.png";
+    
+    //Reset QUANTUM filter
+    this.view.lblQuantum.skin = "sknlblfilterunselected";
+    this.view.flxFilterQuantum.skin = "sknflxfilterunselected";
+    this.view.imgTickQuantum.src = "tickinactive.png";
+    
+    //Reset KEYNOTE filter
+    this.view.lblKeynote.skin = "sknlblfilterunselected";
+    this.view.flxFilterKeynote.skin = "sknflxfilterunselected";
+    this.view.imgTickQuantum.src = "tickinactive.png";
   }
 
 

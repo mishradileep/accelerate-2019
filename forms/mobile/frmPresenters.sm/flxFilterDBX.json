@@ -3,11 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "131dp"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "0dp"
+        "value": "28dp"
     },
     "_margin_": [
         0,
@@ -23,43 +19,47 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sd145a8b00214b9eade1c067a1993800",
+    "_right_": {
+        "type": "string",
+        "value": "0%"
+    },
+    "_skin_": "s2ef5ff1c0e74523ab649625d6b6335f",
     "_top_": {
         "type": "string",
         "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "31%"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "children": [
-        "agendaTitle",
-        "flxFilter"
+        "imgTickDBX",
+        "lblDBX"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "headerContainer",
+    "id": "flxFilterDBX",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "c71362a8c8594355bdbf30a0dae67ca5",
+    "kuid": "cfaccb2a8bf2437b9dd4add69a412a6e",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "masterContainer",
+    "parent": "flxFilter",
     "pf": "frmPresenters",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "vizProps": {
-        "hide": false
-    },
     "wType": "FlexContainer",
-    "widgetalignment": 1,
-    "zindex": 30
+    "widgetalignment": 1
 }
