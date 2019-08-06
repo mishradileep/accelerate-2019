@@ -1,6 +1,7 @@
 var eventConstants = {
   OBJECT_SERVICE_NAME : "KonyAccelerateStorageService",
   WIFI_OBJECT_NAME : "wifi_info",
+  EVENT_SESSIONS_OBJECT_NAME : "event_sessions",
   EVENT_LOCATION_OBJECT_NAME : "location",
   EVENT_OBJECT_NAME : "event",
   CONNECTION_ERROR_TYPE : "ConnectionError",
@@ -15,4 +16,5 @@ var eventConstants = {
   DBX : 3,
   QUANTUM : 2,
   KEYNOTE : 1
+  DATA_SYNC_OBJECT : "data_sync_info"
 };

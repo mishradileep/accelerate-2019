@@ -15,19 +15,20 @@ define({
     //To Do Handle the offline data -- kony.store.getItem("presenterSessionData");
     this.view.presenterScroll.removeAll();   
 
-    if(!kony.sdk.isNullOrUndefined(presenterSessionData)) {
-      this.processPresenterSessionData(presenterSessionData);
-    } else {
-      var queryParams = {
-        "bindSessionInfoWithSpeaker" : true
-      };
-      fetchObjectData(eventConstants.OBJECT_SERVICE_NAME,
-                      eventConstants.PRESENTER_OBJECT_NAME,
-                      queryParams, 
-                      this.presenterFetchSuccess.bind(this),
-                      this.presenterFetchFailure.bind(this));         
-    }
-
+//     if(!kony.sdk.isNullOrUndefined(presenterSessionData)) {
+//       this.processPresenterSessionData(presenterSessionData);
+//     } else {
+//       var queryParams = {
+//         "bindSessionInfoWithSpeaker" : true
+//       };
+//       fetchObjectData(eventConstants.OBJECT_SERVICE_NAME,
+//                       eventConstants.PRESENTER_OBJECT_NAME,
+//                       queryParams, 
+//                       this.presenterFetchSuccess.bind(this),
+//                       this.presenterFetchFailure.bind(this));         
+//     }
+    
+		this.processPresenterSessionData(accelerateSpeakerData.eventSpeakerData.records);
   },
 
   /**
@@ -61,7 +62,7 @@ define({
 
     if(!kony.sdk.isNullOrUndefined(presenterSessionData)) {
       kony.store.setItem("presenterSessionData",presenterSessionData);
-      this. processPresenterSessionData(presenterSessionData);
+      this.processPresenterSessionData(presenterSessionData);
     } else {
       kony.print("Speaker Data not present");
     }
@@ -136,7 +137,7 @@ define({
     this.view.imgProfileLarge.src = presenter.speaker_profile_pic;
 
     if(!kony.sdk.isNullOrUndefined(presenter.sessionsList)) {
-      this.createSessions(JSON.parse(presenter.sessionsList));
+      this.createSessions(presenter.sessionsList);
     }
     this.view.presenterDetail.isVisible = true;
   },

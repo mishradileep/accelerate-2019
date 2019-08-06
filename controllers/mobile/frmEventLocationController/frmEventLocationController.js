@@ -6,51 +6,15 @@ define({
      * @private
      */
     formEventLocationPostShowAction: function() {
-        let eventData = kony.store.getItem("accelerateEventData");
+        let eventData = accelerateEventData.eventdata.records[0];
         if (!kony.sdk.isNullOrUndefined(eventData)) {
-            let eventLocationData = eventData.hasOwnProperty("eventLocationData") ? eventData.eventLocationData : null;
+            let eventLocationData = eventData.hasOwnProperty("location") ? eventData.location[0] : null;
             if (eventLocationData !== null) {
                 this.formatAndSetEventData(eventLocationData);
             } else {
                 kony.print("Event Location Data is null");
             }
-        } else {
-            var queryParams = {
-                "$filter": "((SoftDeleteFlag ne true) or (SoftDeleteFlag eq null))",
-                "$expand": "event_inner_location,wifi_info,location"
-            };
-            fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.EVENT_OBJECT_NAME,
-                queryParams,
-                this.eventFetchSuccess.bind(this),
-                this.eventFetchFailure.bind(this));
-        }
-    },
-
-    /**
-     * @function eventFetchSuccess
-     * @descripiton This function is invoked in the success response of event object
-     * @param successResponse The success response of the event object
-     * @private
-     */
-    eventFetchSuccess: function(successResponse) {
-        let eventLocationData = successResponse.hasOwnProperty("records") ? successResponse.records : null;
-        if (eventLocationData !== null) {
-            let eventLocation = eventLocationData[0].location[0];
-            this.formatAndSetEventData(eventLocation);
-        } else {
-            kony.print("Fetched event data is null");
-        }
-    },
-
-    /**
-     * @function eventFetchFailure
-     * @descripiton This function is invoked in the failure response of event object
-     * @param failureResponse The failure response of the event object
-     * @private
-     */
-    eventFetchFailure: function(failureResponse) {
-        kony.print(eventConstants.GENERIC_EXCEPTION_MESSAGE);
-        kony.print("Failure response is " + JSON.stringify(failureResponse));
+        } 
     },
 
     /**
