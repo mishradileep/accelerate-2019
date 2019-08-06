@@ -15,6 +15,6 @@ var eventConstants = {
   PRESENTER_OBJECT_NAME : "speakers_master",
   DBX : 3,
   QUANTUM : 2,
-  KEYNOTE : 1
+  KEYNOTE : 1,
   DATA_SYNC_OBJECT : "data_sync_info"
 };
