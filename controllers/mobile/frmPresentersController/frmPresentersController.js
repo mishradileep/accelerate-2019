@@ -204,46 +204,46 @@ define({
      */
   speakerFilter: function(eventobject) {
     var lblName,imgName,selectedFilter;
-   switch (eventobject.id){
-     case "flxFilterKeynote" :
-       lblName = "lblKeynote";
-       imgName = "imgTickKeynote";
-       selectedFilter = eventConstants.KEYNOTE;
-       break;
-     case "flxFilterQuantum" :
-       lblName = "lblQuantum";
-       imgName = "imgTickQuantum";
-       selectedFilter = eventConstants.QUANTUM;
-       break;
-     case "flxFilterDBX" :
-       lblName = "lblDBX";
-       imgName = "imgTickDBX";
-       selectedFilter = eventConstants.DBX;
-       break;
-   }
-    
-   if(eventobject.skin === "sknflxfilterunselected"){
-     this.view[eventobject.id].skin = "sknflxfilterselected";
-     this.view[lblName].skin = "sknlblfilterselected";
-     this.view[imgName].src = "tickactive.png";
-     this.filtersSelected.push(selectedFilter);
-   } else {
-     this.view[eventobject.id].skin = "sknflxfilterunselected";
-     this.view[lblName].skin = "sknlblfilterunselected";
-     this.view[imgName].src = "tickinactive.png";
-     var index = this.filtersSelected.indexOf(selectedFilter);
-	 if (index > -1) {
-  		this.filtersSelected.splice(index, 1);
-	 }
-   }
-   if(this.filtersSelected.length>0) {
-		this.showFilteredResults();     
-   }else{
-     this.showAllPresenters();
-   }
+    switch (eventobject.id){
+      case "flxFilterKeynote" :
+        lblName = "lblKeynote";
+        imgName = "imgTickKeynote";
+        selectedFilter = eventConstants.KEYNOTE;
+        break;
+      case "flxFilterQuantum" :
+        lblName = "lblQuantum";
+        imgName = "imgTickQuantum";
+        selectedFilter = eventConstants.QUANTUM;
+        break;
+      case "flxFilterDBX" :
+        lblName = "lblDBX";
+        imgName = "imgTickDBX";
+        selectedFilter = eventConstants.DBX;
+        break;
+    }
+
+    if(eventobject.skin === "sknflxfilterunselected"){
+      this.view[eventobject.id].skin = "sknflxfilterselected";
+      this.view[lblName].skin = "sknlblfilterselected";
+      this.view[imgName].src = "tickactive.png";
+      this.filtersSelected.push(selectedFilter);
+    } else {
+      this.view[eventobject.id].skin = "sknflxfilterunselected";
+      this.view[lblName].skin = "sknlblfilterunselected";
+      this.view[imgName].src = "tickinactive.png";
+      var index = this.filtersSelected.indexOf(selectedFilter);
+      if (index > -1) {
+        this.filtersSelected.splice(index, 1);
+      }
+    }
+    if(this.filtersSelected.length>0) {
+      this.showFilteredResults();     
+    }else{
+      this.showAllPresenters();
+    }
   },
-  
-   /**
+
+  /**
      * @function showFilteredResults
      * @description The function is used to filter the speakers based on the filter seleted and toggle the visibility
      * @private
@@ -251,18 +251,18 @@ define({
   showFilteredResults : function(){
     var presenters = this.view.presenterScroll.widgets();
     for(var index=0; index<presenters.length; index++) {
-     var isPresenterIntrack = false;
-     var tracks = this.view[presenters[index].id].getTracks();
-     for(var filterIndex =0; filterIndex<this.filtersSelected.length; filterIndex++) {
-       if(tracks[this.filtersSelected[filterIndex]]) {
-         isPresenterIntrack = true;
-         break;
-       }
-     }
-     this.view[presenters[index].id].isVisible = isPresenterIntrack;
+      var isPresenterIntrack = false;
+      var tracks = this.view[presenters[index].id].getTracks();
+      for(var filterIndex =0; filterIndex<this.filtersSelected.length; filterIndex++) {
+        if(tracks[this.filtersSelected[filterIndex]]) {
+          isPresenterIntrack = true;
+          break;
+        }
+      }
+      this.view[presenters[index].id].isVisible = isPresenterIntrack;
     }
   },
-  
+
   /**
      * @function showAllPresenters
      * @description The function is used to set the visibility on to all the presenters if there is no filter
@@ -271,27 +271,27 @@ define({
   showAllPresenters : function(){
     var presenters = this.view.presenterScroll.widgets();
     for(var index=0; index<presenters.length; index++) {
-     this.view[presenters[index].id].isVisible = true;
+      this.view[presenters[index].id].isVisible = true;
     }
   },
-  
-    /**
+
+  /**
      * @function initializeFilter
      * @description The function is used to initialize the filters
      * @private
      */
   initializeFilter : function(){
-    
+
     //Reset DBX filter
     this.view.lblDBX.skin = "sknlblfilterunselected";
     this.view.flxFilterDBX.skin = "sknflxfilterunselected";
     this.view.imgTickDBX.src = "tickinactive.png";
-    
+
     //Reset QUANTUM filter
     this.view.lblQuantum.skin = "sknlblfilterunselected";
     this.view.flxFilterQuantum.skin = "sknflxfilterunselected";
     this.view.imgTickQuantum.src = "tickinactive.png";
-    
+
     //Reset KEYNOTE filter
     this.view.lblKeynote.skin = "sknlblfilterunselected";
     this.view.flxFilterKeynote.skin = "sknflxfilterunselected";

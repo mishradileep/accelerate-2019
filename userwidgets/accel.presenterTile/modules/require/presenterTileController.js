@@ -4,7 +4,7 @@ define(function() {
 
 
 
-  /**
+    /**
      * @function setData
      * @description This function will set data to details flex
      * @param presenter The presenter object
@@ -45,7 +45,7 @@ define(function() {
         this.onClickListener(this.presenterObject);
       }
     },
-    
+
     /**
      * @function setTracks
      * @description This function is used to set tracks in a map for presenter
@@ -58,8 +58,8 @@ define(function() {
         this.tracks[tracks[index]]= 1;
       }
     },
-    
-       /**
+
+    /**
      * @function setTracks
      * @description This function is used to return track map
      * @private
