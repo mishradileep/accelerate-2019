@@ -13,7 +13,7 @@ accelerateSessionData = {
     {
         "event_id":3,"event_session_id":3,"session_desc":"The evolution of digital technology today is never-ending. ",
         "session_end_date":"2019-09-04T09:30:00Z",
-        "session_name":"Welcome and Kony Vision",
+        "session_name":"Welcome and Kony Vision12",
         "session_start_date":"2019-09-04T09:00:00Z",
         "session_long_desc":"Our mission is helping our customers keep up with the frenetic pace of digital and how our experience and expertise in the digital space helps companies excel at digital today and into the future.\n",
         "session_code":"52Y1MX",

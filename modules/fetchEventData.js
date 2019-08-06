@@ -7,6 +7,12 @@
       let isTimeStamp = kony.store.getItem("isTimeStampUpdated");
       if (isTimeStamp === null || isTimeStamp === undefined)
           kony.store.setItem("clientLastUpdatedTime", "2019-08-04T15:27:26Z");
+      else {
+              let storeEventData = kony.store.getItem("eventData");
+              let storeEventSessionData = kony.store.getItem("eventSessionData");
+              let storeSpeakerData = kony.store.getItem("eventSpeakerData");
+              assignStoreDataToLocal(storeEventData, storeEventSessionData, storeSpeakerData);
+      }
       fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.DATA_SYNC_OBJECT, {}, dataSyncFetchSuccess, dataSyncFetchFailure);
   }
 
@@ -24,10 +30,30 @@
           if (serverLastUpdatedTime > clientLastUpdatedTime) {
               latestTimeStamp = serverLastUpdatedTime;
               fetchEventStaticData();
+          } else {
+              let storeEventData = kony.store.getItem("eventData");
+              let storeEventSessionData = kony.store.getItem("eventSessionData");
+              let storeSpeakerData = kony.store.getItem("eventSpeakerData");
+              assignStoreDataToLocal(storeEventData, storeEventSessionData, storeSpeakerData);
           }
       }
   }
-
+  /**
+   * @function assignStoreDataToLocal
+   * @description Used to assign store data to local data
+   * @param eventData Event data
+   * @param eventSessionData Event Session data
+   * @param eventSpeakerData Event Speaker data
+   * @public
+   */
+  function assignStoreDataToLocal(eventData, eventSessionData, eventSpeakerData) {
+      if (eventData !== null && eventData !== undefined)
+          accelerateEventData.eventdata = eventData;
+      if (eventSessionData !== null && eventSessionData !== undefined)
+          accelerateSessionData.eventSessionData = eventSessionData;
+      if (eventSpeakerData !== null && eventSpeakerData !== undefined)
+          accelerateSpeakerData.eventSpeakerData = eventSpeakerData;
+  }
   /**
    * @function dataSyncFetchFailure
    * @description This function is invoked in the failure response of data sync service
@@ -61,6 +87,7 @@
   function eventDataFetchSuccess(successResponse) {
       let records = (successResponse.hasOwnProperty("records")) ? successResponse.records : null;
       if (records !== null) {
+          kony.store.setItem("eventData", successResponse);
           accelerateEventData.eventdata = successResponse;
           kony.print(accelerateEventData.eventdata);
           fetchEventSessionData();
@@ -101,6 +128,7 @@
   function eventSessionDataFetchSuccess(successResponse) {
       let records = (successResponse.hasOwnProperty("records")) ? successResponse.records : null;
       if (records !== null) {
+          kony.store.setItem("eventSessionData", successResponse);
           accelerateSessionData.eventSessionData = successResponse;
           kony.print(accelerateSessionData.eventSessionData);
           fetchSpeakersData();
@@ -140,9 +168,10 @@
   function speakerDataFetchSuccess(successResponse) {
       let records = (successResponse.hasOwnProperty("records")) ? successResponse.records : null;
       if (records !== null) {
-          accelerateSpeakerData.eventSpeakerData = successResponse;
           kony.print(accelerateSpeakerData.eventSpeakerData);
           parseJSONResponse(successResponse);
+          accelerateSpeakerData.eventSpeakerData = successResponse;
+          kony.store.setItem("eventSpeakerData", successResponse);
           kony.store.setItem("clientLastUpdatedTime", latestTimeStamp);
           kony.store.setItem("isTimeStampUpdated", true);
       }
