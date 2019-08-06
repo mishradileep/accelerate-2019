@@ -22,7 +22,7 @@
     "_text_": "Submit",
     "_top_": {
         "type": "string",
-        "value": "20dp"
+        "value": "100%"
     },
     "_width_": {
         "type": "string",

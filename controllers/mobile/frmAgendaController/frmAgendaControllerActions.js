@@ -27,6 +27,7 @@ define({
     /** preShow defined for frmAgenda **/
     AS_Form_ad02dde63f0e4c11bbea0ffa927943a6: function AS_Form_ad02dde63f0e4c11bbea0ffa927943a6(eventobject) {
         var self = this;
+        this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = "menuLabelSkinActive";
         this.frmAgendaPreshow();
     }
 });

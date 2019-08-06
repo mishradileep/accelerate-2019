@@ -50,7 +50,7 @@
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "a977c5d154f5405c9d040a3bffe954c2",
-    "layouttype": 4,
+    "layouttype": 2,
     "name": "kony.ui.FlexContainer",
     "parent": "frmFeedback",
     "pf": "frmFeedback",

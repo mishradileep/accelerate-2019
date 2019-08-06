@@ -1,0 +1,24 @@
+{
+    "AS_UWI_e3f54a029a9e478d99edffe3d44eba13": {
+        "id": "AS_UWI_e3f54a029a9e478d99edffe3d44eba13",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmFeedback",
+            "type": "forms",
+            "platform": "",
+            "KUID": "d941d78912be4a0cb84caa0510579054"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__a8bd91b09b9843c9899bd0a56edb332d",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.animateSubmitButton(\"100%\", true);",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}
