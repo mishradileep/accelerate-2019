@@ -71,6 +71,11 @@ define(function() {
       });
         return animationObejct;
       },
+      /**
+         *	@function getPlatformSpecific
+         * 	@description This generic function is to return the animationConfig
+         * 	@private
+         */
       getPlatformSpecific:function(){
         var specificObj= {
         delay: 0,
@@ -79,6 +84,17 @@ define(function() {
       };
         return specificObj;
       },
+      /**
+         *	@function setDefaultSelectedIndex
+         * 	@description This generic function is to set default rating index as 3
+         * 	@private
+         */
+      setDefaultSelectedIndex:function(){
+        var eventObject={
+          id:"ratingBubble3"
+        };
+        this.setFocusOnClick(eventObject);
+      }
         
       
       

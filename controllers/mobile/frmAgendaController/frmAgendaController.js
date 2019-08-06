@@ -876,6 +876,7 @@ define({
                     this.view["speakerDescription" + speakerIndex].text = speakerBio.speaker_bio;
                     this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
                     this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
+                  	this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
                 }
             }
         }
@@ -883,7 +884,8 @@ define({
             this.view["flxSpeaker" + speakerIndex].isVisible = false;
             this.view["ratingTile" + speakerIndex].isVisible = false;
         }
-    },
+        this.view["ratingTile"].setDefaultSelectedIndex();
+      },
 
     /**
      *	@function onClickOfEventDate
