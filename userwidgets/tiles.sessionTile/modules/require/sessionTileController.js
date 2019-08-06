@@ -78,9 +78,9 @@ define(function() {
         this.view.addAgendaContainer.skin=this.agendaContainerSkin;
         var myAgendaData=kony.store.getItem("myAgendaData");
         if(kony.sdk.isNullOrUndefined(myAgendaData)){
-          myAgendaData=[];
+          myAgendaData={};
         }
-        myAgendaData.push(this.sessionData);
+        myAgendaData[this.sessionData.event_session_id]=this.sessionData.event_session_id;
         kony.store.setItem("myAgendaData", myAgendaData);
       }
     };
