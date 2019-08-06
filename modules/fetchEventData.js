@@ -7,7 +7,7 @@
       		kony.store.setItem("clientLastUpdatedTime","2019-08-04T15:27:26Z");
         fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.DATA_SYNC_OBJECT, {}, dataSyncFetchSuccess, dataSyncFetchFailure);
     }
-
+ 
     function dataSyncFetchSuccess(successResponse) {
         let records = (successResponse.hasOwnProperty("records")) ? successResponse.records : null;
         if (records !== null) {
@@ -23,7 +23,6 @@
 	function dataSyncFetchFailure(failureResponse){
        	kony.print("Error occured in fetching the event data");
         kony.print("Error occured is" + JSON.stringify(failureResponse));
-      	alert("Failure")
     }
 
 
@@ -38,8 +37,7 @@
     function eventDataFetchSuccess(successResponse) {
         let records = (successResponse.hasOwnProperty("records")) ? successResponse.records : null;
         if (records !== null) {
-            accelerateEventData.eventdata = records;
-            alert(accelerateEventData.eventdata);
+            accelerateEventData.eventdata = successResponse;
             kony.print(accelerateEventData.eventdata);
             fetchEventSessionData();
         }
@@ -48,7 +46,6 @@
     function eventDataFetchFailure(failureResponse) {
         kony.print("Error occured in fetching the event data");
         kony.print("Error occured is" + JSON.stringify(failureResponse));
-      	alert("Failure")
     }
 
     function fetchEventSessionData() {
@@ -63,8 +60,7 @@
     function eventSessionDataFetchSuccess(successResponse) {
         let records = (successResponse.hasOwnProperty("records")) ? successResponse.records : null;
         if (records !== null) {
-            accelerateSessionData.eventSessionData = records;
-            alert(accelerateSessionData.eventSessionData);
+            accelerateSessionData.eventSessionData = successResponse;
             kony.print(accelerateSessionData.eventSessionData);
             fetchSpeakersData();
         }
@@ -73,7 +69,6 @@
     function eventSessionDataFetchFailure(failureResponse) {
         kony.print("Error occured in fetching the event data");
         kony.print("Error occured is" + JSON.stringify(failureResponse));
-      	alert("Failure")
     }
 
     function fetchSpeakersData() {
@@ -88,9 +83,9 @@
     function speakerDataFetchSuccess(successResponse) {
         let records = (successResponse.hasOwnProperty("records")) ? successResponse.records : null;
         if (records !== null) {
-            accelerateSpeakerData.eventSpeakerData = records;
-            alert(accelerateSpeakerData.eventSpeakerData);
+            accelerateSpeakerData.eventSpeakerData = successResponse;
             kony.print(accelerateSpeakerData.eventSpeakerData);
+          	parseJSONResponse(successResponse);
             kony.store.setItem("clientLastUpdatedTime",latestTimeStamp);
           	kony.store.setItem("isTimeStampUpdated",true);
         }
@@ -99,5 +94,15 @@
     function speakerDataFetchFailure(failureResponse) {
         kony.print("Error occured in fetching the event data");
         kony.print("Error occured is" + JSON.stringify(failureResponse));
-      	alert("Failure")
+    }
+
+	function parseJSONResponse(successResponse){
+      let recordsLength = successResponse.hasOwnProperty("records") ? successResponse.records.length : -1;
+      if(recordsLength > 0){
+        for(let index = 0 ; index < recordsLength ; index++){
+          let currentRecord = successResponse.records[index];
+          currentRecord.sessionsList = JSON.parse(currentRecord.sessionsList);
+          currentRecord.tracks = JSON.parse(currentRecord.tracks);
+        }
+      }
     }
