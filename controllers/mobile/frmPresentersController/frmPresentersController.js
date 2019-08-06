@@ -147,6 +147,10 @@ define({
         this.view.flexSessions.removeAll();
         for (var index = 0; index < sessions.length; index++) {
             var id = "sessiontile" + sessions[index].session_id;
+            if(sessions[index].session_start_date.indexOf(" ")!=-1){
+               sessions[index].session_start_date = sessions[index].session_start_date.replace(" ","T")+"0Z";
+               sessions[index].session_end_date = sessions[index].session_end_date.replace(" ","T")+ "0Z";
+            }
             this.createSessionTile(id, "0dp", sessions[index]);
         }
     },
