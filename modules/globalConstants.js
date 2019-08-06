@@ -13,7 +13,7 @@ var eventConstants = {
   IDENTITY_PROVIDER_NAME:"LinkedinLogin",
   SESSION_TILE_ID:"tile",
   PRESENTER_OBJECT_NAME : "speakers_master",
-  ASPECT_RATION_CONSTANT:0.68,
+  ASPECT_RATION_CONSTANT:1.07,
   DBX : 3,
   QUANTUM : 2,
   KEYNOTE : 1,
