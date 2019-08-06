@@ -9,7 +9,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "23%"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -51,7 +51,7 @@
     "kuid": "jae726eadd754c42bd178f9654c39347",
     "name": "kony.ui.Image2",
     "ontouchstart": "AS_Image_e1854f44ba4d4900b6e5a3fd933ac634",
-    "parent": "flxRating",
+    "parent": "flxRatingWrapper",
     "pf": "frmFeedback",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
