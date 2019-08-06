@@ -18,7 +18,8 @@
             "type": "ADD_SNIPPET",
             "codeSnippet": "this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = \"menuLabelSkinActive\";",
             "parentId": null,
-            "callbackType": null
+            "callbackType": null,
+            "disabled": true
         }, {
             "id": "INVOKE_OBJECT_SERVICE__eb711de5df11475b9d13d3504b2609b1",
             "type": "INVOKE_OBJECT_SERVICE",

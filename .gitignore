@@ -6,6 +6,9 @@
 *.xml
 *.properties
 
+#Ignore all log files
+*.log
+
 # Ignore jssrc folder from all the projects in workspace
 /Demo/jssrc/
 temp/
