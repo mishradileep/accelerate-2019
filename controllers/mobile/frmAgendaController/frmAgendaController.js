@@ -857,7 +857,7 @@ define({
         var sessionIndex = id.substring(startIndex, len);
         var sessionObject = this.sessionsList[sessionIndex];
         var speakerList = sessionObject["presenter"];
-        var speakers_master = kony.store.getItem("master_speakers");
+        var speakers_master = accelerateSpeakerData.eventSpeakerData.records
         if (kony.sdk.isNullOrUndefined(speakerList)) {
             this.view.CopyLabel0he0b8d5a22fc4f.isVisible = false;
             this.view.flxSpeaker0.isVisible = false;
