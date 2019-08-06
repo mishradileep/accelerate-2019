@@ -36,9 +36,9 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "ratingLeastLabel",
-        "ratingMidLabel",
-        "ratingHighestLabel"
+        "ratingLevel3",
+        "ratingLevel5",
+        "ratingLevel1"
     ],
     "clipbounds": true,
     "containerweight": 100,

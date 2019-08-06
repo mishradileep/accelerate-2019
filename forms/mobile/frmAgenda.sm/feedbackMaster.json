@@ -36,13 +36,13 @@
     "autogrowmode": 1,
     "canUpdateUI": true,
     "children": [
-        "Label0cde92fbf36804d",
-        "ratingTile",
-        "ratingTile0",
-        "ratingTile1",
-        "ratingTile2",
-        "CopyLabel0dbbb83fd6a0946",
-        "RichText0iafa4953069e46"
+        "lblFeedback",
+        "flxRatingContainer",
+        "imgThanks",
+        "lblThankyou",
+        "lblPresentation",
+        "flxMaterial",
+        "flxDummySpace"
     ],
     "clipbounds": true,
     "containerweight": 100,

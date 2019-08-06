@@ -68,7 +68,7 @@
         "flxImage": {
             "__events__": {},
             "__info__": {
-                "kuid": "i4a6300d2c7948b68b8cee1a1e023940",
+                "kuid": "fff6bff2db8c45da81821e958f176126",
                 "srcKUID": "h67a308f3b59488eb283c4ddf4465d9d",
                 "wType": "FlexContainer"
             }
@@ -76,7 +76,7 @@
         "ratingBubble1": {
             "__events__": {},
             "__info__": {
-                "kuid": "bb0fcfcc75fd4652a4404219a706f466",
+                "kuid": "fe3eaeddce0744c586fb72f51bd348b2",
                 "srcKUID": "cce7f6d436bf46f995e0f3344995b97e",
                 "wType": "Button"
             }
@@ -84,7 +84,7 @@
         "ratingBubble2": {
             "__events__": {},
             "__info__": {
-                "kuid": "f2ab1f1a6b7c40e0836562b43fad9cde",
+                "kuid": "i71affad9b0649d9bb9293d118368f32",
                 "srcKUID": "ecb39acca5ae4187a588e5b888c5f425",
                 "wType": "Button"
             }
@@ -92,7 +92,7 @@
         "ratingBubble3": {
             "__events__": {},
             "__info__": {
-                "kuid": "f590a12f3f314d0193bb4030593ed5f7",
+                "kuid": "g49ec007c4e64b1e89d182b8233f6417",
                 "srcKUID": "j835dc8d1f3f48ef8db270554caf4184",
                 "wType": "Button"
             }
@@ -100,7 +100,7 @@
         "ratingBubble4": {
             "__events__": {},
             "__info__": {
-                "kuid": "c71eaac4bc7c4d7da4e9eb8f661b717a",
+                "kuid": "da0b1339ff5841d5b75c44263e6b5790",
                 "srcKUID": "d834a6be1cb2450fa69bea43c9ce006e",
                 "wType": "Button"
             }
@@ -108,7 +108,7 @@
         "ratingBubble5": {
             "__events__": {},
             "__info__": {
-                "kuid": "f85df7092f29480c8af86c5a74cb61df",
+                "kuid": "de772b1577274e11bb8a8f372e16c69f",
                 "srcKUID": "e828035953c74c4abcd74820c9262851",
                 "wType": "Button"
             }
@@ -116,31 +116,31 @@
         "ratingBubbles": {
             "__events__": {},
             "__info__": {
-                "kuid": "dd92ebc5d77f486598a91a16e8d3dda6",
+                "kuid": "idbcb65cf9af4321ae01bba3dc87e50a",
                 "srcKUID": "ga3983ff25394797945fdfdbeb501d81",
                 "wType": "FlexContainer"
             }
         },
-        "ratingHighestLabel": {
+        "ratingLevel1": {
             "__events__": {},
             "__info__": {
-                "kuid": "h571b0ec73624f7cb2893b98c43f737d",
+                "kuid": "b2e6a6fd51314a378dddf7c02c3ad4e4",
                 "srcKUID": "f20924522d2543b78bd552331bff1879",
                 "wType": "Label"
             }
         },
-        "ratingLeastLabel": {
+        "ratingLevel3": {
             "__events__": {},
             "__info__": {
-                "kuid": "aaacb0c5152b43b0b80e3c0bc69b655f",
+                "kuid": "jc6165dccbbe4798bdddf3811b52887e",
                 "srcKUID": "a99746b8f37d44a687f5c4eb2ffb8038",
                 "wType": "Label"
             }
         },
-        "ratingMidLabel": {
+        "ratingLevel5": {
             "__events__": {},
             "__info__": {
-                "kuid": "b890865e787049fe87bf49b15bc6b8a2",
+                "kuid": "e590af3b7c08427c830ff4aae3077979",
                 "srcKUID": "e3c200e8743b404cb8e348918d1a00d9",
                 "wType": "Label"
             }
@@ -148,7 +148,7 @@
         "ratingQuestionLabel": {
             "__events__": {},
             "__info__": {
-                "kuid": "f8fa7ab37a024fc59787b078745afedf",
+                "kuid": "hc23ae69ebcf4c298d6a42809aafb5ca",
                 "srcKUID": "e57a7cf4e4844f1a9e52632bf731df04",
                 "wType": "Label"
             }
@@ -156,7 +156,7 @@
         "ratingSpeakerContainer": {
             "__events__": {},
             "__info__": {
-                "kuid": "fa77c3910861427892861e3b7a58c0bf",
+                "kuid": "cb1c8b66b6b541d49d331dee7f70981d",
                 "srcKUID": "a06dd308b60749d6ae4b20732a77b438",
                 "wType": "FlexContainer"
             },
@@ -165,7 +165,7 @@
         "ratingSpeakerImage": {
             "__events__": {},
             "__info__": {
-                "kuid": "ad73351f454c4d12bbf5a68e49f3f471",
+                "kuid": "h2d9cd5f69344c6c9f11d0d566a463dc",
                 "srcKUID": "gd6c719314ad4eeca6a03fe884e3d0e5",
                 "wType": "Image"
             },
@@ -174,7 +174,7 @@
         "ratingSpeakerName": {
             "__events__": {},
             "__info__": {
-                "kuid": "dd2611ee9af342779f60b350532d6d3a",
+                "kuid": "e87fbd72cfe64800b98c217202484289",
                 "srcKUID": "ef500bc54c7e4a7a9889e464869eee58",
                 "wType": "Label"
             }
@@ -182,7 +182,7 @@
         "ratingSpeakerTitle": {
             "__events__": {},
             "__info__": {
-                "kuid": "j913ae1e4bf34ae0a1f765ba0e508653",
+                "kuid": "ddfafe991ecc4f9f94f3e776adde4fec",
                 "srcKUID": "ia1eb74e62e94d0fbeb19a4232a1da82",
                 "wType": "Label"
             }
@@ -190,7 +190,7 @@
         "ratingSystemLabels": {
             "__events__": {},
             "__info__": {
-                "kuid": "b43c37dc3c9c4f72960108157369cc7f",
+                "kuid": "d02de89689fa472aa7dc2d6ff2dfe1f6",
                 "srcKUID": "c72185f1ccea4a3b8268eb502c4f3f8b",
                 "wType": "FlexContainer"
             }
@@ -228,7 +228,7 @@
     "layouttype": 4,
     "masterType": 0,
     "name": "kony.ui.UserWidgetInstance",
-    "parent": "feedbackMaster",
+    "parent": "flxRatingContainer",
     "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

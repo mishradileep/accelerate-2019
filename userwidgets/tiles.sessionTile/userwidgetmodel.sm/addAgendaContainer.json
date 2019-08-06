@@ -38,7 +38,8 @@
     "children": [
         "CopyFlexContainer0h0944543241849",
         "CopyFlexContainer0gfc3854ff00d45",
-        "agendaAddButton"
+        "agendaAddButton",
+        "imgStatus"
     ],
     "clipbounds": true,
     "containerweight": 100,
@@ -50,6 +51,7 @@
     "kuid": "b26268764c614824b21e5445bc10fe32",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
+    "onclick": "AS_FlexContainer_e100f51211ca4cae8fd9c9302263295b",
     "parent": "sessionTile",
     "pf": "userwidgetmodel",
     "retaincontentalignment": false,

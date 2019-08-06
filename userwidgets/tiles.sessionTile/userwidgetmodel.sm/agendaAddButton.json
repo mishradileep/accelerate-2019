@@ -40,7 +40,7 @@
     "id": "agendaAddButton",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "b7dfe511cc6a445992d3b3d40bb8cfbb",
     "name": "kony.ui.Button",
     "parent": "addAgendaContainer",

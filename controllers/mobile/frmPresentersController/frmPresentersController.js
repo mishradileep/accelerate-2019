@@ -1,5 +1,4 @@
-define({ 
-
+define({
   /**
     	* @function  onNavigate
         * @description This function is invoked at the onNavigate of the form and checks 
@@ -49,124 +48,143 @@ define({
     };
   },
 
-  /**
-     * @function presenterFetchSuccess
-     * @description This function is invoked in the success of presenter object and
-                    checks the response for the records and calls processdata function
-     * @param response The success response of the presenter object
+    /**
+     * @function  setFilteronClick
+     * @description This function is used to set Filter Click Action
      * @private
      */
+    setFilteronClick: function() {
+        var self = this;
+        this.view.filterAll.onClick = function(eventobject) {
+            self.speakerFilter(eventobject);
+        };
+        this.view.filterDBX.onClick = function(eventobject) {
+            self.speakerFilter(eventobject);
+        };
+        this.view.filterQuantum.onClick = function(eventobject) {
+            self.speakerFilter(eventobject);
+        };
+    },
 
-  presenterFetchSuccess : function(response) {
-    var presenterSessionData = response.hasOwnProperty("records") ? response.records : null;
+    /**
+       * @function presenterFetchSuccess
+       * @description This function is invoked in the success of presenter object and
+                      checks the response for the records and calls processdata function
+       * @param response The success response of the presenter object
+       * @private
+       */
 
-    if(!kony.sdk.isNullOrUndefined(presenterSessionData)) {
-      kony.store.setItem("presenterSessionData",presenterSessionData);
-      this.processPresenterSessionData(presenterSessionData);
-    } else {
-      kony.print("Speaker Data not present");
-    }
 
-  },
+    presenterFetchSuccess: function(response) {
+        var presenterSessionData = response.hasOwnProperty("records") ? response.records : null;
+        if(!kony.sdk.isNullOrUndefined(presenterSessionData)) {
+            kony.store.setItem("presenterSessionData",presenterSessionData);
+            this.processPresenterSessionData(presenterSessionData);
+        } else {
+            kony.print("Speaker Data not present");
+        }
+    },
 
-  /**
+    /**
      * @function presenterFetchFailure
      * @description This function is invoked in the failure of presenter object
      * @param error The failure response of the presenter object
      * @private
      */
-  presenterFetchFailure : function(error) {
-    kony.print(eventConstants.GENERIC_EXCEPTION_MESSAGE);
-    kony.print("Exception occured is" + JSON.stringify(error));
-  },
+    presenterFetchFailure: function(error) {
+        kony.print(eventConstants.GENERIC_EXCEPTION_MESSAGE);
+        kony.print("Exception occured is" + JSON.stringify(error));
+    },
 
-  /**
-     * @function processPresenterSessionData
-     * @description This function is invoked from the presenter fetch success callback
-                    This function is used to process the response and set the UI
-     * @param presenterSessionData The array of presenter object
-     * @private
-     */
-  processPresenterSessionData : function(presenterSessionData) {
-    for(var index=0; index<presenterSessionData.length; index++) {
-      var presenterObject = presenterSessionData[index];
-      var presenterShortBio =presenterObject.hasOwnProperty("speaker_bio") ? presenterObject.speaker_bio.slice(0,70)+"..." : "";
-      presenterObject.shortBio = presenterShortBio;
-      this.setPresenterList(presenterObject);
-    }
-  },
+    /**
+       * @function processPresenterSessionData
+       * @description This function is invoked from the presenter fetch success callback
+                      This function is used to process the response and set the UI
+       * @param presenterSessionData The array of presenter object
+       * @private
+       */
+    processPresenterSessionData: function(presenterSessionData) {
+        for (var index = 0; index < presenterSessionData.length; index++) {
+            var presenterObject = presenterSessionData[index];
+            var presenterShortBio = presenterObject.hasOwnProperty("speaker_bio") ? presenterObject.speaker_bio.slice(0, 70) + "..." : "";
+            presenterObject.shortBio = presenterShortBio;
+            this.setPresenterList(presenterObject);
+        }
+    },
 
-  /**
+    /**
      * @function setPresenterList
      * @description This function is used to create the PresenterTile dynamically
      * @param presenterSessionData The array of presenter object
      * @private
      */
-  setPresenterList : function(presenterObject) {
-    var id = "presenterTile"+presenterObject.speaker_id;
-    var presenterTile = new accel.presenterTile({
-      "clipBounds": true,
-      "height": "100%",
-      "id": id,
-      "isVisible": true,
-      "layoutType": kony.flex.FREE_FORM,
-      "left": "0dp",
-      "masterType": constants.MASTER_TYPE_DEFAULT,
-      "isModalContainer": false,
-      "skin": "CopyslFbox0d15165bcdad74f",
-      "top": "0dp",
-      "width": "100%",
-      "zIndex": 1,
-    }, {}, {} );
-    presenterTile.setData(presenterObject);
-    presenterTile.setOnClickListenerOfPresenterCard(this.onClickOfPresenter.bind(this));
-    this.view.presenterScroll.add(presenterTile);
-  },
+    setPresenterList: function(presenterObject) {
+        var id = "presenterTile" + presenterObject.speaker_id;
+        var presenterTile = new accel.presenterTile({
+            "clipBounds": true,
+            "height": "100%",
+            "id": id,
+            "isVisible": true,
+            "layoutType": kony.flex.FREE_FORM,
+            "left": "0dp",
+            "masterType": constants.MASTER_TYPE_DEFAULT,
+            "isModalContainer": false,
+            "skin": "CopyslFbox0d15165bcdad74f",
+            "top": "0dp",
+            "width": "100%",
+            "zIndex": 1,
+        }, {}, {});
+        presenterTile.setData(presenterObject);
+        presenterTile.setOnClickListenerOfPresenterCard(this.onClickOfPresenter.bind(this));
+        this.view.presenterScroll.add(presenterTile);
+    },
 
-  /**
+    /**
      * @function onClickOfPresenter
      * @description This function is invoked on click of speaker tile
      *              this function will set data to details flex
      * @param presenter The presenter object
      * @private
      */
-  onClickOfPresenter : function(presenter){
-    this.view.speakerName.text = presenter.speaker_name;
-    this.view.speakerTitle.text = presenter.speaker_title;
-    this.view.speakerInfo.text = presenter.speaker_bio;
-    this.view.imgProfileLarge.src = presenter.speaker_profile_pic;
 
-    if(!kony.sdk.isNullOrUndefined(presenter.sessionsList)) {
-      this.createSessions(presenter.sessionsList);
-    }
-    this.view.presenterDetail.isVisible = true;
-  },
+    onClickOfPresenter: function(presenter) {
+        this.view.speakerName.text = presenter.speaker_name;
+        this.view.speakerTitle.text = presenter.speaker_title;
+        this.view.speakerInfo.text = presenter.speaker_bio;
+        this.view.imgProfileLarge.src = presenter.speaker_profile_pic;
+        var imgWidth = kony.os.deviceInfo().screenWidth;
+        this.view.imgProfileLarge.height = imgWidth * eventConstants.ASPECT_RATION_CONSTANT + "dp";
+        if (!kony.sdk.isNullOrUndefined(presenter.sessionsList)) {
+            this.createSessions(JSON.parse(presenter.sessionsList));
+        }
+        this.view.presenterDetail.isVisible = true;
+    },
 
-  /**
+    /**
      * @function onClickOfCloseSpeakerDetails
      * @description This function will dismiss the presenter detail
      * @private
      */
-  onClickOfCloseSpeakerDetails : function(){
-    this.view.presenterDetail.isVisible = false;
-  },
+    onClickOfCloseSpeakerDetails: function() {
+        this.view.presenterDetail.isVisible = false;
+    },
 
 
-  /**
+    /**
      * @function createSessions
      * @description To do..
      * @private
      */
-  createSessions : function(sessions){
-    this.view.flexSessions.removeAll();
-    for(var index=0; index<sessions.length; index++) {
-      var id = "sessiontile"+sessions[index].session_id;
-      this.createSessionTile(id, "0dp",sessions[index]);
-    }
-  },
+    createSessions: function(sessions) {
+        this.view.flexSessions.removeAll();
+        for (var index = 0; index < sessions.length; index++) {
+            var id = "sessiontile" + sessions[index].session_id;
+            this.createSessionTile(id, "0dp", sessions[index]);
+        }
+    },
 
 
-  /**
+    /**
      * @function createSessionTile
      * @description To do..
      * @private
@@ -197,7 +215,7 @@ define({
     this.view.flexSessions.add(sessionTile);
   },
 
-  /**
+    /**
      * @function spekerFilter
      * @description The function is used to switch the skins from unselected to selected and vice versa
      * @param eventobject The event object or the widget info of the tab which is selected
@@ -298,6 +316,4 @@ define({
     this.view.flxFilterKeynote.skin = "sknflxfilterunselected";
     this.view.imgTickQuantum.src = "tickinactive.png";
   }
-
-
 });

@@ -29,5 +29,10 @@ define({
         var self = this;
         this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = "menuLabelSkinActive";
         this.frmAgendaPreshow();
+    },
+    /** onClick defined for btnSubmit **/
+    AS_Button_f2918332e78c437195c71db8976072cb: function AS_Button_f2918332e78c437195c71db8976072cb(eventobject) {
+        var self = this;
+        this.onClickOfSubmit();
     }
 });

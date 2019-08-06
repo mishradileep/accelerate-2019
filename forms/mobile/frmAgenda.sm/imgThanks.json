@@ -1,14 +1,15 @@
 {
-    "@class": "com.kony.gen.viz.model.component.KVizRichText",
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "160dp"
+        "value": "150dp"
     },
     "_left_": {
         "type": "string",
-        "value": "25dp"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -22,40 +23,43 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "string",
-        "value": "25dp"
-    },
-    "_skin_": "s7b0d6aa13fd4c5399b9254af97e0910",
-    "_text_": "RichText",
+    "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
+    "_src_": "emailsent.png",
     "_top_": {
         "type": "string",
-        "value": "6dp"
+        "value": "15dp"
     },
     "_width_": {
         "type": "string",
-        "value": "86%"
+        "value": "150dp"
     },
-    "_wrapping_": 2,
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50.36%"
+        "value": "50%"
     },
     "containerweight": 100,
-    "contentalignment": 4,
-    "id": "RichText0iafa4953069e46",
+    "context": {
+        "channel": "mobile",
+        "formID": "frmAgenda",
+        "platform": "iphone",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "id": "imgThanks",
+    "imagescalemode": 1,
     "info": null,
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": false,
-    "kuid": "dc2fa314139646dfb54545715a32e553",
-    "linkskin": "s0d7974023eb449381a5ae8e7fea1fe3",
-    "name": "kony.ui.RichText",
+    "kuid": "je91f844ade64f92a9d5b89d82e8f79e",
+    "name": "kony.ui.Image2",
     "parent": "feedbackMaster",
     "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "wType": "RichText",
+    "srcType": 1,
+    "wType": "Image",
     "widgetalignment": 5,
     "zindex": 1
 }

@@ -118,6 +118,8 @@ define({
         this.view.sessionTileAnim.sessionTitle.text = this.thisCard.sessionTitle.text;
         this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
         this.view.CopyLabel0f74c659ce7754e.text = this.view[eventobject.id].sessionData.session_desc;
+        this.view.sessionTileAnim.imgStatus.src = this.view[eventobject.id].imgStatus.src;
+        this.view.sessionTileAnim.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
         this.view.sessionTileAnim.sessionLocation.text = this.thisCard.sessionLocation.text;
         this.view.sessionTileAnim.tileBGImageKony.src = this.thisCard.tileBGImageKony.src;
         var cardFrame = this.thisCard.frame.y;
@@ -690,26 +692,29 @@ define({
         var buttonText = "ALL";
         var targetSkin = "filterSkinAll";
         var destColor = "";
+        var sessionTrack = null;
         if (eventobject.id == "filterAll") {
             leftPos = "0%";
             buttonText = "ALL";
             targetSkin = "filterSkinAll";
             destColor = "1F232900";
+            sessionTrack = eventConstants.KEYNOTE;
         } else if (eventobject.id == "filterDBX") {
             leftPos = "33.33%";
             buttonText = "DBX";
             targetSkin = "filterSkinDBX";
             destColor = "4B3A6600";
+            sessionTrack = eventConstants.DBX;
         } else {
             leftPos = "66.66%";
             buttonText = "QUANTUM";
             targetSkin = "filterSkinQuantum";
             destColor = "14334500";
+            sessionTrack = eventConstants.QUANTUM;
         }
 
         this.view.filterWidget.animate(
             kony.ui.createAnimation({
-                //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
                 100: {
                     left: leftPos,
                     "stepConfig": {}
@@ -721,19 +726,8 @@ define({
             }, {
                 animationEnd: function() {}
             });
-        /*
-     this.view.filterButton.animate(
-	  kony.ui.createAnimation({
-		//50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
-		100:{backgrounColor:destColor,"stepConfig":{}}}),
-	  {delay:0,fillMode:kony.anim.FILL_MODE_FORWARDS,duration:.22},
-	  {animationEnd: function() {
-        	self.view.filterButton.text=buttonText;
-      }});
-  */
         this.view.filterButton.animate(
             kony.ui.createAnimation({
-                //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
                 100: {
                     opacity: 0,
                     "stepConfig": {}
@@ -765,6 +759,7 @@ define({
 
                 }
             });
+        this.filterSessionTiles(sessionTrack);
     },
 
     /**
@@ -851,6 +846,9 @@ define({
      * 	@private
      */
     setSpeakerProfile: function(eventObject) {
+      	this.view.flxRatingContainer.height=kony.flex.USE_PREFERRED_SIZE;
+      	this.view.imgThanks.isVisible=false;
+    	this.view.lblThankyou.isVisible=false;
         var id = eventObject.id;
         var len = id.length;
         var startIndex = eventConstants.SESSION_TILE_ID.length;
@@ -914,5 +912,59 @@ define({
             this.view.buttonDay1.skin = "sknButtonInActive";
             this.view.buttonDay1.focusSkin = "sknButtonActive";
         }
-    }
+    },
+    /**
+     *	@function filterSessionTiles
+     * 	@description This function is used to toggle the Visibility based on the category choosen
+     *	@param sessionTrackId {Integer} sessiontrack which is choosen by the user.
+     * 	@private
+     */
+    filterSessionTiles: function(sessionTrackId) {
+        var isFirstTile = false;
+        var sessionCount = this.sessionsList.length;
+        for (var index = 0; index < sessionCount; index++) {
+            var id = eventConstants.SESSION_TILE_ID + index;
+            if (sessionTrackId === eventConstants.KEYNOTE) {
+                this.view[id].isVisible = true;
+                if (!isFirstTile) {
+                    this.view[id].top = "131dp";
+                    isFirstTile = true;
+                    continue;
+                }
+                this.view[id].top = "0dp";
+            } else if (this.view[id].sessionTrackId !== sessionTrackId) {
+                this.view[id].isVisible = false;
+            } else {
+                this.view[id].isVisible = true;
+                if (!isFirstTile) {
+                    this.view[id].top = "131dp";
+                    isFirstTile = true;
+                    continue;
+                }
+                this.view[id].top = "0dp";
+            }
+        }
+    },
+  onClickOfSubmit:function(){
+    this.view.flxRatingContainer.animate(this.createAnimationObject("0dp"), this. getPlatformSpecific(), null);
+    this.view.imgThanks.isVisible=true;
+    this.view.lblThankyou.isVisible=true;
+  },
+  createAnimationObject:function(height){
+        var animationObejct=kony.ui.createAnimation({
+        100: {
+          "height": height,
+          "stepConfig": {}
+        }
+      });
+        return animationObejct;
+      },
+      getPlatformSpecific:function(){
+        var specificObj= {
+        delay: 0,
+        fillMode: kony.anim.FILL_MODE_FORWARDS,
+        duration: 0.22
+      };
+        return specificObj;
+      }
 });

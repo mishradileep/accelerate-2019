@@ -6,10 +6,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "12dp"
-    },
     "_margin_": [
         1,
         1,
@@ -22,19 +18,15 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "number",
-        "value": "12"
-    },
-    "_skin_": "s75bafbe26684bd7a4e2767872d75549",
-    "_text_": "Somewhat valuable",
+    "_skin_": "sbb93d5ccd1345f8a82717752a8d0a0b",
+    "_text_": "Presentations",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "15dp"
     },
     "_width_": {
-        "type": "string",
-        "value": "91dp"
+        "type": "ref",
+        "value": "preferred"
     },
     "_wrapping_": 2,
     "android": {
@@ -50,7 +42,7 @@
     },
     "containerweight": 100,
     "contentalignment": 5,
-    "id": "ratingLeastLabel",
+    "id": "lblPresentation",
     "info": null,
     "ipad": {
         "psp": {
@@ -60,24 +52,18 @@
     "iphone": {
         "psp": {
             "wrapping": 2
-        },
-        "textStyle": {
-            "lineSpacing": 1
         }
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "a99746b8f37d44a687f5c4eb2ffb8038",
+    "kuid": "icdb7ddefe5446558f2ebd4f53793621",
     "name": "kony.ui.Label",
-    "parent": "ratingSystemLabels",
-    "pf": "userwidgetmodel",
+    "parent": "feedbackMaster",
+    "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},
     "tooltip": "",
-    "vizProps": {
-        "hide": false
-    },
     "wType": "Label",
     "zindex": 1
 }
