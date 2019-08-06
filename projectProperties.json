@@ -87,7 +87,9 @@
     "apmserviceresponse": "false",
     "apmtouchorclick": "",
     "appEvents": {
-        "mobile": {}
+        "mobile": {
+            "postappinit": "AS_AppEvents_hf9bdba361244e8884a25e0b647863b6"
+        }
     },
     "appaddrkey": "",
     "appidkey": "KonyAccelerate",

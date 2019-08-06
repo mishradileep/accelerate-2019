@@ -37,7 +37,7 @@
     "canUpdateUI": true,
     "children": [
         "agendaTitle",
-        "filterSlider"
+        "flxFilter"
     ],
     "clipbounds": true,
     "containerweight": 100,

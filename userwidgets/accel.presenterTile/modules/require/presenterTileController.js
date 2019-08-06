@@ -4,7 +4,7 @@ define(function() {
 
 
 
-  /**
+    /**
      * @function setData
      * @description This function will set data to details flex
      * @param presenter The presenter object
@@ -16,6 +16,8 @@ define(function() {
       this.view.speakerTitle.text = presenterObject.speaker_title;
       this.view.speakerInfo.text = presenterObject.shortBio;
       this.view.speakerImage.src = presenterObject.speaker_profile_pic;
+      var tracks = presenterObject.tracks ? (presenterObject.tracks) : [];
+      this.setTracks(tracks);
     },
 
 
@@ -42,6 +44,28 @@ define(function() {
       if(this.onClickListener) {
         this.onClickListener(this.presenterObject);
       }
+    },
+
+    /**
+     * @function setTracks
+     * @description This function is used to set tracks in a map for presenter
+     * @param tracks The array of track ids
+     * @private
+     */
+    setTracks : function(tracks){
+      this.tracks = {};
+      for(var index=0; index<tracks.length; index++){
+        this.tracks[tracks[index]]= 1;
+      }
+    },
+
+    /**
+     * @function setTracks
+     * @description This function is used to return track map
+     * @private
+     */
+    getTracks : function(){
+      return this.tracks;
     }
 
   };

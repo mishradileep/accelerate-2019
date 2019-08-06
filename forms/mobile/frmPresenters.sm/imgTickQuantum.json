@@ -1,13 +1,15 @@
 {
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "29dp"
+        "value": "7dp"
     },
     "_left_": {
         "type": "string",
-        "value": "2dp"
+        "value": "12dp"
     },
     "_margin_": [
         0,
@@ -15,51 +17,49 @@
         0,
         0
     ],
-    "_orientation_": 6,
     "_padding_": [
         0,
         0,
         0,
         0
     ],
-    "_percent_": true,
-    "_skin_": "s3f1c5f6b87e4972b70f695cfa637645",
+    "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
+    "_src_": "tickinactive.png",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "10dp"
     },
     "_width_": {
         "type": "string",
-        "value": "33.33%"
+        "value": "9dp"
     },
-    "allboxes": [],
-    "autogrowmode": 0,
     "canUpdateUI": true,
     "centery": {
         "type": "string",
         "value": "50%"
     },
-    "children": [
-        "filterButton"
-    ],
-    "clipbounds": true,
     "containerweight": 100,
-    "enablescrolling": true,
-    "id": "filterWidget",
+    "context": {
+        "channel": "mobile",
+        "formID": "frmPresenters",
+        "platform": "iphone",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "id": "imgTickQuantum",
+    "imagescalemode": 1,
     "info": null,
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "af265d4129174461ab0138ab9593572b",
-    "layouttype": 2,
-    "name": "kony.ui.FlexContainer",
-    "parent": "filterSlider",
+    "kuid": "d4c28efc40bd43d4adcb70d3b0392656",
+    "name": "kony.ui.Image2",
+    "parent": "flxFilterQuantum",
     "pf": "frmPresenters",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "retainflowhorizontalalignment": false,
-    "snapgridsize": 10,
-    "snaptogrid": true,
-    "wType": "FlexContainer",
-    "widgetalignment": 1,
+    "srcType": 1,
+    "wType": "Image",
+    "widgetalignment": 5,
     "zindex": 1
 }

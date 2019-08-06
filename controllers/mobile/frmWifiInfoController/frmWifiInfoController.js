@@ -8,9 +8,9 @@ define({
         * @private
     */
   formWifiInfoPostShowAction: function() {
-    let accelerateEventData = kony.store.getItem("accelerateEventData");
-    if (!kony.sdk.isNullOrUndefined(accelerateEventData)) {
-      let wifiInformation = accelerateEventData.wifiInformation;
+    let eventData = accelerateEventData.eventdata.records[0];
+    if (!kony.sdk.isNullOrUndefined(eventData)) {
+      let wifiInformation = eventData.wifi_info[0];
       let wifiUserName = (wifiInformation.hasOwnProperty("wifi_name")) ? wifiInformation.wifi_name : "";
       let wifiPassword = (wifiInformation.hasOwnProperty("wifi_password")) ? wifiInformation.wifi_password : "";
       this.view.lblNetworkName.text = wifiUserName;
@@ -20,45 +20,7 @@ define({
       this.animateWifiCircles(this.view.flxWifiCircle2, 0, 3);
       this.animateWifiCircles(this.view.flxWifiCircle3, 0, 3);
       this.animateWifiCard("62%");
-    } else {
-      fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.WIFI_OBJECT_NAME, {}, this.wifiInfoFetchSuccess.bind(this), this.wifiInfoFetchFailure.bind(this));
-    }
-
-  },
-
-  /**
-     * @function wifiInfoFetchSuccess
-     * @description This function is invoked in the success of wifi object and used to set the data to form
-     * @param successResponse The success response of the wifi object
-     * @private
-     */
-  wifiInfoFetchSuccess: function(successResponse) {
-    let wifiInfo = successResponse.hasOwnProperty("records") ? successResponse.records : null;
-    if (wifiInfo !== null) {
-      let wifiData = wifiInfo[0];
-      let wifiUserName = (wifiData.hasOwnProperty("wifi_name")) ? wifiData.wifi_name : "";
-      let wifiPassword = (wifiData.hasOwnProperty("wifi_password")) ? wifiData.wifi_password : "";
-      this.view.lblNetworkName.text = wifiUserName;
-      this.view.lblPasswordValue.text = wifiPassword;
-      this.view.flxWifiImageContainer.isVisible = true;
-      this.animateWifiCircles(this.view.flxWifiCircle1, 0, 3);
-      this.animateWifiCircles(this.view.flxWifiCircle2, 0, 3);
-      this.animateWifiCircles(this.view.flxWifiCircle3, 0, 3);
-      this.animateWifiCard("62%");
-    } else {
-      kony.print("Wifi Info is empty in the success response");
-    }
-  },
-
-  /**
-     * @function wifiInfoFetchFailure
-     * @description This function is invoked in the failure of wifi object and used to set the data to form
-     * @param failureResponse The failure response of the wifi object
-     * @private
-     */
-  wifiInfoFetchFailure: function(failureResponse) {
-    kony.print(eventConstants.GENERIC_EXCEPTION_MESSAGE);
-    kony.print("Exception occured is" + JSON.stringify(failureResponse));
+    } 
   },
 
   /**

@@ -1,31 +1,52 @@
 define({
-    /**
-      	* @function  onNavigate
-          * @description This function is invoked at the onNavigate of the form and checks 
-          			whether the presenter info is fetched previously 
-          			If the presenter info is already fetched it will display the 
-                      data from the store or else it will fetch the presenter info 
-          * @private
-      */
-    onNavigate: function() {
-        var presenterSessionData = null;
-        //To Do Handle the offline data -- kony.store.getItem("presenterSessionData");
-        this.view.presenterScroll.removeAll();
+  /**
+    	* @function  onNavigate
+        * @description This function is invoked at the onNavigate of the form and checks 
+        			whether the presenter info is fetched previously 
+        			If the presenter info is already fetched it will display the 
+                    data from the store or else it will fetch the presenter info 
+        * @private
+    */
+  onNavigate : function() {
+    this.filtersSelected = [];
+    this.initializeFilter();
+    var presenterSessionData = null;
+    //To Do Handle the offline data -- kony.store.getItem("presenterSessionData");
+    this.view.presenterScroll.removeAll();   
 
-        if (!kony.sdk.isNullOrUndefined(presenterSessionData)) {
-            this.processPresenterSessionData(presenterSessionData);
-        } else {
-            var queryParams = {
-                "bindSessionInfoWithSpeaker": true
-            };
-            fetchObjectData(eventConstants.OBJECT_SERVICE_NAME,
-                eventConstants.PRESENTER_OBJECT_NAME,
-                queryParams,
-                this.presenterFetchSuccess.bind(this),
-                this.presenterFetchFailure.bind(this));
-        }
+//     if(!kony.sdk.isNullOrUndefined(presenterSessionData)) {
+//       this.processPresenterSessionData(presenterSessionData);
+//     } else {
+//       var queryParams = {
+//         "bindSessionInfoWithSpeaker" : true
+//       };
+//       fetchObjectData(eventConstants.OBJECT_SERVICE_NAME,
+//                       eventConstants.PRESENTER_OBJECT_NAME,
+//                       queryParams, 
+//                       this.presenterFetchSuccess.bind(this),
+//                       this.presenterFetchFailure.bind(this));         
+//     }
+    
+		this.processPresenterSessionData(accelerateSpeakerData.eventSpeakerData.records);
+  },
 
-    },
+  /**
+    	* @function  setFilteronClick
+        * @description This function is used to set Filter Click Action
+        * @private
+    */
+  setFilteronClick : function(){
+    var self = this;
+    this.view.flxFilterKeynote.onClick = function(eventobject) {
+      self.speakerFilter(eventobject);
+    };
+    this.view.flxFilterQuantum.onClick = function(eventobject) {
+      self.speakerFilter(eventobject);
+    };
+    this.view.flxFilterDBX.onClick = function(eventobject) {
+      self.speakerFilter(eventobject);
+    };
+  },
 
     /**
      * @function  setFilteronClick
@@ -53,16 +74,15 @@ define({
        * @private
        */
 
+
     presenterFetchSuccess: function(response) {
         var presenterSessionData = response.hasOwnProperty("records") ? response.records : null;
-
-        if (!kony.sdk.isNullOrUndefined(presenterSessionData)) {
-            kony.store.setItem("presenterSessionData", presenterSessionData);
+        if(!kony.sdk.isNullOrUndefined(presenterSessionData)) {
+            kony.store.setItem("presenterSessionData",presenterSessionData);
             this.processPresenterSessionData(presenterSessionData);
         } else {
             kony.print("Speaker Data not present");
         }
-
     },
 
     /**
@@ -126,6 +146,7 @@ define({
      * @param presenter The presenter object
      * @private
      */
+
     onClickOfPresenter: function(presenter) {
         this.view.speakerName.text = presenter.speaker_name;
         this.view.speakerTitle.text = presenter.speaker_title;
@@ -168,125 +189,131 @@ define({
      * @description To do..
      * @private
      */
-    createSessionTile: function(id, top, data) {
-        var sessionTile = new tiles.sessionTile({
-            "autogrowMode": kony.flex.AUTOGROW_NONE,
-            "clipBounds": false,
-            "height": "152dp",
-            "id": id,
-            "isVisible": true,
-            "layoutType": kony.flex.FREE_FORM,
-            "left": "0dp",
-            "masterType": constants.MASTER_TYPE_DEFAULT,
-            "isModalContainer": false,
-            "skin": "CopyslFbox0j4c69221be4c47",
-            "top": top,
-            "width": "100%",
-            "zIndex": 1,
-            "overrides": {
-                "sessionLocationIcon": {
-                    "src": "agendatilelocationicon.png"
-                },
-                "sessionTile": {
-                    "bottom": "viz.val_cleared",
-                    "height": "152dp",
-                    "isVisible": true,
-                    "left": "0dp",
-                    "top": "0dp",
-                    "width": "100%"
-                },
-                "sessionTimeIcon": {
-                    "src": "agendatiletimeicon.png"
-                },
-                "tileBGImageKony": {
-                    "isVisible": true,
-                    "src": "agendatilekony.png"
-                }
-            }
-        }, {
-            "retainFlowHorizontalAlignment": false,
-            "overrides": {}
-        }, {
-            "overrides": {}
-        });
-        sessionTile.setTitleData(data)
-        this.view.flexSessions.add(sessionTile);
-    },
+  createSessionTile:function(id,top,data){
+    var sessionTile = new tiles.sessionTile({
+      "autogrowMode": kony.flex.AUTOGROW_NONE,
+      "clipBounds": false,
+      "height": "152dp",
+      "id": id,
+      "isVisible": true,
+      "layoutType": kony.flex.FREE_FORM,
+      "left": "0dp",
+      "masterType": constants.MASTER_TYPE_DEFAULT,
+      "isModalContainer": false,
+      "skin": "CopyslFbox0j4c69221be4c47",
+      "top": top,
+      "width": "100%",
+      "zIndex": 1,
+      "overrides": {}
+    }, {
+      "retainFlowHorizontalAlignment": false,
+      "overrides": {}
+    }, {
+      "overrides": {}
+    });
+    sessionTile.setTitleData(data);
+    this.view.flexSessions.add(sessionTile);
+  },
 
     /**
      * @function spekerFilter
-     * @description The function is used to animate and change the speaker filter based on the track selected
+     * @description The function is used to switch the skins from unselected to selected and vice versa
      * @param eventobject The event object or the widget info of the tab which is selected
      * @private
      */
-    speakerFilter: function(eventobject) {
-        var self = this;
-        var leftPos = "0%";
-        var buttonText = "ALL";
-        var targetSkin = "filterSkinAll";
-        var destColor = "";
-        if (eventobject.id == "filterAll") {
-            leftPos = "0%";
-            buttonText = "ALL";
-            targetSkin = "filterSkinAll";
-            destColor = "1F232900";
-        } else if (eventobject.id == "filterDBX") {
-            leftPos = "33.33%";
-            buttonText = "DBX";
-            targetSkin = "filterSkinDBX";
-            destColor = "4B3A6600";
-        } else {
-            leftPos = "66.66%";
-            buttonText = "QUANTUM";
-            targetSkin = "filterSkinQuantum";
-            destColor = "14334500";
-        }
-
-        this.view.filterWidget.animate(
-            kony.ui.createAnimation({
-                100: {
-                    left: leftPos,
-                    "stepConfig": {}
-                }
-            }), {
-                delay: 0,
-                fillMode: kony.anim.FILL_MODE_FORWARDS,
-                duration: 0.22
-            }, {
-                animationEnd: function() {}
-            });
-
-        this.view.filterButton.animate(
-            kony.ui.createAnimation({
-                100: {
-                    opacity: 0,
-                    "stepConfig": {}
-                }
-            }), {
-                delay: 0,
-                fillMode: kony.anim.FILL_MODE_FORWARDS,
-                duration: 0.1
-            }, {
-                animationEnd: function() {
-
-                    self.view.filterButton.text = buttonText;
-                    self.view.filterButton.skin = targetSkin;
-
-                    self.view.filterButton.animate(
-                        kony.ui.createAnimation({
-                            100: {
-                                opacity: 1,
-                                "stepConfig": {}
-                            }
-                        }), {
-                            delay: 0,
-                            fillMode: kony.anim.FILL_MODE_FORWARDS,
-                            duration: 0.1
-                        }, {
-                            animationEnd: function() {}
-                        });
-
-                }
-         });
+  speakerFilter: function(eventobject) {
+    var lblName,imgName,selectedFilter;
+    switch (eventobject.id){
+      case "flxFilterKeynote" :
+        lblName = "lblKeynote";
+        imgName = "imgTickKeynote";
+        selectedFilter = eventConstants.KEYNOTE;
+        break;
+      case "flxFilterQuantum" :
+        lblName = "lblQuantum";
+        imgName = "imgTickQuantum";
+        selectedFilter = eventConstants.QUANTUM;
+        break;
+      case "flxFilterDBX" :
+        lblName = "lblDBX";
+        imgName = "imgTickDBX";
+        selectedFilter = eventConstants.DBX;
+        break;
     }
+
+    if(eventobject.skin === "sknflxfilterunselected"){
+      this.view[eventobject.id].skin = "sknflxfilterselected";
+      this.view[lblName].skin = "sknlblfilterselected";
+      this.view[imgName].src = "tickactive.png";
+      this.filtersSelected.push(selectedFilter);
+    } else {
+      this.view[eventobject.id].skin = "sknflxfilterunselected";
+      this.view[lblName].skin = "sknlblfilterunselected";
+      this.view[imgName].src = "tickinactive.png";
+      var index = this.filtersSelected.indexOf(selectedFilter);
+      if (index > -1) {
+        this.filtersSelected.splice(index, 1);
+      }
+    }
+    if(this.filtersSelected.length>0) {
+      this.showFilteredResults();     
+    }else{
+      this.showAllPresenters();
+    }
+  },
+
+  /**
+     * @function showFilteredResults
+     * @description The function is used to filter the speakers based on the filter seleted and toggle the visibility
+     * @private
+     */
+  showFilteredResults : function(){
+    var presenters = this.view.presenterScroll.widgets();
+    for(var index=0; index<presenters.length; index++) {
+      var isPresenterIntrack = false;
+      var tracks = this.view[presenters[index].id].getTracks();
+      for(var filterIndex =0; filterIndex<this.filtersSelected.length; filterIndex++) {
+        if(tracks[this.filtersSelected[filterIndex]]) {
+          isPresenterIntrack = true;
+          break;
+        }
+      }
+      this.view[presenters[index].id].isVisible = isPresenterIntrack;
+    }
+  },
+
+  /**
+     * @function showAllPresenters
+     * @description The function is used to set the visibility on to all the presenters if there is no filter
+     * @private
+     */
+  showAllPresenters : function(){
+    var presenters = this.view.presenterScroll.widgets();
+    for(var index=0; index<presenters.length; index++) {
+      this.view[presenters[index].id].isVisible = true;
+    }
+  },
+
+  /**
+     * @function initializeFilter
+     * @description The function is used to initialize the filters
+     * @private
+     */
+  initializeFilter : function(){
+
+    //Reset DBX filter
+    this.view.lblDBX.skin = "sknlblfilterunselected";
+    this.view.flxFilterDBX.skin = "sknflxfilterunselected";
+    this.view.imgTickDBX.src = "tickinactive.png";
+
+    //Reset QUANTUM filter
+    this.view.lblQuantum.skin = "sknlblfilterunselected";
+    this.view.flxFilterQuantum.skin = "sknflxfilterunselected";
+    this.view.imgTickQuantum.src = "tickinactive.png";
+
+    //Reset KEYNOTE filter
+    this.view.lblKeynote.skin = "sknlblfilterunselected";
+    this.view.flxFilterKeynote.skin = "sknflxfilterunselected";
+    this.view.imgTickQuantum.src = "tickinactive.png";
+  }
 });
