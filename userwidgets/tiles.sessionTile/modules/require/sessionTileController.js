@@ -9,6 +9,7 @@ define(function() {
       	isAddedToMySchedule:null,
       	myScheduleIndicatorImage:"added.png",
       	agendaIndicatorImage:"add.png",
+      	agendaContainerSkin:"sknGreenSelected",
         /**
          *	@function setTitleData
          * 	@description This function is used to set the data to the session tile
@@ -65,10 +66,22 @@ define(function() {
             var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
             return hours + ":" + minutes + ":" + " " + am_pm;
         },
+       /**
+         *	@function sessionToMySchedule
+         * 	@description This function is used to add sessions to strore in phone
+         * 	@private
+         */
       sessionToMySchedule:function(){
         this.isAddedToMySchedule=true;
         this.sessionData.isAddedToMySchedule=true;
         this.view.imgStatus.src=this.myScheduleIndicatorImage;
+        this.view.addAgendaContainer.skin=this.agendaContainerSkin;
+        var myAgendaData=kony.store.getItem("myAgendaData");
+        if(kony.sdk.isNullOrUndefined(myAgendaData)){
+          myAgendaData=[];
+        }
+        myAgendaData.push(this.sessionData);
+        kony.store.setItem("myAgendaData", myAgendaData);
       }
     };
 });

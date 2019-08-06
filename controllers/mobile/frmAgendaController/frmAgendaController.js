@@ -117,6 +117,7 @@ define({
         this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
         this.view.CopyLabel0f74c659ce7754e.text = this.view[eventobject.id].sessionData.session_desc;
       	this.view.sessionTileAnim.imgStatus.src=this.view[eventobject.id].imgStatus.src;
+      	this.view.sessionTileAnim.addAgendaContainer.skin=this.view[eventobject.id].addAgendaContainer.skin;
         this.view.sessionTileAnim.sessionLocation.text = this.thisCard.sessionLocation.text;
         this.view.sessionTileAnim.tileBGImageKony.src = this.thisCard.tileBGImageKony.src;
         var cardFrame = this.thisCard.frame.y;
@@ -942,9 +943,7 @@ define({
     }
   },
   
-  createPresentationMaterialInstace:function(id, left){
-//     var materialInstace=new co
-  }
+ 
   
   
 });

@@ -39,10 +39,9 @@
     "canUpdateUI": true,
     "containerweight": 100,
     "contentalignment": 5,
-    "disabledSkins": {
-        "focusSkin": "s9502514e11d48069838bf3afd8c680d"
-    },
+    "disabledSkins": {},
     "displaytext": true,
+    "focusskin": "s446aa5faf8b4de98408b6a5c1f71d46",
     "id": "btnSubmit",
     "info": null,
     "iscustomlayout": false,

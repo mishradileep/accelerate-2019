@@ -45,7 +45,8 @@
         "consoleScroll",
         "imageBack",
         "buttonBack",
-        "menuMain"
+        "menuMain",
+        "pdfBrowser"
     ],
     "containerweight": 100,
     "controllerInfo": {

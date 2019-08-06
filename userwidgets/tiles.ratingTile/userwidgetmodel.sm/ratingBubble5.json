@@ -39,11 +39,9 @@
     },
     "containerweight": 100,
     "contentalignment": 5,
-    "disabledSkins": {
-        "focusSkin": "s9502514e11d48069838bf3afd8c680d"
-    },
+    "disabledSkins": {},
     "displaytext": true,
-    "focusskin": null,
+    "focusskin": "s1909e0aaedb4dd7ab7f31b186b29978",
     "id": "ratingBubble5",
     "info": null,
     "iscustomlayout": false,

@@ -43,7 +43,7 @@
         "topLevelBox": null
     },
     "id": "imgStatus",
-    "imagescalemode": 0,
+    "imagescalemode": 1,
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
