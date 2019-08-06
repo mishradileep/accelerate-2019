@@ -1,22 +1,28 @@
 {
-    "AS_FlexContainer_fdff18af953b403f97231e492edd8ada": {
-        "id": "AS_FlexContainer_fdff18af953b403f97231e492edd8ada",
+    "AS_Segment_e5403eb6299543ddab008bdc2ce59e08": {
+        "id": "AS_Segment_e5403eb6299543ddab008bdc2ce59e08",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
+        }, {
+            "datatype": "number",
+            "name": "sectionNumber"
+        }, {
+            "datatype": "number",
+            "name": "rowNumber"
         }],
         "contextObj": {
             "name": "frmFloorMap",
             "type": "forms",
-            "platform": null,
+            "platform": "",
             "KUID": "cc9b0c5e9b1f4b8cafefd012a604857d"
         },
         "language": "js",
         "actions": [{
-            "id": "ADD_SNIPPET__aa57498bb37648938a705492d3c5b3c4",
+            "id": "ADD_SNIPPET__d73febb8422b4bb2b8104a998b7d5ceb",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "let segmentVisibility = this.view.sgmntFloorMap.isVisible;\nthis.view.sgmntFloorMap.isVisible = !segmentVisibility",
+            "codeSnippet": "this.onSegmentRowClick(rowNumber)",
             "parentId": null,
             "callbackType": null
         }]

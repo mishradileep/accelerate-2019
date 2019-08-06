@@ -7,10 +7,8 @@
             "lblListItem": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
-            }
-        },
-        {
-            "lblListItem": {
+            },
+            "lblSeparator": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             }
@@ -19,10 +17,8 @@
             "lblListItem": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
-            }
-        },
-        {
-            "lblListItem": {
+            },
+            "lblSeparator": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             }
@@ -31,10 +27,8 @@
             "lblListItem": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
-            }
-        },
-        {
-            "lblListItem": {
+            },
+            "lblSeparator": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             }
@@ -43,10 +37,8 @@
             "lblListItem": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
-            }
-        },
-        {
-            "lblListItem": {
+            },
+            "lblSeparator": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             }
@@ -55,10 +47,58 @@
             "lblListItem": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
+            },
+            "lblSeparator": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
             }
         },
         {
             "lblListItem": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblSeparator": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            }
+        },
+        {
+            "lblListItem": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblSeparator": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            }
+        },
+        {
+            "lblListItem": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblSeparator": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            }
+        },
+        {
+            "lblListItem": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblSeparator": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            }
+        },
+        {
+            "lblListItem": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblSeparator": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
             }
@@ -71,7 +111,7 @@
     "_indicator_": "none",
     "_left_": {
         "type": "string",
-        "value": "10dp"
+        "value": "20dp"
     },
     "_margin_": [
         0,
@@ -88,16 +128,20 @@
     ],
     "_right_": {
         "type": "string",
-        "value": "10dp"
+        "value": "18dp"
     },
     "_top_": {
         "type": "string",
-        "value": "20%"
+        "value": "136dp"
     },
     "autogrowmode": 1,
     "canUpdateUI": true,
     "containerweight": 100,
     "counter": "09",
+    "disabledSkins": {
+        "rowFocusSkin": "s37016420aa141349fdc70c20d117abd",
+        "rowSkin": "s9c6015ff7d04f9c8e709f34dd883634"
+    },
     "focusedindex": null,
     "focuseditem": null,
     "groupcells": false,
@@ -111,7 +155,7 @@
     },
     "iphone": {
         "psp": {
-            "indicator": "rowselect"
+            "indicator": "none"
         }
     },
     "iscustomlayout": false,
@@ -120,6 +164,7 @@
     "masterdata": {},
     "name": "kony.ui.SegmentedUI2",
     "needpageindicator": true,
+    "onrowclick": "AS_Segment_e5403eb6299543ddab008bdc2ce59e08",
     "pageoffdotimage": "pageoffdot.png",
     "pageondotimage": "pageondot.png",
     "paginationconfig": {
@@ -132,8 +177,6 @@
     "retainselection": false,
     "rowTemplateId": "a29009e1650549bd84047bdd24e2f874",
     "rowcounter": 9,
-    "rowfocusskin": "s37016420aa141349fdc70c20d117abd",
-    "rowskin": "s5c2d17521d7482c902344fd9bd3a4ab",
     "rowtemplate": "flxFloorMapContainer",
     "screenlevelwidget": false,
     "seccounter": 0,
@@ -145,9 +188,7 @@
     "selecteditems": null,
     "selectedsectionindex": 0,
     "selectionbehavior": "default",
-    "separatorcolor": "57575700",
-    "separatorrequired": true,
-    "separatorthickness": 1,
+    "separatorrequired": false,
     "showscrollbars": false,
     "viewtype": "tableview",
     "vizProps": {},
@@ -155,7 +196,9 @@
     "widgetalignment": 5,
     "widgetdatamap": {
         "flxFloorMapContainer": "flxFloorMapContainer",
-        "lblListItem": "lblListItem"
+        "lblListItem": "lblListItem",
+        "lblSeparator": "lblSeparator"
     },
+    "widgetskin": "s0cba9a968c742bb8bc747acb1526710",
     "zindex": 2
 }

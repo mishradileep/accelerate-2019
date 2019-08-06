@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "15%"
+        "value": "100dp"
     },
     "_left_": {
         "type": "string",
@@ -26,7 +26,7 @@
     "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
     "_top_": {
         "type": "string",
-        "value": "10%"
+        "value": "70dp"
     },
     "_width_": {
         "type": "string",
@@ -57,5 +57,5 @@
     "snaptogrid": true,
     "wType": "FlexContainer",
     "widgetalignment": 1,
-    "zindex": 10
+    "zindex": 1
 }

@@ -1,6 +1,6 @@
 {
-    "AS_FlexContainer_fdff18af953b403f97231e492edd8ada": {
-        "id": "AS_FlexContainer_fdff18af953b403f97231e492edd8ada",
+    "AS_Form_b656dff519014f869a281c28a38e7cb7": {
+        "id": "AS_Form_b656dff519014f869a281c28a38e7cb7",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -9,14 +9,14 @@
         "contextObj": {
             "name": "frmFloorMap",
             "type": "forms",
-            "platform": null,
+            "platform": "",
             "KUID": "cc9b0c5e9b1f4b8cafefd012a604857d"
         },
         "language": "js",
         "actions": [{
-            "id": "ADD_SNIPPET__aa57498bb37648938a705492d3c5b3c4",
+            "id": "ADD_SNIPPET__c005a435b4ed4a27849a8ddfd94bdd05",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "let segmentVisibility = this.view.sgmntFloorMap.isVisible;\nthis.view.sgmntFloorMap.isVisible = !segmentVisibility",
+            "codeSnippet": "this.formFloorMapPreshowAction();",
             "parentId": null,
             "callbackType": null
         }]

@@ -37,6 +37,7 @@
     "canUpdateUI": true,
     "containerweight": 69,
     "detecttelnumber": true,
+    "enablezoom": true,
     "htmlstring": "",
     "id": "brwsrInnerLocation",
     "info": null,

@@ -28,6 +28,7 @@
     "androidwearos": {
         "needAppMenu": false
     },
+    "bounces": false,
     "canUpdateUI": true,
     "children": [
         "mobileheader",
@@ -49,6 +50,7 @@
     "device": "iPhoneXS",
     "displayorientation": 1,
     "enabledforidletimeout": false,
+    "enablescrolling": false,
     "id": "frmFloorMap",
     "info": null,
     "initdone": false,
@@ -101,8 +103,9 @@
     "needappmenu": false,
     "paddinginpixel": false,
     "platform": "iphone",
-    "prevDevice": "iPhoneXS",
-    "prevPlatform": "iphone",
+    "preshow": "AS_Form_b656dff519014f869a281c28a38e7cb7",
+    "prevDevice": "Pixel3",
+    "prevPlatform": "android",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainscrollposition": false,

@@ -26,14 +26,13 @@
     "_skin_": "s87c232132c841a0b77e21ca7507bcbb",
     "_top_": {
         "type": "string",
-        "value": "25%"
+        "value": "100%"
     },
     "_width_": {
         "type": "string",
         "value": "100%"
     },
     "allboxes": [],
-    "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
         "brwsrInnerLocation"
@@ -55,6 +54,7 @@
     "retainflowhorizontalalignment": false,
     "snapgridsize": 10,
     "snaptogrid": true,
+    "vizProps": {},
     "wType": "FlexContainer",
     "widgetalignment": 1,
     "zindex": 1

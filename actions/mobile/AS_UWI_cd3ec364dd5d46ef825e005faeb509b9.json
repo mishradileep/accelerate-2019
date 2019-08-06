@@ -1,6 +1,6 @@
 {
-    "AS_FlexContainer_fdff18af953b403f97231e492edd8ada": {
-        "id": "AS_FlexContainer_fdff18af953b403f97231e492edd8ada",
+    "AS_UWI_cd3ec364dd5d46ef825e005faeb509b9": {
+        "id": "AS_UWI_cd3ec364dd5d46ef825e005faeb509b9",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -9,14 +9,14 @@
         "contextObj": {
             "name": "frmFloorMap",
             "type": "forms",
-            "platform": null,
+            "platform": "",
             "KUID": "cc9b0c5e9b1f4b8cafefd012a604857d"
         },
         "language": "js",
         "actions": [{
-            "id": "ADD_SNIPPET__aa57498bb37648938a705492d3c5b3c4",
+            "id": "ADD_SNIPPET__e0affdc8abd847a4bb4fa340cb3dbcbf",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "let segmentVisibility = this.view.sgmntFloorMap.isVisible;\nthis.view.sgmntFloorMap.isVisible = !segmentVisibility",
+            "codeSnippet": "this.animatePDFContainer(\"100%\")",
             "parentId": null,
             "callbackType": null
         }]

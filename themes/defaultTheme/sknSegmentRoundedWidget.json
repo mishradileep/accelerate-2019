@@ -25,7 +25,7 @@
   "kiosk": {
     "font_name": "None"
   },
-  "kuid": "se4e5e33c97444c1b4cff342455221b9",
+  "kuid": "s0cba9a968c742bb8bc747acb1526710",
   "spaan": {
     "font_name": "Helvetica"
   },
@@ -50,7 +50,7 @@
   "tabrcandroid": {
     "font_name": "default"
   },
-  "wType": "FlexContainer",
+  "wType": "Segment",
   "watchos": {
     "font_name": "System"
   },
