@@ -14,8 +14,8 @@ var eventConstants = {
   SESSION_TILE_ID:"tile",
   PRESENTER_OBJECT_NAME : "speakers_master",
   ASPECT_RATION_CONSTANT:0.68,
-  DBX : 3,
-  QUANTUM : 2,
-  KEYNOTE : 1,
+  DBX : 2,
+  QUANTUM : 1,
+  KEYNOTE : 3,
   DATA_SYNC_OBJECT : "data_sync_info"
 };

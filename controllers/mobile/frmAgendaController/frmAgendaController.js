@@ -846,6 +846,7 @@ define({
      * 	@private
      */
     setSpeakerProfile: function(eventObject) {
+      	this.view.flxRatingContainer.isVisible=true;
       	this.view.flxRatingContainer.height=kony.flex.USE_PREFERRED_SIZE;
       	this.view.imgThanks.isVisible=false;
     	this.view.lblThankyou.isVisible=false;
@@ -870,7 +871,8 @@ define({
                 if (speakerObject.master_speaker_id == speakers_master[index].speaker_id) {
                     var speakerBio = speakers_master[index];
                     this.view["speakerName" + speakerIndex].text = speakerBio.speaker_name;
-                    this.view["speakerDesignation" + speakerIndex].text = speakerBio.speaker_title;
+                  	var title=speakerBio.speaker_title.length>20?speakerBio.speaker_title.substring(0,16)+"...": speakerBio.speaker_title;
+                    this.view["speakerDesignation" + speakerIndex].text = title;
                     this.view["speakerDescription" + speakerIndex].text = speakerBio.speaker_bio;
                     this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
                     this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
@@ -946,7 +948,8 @@ define({
         }
     },
   onClickOfSubmit:function(){
-    this.view.flxRatingContainer.animate(this.createAnimationObject("0dp"), this. getPlatformSpecific(), null);
+    //this.view.flxRatingContainer.animate(this.createAnimationObject("0dp"), this. getPlatformSpecific(), null);
+    this.view.flxRatingContainer.isVisible=false;
     this.view.imgThanks.isVisible=true;
     this.view.lblThankyou.isVisible=true;
   },
@@ -963,7 +966,7 @@ define({
         var specificObj= {
         delay: 0,
         fillMode: kony.anim.FILL_MODE_FORWARDS,
-        duration: 0.22
+        duration: 0.5
       };
         return specificObj;
       }

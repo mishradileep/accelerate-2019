@@ -47,25 +47,6 @@ define({
       self.speakerFilter(eventobject);
     };
   },
-
-    /**
-     * @function  setFilteronClick
-     * @description This function is used to set Filter Click Action
-     * @private
-     */
-    setFilteronClick: function() {
-        var self = this;
-        this.view.filterAll.onClick = function(eventobject) {
-            self.speakerFilter(eventobject);
-        };
-        this.view.filterDBX.onClick = function(eventobject) {
-            self.speakerFilter(eventobject);
-        };
-        this.view.filterQuantum.onClick = function(eventobject) {
-            self.speakerFilter(eventobject);
-        };
-    },
-
     /**
        * @function presenterFetchSuccess
        * @description This function is invoked in the success of presenter object and
@@ -155,7 +136,7 @@ define({
         var imgWidth = kony.os.deviceInfo().screenWidth;
         this.view.imgProfileLarge.height = imgWidth * eventConstants.ASPECT_RATION_CONSTANT + "dp";
         if (!kony.sdk.isNullOrUndefined(presenter.sessionsList)) {
-            this.createSessions(JSON.parse(presenter.sessionsList));
+            this.createSessions(presenter.sessionsList);
         }
         this.view.presenterDetail.isVisible = true;
     },
