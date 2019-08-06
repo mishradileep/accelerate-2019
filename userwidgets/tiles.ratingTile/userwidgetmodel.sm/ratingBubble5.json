@@ -19,8 +19,8 @@
         0
     ],
     "_right_": {
-        "type": "number",
-        "value": "0"
+        "type": "string",
+        "value": "3dp"
     },
     "_skin_": "s1909e0aaedb4dd7ab7f31b186b29978",
     "_text_": "5",

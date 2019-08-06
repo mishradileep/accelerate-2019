@@ -3,12 +3,12 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "string",
-        "value": "60dp"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
-        "value": "165dp"
+        "value": "12dp"
     },
     "_margin_": [
         1,
@@ -22,15 +22,19 @@
         0,
         0
     ],
-    "_skin_": "s23fa5a890be4926b62d8759ce5df6e8",
-    "_text_": "Would you like to share any specific feedback with us?",
+    "_right_": {
+        "type": "number",
+        "value": "12"
+    },
+    "_skin_": "s75bafbe26684bd7a4e2767872d75549",
+    "_text_": "Somewhat valuable",
     "_top_": {
         "type": "string",
-        "value": "40dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "80%"
+        "value": "91dp"
     },
     "_wrapping_": 2,
     "android": {
@@ -42,11 +46,11 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50.00%"
+        "value": "50%"
     },
     "containerweight": 100,
     "contentalignment": 5,
-    "id": "lblSampleComment",
+    "id": "ratingLevel3",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,18 +60,24 @@
     "iphone": {
         "psp": {
             "wrapping": 2
+        },
+        "textStyle": {
+            "lineSpacing": 1
         }
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "c5c069898345467b80df098039c2f3d3",
+    "kuid": "a99746b8f37d44a687f5c4eb2ffb8038",
     "name": "kony.ui.Label",
-    "parent": "flxRatingContainer",
-    "pf": "frmAgenda",
+    "parent": "ratingSystemLabels",
+    "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},
     "tooltip": "",
+    "vizProps": {
+        "hide": false
+    },
     "wType": "Label",
     "zindex": 1
 }

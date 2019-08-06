@@ -60,7 +60,7 @@
     "mode": "A",
     "name": "kony.ui.TextArea2",
     "numberofvisiblelines": 3,
-    "parent": "feedbackMaster",
+    "parent": "flxRatingContainer",
     "pf": "frmAgenda",
     "placeholderskin": "s9986a2885af49f9ac826e84814a6009",
     "retaincontentalignment": false,

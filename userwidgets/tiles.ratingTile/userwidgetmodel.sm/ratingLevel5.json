@@ -26,8 +26,8 @@
         "type": "number",
         "value": "12"
     },
-    "_skin_": "s75bafbe26684bd7a4e2767872d75549",
-    "_text_": "Somewhat valuable",
+    "_skin_": "s939c1bc31f84cb9a9c795f6493688e9",
+    "_text_": "Extremely Valuable",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -46,11 +46,11 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "87.82%"
     },
     "containerweight": 100,
     "contentalignment": 5,
-    "id": "ratingLeastLabel",
+    "id": "ratingLevel5",
     "info": null,
     "ipad": {
         "psp": {
@@ -67,7 +67,7 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "a99746b8f37d44a687f5c4eb2ffb8038",
+    "kuid": "e3c200e8743b404cb8e348918d1a00d9",
     "name": "kony.ui.Label",
     "parent": "ratingSystemLabels",
     "pf": "userwidgetmodel",

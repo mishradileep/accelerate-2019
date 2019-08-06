@@ -36,14 +36,10 @@
     "autogrowmode": 1,
     "canUpdateUI": true,
     "children": [
-        "Label0cde92fbf36804d",
-        "ratingTile",
-        "ratingTile0",
-        "ratingTile1",
-        "ratingTile2",
-        "lblSampleComment",
-        "txtArea",
-        "btnSubmit",
+        "lblFeedback",
+        "flxRatingContainer",
+        "imgThanks",
+        "lblThankyou",
         "lblPresentation",
         "flxMaterial",
         "flxDummySpace"

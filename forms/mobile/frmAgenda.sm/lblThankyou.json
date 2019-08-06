@@ -8,7 +8,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "165dp"
+        "value": "157dp"
     },
     "_margin_": [
         1,
@@ -22,15 +22,15 @@
         0,
         0
     ],
-    "_skin_": "s13d46dc214a443aa41da216686e59ac",
-    "_text_": "Feedback",
+    "_skin_": "sf1ecc9ec42e4165ac952002b6e32308",
+    "_text_": "Thank you, your message has  been submitted to us.",
     "_top_": {
         "type": "string",
-        "value": "40dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "80%"
+        "value": "70%"
     },
     "_wrapping_": 2,
     "android": {
@@ -46,7 +46,7 @@
     },
     "containerweight": 100,
     "contentalignment": 5,
-    "id": "Label0cde92fbf36804d",
+    "id": "lblThankyou",
     "info": null,
     "ipad": {
         "psp": {
@@ -59,8 +59,8 @@
         }
     },
     "iscustomlayout": false,
-    "isvisible": true,
-    "kuid": "hd21cb9d5ec043db95dc6aedb8ca6d5d",
+    "isvisible": false,
+    "kuid": "je5690985d4d434abeafab3fcbf946f1",
     "name": "kony.ui.Label",
     "parent": "feedbackMaster",
     "pf": "frmAgenda",

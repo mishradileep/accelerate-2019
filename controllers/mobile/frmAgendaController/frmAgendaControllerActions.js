@@ -62,5 +62,10 @@ define({
         event_sessions_inputparam["httpconfig"] = event_sessions_httpconfigs;
         KonyAccelerateStorageService$event_sessions$get = mfobjectsecureinvokerasync(event_sessions_inputparam, "KonyAccelerateStorageService", "event_sessions", INVOKE_OBJECT_SERVICE__ea029f0600df4431909ac24c16083c57_Callback);
         this.frmAgendaPreshow();
+    },
+    /** onClick defined for btnSubmit **/
+    AS_Button_f2918332e78c437195c71db8976072cb: function AS_Button_f2918332e78c437195c71db8976072cb(eventobject) {
+        var self = this;
+        this.onClickOfSubmit();
     }
 });

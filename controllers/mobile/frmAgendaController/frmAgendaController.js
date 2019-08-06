@@ -702,7 +702,7 @@ define({
             buttonText = "DBX";
             targetSkin = "filterSkinDBX";
             destColor = "4B3A6600";
-            sessionTrack = eventConstants.QUANTUM;
+            sessionTrack = eventConstants.DBX;
         } else {
             leftPos = "66.66%";
             buttonText = "QUANTUM";
@@ -844,6 +844,9 @@ define({
      * 	@private
      */
     setSpeakerProfile: function(eventObject) {
+      	this.view.flxRatingContainer.height=kony.flex.USE_PREFERRED_SIZE;
+      	this.view.imgThanks.isVisible=false;
+    	this.view.lblThankyou.isVisible=false;
         var id = eventObject.id;
         var len = id.length;
         var startIndex = eventConstants.SESSION_TILE_ID.length;
@@ -940,6 +943,28 @@ define({
             }
         }
     },
+  onClickOfSubmit:function(){
+    this.view.flxRatingContainer.animate(this.createAnimationObject("0dp"), this. getPlatformSpecific(), null);
+    this.view.imgThanks.isVisible=true;
+    this.view.lblThankyou.isVisible=true;
+  },
+  createAnimationObject:function(height){
+        var animationObejct=kony.ui.createAnimation({
+        100: {
+          "height": height,
+          "stepConfig": {}
+        }
+      });
+        return animationObejct;
+      },
+      getPlatformSpecific:function(){
+        var specificObj= {
+        delay: 0,
+        fillMode: kony.anim.FILL_MODE_FORWARDS,
+        duration: 0.22
+      };
+        return specificObj;
+      }
 
 
 
