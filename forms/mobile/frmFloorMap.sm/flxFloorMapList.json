@@ -1,12 +1,13 @@
 {
     "DNDConfig": null,
+    "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "30dp"
+        "value": "50dp"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "20dp"
     },
     "_margin_": [
         0,
@@ -22,46 +23,41 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sbeedf2d26fb4fa9a86e5fa10b8860ac",
+    "_right_": {
+        "type": "string",
+        "value": "20dp"
+    },
+    "_skin_": "se4e5e33c97444c1b4cff342455221b9",
     "_top_": {
         "type": "string",
-        "value": "0dp"
-    },
-    "_width_": {
-        "type": "string",
-        "value": "100%"
+        "value": "25dp"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "lblListItem"
+        "lblSelectedFloorMapName",
+        "imgDropDown"
     ],
     "clipbounds": true,
-    "containerId": true,
     "containerweight": 100,
-    "controllerInfo": {
-        "default": {
-            "channel": "mobile",
-            "name": "flxFloorMapContainerController"
-        }
-    },
     "enablescrolling": true,
-    "id": "flxFloorMapContainer",
+    "id": "flxFloorMapList",
     "info": null,
-    "isTemplate": true,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "e99b87f4be5a4fd2aedfb62f9438b8ac",
+    "kuid": "db76e8b9bd7a4d72bcce58ce19560e5d",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "tempFloorMapItem",
-    "pf": "tempFloorMapItem",
+    "onclick": "AS_FlexContainer_fdff18af953b403f97231e492edd8ada",
+    "parent": "flxMainContainer",
+    "pf": "frmFloorMap",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,
     "snapgridsize": 10,
     "snaptogrid": true,
     "wType": "FlexContainer",
-    "widgetalignment": 1
+    "widgetalignment": 1,
+    "zindex": 1
 }

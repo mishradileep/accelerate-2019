@@ -5,7 +5,7 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "30dp"
+        "value": "50dp"
     },
     "_margin_": [
         0,
@@ -24,7 +24,7 @@
         "value": "10dp"
     },
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "close.png",
+    "_src_": "listboxarw.png",
     "_width_": {
         "type": "string",
         "value": "30dp"
@@ -37,20 +37,21 @@
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "uwu9532f6a6b1343019654c6b092413aec",
+        "formID": "frmFloorMap",
         "platform": "iphone",
-        "templateType": "userwidgets",
+        "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "imgClose",
+    "id": "imgDropDown",
     "imagescalemode": 1,
     "info": null,
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "a4c9415fb024431e9e9027c08a1315fd",
+    "kuid": "e6d824e830a34b92a66de7a03fa01340",
     "name": "kony.ui.Image2",
-    "parent": "flxHeader",
-    "pf": "userwidgetmodel",
+    "parent": "flxFloorMapList",
+    "pf": "frmFloorMap",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,

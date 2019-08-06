@@ -1,8 +1,11 @@
 {
+    "@class": "com.kony.gen.viz.model.component.KVizUserWidget",
     "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_children_": [],
     "_height_": {
         "type": "string",
-        "value": "30dp"
+        "value": "10%"
     },
     "_left_": {
         "type": "string",
@@ -14,7 +17,7 @@
         0,
         0
     ],
-    "_orientation_": 6,
+    "_orientation_": 1,
     "_padding_": [
         0,
         0,
@@ -22,7 +25,8 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sbeedf2d26fb4fa9a86e5fa10b8860ac",
+    "_render_": true,
+    "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -31,37 +35,30 @@
         "type": "string",
         "value": "100%"
     },
-    "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [
-        "lblListItem"
-    ],
     "clipbounds": true,
-    "containerId": true,
-    "containerweight": 100,
-    "controllerInfo": {
-        "default": {
-            "channel": "mobile",
-            "name": "flxFloorMapContainerController"
-        }
+    "containerweight": 0,
+    "data": {
+        "headerTitle": "FLOOR MAP"
     },
     "enablescrolling": true,
-    "id": "flxFloorMapContainer",
+    "id": "mobileheader",
     "info": null,
-    "isTemplate": true,
     "iscustomlayout": false,
+    "issegmentchild": false,
     "isvisible": true,
-    "kuid": "e99b87f4be5a4fd2aedfb62f9438b8ac",
+    "kuid": "c157ea4bca0443d088fccea7373f57ff",
     "layouttype": 2,
-    "name": "kony.ui.FlexContainer",
-    "parent": "tempFloorMapItem",
-    "pf": "tempFloorMapItem",
+    "masterType": 1,
+    "name": "kony.ui.UserWidgetInstance",
+    "parent": "frmFloorMap",
+    "pf": "frmFloorMap",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "wType": "FlexContainer",
-    "widgetalignment": 1
+    "sourceUserWidget": "j49668e494dc4ed9a607f797e521cab9",
+    "wType": "UserWidgetInstance"
 }

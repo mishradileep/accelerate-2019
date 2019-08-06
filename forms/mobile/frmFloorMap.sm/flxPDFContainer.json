@@ -1,8 +1,9 @@
 {
     "DNDConfig": null,
+    "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "30dp"
+        "value": "75%"
     },
     "_left_": {
         "type": "string",
@@ -22,10 +23,10 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sbeedf2d26fb4fa9a86e5fa10b8860ac",
+    "_skin_": "s87c232132c841a0b77e21ca7507bcbb",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "25%"
     },
     "_width_": {
         "type": "string",
@@ -35,33 +36,26 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "lblListItem"
+        "brwsrInnerLocation"
     ],
     "clipbounds": true,
-    "containerId": true,
     "containerweight": 100,
-    "controllerInfo": {
-        "default": {
-            "channel": "mobile",
-            "name": "flxFloorMapContainerController"
-        }
-    },
     "enablescrolling": true,
-    "id": "flxFloorMapContainer",
+    "id": "flxPDFContainer",
     "info": null,
-    "isTemplate": true,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "e99b87f4be5a4fd2aedfb62f9438b8ac",
+    "kuid": "ffdbe104e666439da0abc60bc0ce4cf2",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "tempFloorMapItem",
-    "pf": "tempFloorMapItem",
+    "parent": "frmFloorMap",
+    "pf": "frmFloorMap",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,
     "snapgridsize": 10,
     "snaptogrid": true,
     "wType": "FlexContainer",
-    "widgetalignment": 1
+    "widgetalignment": 1,
+    "zindex": 1
 }
