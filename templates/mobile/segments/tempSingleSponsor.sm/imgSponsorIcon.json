@@ -5,7 +5,7 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "30dp"
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
@@ -24,38 +24,35 @@
         0
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "sponsors.png",
+    "_src_": "imagedrag.png",
     "_top_": {
         "type": "string",
         "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "30dp"
+        "value": "100%"
     },
     "canUpdateUI": true,
-    "centery": {
-        "type": "string",
-        "value": "50%"
-    },
+    "containerId": true,
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "frmMore",
         "platform": "iphone",
-        "templateType": "forms",
+        "templateType": "segments",
         "topLevelBox": null
     },
-    "id": "imgMenuSponsers",
+    "id": "imgSponsorIcon",
     "imagescalemode": 1,
+    "imagewhiledownloading": "konymp_imagedownload.png",
     "info": null,
-    "invokedProperty": "src",
+    "invokedProperty": "imageWhileDownloading",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "baa8e013ab9f4fa18740109125f97f37",
+    "kuid": "h1fb1f0c48824f698bf6240b86494af6",
     "name": "kony.ui.Image2",
-    "parent": "flxMenuSponsors",
-    "pf": "frmMore",
+    "parent": "flxSponsor",
+    "pf": "tempSingleSponsor",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,

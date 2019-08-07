@@ -39,6 +39,12 @@ define({
               case "flxMenuFeedback":
                 formName = "frmFeedback";
                 break;
+              case "flxMenuSponsors":
+                formName = "frmSponsor";
+                break;
+              case "flxMenuFloorMap":
+                formName = "frmFloorMap";
+                break;
               default:
                 // code block
             }

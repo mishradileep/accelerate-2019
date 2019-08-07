@@ -12,6 +12,11 @@ define({
         var self = this;
         this.onClickOfEventDate(eventobject);
     },
+    /** onClick defined for btnSubmit **/
+    AS_Button_f2918332e78c437195c71db8976072cb: function AS_Button_f2918332e78c437195c71db8976072cb(eventobject) {
+        var self = this;
+        this.onClickOfSubmit();
+    },
     /** onClick defined for menuButtonPresenters **/
     AS_Button_f524c1d44b6d4a61af563b83cef56b3a: function AS_Button_f524c1d44b6d4a61af563b83cef56b3a(eventobject) {
         var self = this;
@@ -27,12 +32,6 @@ define({
     /** preShow defined for frmAgenda **/
     AS_Form_ad02dde63f0e4c11bbea0ffa927943a6: function AS_Form_ad02dde63f0e4c11bbea0ffa927943a6(eventobject) {
         var self = this;
-        this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = "menuLabelSkinActive";
         this.frmAgendaPreshow();
-    },
-    /** onClick defined for btnSubmit **/
-    AS_Button_f2918332e78c437195c71db8976072cb: function AS_Button_f2918332e78c437195c71db8976072cb(eventobject) {
-        var self = this;
-        this.onClickOfSubmit();
     }
 });

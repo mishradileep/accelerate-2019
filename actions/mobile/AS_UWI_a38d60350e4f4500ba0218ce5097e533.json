@@ -1,0 +1,24 @@
+{
+    "AS_UWI_a38d60350e4f4500ba0218ce5097e533": {
+        "id": "AS_UWI_a38d60350e4f4500ba0218ce5097e533",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmSponsor",
+            "type": "forms",
+            "platform": null,
+            "KUID": "f9640f7c59054aaa8f9f223cf78f80de"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__h383da06cb554d83a3eae1098aa82925",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.animateSponsorsFlex(\"100%\")",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}
