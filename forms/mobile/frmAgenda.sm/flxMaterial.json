@@ -51,7 +51,7 @@
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "df6beb6b07d142e692f9f269434f8b8b",
-    "layouttype": 2,
+    "layouttype": 4,
     "name": "kony.ui.FlexContainer",
     "parent": "feedbackMaster",
     "pf": "frmAgenda",

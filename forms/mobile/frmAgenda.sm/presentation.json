@@ -69,7 +69,8 @@
                 "kuid": "efbfe9c2abaa446eaab3eb8dc677ed36",
                 "srcKUID": "c20aa61d5c734feb8a3967a4b745d050",
                 "wType": "Image"
-            }
+            },
+            "src": "pdf.png"
         },
         "lblFIleName": {
             "__events__": {},
@@ -104,6 +105,7 @@
                     "value": "150dp"
                 }
             },
+            "isVisible": false,
             "width": {
                 "Default": {
                     "type": "string",
@@ -118,7 +120,7 @@
     "iscustomlayout": false,
     "isdatareferenced": false,
     "issegmentchild": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "a7c730d0f05a42798fa4eac26228f0d1",
     "layouttype": 4,
     "masterType": 0,
