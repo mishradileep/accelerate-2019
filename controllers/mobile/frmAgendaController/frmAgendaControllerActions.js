@@ -12,6 +12,10 @@ define({
         var self = this;
         this.onClickOfEventDate(eventobject);
     },
+    /** onClick defined for agendaSelectButton **/
+    AS_Button_e3e014cc58424cf59dc7e894e538bc43: function AS_Button_e3e014cc58424cf59dc7e894e538bc43(eventobject) {
+        var self = this;
+    },
     /** onClick defined for btnSubmit **/
     AS_Button_f2918332e78c437195c71db8976072cb: function AS_Button_f2918332e78c437195c71db8976072cb(eventobject) {
         var self = this;

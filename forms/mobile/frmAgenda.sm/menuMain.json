@@ -146,7 +146,8 @@
                 "kuid": "ff0a86cdde554fa18612b46cf1f4bf08",
                 "srcKUID": "ba3ca6db33f645c697fefd341f143be1",
                 "wType": "Image"
-            }
+            },
+            "src": "menuagendaactive_1.png"
         },
         "menuImageMore": {
             "__events__": {},
@@ -163,7 +164,8 @@
                 "kuid": "e79d86dd5bf344b5911cfab4ca569f4f",
                 "srcKUID": "c252d8278fd1465f9cf1377b1b0de8a2",
                 "wType": "Image"
-            }
+            },
+            "src": "menuscheduleinactive_1.png"
         },
         "menuImagePresenters": {
             "__events__": {},
@@ -171,7 +173,8 @@
                 "kuid": "i960ab8a8d814902a26f47ee1bdb43d0",
                 "srcKUID": "fd16a35bd75847eabe6456460ba15929",
                 "wType": "Image"
-            }
+            },
+            "src": "menupresentersinactive_1.png"
         },
         "menuLabelAgenda": {
             "__events__": {},

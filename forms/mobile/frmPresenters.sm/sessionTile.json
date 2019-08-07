@@ -104,12 +104,28 @@
                 "wType": "Button"
             }
         },
+        "flxAddedToSchedule": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "e55146467ee345669199d114b64d4280",
+                "srcKUID": "j8eab4eaed7a407ea216a135abe5b85d",
+                "wType": "FlexContainer"
+            }
+        },
         "imgStatus": {
             "__events__": {},
             "__info__": {
                 "kuid": "g3bce40a19794876b41ab43d067cd14b",
                 "srcKUID": "f6da9eb310a74ca0ab593ced7ca6fb55",
                 "wType": "Image"
+            }
+        },
+        "lblAddedToSchedhule": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "ee11733969204f659e17fd8509dc0fef",
+                "srcKUID": "b5cc5e31008b4587b3bc15c6845aa9e2",
+                "wType": "Label"
             }
         },
         "sessionLocation": {

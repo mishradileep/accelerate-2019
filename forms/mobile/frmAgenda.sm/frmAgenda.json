@@ -46,7 +46,8 @@
         "imageBack",
         "buttonBack",
         "menuMain",
-        "pdfBrowser"
+        "pdfBrowser",
+        "customprompt"
     ],
     "containerweight": 100,
     "controllerInfo": {

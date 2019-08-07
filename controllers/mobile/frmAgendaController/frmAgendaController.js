@@ -10,8 +10,8 @@ define({
      */
     frmAgendaPreshow: function() {
         var self = this;
-      	this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = "menuLabelSkinActive";
-      	this.setData(accelerateSessionData.eventSessionData.records);
+        this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = "menuLabelSkinActive";
+        this.setData(accelerateSessionData.eventSessionData.records);
         //this.addActionToSessionTiles();
         this.view.referenceAgenda.isVisible = false;
         this.view.referenceSession.isVisible = false;
@@ -119,6 +119,8 @@ define({
         this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
         this.view.CopyLabel0f74c659ce7754e.text = this.view[eventobject.id].sessionData.session_desc;
         this.view.sessionTileAnim.imgStatus.src = this.view[eventobject.id].imgStatus.src;
+        this.view.sessionTileAnim.callback = this.view[eventobject.id].callback;
+        this.view.sessionTileAnim.addAgendaContainer.onClick = this.view[eventobject.id].addAgendaContainer.onClick;
         this.view.sessionTileAnim.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
         this.view.sessionTileAnim.sessionLocation.text = this.thisCard.sessionLocation.text;
         this.view.sessionTileAnim.tileBGImageKony.src = this.thisCard.tileBGImageKony.src;
@@ -783,10 +785,12 @@ define({
             }
             this.view.sessionTiles.add(sessionTile);
             this.view[id].setTitleData(sessionObj);
+            this.view[id].callback = this.mySchedular;
             if (!kony.sdk.isNullOrUndefined(sessionObj.presenter)) {
                 this.view[id].onClick = this.frmAgendaSessionSelect.bind(this);
             }
         }
+        this.view.sessionTileAnim.callback = this.mySchedular;
     },
     /**
      *	@function createSessionTile
@@ -846,14 +850,15 @@ define({
      * 	@private
      */
     setSpeakerProfile: function(eventObject) {
-      	this.view.flxRatingContainer.height=kony.flex.USE_PREFERRED_SIZE;
-      	this.view.imgThanks.isVisible=false;
-    	this.view.lblThankyou.isVisible=false;
+        this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
+        this.view.imgThanks.isVisible = false;
+        this.view.lblThankyou.isVisible = false;
         var id = eventObject.id;
         var len = id.length;
         var startIndex = eventConstants.SESSION_TILE_ID.length;
         var sessionIndex = id.substring(startIndex, len);
         var sessionObject = this.sessionsList[sessionIndex];
+        this.setSessionAttachments(sessionObject);
         var speakerList = sessionObject["presenter"];
         var speakers_master = accelerateSpeakerData.eventSpeakerData.records
         if (kony.sdk.isNullOrUndefined(speakerList)) {
@@ -870,10 +875,12 @@ define({
                 if (speakerObject.master_speaker_id == speakers_master[index].speaker_id) {
                     var speakerBio = speakers_master[index];
                     this.view["speakerName" + speakerIndex].text = speakerBio.speaker_name;
-                    this.view["speakerDesignation" + speakerIndex].text = speakerBio.speaker_title;
+                    var title = speakerBio.speaker_title.length > 20 ? speakerBio.speaker_title.substring(0, 16) + "..." : speakerBio.speaker_title;
+                    this.view["speakerDesignation" + speakerIndex].text = title;
                     this.view["speakerDescription" + speakerIndex].text = speakerBio.speaker_bio;
                     this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
                     this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
+                    this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
                 }
             }
         }
@@ -881,6 +888,7 @@ define({
             this.view["flxSpeaker" + speakerIndex].isVisible = false;
             this.view["ratingTile" + speakerIndex].isVisible = false;
         }
+        this.view["ratingTile"].setDefaultSelectedIndex();
     },
 
     /**
@@ -945,26 +953,203 @@ define({
             }
         }
     },
-  onClickOfSubmit:function(){
-    this.view.flxRatingContainer.animate(this.createAnimationObject("0dp"), this. getPlatformSpecific(), null);
-    this.view.imgThanks.isVisible=true;
-    this.view.lblThankyou.isVisible=true;
-  },
-  createAnimationObject:function(height){
-        var animationObejct=kony.ui.createAnimation({
-        100: {
-          "height": height,
-          "stepConfig": {}
-        }
-      });
+    /**
+     *	@function filterSessionTiles
+     * 	@description This function is used to toggle the Visibility based on the category choosen
+     *	@param sessionTrackId {Integer} sessiontrack which is choosen by the user.
+     * 	@private
+     */
+    onClickOfSubmit: function() {
+        var transformObject = kony.ui.makeAffineTransform();
+        transformObject.scale(1, 0);
+        this.view.flxRatingContainer.animate(this.createAnimationObject("0dp"), this.getPlatformSpecific(), {
+            animationEnd: function() {
+                this.view.feedbackMaster.forceLayout();
+            }.bind(this)
+        });
+        this.view.feedbackMaster.animate(this.createAnimationObject(kony.flex.USE_PREFERRED_SIZE), this.getPlatformSpecific(), {
+            animationEnd: function() {
+                this.view.feedbackMaster.forceLayout();
+            }.bind(this)
+        });
+        this.view.feedbackMaster.setContentOffset({
+            "y": "0%",
+        }, true);
+        this.view.imgThanks.isVisible = true;
+        this.view.lblThankyou.isVisible = true;
+    },
+    /**
+     *	@function filterSessionTiles
+     * 	@description This function is used to toggle the Visibility based on the category choosen
+     *	@param sessionTrackId {Integer} sessiontrack which is choosen by the user.
+     * 	@private
+     */
+    createAnimationObject: function(height) {
+        var animationObejct = kony.ui.createAnimation({
+            100: {
+                //"transformation": transformation,
+                "height": height,
+                "stepConfig": {}
+            }
+        });
         return animationObejct;
-      },
-      getPlatformSpecific:function(){
-        var specificObj= {
-        delay: 0,
-        fillMode: kony.anim.FILL_MODE_FORWARDS,
-        duration: 0.22
-      };
+    },
+    /**
+     *	@function getPlatformSpecific
+     * 	@description This function is to create animation related config
+     *	@param sessionTrackId {Integer} sessiontrack which is choosen by the user.
+     * 	@private
+     */
+    getPlatformSpecific: function() {
+        var specificObj = {
+            delay: 0,
+            fillMode: kony.anim.FILL_MODE_FORWARDS,
+            duration: 0.5
+        };
         return specificObj;
-      }
+    },
+    /**
+     *	@function mySchedular
+     * 	@description This function is to set values in the confirmatiom popup
+     * 	@private
+     */
+    mySchedular: function(sessionTitleId, sessionData) {
+        this.currentClickedSessionTItleId = sessionTitleId;
+        var sessionNameLength = sessionData.session_name.length;
+        this.view.customprompt.lblSessionTitle.text = sessionNameLength > 25 ? sessionData.session_name.substring(0, 23) + "..." : sessionData.session_name;
+        this.view.customprompt.lblLocation.text = sessionData.hasOwnProperty("session_location") ? sessionData.session_location : "";
+        this.view.customprompt.lblTime.text = sessionData.modifiedTime;
+        this.view.customprompt.isVisible = true;
+        this.view.customprompt.btDone.onClick = this.onClickOfDone.bind(this);
+    },
+    /**
+     *	@function onClickOfDone
+     * 	@description This function is confirmation that user agree to add session to myschedhule
+     * 	@private
+     */
+    onClickOfDone: function() {
+        this.view.customprompt.isVisible = false;
+        this.view[this.currentClickedSessionTItleId].sessionToMySchedule();
+    },
+    /**
+     *	@function setSessionAttachments
+     * 	@description This function is to create presentation  material associated with sessions
+     *	@param sessionObject {Object} parse Session Object to get material Object
+     * 	@private
+     */
+    setSessionAttachments: function(sessionObject) {
+        this.view.flxMaterial.removeAll();
+        var materials = sessionObject.session_material;
+        if (kony.sdk.isNullOrUndefined(materials)) {
+            return;
+        }
+        var materailsCount = materials.length;
+        if (materailsCount <= 0) {
+            return;
+        }
+        var flexInstance, materialInstance;
+        if (materailsCount == 1) {
+            var id = "flex";
+            flexInstance = this.createFlexInstace(id);
+            this.view.flxMaterial.add(flexInstance);
+            var materialId = "material";
+            materialInstance = this.createMaterialInstance(materialId, "0dp", "100%");
+            this.view[id].add(materialInstance);
+            this.view[materialId].pdfUrl = materials[0].url;
+            return;
+        }
+        var width = "130dp";
+        var materialIdConstant = "material";
+        var flexIdConstant = "flex";
+        for (var materialIndex = 0; materialIndex < materailsCount; materialIndex = materialIndex + 2) {
+            flexInstance = this.createFlexInstace(flexIdConstant + materialIndex);
+            this.view.flxMaterial.add(flexInstance);
+            materialInstance = this.createMaterialInstance(materialIdConstant + materialIndex, "0dp", width);
+            this.view[flexInstance.id].add(materialInstance);
+            this.view[materialInstance.id].pdfUrl = (materials[materialIndex].url);
+            if (materialIndex + 1 < materailsCount) {
+                materialInstance = this.createMaterialInstance(materialIdConstant + materialIndex + 1, "10dp", width);
+                this.view[flexInstance.id].add(materialInstance);
+                this.view[materialInstance.id].pdfUrl = (materials[materialIndex + 1].url);
+            }
+        }
+
+    },
+    /**
+     *	@function doesSessionContainsMaterial
+     * 	@description This is a helper function
+     *	@param session {Object} session Object
+     * 	@private
+     */
+    doesSessionContainsMaterial: function(session) {
+        if (!kony.sdk.isNullOrUndefined(session.session_material) && session.session_material.length > 0) {
+            return true;
+        }
+        return false;
+    },
+    /**
+       *	@function filterSessionTiles
+       * 	@description This function is to create dynamic instance of presentation component
+       @param id {Integer} id to be ued while creating instance
+       * 	@private
+       */
+    createMaterialInstance: function(id, left, width) {
+        var material = new com.konymp.presentation({
+            "clipBounds": true,
+            "height": "150dp",
+            "id": id,
+            "isVisible": true,
+            "layoutType": kony.flex.FLOW_VERTICAL,
+            "left": left,
+            "masterType": constants.MASTER_TYPE_DEFAULT,
+            "isModalContainer": false,
+            "skin": "sknPresentation",
+            "top": "0dp",
+            "width": width,
+            "overrides": {
+                "imgAttachment": {
+                    "src": "pdf.png"
+                },
+                "presentation": {
+                    "height": "150dp",
+                    "isVisible": false,
+                    "left": "155dp",
+                    "top": "0dp",
+                    "width": "130dp"
+                }
+            }
+        }, {
+            "retainFlowHorizontalAlignment": false,
+            "overrides": {}
+        }, {
+            "overrides": {}
+        });
+
+        return material;
+    },
+    /**
+     *	@function createFlexInstace
+     * 	@description This function is to create dynamic instance of flex container
+     *	@param id {Integer} id to be ued while creating instance
+     * 	@private
+     */
+    createFlexInstace: function(id) {
+        var flexContainer = new kony.ui.FlexContainer({
+            "autogrowMode": kony.flex.AUTOGROW_NONE,
+            "clipBounds": true,
+            "height": "160dp",
+            "id": id,
+            "isVisible": true,
+            "layoutType": kony.flex.FREE_FORM,
+            "centerX": "50%",
+            "width": "300dp",
+            "isModalContainer": false,
+            "skin": "slFbox",
+            "top": "0dp",
+            "zIndex": 1
+        }, {
+            "retainFlowHorizontalAlignment": false
+        }, {});
+        return flexContainer;
+    }
 });

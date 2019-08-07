@@ -32,8 +32,6 @@ define({
       self.speakerFilter(eventobject);
     };
   },
-
-  
     /**
        * @function presenterFetchSuccess
        * @description This function is invoked in the success of presenter object and
@@ -123,7 +121,7 @@ define({
         var imgWidth = kony.os.deviceInfo().screenWidth;
         this.view.imgProfileLarge.height = imgWidth * eventConstants.ASPECT_RATION_CONSTANT + "dp";
         if (!kony.sdk.isNullOrUndefined(presenter.sessionsList)) {
-            this.createSessions((presenter.sessionsList));
+            this.createSessions(presenter.sessionsList);
         }
         this.view.presenterDetail.isVisible = true;
     },

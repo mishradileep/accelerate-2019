@@ -81,7 +81,9 @@
             }
         },
         "addAgendaContainer": {
-            "__events__": {},
+            "__events__": {
+                "onClick": "AS_FlexContainer_db23df25760b4b95923deaea3c329577"
+            },
             "__info__": {
                 "kuid": "e0fbc16e109a4b4a9aeae039ae68dede",
                 "srcKUID": "b26268764c614824b21e5445bc10fe32",
@@ -97,11 +99,21 @@
             }
         },
         "agendaSelectButton": {
-            "__events__": {},
+            "__events__": {
+                "onClick": "AS_Button_e3e014cc58424cf59dc7e894e538bc43"
+            },
             "__info__": {
                 "kuid": "ic17286290294579a20fc9e7091b2f99",
                 "srcKUID": "ba57454e69ae4c03bfba02e74cd88da1",
                 "wType": "Button"
+            }
+        },
+        "flxAddedToSchedule": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "j80c85e563ba4cee90ad7030ef240bf3",
+                "srcKUID": "j8eab4eaed7a407ea216a135abe5b85d",
+                "wType": "FlexContainer"
             }
         },
         "imgStatus": {
@@ -110,6 +122,15 @@
                 "kuid": "dc0842f38d73457f935ef0369bfe37f1",
                 "srcKUID": "f6da9eb310a74ca0ab593ced7ca6fb55",
                 "wType": "Image"
+            },
+            "src": "add.png"
+        },
+        "lblAddedToSchedhule": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "b0c551f41c8d470c83b7c5c26b38ec81",
+                "srcKUID": "b5cc5e31008b4587b3bc15c6845aa9e2",
+                "wType": "Label"
             }
         },
         "sessionLocation": {

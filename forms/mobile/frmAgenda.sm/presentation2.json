@@ -69,7 +69,8 @@
                 "kuid": "a8f48505754a48728fd8cc45b89a35fc",
                 "srcKUID": "c20aa61d5c734feb8a3967a4b745d050",
                 "wType": "Image"
-            }
+            },
+            "src": "pdf.png"
         },
         "lblFIleName": {
             "__events__": {},
