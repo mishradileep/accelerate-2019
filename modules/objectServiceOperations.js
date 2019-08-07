@@ -45,7 +45,7 @@
 	        }
 	    } catch (exception) {
 	        kony.application.dismissLoadingScreen();
-	        alert(exception.message);
+	        kony.print(exception.message);
 	    }
 
 	}
