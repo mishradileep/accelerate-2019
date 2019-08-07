@@ -54,7 +54,7 @@
     "isvisible": true,
     "kuid": "baa8e013ab9f4fa18740109125f97f37",
     "name": "kony.ui.Image2",
-    "parent": "flxMenuSponsers",
+    "parent": "flxMenuSponsors",
     "pf": "frmMore",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

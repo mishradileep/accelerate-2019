@@ -13,9 +13,10 @@ var eventConstants = {
   IDENTITY_PROVIDER_NAME:"LinkedinLogin",
   SESSION_TILE_ID:"tile",
   PRESENTER_OBJECT_NAME : "speakers_master",
-  ASPECT_RATION_CONSTANT:0.68,
   DBX : 2,
   QUANTUM : 1,
   KEYNOTE : 3,
+  ASPECT_RATION_CONSTANT:1.07,
+  SPONSOR_MASTER_OBJECT_NAME : "sponsor_category_master",
   DATA_SYNC_OBJECT : "data_sync_info"
 };

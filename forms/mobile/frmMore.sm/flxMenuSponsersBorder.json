@@ -46,7 +46,7 @@
     "kuid": "h903cf2389024abbb06faca439ce7f76",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxMenuSponsers",
+    "parent": "flxMenuSponsors",
     "pf": "frmMore",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

@@ -23,7 +23,7 @@
         0
     ],
     "_skin_": "s605aede886a4871812fc943658b794a",
-    "_text_": "Sponsers",
+    "_text_": "Sponsors",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -62,7 +62,7 @@
     "isvisible": true,
     "kuid": "c9bc140305a8488ab702480fd6e39b82",
     "name": "kony.ui.Label",
-    "parent": "flxMenuSponsers",
+    "parent": "flxMenuSponsors",
     "pf": "frmMore",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
