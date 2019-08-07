@@ -11,23 +11,8 @@ define({
     this.filtersSelected = [];
     this.initializeFilter();
     var presenterSessionData = null;
-    //To Do Handle the offline data -- kony.store.getItem("presenterSessionData");
     this.view.presenterScroll.removeAll();   
-
-//     if(!kony.sdk.isNullOrUndefined(presenterSessionData)) {
-//       this.processPresenterSessionData(presenterSessionData);
-//     } else {
-//       var queryParams = {
-//         "bindSessionInfoWithSpeaker" : true
-//       };
-//       fetchObjectData(eventConstants.OBJECT_SERVICE_NAME,
-//                       eventConstants.PRESENTER_OBJECT_NAME,
-//                       queryParams, 
-//                       this.presenterFetchSuccess.bind(this),
-//                       this.presenterFetchFailure.bind(this));         
-//     }
-    
-		this.processPresenterSessionData(accelerateSpeakerData.eventSpeakerData.records);
+    this.processPresenterSessionData(accelerateSpeakerData.eventSpeakerData.records);
   },
 
   /**
@@ -48,24 +33,7 @@ define({
     };
   },
 
-    /**
-     * @function  setFilteronClick
-     * @description This function is used to set Filter Click Action
-     * @private
-     */
-    setFilteronClick: function() {
-        var self = this;
-        this.view.filterAll.onClick = function(eventobject) {
-            self.speakerFilter(eventobject);
-        };
-        this.view.filterDBX.onClick = function(eventobject) {
-            self.speakerFilter(eventobject);
-        };
-        this.view.filterQuantum.onClick = function(eventobject) {
-            self.speakerFilter(eventobject);
-        };
-    },
-
+  
     /**
        * @function presenterFetchSuccess
        * @description This function is invoked in the success of presenter object and
@@ -155,7 +123,7 @@ define({
         var imgWidth = kony.os.deviceInfo().screenWidth;
         this.view.imgProfileLarge.height = imgWidth * eventConstants.ASPECT_RATION_CONSTANT + "dp";
         if (!kony.sdk.isNullOrUndefined(presenter.sessionsList)) {
-            this.createSessions(JSON.parse(presenter.sessionsList));
+            this.createSessions((presenter.sessionsList));
         }
         this.view.presenterDetail.isVisible = true;
     },
@@ -179,6 +147,10 @@ define({
         this.view.flexSessions.removeAll();
         for (var index = 0; index < sessions.length; index++) {
             var id = "sessiontile" + sessions[index].session_id;
+            if(sessions[index].session_start_date.indexOf(" ")!=-1){
+               sessions[index].session_start_date = sessions[index].session_start_date.replace(" ","T")+"0Z";
+               sessions[index].session_end_date = sessions[index].session_end_date.replace(" ","T")+ "0Z";
+            }
             this.createSessionTile(id, "0dp", sessions[index]);
         }
     },
