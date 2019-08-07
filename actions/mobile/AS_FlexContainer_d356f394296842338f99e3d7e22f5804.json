@@ -1,0 +1,37 @@
+{
+    "AS_FlexContainer_d356f394296842338f99e3d7e22f5804": {
+        "id": "AS_FlexContainer_d356f394296842338f99e3d7e22f5804",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmWelcome",
+            "type": "forms",
+            "platform": "",
+            "KUID": "g575ec9bf24d4f3ab673b9f8806f456e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___d24308868f9d401abdc3b108c703f26f",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmAgenda",
+            "formKUID": "g7d71a566dee45ffa15745fbce32e657",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": "",
+            "navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"onTouchStart\",\n        \"widgetId\": \"flxContinue\"\n    }\n}",
+            "isCustomInput": false
+        }]
+    }
+}
