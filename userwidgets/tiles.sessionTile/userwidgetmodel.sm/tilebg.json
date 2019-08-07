@@ -39,7 +39,8 @@
         "tileBGColorQuantum",
         "tileBGColorDBX",
         "tileBGColorKony",
-        "tileBGImageKony"
+        "tileBGImageKony",
+        "flxAddedToSchedule"
     ],
     "clipbounds": true,
     "containerweight": 100,

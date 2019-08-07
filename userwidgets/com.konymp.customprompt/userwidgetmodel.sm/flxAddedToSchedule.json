@@ -3,11 +3,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "60dp"
+        "value": "30dp"
     },
     "_left_": {
         "type": "string",
-        "value": "10%"
+        "value": "9dp"
     },
     "_margin_": [
         0,
@@ -23,35 +23,33 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
+    "_right_": {
+        "type": "string",
+        "value": "9dp"
+    },
+    "_skin_": "s13386f5bae3491ca8e69a2aacffcd2d",
     "_top_": {
         "type": "string",
-        "value": "0dp"
-    },
-    "_width_": {
-        "type": "string",
-        "value": "80%"
+        "value": "105dp"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "imgMenuSponsers",
-        "lblMenuSponsers",
-        "flxMenuSponsersBorder"
+        "lblAddedToSchedhule"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxMenuSponsers",
+    "id": "flxAddedToSchedule",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
-    "kuid": "bb984538783e4428990356b086a6e78b",
-    "layouttype": 2,
+    "isvisible": false,
+    "kuid": "f9f35454193d40788a06ef42b8729a75",
+    "layouttype": 4,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxMoreWrapper",
-    "pf": "frmMore",
+    "parent": "tilebg",
+    "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,

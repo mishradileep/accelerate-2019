@@ -5,10 +5,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "25dp"
-    },
     "_margin_": [
         0,
         0,
@@ -23,10 +19,6 @@
         0
     ],
     "_percent_": true,
-    "_right_": {
-        "type": "string",
-        "value": "25dp"
-    },
     "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
     "_top_": {
         "type": "string",
@@ -34,11 +26,15 @@
     },
     "_width_": {
         "type": "string",
-        "value": "80%"
+        "value": "300dp"
     },
     "allboxes": [],
     "autogrowmode": 1,
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "children": [
         "presentation",
         "presentation2"
@@ -51,7 +47,7 @@
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "df6beb6b07d142e692f9f269434f8b8b",
-    "layouttype": 2,
+    "layouttype": 4,
     "name": "kony.ui.FlexContainer",
     "parent": "feedbackMaster",
     "pf": "frmAgenda",

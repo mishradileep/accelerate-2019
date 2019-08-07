@@ -6,10 +6,6 @@
         "type": "string",
         "value": "35dp"
     },
-    "_left_": {
-        "type": "string",
-        "value": "25dp"
-    },
     "_margin_": [
         6,
         6,
@@ -22,10 +18,6 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "string",
-        "value": "25dp"
-    },
     "_skin_": "s446aa5faf8b4de98408b6a5c1f71d46",
     "_text_": "Submit",
     "_top_": {
@@ -37,6 +29,10 @@
         "value": "300dp"
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "contentalignment": 5,
     "disabledSkins": {},

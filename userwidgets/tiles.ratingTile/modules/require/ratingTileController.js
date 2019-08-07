@@ -50,10 +50,10 @@ define(function() {
       animateButton:function(selectedButton , unSelecetedButton){
         var transformSelectedButton = kony.ui.makeAffineTransform();
     	var transformUnSelectedButton = kony.ui.makeAffineTransform();
-    	transformUnSelectedButton.scale(0.8, 0.8);
+    	transformUnSelectedButton.scale(1, 1);
     	transformSelectedButton.scale(1.125, 1.125);
-        selectedButton.animate(this.createAnimationObject("36dp","36dp"),this.getPlatformSpecific(),null);
-        unSelecetedButton.animate(this.createAnimationObject("30dp","30dp"),this.getPlatformSpecific(),null);
+        selectedButton.animate(this.createAnimationObject(transformSelectedButton),this.getPlatformSpecific(),null);
+        unSelecetedButton.animate(this.createAnimationObject(transformUnSelectedButton),this.getPlatformSpecific(),null);
       },
       /**
          *	@function createAnimationObject
@@ -62,25 +62,20 @@ define(function() {
          *	@param height {String} -final Height value to scaled
          * 	@private
          */
-//       createAnimationObject:function(transformationObject){
-//         var animationObejct=kony.ui.createAnimation({
-//         100: {
-//           "transform":transformationObject,
-//           "stepConfig": {}
-//         }
-//       });
-//         return animationObejct;
-//       },
-      createAnimationObject:function(width,height){
+      createAnimationObject:function(transformationObject){
         var animationObejct=kony.ui.createAnimation({
         100: {
-          "width":width,
-          "height": height,
+          "transform":transformationObject,
           "stepConfig": {}
         }
       });
         return animationObejct;
       },
+      /**
+         *	@function getPlatformSpecific
+         * 	@description This generic function is to return the animationConfig
+         * 	@private
+         */
       getPlatformSpecific:function(){
         var specificObj= {
         delay: 0,
@@ -89,6 +84,17 @@ define(function() {
       };
         return specificObj;
       },
+      /**
+         *	@function setDefaultSelectedIndex
+         * 	@description This generic function is to set default rating index as 3
+         * 	@private
+         */
+      setDefaultSelectedIndex:function(){
+        var eventObject={
+          id:"ratingBubble3"
+        };
+        this.setFocusOnClick(eventObject);
+      }
         
       
       

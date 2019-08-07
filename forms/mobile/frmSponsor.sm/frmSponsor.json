@@ -15,7 +15,7 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "se1f0be9643045db990c117065cc2aa5",
+    "_skin_": "s7b5af4c4fb440e6877e25b21d5c2b77",
     "_title_": null,
     "addWidgetsdone": false,
     "allboxes": [],
@@ -29,12 +29,15 @@
         "needAppMenu": false
     },
     "canUpdateUI": true,
-    "children": [],
+    "children": [
+        "mobileheader",
+        "flxMainContainer"
+    ],
     "containerweight": 100,
     "controllerInfo": {
         "default": {
             "channel": "mobile",
-            "name": "frmSponsorsController"
+            "name": "frmSponsorController"
         }
     },
     "currentLocale": "default",
@@ -44,7 +47,8 @@
     "device": "iPhoneXS",
     "displayorientation": 1,
     "enabledforidletimeout": false,
-    "id": "frmSponsors",
+    "enablescrolling": false,
+    "id": "frmSponsor",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,
@@ -62,7 +66,7 @@
             "titleBarAttributes": {
                 "barStyle": 0,
                 "hidesBackButton": false,
-                "kuid": "d0dbf5f42053472fba8674d3108dadd8",
+                "kuid": "b609ca3002a84bf0aeadf5aaba56875f",
                 "leftBarButtonItems": [],
                 "leftItemsSupplementBackButton": true,
                 "prompt": "",
@@ -73,7 +77,7 @@
                         "info": {
                             "title": "Edit"
                         },
-                        "kuid": "aeffb4cae16a4d719c37b53d337954bd",
+                        "kuid": "c481eac7245e4ad4b747a6bd2594e687",
                         "style": 0,
                         "tintColor": "4b88f100",
                         "type": 1
@@ -90,13 +94,14 @@
     "kiosk": {
         "needAppMenu": false
     },
-    "kuid": "f8151cdd57e44f45a1110d1b3aa9b082",
+    "kuid": "f9640f7c59054aaa8f9f223cf78f80de",
     "layouttype": 2,
     "name": "kony.ui.Form2",
     "needappmenu": false,
     "paddinginpixel": false,
     "platform": "iphone",
-    "postshow": "AS_Form_fea86e199ec445dea52226ad39e594b6",
+    "postshow": "AS_Form_b18653162e8e4ddab72414fecad28f5a",
+    "preshow": "AS_Form_c798a885fa304a898110091f84e49c0f",
     "prevDevice": "iPhoneXS",
     "prevPlatform": "iphone",
     "retaincontentalignment": false,

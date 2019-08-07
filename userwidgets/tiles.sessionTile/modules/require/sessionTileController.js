@@ -10,6 +10,7 @@ define(function() {
       	myScheduleIndicatorImage:"added.png",
       	agendaIndicatorImage:"add.png",
       	agendaContainerSkin:"sknGreenSelected",
+      	callback:null,
         /**
          *	@function setTitleData
          * 	@description This function is used to set the data to the session tile
@@ -23,7 +24,8 @@ define(function() {
             this.view.sessionLocation.text = data.hasOwnProperty("session_location") ? data.session_location : "";
           	this.startDate=data.session_start_date;
           	this.endDate=data.session_end_date;
-            this.view.sessionTime.text = this.formatDate(data.session_start_date) + " to " + this.formatDate(data.session_end_date);
+          	this.sessionData.modifiedTime= this.formatDate(data.session_start_date) + " to " + this.formatDate(data.session_end_date);
+            this.view.sessionTime.text = this.sessionData.modifiedTime;
             if (kony.sdk.isNullOrUndefined(data.session_track_id)) {
                 return;
             }
@@ -74,6 +76,7 @@ define(function() {
       sessionToMySchedule:function(){
         this.isAddedToMySchedule=true;
         this.sessionData.isAddedToMySchedule=true;
+        this.view.flxAddedToSchedule.isVisible=true;
         this.view.imgStatus.src=this.myScheduleIndicatorImage;
         this.view.addAgendaContainer.skin=this.agendaContainerSkin;
         var myAgendaData=kony.store.getItem("myAgendaData");
@@ -82,6 +85,9 @@ define(function() {
         }
         myAgendaData[this.sessionData.event_session_id]=this.sessionData.event_session_id;
         kony.store.setItem("myAgendaData", myAgendaData);
+      },
+      invokedCallback:function(){
+        this.callback(this.view.id,this.sessionData);
       }
     };
 });

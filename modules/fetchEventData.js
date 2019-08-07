@@ -34,7 +34,8 @@
               let storeEventData = kony.store.getItem("eventData");
               let storeEventSessionData = kony.store.getItem("eventSessionData");
               let storeSpeakerData = kony.store.getItem("eventSpeakerData");
-              assignStoreDataToLocal(storeEventData, storeEventSessionData, storeSpeakerData);
+              let storeSponsorData = kony.store.getItem("eventSponsorData");
+              assignStoreDataToLocal(storeEventData, storeEventSessionData, storeSpeakerData,storeSponsorData);
           }
       }
   }
@@ -46,13 +47,15 @@
    * @param eventSpeakerData Event Speaker data
    * @public
    */
-  function assignStoreDataToLocal(eventData, eventSessionData, eventSpeakerData) {
+  function assignStoreDataToLocal(eventData, eventSessionData, eventSpeakerData, eventSponsorData) {
       if (eventData !== null && eventData !== undefined)
           accelerateEventData.eventdata = eventData;
       if (eventSessionData !== null && eventSessionData !== undefined)
           accelerateSessionData.eventSessionData = eventSessionData;
       if (eventSpeakerData !== null && eventSpeakerData !== undefined)
           accelerateSpeakerData.eventSpeakerData = eventSpeakerData;
+      if(eventSponsorData !== null && eventSponsorData !== undefined)
+          accelerateSponsorData.sponsorData = eventSponsorData;
   }
   /**
    * @function dataSyncFetchFailure
@@ -131,7 +134,7 @@
           kony.store.setItem("eventSessionData", successResponse);
           accelerateSessionData.eventSessionData = successResponse;
           kony.print(accelerateSessionData.eventSessionData);
-          fetchSpeakersData();
+          fetchEventSponsorData();
       }
   }
 
@@ -142,6 +145,46 @@
    * @public
    */
   function eventSessionDataFetchFailure(failureResponse) {
+      kony.print("Error occured in fetching the event data");
+      kony.print("Error occured is" + JSON.stringify(failureResponse));
+  }
+
+   /**
+   * @function fetchEventSponsorData
+   * @description This function is used to fetch the event sponsor data
+   * @public
+   */
+  function fetchEventSponsorData() {
+      var queryParams = {
+          "$filter": "((SoftDeleteFlag ne true) or (SoftDeleteFlag eq null))",
+          "$expand": "sponsors",
+      };
+      fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.SPONSOR_MASTER_OBJECT_NAME, queryParams, eventSponsorDataFetchSuccess, eventSponsorDataFetchFailure);
+  }
+
+  /**
+   * @function eventSponsorDataFetchSuccess
+   * @description This function is invoked in the success response of event sponsor data fetch service
+   * @param successResponse The success response of event sponsor data fetch service
+   * @public
+   */
+  function eventSponsorDataFetchSuccess(successResponse) {
+      let records = (successResponse.hasOwnProperty("records")) ? successResponse.records : null;
+      if (records !== null) {
+          kony.store.setItem("eventSponsorData", successResponse);
+          accelerateSponsorData.sponsorData = successResponse;
+          kony.print(accelerateSponsorData.sponsorData);
+          fetchSpeakersData();
+      }
+  }
+
+  /**
+   * @function eventSponsorDataFetchFailure
+   * @description This function is invoked in the failure response of event sponsor data fetch service
+   * @param failure The failure response of event sponsor data fetch service
+   * @public
+   */
+  function eventSponsorDataFetchFailure(failureResponse) {
       kony.print("Error occured in fetching the event data");
       kony.print("Error occured is" + JSON.stringify(failureResponse));
   }

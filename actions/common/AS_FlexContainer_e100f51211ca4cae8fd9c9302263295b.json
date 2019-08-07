@@ -15,7 +15,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__b729135f725649bcb462c074058d349e",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.sessionToMySchedule();",
+            "codeSnippet": "this.sessionToMySchedule();\n",
             "parentId": null,
             "callbackType": null
         }]

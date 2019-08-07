@@ -22,7 +22,6 @@ define({
                 this.view.sgmntFloorMap.widgetDataMap = segmentWidgetDataMap;
                 this.segmentData = eventInnerLocation;
               	let updatedData = this.formatData(eventInnerLocation);
-              	alert(updatedData);
                 this.view.sgmntFloorMap.setData(updatedData);
             }
         }
