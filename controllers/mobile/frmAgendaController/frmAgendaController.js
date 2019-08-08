@@ -823,18 +823,20 @@ define({
      */
     setData: function(sessions) {
         this.view.sessionTiles.removeAll();
+      	this.filteredSession=[];
         this.sessionsList = sessions;
         var sessionCount = sessions.length;
         for (var index = 0; index < sessionCount; index++) {
             var id = eventConstants.SESSION_TILE_ID + index;
             var sessionObj = sessions[index];
             var sessionTile;
-            if (index == 0) {
+            if (index === 0) {
                 sessionTile = this.createSessionTile(id, "131dp");
             } else {
                 sessionTile = this.createSessionTile(id, "0dp");
             }
             this.view.sessionTiles.add(sessionTile);
+          	this.filteredSession.push(sessionTile);
             this.view[id].setTitleData(sessionObj);
             this.view[id].callback = this.mySchedular;
             if (!kony.sdk.isNullOrUndefined(sessionObj.presenter)) {
@@ -958,6 +960,7 @@ define({
     onClickOfEventDate: function(eventobject) {
         let buttonText = eventobject.text;
         this.changeButtonSkins(buttonText);
+      	this.onClickOfFilter(buttonText);
     },
 
     /**
@@ -986,12 +989,14 @@ define({
      * 	@private
      */
     filterSessionTiles: function(sessionTrackId) {
+      	this.filteredSession=[];
         var isFirstTile = false;
         var sessionCount = this.sessionsList.length;
         for (var index = 0; index < sessionCount; index++) {
             var id = eventConstants.SESSION_TILE_ID + index;
             if (sessionTrackId === eventConstants.KEYNOTE) {
                 this.view[id].isVisible = true;
+              	this.filteredSession.push(this.view[id]);
                 if (!isFirstTile) {
                     this.view[id].top = "131dp";
                     isFirstTile = true;
@@ -1002,6 +1007,7 @@ define({
                 this.view[id].isVisible = false;
             } else {
                 this.view[id].isVisible = true;
+              	this.filteredSession.push(this.view[id]);
                 if (!isFirstTile) {
                     this.view[id].top = "131dp";
                     isFirstTile = true;
@@ -1307,5 +1313,25 @@ define({
             }
         });
         return animationObejct;
+    },
+  onClickOfFilter:function(text){
+    var startDate=parseInt(text);
+    var sessions= this.filteredSession;
+    var len=sessions.length;
+    var found=false;
+    var index;
+    for(index=0;index<len;index++){
+      if(new Date(sessions[index].startDate).getDate()==startDate){
+        found=true;
+        break;
+      }
     }
+    if(found){
+      this.view.contentScroller.scrollToWidget(sessions[index],true);
+    }
+    else{
+      this.view.contentScroller.scrollToEnd();
+    }
+
+  }
 });
