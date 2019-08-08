@@ -1288,7 +1288,9 @@ define({
   closePdf:function(){
     this.view.flxPdf.animate(this.animateTopForPdf("100%"),this.getPlatformSpecific(), {"animationEnd":function(){
       this.view.flxPdf.zIndex=1;
+      this.view.txtArea.setEnabled(false);
     }.bind(this)});
+    
   },
   /**
      *	@function animateTopForPdf
