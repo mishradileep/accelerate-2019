@@ -1,0 +1,18 @@
+{
+    "AS_Button_a55d486c20a74e8fbf399d688f473020": {
+        "id": "AS_Button_a55d486c20a74e8fbf399d688f473020",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__eb51797b7f2c4d669817a38361ff7cde",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "frmAgendaSessionSelect(eventobject);",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

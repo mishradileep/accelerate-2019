@@ -3,11 +3,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "120dp"
+        "value": "43dp"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "35dp"
     },
     "_margin_": [
         0,
@@ -23,43 +23,42 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s50cf873db744343867f6ab8c51fe3b7",
+    "_skin_": "s5af0e66fb2b48adb7e6d653582ab4f1",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "34dp"
     },
     "_width_": {
         "type": "string",
-        "value": "100dp"
+        "value": "43dp"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "imgAttachment",
-        "lblFIleName",
-        "lblFileSize"
+        "CopyFlexContainer0h0944543241849",
+        "CopyFlexContainer0gfc3854ff00d45",
+        "agendaAddButton",
+        "imgStatus"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "presentation",
+    "id": "addAgendaContainer",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "h9c66266bb6f4a95bd9197010aeca14f",
-    "layouttype": 4,
+    "kuid": "id9a225d18f04c17a575470dd31edf46",
+    "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "userwidgetmodel",
+    "parent": "sessionTileAnim",
     "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "vizProps": {
-        "hidewidgethierarchy": false
-    },
     "wType": "FlexContainer",
-    "widgetalignment": 1
+    "widgetalignment": 1,
+    "zindex": 1
 }

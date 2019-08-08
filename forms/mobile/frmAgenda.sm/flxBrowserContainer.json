@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "120dp"
+        "value": "90%"
     },
     "_left_": {
         "type": "string",
@@ -23,43 +23,39 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s50cf873db744343867f6ab8c51fe3b7",
+    "_skin_": "s87c232132c841a0b77e21ca7507bcbb",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "10%"
     },
     "_width_": {
         "type": "string",
-        "value": "100dp"
+        "value": "100%"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "imgAttachment",
-        "lblFIleName",
-        "lblFileSize"
+        "pdfBrowser"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "presentation",
+    "id": "flxBrowserContainer",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "h9c66266bb6f4a95bd9197010aeca14f",
-    "layouttype": 4,
+    "kuid": "cff0cbed0c5a4f52b6cc568263f25f6f",
+    "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "userwidgetmodel",
-    "pf": "userwidgetmodel",
+    "parent": "flxPdf",
+    "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "vizProps": {
-        "hidewidgethierarchy": false
-    },
     "wType": "FlexContainer",
-    "widgetalignment": 1
+    "widgetalignment": 1,
+    "zindex": 1
 }

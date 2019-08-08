@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "120dp"
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
@@ -23,43 +23,37 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s50cf873db744343867f6ab8c51fe3b7",
+    "_skin_": "s7942ea8d02540059d427c53beef3aac",
     "_top_": {
         "type": "string",
         "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "100dp"
+        "value": "100%"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [
-        "imgAttachment",
-        "lblFIleName",
-        "lblFileSize"
-    ],
+    "children": [],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "presentation",
+    "id": "tileBGColorDBX",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
-    "kuid": "h9c66266bb6f4a95bd9197010aeca14f",
-    "layouttype": 4,
+    "isvisible": false,
+    "kuid": "ab832c7d2f014fe1ac8fbb89571b3d89",
+    "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "userwidgetmodel",
+    "parent": "tilebg",
     "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "vizProps": {
-        "hidewidgethierarchy": false
-    },
     "wType": "FlexContainer",
-    "widgetalignment": 1
+    "widgetalignment": 1,
+    "zindex": 1
 }

@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "120dp"
+        "value": "152dp"
     },
     "_left_": {
         "type": "string",
@@ -23,32 +23,38 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s50cf873db744343867f6ab8c51fe3b7",
+    "_skin_": "s4697d0eaa074612940098709d2652a1",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "291dp"
     },
     "_width_": {
         "type": "string",
-        "value": "100dp"
+        "value": "100%"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "imgAttachment",
-        "lblFIleName",
-        "lblFileSize"
+        "tilebg",
+        "sessionTitle",
+        "sessionLocation",
+        "sessionTime",
+        "sessionLocationIcon",
+        "sessionTimeIcon",
+        "agendaSelectButton",
+        "addAgendaContainer",
+        "topPosLabel"
     ],
-    "clipbounds": true,
+    "clipbounds": false,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "presentation",
+    "id": "sessionTileAnim",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "h9c66266bb6f4a95bd9197010aeca14f",
-    "layouttype": 4,
+    "kuid": "bec3b913cb82435197f76d64481cd4e8",
+    "layouttype": 2,
     "name": "kony.ui.FlexContainer",
     "parent": "userwidgetmodel",
     "pf": "userwidgetmodel",
@@ -61,5 +67,6 @@
         "hidewidgethierarchy": false
     },
     "wType": "FlexContainer",
-    "widgetalignment": 1
+    "widgetalignment": 1,
+    "zindex": 1
 }

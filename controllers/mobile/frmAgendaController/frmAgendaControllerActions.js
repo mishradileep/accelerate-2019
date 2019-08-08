@@ -12,10 +12,6 @@ define({
         var self = this;
         this.onClickOfEventDate(eventobject);
     },
-    /** onClick defined for addAgendaContainer **/
-    AS_FlexContainer_db23df25760b4b95923deaea3c329577: function AS_FlexContainer_db23df25760b4b95923deaea3c329577(eventobject) {
-        var self = this;
-    },
     /** onClick defined for btnSubmit **/
     AS_Button_f2918332e78c437195c71db8976072cb: function AS_Button_f2918332e78c437195c71db8976072cb(eventobject) {
         var self = this;
@@ -33,14 +29,14 @@ define({
         var ntf = new kony.mvc.Navigation("frmMore");
         ntf.navigate();
     },
+    /** onCloseClick defined for mobileheader **/
+    AS_UWI_d0fa898518ab4818bafd04de5675daac: function AS_UWI_d0fa898518ab4818bafd04de5675daac(eventobject) {
+        var self = this;
+        this.closePdf();
+    },
     /** preShow defined for frmAgenda **/
     AS_Form_ad02dde63f0e4c11bbea0ffa927943a6: function AS_Form_ad02dde63f0e4c11bbea0ffa927943a6(eventobject) {
         var self = this;
         this.frmAgendaPreshow();
-    },
-    /** onClick defined for Button0ed28b9886c9d45 **/
-    AS_Button_h1e657f73a834561860d8b30aa64e7a3: function AS_Button_h1e657f73a834561860d8b30aa64e7a3(eventobject) {
-        var self = this;
-        this.view.sessionTileAnim.addAgendaContainer.click();
     }
 });

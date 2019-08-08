@@ -40,14 +40,14 @@
         "masterContainer",
         "contentScroller",
         "headerContainer",
-        "sessionTileAnim",
         "detailsScroller",
         "consoleScroll",
         "imageBack",
         "buttonBack",
         "menuMain",
         "customprompt",
-        "flxPdf"
+        "flxPdf",
+        "sessionTileAnim"
     ],
     "containerweight": 100,
     "controllerInfo": {

@@ -23,10 +23,10 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
+    "_skin_": "sf999f4dd7b44c2b8c1002b3e5995834",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "100%"
     },
     "_width_": {
         "type": "string",
@@ -36,8 +36,8 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "pdfBrowser",
-        "btnClosePdf"
+        "mobileheader",
+        "flxBrowserContainer"
     ],
     "clipbounds": true,
     "containerweight": 100,
@@ -45,7 +45,7 @@
     "id": "flxPdf",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": false,
+    "isvisible": true,
     "kuid": "g964f94e73104a56a158335205c1ef4c",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
