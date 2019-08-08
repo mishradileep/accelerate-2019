@@ -877,7 +877,8 @@ define({
                     this.view["speakerName" + speakerIndex].text = speakerBio.speaker_name;
                     var title = speakerBio.speaker_title.length > 20 ? speakerBio.speaker_title.substring(0, 16) + "..." : speakerBio.speaker_title;
                     this.view["speakerDesignation" + speakerIndex].text = title;
-                    this.view["speakerDescription" + speakerIndex].text = speakerBio.speaker_bio;
+                  	var description=speakerBio.speaker_bio.length>50?speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
+                    this.view["speakerDescription" + speakerIndex].text = description;
                     this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
                     this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
                     this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
@@ -972,9 +973,9 @@ define({
                 this.view.feedbackMaster.forceLayout();
             }.bind(this)
         });
-        this.view.feedbackMaster.setContentOffset({
-            "y": "0%",
-        }, true);
+//         this.view.feedbackMaster.setContentOffset({
+//             "y": "0%",
+//         }, true);
         this.view.imgThanks.isVisible = true;
         this.view.lblThankyou.isVisible = true;
     },
@@ -1041,10 +1042,12 @@ define({
         this.view.flxMaterial.removeAll();
         var materials = sessionObject.session_material;
         if (kony.sdk.isNullOrUndefined(materials)) {
+          	this.view.lblPresentation.isVisible=false;
             return;
         }
         var materailsCount = materials.length;
         if (materailsCount <= 0) {
+          	this.view.lblPresentation.isVisible=false;
             return;
         }
         var flexInstance, materialInstance;
@@ -1141,8 +1144,8 @@ define({
             "id": id,
             "isVisible": true,
             "layoutType": kony.flex.FREE_FORM,
-            "centerX": "50%",
             "width": "300dp",
+          	"left":"0dp",
             "isModalContainer": false,
             "skin": "slFbox",
             "top": "0dp",

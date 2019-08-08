@@ -1,6 +1,6 @@
 {
-    "AS_Segment_g55e522c371f4acb822ed34c6864674d": {
-        "id": "AS_Segment_g55e522c371f4acb822ed34c6864674d",
+    "AS_Segment_e5403eb6299543ddab008bdc2ce59e08": {
+        "id": "AS_Segment_e5403eb6299543ddab008bdc2ce59e08",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -13,16 +13,17 @@
             "name": "rowNumber"
         }],
         "contextObj": {
+            "name": "frmFloorMap",
             "type": "forms",
             "platform": "",
-            "KUID": "cc9b0c5e9b1f4b8cafefd012a604857d",
-            "name": "frmFloorMap"
+            "KUID": "cc9b0c5e9b1f4b8cafefd012a604857d"
         },
         "language": "js",
         "actions": [{
-            "id": "ADD_SNIPPET_onRowClick_ad90f99377eb49839a338a9651d7b562",
+            "id": "ADD_SNIPPET__d73febb8422b4bb2b8104a998b7d5ceb",
             "type": "ADD_SNIPPET",
             "codeSnippet": "this.onSegmentRowClick(rowNumber)",
+            "parentId": null,
             "callbackType": null
         }]
     }
