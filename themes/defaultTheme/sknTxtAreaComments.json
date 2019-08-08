@@ -1,6 +1,6 @@
 {
   "android": {
-    "font_name": "default"
+    "font_name": "Poppins Regular"
   },
   "androidwearos": {
     "font_name": "default"
@@ -24,7 +24,7 @@
     "font_name": "System"
   },
   "iphone": {
-    "font_name": "System"
+    "font_name": "Poppins-Regular"
   },
   "isDefaultSkin": false,
   "kiosk": {

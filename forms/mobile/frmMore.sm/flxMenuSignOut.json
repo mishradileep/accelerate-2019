@@ -46,7 +46,7 @@
     "id": "flxMenuSignOut",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "g3e9085df2d944419cc6b14c53d64c70",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
