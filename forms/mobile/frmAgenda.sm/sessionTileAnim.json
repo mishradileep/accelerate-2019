@@ -88,6 +88,9 @@
                 "kuid": "e0fbc16e109a4b4a9aeae039ae68dede",
                 "srcKUID": "b26268764c614824b21e5445bc10fe32",
                 "wType": "FlexContainer"
+            },
+            "zIndex": {
+                "Default": 300
             }
         },
         "agendaAddButton": {
@@ -99,14 +102,13 @@
             }
         },
         "agendaSelectButton": {
-            "__events__": {
-                "onClick": "AS_Button_e3e014cc58424cf59dc7e894e538bc43"
-            },
+            "__events__": {},
             "__info__": {
                 "kuid": "ic17286290294579a20fc9e7091b2f99",
                 "srcKUID": "ba57454e69ae4c03bfba02e74cd88da1",
                 "wType": "Button"
-            }
+            },
+            "isVisible": false
         },
         "flxAddedToSchedule": {
             "__events__": {},

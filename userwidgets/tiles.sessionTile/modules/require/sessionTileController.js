@@ -49,9 +49,11 @@ define(function() {
             }
           if(data.isAddedToMySchedule===true){
             this.view.imgStatus.src=this.myScheduleIndicatorImage;
+            this.view.flxAddedToSchedule.isVisible=true;
           }
           else{
             this.view.imgStatus.src=this.agendaIndicatorImage;
+            this.view.flxAddedToSchedule.isVisible=false;
           }
         },
         /**

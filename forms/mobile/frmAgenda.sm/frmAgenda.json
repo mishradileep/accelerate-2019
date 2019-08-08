@@ -46,8 +46,8 @@
         "imageBack",
         "buttonBack",
         "menuMain",
-        "pdfBrowser",
-        "customprompt"
+        "customprompt",
+        "flxPdf"
     ],
     "containerweight": 100,
     "controllerInfo": {

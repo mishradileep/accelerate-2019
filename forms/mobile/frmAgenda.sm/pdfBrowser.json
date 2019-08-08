@@ -47,7 +47,7 @@
     "method": "get",
     "name": "kony.ui.Browser",
     "paddinginpixel": false,
-    "parent": "frmAgenda",
+    "parent": "flxPdf",
     "pf": "frmAgenda",
     "requesturlconfig": {
         "URL": "",

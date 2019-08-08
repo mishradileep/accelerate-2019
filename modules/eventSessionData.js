@@ -39,7 +39,14 @@ accelerateSessionData = {
             "name":"Kony Quantum Data Sheet FINAL 0319.pdf",
             "session_id":3,"CreatedDateTime":"2019-05-16T14:11:07Z",
             "LastUpdatedDateTime":"2019-05-16T14:11:07Z"
+        },
+   {
+            "session_material_id":1,"url":"https://s3.amazonaws.com/volumeplay/1/1558015853.pdf",
+            "name":"Kony Quantum Data Sheet FINAL 0319.pdf",
+            "session_id":3,"CreatedDateTime":"2019-05-16T14:11:07Z",
+            "LastUpdatedDateTime":"2019-05-16T14:11:07Z"
         }
+  		
 ]
     }
 ,
