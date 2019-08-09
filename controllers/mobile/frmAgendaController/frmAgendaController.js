@@ -3,6 +3,7 @@ define({
     thisCard: null,
     thisCardIndex: null,
     cardFrameRel: null,
+  	currentViewState:0,
     /**
      * @function frmAgendaPreshow
      * @description The function is invoked in the form preshow action which is used to setup the UI
@@ -115,6 +116,7 @@ define({
      * @private
      */
     frmAgendaSessionSelect: function(eventobject) {
+      	this.currentViewState=1;
         this.setSpeakerProfile(eventobject);
         egLoggerClear();
         var self = this;
