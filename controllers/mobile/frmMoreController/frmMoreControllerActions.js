@@ -8,6 +8,12 @@ define({
         var ntf = new kony.mvc.Navigation("frmAgenda");
         ntf.navigate();
     },
+    /** onClick defined for menuContainerMySchedule **/
+    AS_FlexContainer_d2b82377b1c14a9cb17bfc82c820a81f: function AS_FlexContainer_d2b82377b1c14a9cb17bfc82c820a81f(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmmyAgenda");
+        ntf.navigate();
+    },
     /** onClick defined for menuButtonPresenters **/
     AS_Button_i003e17d991a4679949d76870ba75c70: function AS_Button_i003e17d991a4679949d76870ba75c70(eventobject) {
         var self = this;

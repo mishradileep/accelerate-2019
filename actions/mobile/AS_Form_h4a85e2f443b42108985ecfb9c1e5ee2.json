@@ -1,0 +1,83 @@
+{
+    "AS_Form_h4a85e2f443b42108985ecfb9c1e5ee2": {
+        "id": "AS_Form_h4a85e2f443b42108985ecfb9c1e5ee2",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmmyAgenda",
+            "type": "forms",
+            "platform": null,
+            "KUID": "g71b3c8a87fa4a51b327cc739a843419"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET_preShow_h967b66b5e284d8b95a0ac513833dad3",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = \"menuLabelSkinActive\";",
+            "callbackType": null,
+            "disabled": true
+        }, {
+            "id": "INVOKE_OBJECT_SERVICE_preShow_d95097c4357c41b4a1d3faceff0be40d",
+            "type": "INVOKE_OBJECT_SERVICE",
+            "inputparams": null,
+            "httpheaders": null,
+            "httpconfigs": null,
+            "isasynchronous": null,
+            "isoffline": null,
+            "isobject": true,
+            "mappings": {},
+            "mappingsOrder": [],
+            "serviceconfig": {
+                "servicename": "KonyAccelerateStorageService",
+                "type": "objectsvcs",
+                "objectname": "speakers_master",
+                "serviceid": "2802ac63-512a-493e-864b-9b67df972890",
+                "methodname": "get"
+            },
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "disabled": true
+        }, {
+            "id": "ADD_SNIPPET_preShow_bf31e4e3113a41beaba04420477c2566",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "kony.store.setItem(\"master_speakers\",speakers_master.records);",
+            "parentId": "INVOKE_OBJECT_SERVICE_preShow_d95097c4357c41b4a1d3faceff0be40d",
+            "callbackType": "Callback"
+        }, {
+            "id": "INVOKE_OBJECT_SERVICE_preShow_a40d28bd72b64c72855019bc84b1d78a",
+            "type": "INVOKE_OBJECT_SERVICE",
+            "inputparams": null,
+            "httpheaders": null,
+            "httpconfigs": null,
+            "isasynchronous": null,
+            "isoffline": null,
+            "isobject": true,
+            "mappings": {},
+            "mappingsOrder": [],
+            "serviceconfig": {
+                "servicename": "KonyAccelerateStorageService",
+                "type": "objectsvcs",
+                "objectname": "event_sessions",
+                "serviceid": "2802ac63-512a-493e-864b-9b67df972890",
+                "methodname": "get"
+            },
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "disabled": true
+        }, {
+            "id": "ADD_SNIPPET_preShow_ddff0af971f24c95b21e13f2b842ce18",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "self.setData(event_sessions.records);\n",
+            "parentId": "INVOKE_OBJECT_SERVICE_preShow_a40d28bd72b64c72855019bc84b1d78a",
+            "callbackType": "Callback"
+        }, {
+            "id": "ADD_SNIPPET_preShow_e31e44434a2a46d58dcde02d6afcd6e5",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "if(this.currentViewState===0){\n  this.frmAgendaPreshow();\n}",
+            "callbackType": null
+        }]
+    }
+}

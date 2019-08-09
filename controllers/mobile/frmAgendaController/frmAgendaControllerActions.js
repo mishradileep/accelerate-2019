@@ -17,6 +17,12 @@ define({
         var self = this;
         this.onClickOfSubmit();
     },
+    /** onClick defined for menuButtonMySchedule **/
+    AS_Button_d464ddb7db31413a88e949c9d363aea6: function AS_Button_d464ddb7db31413a88e949c9d363aea6(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmmyAgenda");
+        ntf.navigate();
+    },
     /** onClick defined for menuButtonPresenters **/
     AS_Button_f524c1d44b6d4a61af563b83cef56b3a: function AS_Button_f524c1d44b6d4a61af563b83cef56b3a(eventobject) {
         var self = this;
@@ -29,6 +35,11 @@ define({
         var ntf = new kony.mvc.Navigation("frmMore");
         ntf.navigate();
     },
+    /** onClick defined for addAgendaContainer **/
+    AS_FlexContainer_d3f32616eb0c4bc8819ae8842c097416: function AS_FlexContainer_d3f32616eb0c4bc8819ae8842c097416(eventobject) {
+        var self = this;
+        this.onClickOfPlus();
+    },
     /** onCloseClick defined for mobileheader **/
     AS_UWI_d0fa898518ab4818bafd04de5675daac: function AS_UWI_d0fa898518ab4818bafd04de5675daac(eventobject) {
         var self = this;
@@ -40,10 +51,5 @@ define({
         if (this.currentViewState === 0) {
             this.frmAgendaPreshow();
         }
-    },
-    /** onClick defined for addAgendaContainer **/
-    AS_FlexContainer_d3f32616eb0c4bc8819ae8842c097416: function AS_FlexContainer_d3f32616eb0c4bc8819ae8842c097416(eventobject) {
-        var self = this;
-        this.onClickOfPlus();
     }
 });

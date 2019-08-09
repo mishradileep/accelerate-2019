@@ -11,6 +11,8 @@ define(function() {
       	agendaIndicatorImage:"add.png",
       	agendaContainerSkin:"sknGreenSelected",
       	callback:null,
+      	deleteIcon:"delete.png",
+      	deleteCallback:null,
         /**
          *	@function setTitleData
          * 	@description This function is used to set the data to the session tile
@@ -76,6 +78,10 @@ define(function() {
          * 	@private
          */
       sessionToMySchedule:function(){
+        if(this.view.imgStatus.src==this.deleteIcon){
+          this.deleteSessionFromMyAgenda();
+          return ;
+        }
         this.isAddedToMySchedule=true;
         this.sessionData.isAddedToMySchedule=true;
         this.view.flxAddedToSchedule.isVisible=true;
@@ -90,6 +96,15 @@ define(function() {
       },
       invokedCallback:function(){
         this.callback(this.view.id,this.sessionData);
+      },
+      setDeleteButtonValues:function(){
+        this.view.imgStatus.src=this.deleteIcon;
+        this.view.flxAddedToSchedule.isVisible=false;
+      },
+      deleteSessionFromMyAgenda:function(){
+        this.isAddedToMySchedule=false;
+        this.sessionData.isAddedToMySchedule=false;
+        this.deleteCallback(this.view.id);
       }
     };
 });

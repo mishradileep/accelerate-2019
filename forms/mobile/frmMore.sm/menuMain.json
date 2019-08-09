@@ -124,7 +124,9 @@
             }
         },
         "menuContainerMySchedule": {
-            "__events__": {},
+            "__events__": {
+                "onClick": "AS_FlexContainer_d2b82377b1c14a9cb17bfc82c820a81f"
+            },
             "__info__": {
                 "kuid": "f94df1252db9489a99abcfe80bd75ac8",
                 "srcKUID": "da4b1b3b965b437c9977b0cb6dce4d78",

@@ -385,7 +385,7 @@
     "keyStorePassword": "",
     "kfAppInfo": {
         "90508382-0b7b-4825-b4f6-3cf5a2ffed31": {
-            "appName": "KonyEvents",
+            "appName": "Accelerate2019",
             "baseId": "0516cb4d-6079-4b84-af9d-35fbce116648",
             "id": "0516cb4d-6079-4b84-af9d-35fbce116648",
             "version": "1.0"
@@ -727,7 +727,7 @@
     "spawindows480basefontsize": "12",
     "spawindowstabbasefontsize": "17",
     "splashlogokey": "",
-    "startupformkey": "g575ec9bf24d4f3ab673b9f8806f456e",
+    "startupformkey": "g7d71a566dee45ffa15745fbce32e657",
     "statusBarHidden": "false",
     "statusBarStyle": "STATUS_BAR_STYLE_DEFAULT",
     "support64bit": "false",
