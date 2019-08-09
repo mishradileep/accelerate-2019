@@ -38,5 +38,10 @@ define({
     AS_Form_ad02dde63f0e4c11bbea0ffa927943a6: function AS_Form_ad02dde63f0e4c11bbea0ffa927943a6(eventobject) {
         var self = this;
         this.frmAgendaPreshow();
+    },
+    /** onClick defined for addAgendaContainer **/
+    AS_FlexContainer_d3f32616eb0c4bc8819ae8842c097416: function AS_FlexContainer_d3f32616eb0c4bc8819ae8842c097416(eventobject) {
+        var self = this;
+        this.onClickOfPlus();
     }
 });

@@ -126,9 +126,12 @@ define({
         this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
         this.view.CopyLabel0f74c659ce7754e.text = this.view[eventobject.id].sessionData.session_desc;
         this.view.sessionTileAnim.imgStatus.src = this.view[eventobject.id].imgStatus.src;
+      	this.view.addAgendaContainer.imgStatus.src = this.view[eventobject.id].imgStatus.src;
         this.view.sessionTileAnim.callback = this.view[eventobject.id].callback;
         this.view.sessionTileAnim.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, this.view[eventobject.id]);
+      	this.view.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, this.view[eventobject.id]);
         this.view.sessionTileAnim.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
+      	this.view.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
         this.view.sessionTileAnim.sessionLocation.text = this.thisCard.sessionLocation.text;
         this.view.sessionTileAnim.tileBGImageKony.src = this.thisCard.tileBGImageKony.src;
         var cardFrame = this.thisCard.frame.y;
@@ -400,6 +403,22 @@ define({
                                 self.view.buttonBack.isVisible = true;
                             }
                         });
+                     self.view.addAgendaContainer.animate(
+                        kony.ui.createAnimation({
+                            //50:{top:"100%dp","stepConfig":{}},
+                            100: {
+                                opacity: 1,
+                                "stepConfig": {}
+                            }
+                        }), {
+                            delay: 0,
+                            fillMode: kony.anim.FILL_MODE_FORWARDS,
+                            duration: animDuration
+                        }, {
+                            animationEnd: function() {
+                                self.view.buttonBack.isVisible = true;
+                            }
+                        });
 
                 }
             });
@@ -446,7 +465,9 @@ define({
                 fillMode: kony.anim.FILL_MODE_FORWARDS,
                 duration: animDuration
             }, {
-                animationEnd: function() {}
+                animationEnd: function() {
+                   this.view.addAgendaContainer.isVisible=true;
+                }.bind(this)
             });
         this.view.animate(
             kony.ui.createAnimation({
@@ -460,7 +481,10 @@ define({
                 fillMode: kony.anim.FILL_MODE_FORWARDS,
                 duration: animHalf
             }, {
-                animationEnd: function() {}
+                animationEnd: function() {
+                 this.view.addAgendaContainer.isVisible=true;
+                  
+                }.bind(this)
             });
     },
 
@@ -470,6 +494,7 @@ define({
      * @private
      */
     frmAgendaSessionClose: function() {
+      	//this.setData(accelerateSessionData.eventSessionData.records);
         var self = this;
         egLogger("this.thisCard = " + this.thisCard.id);
         var animDuration = 0.8;
@@ -642,6 +667,22 @@ define({
                     self.view.buttonBack.isVisible = true;
                 }
             });
+      this.view.addAgendaContainer.animate(
+            kony.ui.createAnimation({
+                //50:{top:"100%dp","stepConfig":{}},
+                100: {
+                    opacity: 0,
+                    "stepConfig": {}
+                }
+            }), {
+                delay: 0,
+                fillMode: kony.anim.FILL_MODE_FORWARDS,
+                duration: animDuration
+            }, {
+                animationEnd: function() {
+                    self.view.buttonBack.isVisible = true;
+                }
+            });
         this.view.sessionTileAnim.tilebg.animate(
             kony.ui.createAnimation({
                 50: {
@@ -728,7 +769,15 @@ define({
             self.view.sessionTileAnim.transform = tileScale;
         } else {
             self.view.sessionTileAnim.top = scrollPosY * -0.3;
-            self.view.imageBack.opacity = (1 - (scrollPosY * 0.01));
+          	var opacity= (1 - (scrollPosY * 0.01));
+            self.view.imageBack.opacity = opacity;
+          if(opacity>=1){
+            self.view.addAgendaContainer.isVisible=true;
+          }
+          else{
+            self.view.addAgendaContainer.isVisible=false;
+          }
+          	
         }
 
     },
@@ -1148,7 +1197,6 @@ define({
             this.view.lblPresentation.isVisible = false;
             return;
         }
-      	debugger;
         var flexInstance, materialInstance;
         if (materailsCount == 1) {
             var id = "flex";
@@ -1264,10 +1312,12 @@ define({
      *  @param sessionTileObject {Object} sessionTile Object which is clicked
      * 	@private
      */
-    addToMyScheduleInAnimTile: function(eventObject, sessionTileObject) {
-        eventObject.imgStatus.src = sessionTileObject.myScheduleIndicatorImage;
-        eventObject.addAgendaContainer.skin = sessionTileObject.agendaContainerSkin;
-        sessionTileObject.sessionToMySchedule();
+    addToMyScheduleInAnimTile: function(tileObject, addAgendaButton) {
+        addAgendaButton.imgStatus.src = tileObject.myScheduleIndicatorImage;
+        addAgendaButton.skin = tileObject.agendaContainerSkin;
+      	this.view.sessionTileAnim.addAgendaContainer.skin=tileObject.agendaContainerSkin;
+      	this.view.sessionTileAnim.imgStatus.src=tileObject.myScheduleIndicatorImage;
+        tileObject.sessionToMySchedule();
     },
     /**
      *	@function onClickOfPDF
@@ -1332,6 +1382,6 @@ define({
     else{
       this.view.contentScroller.scrollToEnd();
     }
-
-  }
+  },
+  
 });

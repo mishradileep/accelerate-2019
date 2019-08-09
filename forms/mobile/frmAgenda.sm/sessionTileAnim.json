@@ -70,7 +70,8 @@
                 "kuid": "b2564fd166c24ce086996ae7709cc7ec",
                 "srcKUID": "b005d134ca4d410d9f4c541c79fe4f6d",
                 "wType": "FlexContainer"
-            }
+            },
+            "isVisible": false
         },
         "CopyFlexContainer0h0944543241849": {
             "__events__": {},
@@ -78,7 +79,8 @@
                 "kuid": "c009d024f8b846b7940d7030125a5076",
                 "srcKUID": "f00c894d803647ee89a23a49b37ff47b",
                 "wType": "FlexContainer"
-            }
+            },
+            "isVisible": false
         },
         "FlexContainer0b93ee7efb53b46": {
             "__events__": {},

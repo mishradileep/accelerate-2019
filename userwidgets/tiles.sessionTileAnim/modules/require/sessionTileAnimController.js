@@ -11,6 +11,7 @@ define(function() {
       	myScheduleIndicatorImage:"added.png",
       	agendaIndicatorImage:"add.png",
       	agendaContainerSkin:"sknGreenSelected",
+      	agendaUnselectedSkin:"CopysknGreyUnselected",
         /**
          *	@function setTitleData
          * 	@description This function is used to set the data to the session tile
