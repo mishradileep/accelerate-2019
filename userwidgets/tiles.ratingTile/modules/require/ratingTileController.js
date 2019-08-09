@@ -14,7 +14,7 @@ define(function() {
             this.view.ratingSpeakerImage.src = speaker.speaker_profile_pic;
             this.view.ratingSpeakerName.text = speaker.speaker_name;
             this.view.ratingSpeakerTitle.text = speaker.speaker_title;
-          	this.speakerId=speaker.master_speaker_id;
+          	this.speakerId=speaker.speaker_id;
         },
       /**
          *	@function setFocusOnClick

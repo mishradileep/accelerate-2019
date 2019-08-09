@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__f9f9209ea7f44b23ab592bb61a3d590b",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.onClickOfEventDate(eventobject);",
+            "codeSnippet": "this.onClickOfEventDate(eventobject);\n",
             "parentId": null,
             "callbackType": null
         }]

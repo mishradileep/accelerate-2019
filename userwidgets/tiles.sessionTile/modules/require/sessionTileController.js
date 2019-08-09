@@ -49,9 +49,11 @@ define(function() {
             }
           if(data.isAddedToMySchedule===true){
             this.view.imgStatus.src=this.myScheduleIndicatorImage;
+            this.view.flxAddedToSchedule.isVisible=true;
           }
           else{
             this.view.imgStatus.src=this.agendaIndicatorImage;
+            this.view.flxAddedToSchedule.isVisible=false;
           }
         },
         /**
@@ -66,7 +68,7 @@ define(function() {
             var am_pm = date.getHours() >= 12 ? "PM" : "AM";
             hours = hours < 10 ? "0" + hours : hours;
             var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-            return hours + ":" + minutes + ":" + " " + am_pm;
+            return hours + ":" + minutes + am_pm;
         },
        /**
          *	@function sessionToMySchedule

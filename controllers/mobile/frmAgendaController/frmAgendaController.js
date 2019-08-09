@@ -3,6 +3,7 @@ define({
     thisCard: null,
     thisCardIndex: null,
     cardFrameRel: null,
+  	currentViewState:0,
     /**
      * @function frmAgendaPreshow
      * @description The function is invoked in the form preshow action which is used to setup the UI
@@ -17,10 +18,12 @@ define({
         this.view.referenceSession.isVisible = false;
         this.view.postShow = this.frmAgendaPostshow;
         this.view.sessionContentContainer.top = "100%";
+      	this.view.sessionTileAnim.left="100%";
         this.view.buttonBack.isVisible = false;
         this.view.imageBack.opacity = 0;
         this.view.buttonBack.onClick = this.frmAgendaSessionClose;
         this.view.detailsScroller.onScrolling = this.detailsScrollerOnScrolling;
+      	this.view.sessionTileAnim.animationElements.opacity=0;
         this.view.filterAll.onClick = function(eventobject) {
             self.agendaFilter(eventobject);
         };
@@ -34,6 +37,10 @@ define({
             "x": 0.5,
             "y": 0
         };
+      	this.view.sessionTileAnim.tileBGImageKony.anchorPoint = {
+           "x": 1,
+           "y": -0.2
+       };
         //this.view.sessionTile.tileBGImageKony.anchorPoint={"x":1,"y":.5};
         globalPreshow();
         //this.frmAgendaSetAgendaTiles();
@@ -63,6 +70,7 @@ define({
     frmAgendaPostshow: function() {
         this.devHeight = this.view.masterContainer.frame.height;
         egLogger("devHeight = " + this.devHeight);
+      	var dotsblurwidth=this.view.sessionTileAnim.quantumDotsBlur.frame.height*10.7388+"dp";
     },
 
     /**
@@ -108,6 +116,7 @@ define({
      * @private
      */
     frmAgendaSessionSelect: function(eventobject) {
+      	this.currentViewState=1;
         this.setSpeakerProfile(eventobject);
         egLoggerClear();
         var self = this;
@@ -119,9 +128,12 @@ define({
         this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
         this.view.CopyLabel0f74c659ce7754e.text = this.view[eventobject.id].sessionData.session_desc;
         this.view.sessionTileAnim.imgStatus.src = this.view[eventobject.id].imgStatus.src;
+      	this.view.addAgendaContainer.imgStatus.src = this.view[eventobject.id].imgStatus.src;
         this.view.sessionTileAnim.callback = this.view[eventobject.id].callback;
-        this.view.sessionTileAnim.addAgendaContainer.onClick = this.view[eventobject.id].addAgendaContainer.onClick;
+        this.view.sessionTileAnim.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, this.view[eventobject.id]);
+      	this.view.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, this.view[eventobject.id]);
         this.view.sessionTileAnim.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
+      	this.view.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
         this.view.sessionTileAnim.sessionLocation.text = this.thisCard.sessionLocation.text;
         this.view.sessionTileAnim.tileBGImageKony.src = this.thisCard.tileBGImageKony.src;
         var cardFrame = this.thisCard.frame.y;
@@ -203,7 +215,7 @@ define({
                         });
                 }
             });
-
+		/*
         this.view.sessionTileAnim.addAgendaContainer.animate(
             kony.ui.createAnimation({
                 //0:{left:0,"stepConfig":{}},
@@ -218,6 +230,52 @@ define({
             }, {
                 animationEnd: function() {}
             });
+            */
+      	this.view.sessionTileAnim.animationElements.animate(
+           kony.ui.createAnimation({
+               //0:{left:0,"stepConfig":{}},
+               100: {
+                   opacity: 1,
+                   "stepConfig": {}
+               }
+           }), {
+               delay: animDuration,
+               iterationCount:1,
+               fillMode: kony.anim.FILL_MODE_FORWARDS,
+               duration: animDuration
+           }, {
+               animationEnd: function() {}
+           });
+     this.view.sessionTileAnim.quantumDotsBlur.animate(
+                     kony.ui.createAnimation({
+                         //0:{left:0,"stepConfig":{}},
+                         100: {
+                             left: "-1465dp",
+                             "stepConfig": {"timingFunction": kony.anim.LINEAR}
+                         }
+                     }), {
+                         delay: 0,
+                         iterationCount:0,
+                         fillMode: kony.anim.FILL_MODE_FORWARDS,
+                         duration: 90
+                     }, {
+                         animationEnd: function() {}
+                     });
+       this.view.sessionTileAnim.quantumDotsClear.animate(
+                     kony.ui.createAnimation({
+                         //0:{left:0,"stepConfig":{}},
+                         100: {
+                             left: "-966dp",
+                             "stepConfig": {"timingFunction": kony.anim.LINEAR}
+                         }
+                     }), {
+                         delay: 0,
+                         iterationCount:0,
+                         fillMode: kony.anim.FILL_MODE_FORWARDS,
+                         duration: 40
+                     }, {
+                         animationEnd: function() {}
+                     });
 
         this.view.sessionTileAnim.sessionLocationIcon.animate(
             kony.ui.createAnimation({
@@ -244,8 +302,9 @@ define({
                 duration: animHalf
             }, {
                 animationEnd: function() {
-
-                    self.view.sessionTileAnim.tileBGImageKony.animate(
+                }
+            });
+      	 self.view.sessionTileAnim.tileBGImageKony.animate(
                         kony.ui.createAnimation({
                             100: {
                                 transform: bgImageScale,
@@ -254,13 +313,10 @@ define({
                         }), {
                             delay: 0,
                             fillMode: kony.anim.FILL_MODE_FORWARDS,
-                            duration: animHalf * 0.5
+                            duration: animDuration * 0.5
                         }, {
                             animationEnd: function() {}
                         });
-
-                }
-            });
         this.view.sessionTileAnim.animate(
             kony.ui.createAnimation({
                 50: {
@@ -279,6 +335,23 @@ define({
             }, {
                 animationEnd: function() {}
             });
+      	this.view.sessionContentContainer.animate(
+                       kony.ui.createAnimation({
+                           50: {
+                               top: "100%",
+                               "stepConfig": {}
+                           },
+                           100: {
+                               top: "28%",
+                               "stepConfig": {}
+                           }
+                       }), {
+                           delay: animHalf*0.65,
+                           fillMode: kony.anim.FILL_MODE_FORWARDS,
+                           duration: animDuration
+                       }, {
+                           animationEnd: function() {}
+                       });
         this.view.sessionTileAnim.tilebg.animate(
             kony.ui.createAnimation({
                 50: {
@@ -299,23 +372,6 @@ define({
                 duration: animDuration
             }, {
                 animationEnd: function() {
-                    self.view.sessionContentContainer.animate(
-                        kony.ui.createAnimation({
-                            50: {
-                                top: "100%",
-                                "stepConfig": {}
-                            },
-                            100: {
-                                top: "25%",
-                                "stepConfig": {}
-                            }
-                        }), {
-                            delay: 0,
-                            fillMode: kony.anim.FILL_MODE_FORWARDS,
-                            duration: animDuration
-                        }, {
-                            animationEnd: function() {}
-                        });
                     self.view.feedbackMaster.animate(
                         kony.ui.createAnimation({
                             50: {
@@ -334,6 +390,22 @@ define({
                             animationEnd: function() {}
                         });
                     self.view.imageBack.animate(
+                        kony.ui.createAnimation({
+                            //50:{top:"100%dp","stepConfig":{}},
+                            100: {
+                                opacity: 1,
+                                "stepConfig": {}
+                            }
+                        }), {
+                            delay: 0,
+                            fillMode: kony.anim.FILL_MODE_FORWARDS,
+                            duration: animDuration
+                        }, {
+                            animationEnd: function() {
+                                self.view.buttonBack.isVisible = true;
+                            }
+                        });
+                     self.view.addAgendaContainer.animate(
                         kony.ui.createAnimation({
                             //50:{top:"100%dp","stepConfig":{}},
                             100: {
@@ -395,7 +467,9 @@ define({
                 fillMode: kony.anim.FILL_MODE_FORWARDS,
                 duration: animDuration
             }, {
-                animationEnd: function() {}
+                animationEnd: function() {
+                   this.view.addAgendaContainer.isVisible=true;
+                }.bind(this)
             });
         this.view.animate(
             kony.ui.createAnimation({
@@ -409,7 +483,10 @@ define({
                 fillMode: kony.anim.FILL_MODE_FORWARDS,
                 duration: animHalf
             }, {
-                animationEnd: function() {}
+                animationEnd: function() {
+                 this.view.addAgendaContainer.isVisible=true;
+                  
+                }.bind(this)
             });
     },
 
@@ -419,6 +496,7 @@ define({
      * @private
      */
     frmAgendaSessionClose: function() {
+      	//this.setData(accelerateSessionData.eventSessionData.records);
         var self = this;
         egLogger("this.thisCard = " + this.thisCard.id);
         var animDuration = 0.8;
@@ -591,6 +669,22 @@ define({
                     self.view.buttonBack.isVisible = true;
                 }
             });
+      this.view.addAgendaContainer.animate(
+            kony.ui.createAnimation({
+                //50:{top:"100%dp","stepConfig":{}},
+                100: {
+                    opacity: 0,
+                    "stepConfig": {}
+                }
+            }), {
+                delay: 0,
+                fillMode: kony.anim.FILL_MODE_FORWARDS,
+                duration: animDuration
+            }, {
+                animationEnd: function() {
+                    self.view.buttonBack.isVisible = true;
+                }
+            });
         this.view.sessionTileAnim.tilebg.animate(
             kony.ui.createAnimation({
                 50: {
@@ -677,7 +771,15 @@ define({
             self.view.sessionTileAnim.transform = tileScale;
         } else {
             self.view.sessionTileAnim.top = scrollPosY * -0.3;
-            self.view.imageBack.opacity = (1 - (scrollPosY * 0.01));
+          	var opacity= (1 - (scrollPosY * 0.01));
+            self.view.imageBack.opacity = opacity;
+          if(opacity>=1){
+            self.view.addAgendaContainer.isVisible=true;
+          }
+          else{
+            self.view.addAgendaContainer.isVisible=false;
+          }
+          	
         }
 
     },
@@ -772,18 +874,20 @@ define({
      */
     setData: function(sessions) {
         this.view.sessionTiles.removeAll();
+      	this.filteredSession=[];
         this.sessionsList = sessions;
         var sessionCount = sessions.length;
         for (var index = 0; index < sessionCount; index++) {
             var id = eventConstants.SESSION_TILE_ID + index;
             var sessionObj = sessions[index];
             var sessionTile;
-            if (index == 0) {
+            if (index === 0) {
                 sessionTile = this.createSessionTile(id, "131dp");
             } else {
                 sessionTile = this.createSessionTile(id, "0dp");
             }
             this.view.sessionTiles.add(sessionTile);
+          	this.filteredSession.push(sessionTile);
             this.view[id].setTitleData(sessionObj);
             this.view[id].callback = this.mySchedular;
             if (!kony.sdk.isNullOrUndefined(sessionObj.presenter)) {
@@ -850,7 +954,6 @@ define({
      * 	@private
      */
     setSpeakerProfile: function(eventObject) {
-        this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
         this.view.imgThanks.isVisible = false;
         this.view.lblThankyou.isVisible = false;
         var id = eventObject.id;
@@ -858,9 +961,16 @@ define({
         var startIndex = eventConstants.SESSION_TILE_ID.length;
         var sessionIndex = id.substring(startIndex, len);
         var sessionObject = this.sessionsList[sessionIndex];
+        this.currentSessionObjectInDetailScreen = sessionObject;
+        if (!kony.sdk.isNullOrUndefined(sessionObject.feedBackSubmit) && sessionObject.feedBackSubmit) {
+            this.dismissRatingTiles();
+        } else {
+            this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
+        }
         this.setSessionAttachments(sessionObject);
         var speakerList = sessionObject["presenter"];
-        var speakers_master = accelerateSpeakerData.eventSpeakerData.records
+        this.ratingLength = speakerList.length;
+        var speakers_master = accelerateSpeakerData.eventSpeakerData.records;
         if (kony.sdk.isNullOrUndefined(speakerList)) {
             this.view.CopyLabel0he0b8d5a22fc4f.isVisible = false;
             this.view.flxSpeaker0.isVisible = false;
@@ -877,7 +987,7 @@ define({
                     this.view["speakerName" + speakerIndex].text = speakerBio.speaker_name;
                     var title = speakerBio.speaker_title.length > 20 ? speakerBio.speaker_title.substring(0, 16) + "..." : speakerBio.speaker_title;
                     this.view["speakerDesignation" + speakerIndex].text = title;
-                  	var description=speakerBio.speaker_bio.length>50?speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
+                    var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
                     this.view["speakerDescription" + speakerIndex].text = description;
                     this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
                     this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
@@ -901,6 +1011,7 @@ define({
     onClickOfEventDate: function(eventobject) {
         let buttonText = eventobject.text;
         this.changeButtonSkins(buttonText);
+      	this.onClickOfFilter(buttonText);
     },
 
     /**
@@ -929,12 +1040,14 @@ define({
      * 	@private
      */
     filterSessionTiles: function(sessionTrackId) {
+      	this.filteredSession=[];
         var isFirstTile = false;
         var sessionCount = this.sessionsList.length;
         for (var index = 0; index < sessionCount; index++) {
             var id = eventConstants.SESSION_TILE_ID + index;
             if (sessionTrackId === eventConstants.KEYNOTE) {
                 this.view[id].isVisible = true;
+              	this.filteredSession.push(this.view[id]);
                 if (!isFirstTile) {
                     this.view[id].top = "131dp";
                     isFirstTile = true;
@@ -945,6 +1058,7 @@ define({
                 this.view[id].isVisible = false;
             } else {
                 this.view[id].isVisible = true;
+              	this.filteredSession.push(this.view[id]);
                 if (!isFirstTile) {
                     this.view[id].top = "131dp";
                     isFirstTile = true;
@@ -961,6 +1075,40 @@ define({
      * 	@private
      */
     onClickOfSubmit: function() {
+        var batch = [];
+        var record;
+        for (var index = 0; index < this.ratingLength; index++) {
+            record = {};
+            record.speaker_id = this.view["ratingTile" + index].speakerId;
+            record.rating = this.view["ratingTile" + index].selectedIndex;
+            batch.push(record);
+        }
+        record = {};
+        record.speaker_id = this.view.ratingTile.speakerId;
+        record.rating = this.view.ratingTile.selectedIndex;
+        batch.push(record);
+        record = {};
+        record.speaker_id = -2;
+        record.feedback_comments = this.view.txtArea.text;
+        batch.push(record);
+        var dataBatch = {
+            "records": batch
+        };
+        createRecord(eventConstants.OBJECT_SERVICE_NAME, eventConstants.DATA_MODEL_SESSION_FEEDBACK, dataBatch, this.successInUpdateFeedback.bind(this), this.failureInUpdateFeedback.bind(this));
+    },
+    successInUpdateFeedback: function(response) {
+        kony.print(" feedback saved successfully");
+        this.dismissRatingTiles();
+        this.currentSessionObjectInDetailScreen.feedBackSubmit = true;
+
+    },
+    failureInUpdateFeedback: function(error) {
+        kony.print("failure in storing feedback");
+        this.dismissRatingTiles();
+        this.currentSessionObjectInDetailScreen.feedBackSubmit = true;
+
+    },
+    dismissRatingTiles: function() {
         var transformObject = kony.ui.makeAffineTransform();
         transformObject.scale(1, 0);
         this.view.flxRatingContainer.animate(this.createAnimationObject("0dp"), this.getPlatformSpecific(), {
@@ -973,12 +1121,13 @@ define({
                 this.view.feedbackMaster.forceLayout();
             }.bind(this)
         });
-//         this.view.feedbackMaster.setContentOffset({
-//             "y": "0%",
-//         }, true);
+        //         this.view.feedbackMaster.setContentOffset({
+        //             "y": "0%",
+        //         }, true);
         this.view.imgThanks.isVisible = true;
         this.view.lblThankyou.isVisible = true;
     },
+
     /**
      *	@function filterSessionTiles
      * 	@description This function is used to toggle the Visibility based on the category choosen
@@ -1042,12 +1191,12 @@ define({
         this.view.flxMaterial.removeAll();
         var materials = sessionObject.session_material;
         if (kony.sdk.isNullOrUndefined(materials)) {
-          	this.view.lblPresentation.isVisible=false;
+            this.view.lblPresentation.isVisible = false;
             return;
         }
         var materailsCount = materials.length;
         if (materailsCount <= 0) {
-          	this.view.lblPresentation.isVisible=false;
+            this.view.lblPresentation.isVisible = false;
             return;
         }
         var flexInstance, materialInstance;
@@ -1059,6 +1208,7 @@ define({
             materialInstance = this.createMaterialInstance(materialId, "0dp", "100%");
             this.view[id].add(materialInstance);
             this.view[materialId].pdfUrl = materials[0].url;
+          	this.view[materialId].onClick=this.onClickOfPDF.bind(this);
             return;
         }
         var width = "130dp";
@@ -1070,10 +1220,12 @@ define({
             materialInstance = this.createMaterialInstance(materialIdConstant + materialIndex, "0dp", width);
             this.view[flexInstance.id].add(materialInstance);
             this.view[materialInstance.id].pdfUrl = (materials[materialIndex].url);
+          	this.view[materialInstance.id].onClick=this.onClickOfPDF.bind(this);
             if (materialIndex + 1 < materailsCount) {
-                materialInstance = this.createMaterialInstance(materialIdConstant + materialIndex + 1, "10dp", width);
+                materialInstance = this.createMaterialInstance(materialIdConstant + materialIndex + 1, "170dp", width);
                 this.view[flexInstance.id].add(materialInstance);
                 this.view[materialInstance.id].pdfUrl = (materials[materialIndex + 1].url);
+              	this.view[materialInstance.id].onClick=this.onClickOfPDF.bind(this);
             }
         }
 
@@ -1145,14 +1297,93 @@ define({
             "isVisible": true,
             "layoutType": kony.flex.FREE_FORM,
             "width": "300dp",
-          	"left":"0dp",
+            "left": "0dp",
             "isModalContainer": false,
             "skin": "slFbox",
-            "top": "0dp",
+            "top": "20dp",
             "zIndex": 1
         }, {
             "retainFlowHorizontalAlignment": false
         }, {});
         return flexContainer;
+    },
+    /**
+     *	@function addToMyScheduleInAnimTile
+     * 	@description This function is to create add session to my schedhule from session detail page
+     *	@param eventObject {Object} of sessionTileAnim
+     *  @param sessionTileObject {Object} sessionTile Object which is clicked
+     * 	@private
+     */
+    addToMyScheduleInAnimTile: function(tileObject, addAgendaButton) {
+        addAgendaButton.imgStatus.src = tileObject.myScheduleIndicatorImage;
+        addAgendaButton.skin = tileObject.agendaContainerSkin;
+      	this.view.sessionTileAnim.addAgendaContainer.skin=tileObject.agendaContainerSkin;
+      	this.view.sessionTileAnim.imgStatus.src=tileObject.myScheduleIndicatorImage;
+        tileObject.sessionToMySchedule();
+    },
+    /**
+     *	@function onClickOfPDF
+     * 	@description This function is to open pdf
+     *	@param floorMapURL {url} url of the pdf
+     * 	@private
+     */
+    onClickOfPDF: function(eventObject) {
+      	this.view.flxPdf.zIndex=300;
+      	var url=this.view[eventObject.id].pdfUrl;
+      	this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
+      	this.view.flxPdf.animate(this.animateTopForPdf("0dp"),this.getPlatformSpecific(), {"animationEnd":function(){
+           this.view.pdfBrowser.requestURLConfig = {
+            URL: "https://docs.google.com/gview?embedded=true&url=" + url,
+            requestMethod: constants.BROWSER_REQUEST_METHOD_GET
+        };
+        }.bind(this)});
+    },
+  /**
+     *	@function closePdf
+     * 	@description This  is to move the pdf container to down.
+     * 	@private
+     */
+  closePdf:function(){
+    this.view.flxPdf.animate(this.animateTopForPdf("100%"),this.getPlatformSpecific(), {"animationEnd":function(){
+      this.view.flxPdf.zIndex=1;
+      this.view.txtArea.setEnabled(false);
+    }.bind(this)});
+    
+  },
+  /**
+     *	@function animateTopForPdf
+     * 	@description This returns the animationObject
+     *	@param top {String} to where top value to be animated
+     * 	@private
+     */
+  animateTopForPdf: function(top) {
+        var animationObejct = kony.ui.createAnimation({
+            100: {
+                //"transformation": transformation,
+                "top": top,
+                "stepConfig": {}
+            }
+        });
+        return animationObejct;
+    },
+  onClickOfFilter:function(text){
+    var startDate=parseInt(text);
+    var sessions= this.filteredSession;
+    var len=sessions.length;
+    var found=false;
+    var index;
+    for(index=0;index<len;index++){
+      if(new Date(sessions[index].startDate).getDate()==startDate){
+        found=true;
+        break;
+      }
     }
+    if(found){
+      this.view.contentScroller.scrollToWidget(sessions[index],true);
+    }
+    else{
+      this.view.contentScroller.scrollToEnd();
+    }
+  },
+  
 });
