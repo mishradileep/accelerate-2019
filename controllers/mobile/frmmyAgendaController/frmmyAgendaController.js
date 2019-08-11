@@ -943,8 +943,8 @@ define({
         return;
       }
     if(children[0].id==id && childrenCount>1){
-      children[1].top="80dp";
       this.view.sessionTiles.remove(this.view[id]);
+      children[1].top="80dp";
     }
     else{
       this.view.sessionTiles.remove(this.view[id]);
