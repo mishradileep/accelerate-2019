@@ -94,17 +94,40 @@ define(function() {
         myAgendaData[this.sessionData.event_session_id]=this.sessionData.event_session_id;
         kony.store.setItem("myAgendaData", myAgendaData);
       },
+      /**
+         *	@function invokedCallback
+         * 	@description This function is to invoke  the formlevel callback
+         * 	@private
+         */
       invokedCallback:function(){
         this.callback(this.view.id,this.sessionData);
       },
+      /**
+         *	@function setDeleteButtonValues
+         * 	@description This function is to set the delete icon when user opens myschedule form.
+         * 	@private
+         */
       setDeleteButtonValues:function(){
         this.view.imgStatus.src=this.deleteIcon;
         this.view.flxAddedToSchedule.isVisible=false;
       },
+      /**
+         *	@function deleteSessionFromMyAgenda
+         * 	@description This is to  delete the session_id keys from kony store.
+         * 	@private
+         */
       deleteSessionFromMyAgenda:function(){
         this.isAddedToMySchedule=false;
         this.sessionData.isAddedToMySchedule=false;
-        this.deleteCallback(this.view.id);
+        var myScheduleMap=kony.store.getItem("myAgendaData");
+        if(kony.sdk.isNullOrUndefined(myScheduleMap)){
+          return;
+        }
+        if(myScheduleMap.hasOwnProperty(this.sessionData.event_session_id)){
+          delete myScheduleMap[this.sessionData.event_session_id];
+        }
+        kony.store.setItem("myAgendaData", myScheduleMap);
+		this.deleteCallback(this.view.id);
       }
     };
 });

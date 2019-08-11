@@ -132,7 +132,7 @@ define({
       	this.view.addAgendaContainer.imgStatus.src = this.view[eventobject.id].imgStatus.src;
         this.view.sessionTileAnim.callback = this.view[eventobject.id].callback;
         this.view.sessionTileAnim.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, this.view[eventobject.id]);
-      	this.view.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, this.view[eventobject.id]);
+      	this.view.addAgendaContainer.onClick = this.frmAgendaSessionClose.bind(this,this.view[eventobject.id].deleteSessionFromMyAgenda);
         this.view.sessionTileAnim.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
       	this.view.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
         this.view.sessionTileAnim.sessionLocation.text = this.thisCard.sessionLocation.text;
@@ -496,7 +496,7 @@ define({
      * @description The function is used to invoke the action on the click of the close button of the session tile
      * @private
      */
-    frmAgendaSessionClose: function() {
+    frmAgendaSessionClose: function(callback) {
       	//this.setData(accelerateSessionData.eventSessionData.records);
       	this.currentViewState=0;
         var self = this;
@@ -753,7 +753,12 @@ define({
                 fillMode: kony.anim.FILL_MODE_FORWARDS,
                 duration: animDuration
             }, {
-                animationEnd: function() {}
+                animationEnd: function() {
+                  if(!kony.sdk.isNullOrUndefined(callback)){
+                    callback();
+                  }
+                  
+                }.bind(this)
             });
 
     },
@@ -880,6 +885,7 @@ define({
         this.view.sessionTiles.removeAll();
       	this.filteredSession=[];
         this.sessionsList = sessions;
+        this.checkIfSessionsAreMyScheduled(sessions)
         var sessionCount = sessions.length;
         for (var index = 0; index < sessionCount; index++) {
             var id = eventConstants.SESSION_TILE_ID + index;
@@ -906,8 +912,45 @@ define({
         }
         this.view.sessionTileAnim.callback = this.mySchedular;
     },
+  	/**
+     *	@function checkIfSessionsAreMyScheduled
+     * 	@description This is update the session object if it is already added to myschedule
+     *	@param sessions {Object} - list of sessions
+     * 	@private
+     */
+  	checkIfSessionsAreMyScheduled:function(sessions){
+      var myScheduledSession=kony.store.getItem("myAgendaData");
+      if(kony.sdk.isNullOrUndefined(myScheduledSession)){
+        return;
+      }
+      for(var index=0;index<sessions.length;index++){
+        var session_id=sessions[index].event_session_id;
+        if(!kony.sdk.isNullOrUndefined(session_id) && myScheduledSession.hasOwnProperty(session_id)){
+          sessions[index].isAddedToMySchedule=true;
+        }
+      }
+    },
   resetData:function(id){
-   this.setData(accelerateSessionData.eventSessionData.records);
+    var sessions=this.myScheduleSession;
+    var len=sessions.length;
+    var index;
+      this.view[id].sessionData.isAddedToMySchedule=false;
+      this.view[id].isAddedToMySchedule=false;
+      this.view[id].isVisible=false;
+      var children=this.view.sessionTiles.widgets();
+      var childrenCount=children.length;
+      if(childrenCount<=0){
+        return;
+      }
+    if(children[0].id==id && childrenCount>1){
+      children[1].top="80dp";
+      this.view.sessionTiles.remove(this.view[id]);
+    }
+    else{
+      this.view.sessionTiles.remove(this.view[id]);
+    }
+    
+      this.view.forceLayout();
   },
     /**
      *	@function createSessionTile

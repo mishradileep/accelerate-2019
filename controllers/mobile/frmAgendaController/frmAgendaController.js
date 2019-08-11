@@ -876,6 +876,7 @@ define({
         this.view.sessionTiles.removeAll();
       	this.filteredSession=[];
         this.sessionsList = sessions;
+      	this.checkIfSessionsAreMyScheduled(sessions);
         var sessionCount = sessions.length;
         for (var index = 0; index < sessionCount; index++) {
             var id = eventConstants.SESSION_TILE_ID + index;
@@ -895,6 +896,25 @@ define({
             }
         }
         this.view.sessionTileAnim.callback = this.mySchedular;
+    },
+  
+  /**
+     *	@function checkIfSessionsAreMyScheduled
+     * 	@description This is update the session object if it is already added to myschedule
+     *	@param sessions {Object} - list of sessions
+     * 	@private
+     */
+  	checkIfSessionsAreMyScheduled:function(sessions){
+      var myScheduledSession=kony.store.getItem("myAgendaData");
+      if(kony.sdk.isNullOrUndefined(myScheduledSession)){
+        return;
+      }
+      for(var index=0;index<sessions.length;index++){
+        var session_id=sessions[index].event_session_id;
+       if(!kony.sdk.isNullOrUndefined(session_id) && myScheduledSession.hasOwnProperty(session_id)){
+          sessions[index].isAddedToMySchedule=true;
+        }
+      }
     },
     /**
      *	@function createSessionTile
