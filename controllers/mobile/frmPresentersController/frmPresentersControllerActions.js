@@ -29,5 +29,11 @@ define({
         var self = this;
         this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = "menuLabelSkinActive";
         this.view.presenterScroll.showFadingEdges = false;
+    },
+    /** onClick defined for menuButtonMySchedule **/
+    AS_Button_ea3fe76990774a1e9e3bb6bbfdd8cd49: function AS_Button_ea3fe76990774a1e9e3bb6bbfdd8cd49(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmmyAgenda");
+        ntf.navigate();
     }
 });

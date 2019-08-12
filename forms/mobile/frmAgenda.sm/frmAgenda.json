@@ -46,9 +46,11 @@
         "buttonBack",
         "menuMain",
         "addAgendaContainer",
+        "sessionLocation",
         "customprompt",
         "flxPdf",
-        "sessionTileAnim"
+        "sessionTileAnim",
+        "flxToast"
     ],
     "containerweight": 100,
     "controllerInfo": {

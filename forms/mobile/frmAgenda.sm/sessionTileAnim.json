@@ -160,6 +160,14 @@
         "sessionLocation": {
             "__events__": {},
             "__info__": {
+                "kuid": "bb62e940416245f2b5ba8061f1958d13",
+                "srcKUID": "ea0238ea5fe442659705dda7280f37e5",
+                "wType": "RichText"
+            }
+        },
+        "sessionLocation1": {
+            "__events__": {},
+            "__info__": {
                 "kuid": "h21b3b9acf0e4eeba21393550a79fc70",
                 "srcKUID": "ebc7005db4fc438c9f4545c447adf704",
                 "wType": "Label"

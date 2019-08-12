@@ -1,0 +1,102 @@
+{
+  "android": {
+    "font_name": "Poppins Regular",
+    "font_size": 101,
+    "isForked": false
+  },
+  "androidwearos": {
+    "font_name": "default",
+    "font_size": 101,
+    "isForked": false
+  },
+  "background_color": "00000000",
+  "bg_type": "one",
+  "border_color": "424242ff",
+  "border_style": "plain",
+  "border_type": 0,
+  "border_width": 0,
+  "desktopweb": {
+    "font_name": "Helvetica",
+    "font_size": 101,
+    "isForked": false
+  },
+  "fontSizeInPx": false,
+  "font_color": "ffffffb2",
+  "font_name": "iphoneSystem",
+  "font_size": 101,
+  "font_style": "normal",
+  "font_weight": "400",
+  "ipad": {
+    "font_name": "System",
+    "font_size": 101,
+    "isForked": false
+  },
+  "iphone": {
+    "font_name": "Poppins-Regular",
+    "font_size": 101,
+    "isForked": false
+  },
+  "isDefaultSkin": false,
+  "kiosk": {
+    "font_name": "None",
+    "font_size": 101,
+    "isForked": false
+  },
+  "kuid": "s431a5e51c914d6dbbadca1d28edaedf",
+  "spaan": {
+    "font_name": "Helvetica",
+    "font_size": 101,
+    "isForked": false
+  },
+  "spaandroidtablet": {
+    "font_name": "Helvetica",
+    "font_size": 101,
+    "isForked": false
+  },
+  "spabb": {
+    "font_name": "Helvetica",
+    "font_size": 101,
+    "isForked": false
+  },
+  "spaip": {
+    "font_name": "Helvetica",
+    "font_size": 101,
+    "isForked": false
+  },
+  "spaipad": {
+    "font_name": "Helvetica",
+    "font_size": 101,
+    "isForked": false
+  },
+  "spawindowstablet": {
+    "font_name": "Helvetica",
+    "font_size": 101,
+    "isForked": false
+  },
+  "spawinphone8": {
+    "font_name": "Helvetica",
+    "font_size": 101,
+    "isForked": false
+  },
+  "tabrcandroid": {
+    "font_name": "default",
+    "font_size": 101,
+    "isForked": false
+  },
+  "wType": "RichText",
+  "watchos": {
+    "font_name": "System",
+    "font_size": 101,
+    "isForked": false
+  },
+  "windows8": {
+    "font_name": "None",
+    "font_size": 101,
+    "isForked": false
+  },
+  "winphone8": {
+    "font_name": "None",
+    "font_size": 101,
+    "isForked": false
+  }
+}

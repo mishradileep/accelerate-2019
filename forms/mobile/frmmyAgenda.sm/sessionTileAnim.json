@@ -162,6 +162,14 @@
         "sessionLocation": {
             "__events__": {},
             "__info__": {
+                "kuid": "a2bb1a14db904044a18c21579dc990ed",
+                "srcKUID": "ea0238ea5fe442659705dda7280f37e5",
+                "wType": "RichText"
+            }
+        },
+        "sessionLocation1": {
+            "__events__": {},
+            "__info__": {
                 "kuid": "ga937d3af70745e8921c0cbb743eb8d1",
                 "srcKUID": "ebc7005db4fc438c9f4545c447adf704",
                 "wType": "Label"

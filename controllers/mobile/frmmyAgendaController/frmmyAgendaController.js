@@ -12,7 +12,7 @@ define({
      */
     frmAgendaPreshow: function() {
         var self = this;
-        this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = "menuLabelSkinActive";
+        this.view.menuMain.menuContainerMySchedule.menuLabelMySchedule.skin = "menuLabelSkinActive";
         this.setData(accelerateSessionData.eventSessionData.records);
         //this.addActionToSessionTiles();
         this.view.referenceAgenda.isVisible = false;
@@ -132,11 +132,14 @@ define({
       	this.view.addAgendaContainer.imgStatus.src = this.view[eventobject.id].imgStatus.src;
         this.view.sessionTileAnim.callback = this.view[eventobject.id].callback;
         this.view.sessionTileAnim.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, this.view[eventobject.id]);
+      	debugger;
       	this.view.addAgendaContainer.onClick = this.frmAgendaSessionClose.bind(this,this.view[eventobject.id].deleteSessionFromMyAgenda);
         this.view.sessionTileAnim.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
       	this.view.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
         this.view.sessionTileAnim.sessionLocation.text = this.thisCard.sessionLocation.text;
         this.view.sessionTileAnim.tileBGImageKony.src = this.thisCard.tileBGImageKony.src;
+      	this.view.sessionLocation.text = "<u>"+this.thisCard.sessionLocation.text+"</u>";
+      	this.view.sessionLocation.onTouchEnd=this.openFloorMap.bind(this,this.view[eventobject.id]. sessionData);
         var cardFrame = this.thisCard.frame.y;
         egLogger("cardFrame = " + cardFrame);
         this.cardFrameRel = cardFrame - this.view.contentScroller.contentOffsetMeasured.y;
@@ -422,6 +425,22 @@ define({
                                 self.view.buttonBack.isVisible = true;
                             }
                         });
+                  self.view.sessionLocation.animate(
+                        kony.ui.createAnimation({
+                            //50:{top:"100%dp","stepConfig":{}},
+                            100: {
+                                opacity: 1,
+                                "stepConfig": {}
+                            }
+                        }), {
+                            delay: 0,
+                            fillMode: kony.anim.FILL_MODE_FORWARDS,
+                            duration: animDuration
+                        }, {
+                            animationEnd: function() {
+                                self.view.buttonBack.isVisible = true;
+                            }
+                        });
 
                 }
             });
@@ -470,6 +489,7 @@ define({
             }, {
                 animationEnd: function() {
                    this.view.addAgendaContainer.isVisible=true;
+                   this.view.sessionLocation.isVisible=true;
                 }.bind(this)
             });
         this.view.animate(
@@ -486,9 +506,28 @@ define({
             }, {
                 animationEnd: function() {
                  this.view.addAgendaContainer.isVisible=true;
-                  
+                  this.view.sessionLocation.isVisible=true;
                 }.bind(this)
             });
+    },
+  	openFloorMap:function(session){
+      if(kony.sdk.isNullOrUndefined(session.event_inner_location)){
+        return ;
+      }
+      var floormap=session.event_inner_location;
+      if(!kony.sdk.isNullOrUndefined(floormap) && floormap.length>0){
+      this.view.flxPdf.zIndex=300;
+      var url=floormap[0].inner_location;
+      var heading=floormap[0].text;
+      this.view.flxPdf.mobileheader.headerTitle=heading;
+      	this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
+      	this.view.flxPdf.animate(this.animateTopForPdf("0dp"),this.getPlatformSpecific(), {"animationEnd":function(){
+        this.view.pdfBrowser.requestURLConfig = {
+            URL: "https://docs.google.com/gview?embedded=true&url=" + url,
+            requestMethod: constants.BROWSER_REQUEST_METHOD_GET
+        };
+        }.bind(this)});
+      }
     },
 
     /**
@@ -687,6 +726,22 @@ define({
                     self.view.buttonBack.isVisible = true;
                 }
             });
+      	this.view.sessionLocation.animate(
+            kony.ui.createAnimation({
+                //50:{top:"100%dp","stepConfig":{}},
+                100: {
+                    opacity: 0,
+                    "stepConfig": {}
+                }
+            }), {
+                delay: 0,
+                fillMode: kony.anim.FILL_MODE_FORWARDS,
+                duration: animDuration
+            }, {
+                animationEnd: function() {
+                    self.view.buttonBack.isVisible = true;
+                }
+            });
         this.view.sessionTileAnim.tilebg.animate(
             kony.ui.createAnimation({
                 50: {
@@ -742,7 +797,6 @@ define({
             });
         this.view.sessionTileAnim.sessionTime.animate(
             kony.ui.createAnimation({
-                //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
                 100: {
                     left: "111dp",
                     top: "74dp",
@@ -754,13 +808,12 @@ define({
                 duration: animDuration
             }, {
                 animationEnd: function() {
-                  if(!kony.sdk.isNullOrUndefined(callback)){
+                  if(!kony.sdk.isNullOrUndefined(callback) && typeof(callback)=="function"){
                     callback();
                   }
                   
                 }.bind(this)
             });
-
     },
 
     /**
@@ -782,9 +835,11 @@ define({
             self.view.imageBack.opacity = opacity;
           if(opacity>=1){
             self.view.addAgendaContainer.isVisible=true;
+            self.view.sessionLocation.isVisible=true;
           }
           else{
             self.view.addAgendaContainer.isVisible=false;
+            self.view.sessionLocation.isVisible=false;
           }
           	
         }
@@ -1017,12 +1072,13 @@ define({
         var startIndex = eventConstants.SESSION_TILE_ID.length;
         var sessionIndex = id.substring(startIndex, len);
         var sessionObject = this.sessionsList[sessionIndex];
+      	this.dismissRatingIfSubmitted(sessionObject);
         this.currentSessionObjectInDetailScreen = sessionObject;
-        if (!kony.sdk.isNullOrUndefined(sessionObject.feedBackSubmit) && sessionObject.feedBackSubmit) {
-            this.dismissRatingTiles();
-        } else {
-            this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
-        }
+//         if (!kony.sdk.isNullOrUndefined(sessionObject.feedBackSubmit) && sessionObject.feedBackSubmit) {
+//             this.dismissRatingTiles();
+//         } else {
+//             this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
+//         }
         this.setSessionAttachments(sessionObject);
         var speakerList = sessionObject["presenter"];
         this.ratingLength = speakerList.length;
@@ -1048,6 +1104,8 @@ define({
                     this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
                     this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
                     this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
+                    this.view["flxSpeaker"+speakerIndex].speakerInfo=speakerBio;
+                  	this.view["flxSpeaker"+speakerIndex].onClick=this.onClickOfSpeaker.bind(this);
                 }
             }
         }
@@ -1057,6 +1115,27 @@ define({
         }
         this.view["ratingTile"].setDefaultSelectedIndex();
     },
+  	onClickOfSpeaker:function(eventObject){
+    var naviInfo={
+      "formId":this.view.id,
+      "speakerId":eventObject.speakerInfo.speaker_id,
+    };
+    var navigateObj=new kony.mvc.Navigation("frmPresenters");
+    navigateObj.navigate(naviInfo);
+    
+  },
+  dismissRatingIfSubmitted:function(sessionObject){
+    var feedbackSubmittedSessions=kony.store.getItem("feedbackstore");
+    if(kony.sdk.isNullOrUndefined(feedbackSubmittedSessions)){
+      return;
+    }
+    if(feedbackSubmittedSessions.hasOwnProperty(sessionObject.event_session_id)){
+      this.dismissRatingTiles();
+    }
+    else{
+      this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
+    }
+  },
 
     /**
      *	@function onClickOfEventDate
@@ -1154,16 +1233,23 @@ define({
     },
     successInUpdateFeedback: function(response) {
         kony.print(" feedback saved successfully");
-        this.dismissRatingTiles();
+         this.dismissRatingTiles();
         this.currentSessionObjectInDetailScreen.feedBackSubmit = true;
-
+      	this.addToKonyStore(this.currentSessionObjectInDetailScreen.event_session_id);
     },
     failureInUpdateFeedback: function(error) {
         kony.print("failure in storing feedback");
         this.dismissRatingTiles();
-        this.currentSessionObjectInDetailScreen.feedBackSubmit = true;
 
     },
+  	addToKonyStore:function(sessionId){
+    var feedbackSubmittedSessions=kony.store.getItem("feedbackstore");
+    if(kony.sdk.isNullOrUndefined(feedbackSubmittedSessions)){
+      feedbackSubmittedSessions={};
+    }
+    feedbackSubmittedSessions[sessionId]=sessionId;
+    kony.store.setItem("feedbackstore", feedbackSubmittedSessions);
+  },
     dismissRatingTiles: function() {
         var transformObject = kony.ui.makeAffineTransform();
         transformObject.scale(1, 0);
@@ -1386,6 +1472,7 @@ define({
     onClickOfPDF: function(eventObject) {
       	this.view.flxPdf.zIndex=300;
       	var url=this.view[eventObject.id].pdfUrl;
+      	this.view.flxPdf.mobileheader.headerTitle="PDF Material";
       	this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
       	this.view.flxPdf.animate(this.animateTopForPdf("0dp"),this.getPlatformSpecific(), {"animationEnd":function(){
            this.view.pdfBrowser.requestURLConfig = {

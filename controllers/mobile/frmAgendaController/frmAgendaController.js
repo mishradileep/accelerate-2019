@@ -134,7 +134,9 @@ define({
       	this.view.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, this.view[eventobject.id]);
         this.view.sessionTileAnim.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
       	this.view.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
-        this.view.sessionTileAnim.sessionLocation.text = this.thisCard.sessionLocation.text;
+        this.view.sessionTileAnim.sessionLocation.text = "<u>"+this.thisCard.sessionLocation.text+"</u>";
+      	this.view.sessionLocation.text = "<u>"+this.thisCard.sessionLocation.text+"</u>";
+      	this.view.sessionLocation.onTouchEnd=this.openFloorMap.bind(this,this.view[eventobject.id]. sessionData);
         this.view.sessionTileAnim.tileBGImageKony.src = this.thisCard.tileBGImageKony.src;
         var cardFrame = this.thisCard.frame.y;
         egLogger("cardFrame = " + cardFrame);
@@ -421,6 +423,22 @@ define({
                                 self.view.buttonBack.isVisible = true;
                             }
                         });
+                  self.view.sessionLocation.animate(
+                        kony.ui.createAnimation({
+                            //50:{top:"100%dp","stepConfig":{}},
+                            100: {
+                                opacity: 1,
+                                "stepConfig": {}
+                            }
+                        }), {
+                            delay: 0,
+                            fillMode: kony.anim.FILL_MODE_FORWARDS,
+                            duration: animDuration
+                        }, {
+                            animationEnd: function() {
+                                self.view.buttonBack.isVisible = true;
+                            }
+                        });
 
                 }
             });
@@ -469,6 +487,7 @@ define({
             }, {
                 animationEnd: function() {
                    this.view.addAgendaContainer.isVisible=true;
+                  this.view.sessionLocation.isVisible=true;
                 }.bind(this)
             });
         this.view.animate(
@@ -485,11 +504,29 @@ define({
             }, {
                 animationEnd: function() {
                  this.view.addAgendaContainer.isVisible=true;
-                  
+                 this.view.sessionLocation.isVisible=true;
                 }.bind(this)
             });
     },
-
+	openFloorMap:function(session){
+      if(kony.sdk.isNullOrUndefined(session.event_inner_location)){
+        return ;
+      }
+      var floormap=session.event_inner_location;
+      if(!kony.sdk.isNullOrUndefined(floormap) && floormap.length>0){
+      this.view.flxPdf.zIndex=300;
+      var url=floormap[0].inner_location;
+      var heading=floormap[0].text;
+      this.view.flxPdf.mobileheader.headerTitle=heading;
+      	this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
+      	this.view.flxPdf.animate(this.animateTopForPdf("0dp"),this.getPlatformSpecific(), {"animationEnd":function(){
+        this.view.pdfBrowser.requestURLConfig = {
+            URL: "https://docs.google.com/gview?embedded=true&url=" + url,
+            requestMethod: constants.BROWSER_REQUEST_METHOD_GET
+        };
+        }.bind(this)});
+      }
+    },
     /**
      * @function frmAgendaSessionClose
      * @description The function is used to invoke the action on the click of the close button of the session tile
@@ -685,6 +722,22 @@ define({
                     self.view.buttonBack.isVisible = true;
                 }
             });
+      	this.view.sessionLocation.animate(
+            kony.ui.createAnimation({
+                //50:{top:"100%dp","stepConfig":{}},
+                100: {
+                    opacity: 0,
+                    "stepConfig": {}
+                }
+            }), {
+                delay: 0,
+                fillMode: kony.anim.FILL_MODE_FORWARDS,
+                duration: animDuration
+            }, {
+                animationEnd: function() {
+                    self.view.buttonBack.isVisible = true;
+                }
+            });
         this.view.sessionTileAnim.tilebg.animate(
             kony.ui.createAnimation({
                 50: {
@@ -775,9 +828,11 @@ define({
             self.view.imageBack.opacity = opacity;
           if(opacity>=1){
             self.view.addAgendaContainer.isVisible=true;
+            self.view.sessionLocation.isVisible=true;
           }
           else{
             self.view.addAgendaContainer.isVisible=false;
+            self.view.sessionLocation.isVisible=false;
           }
           	
         }
@@ -873,6 +928,7 @@ define({
      * 	@private
      */
     setData: function(sessions) {
+      
         this.view.sessionTiles.removeAll();
       	this.filteredSession=[];
         this.sessionsList = sessions;
@@ -883,9 +939,28 @@ define({
             var sessionObj = sessions[index];
             var sessionTile;
             if (index === 0) {
+              	if(sessionObj.session_track_id==4){
+                  var duration=this.findTimeDifference(sessionObj.session_start_date,sessionObj.session_end_date);
+                  var breakTile=this.createBreakSession(id,"142dp","50dp",duration+" "+"BREAK");
+                  breakTile.sessionTrackId=4;
+                  this.view.sessionTiles.add(breakTile);
+                  continue;
+                }
+              else{
                 sessionTile = this.createSessionTile(id, "131dp");
+              }
             } else {
+              	if(sessionObj.session_track_id==4){
+                  var duration=this.findTimeDifference(sessionObj.session_start_date,sessionObj.session_end_date);
+                  var breakTile=this.createBreakSession(id,"0dp","50dp",duration+" BREAK");
+                  breakTile.sessionTrackId=4;
+                  this.view.sessionTiles.add(breakTile);
+                  continue;
+                }
+              else{
                 sessionTile = this.createSessionTile(id, "0dp");
+              }
+                
             }
             this.view.sessionTiles.add(sessionTile);
           	this.filteredSession.push(sessionTile);
@@ -897,7 +972,23 @@ define({
         }
         this.view.sessionTileAnim.callback = this.mySchedular;
     },
-  
+  	findTimeDifference:function(t1,t2){
+      var d1=new Date(t1).getTime();
+      var d2=new Date(t2).getTime();
+      var diff=(d2-d1)/1000;
+      diff/=60;
+      var hours=parseInt(diff/60);
+      var min=parseInt(diff%60);
+      var returnValue="";
+      if(hours>0){
+        returnValue=hours+" HOUR ";
+      }
+      if(min>0){
+        returnValue+= min+" MINS ";
+      }
+     return returnValue;
+      
+    },
   /**
      *	@function checkIfSessionsAreMyScheduled
      * 	@description This is update the session object if it is already added to myschedule
@@ -981,12 +1072,13 @@ define({
         var startIndex = eventConstants.SESSION_TILE_ID.length;
         var sessionIndex = id.substring(startIndex, len);
         var sessionObject = this.sessionsList[sessionIndex];
+      	this.dismissRatingIfSubmitted(sessionObject);
         this.currentSessionObjectInDetailScreen = sessionObject;
-        if (!kony.sdk.isNullOrUndefined(sessionObject.feedBackSubmit) && sessionObject.feedBackSubmit) {
-            this.dismissRatingTiles();
-        } else {
-            this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
-        }
+//         if (!kony.sdk.isNullOrUndefined(sessionObject.feedBackSubmit) && sessionObject.feedBackSubmit) {
+//             this.dismissRatingTiles();
+//         } else {
+//             this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
+//         }
         this.setSessionAttachments(sessionObject);
         var speakerList = sessionObject["presenter"];
         this.ratingLength = speakerList.length;
@@ -1013,8 +1105,11 @@ define({
                     this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
                     this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
                     this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
+                  	this.view["flxSpeaker"+speakerIndex].speakerInfo=speakerBio;
+                  	this.view["flxSpeaker"+speakerIndex].onClick=this.onClickOfSpeaker.bind(this);
                     //this.view["imgSpeaker"+speakerIndex].width = widthImageWidth+"dp";
                     //this.view["imgSpeaker"+speakerIndex].height = (widthImageWidth * eventConstants.ASPECT_RATION_CONSTANT)+"dp";
+
                 }
             }
         }
@@ -1024,6 +1119,28 @@ define({
         }
         this.view["ratingTile"].setDefaultSelectedIndex();
     },
+  onClickOfSpeaker:function(eventObject){
+    debugger;
+    var naviInfo={
+      "form":this.view.id,
+      "speakerId":eventObject.speakerInfo.speaker_id,
+    };
+    var navigateObj=new kony.mvc.Navigation("frmPresenters");
+    navigateObj.navigate(naviInfo);
+    
+  },
+  dismissRatingIfSubmitted:function(sessionObject){
+    var feedbackSubmittedSessions=kony.store.getItem("feedbackstore");
+    if(kony.sdk.isNullOrUndefined(feedbackSubmittedSessions)){
+      return;
+    }
+    if(feedbackSubmittedSessions.hasOwnProperty(sessionObject.event_session_id)){
+      this.dismissRatingTiles();
+    }
+    else{
+      this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
+    }
+  },
 
     /**
      *	@function onClickOfEventDate
@@ -1123,14 +1240,22 @@ define({
         kony.print(" feedback saved successfully");
         this.dismissRatingTiles();
         this.currentSessionObjectInDetailScreen.feedBackSubmit = true;
+      	this.addToKonyStore(this.currentSessionObjectInDetailScreen.event_session_id);
+      	
 
     },
     failureInUpdateFeedback: function(error) {
         kony.print("failure in storing feedback");
         this.dismissRatingTiles();
-        this.currentSessionObjectInDetailScreen.feedBackSubmit = true;
-
     },
+  addToKonyStore:function(sessionId){
+    var feedbackSubmittedSessions=kony.store.getItem("feedbackstore");
+    if(kony.sdk.isNullOrUndefined(feedbackSubmittedSessions)){
+      feedbackSubmittedSessions={};
+    }
+    feedbackSubmittedSessions[sessionId]=sessionId;
+    kony.store.setItem("feedbackstore", feedbackSubmittedSessions);
+  },
     dismissRatingTiles: function() {
         var transformObject = kony.ui.makeAffineTransform();
         transformObject.scale(1, 0);
@@ -1187,13 +1312,24 @@ define({
      * 	@private
      */
     mySchedular: function(sessionTitleId, sessionData) {
-        this.currentClickedSessionTItleId = sessionTitleId;
-        var sessionNameLength = sessionData.session_name.length;
-        this.view.customprompt.lblSessionTitle.text = sessionNameLength > 25 ? sessionData.session_name.substring(0, 23) + "..." : sessionData.session_name;
-        this.view.customprompt.lblLocation.text = sessionData.hasOwnProperty("session_location") ? sessionData.session_location : "";
-        this.view.customprompt.lblTime.text = sessionData.modifiedTime;
-        this.view.customprompt.isVisible = true;
-        this.view.customprompt.btDone.onClick = this.onClickOfDone.bind(this);
+      	this.view.flxToast.opacity=100;
+      	this.view.flxToast.isVisible=true;
+      	kony.timer.schedule("timer"+Math.random(), function(){
+        this.view.flxToast.animate(kony.ui.createAnimation({
+                100: {
+                    opacity: 0,
+                    "stepConfig": {}
+                }
+            }), {
+                delay: 0,
+                fillMode: kony.anim.FILL_MODE_FORWARDS,
+                duration: 0.5
+            }, {
+                animationEnd: function() {}
+        		});
+        }.bind(this)
+          , 0.5, false);
+      	
     },
     /**
      *	@function onClickOfDone
@@ -1226,6 +1362,7 @@ define({
         if (materailsCount == 1) {
             var id = "flex";
             flexInstance = this.createFlexInstace(id);
+          	flexInstance.width="300dp";
             this.view.flxMaterial.add(flexInstance);
             var materialId = "material";
             materialInstance = this.createMaterialInstance(materialId, "0dp", "100%");
@@ -1239,6 +1376,7 @@ define({
         var flexIdConstant = "flex";
         for (var materialIndex = 0; materialIndex < materailsCount; materialIndex = materialIndex + 2) {
             flexInstance = this.createFlexInstace(flexIdConstant + materialIndex);
+           flexInstance.width="300dp";
             this.view.flxMaterial.add(flexInstance);
             materialInstance = this.createMaterialInstance(materialIdConstant + materialIndex, "0dp", width);
             this.view[flexInstance.id].add(materialInstance);
@@ -1305,6 +1443,27 @@ define({
 
         return material;
     },
+  	createBreakSession:function(id,top,height,text){
+      var flex=this.createFlexInstace(id);
+      flex.height=height;
+      flex.top=top;
+      flex.left="0dp";
+      flex.width="100%";
+      flex.skin="sknFlxBreak";
+      var label=this.createLabelInstance("lbBreak"+id,text);
+      label.skin="sknBreak";
+      flex.add(label);
+      return flex;
+    },
+  createLabelInstance:function(id,text){
+    var label=new kony.ui.Label({
+      "id":id,
+      "text":text,
+      "centerX":"50%",
+      "centerY":"50%",
+    }, {}, {});
+    return label;
+  },
     /**
      *	@function createFlexInstace
      * 	@description This function is to create dynamic instance of flex container
@@ -1319,7 +1478,6 @@ define({
             "id": id,
             "isVisible": true,
             "layoutType": kony.flex.FREE_FORM,
-            "width": "300dp",
             "left": "0dp",
             "isModalContainer": false,
             "skin": "slFbox",
@@ -1353,6 +1511,7 @@ define({
     onClickOfPDF: function(eventObject) {
       	this.view.flxPdf.zIndex=300;
       	var url=this.view[eventObject.id].pdfUrl;
+      	this.view.flxPdf.mobileheader.headerTitle="PDF Material";
       	this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
       	this.view.flxPdf.animate(this.animateTopForPdf("0dp"),this.getPlatformSpecific(), {"animationEnd":function(){
            this.view.pdfBrowser.requestURLConfig = {

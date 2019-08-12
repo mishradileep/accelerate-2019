@@ -1,5 +1,5 @@
 {
-    "@class": "com.kony.gen.viz.model.component.KVizRichText",
+    "@class": "com.kony.gen.viz.model.component.KVizLabel",
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
@@ -11,10 +11,10 @@
         "value": "111dp"
     },
     "_margin_": [
-        0,
-        0,
-        0,
-        0
+        1,
+        1,
+        1,
+        1
     ],
     "_padding_": [
         0,
@@ -22,8 +22,8 @@
         0,
         0
     ],
-    "_skin_": "s431a5e51c914d6dbbadca1d28edaedf",
-    "_text_": "<u> second floor </u>\n",
+    "_skin_": "sec403a9e74d4dabaf33dbae14f9c855",
+    "_text_": "Lady Bird Ballroom",
     "_top_": {
         "type": "string",
         "value": "52dp"
@@ -33,21 +33,41 @@
         "value": "preferred"
     },
     "_wrapping_": 2,
+    "android": {
+        "textStyle": {
+            "letterSpacing": 0,
+            "strikeThrough": false
+        }
+    },
     "canUpdateUI": true,
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "sessionLocation",
+    "id": "sessionLocation1",
     "info": null,
+    "ipad": {
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "iphone": {
+        "psp": {
+            "wrapping": 2
+        },
+        "textStyle": {
+            "baseline": 0,
+            "strikeThrough": false
+        }
+    },
     "iscustomlayout": false,
-    "isvisible": true,
-    "kuid": "ea0238ea5fe442659705dda7280f37e5",
-    "linkskin": "s0d7974023eb449381a5ae8e7fea1fe3",
-    "name": "kony.ui.RichText",
+    "isvisible": false,
+    "kuid": "ebc7005db4fc438c9f4545c447adf704",
+    "name": "kony.ui.Label",
     "parent": "sessionTileAnim",
     "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "wType": "RichText",
-    "widgetalignment": 5,
+    "textstyle": {},
+    "tooltip": "",
+    "wType": "Label",
     "zindex": 1
 }
