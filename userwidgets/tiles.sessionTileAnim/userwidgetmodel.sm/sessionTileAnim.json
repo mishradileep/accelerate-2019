@@ -38,13 +38,14 @@
     "children": [
         "tilebg",
         "sessionTitle",
-        "sessionLocation",
+        "sessionLocation1",
         "sessionTime",
         "sessionLocationIcon",
         "sessionTimeIcon",
         "agendaSelectButton",
         "addAgendaContainer",
-        "topPosLabel"
+        "topPosLabel",
+        "sessionLocation"
     ],
     "clipbounds": false,
     "containerweight": 100,

@@ -40,7 +40,8 @@
         "flxRating",
         "lblShowComments",
         "txtAreaComments",
-        "btnSubmit"
+        "btnSubmit",
+        "flxThankyou"
     ],
     "clipbounds": true,
     "containerweight": 100,

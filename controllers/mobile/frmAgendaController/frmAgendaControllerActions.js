@@ -18,7 +18,7 @@ define({
         this.onClickOfSubmit();
     },
     /** onClick defined for menuButtonMySchedule **/
-    AS_Button_d464ddb7db31413a88e949c9d363aea6: function AS_Button_d464ddb7db31413a88e949c9d363aea6(eventobject) {
+    AS_Button_jcad9ff2c5944e3494d663074c0e4fe7: function AS_Button_jcad9ff2c5944e3494d663074c0e4fe7(eventobject) {
         var self = this;
         var ntf = new kony.mvc.Navigation("frmmyAgenda");
         ntf.navigate();

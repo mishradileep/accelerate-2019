@@ -258,19 +258,19 @@ define({
         this.onClickOfSubmit();
     },
     /** onClick defined for menuButtonAgenda **/
-    AS_Button_hf1d15f1801243fea70a7ad24156eea0: function AS_Button_hf1d15f1801243fea70a7ad24156eea0(eventobject) {
+    AS_Button_ja12414d0b08453d8a8f617afcc32d2f: function AS_Button_ja12414d0b08453d8a8f617afcc32d2f(eventobject) {
         var self = this;
         var ntf = new kony.mvc.Navigation("frmAgenda");
         ntf.navigate();
     },
     /** onClick defined for menuButtonPresenters **/
-    AS_Button_c88e24cebe174c67b861806e124e672a: function AS_Button_c88e24cebe174c67b861806e124e672a(eventobject) {
+    AS_Button_c1f51313917845e797a9e54f61d19798: function AS_Button_c1f51313917845e797a9e54f61d19798(eventobject) {
         var self = this;
         var ntf = new kony.mvc.Navigation("frmPresenters");
         ntf.navigate();
     },
     /** onClick defined for menuButtonMore **/
-    AS_Button_g4350613722d40518412c71b35f8d90a: function AS_Button_g4350613722d40518412c71b35f8d90a(eventobject) {
+    AS_Button_db49a8e78e76416c9498f54c559cfd10: function AS_Button_db49a8e78e76416c9498f54c559cfd10(eventobject) {
         var self = this;
         var ntf = new kony.mvc.Navigation("frmMore");
         ntf.navigate();

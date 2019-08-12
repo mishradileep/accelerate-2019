@@ -51,11 +51,11 @@ define(function() {
             }
           if(data.isAddedToMySchedule===true){
             this.view.imgStatus.src=this.myScheduleIndicatorImage;
-            this.view.flxAddedToSchedule.isVisible=true;
+            //this.view.flxAddedToSchedule.isVisible=true;
           }
           else{
             this.view.imgStatus.src=this.agendaIndicatorImage;
-            this.view.flxAddedToSchedule.isVisible=false;
+            //this.view.flxAddedToSchedule.isVisible=false;
           }
         },
         /**
@@ -84,8 +84,8 @@ define(function() {
         }
         this.isAddedToMySchedule=true;
         this.sessionData.isAddedToMySchedule=true;
-        this.view.flxAddedToSchedule.isVisible=true;
         createLocalnotification(this.sessionData.session_start_date,this.sessionData.event_session_id,this.sessionData.session_name);
+        //this.view.flxAddedToSchedule.isVisible=true;
         this.view.imgStatus.src=this.myScheduleIndicatorImage;
         this.view.addAgendaContainer.skin=this.agendaContainerSkin;
         var myAgendaData=kony.store.getItem("myAgendaData");
@@ -94,7 +94,7 @@ define(function() {
         }
         myAgendaData[this.sessionData.event_session_id]=this.sessionData.event_session_id;
         kony.store.setItem("myAgendaData", myAgendaData);
-
+        this.invokedCallback();
       },
       /**
          *	@function invokedCallback

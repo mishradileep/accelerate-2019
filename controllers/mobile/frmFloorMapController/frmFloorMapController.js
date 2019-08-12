@@ -85,6 +85,7 @@ define({
         "isVisible" :false
       };
       return eventInnerLocation;
-    }
+    },
+  
    
 });
