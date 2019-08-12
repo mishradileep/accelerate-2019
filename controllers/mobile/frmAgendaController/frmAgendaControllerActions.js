@@ -17,6 +17,12 @@ define({
         var self = this;
         this.onClickOfSubmit();
     },
+    /** onClick defined for menuButtonMySchedule **/
+    AS_Button_jcad9ff2c5944e3494d663074c0e4fe7: function AS_Button_jcad9ff2c5944e3494d663074c0e4fe7(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmmyAgenda");
+        ntf.navigate();
+    },
     /** onClick defined for menuButtonPresenters **/
     AS_Button_f524c1d44b6d4a61af563b83cef56b3a: function AS_Button_f524c1d44b6d4a61af563b83cef56b3a(eventobject) {
         var self = this;
@@ -46,10 +52,11 @@ define({
             this.frmAgendaPreshow();
         }
     },
-    /** onClick defined for menuButtonMySchedule **/
-    AS_Button_jcad9ff2c5944e3494d663074c0e4fe7: function AS_Button_jcad9ff2c5944e3494d663074c0e4fe7(eventobject) {
+    /** postShow defined for frmAgenda **/
+    AS_Form_hf21e31f4967438e82aeda07e33201d5: function AS_Form_hf21e31f4967438e82aeda07e33201d5(eventobject) {
         var self = this;
-        var ntf = new kony.mvc.Navigation("frmmyAgenda");
-        ntf.navigate();
+        if (this.isNavigatedFrmOtherForm) {
+            this.naviateToSessionDetail();
+        }
     }
 });

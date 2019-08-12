@@ -534,6 +534,10 @@ define({
      */
     frmAgendaSessionClose: function() {
       	//this.setData(accelerateSessionData.eventSessionData.records);
+      	if(this.isNavigatedFrmOtherForm){
+          this.isNavigatedFrmOtherForm=false;
+          this.navigateToOtherForm();
+        }
         var self = this;
         egLogger("this.thisCard = " + this.thisCard.id);
         var animDuration = 0.8;
@@ -928,9 +932,9 @@ define({
      * 	@private
      */
     setData: function(sessions) {
-      
         this.view.sessionTiles.removeAll();
       	this.filteredSession=[];
+      	this.allSessionTiles=[];
         this.sessionsList = sessions;
       	this.checkIfSessionsAreMyScheduled(sessions);
         var sessionCount = sessions.length;
@@ -964,6 +968,7 @@ define({
             }
             this.view.sessionTiles.add(sessionTile);
           	this.filteredSession.push(sessionTile);
+          	this.allSessionTiles.push(sessionTile);
             this.view[id].setTitleData(sessionObj);
             this.view[id].callback = this.mySchedular;
             if (!kony.sdk.isNullOrUndefined(sessionObj.presenter)) {
@@ -1567,5 +1572,35 @@ define({
       this.view.contentScroller.scrollToEnd();
     }
   },
+  onNavigate:function(naviInfo){
+    this.navigateSessionId=null;
+    if(kony.sdk.isNullOrUndefined(naviInfo)){
+       this.navigateSessionId=kony.store.getItem("currentNotificationId");
+       if(this.navigateSessionId==-999999999){
+         return;
+       }
+      kony.store.setItem("currentNotificationId",-999999999);
+    }
+    else{
+       this._previousForm=naviInfo.form;
+        this.navigateSessionId=naviInfo.id;
+        this.isNavigatedFrmOtherForm=true;
+    }
+    
+  },
+  navigateToOtherForm:function(){
+    (new kony.mvc.Navigation(this._previousForm)).navigate();
+  },
+  naviateToSessionDetail:function(){
+    var sessionId=this.navigateSessionId;
+    var tiles=this.allSessionTiles;
+       for(var index=0;index<tiles.length;index++){
+         var tileObject=tiles[index];
+         if(tileObject.sessionData.event_session_id== sessionId){
+           this.view.contentScroller.scrollToWidget(tileObject.id);
+           tileObject.onClick();
+         }
+       }
+  }
   
 });
