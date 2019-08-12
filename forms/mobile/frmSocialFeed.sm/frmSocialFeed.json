@@ -34,27 +34,28 @@
     "androidwearos": {
         "needAppMenu": false
     },
+    "bounces": false,
     "canUpdateUI": true,
     "children": [
         "mobileheader",
-        "flxMainContainer"
+        "flxPDFContainer"
     ],
     "containerweight": 100,
     "controllerInfo": {
         "default": {
             "channel": "mobile",
-            "name": "frmSponsorController"
+            "name": "frmSocialFeedController"
         }
     },
     "currentLocale": "default",
     "desktopweb": {
         "needAppMenu": false
     },
-    "device": "iPhoneXS",
+    "device": "Pixel3",
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "enablescrolling": false,
-    "id": "frmSponsor",
+    "id": "frmSocialFeed",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,
@@ -82,7 +83,7 @@
             "titleBarAttributes": {
                 "barStyle": 0,
                 "hidesBackButton": false,
-                "kuid": "b609ca3002a84bf0aeadf5aaba56875f",
+                "kuid": "e0107395f0e8421a85d257fa50862984",
                 "leftBarButtonItems": [],
                 "leftItemsSupplementBackButton": true,
                 "prompt": "",
@@ -93,7 +94,7 @@
                         "info": {
                             "title": "Edit"
                         },
-                        "kuid": "c481eac7245e4ad4b747a6bd2594e687",
+                        "kuid": "ace204f89e654edba2557e59035bcec8",
                         "style": 0,
                         "tintColor": "4b88f100",
                         "type": 1
@@ -110,20 +111,19 @@
     "kiosk": {
         "needAppMenu": false
     },
-    "kuid": "f9640f7c59054aaa8f9f223cf78f80de",
+    "kuid": "ac7cf81ba54f4d2da1df0df4177bd21b",
     "layouttype": 2,
     "name": "kony.ui.Form2",
     "needappmenu": false,
     "paddinginpixel": false,
-    "platform": "iphone",
-    "postshow": "AS_Form_b18653162e8e4ddab72414fecad28f5a",
-    "preshow": "AS_Form_c798a885fa304a898110091f84e49c0f",
+    "platform": "android",
+    "preshow": "AS_Form_a7ef91fff87a4bada03398b8d9779865",
     "prevDevice": "iPhoneXS",
     "prevPlatform": "iphone",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainscrollposition": false,
-    "shellCSS": "iOS_iPhoneXS",
+    "shellCSS": "and_Pixel3",
     "snapgridsize": 10,
     "snaptogrid": true,
     "spa": {
