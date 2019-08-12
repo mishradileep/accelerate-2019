@@ -2,7 +2,7 @@
     "splashScreen": {
         "mobile": {
             "iphone": {
-                "splashImage": "splash_screen.png"
+                "splashImage": "splash.png"
             },
             "android": {},
             "winphone8": {},
