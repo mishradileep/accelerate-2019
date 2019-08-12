@@ -72,6 +72,7 @@ define({
         this.devHeight = this.view.masterContainer.frame.height;
         egLogger("devHeight = " + this.devHeight);
       	var dotsblurwidth=this.view.sessionTileAnim.quantumDotsBlur.frame.height*10.7388+"dp";
+      	// add scrollToWidget functionality with the session id availble at kony store key 'currentNotificationId'
     },
 
     /**
