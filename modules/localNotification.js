@@ -162,7 +162,5 @@ function createLocalnotification(date, session_id, session_name) {
         "pspConfig": {
             "sound": kony.localnotifications.DEFAULT_SOUND
         }
-
     });
-
 }

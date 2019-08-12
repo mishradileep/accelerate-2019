@@ -36,6 +36,8 @@
               let storeSpeakerData = kony.store.getItem("eventSpeakerData");
               let storeSponsorData = kony.store.getItem("eventSponsorData");
               assignStoreDataToLocal(storeEventData, storeEventSessionData, storeSpeakerData,storeSponsorData);
+              var nav = new kony.mvc.Navigation("frmAgenda");
+   			  nav.navigate();
           }
       }
   }
@@ -217,6 +219,8 @@
           kony.store.setItem("eventSpeakerData", successResponse);
           kony.store.setItem("clientLastUpdatedTime", latestTimeStamp);
           kony.store.setItem("isTimeStampUpdated", true);
+          var nav = new kony.mvc.Navigation("frmAgenda");
+    	  nav.navigate();
       }
   }
 
