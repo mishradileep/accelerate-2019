@@ -11,6 +11,8 @@ define(function() {
       	agendaIndicatorImage:"add.png",
       	agendaContainerSkin:"sknGreenSelected",
       	callback:null,
+      	deleteIcon:"delete.png",
+      	deleteCallback:null,
         /**
          *	@function setTitleData
          * 	@description This function is used to set the data to the session tile
@@ -76,6 +78,10 @@ define(function() {
          * 	@private
          */
       sessionToMySchedule:function(){
+        if(this.view.imgStatus.src==this.deleteIcon){
+          this.deleteSessionFromMyAgenda();
+          return ;
+        }
         this.isAddedToMySchedule=true;
         this.sessionData.isAddedToMySchedule=true;
         this.view.flxAddedToSchedule.isVisible=true;
@@ -88,8 +94,40 @@ define(function() {
         myAgendaData[this.sessionData.event_session_id]=this.sessionData.event_session_id;
         kony.store.setItem("myAgendaData", myAgendaData);
       },
+      /**
+         *	@function invokedCallback
+         * 	@description This function is to invoke  the formlevel callback
+         * 	@private
+         */
       invokedCallback:function(){
         this.callback(this.view.id,this.sessionData);
+      },
+      /**
+         *	@function setDeleteButtonValues
+         * 	@description This function is to set the delete icon when user opens myschedule form.
+         * 	@private
+         */
+      setDeleteButtonValues:function(){
+        this.view.imgStatus.src=this.deleteIcon;
+        this.view.flxAddedToSchedule.isVisible=false;
+      },
+      /**
+         *	@function deleteSessionFromMyAgenda
+         * 	@description This is to  delete the session_id keys from kony store.
+         * 	@private
+         */
+      deleteSessionFromMyAgenda:function(){
+        this.isAddedToMySchedule=false;
+        this.sessionData.isAddedToMySchedule=false;
+        var myScheduleMap=kony.store.getItem("myAgendaData");
+        if(kony.sdk.isNullOrUndefined(myScheduleMap)){
+          return;
+        }
+        if(myScheduleMap.hasOwnProperty(this.sessionData.event_session_id)){
+          delete myScheduleMap[this.sessionData.event_session_id];
+        }
+        kony.store.setItem("myAgendaData", myScheduleMap);
+		this.deleteCallback(this.view.id);
       }
     };
 });

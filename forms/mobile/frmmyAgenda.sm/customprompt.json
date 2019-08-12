@@ -1,0 +1,231 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizUserWidget",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_android_": {},
+    "_androidwearos_": {},
+    "_children_": [],
+    "_desktopweb_": {},
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_ipad_": {},
+    "_iphone_": {},
+    "_kiosk_": {},
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 1,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_percent_": true,
+    "_skin_": "s2277e9d406d43be9eff4b228a1052af",
+    "_spa_": {},
+    "_spaan_": {},
+    "_spaandroidtablet_": {},
+    "_spabb_": {},
+    "_spaip_": {},
+    "_spaipad_": {},
+    "_spamobile_": {},
+    "_spatablet_": {},
+    "_spawindowstablet_": {},
+    "_spawinphone8_": {},
+    "_tabrcandroid_": {},
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_vizProps_": {
+        "hidewidgethierarchy": false
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_windows10_": {},
+    "_windows8_": {},
+    "_winphone10_": {},
+    "_winphone8_": {},
+    "areflexpropsreferenced": false,
+    "canUpdateUI": true,
+    "clipbounds": true,
+    "containerweight": 0,
+    "dataDiffs": {
+        "btDone": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "d8d65898aadb4032973d0d0eef3d8f6e",
+                "srcKUID": "a1bd8bbc7f1a4c28820ae1d7ac74726a",
+                "wType": "Button"
+            }
+        },
+        "customprompt": {
+            "__events__": {},
+            "__info__": {
+                "isRoot": true,
+                "kuid": "f29bb1c3aa0548d7b10021dd8099f4f3",
+                "srcKUID": "b780a42164ca4113930868773eb15aec",
+                "wType": "FlexContainer"
+            },
+            "isVisible": false,
+            "zIndex": {
+                "Default": 30
+            }
+        },
+        "flxAddedToSchedule": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "g0ef100584464621bbc06bbf26088ff1",
+                "srcKUID": "f9f35454193d40788a06ef42b8729a75",
+                "wType": "FlexContainer"
+            }
+        },
+        "flxContainer": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "a67d78cbaa324ec79defcf9eb1553d9c",
+                "srcKUID": "f46098badffb485088eeb615de90f6bd",
+                "wType": "FlexContainer"
+            }
+        },
+        "flxbelowContainer": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "dbbfb146fbb142fba16dcbd6ae7d75ff",
+                "srcKUID": "bb145b2fe385484a9f545e62cddf0084",
+                "wType": "FlexContainer"
+            }
+        },
+        "imgLocation": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "j068b4a32cbf457e8115edabb38014f0",
+                "srcKUID": "be0241849aef44a3a5958f0108e934db",
+                "wType": "Image"
+            },
+            "src": "agendatilelocationicon.png"
+        },
+        "imgTime": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "ad9af2a8e1704cbaa7a5b0935d7f8fcb",
+                "srcKUID": "h6bd8508a68547d890141cac5829d0c6",
+                "wType": "Image"
+            },
+            "src": "agendatiletimeicon.png"
+        },
+        "lblAddStatement": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "d767804109204a29aa43b790b9680f4b",
+                "srcKUID": "ca9d6d4aff624581b4f24a4065c5acf0",
+                "wType": "Label"
+            }
+        },
+        "lblAddedToSchedhule": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "edd5ca80608e4135a157478172a56b62",
+                "srcKUID": "db6a2ca7a93e412dbff27190dab76016",
+                "wType": "Label"
+            }
+        },
+        "lblLocation": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "h803bf7ed82a4e4bad748778201adf27",
+                "srcKUID": "d82e085e0bb946d894c1d2a7198f8d09",
+                "wType": "Label"
+            }
+        },
+        "lblSessionTitle": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "a1ce3be83c7d45098b4fab07ec2ab9f1",
+                "srcKUID": "f5203e0a336d4d1bb504760ace2c9228",
+                "wType": "Label"
+            }
+        },
+        "lblTime": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "i4899cf326b44230bbea43fb56b91a27",
+                "srcKUID": "c0ac19eb300745d0925b84c790a46f90",
+                "wType": "Label"
+            }
+        },
+        "tileBGColorDBX": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "d22940c2fb22411f9381a994db4aede5",
+                "srcKUID": "bb3035e30d394d2390cd9a5b35025e11",
+                "wType": "FlexContainer"
+            }
+        },
+        "tileBGColorKony": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "hc16a979c4e049e5b6c77abcdd75f182",
+                "srcKUID": "fffbad8cee8846dda64fa248344c97bf",
+                "wType": "FlexContainer"
+            }
+        },
+        "tileBGColorQuantum": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "c55caad8fe244f3eab8826102aa2bdb0",
+                "srcKUID": "a02ac7f9de9e4b9f86e8b506687544db",
+                "wType": "FlexContainer"
+            }
+        },
+        "tileBGImageKony": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "i3ba3e4b639d44b68f9c3f082734fd35",
+                "srcKUID": "c54feb1871394e5fbac7b8499474f739",
+                "wType": "Image"
+            },
+            "src": "agendatilekony.png"
+        },
+        "tilebg": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "e613839c63f249eab0b89f0530e14ec6",
+                "srcKUID": "h68f0bb0612944d5b0438b99eb4db901",
+                "wType": "FlexContainer"
+            }
+        }
+    },
+    "enablescrolling": true,
+    "id": "customprompt",
+    "info": null,
+    "iscustomlayout": false,
+    "isdatareferenced": false,
+    "issegmentchild": false,
+    "isvisible": true,
+    "kuid": "f29bb1c3aa0548d7b10021dd8099f4f3",
+    "layouttype": 2,
+    "masterType": 0,
+    "name": "kony.ui.UserWidgetInstance",
+    "parent": "frmmyAgenda",
+    "pf": "frmmyAgenda",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainflowhorizontalalignment": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "sourceUserWidget": "b780a42164ca4113930868773eb15aec",
+    "wType": "UserWidgetInstance"
+}
