@@ -116,7 +116,7 @@
   function fetchEventSessionData() {
       var queryParams = {
           "$filter": "((SoftDeleteFlag ne true) or (SoftDeleteFlag eq null))",
-          "$expand": "presenter,session_material",
+          "$expand": "presenter,session_material,event_inner_location",
           "$orderby": "session_start_date"
       };
       fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.EVENT_SESSIONS_OBJECT_NAME, queryParams, eventSessionDataFetchSuccess, eventSessionDataFetchFailure);

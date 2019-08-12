@@ -28,7 +28,7 @@ define({
           // naviaget to clicked form on slideOut after last menu item slides out.
           if ((menuWidgets.length - 1) == currentItemIdex &&
              'slideOut' == slideType) {
-            let formName = "";
+            let formName = null;
             switch(eventObj.id) {
               case 'flxMenuWifi':
                 formName = "frmWifiInfo";
@@ -45,10 +45,18 @@ define({
               case "flxMenuFloorMap":
                 formName = "frmFloorMap";
                 break;
+              case "flxMenuSocialFeed":
+                formName = "frmSocialFeed";
+                break;
               default:
                 // code block
             }
-            new kony.mvc.Navigation(formName).navigate();
+            if(formName) {
+            	new kony.mvc.Navigation(formName).navigate();  
+            } else {
+               alert("This Feature is yet to be implemented!!");
+            }
+            
           }
         }}
       );

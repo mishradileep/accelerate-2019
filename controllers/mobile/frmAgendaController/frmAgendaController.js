@@ -1001,6 +1001,7 @@ define({
         var speakerIndex;
         for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
             var speakerObject = speakerList[speakerIndex];
+            //var widthImageWidth = kony.os.deviceInfo().screenWidth - 72;
             for (var index = 0; index < speakers_master.length; index++) {
                 if (speakerObject.master_speaker_id == speakers_master[index].speaker_id) {
                     var speakerBio = speakers_master[index];
@@ -1012,6 +1013,8 @@ define({
                     this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
                     this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
                     this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
+                    //this.view["imgSpeaker"+speakerIndex].width = widthImageWidth+"dp";
+                    //this.view["imgSpeaker"+speakerIndex].height = (widthImageWidth * eventConstants.ASPECT_RATION_CONSTANT)+"dp";
                 }
             }
         }
