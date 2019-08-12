@@ -1,17 +1,10 @@
 {
     "@class": "com.kony.gen.viz.model.component.KVizLabel",
     "DNDConfig": null,
-    "Default": {
-        "contentAlignment": 7
-    },
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "string",
-        "value": "100%"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "0%"
+        "type": "ref",
+        "value": "preferred"
     },
     "_margin_": [
         1,
@@ -25,27 +18,31 @@
         0,
         0
     ],
-    "_skin_": "s896ee71a170415f9523545e9a99c20f",
-    "_text_": "ACCELERATE ",
+    "_skin_": "sefcd27f91974779a26b8002dafcd187",
+    "_text_": "September 4-5, 2019 | Austin, TX",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "39%"
     },
     "_width_": {
         "type": "string",
-        "value": "70%"
+        "value": "100%"
     },
     "_wrapping_": 2,
     "android": {
         "textStyle": {
-            "letterSpacing": 3,
+            "letterSpacing": 0,
             "strikeThrough": false
         }
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
-    "contentalignment": 9,
-    "id": "lblAccelerate",
+    "contentalignment": 5,
+    "id": "lblTimeAndVenue",
     "info": null,
     "ipad": {
         "psp": {
@@ -55,18 +52,13 @@
     "iphone": {
         "psp": {
             "wrapping": 2
-        },
-        "textStyle": {
-            "letterSpacing": 4,
-            "lineSpacing": 0
         }
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "a3d8b6f7829d4862a9c30d50829beaf6",
+    "kuid": "i0bd127d5b2844f6836b3b090d738e7a",
     "name": "kony.ui.Label",
-    "paddinginpixel": false,
-    "parent": "flxTitle",
+    "parent": "flxMain",
     "pf": "frmWelcome",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

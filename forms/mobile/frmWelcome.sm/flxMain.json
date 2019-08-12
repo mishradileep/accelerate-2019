@@ -35,9 +35,10 @@
     "allboxes": [],
     "canUpdateUI": true,
     "children": [
+        "imgKony",
         "lblWelcome",
-        "lblAccelerate",
-        "lblEventYear",
+        "flxTitle",
+        "lblTimeAndVenue",
         "lblDesc",
         "flxContinue"
     ],
@@ -49,7 +50,7 @@
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "a921347718c94016af52b9cf04ea7f03",
-    "layouttype": 4,
+    "layouttype": 2,
     "name": "kony.ui.FlexContainer",
     "parent": "frmWelcome",
     "pf": "frmWelcome",

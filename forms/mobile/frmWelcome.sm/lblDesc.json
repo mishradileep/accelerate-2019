@@ -19,10 +19,10 @@
         0
     ],
     "_skin_": "s57e49b6caf04670916dd493d0259f32",
-    "_text_": "&  \nthank you for joining us in Austin.\nWe look to showing you  \nfirst-hand how Kony accelerates  \ndigital success.",
+    "_text_": "Thank you for joining us in Austin. We look to showing you first-hand how Kony accelerates  digital success.",
     "_top_": {
         "type": "string",
-        "value": "10dp"
+        "value": "46%"
     },
     "_width_": {
         "type": "string",
@@ -32,7 +32,7 @@
     "android": {
         "textStyle": {
             "letterSpacing": 0,
-            "lineSpacing": 16,
+            "lineSpacing": 14,
             "strikeThrough": false
         }
     },
@@ -55,12 +55,12 @@
             "wrapping": 2
         },
         "textStyle": {
-            "lineSpacing": 16
+            "lineSpacing": 14
         }
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "e029cb2a122343e0a84eecd41026ee08",
+    "kuid": "b5669978a6744d04a5a85ec8982d3f46",
     "name": "kony.ui.Label",
     "parent": "flxMain",
     "pf": "frmWelcome",
