@@ -1117,7 +1117,7 @@ define({
     },
   	onClickOfSpeaker:function(eventObject){
     var naviInfo={
-      "formId":this.view.id,
+      "form":this.view.id,
       "speakerId":eventObject.speakerInfo.speaker_id,
     };
     var navigateObj=new kony.mvc.Navigation("frmPresenters");

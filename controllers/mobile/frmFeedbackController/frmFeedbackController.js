@@ -6,6 +6,7 @@ define({
     feedbackQuestionId: "12",
     opinion_id: 18,
     animDuration: 0.2,
+  	callback:null,
     /**
      * @function onClickOfRatingPrompt
      * @description this function is invoked to toggle the selected and unselected images.
@@ -34,21 +35,17 @@ define({
      */
     onClickOfSubmitButton: function() {
         kony.print("Entering frmFeedbackController : onClickOfSubmitButton function");
-        var currentUserInfo = kony.store.getItem("currentUserInfo");
-        var userId = currentUserInfo.user_id;
         if (kony.sdk.isNullOrUndefined(this.index)) {
             this.index = 0;
         }
         var feedback = this.view.txtAreaComments.text;
         var feedbacks = [];
         var rating = {
-            "userId": userId,
             "opinion_question_id": this.feedbackQuestionId,
             "response_text": feedback,
             "opinion_id": this.opinion_id,
         };
         var feedbackComment = {
-            "userId": userId,
             "opinion_question_id": this.ratingQuestionId,
             "opinion_id": this.opinion_id,
             "response_text": this.index,
@@ -69,9 +66,11 @@ define({
      * @private
      */
     successInStoreFeedback: function(response) {
+      	kony.store.setItem("appfeedbackSubmit", true);
         kony.print("Entering frmFeedbackController : successInStoreFeedback function");
-        alert("success in storing feedback");
         kony.print("Exiting frmFeedbackController : successInStoreFeedback function");
+      	this.callback=this.showThankyou;
+      	this.animateSubmitButton("100%", true);
     },
     /**
      * @function failInStoreFeedback
@@ -81,8 +80,9 @@ define({
      */
     failInStoreFeedback: function(error) {
         kony.print("Entering frmFeedbackController : failInStoreFeedback function");
-        alert("failure in storing the feedback");
         kony.print("Exiting frmFeedbackController : failInStoreFeedback function");
+     	this.callback=this.showThankyou;
+      	this.animateSubmitButton("100%", true);
     },
 
     /** 
@@ -110,7 +110,7 @@ define({
                     if (!isClose)
                         self.animateRatingContainer("220dp", isClose);
                     else
-                        new kony.mvc.Navigation("frmMore").navigate();
+                        this.callback();
                 }.bind(self)
             });
     },
@@ -194,10 +194,12 @@ define({
                 duration: this.animDuration
             }, {
                 animationEnd: function() {
-                    if (!isClose)
+                    if (!isClose){
                         this.animateSubmitButton("510dp", isClose);
-                    else
+                    }
+                    else{
                         this.animateCommentsLabel("100%", isClose);
+                    }
                 }.bind(this)
             });
     },
@@ -227,5 +229,11 @@ define({
                         this.animateCommentsArea("100%", isClose);
                 }.bind(this)
             });
-    }
+    },
+  showThankyou:function(){
+    this.view.flxThankyou.isVisible=true;
+  },
+  navigateToFrmMore:function(){
+    new kony.mvc.Navigation("frmMore").navigate();
+  }
 });
