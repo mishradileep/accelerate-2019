@@ -976,7 +976,7 @@ define({
             }
         }
         this.view.sessionTileAnim.callback = this.mySchedular;
-      	if(!kony.sdk.isNullOrUndefined(this._previousForm) && !kony.sdk.isNullOrUndefined(this. navigateSessionId)){
+      	if(!kony.sdk.isNullOrUndefined(this._previousForm) || !kony.sdk.isNullOrUndefined(this. navigateSessionId)){
           this.naviateToSessionDetail();
         }
     },

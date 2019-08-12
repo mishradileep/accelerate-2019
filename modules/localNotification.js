@@ -25,7 +25,7 @@ function offlinenotification(notificationobject, actionid) {
   //#ifdef iphone
   kony.store.setItem("currentNotificationId", notificationobject.id);
   //#endif
-    var nav = new kony.mvc.Navigation("frmmyAgenda");
+    var nav = new kony.mvc.Navigation("frmAgenda");
     nav.navigate();
 }
 
