@@ -9,7 +9,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "-33dp"
+        "value": "-27dp"
     },
     "_margin_": [
         0,
@@ -43,7 +43,7 @@
         "topLevelBox": null
     },
     "id": "imgSpeaker0",
-    "imagescalemode": 0,
+    "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
     "iscustomlayout": false,

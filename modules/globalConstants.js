@@ -19,5 +19,6 @@ var eventConstants = {
   ASPECT_RATION_CONSTANT:1.07,
   SPONSOR_MASTER_OBJECT_NAME : "sponsor_category_master",
   DATA_SYNC_OBJECT : "data_sync_info",
-  DATA_MODEL_SESSION_FEEDBACK:"session_feedback"
+  DATA_MODEL_SESSION_FEEDBACK:"session_feedback",
+  EVENT_TWITTER_HANDLE : "https://twitter.com/hashtag/KonyAccelerate2019?src=hash"
 };
