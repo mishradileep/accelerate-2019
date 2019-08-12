@@ -1,22 +1,22 @@
 {
-    "AS_UWI_e3f54a029a9e478d99edffe3d44eba13": {
-        "id": "AS_UWI_e3f54a029a9e478d99edffe3d44eba13",
+    "AS_Form_acc108b90ad041868d0ef5f813ab476b": {
+        "id": "AS_Form_acc108b90ad041868d0ef5f813ab476b",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }],
         "contextObj": {
-            "name": "frmFeedback",
+            "name": "frmAgenda",
             "type": "forms",
             "platform": "",
-            "KUID": "d941d78912be4a0cb84caa0510579054"
+            "KUID": "g7d71a566dee45ffa15745fbce32e657"
         },
         "language": "js",
         "actions": [{
-            "id": "ADD_SNIPPET__a8bd91b09b9843c9899bd0a56edb332d",
+            "id": "ADD_SNIPPET__d5af677e32294b18b5c9a7e800196ee2",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.callback=this.navigateToFrmMore;\nthis.animateSubmitButton(\"100%\", true);",
+            "codeSnippet": "this.setData(accelerateSessionData.eventSessionData.records);",
             "parentId": null,
             "callbackType": null
         }]

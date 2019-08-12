@@ -12,7 +12,7 @@ define({
     frmAgendaPreshow: function() {
         var self = this;
         this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = "menuLabelSkinActive";
-        this.setData(accelerateSessionData.eventSessionData.records);
+        //this.setData(accelerateSessionData.eventSessionData.records);
         //this.addActionToSessionTiles();
         this.view.referenceAgenda.isVisible = false;
         this.view.referenceSession.isVisible = false;
@@ -976,6 +976,9 @@ define({
             }
         }
         this.view.sessionTileAnim.callback = this.mySchedular;
+      	if(!kony.sdk.isNullOrUndefined(this._previousForm) && !kony.sdk.isNullOrUndefined(this. navigateSessionId)){
+          this.naviateToSessionDetail();
+        }
     },
   	findTimeDifference:function(t1,t2){
       var d1=new Date(t1).getTime();
@@ -1125,7 +1128,6 @@ define({
         this.view["ratingTile"].setDefaultSelectedIndex();
     },
   onClickOfSpeaker:function(eventObject){
-    debugger;
     var naviInfo={
       "form":this.view.id,
       "speakerId":eventObject.speakerInfo.speaker_id,
@@ -1583,7 +1585,7 @@ define({
     }
     else{
        this._previousForm=naviInfo.form;
-        this.navigateSessionId=naviInfo.id;
+        this.navigateSessionId=naviInfo.session_id;
         this.isNavigatedFrmOtherForm=true;
     }
     
@@ -1597,8 +1599,8 @@ define({
        for(var index=0;index<tiles.length;index++){
          var tileObject=tiles[index];
          if(tileObject.sessionData.event_session_id== sessionId){
-           this.view.contentScroller.scrollToWidget(tileObject.id);
-           tileObject.onClick();
+           this.view.contentScroller.scrollToWidget(this.view[tileObject.id]);
+           this.view[tileObject.id].onClick(this.view[tileObject.id]);
          }
        }
   }

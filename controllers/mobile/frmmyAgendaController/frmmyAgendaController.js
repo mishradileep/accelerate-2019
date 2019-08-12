@@ -132,7 +132,6 @@ define({
       	this.view.addAgendaContainer.imgStatus.src = this.view[eventobject.id].imgStatus.src;
         this.view.sessionTileAnim.callback = this.view[eventobject.id].callback;
         this.view.sessionTileAnim.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, this.view[eventobject.id]);
-      	debugger;
       	this.view.addAgendaContainer.onClick = this.frmAgendaSessionClose.bind(this,this.view[eventobject.id].deleteSessionFromMyAgenda);
         this.view.sessionTileAnim.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
       	this.view.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
@@ -1117,7 +1116,7 @@ define({
     },
   	onClickOfSpeaker:function(eventObject){
     var naviInfo={
-      "formId":this.view.id,
+      "form":this.view.id,
       "speakerId":eventObject.speakerInfo.speaker_id,
     };
     var navigateObj=new kony.mvc.Navigation("frmPresenters");
@@ -1528,5 +1527,6 @@ define({
       this.view.contentScroller.scrollToEnd();
     }
   },
+  
   
 });

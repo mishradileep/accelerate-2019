@@ -257,6 +257,24 @@ define({
         var self = this;
         this.onClickOfSubmit();
     },
+    /** onClick defined for menuButtonAgenda **/
+    AS_Button_ja12414d0b08453d8a8f617afcc32d2f: function AS_Button_ja12414d0b08453d8a8f617afcc32d2f(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmAgenda");
+        ntf.navigate();
+    },
+    /** onClick defined for menuButtonPresenters **/
+    AS_Button_c1f51313917845e797a9e54f61d19798: function AS_Button_c1f51313917845e797a9e54f61d19798(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmPresenters");
+        ntf.navigate();
+    },
+    /** onClick defined for menuButtonMore **/
+    AS_Button_db49a8e78e76416c9498f54c559cfd10: function AS_Button_db49a8e78e76416c9498f54c559cfd10(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmMore");
+        ntf.navigate();
+    },
     /** onClick defined for addAgendaContainer **/
     AS_FlexContainer_h2e3c3839dfa4ce8aea7fff37ea5c9db: function AS_FlexContainer_h2e3c3839dfa4ce8aea7fff37ea5c9db(eventobject) {
         var self = this;
@@ -278,23 +296,5 @@ define({
         if (this.currentViewState === 0) {
             this.frmAgendaPreshow();
         }
-    },
-    /** onClick defined for menuButtonAgenda **/
-    AS_Button_ja12414d0b08453d8a8f617afcc32d2f: function AS_Button_ja12414d0b08453d8a8f617afcc32d2f(eventobject) {
-        var self = this;
-        var ntf = new kony.mvc.Navigation("frmAgenda");
-        ntf.navigate();
-    },
-    /** onClick defined for menuButtonPresenters **/
-    AS_Button_c1f51313917845e797a9e54f61d19798: function AS_Button_c1f51313917845e797a9e54f61d19798(eventobject) {
-        var self = this;
-        var ntf = new kony.mvc.Navigation("frmPresenters");
-        ntf.navigate();
-    },
-    /** onClick defined for menuButtonMore **/
-    AS_Button_db49a8e78e76416c9498f54c559cfd10: function AS_Button_db49a8e78e76416c9498f54c559cfd10(eventobject) {
-        var self = this;
-        var ntf = new kony.mvc.Navigation("frmMore");
-        ntf.navigate();
     }
 });

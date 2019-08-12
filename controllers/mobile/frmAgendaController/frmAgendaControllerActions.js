@@ -53,10 +53,8 @@ define({
         }
     },
     /** postShow defined for frmAgenda **/
-    AS_Form_hf21e31f4967438e82aeda07e33201d5: function AS_Form_hf21e31f4967438e82aeda07e33201d5(eventobject) {
+    AS_Form_acc108b90ad041868d0ef5f813ab476b: function AS_Form_acc108b90ad041868d0ef5f813ab476b(eventobject) {
         var self = this;
-        if (this.isNavigatedFrmOtherForm) {
-            this.naviateToSessionDetail();
-        }
+        this.setData(accelerateSessionData.eventSessionData.records);
     }
 });
