@@ -68,6 +68,7 @@ define({
      * @private
      */
     frmAgendaPostshow: function() {
+      	this.setData(accelerateSessionData.eventSessionData.records);
         this.devHeight = this.view.masterContainer.frame.height;
         egLogger("devHeight = " + this.devHeight);
       	var dotsblurwidth=this.view.sessionTileAnim.quantumDotsBlur.frame.height*10.7388+"dp";
@@ -978,6 +979,7 @@ define({
         this.view.sessionTileAnim.callback = this.mySchedular;
       	if(!kony.sdk.isNullOrUndefined(this._previousForm) || !kony.sdk.isNullOrUndefined(this. navigateSessionId)){
           this.naviateToSessionDetail();
+          this. navigateSessionId=null;
         }
     },
   	findTimeDifference:function(t1,t2){
