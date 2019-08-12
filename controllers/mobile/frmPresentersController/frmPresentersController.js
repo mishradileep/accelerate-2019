@@ -123,16 +123,13 @@ define({
   createSessions: function(sessions) {
     this.view.flexSessions.removeAll();
      var myScheduleData = kony.store.getItem("myAgendaData");
-    alert(JSON.stringify(myScheduleData));
     for (var index = 0; index < sessions.length; index++) {
       var id = "sessiontile" + sessions[index].event_session_id;
-      alert("sessionID"+sessions[index].event_session_id);
       var isSessionPresent = myScheduleData[sessions[index].event_session_id];
       if(sessions[index].session_start_date.indexOf(" ")!=-1){
         sessions[index].session_start_date = sessions[index].session_start_date.replace(" ","T")+"0Z";
         sessions[index].session_end_date = sessions[index].session_end_date.replace(" ","T")+ "0Z";
         if(isSessionPresent){
-          alert("my schedule data");
           sessions[index].isAddedToMySchedule = true;
         }
       }
@@ -313,6 +310,6 @@ define({
       "form" : "frmPresenters"
     };
     var navObj = new kony.mvc.Navigation("frmAgenda");
-    navObj.navigate();
+    navObj.navigate(param);
   }
 });

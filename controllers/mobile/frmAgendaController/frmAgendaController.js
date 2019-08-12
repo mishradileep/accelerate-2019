@@ -12,7 +12,7 @@ define({
     frmAgendaPreshow: function() {
         var self = this;
         this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = "menuLabelSkinActive";
-        this.setData(accelerateSessionData.eventSessionData.records);
+        //this.setData(accelerateSessionData.eventSessionData.records);
         //this.addActionToSessionTiles();
         this.view.referenceAgenda.isVisible = false;
         this.view.referenceSession.isVisible = false;
@@ -68,6 +68,7 @@ define({
      * @private
      */
     frmAgendaPostshow: function() {
+      	this.setData(accelerateSessionData.eventSessionData.records);
         this.devHeight = this.view.masterContainer.frame.height;
         egLogger("devHeight = " + this.devHeight);
       	var dotsblurwidth=this.view.sessionTileAnim.quantumDotsBlur.frame.height*10.7388+"dp";
@@ -534,6 +535,10 @@ define({
      */
     frmAgendaSessionClose: function() {
       	//this.setData(accelerateSessionData.eventSessionData.records);
+      	if(this.isNavigatedFrmOtherForm){
+          this.isNavigatedFrmOtherForm=false;
+          this.navigateToOtherForm();
+        }
         var self = this;
         egLogger("this.thisCard = " + this.thisCard.id);
         var animDuration = 0.8;
@@ -928,9 +933,9 @@ define({
      * 	@private
      */
     setData: function(sessions) {
-      
         this.view.sessionTiles.removeAll();
       	this.filteredSession=[];
+      	this.allSessionTiles=[];
         this.sessionsList = sessions;
       	this.checkIfSessionsAreMyScheduled(sessions);
         var sessionCount = sessions.length;
@@ -964,6 +969,7 @@ define({
             }
             this.view.sessionTiles.add(sessionTile);
           	this.filteredSession.push(sessionTile);
+          	this.allSessionTiles.push(sessionTile);
             this.view[id].setTitleData(sessionObj);
             this.view[id].callback = this.mySchedular;
             if (!kony.sdk.isNullOrUndefined(sessionObj.presenter)) {
@@ -971,6 +977,10 @@ define({
             }
         }
         this.view.sessionTileAnim.callback = this.mySchedular;
+      	if(!kony.sdk.isNullOrUndefined(this._previousForm) || !kony.sdk.isNullOrUndefined(this. navigateSessionId)){
+          this.naviateToSessionDetail();
+          this. navigateSessionId=null;
+        }
     },
   	findTimeDifference:function(t1,t2){
       var d1=new Date(t1).getTime();
@@ -1120,7 +1130,6 @@ define({
         this.view["ratingTile"].setDefaultSelectedIndex();
     },
   onClickOfSpeaker:function(eventObject){
-    debugger;
     var naviInfo={
       "form":this.view.id,
       "speakerId":eventObject.speakerInfo.speaker_id,
@@ -1567,5 +1576,35 @@ define({
       this.view.contentScroller.scrollToEnd();
     }
   },
+  onNavigate:function(naviInfo){
+    this.navigateSessionId=null;
+    if(kony.sdk.isNullOrUndefined(naviInfo)){
+       this.navigateSessionId=kony.store.getItem("currentNotificationId");
+       if(this.navigateSessionId==-999999999){
+         return;
+       }
+      kony.store.setItem("currentNotificationId",-999999999);
+    }
+    else{
+       this._previousForm=naviInfo.form;
+        this.navigateSessionId=naviInfo.session_id;
+        this.isNavigatedFrmOtherForm=true;
+    }
+    
+  },
+  navigateToOtherForm:function(){
+    (new kony.mvc.Navigation(this._previousForm)).navigate();
+  },
+  naviateToSessionDetail:function(){
+    var sessionId=this.navigateSessionId;
+    var tiles=this.allSessionTiles;
+       for(var index=0;index<tiles.length;index++){
+         var tileObject=tiles[index];
+         if(tileObject.sessionData.event_session_id== sessionId){
+           this.view.contentScroller.scrollToWidget(this.view[tileObject.id]);
+           this.view[tileObject.id].onClick(this.view[tileObject.id]);
+         }
+       }
+  }
   
 });

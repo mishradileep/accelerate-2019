@@ -51,5 +51,10 @@ define({
         if (this.currentViewState === 0) {
             this.frmAgendaPreshow();
         }
+    },
+    /** postShow defined for frmAgenda **/
+    AS_Form_acc108b90ad041868d0ef5f813ab476b: function AS_Form_acc108b90ad041868d0ef5f813ab476b(eventobject) {
+        var self = this;
+        this.setData(accelerateSessionData.eventSessionData.records);
     }
 });
