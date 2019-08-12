@@ -84,6 +84,7 @@ define(function() {
         }
         this.isAddedToMySchedule=true;
         this.sessionData.isAddedToMySchedule=true;
+        createLocalnotification(this.sessionData.session_start_date,this.sessionData.event_session_id,this.sessionData.session_name);
         //this.view.flxAddedToSchedule.isVisible=true;
         this.view.imgStatus.src=this.myScheduleIndicatorImage;
         this.view.addAgendaContainer.skin=this.agendaContainerSkin;
@@ -123,6 +124,9 @@ define(function() {
         this.isAddedToMySchedule=false;
         this.sessionData.isAddedToMySchedule=false;
         var myScheduleMap=kony.store.getItem("myAgendaData");
+        var localNotificationIDs = [];
+        localNotificationIDs.push('0'+this.sessionData.event_session_id);
+        kony.localnotifications.cancel(localNotificationIDs);
         if(kony.sdk.isNullOrUndefined(myScheduleMap)){
           return;
         }
