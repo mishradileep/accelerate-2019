@@ -102,7 +102,9 @@ define(function() {
          * 	@private
          */
       invokedCallback:function(){
-        this.callback(this.view.id,this.sessionData);
+        if(this.callback){
+			this.callback(this.view.id,this.sessionData);          
+        }
       },
       /**
          *	@function setDeleteButtonValues
