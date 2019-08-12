@@ -214,7 +214,7 @@
     "iscustomlayout": false,
     "isdatareferenced": false,
     "issegmentchild": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "ab400335095f425fbfbb5489810fb085",
     "layouttype": 2,
     "masterType": 0,

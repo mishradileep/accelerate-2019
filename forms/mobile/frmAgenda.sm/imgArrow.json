@@ -5,7 +5,11 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "45dp"
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -20,37 +24,34 @@
         0
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "add.png",
+    "_src_": "combinedshape.png",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_width_": {
         "type": "string",
-        "value": "45dp"
+        "value": "100%"
     },
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "49%"
-    },
-    "centery": {
-        "type": "string",
-        "value": "48%"
-    },
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "uwi7b6fec8ba2f4d20af42002d77b52b78",
+        "formID": "frmAgenda",
         "platform": "iphone",
-        "templateType": "userwidgets",
+        "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "imgStatus",
-    "imagescalemode": 1,
+    "id": "imgArrow",
+    "imagescalemode": 0,
     "info": null,
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "cf50eac5d0534dee8802dde4e300f38c",
+    "kuid": "d12b2877866a42418ed6f1d06b520571",
     "name": "kony.ui.Image2",
-    "parent": "addAgendaContainer",
-    "pf": "userwidgetmodel",
+    "parent": "flxToast",
+    "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,

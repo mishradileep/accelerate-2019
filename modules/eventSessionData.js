@@ -47,7 +47,7 @@ accelerateSessionData = {
             "LastUpdatedDateTime":"2019-05-16T14:11:07Z"
         }
   		
-]
+],
     }
 ,
     {
@@ -212,6 +212,7 @@ accelerateSessionData = {
             "LastUpdatedDateTime":"2019-05-16T10:01:29Z"
         }
 ]
+      
     }
 ,
     {

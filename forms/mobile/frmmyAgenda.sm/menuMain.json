@@ -74,7 +74,7 @@
         },
         "menuButtonAgenda": {
             "__events__": {
-                "onClick": "AS_Button_hf1d15f1801243fea70a7ad24156eea0"
+                "onClick": "AS_Button_ja12414d0b08453d8a8f617afcc32d2f"
             },
             "__info__": {
                 "kuid": "a4aa42f6422c4680a951dd3c7c07712a",
@@ -84,7 +84,7 @@
         },
         "menuButtonMore": {
             "__events__": {
-                "onClick": "AS_Button_g4350613722d40518412c71b35f8d90a"
+                "onClick": "AS_Button_db49a8e78e76416c9498f54c559cfd10"
             },
             "__info__": {
                 "kuid": "b189e2a068c24974bf2e9d3d153e7342",
@@ -102,7 +102,7 @@
         },
         "menuButtonPresenters": {
             "__events__": {
-                "onClick": "AS_Button_c88e24cebe174c67b861806e124e672a"
+                "onClick": "AS_Button_c1f51313917845e797a9e54f61d19798"
             },
             "__info__": {
                 "kuid": "a13fdc0036f14c81ad4849ee953444f4",
@@ -149,7 +149,7 @@
                 "srcKUID": "ba3ca6db33f645c697fefd341f143be1",
                 "wType": "Image"
             },
-            "src": "menuagendaactive_1.png"
+            "src": "agenda_inactive_icon.png"
         },
         "menuImageMore": {
             "__events__": {},
@@ -167,7 +167,7 @@
                 "srcKUID": "c252d8278fd1465f9cf1377b1b0de8a2",
                 "wType": "Image"
             },
-            "src": "menuscheduleinactive_1.png"
+            "src": "scheduleactive.png"
         },
         "menuImagePresenters": {
             "__events__": {},
