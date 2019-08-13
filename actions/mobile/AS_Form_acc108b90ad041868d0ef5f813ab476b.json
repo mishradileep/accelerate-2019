@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__d5af677e32294b18b5c9a7e800196ee2",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.setData(accelerateSessionData.eventSessionData.records);",
+            "codeSnippet": "if(kony.sdk.isNullOrUndefined(this.currentSelectedTab)){\nthis.setData(accelerateSessionData.eventSessionData.records);\nthis.currentSelectedTab=null;\n}",
             "parentId": null,
             "callbackType": null
         }]

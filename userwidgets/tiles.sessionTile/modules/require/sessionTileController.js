@@ -84,8 +84,7 @@ define(function() {
         }
         this.isAddedToMySchedule=true;
         this.sessionData.isAddedToMySchedule=true;
-        createLocalnotification(this.sessionData.session_start_date,this.sessionData.event_session_id,this.sessionData.session_name);
-        //this.view.flxAddedToSchedule.isVisible=true;
+        this.schedulePushNotificationIfNotScheduled(this.sessionData.session_start_date,this.sessionData.event_session_id,this.sessionData.session_name);
         this.view.imgStatus.src=this.myScheduleIndicatorImage;
         this.view.addAgendaContainer.skin=this.agendaContainerSkin;
         var myAgendaData=kony.store.getItem("myAgendaData");
@@ -95,6 +94,17 @@ define(function() {
         myAgendaData[this.sessionData.event_session_id]=this.sessionData.event_session_id;
         kony.store.setItem("myAgendaData", myAgendaData);
         this.invokedCallback();
+      },
+      /**
+         *	@function schedulePushNotificationIfNotScheduled
+         * 	@description This function is to add local notification if and only if it is not added.
+         * 	@private
+         */
+      schedulePushNotificationIfNotScheduled:function(startDate,sessionId,sessionName){
+        var myAgendaSchedule=kony.store.getItem("myAgendaData");
+        if(!myAgendaSchedule.hasOwnProperty(sessionId)){
+          createLocalnotification(startDate, sessionId, sessionName);
+        }
       },
       /**
          *	@function invokedCallback

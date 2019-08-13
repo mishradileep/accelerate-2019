@@ -4,6 +4,7 @@ define({
     thisCardIndex: null,
     cardFrameRel: null,
   	currentViewState:0,
+  	currentSelectedTab:null,
     /**
      * @function frmAgendaPreshow
      * @description The function is invoked in the form preshow action which is used to setup the UI
@@ -863,18 +864,21 @@ define({
             targetSkin = "filterSkinAll";
             destColor = "1F232900";
             sessionTrack = eventConstants.KEYNOTE;
+          	this.currentSelectedTab=null;
         } else if (eventobject.id == "filterDBX") {
             leftPos = "33.33%";
             buttonText = "DBX";
             targetSkin = "filterSkinDBX";
             destColor = "4B3A6600";
             sessionTrack = eventConstants.DBX;
+          	this.currentSelectedTab=1;
         } else {
             leftPos = "66.66%";
             buttonText = "QUANTUM";
             targetSkin = "filterSkinQuantum";
             destColor = "14334500";
             sessionTrack = eventConstants.QUANTUM;
+          	this.currentSelectedTab=2;
         }
 
         this.view.filterWidget.animate(
