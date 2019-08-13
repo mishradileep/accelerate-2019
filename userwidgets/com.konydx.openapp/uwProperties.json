@@ -1,0 +1,144 @@
+{
+    "classname": "openapp",
+    "definitions": {
+        "apis": {
+            "custom": [
+                {
+                    "group": "General",
+                    "kuid": "b45ae36b40184bbc8e55a3eb98fb78e3",
+                    "paramList": [],
+                    "propertyKey": "open",
+                    "pw": {
+                        "displayName": "open",
+                        "uiRepresentation": "Label-Label-Button-Button"
+                    },
+                    "srcWgtKUID": "bd8acfda4e024f86be9f604fcef13512",
+                    "type": "event"
+                }
+            ],
+            "passthrough": []
+        },
+        "events": {
+            "custom": [],
+            "passthrough": []
+        },
+        "groups": {
+            "apis": [
+                "General"
+            ],
+            "events": [],
+            "properties": [
+                "Android",
+                "iOS"
+            ],
+            "widgets": []
+        },
+        "properties": {
+            "custom": [
+                {
+                    "access": "Write",
+                    "defaultValue": "com.kony.FunctionPreviewApp",
+                    "group": "General",
+                    "kuid": "f54072848bdc407bb6ec575a7e433490",
+                    "originalPropertyKey": "bundleId",
+                    "propertyIndex": 1,
+                    "propertyKey": "bundleId",
+                    "pw": {
+                        "displayName": "Bundle Identifier",
+                        "uiRepresentation": "Label-Textbox"
+                    },
+                    "srcWgtKUID": "bd8acfda4e024f86be9f604fcef13512",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "access": "Write",
+                    "defaultValue": "https",
+                    "group": "Android",
+                    "kuid": "c2e709f825da4938b2f36fd4b691de93",
+                    "originalPropertyKey": "androidScheme",
+                    "propertyIndex": 1,
+                    "propertyKey": "androidScheme",
+                    "pw": {
+                        "displayName": "Scheme",
+                        "uiRepresentation": "Label-Textbox"
+                    },
+                    "srcWgtKUID": "bd8acfda4e024f86be9f604fcef13512",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "access": "Write",
+                    "defaultValue": "konyfunctionalpreview",
+                    "group": "iOS",
+                    "kuid": "b7d55a92b16f45c3a244b817dcdec4ab",
+                    "originalPropertyKey": "iosUrlScheme",
+                    "propertyIndex": 1,
+                    "propertyKey": "iosUrlScheme",
+                    "pw": {
+                        "displayName": "URL Scheme",
+                        "uiRepresentation": "Label-Textbox"
+                    },
+                    "srcWgtKUID": "bd8acfda4e024f86be9f604fcef13512",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "access": "Write",
+                    "defaultValue": "www.kony.com/marketplace/app_preview",
+                    "group": "Android",
+                    "kuid": "gc365585424b43f29e95c621970d0967",
+                    "originalPropertyKey": "androidHost",
+                    "propertyIndex": 2,
+                    "propertyKey": "androidHost",
+                    "pw": {
+                        "displayName": "Host",
+                        "uiRepresentation": "Label-Textbox"
+                    },
+                    "srcWgtKUID": "bd8acfda4e024f86be9f604fcef13512",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "access": "Write",
+                    "defaultValue": "http://itunes.apple.com/us/app/kony-quantum/id1459085071?mt=8",
+                    "group": "iOS",
+                    "kuid": "d72fa1b0e14341899acb8fa56d5b64a3",
+                    "originalPropertyKey": "iosStoreUrl",
+                    "propertyIndex": 2,
+                    "propertyKey": "iosStoreUrl",
+                    "pw": {
+                        "displayName": "App Store URL",
+                        "uiRepresentation": "Label-Textbox"
+                    },
+                    "srcWgtKUID": "bd8acfda4e024f86be9f604fcef13512",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "access": "Write",
+                    "defaultValue": "https://play.google.com/store/apps/details?id=com.kony.FunctionPreviewApp",
+                    "group": "Android",
+                    "kuid": "f7f694b42d514e10b188ea5d83d8e1d1",
+                    "originalPropertyKey": "androidStoreUrl",
+                    "propertyIndex": 3,
+                    "propertyKey": "androidStoreUrl",
+                    "pw": {
+                        "displayName": "Play Store URL",
+                        "uiRepresentation": "Label-Textbox"
+                    },
+                    "srcWgtKUID": "bd8acfda4e024f86be9f604fcef13512",
+                    "type": "string",
+                    "value": ""
+                }
+            ],
+            "passthrough": []
+        },
+        "widgets": {
+            "expose": [],
+            "passthrough": []
+        }
+    },
+    "namespace": "com.konydx",
+    "version": "1.0.0"
+}

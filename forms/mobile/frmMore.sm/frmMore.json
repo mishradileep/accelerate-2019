@@ -37,7 +37,8 @@
     "canUpdateUI": true,
     "children": [
         "flxMoreWrapper",
-        "menuMain"
+        "menuMain",
+        "openapp"
     ],
     "containerweight": 100,
     "controllerInfo": {
