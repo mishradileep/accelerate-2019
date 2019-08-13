@@ -1077,6 +1077,8 @@ define({
     setSpeakerProfile: function(eventObject) {
       	var flxImageContainerwidthCalc = this.view.flxSpeaker0.frame.width * 1.1;
 		flxImageContainerwidthCalc = flxImageContainerwidthCalc.toFixed();
+      	var imgHeight = flxImageContainerwidthCalc * 1.02;
+        imgHeight = imgHeight.toFixed();
         this.view.imgThanks.isVisible = false;
         this.view.lblThankyou.isVisible = false;
         var id = eventObject.id;
