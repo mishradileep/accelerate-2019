@@ -98,7 +98,9 @@ define({
     this.view.speakerInfo.text = presenter.speaker_bio;
     this.view.imgProfileLarge.src = presenter.speaker_profile_pic;
     var imgWidth = kony.os.deviceInfo().screenWidth;
-    this.view.imgProfileLarge.height = imgWidth * eventConstants.ASPECT_RATION_CONSTANT + "dp";
+    imgWidth = imgWidth * eventConstants.ASPECT_RATION_CONSTANT;
+    this.view.imgProfileLarge.height = imgWidth + "dp";
+    this.view.flxImagelargeView.height = imgWidth + "dp";
     if (!kony.sdk.isNullOrUndefined(presenter.sessionsList)) {
       this.createSessions(presenter.sessionsList);
     }
