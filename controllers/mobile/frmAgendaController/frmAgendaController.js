@@ -1075,6 +1075,10 @@ define({
      * 	@private
      */
     setSpeakerProfile: function(eventObject) {
+      	var flxImageContainerwidthCalc = this.view.flxSpeaker0.frame.width * 1.1;
+		flxImageContainerwidthCalc = flxImageContainerwidthCalc.toFixed();
+      	var imgHeight = flxImageContainerwidthCalc * 1.02;
+        imgHeight = imgHeight.toFixed();
         this.view.imgThanks.isVisible = false;
         this.view.lblThankyou.isVisible = false;
         var id = eventObject.id;
@@ -1117,6 +1121,8 @@ define({
                     this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
                   	this.view["flxSpeaker"+speakerIndex].speakerInfo=speakerBio;
                   	this.view["flxSpeaker"+speakerIndex].onClick=this.onClickOfSpeaker.bind(this);
+                  	this.view["imgSpeaker" + speakerIndex].width = flxImageContainerwidthCalc + "dp";
+					this.view["imgSpeaker" + speakerIndex].height = imgHeight + "dp";
                     //this.view["imgSpeaker"+speakerIndex].width = widthImageWidth+"dp";
                     //this.view["imgSpeaker"+speakerIndex].height = (widthImageWidth * eventConstants.ASPECT_RATION_CONSTANT)+"dp";
 
