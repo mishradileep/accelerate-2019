@@ -5,11 +5,11 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "237dp"
+        "value": "170dp"
     },
     "_left_": {
         "type": "string",
-        "value": "-27dp"
+        "value": "-5%"
     },
     "_margin_": [
         0,
@@ -24,14 +24,14 @@
         0
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "biotom.png",
+    "_src_": "defaultimg.png",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "-5%"
     },
     "_width_": {
         "type": "string",
-        "value": "235dp"
+        "value": "167dp"
     },
     "canUpdateUI": true,
     "containerweight": 100,
