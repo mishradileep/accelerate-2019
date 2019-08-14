@@ -13,6 +13,7 @@ define(function() {
       	callback:null,
       	deleteIcon:"delete.png",
       	deleteCallback:null,
+      	agendaUnselectedSkin:"sknGreyUnselected",
         /**
          *	@function setTitleData
          * 	@description This function is used to set the data to the session tile
@@ -82,10 +83,15 @@ define(function() {
           this.deleteSessionFromMyAgenda();
           return ;
         }
+        if(this.view.imgStatus.src==this.myScheduleIndicatorImage){
+          this.view.imgStatus.src=this.agendaIndicatorImage;
+          this.deleteSessionFromMyAgenda();
+          this.view.addAgendaContainer.skin=this.agendaUnselectedSkin;
+          return;
+        }
         this.isAddedToMySchedule=true;
         this.sessionData.isAddedToMySchedule=true;
         createLocalnotification(this.sessionData.session_start_date,this.sessionData.event_session_id,this.sessionData.session_name);
-        //this.view.flxAddedToSchedule.isVisible=true;
         this.view.imgStatus.src=this.myScheduleIndicatorImage;
         this.view.addAgendaContainer.skin=this.agendaContainerSkin;
         var myAgendaData=kony.store.getItem("myAgendaData");
@@ -134,7 +140,9 @@ define(function() {
           delete myScheduleMap[this.sessionData.event_session_id];
         }
         kony.store.setItem("myAgendaData", myScheduleMap);
+        if(this.deleteCallback){
 		this.deleteCallback(this.view.id);
+        }
       }
     };
 });

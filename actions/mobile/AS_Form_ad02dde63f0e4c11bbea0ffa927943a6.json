@@ -73,7 +73,7 @@
         }, {
             "id": "ADD_SNIPPET__f759dd8704de4f509e419d4086d9f9a9",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "if(this.currentViewState===0){\n  this.frmAgendaPreshow();\n}\n",
+            "codeSnippet": "if(this.currentViewState===0){\n  this.frmAgendaPreshow();\n}\nthis.view.flxToast.isVisible=false;\n",
             "parentId": null,
             "callbackType": null
         }, {
