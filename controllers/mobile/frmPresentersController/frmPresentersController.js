@@ -98,7 +98,9 @@ define({
     this.view.speakerInfo.text = presenter.speaker_bio;
     this.view.imgProfileLarge.src = presenter.speaker_profile_pic;
     var imgWidth = kony.os.deviceInfo().screenWidth;
-    this.view.imgProfileLarge.height = imgWidth * eventConstants.ASPECT_RATION_CONSTANT + "dp";
+    imgWidth = imgWidth * eventConstants.ASPECT_RATION_CONSTANT;
+    this.view.imgProfileLarge.height = imgWidth + "dp";
+    this.view.flxImagelargeView.height = imgWidth + "dp";
     if (!kony.sdk.isNullOrUndefined(presenter.sessionsList)) {
       this.createSessions(presenter.sessionsList);
     }
@@ -122,10 +124,13 @@ define({
      */
   createSessions: function(sessions) {
     this.view.flexSessions.removeAll();
+    var isSessionPresent = null;
      var myScheduleData = kony.store.getItem("myAgendaData");
     for (var index = 0; index < sessions.length; index++) {
       var id = "sessiontile" + sessions[index].event_session_id;
-      var isSessionPresent = myScheduleData[sessions[index].event_session_id];
+      if(myScheduleData){
+        isSessionPresent = myScheduleData[sessions[index].event_session_id];
+      }
       if(sessions[index].session_start_date.indexOf(" ")!=-1){
         sessions[index].session_start_date = sessions[index].session_start_date.replace(" ","T")+"0Z";
         sessions[index].session_end_date = sessions[index].session_end_date.replace(" ","T")+ "0Z";

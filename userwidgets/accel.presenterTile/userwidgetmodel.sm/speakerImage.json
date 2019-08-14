@@ -48,6 +48,7 @@
     },
     "id": "speakerImage",
     "imagescalemode": 0,
+    "imagewhiledownloading": "konymp_imagedownload.png",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
