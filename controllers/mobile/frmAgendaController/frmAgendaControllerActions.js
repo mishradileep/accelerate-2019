@@ -51,6 +51,7 @@ define({
         if (this.currentViewState === 0) {
             this.frmAgendaPreshow();
         }
+        this.view.flxToast.isVisible = false;
     },
     /** postShow defined for frmAgenda **/
     AS_Form_acc108b90ad041868d0ef5f813ab476b: function AS_Form_acc108b90ad041868d0ef5f813ab476b(eventobject) {

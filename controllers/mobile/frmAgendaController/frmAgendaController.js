@@ -859,18 +859,21 @@ define({
         var destColor = "";
         var sessionTrack = null;
         if (eventobject.id == "filterAll") {
+          	this.currentSelectedTab=0;
             leftPos = "0%";
             buttonText = "ALL";
             targetSkin = "filterSkinAll";
             destColor = "1F232900";
             sessionTrack = eventConstants.KEYNOTE;
         } else if (eventobject.id == "filterDBX") {
+          	this.currentSelectedTab=1;
             leftPos = "33.33%";
             buttonText = "DBX";
             targetSkin = "filterSkinDBX";
             destColor = "4B3A6600";
             sessionTrack = eventConstants.DBX;
         } else {
+          	this.currentSelectedTab=2;
             leftPos = "66.66%";
             buttonText = "QUANTUM";
             targetSkin = "filterSkinQuantum";
@@ -1512,11 +1515,12 @@ define({
      * 	@private
      */
     addToMyScheduleInAnimTile: function(tileObject, addAgendaButton) {
-        addAgendaButton.imgStatus.src = tileObject.myScheduleIndicatorImage;
-        addAgendaButton.skin = tileObject.agendaContainerSkin;
-      	this.view.sessionTileAnim.addAgendaContainer.skin=tileObject.agendaContainerSkin;
-      	this.view.sessionTileAnim.imgStatus.src=tileObject.myScheduleIndicatorImage;
-        tileObject.sessionToMySchedule();
+      	tileObject.sessionToMySchedule();
+        addAgendaButton.skin = tileObject.addAgendaContainer.skin;
+      	addAgendaButton.imgStatus.src = tileObject.imgStatus.src;
+      	this.view.sessionTileAnim.addAgendaContainer.skin=tileObject.addAgendaContainer.skin;
+      	this.view.sessionTileAnim.imgStatus.src=tileObject.imgStatus.src;
+        
     },
     /**
      *	@function onClickOfPDF
