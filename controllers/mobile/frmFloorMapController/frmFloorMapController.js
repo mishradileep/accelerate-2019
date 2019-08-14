@@ -77,10 +77,12 @@ define({
   	formatData : function(eventInnerLocation){
       let recordsLength = eventInnerLocation.length;
       for(let index = 0 ; index < recordsLength -1 ; index++){
+        eventInnerLocation[index].name = eventInnerLocation[index].name.replace('.pdf', '');
         eventInnerLocation[index].separatorVisibility = {
           "isVisible" :true
         };
       }
+      eventInnerLocation[recordsLength-1].name = eventInnerLocation[recordsLength-1].name.replace('.pdf', '');
       eventInnerLocation[recordsLength-1].separatorVisibility = {
         "isVisible" :false
       };
