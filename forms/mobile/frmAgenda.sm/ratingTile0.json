@@ -90,7 +90,9 @@
             }
         },
         "ratingBubble3": {
-            "__events__": {},
+            "__events__": {
+                "onClick": "AS_Button_iad8ac72475745688c1e522b0750446f"
+            },
             "__info__": {
                 "kuid": "ade8f442822c4dc9838f1adbc6acb60b",
                 "srcKUID": "j835dc8d1f3f48ef8db270554caf4184",

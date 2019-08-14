@@ -74,9 +74,7 @@
             }
         },
         "ratingBubble1": {
-            "__events__": {
-                "onClick": "AS_Button_ee619d85fbdf430bb47e8611f4f1cfca"
-            },
+            "__events__": {},
             "__info__": {
                 "kuid": "eba928c1aed140d4b2ccc229c67f7613",
                 "srcKUID": "cce7f6d436bf46f995e0f3344995b97e",
@@ -84,9 +82,7 @@
             }
         },
         "ratingBubble2": {
-            "__events__": {
-                "onClick": "AS_Button_e5ae07411d344b8191fe5186dd494c18"
-            },
+            "__events__": {},
             "__info__": {
                 "kuid": "a07bda4b6b1a4a4797b72c865a5fc25e",
                 "srcKUID": "ecb39acca5ae4187a588e5b888c5f425",
@@ -94,9 +90,7 @@
             }
         },
         "ratingBubble3": {
-            "__events__": {
-                "onClick": "AS_Button_d87a664a6ed64fdb8f72b2a0fb2557e0"
-            },
+            "__events__": {},
             "__info__": {
                 "kuid": "e4031b63ef5a41c59f85ca9ad2c27661",
                 "srcKUID": "j835dc8d1f3f48ef8db270554caf4184",
@@ -104,9 +98,7 @@
             }
         },
         "ratingBubble4": {
-            "__events__": {
-                "onClick": "AS_Button_gda031cc43ce43038e5d64661378162d"
-            },
+            "__events__": {},
             "__info__": {
                 "kuid": "ie1a158cc9474f2eb3132329e5a76ed4",
                 "srcKUID": "d834a6be1cb2450fa69bea43c9ce006e",
@@ -114,9 +106,7 @@
             }
         },
         "ratingBubble5": {
-            "__events__": {
-                "onClick": "AS_Button_bb2dee9bb3d94bfbb355419f876ecd0b"
-            },
+            "__events__": {},
             "__info__": {
                 "kuid": "c4d505e38a0e40f2b208854df19d7df6",
                 "srcKUID": "e828035953c74c4abcd74820c9262851",
