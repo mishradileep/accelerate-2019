@@ -18,6 +18,12 @@ define(function() {
       this.view.speakerImage.src = presenterObject.speaker_profile_pic;
       var tracks = presenterObject.tracks ? (presenterObject.tracks) : [];
       this.setTracks(tracks);
+      var deviceWidth = kony.os.deviceInfo().screenWidth;
+      var speakerImgWidth = deviceWidth - 90;
+      var speakerImgHeight = speakerImgWidth * 1.02;
+      speakerImgHeight = speakerImgHeight.toFixed();
+      this.view.speakerImage.width = speakerImgWidth + "dp";
+      this.view.speakerImage.height = speakerImgHeight + "dp";
     },
 
 
