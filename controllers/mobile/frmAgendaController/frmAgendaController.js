@@ -1118,6 +1118,7 @@ define({
             for (var index = 0; index < speakers_master.length; index++) {
                 if (speakerObject.master_speaker_id == speakers_master[index].speaker_id) {
                     var speakerBio = speakers_master[index];
+                  	this.view["flxSpeaker"+index].isVisible=true;
                     this.view["speakerName" + speakerIndex].text = speakerBio.speaker_name;
                     var title = speakerBio.speaker_title.length > 20 ? speakerBio.speaker_title.substring(0, 16) + "..." : speakerBio.speaker_title;
                     this.view["speakerDesignation" + speakerIndex].text = title;
