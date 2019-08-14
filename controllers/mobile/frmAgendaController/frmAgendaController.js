@@ -4,6 +4,7 @@ define({
     thisCardIndex: null,
     cardFrameRel: null,
   	currentViewState:0,
+  	currentSelectedTab:0,
     /**
      * @function frmAgendaPreshow
      * @description The function is invoked in the form preshow action which is used to setup the UI
@@ -68,7 +69,9 @@ define({
      * @private
      */
     frmAgendaPostshow: function() {
-      	this.setData(accelerateSessionData.eventSessionData.records);
+      	if(this. currentSelectedTab===0){
+         this.setData(accelerateSessionData.eventSessionData.records); 
+        }
         this.devHeight = this.view.masterContainer.frame.height;
         egLogger("devHeight = " + this.devHeight);
       	var dotsblurwidth=this.view.sessionTileAnim.quantumDotsBlur.frame.height*10.7388+"dp";
