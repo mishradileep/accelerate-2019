@@ -127,16 +127,25 @@ define({
     var isSessionPresent = null;
      var myScheduleData = kony.store.getItem("myAgendaData");
     for (var index = 0; index < sessions.length; index++) {
+      
+      if(sessions[index].SoftDeleteFlag!==undefined && sessions[index].SoftDeleteFlag === true) {
+          continue;
+      }
       var id = "sessiontile" + sessions[index].event_session_id;
-      if(myScheduleData){
+      
+      if(myScheduleData) {
         isSessionPresent = myScheduleData[sessions[index].event_session_id];
       }
-      if(sessions[index].session_start_date.indexOf(" ")!=-1){
+      
+      if(sessions[index].session_start_date.indexOf(" ")!=-1) {
         sessions[index].session_start_date = sessions[index].session_start_date.replace(" ","T")+"0Z";
         sessions[index].session_end_date = sessions[index].session_end_date.replace(" ","T")+ "0Z";
-        if(isSessionPresent){
+      }
+      
+      if(isSessionPresent) {
           sessions[index].isAddedToMySchedule = true;
-        }
+      } else {
+          sessions[index].isAddedToMySchedule = false;
       }
       this.createSessionTile(id, "0dp", sessions[index]);
     }
