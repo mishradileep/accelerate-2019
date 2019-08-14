@@ -851,6 +851,7 @@ define({
      * @private
      */
     agendaFilter: function(eventobject) {
+      	this.view.contentScroller.setContentOffset({"y":0}, true);
         var self = this;
         var leftPos = "0%";
         var buttonText = "ALL";
