@@ -60,8 +60,8 @@
     "androidInstallLocnPref": "false",
     "android_allowselfsignedcertificates": "None",
     "androidloadindicatorkey": "true",
-    "androidmapkey": "",
-    "androidmapkey2": "",
+    "androidmapkey": "AIzaSyBxz_lS49jNEpML6LiwXTbKQRPsTSS8HZM",
+    "androidmapkey2": "AIzaSyBxz_lS49jNEpML6LiwXTbKQRPsTSS8HZM",
     "androidorientation": "Device Default",
     "androidscreenanydensity": "true",
     "androidscreenextralarge": "true",
@@ -414,7 +414,7 @@
     "lastmodifiedtime": "1562231476148",
     "location": "false",
     "mangoapptitlekey": ",,,,,,",
-    "mapkey": "",
+    "mapkey": "AIzaSyBxz_lS49jNEpML6LiwXTbKQRPsTSS8HZM",
     "marginsincludedinwidgetcontainerweight": "true",
     "mastersProperties": {
         "mastersVersion": "2.0.0"
@@ -743,6 +743,7 @@
     "supportX86Devicesandwear": "false",
     "supportedOrientations": "PORTRAIT_MODE",
     "supportmarginpixelindip": "false",
+    "swiftversionkey": "None",
     "tags": {
         "android": {
             "activity_child_tags": "",
@@ -824,6 +825,7 @@
     "watchos_notificationcentericon_42": "",
     "watchos_shortlooknotificationicon_38": "",
     "watchos_shortlooknotificationicon_42": "",
+    "watchos_target_versionkey": "None",
     "watchos_watchMarketing1x": "",
     "webcam": "false",
     "win10bgagentclassname": "",
