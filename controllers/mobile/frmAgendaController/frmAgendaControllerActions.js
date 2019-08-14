@@ -62,5 +62,13 @@ define({
     AS_Form_ce1c3ac567c14878a6d0115ae35f7155: function AS_Form_ce1c3ac567c14878a6d0115ae35f7155(eventobject) {
         var self = this;
         return;
+    },
+    /** onClick defined for ratingBubble3 **/
+    AS_Button_h7e2b86b987a4ab2b456a3d177861ddb: function AS_Button_h7e2b86b987a4ab2b456a3d177861ddb(eventobject) {
+        var self = this;
+    },
+    /** onClick defined for ratingBubble3 **/
+    AS_Button_iad8ac72475745688c1e522b0750446f: function AS_Button_iad8ac72475745688c1e522b0750446f(eventobject) {
+        var self = this;
     }
 });
