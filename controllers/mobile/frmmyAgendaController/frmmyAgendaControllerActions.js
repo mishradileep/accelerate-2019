@@ -296,5 +296,10 @@ define({
         if (this.currentViewState === 0) {
             this.frmAgendaPreshow();
         }
+    },
+    /** onDeviceBack defined for frmmyAgenda **/
+    AS_Form_gdc7a27b1fde45bea31c1bf7860c0d0e: function AS_Form_gdc7a27b1fde45bea31c1bf7860c0d0e(eventobject) {
+        var self = this;
+        return;
     }
 });

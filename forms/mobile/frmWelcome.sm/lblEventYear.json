@@ -18,19 +18,15 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "number",
-        "value": "0"
-    },
     "_skin_": "s5122dcdd5e7469f9423072e207f8e03",
     "_text_": "2019",
     "_top_": {
         "type": "string",
-        "value": "5dp"
+        "value": "8dp"
     },
     "_width_": {
         "type": "string",
-        "value": "30%"
+        "value": "80dp"
     },
     "_wrapping_": 2,
     "android": {
@@ -40,6 +36,10 @@
         }
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "10%"
+    },
     "containerweight": 100,
     "contentalignment": 7,
     "id": "lblEventYear",

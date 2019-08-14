@@ -37,5 +37,10 @@ define({
     AS_Form_f9337d7c18aa4abbb9873bd00f925294: function AS_Form_f9337d7c18aa4abbb9873bd00f925294(eventobject) {
         var self = this;
         this.menuAnimateSlide('slideIn');
+    },
+    /** onDeviceBack defined for frmMore **/
+    AS_Form_a20b9413c8b34aee8c35e3133f1c7208: function AS_Form_a20b9413c8b34aee8c35e3133f1c7208(eventobject) {
+        var self = this;
+        return;
     }
 });

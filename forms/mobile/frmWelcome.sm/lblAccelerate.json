@@ -9,10 +9,6 @@
         "type": "string",
         "value": "100%"
     },
-    "_left_": {
-        "type": "string",
-        "value": "0%"
-    },
     "_margin_": [
         1,
         1,
@@ -32,20 +28,28 @@
         "value": "0dp"
     },
     "_width_": {
-        "type": "string",
-        "value": "70%"
+        "type": "ref",
+        "value": "preferred"
     },
     "_wrapping_": 2,
     "android": {
+        "psp": {
+            "includeFontPadding": false
+        },
         "textStyle": {
             "letterSpacing": 3,
             "strikeThrough": false
         }
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "40%"
+    },
     "containerweight": 100,
-    "contentalignment": 9,
+    "contentalignment": 8,
     "id": "lblAccelerate",
+    "includeFontPadding": false,
     "info": null,
     "ipad": {
         "psp": {
@@ -57,7 +61,7 @@
             "wrapping": 2
         },
         "textStyle": {
-            "letterSpacing": 4,
+            "letterSpacing": 3,
             "lineSpacing": 0
         }
     },
