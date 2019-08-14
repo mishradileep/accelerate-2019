@@ -208,7 +208,8 @@
                 "kuid": "be32c0e3467e469aa11f77ae8d33fecc",
                 "srcKUID": "g1852b11bef94086ac089da8e86605a6",
                 "wType": "Label"
-            }
+            },
+            "text": "Presenters"
         },
         "menuMain": {
             "__events__": {},
