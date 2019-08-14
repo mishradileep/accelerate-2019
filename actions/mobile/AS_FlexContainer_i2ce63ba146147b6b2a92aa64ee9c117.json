@@ -1,0 +1,30 @@
+{
+    "AS_FlexContainer_i2ce63ba146147b6b2a92aa64ee9c117": {
+        "id": "AS_FlexContainer_i2ce63ba146147b6b2a92aa64ee9c117",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmWelcome",
+            "type": "forms",
+            "platform": "",
+            "KUID": "g575ec9bf24d4f3ab673b9f8806f456e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__f5169e75dccb4e0c8ddcb7adb24aef85",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.animateWelcomeArrow();\nsyncEventData();",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}
