@@ -22,6 +22,10 @@
         0,
         0
     ],
+    "_right_": {
+        "type": "string",
+        "value": "45dp"
+    },
     "_skin_": "se2c371ba3ad4f9e8f06c424e98f9d68",
     "_text_": "Choose your room",
     "_width_": {
@@ -57,12 +61,14 @@
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "cb7d3bc743114d6b84be8ec4148fd2f9",
+    "maxnumberoflines": 1,
     "name": "kony.ui.Label",
     "parent": "flxFloorMapList",
     "pf": "frmFloorMap",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},
+    "texttruncateposition": 3,
     "tooltip": "",
     "wType": "Label",
     "zindex": 1
