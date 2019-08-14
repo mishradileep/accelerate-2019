@@ -43,8 +43,7 @@
         "flxMenuSocialFeed",
         "flxMenuExploreAustin",
         "flxMenuAbout",
-        "flxMenuFeedback",
-        "flxMenuSignOut"
+        "flxMenuFeedback"
     ],
     "clipbounds": true,
     "containerweight": 100,
