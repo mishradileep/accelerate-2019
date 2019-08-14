@@ -1,0 +1,64 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizUserWidget",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_children_": [],
+    "_height_": {
+        "type": "string",
+        "value": "8%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 1,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_percent_": true,
+    "_render_": true,
+    "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "clipbounds": true,
+    "containerweight": 0,
+    "data": {
+        "headerTitle": "WIFI",
+        "onCloseClick": "AS_UWI_af090f87e9594bd681c5634379a360bb"
+    },
+    "enablescrolling": true,
+    "id": "mobileheader",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "bc147d5f6bc34990909d919d124548eb",
+    "layouttype": 2,
+    "masterType": 1,
+    "name": "kony.ui.UserWidgetInstance",
+    "parent": "flxMainContainer",
+    "pf": "frmWifiInfo",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainflowhorizontalalignment": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "sourceUserWidget": "j49668e494dc4ed9a607f797e521cab9",
+    "wType": "UserWidgetInstance"
+}

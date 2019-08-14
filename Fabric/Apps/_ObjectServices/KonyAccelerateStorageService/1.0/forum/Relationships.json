@@ -1,0 +1,13 @@
+[ {
+  "sourceObject" : "forum",
+  "targetObject" : "forum_discussion",
+  "relationshipKeys" : [ {
+    "sourceField" : "forum_id",
+    "targetField" : "forum_id",
+    "etag" : "6995048e-c74f-4eea-81da-adee9137a0e8"
+  } ],
+  "name" : "forum_forum_discussion",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+} ]

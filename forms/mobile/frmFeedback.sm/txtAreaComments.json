@@ -1,0 +1,71 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizTextArea2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "163dp"
+    },
+    "_margin_": [
+        2,
+        2,
+        2,
+        2
+    ],
+    "_padding_": [
+        2,
+        2,
+        2,
+        2
+    ],
+    "_placeholder_": "",
+    "_skin_": "s300b5b6a2cd4e3f822c67bfdfec0562",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "90%"
+    },
+    "autocapitalize": "none",
+    "autocomplete": false,
+    "autocorrect": false,
+    "autofilter": false,
+    "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50.03%"
+    },
+    "closebuttontext": "",
+    "containerheight": "",
+    "containerheightmode": 1,
+    "containerweight": 100,
+    "contentalignment": 1,
+    "focusskin": "s300b5b6a2cd4e3f822c67bfdfec0562",
+    "id": "txtAreaComments",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "keyboardstyle": "A",
+    "keyboardtype": "A",
+    "kuid": "fe53d3f6003b4be2a4c777b4897c7b5f",
+    "mode": "A",
+    "name": "kony.ui.TextArea2",
+    "numberofvisiblelines": 3,
+    "paddinginpixel": false,
+    "parent": "flxFeedback",
+    "pf": "frmFeedback",
+    "placeholderskin": "s9986a2885af49f9ac826e84814a6009",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "securetextentry": false,
+    "showoprogressindicator": false,
+    "showprogressindicator": false,
+    "textinputmode": "A",
+    "tooltip": "",
+    "viewtype": "default",
+    "wType": "TextArea",
+    "zindex": 1
+}

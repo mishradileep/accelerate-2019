@@ -1,0 +1,63 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "222dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
+    "_src_": "biotom.png",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "formID": "frmPresenters",
+        "platform": "android",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "id": "imgProfileLarge",
+    "imagescalemode": 0,
+    "imagewhenfailed": "defaultimg.png",
+    "imagewhiledownloading": "defaultimg.png",
+    "info": null,
+    "invokedProperty": "imageWhenFailed",
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "b1cab81dbab448f2a6bf7dcd739b034f",
+    "name": "kony.ui.Image2",
+    "parent": "flxImagelargeView",
+    "pf": "frmPresenters",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "srcType": 1,
+    "wType": "Image",
+    "widgetalignment": 5,
+    "zindex": 1
+}

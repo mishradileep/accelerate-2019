@@ -1,0 +1,19 @@
+{
+  "name" : "LinkedinLogin",
+  "displayName" : "LinkedinLogin",
+  "type" : "oauth2",
+  "version" : "1.0",
+  "metaPreference" : -1,
+  "config" : "{\"logout_url\":\"\",\"auth_type\":\"oauth2\",\"additional_data\":{\"refresh_request\":[],\"token_request\":[],\"revoke_request\":[],\"profile_request\":[],\"authorize_request\":[]},\"grant_type\":\"authorization_code\",\"scope\":\"r_liteprofile r_emailaddress\",\"profile\":{\"profile_attribute_selectors\":{\"federation_id\":\"id\",\"last_name\":\"lastName.localized.en_US\",\"custom_profile_attribute_selectors\":{},\"first_name\":\"firstName.localized.en_US\",\"email\":\"\"},\"endpoint\":{\"location\":\"url\",\"type\":\"direct\",\"value\":\"https://api.linkedin.com/v2/me?projection=(id,firstName,lastName,profilePicture(displayImage~:playableStreams))\"},\"request_method\":\"GET\"},\"authentication_scheme\":\"header\",\"dependent_providers\":[],\"client_authentication\":{\"authentication_scheme\":\"form\",\"client_secret\":\"C4ESBpzWDobgDSCk\",\"client_id\":\"866t0lj8wpask1\"},\"oauthProviderType\":\"linkedin\",\"authorization_endpoint\":\"https://www.linkedin.com/oauth/v2/authorization\",\"token_endpoint\":\"https://www.linkedin.com/oauth/v2/accessToken\"}",
+  "policyConfig" : "{\"def_user_status\":\"pending\",\"max_login_fail\":5}",
+  "admissionPolicy" : "no_approval_needed",
+  "identityMeta" : {
+    "allow_sso" : false,
+    "oauth2_success_url_config" : {
+      "allow_any" : true,
+      "allowed_urls" : [ ],
+      "default" : -1
+    }
+  },
+  "ssoenabled" : false
+}

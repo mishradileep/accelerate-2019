@@ -1,0 +1,60 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "237dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "-23dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
+    "_src_": "bioburley.png",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "235dp"
+    },
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "formID": "frmmyAgenda",
+        "platform": "iphone",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "id": "imgSpeaker1",
+    "imagescalemode": 0,
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "e356f8442032489db8c2b0e582e4e352",
+    "name": "kony.ui.Image2",
+    "parent": "flxSpeaker1",
+    "pf": "frmmyAgenda",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "srcType": 1,
+    "wType": "Image",
+    "widgetalignment": 5,
+    "zindex": 1
+}

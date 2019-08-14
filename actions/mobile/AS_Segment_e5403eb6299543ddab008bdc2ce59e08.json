@@ -1,0 +1,30 @@
+{
+    "AS_Segment_e5403eb6299543ddab008bdc2ce59e08": {
+        "id": "AS_Segment_e5403eb6299543ddab008bdc2ce59e08",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "number",
+            "name": "sectionNumber"
+        }, {
+            "datatype": "number",
+            "name": "rowNumber"
+        }],
+        "contextObj": {
+            "name": "frmFloorMap",
+            "type": "forms",
+            "platform": "",
+            "KUID": "cc9b0c5e9b1f4b8cafefd012a604857d"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__d73febb8422b4bb2b8104a998b7d5ceb",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.onSegmentRowClick(rowNumber)",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

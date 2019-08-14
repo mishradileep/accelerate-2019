@@ -1,0 +1,61 @@
+[ {
+  "sourceObject" : "users",
+  "targetObject" : "forum",
+  "relationshipKeys" : [ {
+    "sourceField" : "user_id",
+    "targetField" : "user_id",
+    "etag" : "91656d34-d15c-438c-a88c-4731737b8049"
+  } ],
+  "name" : "users_forum",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "users",
+  "targetObject" : "forum_discussion",
+  "relationshipKeys" : [ {
+    "sourceField" : "user_id",
+    "targetField" : "user_id",
+    "etag" : "bd1b796b-003b-4a89-b9fa-5385d21f2aa0"
+  } ],
+  "name" : "users_forum_discussion",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "users",
+  "targetObject" : "opinion_answers",
+  "relationshipKeys" : [ {
+    "sourceField" : "user_id",
+    "targetField" : "user_id",
+    "etag" : "856f73e7-125f-4662-b562-75266e389377"
+  } ],
+  "name" : "users_opinion_answers",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "users",
+  "targetObject" : "user_event_session",
+  "relationshipKeys" : [ {
+    "sourceField" : "user_id",
+    "targetField" : "user_id",
+    "etag" : "4968709b-d2c9-4f44-a2e5-6350e961d5c2"
+  } ],
+  "name" : "users_user_event_session",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "users",
+  "targetObject" : "user_notification",
+  "relationshipKeys" : [ {
+    "sourceField" : "user_id",
+    "targetField" : "user_id",
+    "etag" : "4622d753-4064-47ec-9916-475e073ef83b"
+  } ],
+  "name" : "users_user_notification",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+} ]

@@ -1,0 +1,2 @@
+ALTER TABLE `presenter`
+	DROP FOREIGN KEY `2a9d4aea53009432257fec0964fc6a`;

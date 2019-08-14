@@ -1,0 +1,87 @@
+{
+  "operationConfig" : {
+    "name" : "deleteusers8618",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "referencingEndpoint" : "default",
+    "odata" : [ {
+      "id" : "$filter",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    } ],
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "opcode" : "delete",
+    "relationshipHierarchyMapping" : {
+      "children" : [ {
+        "actionsAllSelected" : false,
+        "children" : [ {
+          "actionsAllSelected" : false,
+          "children" : [ ],
+          "name" : "forum_discussion",
+          "actions" : {
+            "delete" : false
+          },
+          "actionsPartiallySelected" : false,
+          "selected" : false
+        } ],
+        "name" : "forum",
+        "actions" : {
+          "delete" : false
+        },
+        "actionsPartiallySelected" : false,
+        "selected" : false
+      }, {
+        "actionsAllSelected" : false,
+        "children" : [ ],
+        "name" : "forum_discussion",
+        "actions" : {
+          "delete" : false
+        },
+        "actionsPartiallySelected" : false,
+        "selected" : false
+      }, {
+        "actionsAllSelected" : false,
+        "children" : [ ],
+        "name" : "opinion_answers",
+        "actions" : {
+          "delete" : false
+        },
+        "actionsPartiallySelected" : false,
+        "selected" : false
+      }, {
+        "actionsAllSelected" : false,
+        "children" : [ ],
+        "name" : "user_event_session",
+        "actions" : {
+          "delete" : false
+        },
+        "actionsPartiallySelected" : false,
+        "selected" : false
+      }, {
+        "actionsAllSelected" : false,
+        "children" : [ ],
+        "name" : "user_notification",
+        "actions" : {
+          "delete" : false
+        },
+        "actionsPartiallySelected" : false,
+        "selected" : false
+      } ],
+      "name" : "users",
+      "actions" : {
+        "delete" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

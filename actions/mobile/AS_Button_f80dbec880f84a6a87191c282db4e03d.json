@@ -1,0 +1,24 @@
+{
+    "AS_Button_f80dbec880f84a6a87191c282db4e03d": {
+        "id": "AS_Button_f80dbec880f84a6a87191c282db4e03d",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmMore",
+            "type": "forms",
+            "platform": "",
+            "KUID": "i21cbe9b7e694202b75d48af6701fb10"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__f10276cc1c70457fb5148f2303a6631a",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.menuAnimateSlide('slideIn');",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

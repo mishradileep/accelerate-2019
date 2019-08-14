@@ -1,0 +1,40 @@
+{
+  "operationConfig" : {
+    "name" : "createforum9556",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "public",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "referencingEndpoint" : "default",
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "opcode" : "create",
+    "relationshipHierarchyMapping" : {
+      "children" : [ {
+        "actionsAllSelected" : true,
+        "children" : [ ],
+        "name" : "forum_discussion",
+        "actions" : {
+          "create" : true,
+          "update" : true,
+          "partialupdate" : true
+        },
+        "actionsPartiallySelected" : false,
+        "selected" : true
+      } ],
+      "name" : "forum",
+      "actions" : {
+        "create" : true,
+        "update" : true,
+        "partialupdate" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

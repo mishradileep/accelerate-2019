@@ -1,0 +1,62 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "32dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "135dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s34b8f6321b74d61b178899476425f17",
+    "_text_": "3",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "32dp"
+    },
+    "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerweight": 100,
+    "contentalignment": 5,
+    "disabledSkins": {},
+    "displaytext": true,
+    "focusskin": "s34b8f6321b74d61b178899476425f17",
+    "id": "ratingBubble3",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "j835dc8d1f3f48ef8db270554caf4184",
+    "name": "kony.ui.Button",
+    "onclick": "AS_Button_ae7b5b1b880c4cdb80993cf3cf66bf9f",
+    "parent": "ratingBubbles",
+    "pf": "userwidgetmodel",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "wType": "Button",
+    "zindex": 1
+}

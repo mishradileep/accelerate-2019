@@ -1,0 +1,73 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizLabel",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "28dp"
+    },
+    "_margin_": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sb819f3d3048455895969bda2a1b6e98",
+    "_text_": "KEYNOTE",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_wrapping_": 2,
+    "android": {
+        "textStyle": {
+            "letterSpacing": 1,
+            "strikeThrough": false
+        }
+    },
+    "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "52%"
+    },
+    "containerweight": 100,
+    "contentalignment": 4,
+    "id": "lblKeynote",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "iphone": {
+        "psp": {
+            "wrapping": 2
+        },
+        "textStyle": {
+            "letterSpacing": 1,
+            "lineSpacing": 0
+        }
+    },
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "d77f1b14bd0c4526ae0e52a6f54b09ea",
+    "name": "kony.ui.Label",
+    "parent": "flxFilterKeynote",
+    "pf": "frmPresenters",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "textstyle": {},
+    "tooltip": "",
+    "wType": "Label",
+    "zindex": 1
+}

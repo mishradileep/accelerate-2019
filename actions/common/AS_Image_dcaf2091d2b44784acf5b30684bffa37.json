@@ -1,0 +1,23 @@
+{
+    "AS_Image_dcaf2091d2b44784acf5b30684bffa37": {
+        "id": "AS_Image_dcaf2091d2b44784acf5b30684bffa37",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "uwu9532f6a6b1343019654c6b092413aec",
+            "type": "userwidgets",
+            "KUID": "u9532f6a6b1343019654c6b092413aec"
+        },
+        "language": "js",
+        "actions": []
+    }
+}

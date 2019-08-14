@@ -1,0 +1,72 @@
+{
+  "customCode" : {
+    "responseProcessorName" : "com.events.postprocessors.speakerWithSessionPostProcessor"
+  },
+  "operationConfig" : {
+    "name" : "queryspeakers_master2708",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "referencingEndpoint" : "default",
+    "odata" : [ {
+      "id" : "$select",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$filter",
+      "dataType" : "string",
+      "defaultValue" : "(SoftDeleteFlag ne true) or (SoftDeleteFlag eq null)",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$orderby",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$top",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$skip",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$expand",
+      "dataType" : "string",
+      "defaultValue" : "presenter",
+      "encode" : true,
+      "accessType" : "readonly"
+    } ],
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "opcode" : "query",
+    "relationshipHierarchyMapping" : {
+      "children" : [ {
+        "actionsAllSelected" : true,
+        "children" : [ ],
+        "name" : "presenter",
+        "actions" : {
+          "get" : true
+        },
+        "actionsPartiallySelected" : false,
+        "selected" : true
+      } ],
+      "name" : "speakers_master",
+      "actions" : {
+        "get" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

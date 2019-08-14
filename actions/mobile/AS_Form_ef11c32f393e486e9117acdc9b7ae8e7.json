@@ -1,0 +1,18 @@
+{
+    "AS_Form_ef11c32f393e486e9117acdc9b7ae8e7": {
+        "id": "AS_Form_ef11c32f393e486e9117acdc9b7ae8e7",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmWifiInfo",
+            "type": "forms",
+            "platform": "",
+            "KUID": "jec7a8f26da3470699013344b9d3e7d7"
+        },
+        "language": "js",
+        "actions": []
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "jars" : [ {
+    "name" : "KonyEventsServices.jar",
+    "type" : "jar"
+  } ],
+  "assets" : [ {
+    "name" : "Archive.zip",
+    "type" : "sampleData"
+  } ],
+  "config" : {
+    "metadataSecurity" : "public",
+    "offline" : false,
+    "uploadCache" : false,
+    "conflict_policy" : "none"
+  }
+}

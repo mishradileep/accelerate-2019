@@ -1,0 +1,24 @@
+{
+    "AS_Form_a19f8be4c0114e0a86095bb24d875c3d": {
+        "id": "AS_Form_a19f8be4c0114e0a86095bb24d875c3d",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmWifiInfo",
+            "type": "forms",
+            "platform": "",
+            "KUID": "jec7a8f26da3470699013344b9d3e7d7"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__bef1d60f5aaa46fe8306d8c08036a2c0",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.formPostShowAction();",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizRichText",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "60%"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s431a5e51c914d6dbbadca1d28edaedf",
+    "_text_": "<u> second floor </u>\n",
+    "_top_": {
+        "type": "string",
+        "value": "105dp"
+    },
+    "_width_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "contentalignment": 4,
+    "id": "sessionLocation",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": false,
+    "kuid": "j869d3ce71984f25a63004ee21affe9e",
+    "linkskin": "s0d7974023eb449381a5ae8e7fea1fe3",
+    "name": "kony.ui.RichText",
+    "parent": "frmmyAgenda",
+    "pf": "frmmyAgenda",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "wType": "RichText",
+    "widgetalignment": 5,
+    "zindex": 200
+}

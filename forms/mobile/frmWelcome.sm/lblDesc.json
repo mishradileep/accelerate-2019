@@ -1,0 +1,73 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizLabel",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_margin_": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s57e49b6caf04670916dd493d0259f32",
+    "_text_": "Thank you for joining us in Austin. We look to showing you first-hand how Kony accelerates digital success.",
+    "_top_": {
+        "type": "string",
+        "value": "56%"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "70%"
+    },
+    "_wrapping_": 2,
+    "android": {
+        "textStyle": {
+            "letterSpacing": 0,
+            "lineSpacing": 10,
+            "strikeThrough": false
+        }
+    },
+    "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerweight": 100,
+    "contentalignment": 5,
+    "id": "lblDesc",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "iphone": {
+        "psp": {
+            "wrapping": 2
+        },
+        "textStyle": {
+            "lineSpacing": 11
+        }
+    },
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "b5669978a6744d04a5a85ec8982d3f46",
+    "name": "kony.ui.Label",
+    "parent": "flxMain",
+    "pf": "frmWelcome",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "textstyle": {},
+    "tooltip": "",
+    "wType": "Label",
+    "zindex": 1
+}

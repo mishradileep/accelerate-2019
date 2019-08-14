@@ -1,0 +1,30 @@
+{
+  "operationConfig" : {
+    "name" : "updateparticipation8451",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "public",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "referencingEndpoint" : "default",
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "opcode" : "update",
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "participation",
+      "actions" : {
+        "create" : true,
+        "update" : true,
+        "partialupdate" : true,
+        "delete" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

@@ -1,0 +1,244 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizUserWidget",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_android_": {},
+    "_androidwearos_": {},
+    "_bottom_": {
+        "type": "number",
+        "value": "0"
+    },
+    "_children_": [],
+    "_desktopweb_": {},
+    "_height_": {
+        "type": "string",
+        "value": "60dp"
+    },
+    "_ipad_": {},
+    "_iphone_": {},
+    "_kiosk_": {},
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 1,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_percent_": true,
+    "_skin_": "sce64a14b0654e55bf38f23eb67bc874",
+    "_spa_": {},
+    "_spaan_": {},
+    "_spaandroidtablet_": {},
+    "_spabb_": {},
+    "_spaip_": {},
+    "_spaipad_": {},
+    "_spamobile_": {},
+    "_spatablet_": {},
+    "_spawindowstablet_": {},
+    "_spawinphone8_": {},
+    "_tabrcandroid_": {},
+    "_vizProps_": {
+        "hidewidgethierarchy": false
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_windows10_": {},
+    "_windows8_": {},
+    "_winphone10_": {},
+    "_winphone8_": {},
+    "areflexpropsreferenced": false,
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "clipbounds": true,
+    "containerweight": 0,
+    "dataDiffs": {
+        "FlexContainer0a1a5ea125dd043": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "f0663c47dd4d4cabb93ffef6447c45a3",
+                "srcKUID": "b5f68210650748a09a67a77356c63d3a",
+                "wType": "FlexContainer"
+            }
+        },
+        "menuButtonAgenda": {
+            "__events__": {
+                "onClick": "AS_Button_ja12414d0b08453d8a8f617afcc32d2f"
+            },
+            "__info__": {
+                "kuid": "a4aa42f6422c4680a951dd3c7c07712a",
+                "srcKUID": "j6228e12de0a4ad089565baee9b26d5d",
+                "wType": "Button"
+            }
+        },
+        "menuButtonMore": {
+            "__events__": {
+                "onClick": "AS_Button_db49a8e78e76416c9498f54c559cfd10"
+            },
+            "__info__": {
+                "kuid": "b189e2a068c24974bf2e9d3d153e7342",
+                "srcKUID": "h7b0c6a01d054846a58b3b1035156512",
+                "wType": "Button"
+            }
+        },
+        "menuButtonMySchedule": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "ed0db2c57ec545a3b438b815e65c463f",
+                "srcKUID": "jd94bce423a4453c96ed47769f0e9468",
+                "wType": "Button"
+            }
+        },
+        "menuButtonPresenters": {
+            "__events__": {
+                "onClick": "AS_Button_c1f51313917845e797a9e54f61d19798"
+            },
+            "__info__": {
+                "kuid": "a13fdc0036f14c81ad4849ee953444f4",
+                "srcKUID": "ce637f2ce0714d179c79c378584d73eb",
+                "wType": "Button"
+            }
+        },
+        "menuContainerAgenda": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "d86256e37a1d4c318260f58ba96552a8",
+                "srcKUID": "fc2481a695734f90a103d417e2c40b67",
+                "wType": "FlexContainer"
+            }
+        },
+        "menuContainerMore": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "b5ad6b8cdfdd4a418ea8900cdb8c7b23",
+                "srcKUID": "fab8eeff3d3a4978901edf64060316c6",
+                "wType": "FlexContainer"
+            }
+        },
+        "menuContainerMySchedule": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "fb2b03671bf741b49a4046acdf184416",
+                "srcKUID": "da4b1b3b965b437c9977b0cb6dce4d78",
+                "wType": "FlexContainer"
+            }
+        },
+        "menuContainerPresenters": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "da53dffa326c475cb6abe6658bfc86ab",
+                "srcKUID": "f7b7d76d9cbc4364958b6c2ef4f3eec4",
+                "wType": "FlexContainer"
+            }
+        },
+        "menuImageAgenda": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "b6a0bf13c6a14d1496d235f87c9a5564",
+                "srcKUID": "ba3ca6db33f645c697fefd341f143be1",
+                "wType": "Image"
+            },
+            "src": "agenda_inactive_icon.png"
+        },
+        "menuImageMore": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "cb7167edf11d4d8ab2812b6f343f14fb",
+                "srcKUID": "b914a739c4ef4bec840524a4d77f1076",
+                "wType": "Image"
+            },
+            "src": "more_inactive.png"
+        },
+        "menuImageMySchedule": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "a40075f1fdf046cca6116a030920943e",
+                "srcKUID": "c252d8278fd1465f9cf1377b1b0de8a2",
+                "wType": "Image"
+            },
+            "src": "scheduleactive.png"
+        },
+        "menuImagePresenters": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "i0127322c78e422d8d0883bf600a7cc0",
+                "srcKUID": "fd16a35bd75847eabe6456460ba15929",
+                "wType": "Image"
+            },
+            "src": "menupresentersinactive_1.png"
+        },
+        "menuLabelAgenda": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "a427d0406f934b7d91223be6af554fa0",
+                "srcKUID": "aca697485c144d3aa964957e43226550",
+                "wType": "Label"
+            }
+        },
+        "menuLabelMore": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "f692f66cc5cb4055bff9dd71b2640aab",
+                "srcKUID": "ba734a47ffe2494896f0cbcec6d864dd",
+                "wType": "Label"
+            }
+        },
+        "menuLabelMySchedule": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "a59273c192b44883882249d6dd035077",
+                "srcKUID": "cd71219af5e947a8b0a25e18669f0ba7",
+                "wType": "Label"
+            }
+        },
+        "menuLabelPresenters": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "be32c0e3467e469aa11f77ae8d33fecc",
+                "srcKUID": "g1852b11bef94086ac089da8e86605a6",
+                "wType": "Label"
+            },
+            "text": "Presenters"
+        },
+        "menuMain": {
+            "__events__": {},
+            "__info__": {
+                "isRoot": true,
+                "kuid": "b613a83a1e6643d5b81e2c6c7cf74793",
+                "srcKUID": "f5fdcbc491394b349bf721f20eac9eaa",
+                "wType": "FlexContainer"
+            }
+        }
+    },
+    "enablescrolling": true,
+    "id": "menuMain",
+    "info": null,
+    "iscustomlayout": false,
+    "isdatareferenced": false,
+    "isvisible": true,
+    "kuid": "b613a83a1e6643d5b81e2c6c7cf74793",
+    "layouttype": 2,
+    "masterType": 0,
+    "name": "kony.ui.UserWidgetInstance",
+    "parent": "frmmyAgenda",
+    "pf": "frmmyAgenda",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainflowhorizontalalignment": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "sourceUserWidget": "f5fdcbc491394b349bf721f20eac9eaa",
+    "wType": "UserWidgetInstance",
+    "zindex": 40
+}

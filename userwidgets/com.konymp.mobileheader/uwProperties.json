@@ -1,0 +1,116 @@
+{
+    "classname": "mobileheader",
+    "definitions": {
+        "apis": {
+            "custom": [],
+            "passthrough": []
+        },
+        "events": {
+            "custom": [],
+            "passthrough": [
+                {
+                    "access": "Enable",
+                    "group": "General",
+                    "kuid": "a32aedea690e48a58a63fe40b47a921d",
+                    "originalPropertyKey": "onTouchEnd",
+                    "propertyIndex": 1,
+                    "propertyKey": "onCloseClick",
+                    "pw": {
+                        "access": "readwrite",
+                        "category": "action",
+                        "displayName": "onCloseClick",
+                        "srcWidget": "imgClose",
+                        "type": "action",
+                        "uiRepresentation": "Label-Label-Button-Button",
+                        "wType": "Image"
+                    },
+                    "srcWgtKUID": "a4c9415fb024431e9e9027c08a1315fd"
+                }
+            ]
+        },
+        "groups": {
+            "apis": [
+                "General"
+            ],
+            "events": [],
+            "properties": [],
+            "widgets": []
+        },
+        "properties": {
+            "custom": [],
+            "passthrough": [
+                {
+                    "access": "Enable",
+                    "group": "General",
+                    "kuid": "i2abe92801254424956b09484455a82b",
+                    "originalPropertyKey": "text",
+                    "propertyIndex": 1,
+                    "propertyKey": "headerTitle",
+                    "pw": {
+                        "access": "readwrite",
+                        "category": "look",
+                        "dependentKeysKUIDs": null,
+                        "displayName": "Header Title",
+                        "srcWidget": "lblHeaderText",
+                        "type": "string",
+                        "uiRepresentation": "Label-Textbox",
+                        "wType": "Label"
+                    },
+                    "srcWgtKUID": "eca13d68df0047cd942249e338308f31"
+                },
+                {
+                    "access": "Enable",
+                    "group": "General",
+                    "kuid": "ce912de0a5214ee29e3de8200f9db446",
+                    "originalPropertyKey": "src",
+                    "propertyIndex": 2,
+                    "propertyKey": "imgSource",
+                    "pw": {
+                        "access": "readwrite",
+                        "category": "widget",
+                        "dependentKeysKUIDs": null,
+                        "displayName": "Image Source",
+                        "srcWidget": "imgClose",
+                        "type": "string",
+                        "uiConfig": {
+                            "Button": {
+                                "dataRetrieverId": "Imagelist",
+                                "dataUpdaterId": "Imagelist",
+                                "popupId": "Imagelist",
+                                "type": "ImageEditBtn"
+                            },
+                            "Label": {}
+                        },
+                        "uiRepresentation": "Label-Label-Button",
+                        "wType": "Image"
+                    },
+                    "srcWgtKUID": "a4c9415fb024431e9e9027c08a1315fd"
+                },
+                {
+                    "access": "Enable",
+                    "defaultSkinKUID": "s7af066e56d642a782c09640ae0c4a07",
+                    "group": "General",
+                    "kuid": "bdeb146f7d724c2ca66222d5eff0ba9d",
+                    "originalPropertyKey": "skin",
+                    "propertyIndex": 3,
+                    "propertyKey": "sknHeader",
+                    "pw": {
+                        "access": "readwrite",
+                        "category": "skin",
+                        "dependentKeysKUIDs": null,
+                        "displayName": "Header Skin",
+                        "srcWidget": "lblHeaderText",
+                        "wType": "Label"
+                    },
+                    "srcWgtKUID": "eca13d68df0047cd942249e338308f31"
+                }
+            ]
+        },
+        "widgets": {
+            "expose": [],
+            "passthrough": []
+        }
+    },
+    "namespace": "com.konymp",
+    "version": "1.0.0"
+}

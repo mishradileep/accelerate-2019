@@ -1,0 +1,14 @@
+{
+  "name" : "konyEventsUsers",
+  "displayName" : "konyEventsUsers",
+  "type" : "userstore",
+  "version" : "1.0",
+  "metaPreference" : -1,
+  "config" : "{}",
+  "policyConfig" : "{\"def_user_status\":\"pending\",\"max_login_fail\":5}",
+  "admissionPolicy" : "no_approval_needed",
+  "identityMeta" : {
+    "allow_sso" : false
+  },
+  "ssoenabled" : false
+}

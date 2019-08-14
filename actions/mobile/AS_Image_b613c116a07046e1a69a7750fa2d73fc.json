@@ -1,0 +1,37 @@
+{
+    "AS_Image_b613c116a07046e1a69a7750fa2d73fc": {
+        "id": "AS_Image_b613c116a07046e1a69a7750fa2d73fc",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmWelcome",
+            "type": "forms",
+            "platform": "",
+            "KUID": "g575ec9bf24d4f3ab673b9f8806f456e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___db7b717c11aa424091d446be7fa35691",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmAgenda",
+            "formKUID": "g7d71a566dee45ffa15745fbce32e657",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": "",
+            "navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"\",\n        \"widgetId\": \"\"\n    }\n}",
+            "isCustomInput": false
+        }]
+    }
+}

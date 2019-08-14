@@ -1,0 +1,13 @@
+[ {
+  "sourceObject" : "speakers_master",
+  "targetObject" : "presenter",
+  "relationshipKeys" : [ {
+    "sourceField" : "speaker_id",
+    "targetField" : "master_speaker_id",
+    "etag" : "f933b171-9f50-4d33-9db7-3bed6c6929ea"
+  } ],
+  "name" : "speakers_master_presenter",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+} ]

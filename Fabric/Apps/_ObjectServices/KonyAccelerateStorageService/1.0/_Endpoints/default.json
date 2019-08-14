@@ -1,0 +1,11 @@
+{
+  "name" : "default",
+  "type" : "SAAS",
+  "encryptSecureInfo" : false,
+  "config" : {
+    "sampleData" : "Archive.zip",
+    "identityProviderType" : "userstore",
+    "identityProvider" : "konyEventsUsers"
+  },
+  "jsonpath" : false
+}

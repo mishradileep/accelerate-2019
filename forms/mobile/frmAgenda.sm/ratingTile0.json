@@ -1,0 +1,243 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizUserWidget",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_android_": {},
+    "_androidwearos_": {},
+    "_children_": [],
+    "_desktopweb_": {},
+    "_height_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_ipad_": {},
+    "_iphone_": {},
+    "_kiosk_": {},
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 1,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_percent_": true,
+    "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
+    "_spa_": {},
+    "_spaan_": {},
+    "_spaandroidtablet_": {},
+    "_spabb_": {},
+    "_spaip_": {},
+    "_spaipad_": {},
+    "_spamobile_": {},
+    "_spatablet_": {},
+    "_spawindowstablet_": {},
+    "_spawinphone8_": {},
+    "_tabrcandroid_": {},
+    "_top_": {
+        "type": "string",
+        "value": "59dp"
+    },
+    "_vizProps_": {
+        "hide": false,
+        "hidewidgethierarchy": false
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_windows10_": {},
+    "_windows8_": {},
+    "_winphone10_": {},
+    "_winphone8_": {},
+    "areflexpropsreferenced": false,
+    "autogrowmode": 1,
+    "canUpdateUI": true,
+    "clipbounds": true,
+    "containerweight": 0,
+    "dataDiffs": {
+        "flxImage": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "a0c6df1aebff4411b9ef705892ecabda",
+                "srcKUID": "h67a308f3b59488eb283c4ddf4465d9d",
+                "wType": "FlexContainer"
+            }
+        },
+        "ratingBubble1": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "h66e77aaced645adb7652e1ded575d8a",
+                "srcKUID": "cce7f6d436bf46f995e0f3344995b97e",
+                "wType": "Button"
+            }
+        },
+        "ratingBubble2": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "ab01b6c68a3c4d2a89caba4cb379421e",
+                "srcKUID": "ecb39acca5ae4187a588e5b888c5f425",
+                "wType": "Button"
+            }
+        },
+        "ratingBubble3": {
+            "__events__": {
+                "onClick": "AS_Button_iad8ac72475745688c1e522b0750446f"
+            },
+            "__info__": {
+                "kuid": "ade8f442822c4dc9838f1adbc6acb60b",
+                "srcKUID": "j835dc8d1f3f48ef8db270554caf4184",
+                "wType": "Button"
+            }
+        },
+        "ratingBubble4": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "d0effd41899b49a5a6e1897d09ef1d0b",
+                "srcKUID": "d834a6be1cb2450fa69bea43c9ce006e",
+                "wType": "Button"
+            }
+        },
+        "ratingBubble5": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "h8272ba6bcd446cbadac29cee57a68ad",
+                "srcKUID": "e828035953c74c4abcd74820c9262851",
+                "wType": "Button"
+            }
+        },
+        "ratingBubbles": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "a7221dfe1349428abaadd80f3c9afa86",
+                "srcKUID": "ga3983ff25394797945fdfdbeb501d81",
+                "wType": "FlexContainer"
+            }
+        },
+        "ratingLevel1": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "c3ebc8abed8a4be6821a2cda67275aa8",
+                "srcKUID": "f20924522d2543b78bd552331bff1879",
+                "wType": "Label"
+            }
+        },
+        "ratingLevel3": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "a1a47240b5f14333a10dc1651229c1ee",
+                "srcKUID": "a99746b8f37d44a687f5c4eb2ffb8038",
+                "wType": "Label"
+            }
+        },
+        "ratingLevel5": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "j3502bceed6449c79038fc3bc9a86b40",
+                "srcKUID": "e3c200e8743b404cb8e348918d1a00d9",
+                "wType": "Label"
+            }
+        },
+        "ratingQuestionLabel": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "g15f06bf9d8d4c82a3346ebc0e5eaf77",
+                "srcKUID": "e57a7cf4e4844f1a9e52632bf731df04",
+                "wType": "Label"
+            },
+            "text": "How would you rate the quality of the presenters?"
+        },
+        "ratingSpeakerContainer": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "dad4af32de1b4f57a3159a8989a9e961",
+                "srcKUID": "a06dd308b60749d6ae4b20732a77b438",
+                "wType": "FlexContainer"
+            }
+        },
+        "ratingSpeakerImage": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "a6d93e6ed445480d9225950acd26e5c2",
+                "srcKUID": "gd6c719314ad4eeca6a03fe884e3d0e5",
+                "wType": "Image"
+            },
+            "src": "speakerratingtomhogan.png"
+        },
+        "ratingSpeakerName": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "j479f9bce1f6484aa637d1583ede92eb",
+                "srcKUID": "ef500bc54c7e4a7a9889e464869eee58",
+                "wType": "Label"
+            }
+        },
+        "ratingSpeakerTitle": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "e0893a643a874d7288711176a08ed4ff",
+                "srcKUID": "ia1eb74e62e94d0fbeb19a4232a1da82",
+                "wType": "Label"
+            }
+        },
+        "ratingSystemLabels": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "b8fb4f577bac458f95f9c41b5214bc16",
+                "srcKUID": "c72185f1ccea4a3b8268eb502c4f3f8b",
+                "wType": "FlexContainer"
+            }
+        },
+        "ratingTile": {
+            "__events__": {},
+            "__info__": {
+                "isRoot": true,
+                "kuid": "c1cf943e662f466b97335351e58124d7",
+                "srcKUID": "d9e410e5244c45bebe9f80f079b7c0aa",
+                "wType": "FlexContainer"
+            },
+            "left": {
+                "Default": {
+                    "type": "string",
+                    "value": "0dp"
+                }
+            },
+            "top": {
+                "Default": {
+                    "type": "string",
+                    "value": "59dp"
+                }
+            }
+        }
+    },
+    "enablescrolling": true,
+    "id": "ratingTile0",
+    "info": null,
+    "iscustomlayout": false,
+    "isdatareferenced": false,
+    "issegmentchild": false,
+    "isvisible": true,
+    "kuid": "c1cf943e662f466b97335351e58124d7",
+    "layouttype": 4,
+    "masterType": 0,
+    "name": "kony.ui.UserWidgetInstance",
+    "parent": "flxRatingContainer",
+    "pf": "frmAgenda",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainflowhorizontalalignment": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "sourceUserWidget": "d9e410e5244c45bebe9f80f079b7c0aa",
+    "wType": "UserWidgetInstance",
+    "zindex": 1
+}

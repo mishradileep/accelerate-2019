@@ -1,0 +1,78 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizTextArea2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "130dp"
+    },
+    "_margin_": [
+        2,
+        2,
+        2,
+        2
+    ],
+    "_padding_": [
+        2,
+        2,
+        2,
+        2
+    ],
+    "_placeholder_": "",
+    "_skin_": "s300b5b6a2cd4e3f822c67bfdfec0562",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "300dp"
+    },
+    "autocapitalize": "none",
+    "autocomplete": false,
+    "autocorrect": false,
+    "autofilter": false,
+    "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "closebuttontext": "",
+    "containerheight": "",
+    "containerheightmode": 1,
+    "containerweight": 100,
+    "contentalignment": 1,
+    "disabledSkins": {
+        "focusSkin": "s7908e0e843944a4b26cea053a7f5239"
+    },
+    "id": "txtArea",
+    "info": null,
+    "iphone": {
+        "psp": {
+            "placeholderSkin": "s300b5b6a2cd4e3f822c67bfdfec0562"
+        }
+    },
+    "iscustomlayout": false,
+    "isvisible": true,
+    "keyboardstyle": "A",
+    "keyboardtype": "A",
+    "kuid": "e1cd5b8940e94b898e4eaaa1bddec335",
+    "mode": "A",
+    "name": "kony.ui.TextArea2",
+    "numberofvisiblelines": 3,
+    "ontouchend": "AS_TextArea_f31bf1de7e754eb88153204603fc6bd0",
+    "parent": "flxRatingContainer",
+    "pf": "frmAgenda",
+    "placeholderskin": "s300b5b6a2cd4e3f822c67bfdfec0562",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "securetextentry": false,
+    "showoprogressindicator": false,
+    "showprogressindicator": false,
+    "textinputmode": "A",
+    "tooltip": "",
+    "viewtype": "default",
+    "wType": "TextArea",
+    "zindex": 1
+}

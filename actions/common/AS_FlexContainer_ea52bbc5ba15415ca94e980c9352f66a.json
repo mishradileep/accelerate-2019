@@ -1,0 +1,23 @@
+{
+    "AS_FlexContainer_ea52bbc5ba15415ca94e980c9352f66a": {
+        "id": "AS_FlexContainer_ea52bbc5ba15415ca94e980c9352f66a",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "uwuc1974808b5144e28c3ac5f0257500fd",
+            "type": "userwidgets",
+            "KUID": "uc1974808b5144e28c3ac5f0257500fd"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__i1eb12f609f444a981bfeebead93d330",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.invokeIdentitySerivce(\"reusableGoogleLogin\");",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

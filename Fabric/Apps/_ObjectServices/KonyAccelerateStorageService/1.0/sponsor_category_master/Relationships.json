@@ -1,0 +1,13 @@
+[ {
+  "sourceObject" : "sponsor_category_master",
+  "targetObject" : "sponsors",
+  "relationshipKeys" : [ {
+    "sourceField" : "sponsorCategoryId",
+    "targetField" : "sponsorCategoryId",
+    "etag" : "4ef084f3-1705-419a-a54d-1b9ae89f5fbf"
+  } ],
+  "name" : "sponsor_category_master_sponsors",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+} ]

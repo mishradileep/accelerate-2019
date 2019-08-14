@@ -1,0 +1,160 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizUserWidget",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_android_": {},
+    "_androidwearos_": {},
+    "_children_": [],
+    "_desktopweb_": {},
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_ipad_": {},
+    "_iphone_": {},
+    "_kiosk_": {},
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 1,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_percent_": true,
+    "_skin_": "s90a03197d4042f888feb56aae0caf4f",
+    "_spa_": {},
+    "_spaan_": {},
+    "_spaandroidtablet_": {},
+    "_spabb_": {},
+    "_spaip_": {},
+    "_spaipad_": {},
+    "_spamobile_": {},
+    "_spatablet_": {},
+    "_spawindowstablet_": {},
+    "_spawinphone8_": {},
+    "_tabrcandroid_": {},
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_vizProps_": {
+        "hidewidgethierarchy": false
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_windows10_": {},
+    "_windows8_": {},
+    "_winphone10_": {},
+    "_winphone8_": {},
+    "areflexpropsreferenced": false,
+    "canUpdateUI": true,
+    "clipbounds": true,
+    "containerweight": 0,
+    "dataDiffs": {
+        "FlexContainer0a7b42ace73704d": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "b2dcef28004c4805a85945dab6e5a076",
+                "srcKUID": "a202119c548b4ce0b857ff069f43863d",
+                "wType": "FlexContainer"
+            }
+        },
+        "FlexGroup0b8c01e2d521f41": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "d748182ccd1c4628ae142e766b1f3389",
+                "srcKUID": "j7c9ebd001f64933904d0679929df0f0",
+                "wType": "FlexContainer"
+            }
+        },
+        "presenterTile": {
+            "__events__": {},
+            "__info__": {
+                "isRoot": true,
+                "kuid": "d2ededbe29cb471595f290bb3ee78a72",
+                "srcKUID": "e04cdd42ffdc451189ebcb43a18c4669",
+                "wType": "FlexContainer"
+            }
+        },
+        "speakerDetails": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "e0777eb94f1c409f8e842b86df1ecabc",
+                "srcKUID": "daf2822007b947869498ecc6c3067c93",
+                "wType": "FlexContainer"
+            }
+        },
+        "speakerImage": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "a91da7b7fad746719b6c2a5a82b942e4",
+                "srcKUID": "c61c8d81be734d32b1ecaa439c8ab6e1",
+                "wType": "Image"
+            },
+            "src": "speakerth.png",
+            "top": {
+                "Default": {
+                    "type": "string",
+                    "value": "-55dp"
+                }
+            }
+        },
+        "speakerInfo": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "b7aa497269d44eaeaf6bfcee37da6fd1",
+                "srcKUID": "bf9188fb45d24f7eb2609fbf35911370",
+                "wType": "Label"
+            }
+        },
+        "speakerName": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "bd5ec5ccdaac4128b7d3ca795718cbe3",
+                "srcKUID": "edc5dfdc8609428ea6976f307fc8432d",
+                "wType": "Label"
+            }
+        },
+        "speakerTitle": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "e8a491677dc843efba504d95c5131c91",
+                "srcKUID": "f761505e956544ec8f257d523e350779",
+                "wType": "Label"
+            }
+        }
+    },
+    "enablescrolling": true,
+    "id": "CopypresenterTile0d49cd1f311e648",
+    "info": null,
+    "iscustomlayout": false,
+    "isdatareferenced": false,
+    "issegmentchild": false,
+    "isvisible": true,
+    "kuid": "d2ededbe29cb471595f290bb3ee78a72",
+    "layouttype": 2,
+    "masterType": 0,
+    "name": "kony.ui.UserWidgetInstance",
+    "parent": "presenterScroll",
+    "pf": "frmPresenters",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainflowhorizontalalignment": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "sourceUserWidget": "e04cdd42ffdc451189ebcb43a18c4669",
+    "wType": "UserWidgetInstance",
+    "zindex": 1
+}

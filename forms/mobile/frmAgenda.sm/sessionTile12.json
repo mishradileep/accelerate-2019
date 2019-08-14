@@ -1,0 +1,271 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizUserWidget",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_android_": {},
+    "_androidwearos_": {},
+    "_children_": [],
+    "_desktopweb_": {},
+    "_height_": {
+        "type": "string",
+        "value": "152dp"
+    },
+    "_ipad_": {},
+    "_iphone_": {},
+    "_kiosk_": {},
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 1,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_percent_": true,
+    "_skin_": "s2c49639db58403abc781df6cac1ea01",
+    "_spa_": {},
+    "_spaan_": {},
+    "_spaandroidtablet_": {},
+    "_spabb_": {},
+    "_spaip_": {},
+    "_spaipad_": {},
+    "_spamobile_": {},
+    "_spatablet_": {},
+    "_spawindowstablet_": {},
+    "_spawinphone8_": {},
+    "_tabrcandroid_": {},
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_vizProps_": {
+        "hide": false,
+        "hidewidgethierarchy": false
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_windows10_": {},
+    "_windows8_": {},
+    "_winphone10_": {},
+    "_winphone8_": {},
+    "areflexpropsreferenced": false,
+    "canUpdateUI": true,
+    "clipbounds": false,
+    "containerweight": 0,
+    "dataDiffs": {
+        "CopyFlexContainer0gfc3854ff00d45": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "a85084c326cd431f911e76a91b585946",
+                "srcKUID": "hf22216092614064847a76e1ddcdb063",
+                "wType": "FlexContainer"
+            }
+        },
+        "CopyFlexContainer0h0944543241849": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "hcbfcac205be4ce28a4965fc58c866a6",
+                "srcKUID": "g29cd69e6dcb41fda11b6aec1447c5ff",
+                "wType": "FlexContainer"
+            }
+        },
+        "addAgendaContainer": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "d32f80f6646c4966b535872714d12599",
+                "srcKUID": "b26268764c614824b21e5445bc10fe32",
+                "wType": "FlexContainer"
+            }
+        },
+        "agendaAddButton": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "cb9dec2e6f6a4a76a6013d21e370dade",
+                "srcKUID": "b7dfe511cc6a445992d3b3d40bb8cfbb",
+                "wType": "Button"
+            }
+        },
+        "agendaSelectButton": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "cbf5ee7dba5d448e922d357bee3cb96b",
+                "srcKUID": "ba57454e69ae4c03bfba02e74cd88da1",
+                "wType": "Button"
+            }
+        },
+        "flxAddedToSchedule": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "i7c193c20bfe4d35a2fe764518e87870",
+                "srcKUID": "j8eab4eaed7a407ea216a135abe5b85d",
+                "wType": "FlexContainer"
+            }
+        },
+        "imgStatus": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "f4035943d7314e70b83e94cbeab7157b",
+                "srcKUID": "f6da9eb310a74ca0ab593ced7ca6fb55",
+                "wType": "Image"
+            },
+            "src": "add.png"
+        },
+        "lblAddedToSchedhule": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "cb89eef97fd749c8b9c82114b3e31566",
+                "srcKUID": "b5cc5e31008b4587b3bc15c6845aa9e2",
+                "wType": "Label"
+            }
+        },
+        "sessionLocation": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "bceb0548b98746758cf4fa6b325cedfe",
+                "srcKUID": "g679777ca7a5465a99a259b0fb430de1",
+                "wType": "Label"
+            }
+        },
+        "sessionLocationIcon": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "i010c8784c944623a3bbadc62b98758d",
+                "srcKUID": "j813b16495964e3295c27ac3e2efb2b8",
+                "wType": "Image"
+            },
+            "src": "agendatilelocationicon.png"
+        },
+        "sessionTile": {
+            "__events__": {},
+            "__info__": {
+                "isRoot": true,
+                "kuid": "a56a5bb376c04c95811ae937532bce47",
+                "srcKUID": "fb318ff0d30b4e7e887e5c06ff43ab8d",
+                "wType": "FlexContainer"
+            },
+            "isVisible": false,
+            "left": {
+                "Default": {
+                    "type": "string",
+                    "value": "0dp"
+                }
+            },
+            "top": {
+                "Default": {
+                    "type": "string",
+                    "value": "0dp"
+                }
+            },
+            "vizProps": {
+                "hide": false
+            }
+        },
+        "sessionTime": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "d9181fd2a7d74073a32737ab49e421a7",
+                "srcKUID": "e6cc01f79b6a4e4281586fc79a694307",
+                "wType": "Label"
+            }
+        },
+        "sessionTimeIcon": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "c0e6dc23379446dd8120c3ff86d6a5f9",
+                "srcKUID": "if3bd46d8df8463fa8b1ea9524d0d612",
+                "wType": "Image"
+            },
+            "src": "agendatiletimeicon.png"
+        },
+        "sessionTitle": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "c1e1c8e82a294d679a3bbc9fe3ca304f",
+                "srcKUID": "ec3db3f4fd634f85b0b4ff30a9d36c93",
+                "wType": "Label"
+            }
+        },
+        "tileBGColorDBX": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "h9e8436483ea4691aea0c9f31e7407c1",
+                "srcKUID": "fe48c17de2914d71be456b883cda7352",
+                "wType": "FlexContainer"
+            }
+        },
+        "tileBGColorKony": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "gbc13489795e4c8cba5ed7213cae5e8e",
+                "srcKUID": "b98e71b68fc54b2b94e4dac58b7028b2",
+                "wType": "FlexContainer"
+            }
+        },
+        "tileBGColorQuantum": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "c2d57281d1d2491d8105264bbc53c4be",
+                "srcKUID": "d7b8e553a16f450d9a149a1dd4c99ed4",
+                "wType": "FlexContainer"
+            }
+        },
+        "tileBGImageKony": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "j54d7808ad174f6f9a722e254bf7cf87",
+                "srcKUID": "d469e2eb20484ce8b9269b31bdf1f9d3",
+                "wType": "Image"
+            },
+            "isVisible": true,
+            "src": "agendatiledbx.png"
+        },
+        "tilebg": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "be277ad80f854fc9a43ce90e8884a0b3",
+                "srcKUID": "e89d21c40b48498eab946870152a0920",
+                "wType": "FlexContainer"
+            }
+        },
+        "topPosLabel": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "cf633c1313d24b3cb169ca3c9275358b",
+                "srcKUID": "d3c42ca5e86e4ee6a719ffb22b9203f4",
+                "wType": "Label"
+            }
+        }
+    },
+    "enablescrolling": true,
+    "id": "sessionTile12",
+    "info": null,
+    "iscustomlayout": false,
+    "isdatareferenced": false,
+    "issegmentchild": false,
+    "isvisible": true,
+    "kuid": "a56a5bb376c04c95811ae937532bce47",
+    "layouttype": 2,
+    "masterType": 0,
+    "name": "kony.ui.UserWidgetInstance",
+    "parent": "sessionTiles",
+    "pf": "frmAgenda",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainflowhorizontalalignment": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "sourceUserWidget": "fb318ff0d30b4e7e887e5c06ff43ab8d",
+    "wType": "UserWidgetInstance",
+    "zindex": 1
+}

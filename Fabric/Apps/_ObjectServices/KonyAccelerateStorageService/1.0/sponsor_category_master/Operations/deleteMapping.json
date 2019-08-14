@@ -1,0 +1,34 @@
+{
+  "operationConfig" : {
+    "name" : "deletesponsor_category_master7783",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "referencingEndpoint" : "default",
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "opcode" : "delete",
+    "relationshipHierarchyMapping" : {
+      "children" : [ {
+        "children" : [ ],
+        "name" : "sponsors",
+        "actions" : {
+          "delete" : true
+        },
+        "selected" : false
+      } ],
+      "name" : "sponsor_category_master",
+      "actions" : {
+        "delete" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

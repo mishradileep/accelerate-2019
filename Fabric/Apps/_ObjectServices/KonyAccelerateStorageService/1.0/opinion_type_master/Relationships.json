@@ -1,0 +1,13 @@
+[ {
+  "sourceObject" : "opinion_type_master",
+  "targetObject" : "opinions",
+  "relationshipKeys" : [ {
+    "sourceField" : "opinion_type_id",
+    "targetField" : "opinion_type",
+    "etag" : "4d548ea7-fdea-4577-a6ca-55759124bef3"
+  } ],
+  "name" : "opinion_type_master_opinions",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+} ]

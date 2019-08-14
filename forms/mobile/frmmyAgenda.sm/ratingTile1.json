@@ -1,0 +1,243 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizUserWidget",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_android_": {},
+    "_androidwearos_": {},
+    "_children_": [],
+    "_desktopweb_": {},
+    "_height_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_ipad_": {},
+    "_iphone_": {},
+    "_kiosk_": {},
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 1,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_percent_": true,
+    "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
+    "_spa_": {},
+    "_spaan_": {},
+    "_spaandroidtablet_": {},
+    "_spabb_": {},
+    "_spaip_": {},
+    "_spaipad_": {},
+    "_spamobile_": {},
+    "_spatablet_": {},
+    "_spawindowstablet_": {},
+    "_spawinphone8_": {},
+    "_tabrcandroid_": {},
+    "_top_": {
+        "type": "string",
+        "value": "8dp"
+    },
+    "_vizProps_": {
+        "hide": false,
+        "hidewidgethierarchy": false
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_windows10_": {},
+    "_windows8_": {},
+    "_winphone10_": {},
+    "_winphone8_": {},
+    "areflexpropsreferenced": false,
+    "autogrowmode": 1,
+    "canUpdateUI": true,
+    "clipbounds": true,
+    "containerweight": 0,
+    "dataDiffs": {
+        "flxImage": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "g828684455624320b14a0b0d442bf372",
+                "srcKUID": "h67a308f3b59488eb283c4ddf4465d9d",
+                "wType": "FlexContainer"
+            }
+        },
+        "ratingBubble1": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "eba928c1aed140d4b2ccc229c67f7613",
+                "srcKUID": "cce7f6d436bf46f995e0f3344995b97e",
+                "wType": "Button"
+            }
+        },
+        "ratingBubble2": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "a07bda4b6b1a4a4797b72c865a5fc25e",
+                "srcKUID": "ecb39acca5ae4187a588e5b888c5f425",
+                "wType": "Button"
+            }
+        },
+        "ratingBubble3": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "e4031b63ef5a41c59f85ca9ad2c27661",
+                "srcKUID": "j835dc8d1f3f48ef8db270554caf4184",
+                "wType": "Button"
+            }
+        },
+        "ratingBubble4": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "ie1a158cc9474f2eb3132329e5a76ed4",
+                "srcKUID": "d834a6be1cb2450fa69bea43c9ce006e",
+                "wType": "Button"
+            }
+        },
+        "ratingBubble5": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "c4d505e38a0e40f2b208854df19d7df6",
+                "srcKUID": "e828035953c74c4abcd74820c9262851",
+                "wType": "Button"
+            }
+        },
+        "ratingBubbles": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "b0cfad214ad540b4ad9841a0700a727a",
+                "srcKUID": "ga3983ff25394797945fdfdbeb501d81",
+                "wType": "FlexContainer"
+            }
+        },
+        "ratingLevel1": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "d3e352ddca2348a9b69d758772622dbf",
+                "srcKUID": "f20924522d2543b78bd552331bff1879",
+                "wType": "Label"
+            }
+        },
+        "ratingLevel3": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "f9ccdfb9f19b42b59195c0844bfe3c2d",
+                "srcKUID": "a99746b8f37d44a687f5c4eb2ffb8038",
+                "wType": "Label"
+            }
+        },
+        "ratingLevel5": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "da48a27b131c4b24b812b405bf438ca1",
+                "srcKUID": "e3c200e8743b404cb8e348918d1a00d9",
+                "wType": "Label"
+            }
+        },
+        "ratingQuestionLabel": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "d1812700b90d4971ad4be20fdfa28082",
+                "srcKUID": "e57a7cf4e4844f1a9e52632bf731df04",
+                "wType": "Label"
+            },
+            "isVisible": false
+        },
+        "ratingSpeakerContainer": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "bb3c7c83b58a4cb5a1303e322dfb722e",
+                "srcKUID": "a06dd308b60749d6ae4b20732a77b438",
+                "wType": "FlexContainer"
+            }
+        },
+        "ratingSpeakerImage": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "ef9934a69a5b49048b129f3c89847ef7",
+                "srcKUID": "gd6c719314ad4eeca6a03fe884e3d0e5",
+                "wType": "Image"
+            },
+            "src": "speakerratingburley.png"
+        },
+        "ratingSpeakerName": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "g5e749a27d854a09bb9e7710bb84eb8e",
+                "srcKUID": "ef500bc54c7e4a7a9889e464869eee58",
+                "wType": "Label"
+            },
+            "text": "Burley Kawasaki"
+        },
+        "ratingSpeakerTitle": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "c6f36d27639a401f9201e477796413cb",
+                "srcKUID": "ia1eb74e62e94d0fbeb19a4232a1da82",
+                "wType": "Label"
+            },
+            "text": "Executive Vice President of Products"
+        },
+        "ratingSystemLabels": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "d605f542e1e14d99936c260c70f26d5d",
+                "srcKUID": "c72185f1ccea4a3b8268eb502c4f3f8b",
+                "wType": "FlexContainer"
+            }
+        },
+        "ratingTile": {
+            "__events__": {},
+            "__info__": {
+                "isRoot": true,
+                "kuid": "e51991371d8d43baa109339c2447bd91",
+                "srcKUID": "d9e410e5244c45bebe9f80f079b7c0aa",
+                "wType": "FlexContainer"
+            },
+            "left": {
+                "Default": {
+                    "type": "string",
+                    "value": "0dp"
+                }
+            },
+            "top": {
+                "Default": {
+                    "type": "string",
+                    "value": "8dp"
+                }
+            }
+        }
+    },
+    "enablescrolling": true,
+    "id": "ratingTile1",
+    "info": null,
+    "iscustomlayout": false,
+    "isdatareferenced": false,
+    "issegmentchild": false,
+    "isvisible": true,
+    "kuid": "e51991371d8d43baa109339c2447bd91",
+    "layouttype": 4,
+    "masterType": 0,
+    "name": "kony.ui.UserWidgetInstance",
+    "parent": "flxRatingContainer",
+    "pf": "frmmyAgenda",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainflowhorizontalalignment": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "sourceUserWidget": "d9e410e5244c45bebe9f80f079b7c0aa",
+    "wType": "UserWidgetInstance",
+    "zindex": 1
+}

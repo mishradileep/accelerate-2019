@@ -1,0 +1,97 @@
+[ {
+  "sourceObject" : "event_sessions",
+  "targetObject" : "event_inner_location",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_session_id",
+    "targetField" : "session_id",
+    "etag" : "a5bf78b7-697b-496e-abd5-e9054ce3b59f"
+  } ],
+  "name" : "event_sessions_event_inner_location",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event_sessions",
+  "targetObject" : "forum",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_session_id",
+    "targetField" : "session_id",
+    "etag" : "9293da49-4db8-48a0-ab60-b1ec5a7552bd"
+  } ],
+  "name" : "event_sessions_forum",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event_sessions",
+  "targetObject" : "location",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_session_id",
+    "targetField" : "session_id",
+    "etag" : "353563a8-2f07-4814-b29e-5e37169c2591"
+  } ],
+  "name" : "event_sessions_location",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event_sessions",
+  "targetObject" : "opinions",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_session_id",
+    "targetField" : "session_id",
+    "etag" : "f088372f-5fbf-487c-b196-27fe5b445017"
+  } ],
+  "name" : "event_sessions_opinions",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event_sessions",
+  "targetObject" : "participation",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_session_id",
+    "targetField" : "session_id",
+    "etag" : "8092c928-1c87-4c69-af6b-654331da6a13"
+  } ],
+  "name" : "event_sessions_participation",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event_sessions",
+  "targetObject" : "presenter",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_session_id",
+    "targetField" : "session_id",
+    "etag" : "509dc58c-c33c-45ef-868f-434350bb226a"
+  } ],
+  "name" : "event_sessions_presenter",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event_sessions",
+  "targetObject" : "session_material",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_session_id",
+    "targetField" : "session_id",
+    "etag" : "0857af5c-9bea-4238-8241-42252ca620fb"
+  } ],
+  "name" : "event_sessions_session_material",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event_sessions",
+  "targetObject" : "user_event_session",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_session_id",
+    "targetField" : "session_id",
+    "etag" : "cd334a46-8e93-4af4-bd9a-df2605988075"
+  } ],
+  "name" : "event_sessions_user_event_session",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+} ]

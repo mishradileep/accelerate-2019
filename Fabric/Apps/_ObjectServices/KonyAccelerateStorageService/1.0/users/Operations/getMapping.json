@@ -1,0 +1,112 @@
+{
+  "operationConfig" : {
+    "name" : "queryusers6961",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "public",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "referencingEndpoint" : "default",
+    "odata" : [ {
+      "id" : "$select",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$filter",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$orderby",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$top",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$skip",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$expand",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    } ],
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "opcode" : "query",
+    "relationshipHierarchyMapping" : {
+      "children" : [ {
+        "actionsAllSelected" : true,
+        "children" : [ {
+          "actionsAllSelected" : true,
+          "children" : [ ],
+          "name" : "forum_discussion",
+          "actions" : {
+            "get" : true
+          },
+          "actionsPartiallySelected" : false,
+          "selected" : true
+        } ],
+        "name" : "forum",
+        "actions" : {
+          "get" : true
+        },
+        "actionsPartiallySelected" : false,
+        "selected" : true
+      }, {
+        "actionsAllSelected" : true,
+        "children" : [ ],
+        "name" : "forum_discussion",
+        "actions" : {
+          "get" : true
+        },
+        "actionsPartiallySelected" : false,
+        "selected" : true
+      }, {
+        "actionsAllSelected" : true,
+        "children" : [ ],
+        "name" : "opinion_answers",
+        "actions" : {
+          "get" : true
+        },
+        "actionsPartiallySelected" : false,
+        "selected" : true
+      }, {
+        "actionsAllSelected" : true,
+        "children" : [ ],
+        "name" : "user_event_session",
+        "actions" : {
+          "get" : true
+        },
+        "actionsPartiallySelected" : false,
+        "selected" : true
+      }, {
+        "actionsAllSelected" : true,
+        "children" : [ ],
+        "name" : "user_notification",
+        "actions" : {
+          "get" : true
+        },
+        "actionsPartiallySelected" : false,
+        "selected" : true
+      } ],
+      "name" : "users",
+      "actions" : {
+        "get" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

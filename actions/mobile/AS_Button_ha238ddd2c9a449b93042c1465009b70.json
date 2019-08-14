@@ -1,0 +1,17 @@
+{
+    "AS_Button_ha238ddd2c9a449b93042c1465009b70": {
+        "id": "AS_Button_ha238ddd2c9a449b93042c1465009b70",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET_onClick_a0defe1e81e0460681add76ca1cf0dff",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.menuAnimateSlideIn();",
+            "callbackType": null
+        }]
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "30dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "15dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s7bf3232485740248cc1443f4519b12b",
+    "_src_": "linkedinlogo.png",
+    "_width_": {
+        "type": "string",
+        "value": "30dp"
+    },
+    "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "formID": "uw858f02cb0f4e415d838e3f01d910342c",
+        "platform": "android",
+        "templateType": "userwidgets",
+        "topLevelBox": null
+    },
+    "id": "imgOauth",
+    "imagescalemode": 1,
+    "info": null,
+    "isvisible": true,
+    "kuid": "338fcfc38df546ff85a27fe213a605a2",
+    "name": "kony.ui.Image2",
+    "parent": "flxMain",
+    "pf": "userwidgetmodel",
+    "srcType": 1,
+    "wType": "Image",
+    "widgetalignment": 5,
+    "zindex": 1
+}

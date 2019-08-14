@@ -1,0 +1,17 @@
+{
+    "AS_UWI_ge777c6098f545e693c0537e7f6d99e6": {
+        "id": "AS_UWI_ge777c6098f545e693c0537e7f6d99e6",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "name": "response",
+            "datatype": "collection"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET_onLoginFailure_af5ca35fe657453ca2347536e6c5e093",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "kony.print(\"login failed\");",
+            "callbackType": null
+        }]
+    }
+}

@@ -1,0 +1,132 @@
+{
+  "operationConfig" : {
+    "name" : "deletesession_track_master2838",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "referencingEndpoint" : "default",
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "opcode" : "delete",
+    "relationshipHierarchyMapping" : {
+      "children" : [ {
+        "children" : [ {
+          "children" : [ ],
+          "name" : "event_inner_location",
+          "actions" : {
+            "delete" : true
+          },
+          "selected" : false
+        }, {
+          "children" : [ {
+            "children" : [ ],
+            "name" : "forum_discussion",
+            "actions" : {
+              "delete" : true
+            },
+            "selected" : false
+          } ],
+          "name" : "forum",
+          "actions" : {
+            "delete" : true
+          },
+          "selected" : false
+        }, {
+          "children" : [ ],
+          "name" : "location",
+          "actions" : {
+            "delete" : true
+          },
+          "selected" : false
+        }, {
+          "children" : [ {
+            "children" : [ ],
+            "name" : "opinion_answers",
+            "actions" : {
+              "delete" : true
+            },
+            "selected" : false
+          }, {
+            "children" : [ {
+              "children" : [ ],
+              "name" : "opinion_answers",
+              "actions" : {
+                "delete" : true
+              },
+              "selected" : false
+            }, {
+              "children" : [ {
+                "children" : [ ],
+                "name" : "opinion_answers",
+                "actions" : {
+                  "delete" : true
+                },
+                "selected" : false
+              } ],
+              "name" : "opinion_options",
+              "actions" : {
+                "delete" : true
+              },
+              "selected" : false
+            } ],
+            "name" : "opinion_questions",
+            "actions" : {
+              "delete" : true
+            },
+            "selected" : false
+          } ],
+          "name" : "opinions",
+          "actions" : {
+            "delete" : true
+          },
+          "selected" : false
+        }, {
+          "children" : [ ],
+          "name" : "participation",
+          "actions" : {
+            "delete" : true
+          },
+          "selected" : false
+        }, {
+          "children" : [ ],
+          "name" : "presenter",
+          "actions" : {
+            "delete" : true
+          },
+          "selected" : false
+        }, {
+          "children" : [ ],
+          "name" : "session_material",
+          "actions" : {
+            "delete" : true
+          },
+          "selected" : false
+        }, {
+          "children" : [ ],
+          "name" : "user_event_session",
+          "actions" : {
+            "delete" : true
+          },
+          "selected" : false
+        } ],
+        "name" : "event_sessions",
+        "actions" : {
+          "delete" : true
+        },
+        "selected" : false
+      } ],
+      "name" : "session_track_master",
+      "actions" : {
+        "delete" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

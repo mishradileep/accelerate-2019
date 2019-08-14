@@ -1,0 +1,15 @@
+CREATE TABLE `sponsors`(
+	`CreatedBy` VARCHAR(32),
+	`CreatedDateTime` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+	`LastUpdatedBy` VARCHAR(32),
+	`LastUpdatedDateTime` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
+	`SoftDeleteFlag` BOOLEAN,
+	`sponsorCategoryId` BIGINT,
+	`sponsorId` BIGINT NOT NULL AUTO_INCREMENT,
+	`sponsorImageURL` VARCHAR(200),
+	`sponsorName` VARCHAR(100),
+	`sponsorRank` BIGINT,
+	PRIMARY KEY(`sponsorId`)
+);
+ALTER TABLE `sponsors`
+	ADD CONSTRAINT `388bb031967eda091026690504a421` UNIQUE KEY(`sponsorId`);

@@ -1,0 +1,157 @@
+[ {
+  "sourceObject" : "event",
+  "targetObject" : "event_banners",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_id",
+    "targetField" : "event_id",
+    "etag" : "c7a9f269-ee9c-494a-ba27-4ac39b4d70db"
+  } ],
+  "name" : "event_event_banners",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event",
+  "targetObject" : "event_images",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_id",
+    "targetField" : "event_id",
+    "etag" : "bbb675bb-ad5a-4ff6-8d8b-477ff9ce3d27"
+  } ],
+  "name" : "event_event_images",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event",
+  "targetObject" : "event_inner_location",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_id",
+    "targetField" : "event_id",
+    "etag" : "eedb8abd-0ffa-4df2-b2a9-ea564b07ebfb"
+  } ],
+  "name" : "event_event_inner_location",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event",
+  "targetObject" : "event_metrics",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_id",
+    "targetField" : "event_id",
+    "etag" : "321a0ecf-0cd6-4342-afe0-5e9ad186b7bd"
+  } ],
+  "name" : "event_event_metrics",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event",
+  "targetObject" : "event_registration",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_id",
+    "targetField" : "event_id",
+    "etag" : "a258f1b1-8f20-4656-9a97-02a1094bc653"
+  } ],
+  "name" : "event_event_registration",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event",
+  "targetObject" : "event_sessions",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_id",
+    "targetField" : "event_id",
+    "etag" : "1567c53f-a36f-47cb-88b8-fc7e9504ec39"
+  } ],
+  "name" : "event_event_sessions",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event",
+  "targetObject" : "forum",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_id",
+    "targetField" : "event_id",
+    "etag" : "766ecd24-d88d-42ac-a393-fc451772f029"
+  } ],
+  "name" : "event_forum",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event",
+  "targetObject" : "location",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_id",
+    "targetField" : "event_id",
+    "etag" : "80796b4f-6c97-4426-8693-ebc3e3f0717f"
+  } ],
+  "name" : "event_location",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event",
+  "targetObject" : "opinions",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_id",
+    "targetField" : "event_id",
+    "etag" : "29e78e99-07de-44f1-aff6-c78028d1dc8e"
+  } ],
+  "name" : "event_opinions",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event",
+  "targetObject" : "participation",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_id",
+    "targetField" : "event_id",
+    "etag" : "0e4a9c02-3934-4d43-8609-c9dcd1a13839"
+  } ],
+  "name" : "event_participation",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event",
+  "targetObject" : "presenter",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_id",
+    "targetField" : "event_id",
+    "etag" : "b9635361-e33c-445a-a525-263d81fc4aba"
+  } ],
+  "name" : "event_presenter",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event",
+  "targetObject" : "user_event_session",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_id",
+    "targetField" : "event_id",
+    "etag" : "05c76541-4d81-4311-80b6-fae62d46d38d"
+  } ],
+  "name" : "event_user_event_session",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "event",
+  "targetObject" : "wifi_info",
+  "relationshipKeys" : [ {
+    "sourceField" : "event_id",
+    "targetField" : "event_id",
+    "etag" : "45e1be96-8a4b-4ad4-9eba-5b0c8b5464dd"
+  } ],
+  "name" : "event_wifi_info",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+} ]

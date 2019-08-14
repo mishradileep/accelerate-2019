@@ -1,0 +1,25 @@
+[ {
+  "sourceObject" : "opinions",
+  "targetObject" : "opinion_answers",
+  "relationshipKeys" : [ {
+    "sourceField" : "opinion_id",
+    "targetField" : "opinion_id",
+    "etag" : "2eaae437-8419-4117-8d36-a907af15a7ee"
+  } ],
+  "name" : "opinions_opinion_answers",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+}, {
+  "sourceObject" : "opinions",
+  "targetObject" : "opinion_questions",
+  "relationshipKeys" : [ {
+    "sourceField" : "opinion_id",
+    "targetField" : "opinion_id",
+    "etag" : "123c6079-3d89-4290-a923-6a4321ad9171"
+  } ],
+  "name" : "opinions_opinion_questions",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : true
+} ]

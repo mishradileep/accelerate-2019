@@ -1,0 +1,23 @@
+{
+    "AS_FlexContainer_g3ff5c837c7a4ffda573bafca5ba639a": {
+        "id": "AS_FlexContainer_g3ff5c837c7a4ffda573bafca5ba639a",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmmyAgenda",
+            "type": "forms",
+            "platform": null,
+            "KUID": "g71b3c8a87fa4a51b327cc739a843419"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET_onClick_h7abfd6dd06141f784b65dffb30bc8f9",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.sessionToMySchedule();\n",
+            "callbackType": null
+        }]
+    }
+}
