@@ -38,14 +38,16 @@
     "context": {
         "channel": "mobile",
         "formID": "frmPresenters",
-        "platform": "iphone",
+        "platform": "android",
         "templateType": "forms",
         "topLevelBox": null
     },
     "id": "imgProfileLarge",
     "imagescalemode": 0,
+    "imagewhenfailed": "defaultimg.png",
+    "imagewhiledownloading": "defaultimg.png",
     "info": null,
-    "invokedProperty": "src",
+    "invokedProperty": "imageWhenFailed",
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "b1cab81dbab448f2a6bf7dcd739b034f",
