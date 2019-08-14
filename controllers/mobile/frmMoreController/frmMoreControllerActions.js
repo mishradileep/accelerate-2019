@@ -31,5 +31,11 @@ define({
     AS_Form_f9337d7c18aa4abbb9873bd00f925294: function AS_Form_f9337d7c18aa4abbb9873bd00f925294(eventobject) {
         var self = this;
         this.menuAnimateSlide('slideIn');
+    },
+    /** onClick defined for menuButtonMySchedule **/
+    AS_Button_ee14463e4423415780f07c1e947099d9: function AS_Button_ee14463e4423415780f07c1e947099d9(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmmyAgenda");
+        ntf.navigate();
     }
 });

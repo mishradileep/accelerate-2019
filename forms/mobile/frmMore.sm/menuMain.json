@@ -90,7 +90,9 @@
             }
         },
         "menuButtonMySchedule": {
-            "__events__": {},
+            "__events__": {
+                "onClick": "AS_Button_ee14463e4423415780f07c1e947099d9"
+            },
             "__info__": {
                 "kuid": "c94d054d03b040e9a777d1181109d61d",
                 "srcKUID": "jd94bce423a4453c96ed47769f0e9468",
