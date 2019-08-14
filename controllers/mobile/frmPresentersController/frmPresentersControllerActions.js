@@ -25,15 +25,15 @@ define({
         var self = this;
         this.setFilteronClick();
     },
-    /** onDeviceBack defined for frmPresenters **/
-    AS_Form_hbd56c17ef8740b69d6b9924a02f1d5f: function AS_Form_hbd56c17ef8740b69d6b9924a02f1d5f(eventobject) {
-        var self = this;
-        return;
-    },
     /** preShow defined for frmPresenters **/
     AS_Form_be66a65fc0ef4de4a2c42e58e5e7906f: function AS_Form_be66a65fc0ef4de4a2c42e58e5e7906f(eventobject) {
         var self = this;
         this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = "menuLabelSkinActive";
         this.view.presenterScroll.showFadingEdges = false;
+    },
+    /** onDeviceBack defined for frmPresenters **/
+    AS_Form_hbd56c17ef8740b69d6b9924a02f1d5f: function AS_Form_hbd56c17ef8740b69d6b9924a02f1d5f(eventobject) {
+        var self = this;
+        return;
     }
 });
