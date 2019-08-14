@@ -63,6 +63,14 @@ define({
         var self = this;
         return;
     },
+    /** onClick defined for ratingBubble3 **/
+    AS_Button_h7e2b86b987a4ab2b456a3d177861ddb: function AS_Button_h7e2b86b987a4ab2b456a3d177861ddb(eventobject) {
+        var self = this;
+    },
+    /** onClick defined for ratingBubble3 **/
+    AS_Button_iad8ac72475745688c1e522b0750446f: function AS_Button_iad8ac72475745688c1e522b0750446f(eventobject) {
+        var self = this;
+
     /** onTouchEnd defined for txtArea **/
     AS_TextArea_f31bf1de7e754eb88153204603fc6bd0: function AS_TextArea_f31bf1de7e754eb88153204603fc6bd0(eventobject, x, y) {
         var self = this;
