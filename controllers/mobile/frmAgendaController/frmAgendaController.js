@@ -117,6 +117,7 @@ define({
      * @private
      */
     frmAgendaSessionSelect: function(eventobject) {
+        this.view.detailsScroller.isVisible=true;
       	this.currentViewState=1;
         this.setSpeakerProfile(eventobject);
         egLoggerClear();
@@ -1762,7 +1763,10 @@ var currentTime=new Date();
     
   },
   navigateToOtherForm:function(){
-    (new kony.mvc.Navigation(this._previousForm)).navigate();
+    var param = {
+      "form" : "frmPresenters"
+    };
+    (new kony.mvc.Navigation(this._previousForm)).navigate(param);
   },
   naviateToSessionDetail:function(){
     var sessionId=this.navigateSessionId;

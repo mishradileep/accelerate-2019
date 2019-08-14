@@ -50,7 +50,7 @@
     "id": "detailsScroller",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "ife28c26431749cf8732d9d72bde4862",
     "layouttype": 4,
     "name": "kony.ui.FlexScrollContainer",

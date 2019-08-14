@@ -10,9 +10,13 @@ define({
   onNavigate : function(param) {
     if(param){
       this.formId = param.form;
-      this.view.flxImageClose.onClick = this.navigateBackToSessionListPage;
-      this.navigateToPresenterDetailsById(param.speakerId);
-      return;
+      if(this.formId === "frmAgenda" || this.formId === "frmmyAgenda") {
+      	this.view.flxImageClose.onClick = this.navigateBackToSessionListPage;
+      	this.navigateToPresenterDetailsById(param.speakerId);
+      	return;
+      } else if(this.formId === "frmPresenters") {
+      	return;
+      }
     }
     this.onClickOfCloseSpeakerDetails();
     this.view.flxImageClose.onClick = this.onClickOfCloseSpeakerDetails.bind(this);
@@ -125,27 +129,31 @@ define({
   createSessions: function(sessions) {
     this.view.flexSessions.removeAll();
     var isSessionPresent = null;
-     var myScheduleData = kony.store.getItem("myAgendaData");
-    for (var index = 0; index < sessions.length; index++) {
+    var myScheduleData = kony.store.getItem("myAgendaData");
+    for (var index = 0; index < sessions.length; index++) {    
+      
+	  if(sessions[index].session_track_id === 4){
+      	continue;
+      }
       
       if(sessions[index].SoftDeleteFlag!==undefined && sessions[index].SoftDeleteFlag === true) {
-          continue;
+        continue;
       }
       var id = "sessiontile" + sessions[index].event_session_id;
-      
+
       if(myScheduleData) {
         isSessionPresent = myScheduleData[sessions[index].event_session_id];
       }
-      
+
       if(sessions[index].session_start_date.indexOf(" ")!=-1) {
         sessions[index].session_start_date = sessions[index].session_start_date.replace(" ","T")+"0Z";
         sessions[index].session_end_date = sessions[index].session_end_date.replace(" ","T")+ "0Z";
       }
-      
+
       if(isSessionPresent) {
-          sessions[index].isAddedToMySchedule = true;
+        sessions[index].isAddedToMySchedule = true;
       } else {
-          sessions[index].isAddedToMySchedule = false;
+        sessions[index].isAddedToMySchedule = false;
       }
       this.createSessionTile(id, "0dp", sessions[index]);
     }
@@ -326,4 +334,5 @@ define({
     var navObj = new kony.mvc.Navigation("frmAgenda");
     navObj.navigate(param);
   }
+
 });
