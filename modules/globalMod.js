@@ -40,3 +40,11 @@ function roundNum(num, decimals) {
  	return (Math.round((num * t) + (decimals>0?1:0)*(Math.sign(num) * (10 / Math.pow(100, decimals)))) / t).toFixed(decimals);
 }
 
+function disableDefaultLoadingScreen(){
+  //#ifdef android
+  kony.application.setApplicationBehaviors({
+     "hideDefaultLoadingIndicator":true
+  });
+  //#endif
+}
+

@@ -3,5 +3,6 @@ define({
         var self = this;
         //syncEventData();
         localNotificationCallBacks();
+        disableDefaultLoadingScreen();
     }
 });
