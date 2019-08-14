@@ -119,6 +119,7 @@ define({
      * @private
      */
     frmAgendaSessionSelect: function(eventobject) {
+        this.view.detailsScroller.isVisible= true;
       	this.currentViewState=1;
         this.setSpeakerProfile(eventobject);
         egLoggerClear();

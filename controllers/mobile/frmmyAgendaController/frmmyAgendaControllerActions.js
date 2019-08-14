@@ -190,8 +190,13 @@ define({
         var self = this;
         frmAgendaSessionSelect(eventobject);
     },
+    /** onDeviceBack defined for frmmyAgenda **/
+    AS_Form_gdc7a27b1fde45bea31c1bf7860c0d0e: function AS_Form_gdc7a27b1fde45bea31c1bf7860c0d0e(eventobject) {
+        var self = this;
+        return;
+    },
     /** preShow defined for frmmyAgenda **/
-    AS_Form_h4a85e2f443b42108985ecfb9c1e5ee2: function AS_Form_h4a85e2f443b42108985ecfb9c1e5ee2(eventobject) {
+    AS_Form_f5afbe5fc3304df598f6451437ef10f1: function AS_Form_f5afbe5fc3304df598f6451437ef10f1(eventobject) {
         var self = this;
         if (this.currentViewState === 0) {
             this.frmAgendaPreshow();
