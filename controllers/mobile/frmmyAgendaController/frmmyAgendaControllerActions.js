@@ -152,106 +152,6 @@ define({
         var self = this;
         this.onClickOfEventDate(eventobject);
     },
-    /** onClick defined for ratingBubble3 **/
-    AS_Button_d2263802938f43d49938d5d565de1a59: function AS_Button_d2263802938f43d49938d5d565de1a59(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble4 **/
-    AS_Button_j0019bee5ec64b75987ea26adc84b5a9: function AS_Button_j0019bee5ec64b75987ea26adc84b5a9(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble5 **/
-    AS_Button_cdd59aa49eab41beb23be5d417f8ba2e: function AS_Button_cdd59aa49eab41beb23be5d417f8ba2e(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble1 **/
-    AS_Button_b7896cdce5d447f0aa1c4cd19836e5bb: function AS_Button_b7896cdce5d447f0aa1c4cd19836e5bb(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble2 **/
-    AS_Button_d4da83a45b124bc5ae1c8c3f53e80201: function AS_Button_d4da83a45b124bc5ae1c8c3f53e80201(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble3 **/
-    AS_Button_b3885818181344b38319d82ac503ec1d: function AS_Button_b3885818181344b38319d82ac503ec1d(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble4 **/
-    AS_Button_d05a769cf5af4e9998060c9022a48432: function AS_Button_d05a769cf5af4e9998060c9022a48432(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble5 **/
-    AS_Button_h9b59bddfa05476280df04967bec0245: function AS_Button_h9b59bddfa05476280df04967bec0245(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble1 **/
-    AS_Button_ad3046067e0e4c52a9a49504c9aa6029: function AS_Button_ad3046067e0e4c52a9a49504c9aa6029(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble2 **/
-    AS_Button_df0f35a80a5d4b9f82ee9a473e988afe: function AS_Button_df0f35a80a5d4b9f82ee9a473e988afe(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble3 **/
-    AS_Button_d87a664a6ed64fdb8f72b2a0fb2557e0: function AS_Button_d87a664a6ed64fdb8f72b2a0fb2557e0(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble4 **/
-    AS_Button_gda031cc43ce43038e5d64661378162d: function AS_Button_gda031cc43ce43038e5d64661378162d(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble5 **/
-    AS_Button_bb2dee9bb3d94bfbb355419f876ecd0b: function AS_Button_bb2dee9bb3d94bfbb355419f876ecd0b(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble1 **/
-    AS_Button_ee619d85fbdf430bb47e8611f4f1cfca: function AS_Button_ee619d85fbdf430bb47e8611f4f1cfca(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble2 **/
-    AS_Button_e5ae07411d344b8191fe5186dd494c18: function AS_Button_e5ae07411d344b8191fe5186dd494c18(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble3 **/
-    AS_Button_edd3e0dd57c8450d94568dc14161fc2f: function AS_Button_edd3e0dd57c8450d94568dc14161fc2f(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble4 **/
-    AS_Button_i5b127987b9d4978a0e11eaf50942237: function AS_Button_i5b127987b9d4978a0e11eaf50942237(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble5 **/
-    AS_Button_beabef238d644e86b98627775d66282c: function AS_Button_beabef238d644e86b98627775d66282c(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble1 **/
-    AS_Button_b7bbbf3368924155a874aaff3a159f21: function AS_Button_b7bbbf3368924155a874aaff3a159f21(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
-    /** onClick defined for ratingBubble2 **/
-    AS_Button_j33db9de37634685a48f8de9383209bc: function AS_Button_j33db9de37634685a48f8de9383209bc(eventobject) {
-        var self = this;
-        this.setFocusOnClick(eventobject);
-    },
     /** onClick defined for btnSubmit **/
     AS_Button_g017f151d4e5486e8b3197999d14e7dd: function AS_Button_g017f151d4e5486e8b3197999d14e7dd(eventobject) {
         var self = this;
@@ -301,5 +201,27 @@ define({
     AS_Form_gdc7a27b1fde45bea31c1bf7860c0d0e: function AS_Form_gdc7a27b1fde45bea31c1bf7860c0d0e(eventobject) {
         var self = this;
         return;
+    },
+    /** onTouchStart defined for detailsScroller **/
+    AS_FlexScrollContainer_j7b91e9e3b1d4c6db7e544ad3b116db8: function AS_FlexScrollContainer_j7b91e9e3b1d4c6db7e544ad3b116db8(eventobject, x, y) {
+        var self = this;
+        if (this.txtAreaEnable) {
+            this.view.txtArea.setEnabled(false);
+            this.txtAreaEnable = !this.txtAreaEnable
+        }
+    },
+    /** onClick defined for flxRatingContainer **/
+    AS_FlexContainer_b7c7e5f0e881488f85d41256ffd04f43: function AS_FlexContainer_b7c7e5f0e881488f85d41256ffd04f43(eventobject) {
+        var self = this;
+        this.txtAreaEnable = true;
+        this.view.txtArea.setEnabled(true);
+        this.view.txtArea.setFocus(true);
+    },
+    /** onTouchEnd defined for txtArea **/
+    AS_TextArea_f198db812a894b6d85463aa7e1dd6fbd: function AS_TextArea_f198db812a894b6d85463aa7e1dd6fbd(eventobject, x, y) {
+        var self = this;
+        this.txtAreaEnable = true;
+        this.view.txtArea.setEnabled(true);
+        this.view.txtArea.setFocus(true);
     }
 });

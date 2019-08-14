@@ -537,6 +537,7 @@ define({
      */
     frmAgendaSessionClose: function(callback) {
       	//this.setData(accelerateSessionData.eventSessionData.records);
+      this.view.txtArea.text="";
       	this.currentViewState=0;
         var self = this;
         egLogger("this.thisCard = " + this.thisCard.id);
@@ -1096,6 +1097,7 @@ define({
             for (var index = 0; index < speakers_master.length; index++) {
                 if (speakerObject.master_speaker_id == speakers_master[index].speaker_id) {
                     var speakerBio = speakers_master[index];
+                  	this.view["flxSpeaker"+index].isVisible=true;
                     this.view["speakerName" + speakerIndex].text = speakerBio.speaker_name;
                     var title = speakerBio.speaker_title.length > 20 ? speakerBio.speaker_title.substring(0, 16) + "..." : speakerBio.speaker_title;
                     this.view["speakerDesignation" + speakerIndex].text = title;
@@ -1341,6 +1343,7 @@ define({
             this.view.lblPresentation.isVisible = false;
             return;
         }
+      	this.view.lblPresentation.isVisible = true;
         var flexInstance, materialInstance;
         if (materailsCount == 1) {
             var id = "flex";
