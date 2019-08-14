@@ -36,6 +36,7 @@
         "needAppMenu": false
     },
     "bounces": false,
+    "bounceszoom": false,
     "canUpdateUI": true,
     "children": [
         "masterContainer",
@@ -92,6 +93,7 @@
             "transitionEffect": "transitionFade"
         },
         "psp": {
+            "bouncesZoom": false,
             "inputAccessoryViewType": 4,
             "titleBarAttributes": {
                 "barStyle": 0,
