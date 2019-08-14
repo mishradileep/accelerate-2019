@@ -18,7 +18,7 @@
         2,
         2
     ],
-    "_placeholder_": "Placeholder",
+    "_placeholder_": "",
     "_skin_": "s300b5b6a2cd4e3f822c67bfdfec0562",
     "_text_": "",
     "_top_": {
@@ -48,6 +48,11 @@
     },
     "id": "txtArea",
     "info": null,
+    "iphone": {
+        "psp": {
+            "placeholderSkin": "s300b5b6a2cd4e3f822c67bfdfec0562"
+        }
+    },
     "iscustomlayout": false,
     "isvisible": true,
     "keyboardstyle": "A",
@@ -58,7 +63,7 @@
     "numberofvisiblelines": 3,
     "parent": "flxRatingContainer",
     "pf": "frmAgenda",
-    "placeholderskin": "s9986a2885af49f9ac826e84814a6009",
+    "placeholderskin": "s300b5b6a2cd4e3f822c67bfdfec0562",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "securetextentry": false,
