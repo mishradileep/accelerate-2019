@@ -31,7 +31,7 @@
             "enableMappingEditor": true,
             "disabled": true,
             "package": "",
-            "navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"onTouchStart\",\n        \"widgetId\": \"flxContinue\"\n    }\n}",
+            "navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"\",\n        \"widgetId\": \"\"\n    }\n}",
             "isCustomInput": false
         }, {
             "id": "ADD_SNIPPET__b013321d858f45c7bd7e3a6c0183562b",

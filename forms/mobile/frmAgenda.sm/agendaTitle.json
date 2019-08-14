@@ -43,10 +43,9 @@
     },
     "containerweight": 100,
     "contentalignment": 5,
-    "disabledSkins": {
-        "focusSkin": "s9bd923d0fc14ce2aa5b85b735cae172"
-    },
+    "disabledSkins": {},
     "displaytext": true,
+    "focusskin": "s9bd923d0fc14ce2aa5b85b735cae172",
     "id": "agendaTitle",
     "info": null,
     "iscustomlayout": false,

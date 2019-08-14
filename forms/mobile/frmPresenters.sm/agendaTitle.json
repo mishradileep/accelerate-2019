@@ -26,7 +26,7 @@
         "type": "string",
         "value": "79dp"
     },
-    "_skin_": "s28b7f7a2d984f999d82c8f222ce35dd",
+    "_skin_": "s9bd923d0fc14ce2aa5b85b735cae172",
     "_text_": "PRESENTERS",
     "_top_": {
         "type": "string",
@@ -43,10 +43,9 @@
     },
     "containerweight": 100,
     "contentalignment": 5,
-    "disabledSkins": {
-        "focusSkin": "s9502514e11d48069838bf3afd8c680d"
-    },
+    "disabledSkins": {},
     "displaytext": true,
+    "focusskin": "s9bd923d0fc14ce2aa5b85b735cae172",
     "id": "agendaTitle",
     "info": null,
     "iscustomlayout": false,

@@ -8,6 +8,12 @@ define({
         var ntf = new kony.mvc.Navigation("frmAgenda");
         ntf.navigate();
     },
+    /** onClick defined for menuButtonMySchedule **/
+    AS_Button_ee14463e4423415780f07c1e947099d9: function AS_Button_ee14463e4423415780f07c1e947099d9(eventobject) {
+        var self = this;
+        var ntf = new kony.mvc.Navigation("frmmyAgenda");
+        ntf.navigate();
+    },
     /** onClick defined for menuContainerMySchedule **/
     AS_FlexContainer_d2b82377b1c14a9cb17bfc82c820a81f: function AS_FlexContainer_d2b82377b1c14a9cb17bfc82c820a81f(eventobject) {
         var self = this;
@@ -31,11 +37,5 @@ define({
     AS_Form_f9337d7c18aa4abbb9873bd00f925294: function AS_Form_f9337d7c18aa4abbb9873bd00f925294(eventobject) {
         var self = this;
         this.menuAnimateSlide('slideIn');
-    },
-    /** onClick defined for menuButtonMySchedule **/
-    AS_Button_ee14463e4423415780f07c1e947099d9: function AS_Button_ee14463e4423415780f07c1e947099d9(eventobject) {
-        var self = this;
-        var ntf = new kony.mvc.Navigation("frmmyAgenda");
-        ntf.navigate();
     }
 });
