@@ -69,7 +69,10 @@ define({
      * @private
      */
     frmAgendaPostshow: function() {
-      	this.setData(accelerateSessionData.eventSessionData.records);
+		if(kony.sdk.isNullOrUndefined(this.currentSelectedTab)){
+this.setData(accelerateSessionData.eventSessionData.records);
+this.currentSelectedTab=null;
+}
         this.devHeight = this.view.masterContainer.frame.height;
         egLogger("devHeight = " + this.devHeight);
       	var dotsblurwidth=this.view.sessionTileAnim.quantumDotsBlur.frame.height*10.7388+"dp";
@@ -490,6 +493,7 @@ define({
                 animationEnd: function() {
                    this.view.addAgendaContainer.isVisible=true;
                   this.view.sessionLocation.isVisible=true;
+                  this.view.menuMain.isVisible=false;
                 }.bind(this)
             });
         this.view.animate(
@@ -507,6 +511,7 @@ define({
                 animationEnd: function() {
                  this.view.addAgendaContainer.isVisible=true;
                  this.view.sessionLocation.isVisible=true;
+                 this.view.menuMain.isVisible=false;
                 }.bind(this)
             });
     },
@@ -536,6 +541,7 @@ define({
      */
     frmAgendaSessionClose: function() {
       	//this.setData(accelerateSessionData.eventSessionData.records);
+      	this.currentViewState=0;
       	if(this.isNavigatedFrmOtherForm){
           this.isNavigatedFrmOtherForm=false;
           this.navigateToOtherForm();
@@ -810,7 +816,9 @@ define({
                 fillMode: kony.anim.FILL_MODE_FORWARDS,
                 duration: animDuration
             }, {
-                animationEnd: function() {}
+                animationEnd: function() {
+                  self.view.menuMain.isVisible=true;
+                }
             });
 
     },
@@ -976,9 +984,7 @@ define({
           	this.allSessionTiles.push(sessionTile);
             this.view[id].setTitleData(sessionObj);
             this.view[id].callback = this.mySchedular;
-            if (!kony.sdk.isNullOrUndefined(sessionObj.presenter)) {
-                this.view[id].onClick = this.frmAgendaSessionSelect.bind(this);
-            }
+            this.view[id].onClick = this.frmAgendaSessionSelect.bind(this);
         }
         this.view.sessionTileAnim.callback = this.mySchedular;
       	if(!kony.sdk.isNullOrUndefined(this._previousForm) || !kony.sdk.isNullOrUndefined(this. navigateSessionId)){
@@ -1517,9 +1523,20 @@ define({
     addToMyScheduleInAnimTile: function(tileObject, addAgendaButton) {
         addAgendaButton.imgStatus.src = tileObject.myScheduleIndicatorImage;
         addAgendaButton.skin = tileObject.agendaContainerSkin;
-      	this.view.sessionTileAnim.addAgendaContainer.skin=tileObject.agendaContainerSkin;
-      	this.view.sessionTileAnim.imgStatus.src=tileObject.myScheduleIndicatorImage;
+      	if(tileObject.isAddedToMySchedule){
+          this.view.sessionTileAnim.imgStatus.src=tileObject.agendaIndicatorImage;
+          this.view.sessionTileAnim.addAgendaContainer.skin=tileObject.agendaUnselectedSkin;
+          addAgendaButton.imgStatus.src = tileObject.agendaIndicatorImage;
+          addAgendaButton.skin = tileObject.agendaUnselectedSkin;
+        }
+      else{
+        this.view.sessionTileAnim.imgStatus.src=tileObject.myScheduleIndicatorImage;
+        this.view.sessionTileAnim.addAgendaContainer.skin=tileObject.agendaContainerSkin;
+        addAgendaButton.imgStatus.src = tileObject.myScheduleIndicatorImage;
+        addAgendaButton.skin = tileObject.agendaContainerSkin;
+      }
         tileObject.sessionToMySchedule();
+      	
     },
     /**
      *	@function onClickOfPDF
@@ -1591,11 +1608,16 @@ define({
     if(kony.sdk.isNullOrUndefined(naviInfo)){
        this.navigateSessionId=kony.store.getItem("currentNotificationId");
        if(this.navigateSessionId==-999999999){
+         if(this.currentViewState==1){
+           this.frmAgendaSessionClose();
+         }
+         
          return;
        }
       kony.store.setItem("currentNotificationId",-999999999);
     }
     else{
+      this.view.filterAll.onClick(this.view.filterAll);
        this._previousForm=naviInfo.form;
         this.navigateSessionId=naviInfo.session_id;
         this.isNavigatedFrmOtherForm=true;

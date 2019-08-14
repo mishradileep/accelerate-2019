@@ -13,6 +13,7 @@ define(function() {
       	callback:null,
       	deleteIcon:"delete.png",
       	deleteCallback:null,
+      	agendaUnselectedSkin:"sknGreyUnselected",
         /**
          *	@function setTitleData
          * 	@description This function is used to set the data to the session tile
@@ -82,6 +83,12 @@ define(function() {
           this.deleteSessionFromMyAgenda();
           return ;
         }
+        if(this.isAddedToMySchedule){
+          this.deleteSessionFromMyAgenda();
+          this.view.addAgendaContainer.imgStatus.src=this.agendaIndicatorImage;
+          this.view.addAgendaContainer.skin=this.agendaUnselectedSkin;
+          return;
+        }
         this.isAddedToMySchedule=true;
         this.sessionData.isAddedToMySchedule=true;
         this.schedulePushNotificationIfNotScheduled(this.sessionData.session_start_date,this.sessionData.event_session_id,this.sessionData.session_name);
@@ -102,7 +109,7 @@ define(function() {
          */
       schedulePushNotificationIfNotScheduled:function(startDate,sessionId,sessionName){
         var myAgendaSchedule=kony.store.getItem("myAgendaData");
-        if(!myAgendaSchedule.hasOwnProperty(sessionId)){
+        if(!kony.sdk.isNullOrUndefined(myAgendaSchedule) && !myAgendaSchedule.hasOwnProperty(sessionId)){
           createLocalnotification(startDate, sessionId, sessionName);
         }
       },
@@ -144,7 +151,9 @@ define(function() {
           delete myScheduleMap[this.sessionData.event_session_id];
         }
         kony.store.setItem("myAgendaData", myScheduleMap);
-		this.deleteCallback(this.view.id);
+        if(!kony.sdk.isNullOrUndefined(this.deleteCallback)){
+          this.deleteCallback(this.view.id);
+        }
       }
     };
 });

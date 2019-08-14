@@ -51,13 +51,12 @@ define({
         if (this.currentViewState === 0 && kony.sdk.isNullOrUndefined(this.currentSelectedTab)) {
             this.frmAgendaPreshow();
         }
-    },
-    /** postShow defined for frmAgenda **/
-    AS_Form_acc108b90ad041868d0ef5f813ab476b: function AS_Form_acc108b90ad041868d0ef5f813ab476b(eventobject) {
-        var self = this;
         if (kony.sdk.isNullOrUndefined(this.currentSelectedTab)) {
-            this.setData(accelerateSessionData.eventSessionData.records);
-            this.currentSelectedTab = null;
+            this.view.sessionTiles.removeAll();
         }
+        if (this.currentSelectedTab == 1) {
+            this.frmAgendaSessionClose();
+        }
+        this.view.flxToast.isVisible = false;
     }
 });
