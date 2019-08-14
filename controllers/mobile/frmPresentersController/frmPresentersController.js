@@ -274,7 +274,7 @@ define({
     //Reset KEYNOTE filter
     this.view.lblKeynote.skin = "sknlblfilterunselected";
     this.view.flxFilterKeynote.skin = "sknflxfilterunselected";
-    this.view.imgTickQuantum.src = "tickinactive.png";
+    this.view.imgTickKeynote.src = "tickinactive.png";
   },
 
   /**
