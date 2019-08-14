@@ -535,6 +535,8 @@ define({
      */
     frmAgendaSessionClose: function() {
       	//this.setData(accelerateSessionData.eventSessionData.records);
+      	//this.view.txtArea.setEnabled(true);
+      	this.view.txtArea.text="";
       	if(this.isNavigatedFrmOtherForm){
           this.isNavigatedFrmOtherForm=false;
           this.navigateToOtherForm();

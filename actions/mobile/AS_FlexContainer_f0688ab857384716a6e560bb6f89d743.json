@@ -1,0 +1,24 @@
+{
+    "AS_FlexContainer_f0688ab857384716a6e560bb6f89d743": {
+        "id": "AS_FlexContainer_f0688ab857384716a6e560bb6f89d743",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmAgenda",
+            "type": "forms",
+            "platform": "",
+            "KUID": "g7d71a566dee45ffa15745fbce32e657"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__fb2bbe7cb087482e95917e778deb631c",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.txtAreaEnable=true;\nthis.view.txtArea.setEnabled(true);\nthis.view.txtArea.setFocus(true);",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}
