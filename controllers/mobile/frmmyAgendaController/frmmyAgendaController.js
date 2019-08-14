@@ -69,6 +69,7 @@ define({
      * @private
      */
     frmAgendaPostshow: function() {
+ 		this.setData(accelerateSessionData.eventSessionData.records); 
         this.devHeight = this.view.masterContainer.frame.height;
         egLogger("devHeight = " + this.devHeight);
       	var dotsblurwidth=this.view.sessionTileAnim.quantumDotsBlur.frame.height*10.7388+"dp";
@@ -861,18 +862,21 @@ define({
         var destColor = "";
         var sessionTrack = null;
         if (eventobject.id == "filterAll") {
+          	this.currentSelectedTab=0;
             leftPos = "0%";
             buttonText = "ALL";
             targetSkin = "filterSkinAll";
             destColor = "1F232900";
             sessionTrack = eventConstants.KEYNOTE;
         } else if (eventobject.id == "filterDBX") {
+            this.currentSelectedTab=1;
             leftPos = "33.33%";
             buttonText = "DBX";
             targetSkin = "filterSkinDBX";
             destColor = "4B3A6600";
             sessionTrack = eventConstants.DBX;
         } else {
+            this.currentSelectedTab=2;
             leftPos = "66.66%";
             buttonText = "QUANTUM";
             targetSkin = "filterSkinQuantum";
