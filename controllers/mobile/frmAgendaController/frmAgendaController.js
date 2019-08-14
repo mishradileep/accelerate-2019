@@ -852,6 +852,7 @@ define({
      */
     agendaFilter: function(eventobject) {
       	this.view.contentScroller.setContentOffset({"y":0}, true);
+      	this.changeButtonSkins("4TH SEP");
         var self = this;
         var leftPos = "0%";
         var buttonText = "ALL";
@@ -1581,7 +1582,12 @@ define({
       }
     }
     if(found){
-      this.view.contentScroller.scrollToWidget(sessions[index],true);
+      if(index===0){
+        this.view.contentScroller.setContentOffset({"y":0},true);
+      }
+      else{
+        this.view.contentScroller.scrollToWidget(sessions[index],true);
+      }
     }
     else{
       this.view.contentScroller.scrollToEnd();
