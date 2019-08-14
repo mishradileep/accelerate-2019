@@ -1,0 +1,24 @@
+{
+    "AS_FlexScrollContainer_bc58c8f898e44fa4bbbe46bb4828f486": {
+        "id": "AS_FlexScrollContainer_bc58c8f898e44fa4bbbe46bb4828f486",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmAgenda",
+            "type": "forms",
+            "platform": "",
+            "KUID": "g7d71a566dee45ffa15745fbce32e657"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__aea8e82e586c4a8fb393579fd63131cb",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "if(this.txtAreaEnable){\n  this.view.txtArea.setEnabled(false);\n  this.txtAreaEnable=!this.txtAreaEnable\n}\n\n",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

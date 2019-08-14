@@ -70,5 +70,27 @@ define({
     /** onClick defined for ratingBubble3 **/
     AS_Button_iad8ac72475745688c1e522b0750446f: function AS_Button_iad8ac72475745688c1e522b0750446f(eventobject) {
         var self = this;
+
+    /** onTouchEnd defined for txtArea **/
+    AS_TextArea_f31bf1de7e754eb88153204603fc6bd0: function AS_TextArea_f31bf1de7e754eb88153204603fc6bd0(eventobject, x, y) {
+        var self = this;
+        this.txtAreaEnable = true;
+        this.view.txtArea.setEnabled(true);
+        this.view.txtArea.setFocus(true);
+    },
+    /** onTouchStart defined for detailsScroller **/
+    AS_FlexScrollContainer_c4a056b6f01a423093c598b34fd6c565: function AS_FlexScrollContainer_c4a056b6f01a423093c598b34fd6c565(eventobject, x, y) {
+        var self = this;
+        if (this.txtAreaEnable) {
+            this.view.txtArea.setEnabled(false);
+            this.txtAreaEnable = !this.txtAreaEnable
+        }
+    },
+    /** onClick defined for flxRatingContainer **/
+    AS_FlexContainer_f0688ab857384716a6e560bb6f89d743: function AS_FlexContainer_f0688ab857384716a6e560bb6f89d743(eventobject) {
+        var self = this;
+        this.txtAreaEnable = true;
+        this.view.txtArea.setEnabled(true);
+        this.view.txtArea.setFocus(true);
     }
 });
