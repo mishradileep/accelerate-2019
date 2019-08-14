@@ -537,6 +537,7 @@ define({
      */
     frmAgendaSessionClose: function(callback) {
       	//this.setData(accelerateSessionData.eventSessionData.records);
+      this.view.txtArea.text="";
       	this.currentViewState=0;
         var self = this;
         egLogger("this.thisCard = " + this.thisCard.id);
@@ -1341,6 +1342,7 @@ define({
             this.view.lblPresentation.isVisible = false;
             return;
         }
+      	this.view.lblPresentation.isVisible = true;
         var flexInstance, materialInstance;
         if (materailsCount == 1) {
             var id = "flex";
