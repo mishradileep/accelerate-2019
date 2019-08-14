@@ -22,17 +22,17 @@
     "_text_": "Thank you for joining us in Austin. We look to showing you first-hand how Kony accelerates digital success.",
     "_top_": {
         "type": "string",
-        "value": "46%"
+        "value": "56%"
     },
     "_width_": {
         "type": "string",
-        "value": "80%"
+        "value": "70%"
     },
     "_wrapping_": 2,
     "android": {
         "textStyle": {
             "letterSpacing": 0,
-            "lineSpacing": 14,
+            "lineSpacing": 10,
             "strikeThrough": false
         }
     },
@@ -55,7 +55,7 @@
             "wrapping": 2
         },
         "textStyle": {
-            "lineSpacing": 14
+            "lineSpacing": 11
         }
     },
     "iscustomlayout": false,

@@ -5,7 +5,7 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "30dp"
+        "value": "40dp"
     },
     "_margin_": [
         0,
@@ -23,11 +23,11 @@
     "_src_": "kony.png",
     "_top_": {
         "type": "string",
-        "value": "20%"
+        "value": "34%"
     },
     "_width_": {
         "type": "string",
-        "value": "110dp"
+        "value": "130dp"
     },
     "canUpdateUI": true,
     "centerx": {
