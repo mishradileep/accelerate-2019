@@ -24,6 +24,7 @@
             "formAnimation": 0
         },
         "needAppMenu": false,
+        "onDeviceBack": "AS_Form_a20b9413c8b34aee8c35e3133f1c7208",
         "outTransitionConfig": {
             "formAnimation": 0
         },
@@ -50,7 +51,7 @@
     "desktopweb": {
         "needAppMenu": false
     },
-    "device": "iPhoneXS",
+    "device": "Pixel3",
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmMore",
@@ -114,7 +115,7 @@
     "name": "kony.ui.Form2",
     "needappmenu": false,
     "paddinginpixel": false,
-    "platform": "iphone",
+    "platform": "android",
     "postshow": "AS_Form_f9337d7c18aa4abbb9873bd00f925294",
     "preshow": "AS_Form_h902144b12734dd5892b60716ca9a3f2",
     "prevDevice": "iPhoneXS",
@@ -122,7 +123,7 @@
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainscrollposition": false,
-    "shellCSS": "iOS_iPhoneXS",
+    "shellCSS": "and_Pixel3",
     "snapgridsize": 10,
     "snaptogrid": true,
     "spa": {

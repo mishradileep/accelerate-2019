@@ -56,5 +56,10 @@ define({
     AS_Form_acc108b90ad041868d0ef5f813ab476b: function AS_Form_acc108b90ad041868d0ef5f813ab476b(eventobject) {
         var self = this;
         this.setData(accelerateSessionData.eventSessionData.records);
+    },
+    /** onDeviceBack defined for frmAgenda **/
+    AS_Form_ce1c3ac567c14878a6d0115ae35f7155: function AS_Form_ce1c3ac567c14878a6d0115ae35f7155(eventobject) {
+        var self = this;
+        return;
     }
 });
