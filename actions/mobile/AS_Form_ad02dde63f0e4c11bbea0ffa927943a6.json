@@ -73,7 +73,7 @@
         }, {
             "id": "ADD_SNIPPET__f759dd8704de4f509e419d4086d9f9a9",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "if(this.currentViewState===0 &&  kony.sdk.isNullOrUndefined(this.currentSelectedTab)){\n  this.frmAgendaPreshow();\n} \nif(kony.sdk.isNullOrUndefined(this.currentSelectedTab)){\n  this.view.sessionTiles.removeAll();\n}\nif(this.currentSelectedTab==1){\n  this.frmAgendaSessionClose();\n}\n\nthis.view.flxToast.isVisible=false;\n",
+            "codeSnippet": "// if(this.currentViewState===0 &&  kony.sdk.isNullOrUndefined(this.currentSelectedTab)){\n//   this.frmAgendaPreshow();\n// } \n// if(kony.sdk.isNullOrUndefined(this.currentSelectedTab)){\n//   this.view.sessionTiles.removeAll();\n// }\nthis.frmAgendaPreshow();\nthis.view.flxToast.isVisible=false;\n",
             "parentId": null,
             "callbackType": null
         }, {

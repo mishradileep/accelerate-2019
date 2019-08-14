@@ -69,9 +69,12 @@ define({
      * @private
      */
     frmAgendaPostshow: function() {
+      	if (this.needToShowList) {
+            this.frmAgendaSessionClose();
+        }
 		if(kony.sdk.isNullOrUndefined(this.currentSelectedTab)){
-this.setData(accelerateSessionData.eventSessionData.records);
-this.currentSelectedTab=null;
+			this.setData(accelerateSessionData.eventSessionData.records);
+			this.currentSelectedTab=null;
 }
         this.devHeight = this.view.masterContainer.frame.height;
         egLogger("devHeight = " + this.devHeight);
@@ -541,11 +544,12 @@ this.currentSelectedTab=null;
      */
     frmAgendaSessionClose: function() {
       	//this.setData(accelerateSessionData.eventSessionData.records);
-      	this.currentViewState=0;
       	if(this.isNavigatedFrmOtherForm){
           this.isNavigatedFrmOtherForm=false;
           this.navigateToOtherForm();
+          return;
         }
+      	this.currentViewState=0;
         var self = this;
         egLogger("this.thisCard = " + this.thisCard.id);
         var animDuration = 0.8;
@@ -987,10 +991,10 @@ this.currentSelectedTab=null;
             this.view[id].onClick = this.frmAgendaSessionSelect.bind(this);
         }
         this.view.sessionTileAnim.callback = this.mySchedular;
-      	if(!kony.sdk.isNullOrUndefined(this._previousForm) || !kony.sdk.isNullOrUndefined(this. navigateSessionId)){
-          this.naviateToSessionDetail();
-          this. navigateSessionId=null;
-        }
+//       	if(!kony.sdk.isNullOrUndefined(this._previousForm) || !kony.sdk.isNullOrUndefined(this. navigateSessionId)){
+//           this.naviateToSessionDetail();
+//           this. navigateSessionId=null;
+//         }
     },
   	findTimeDifference:function(t1,t2){
       var d1=new Date(t1).getTime();
@@ -1255,6 +1259,7 @@ this.currentSelectedTab=null;
         record = {};
         record.speaker_id = -2;
         record.feedback_comments = this.view.txtArea.text;
+      	this.view.txtArea.text="";
         batch.push(record);
         var dataBatch = {
             "records": batch
@@ -1609,7 +1614,7 @@ this.currentSelectedTab=null;
        this.navigateSessionId=kony.store.getItem("currentNotificationId");
        if(this.navigateSessionId==-999999999){
          if(this.currentViewState==1){
-           this.frmAgendaSessionClose();
+           this.needToShowList=true;
          }
          
          return;
@@ -1621,6 +1626,7 @@ this.currentSelectedTab=null;
        this._previousForm=naviInfo.form;
         this.navigateSessionId=naviInfo.session_id;
         this.isNavigatedFrmOtherForm=true;
+      	//this.showSessionDetailPageDirectly();
     }
     
   },
@@ -1636,7 +1642,38 @@ this.currentSelectedTab=null;
            this.view.contentScroller.scrollToWidget(this.view[tileObject.id]);
            this.view[tileObject.id].onClick(this.view[tileObject.id]);
          }
-       }
-  }
+      }
+  },
+  showSessionDetailPageDirectly:function(){
+    this.view.headerContainer.top="-131dp";
+    this.view.sessionTileAnim.addAgendaContainer.left = "82.6%";
+    this.view.sessionTileAnim.addAgendaContainer.top = "39dp";
+    this.view.sessionTileAnim.addAgendaContainer.opacity=100;
+    this.view.sessionTileAnim.animationElements.opacity=100;
+    this.view.sessionTileAnim.quantumDotsBlur.left="-1465dp";
+    this.view.sessionTileAnim.quantumDotsClear.left="-966dp";
+    this.view.sessionTileAnim.sessionLocationIcon.opacity=0;
+    this.view.sessionTileAnim.sessionTimeIcon.opacity=0;
+    //this.view.sessionTileAnim.tileBGImageKony.scale("");//---------->314
+    this.view.sessionTileAnim.height="152dp";
+    this.view.sessionContentContainer.top="100%";
+    this.view.sessionTileAnim.tilebg.left="-16dp";
+    this.view.sessionTileAnim.tilebg.right="-16dp";
+    this.view.feedbackMaster.opacity=100;
+    this.view.imageBack.opacity=100;
+    this.view.buttonBack.isVisible = true;
+    this.view.sessionLocation.opacity=100;
+    this.view.sessionTileAnim.sessionTitle.left="24dp";
+    this.view.sessionTileAnim.sessionTitle.top="59dp";
+    this.view.sessionTileAnim.sessionLocation.left="60%";
+    this.view.sessionTileAnim.sessionLocation.top="105dp";
+    this.view.sessionTileAnim.sessionTime.left="24dp";
+    this.view.sessionTileAnim.sessionTime.top="105dp";
+    this.view.addAgendaContainer.isVisible=true;
+    this.view.sessionLocation.isVisible=true;
+    this.view.menuMain.isVisible=false;
+  },
+  
+  
   
 });

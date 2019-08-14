@@ -48,15 +48,20 @@ define({
     /** preShow defined for frmAgenda **/
     AS_Form_ad02dde63f0e4c11bbea0ffa927943a6: function AS_Form_ad02dde63f0e4c11bbea0ffa927943a6(eventobject) {
         var self = this;
-        if (this.currentViewState === 0 && kony.sdk.isNullOrUndefined(this.currentSelectedTab)) {
-            this.frmAgendaPreshow();
-        }
-        if (kony.sdk.isNullOrUndefined(this.currentSelectedTab)) {
-            this.view.sessionTiles.removeAll();
-        }
-        if (this.currentSelectedTab == 1) {
+        // if(this.currentViewState===0 &&  kony.sdk.isNullOrUndefined(this.currentSelectedTab)){
+        //   this.frmAgendaPreshow();
+        // } 
+        // if(kony.sdk.isNullOrUndefined(this.currentSelectedTab)){
+        //   this.view.sessionTiles.removeAll();
+        // }
+        this.frmAgendaPreshow();
+        this.view.flxToast.isVisible = false;
+    },
+    /** postShow defined for frmAgenda **/
+    AS_Form_e3a673f862804c1d96f5a3563d526066: function AS_Form_e3a673f862804c1d96f5a3563d526066(eventobject) {
+        var self = this;
+        if (this.needToShowList) {
             this.frmAgendaSessionClose();
         }
-        this.view.flxToast.isVisible = false;
     }
 });
