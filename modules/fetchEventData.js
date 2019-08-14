@@ -67,7 +67,7 @@
    */
   function dataSyncFetchFailure(failureResponse) {
       kony.print("Error occured in fetching the event data");
-      kony.print("Error occured is" + JSON.stringify(failureResponse));
+     kony.print("Error occured is" + JSON.stringify(failureResponse));
   }
 
   /**
