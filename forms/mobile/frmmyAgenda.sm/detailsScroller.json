@@ -54,6 +54,7 @@
     "kuid": "d85c8966ae674b558fb8083adf83aa6c",
     "layouttype": 4,
     "name": "kony.ui.FlexScrollContainer",
+    "ontouchstart": "AS_FlexScrollContainer_j7b91e9e3b1d4c6db7e544ad3b116db8",
     "pagingenabled": false,
     "parent": "frmmyAgenda",
     "pf": "frmmyAgenda",

@@ -35,6 +35,8 @@ define({
      */
     onClickOfSubmitButton: function() {
         kony.print("Entering frmFeedbackController : onClickOfSubmitButton function");
+      	this.callback=this.showThankyou;
+      	this.animateSubmitButton("100%", true);
         if (kony.sdk.isNullOrUndefined(this.index)) {
             this.index = 0;
         }
@@ -69,8 +71,8 @@ define({
       	kony.store.setItem("appfeedbackSubmit", true);
         kony.print("Entering frmFeedbackController : successInStoreFeedback function");
         kony.print("Exiting frmFeedbackController : successInStoreFeedback function");
-      	this.callback=this.showThankyou;
-      	this.animateSubmitButton("100%", true);
+//       	this.callback=this.showThankyou;
+//       	this.animateSubmitButton("100%", true);
     },
     /**
      * @function failInStoreFeedback
@@ -81,8 +83,8 @@ define({
     failInStoreFeedback: function(error) {
         kony.print("Entering frmFeedbackController : failInStoreFeedback function");
         kony.print("Exiting frmFeedbackController : failInStoreFeedback function");
-     	this.callback=this.showThankyou;
-      	this.animateSubmitButton("100%", true);
+//      	this.callback=this.showThankyou;
+//       	this.animateSubmitButton("100%", true);
     },
 
     /** 

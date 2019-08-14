@@ -201,5 +201,32 @@ define({
         if (this.currentViewState === 0) {
             this.frmAgendaPreshow();
         }
+    },
+    /** onDeviceBack defined for frmmyAgenda **/
+    AS_Form_gdc7a27b1fde45bea31c1bf7860c0d0e: function AS_Form_gdc7a27b1fde45bea31c1bf7860c0d0e(eventobject) {
+        var self = this;
+        return;
+    },
+    /** onTouchStart defined for detailsScroller **/
+    AS_FlexScrollContainer_j7b91e9e3b1d4c6db7e544ad3b116db8: function AS_FlexScrollContainer_j7b91e9e3b1d4c6db7e544ad3b116db8(eventobject, x, y) {
+        var self = this;
+        if (this.txtAreaEnable) {
+            this.view.txtArea.setEnabled(false);
+            this.txtAreaEnable = !this.txtAreaEnable
+        }
+    },
+    /** onClick defined for flxRatingContainer **/
+    AS_FlexContainer_b7c7e5f0e881488f85d41256ffd04f43: function AS_FlexContainer_b7c7e5f0e881488f85d41256ffd04f43(eventobject) {
+        var self = this;
+        this.txtAreaEnable = true;
+        this.view.txtArea.setEnabled(true);
+        this.view.txtArea.setFocus(true);
+    },
+    /** onTouchEnd defined for txtArea **/
+    AS_TextArea_f198db812a894b6d85463aa7e1dd6fbd: function AS_TextArea_f198db812a894b6d85463aa7e1dd6fbd(eventobject, x, y) {
+        var self = this;
+        this.txtAreaEnable = true;
+        this.view.txtArea.setEnabled(true);
+        this.view.txtArea.setFocus(true);
     }
 });

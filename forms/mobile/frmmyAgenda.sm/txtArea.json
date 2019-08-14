@@ -56,6 +56,7 @@
     "mode": "A",
     "name": "kony.ui.TextArea2",
     "numberofvisiblelines": 3,
+    "ontouchend": "AS_TextArea_f198db812a894b6d85463aa7e1dd6fbd",
     "parent": "flxRatingContainer",
     "pf": "frmmyAgenda",
     "placeholderskin": "s9986a2885af49f9ac826e84814a6009",
