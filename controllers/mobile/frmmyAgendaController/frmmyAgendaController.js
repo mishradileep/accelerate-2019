@@ -1072,6 +1072,11 @@ define({
      */
   setSpeakerProfile: function(eventObject) {
     this.speakerIdMap = {};
+    var flxImageContainerwidthCalc = this.view.flxSpeaker0.frame.width * 1.1;
+    flxImageContainerwidthCalc = flxImageContainerwidthCalc.toFixed();
+    var imgHeight = flxImageContainerwidthCalc * 1.02;
+    imgHeight = imgHeight.toFixed();
+ 
     this.view.imgThanks.isVisible = false;
     this.view.lblThankyou.isVisible = false;
     var id = eventObject.id;
@@ -1105,11 +1110,13 @@ define({
           this.view["speakerDesignation" + speakerIndex].text = title;
           var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
           this.view["speakerDescription" + speakerIndex].text = description;
-          this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
           this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
           this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
           this.view["flxSpeaker"+speakerIndex].speakerInfo=speakerBio;
           this.view["flxSpeaker"+speakerIndex].onClick=this.onClickOfSpeaker.bind(this);
+          this.view["imgSpeaker" + speakerIndex].width = flxImageContainerwidthCalc + "dp";
+		  this.view["imgSpeaker" + speakerIndex].height = imgHeight + "dp";
+          this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
         }
       }
     }
@@ -1120,6 +1127,15 @@ define({
     this.view["ratingTile"].setDefaultSelectedIndex();
   },
   onClickOfSpeaker:function(eventObject){
+    var naviInfo={
+      "form":this.view.id,
+      "speakerId":this.speakerIdMap[eventObject.id]
+    };
+    var navigateObj=new kony.mvc.Navigation("frmPresenters");
+    navigateObj.navigate(naviInfo);
+
+  },
+  dismissRatingIfSubmitted:function(sessionObject){
     var currentTime=new Date();
     var sessionEndTime=sessionObject.session_end_date;
     sessionEndTime=new Date(sessionEndTime);
@@ -1130,15 +1146,6 @@ define({
       return;
     }
     this.view.lblFeedback.isVisible=true;
-    var naviInfo={
-      "form":this.view.id,
-      "speakerId":this.speakerIdMap[eventObject.id]
-    };
-    var navigateObj=new kony.mvc.Navigation("frmPresenters");
-    navigateObj.navigate(naviInfo);
-
-  },
-  dismissRatingIfSubmitted:function(sessionObject){
     var feedbackSubmittedSessions=kony.store.getItem("feedbackstore");
     if(kony.sdk.isNullOrUndefined(feedbackSubmittedSessions)){
       return;
