@@ -26,7 +26,7 @@ define({
         this.setFilteronClick();
     },
     /** preShow defined for frmPresenters **/
-    AS_Form_be66a65fc0ef4de4a2c42e58e5e7906f: function AS_Form_be66a65fc0ef4de4a2c42e58e5e7906f(eventobject) {
+    AS_Form_b5893bf86b0a4cd2bfcc965c2a4b375f: function AS_Form_b5893bf86b0a4cd2bfcc965c2a4b375f(eventobject) {
         var self = this;
         this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = "menuLabelSkinActive";
         this.view.presenterScroll.showFadingEdges = false;

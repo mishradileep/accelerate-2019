@@ -1,6 +1,6 @@
 {
-    "AS_Form_b4d8869f1b9144b382033feab30520d6": {
-        "id": "AS_Form_b4d8869f1b9144b382033feab30520d6",
+    "AS_Form_b5893bf86b0a4cd2bfcc965c2a4b375f": {
+        "id": "AS_Form_b5893bf86b0a4cd2bfcc965c2a4b375f",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -14,7 +14,7 @@
         },
         "language": "js",
         "actions": [{
-            "id": "ADD_SNIPPET__e7970610162f48f2bb8b00120ce2ae56",
+            "id": "ADD_SNIPPET__f8eeb3b5aea44dc19f5bbb0e505edb6c",
             "type": "ADD_SNIPPET",
             "codeSnippet": "this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = \"menuLabelSkinActive\";\nthis.view.presenterScroll.showFadingEdges = false;",
             "parentId": null,
