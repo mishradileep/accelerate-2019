@@ -44,10 +44,14 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "42%"
+        "value": "40%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "50%"
     },
     "containerweight": 100,
-    "contentalignment": 8,
+    "contentalignment": 6,
     "id": "lblAccelerate",
     "includeFontPadding": false,
     "info": null,

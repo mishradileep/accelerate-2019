@@ -16,10 +16,16 @@ define({
             this.view.flxContinue.bottom = "20dp";
             this.view.flxContinue.width = "60dp";
             this.view.flxContinue.height = "60dp";
-            this.view.lblDesc.text = "Thank you for joining us in Austin. We look to showing you first-hand how Kony accelerates digital success.";
             this.view.lblTimeAndVenue.top = "52%";
             this.view.lblDesc.skin = 'sknlblDescWhiteSmall';
             this.view.lblTimeAndVenue.skin = 'sknlblTimeVenuewhiteSmall';
         }
+        if (kony.os.deviceInfo().screenWidth < 380) {
+            //this.view.lblDesc.text = "Thank you for joining us in Austin. We look to showing you first-hand how Kony accelerates digital success.";
+            this.view.lblDesc.skin = 'sknlblDescWhiteSmall';
+            this.view.lblTimeAndVenue.skin = 'sknlblTimeVenuewhiteSmall';
+        }
+        alert(kony.os.deviceInfo().screenWidth + " - " + kony.os.deviceInfo().screenHeight)
+        this.view.lblDesc.text = "Thank you for joining us in Austin. We look to showing you first-hand how Kony accelerates digital success.";
     }
 });
