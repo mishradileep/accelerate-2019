@@ -25,12 +25,6 @@ define({
         var self = this;
         this.setFilteronClick();
     },
-    /** preShow defined for frmPresenters **/
-    AS_Form_b5893bf86b0a4cd2bfcc965c2a4b375f: function AS_Form_b5893bf86b0a4cd2bfcc965c2a4b375f(eventobject) {
-        var self = this;
-        this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = "menuLabelSkinActive";
-        this.view.presenterScroll.showFadingEdges = false;
-    },
     /** onDeviceBack defined for frmPresenters **/
     AS_Form_hbd56c17ef8740b69d6b9924a02f1d5f: function AS_Form_hbd56c17ef8740b69d6b9924a02f1d5f(eventobject) {
         var self = this;

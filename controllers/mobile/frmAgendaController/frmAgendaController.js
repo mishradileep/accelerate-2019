@@ -1127,9 +1127,11 @@ define({
                   	this.view["flxSpeaker"+speakerIndex].onClick = function(eventobject) {
                       this.onClickOfSpeaker(this.speakerIdMap[eventobject.id]);
                     }.bind(this);
-                  	this.view["imgSpeaker" + speakerIndex].width = flxImageContainerwidthCalc + "dp";
-					this.view["imgSpeaker" + speakerIndex].height = imgHeight + "dp";
-                    this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
+                    if(flxImageContainerwidthCalc>0 && imgHeight>0){
+                      this.view["imgSpeaker" + speakerIndex].width = flxImageContainerwidthCalc + "dp";
+					  this.view["imgSpeaker" + speakerIndex].height = imgHeight + "dp";
+                    }
+                  	this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
                 }
             }
         }

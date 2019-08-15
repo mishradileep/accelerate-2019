@@ -25,7 +25,6 @@ define({
             this.view.lblDesc.skin = 'sknlblDescWhiteSmall';
             this.view.lblTimeAndVenue.skin = 'sknlblTimeVenuewhiteSmall';
         }
-        alert(kony.os.deviceInfo().screenWidth + " - " + kony.os.deviceInfo().screenHeight)
         this.view.lblDesc.text = "Thank you for joining us in Austin. We look to showing you first-hand how Kony accelerates digital success.";
     }
 });
