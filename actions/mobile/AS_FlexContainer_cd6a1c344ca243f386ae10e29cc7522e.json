@@ -1,0 +1,17 @@
+{
+    "AS_FlexContainer_cd6a1c344ca243f386ae10e29cc7522e": {
+        "id": "AS_FlexContainer_cd6a1c344ca243f386ae10e29cc7522e",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET_onClick_c51adbbbfe2749008ea16fe7d00f8453",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.txtAreaEnable=true;\nthis.view.txtArea.setEnabled(true);\nthis.view.txtArea.setFocus(true);",
+            "callbackType": null
+        }]
+    }
+}

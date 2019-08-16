@@ -30,7 +30,7 @@
     "_text_": "Explore emerging trends in software development – Low-Code, PWA, VR/AI, Cloud, DevOps and more. See how to leverage the full potential of Kony with hands-on  platform workshops, ",
     "_top_": {
         "type": "string",
-        "value": "51dp"
+        "value": "10dp"
     },
     "_wrapping_": 2,
     "android": {
@@ -56,7 +56,7 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "hd016807f41e41858b8fd87edd9d456e",
+    "kuid": "ebb1c3c426854b3284be5e3bdd605032",
     "name": "kony.ui.Label",
     "parent": "sessionContentContainer",
     "pf": "frmmyAgenda",

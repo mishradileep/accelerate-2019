@@ -134,7 +134,16 @@ define({
     this.view.sessionTileAnim.tilebg.skin = this.thisCard.tilebg.skin;
     this.view.sessionTileAnim.sessionTitle.text = this.thisCard.sessionTitle.text;
     this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
-    this.view.CopyLabel0f74c659ce7754e.text = this.view[eventobject.id].sessionData.session_desc;
+    var desc= this.view[eventobject.id].sessionData.session_desc;
+      	if(!kony.sdk.isNullOrUndefined(desc) && desc.length>0 ){
+          this.view.CopyLabel0f74c659ce7754e.isVisible=true;
+        this.view.Label0c15d6a3069eb44.isVisible=true;
+          this.view.CopyLabel0f74c659ce7754e.text = desc;
+        }
+      else{
+        this.view.CopyLabel0f74c659ce7754e.isVisible=false;
+        this.view.Label0c15d6a3069eb44.isVisible=false;
+      }
     this.view.sessionTileAnim.imgStatus.src = this.view[eventobject.id].imgStatus.src;
     this.view.addAgendaContainer.imgStatus.src = this.view[eventobject.id].imgStatus.src;
     this.view.sessionTileAnim.callback = this.view[eventobject.id].callback;
