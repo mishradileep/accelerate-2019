@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "15dp"
+        "value": "20dp"
     },
     "_left_": {
         "type": "string",
@@ -23,36 +23,38 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s25c5dbedc9c489e997bcdc429c5eb50",
+    "_skin_": "s8cfed1dd1554bce93596b5c3af28ea0",
     "_top_": {
-        "type": "number",
-        "value": "-15"
+        "type": "string",
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
         "value": "100%"
     },
     "allboxes": [],
-    "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [],
+    "children": [
+        "Image0a48001e7e05547"
+    ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "CopyFlexContainer0a95fcd86c47e42",
+    "id": "flxCurvedArrow",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "b49ad4366236462996ddcc6ac76cb346",
+    "kuid": "i5db249862e94adaafeda80858a67a2d",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "sessionContentContainer",
+    "parent": "detailsScroller",
     "pf": "frmmyAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,
     "snapgridsize": 10,
     "snaptogrid": true,
+    "vizProps": {},
     "wType": "FlexContainer",
     "widgetalignment": 1,
     "zindex": 1

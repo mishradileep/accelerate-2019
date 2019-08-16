@@ -23,7 +23,9 @@ define(function() {
         setTitleData: function(data) {
             this.sessionData = data;
             var sessionNameLength = data.session_name.length;
-            this.view.sessionTitle.text = sessionNameLength > 28 ? data.session_name.substring(0, 25) + "..." : data.session_name;
+          	var shortTitle= sessionNameLength > 28 ? data.session_name.substring(0, 25) + "..." : data.session_name;
+            this.view.sessionTitle.text = shortTitle;
+          	this.sessionData.shortTitle=shortTitle;
             this.view.sessionLocation.text = data.hasOwnProperty("session_location") ? data.session_location : "";
           	this.startDate=data.session_start_date;
           	this.endDate=data.session_end_date;

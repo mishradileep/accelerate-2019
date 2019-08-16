@@ -1,0 +1,23 @@
+{
+    "AS_FlexScrollContainer_ce5f34897f634a9f83dcdd6f9c9c0aec": {
+        "id": "AS_FlexScrollContainer_ce5f34897f634a9f83dcdd6f9c9c0aec",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET_onTouchStart_c5dc6b1b196b447b8d377545d9aca11a",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "if(this.txtAreaEnable){\n  this.view.txtArea.setEnabled(false);\n  this.txtAreaEnable=!this.txtAreaEnable\n}\n\n",
+            "callbackType": null
+        }]
+    }
+}

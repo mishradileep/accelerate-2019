@@ -39,6 +39,7 @@
     "canUpdateUI": true,
     "children": [
         "sessionContentContainer",
+        "flxCurvedArrow",
         "feedbackMaster"
     ],
     "clipbounds": true,
