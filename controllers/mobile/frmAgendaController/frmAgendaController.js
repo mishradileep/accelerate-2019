@@ -1390,11 +1390,13 @@ define({
         var materials = sessionObject.session_material;
         if (kony.sdk.isNullOrUndefined(materials)) {
             this.view.lblPresentation.isVisible = false;
+          	this.view.flxMaterial.removeAll();
             return;
         }
         var materailsCount = materials.length;
         if (materailsCount <= 0) {
             this.view.lblPresentation.isVisible = false;
+          	this.view.flxMaterial.removeAll();
             return;
         }
         var flexInstance, materialInstance;
@@ -1817,7 +1819,6 @@ define({
     this.view.forceLayout();
     this.view.addAgendaContainer.isVisible=false;
     this.view.sessionContentContainer.top="100%";
-    debugger;
     if(kony.sdk.isNullOrUndefined(this.normalWidth)){
       this.normalWidth= this.view.sessionTileAnim.tileBGImageKony.width;
       this.normalHeight=this.view.sessionTileAnim.tileBGImageKony.height;
