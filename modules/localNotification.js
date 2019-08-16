@@ -36,7 +36,7 @@ function offlinenotification(notificationobject, actionid) {
   */
 function onlinenotification(notificationobject, actionid) {
     var basicConf = {
-        message: "There is an event which starts in 1hr. Click View, to view the event",
+        message: "There is an event which starts in 1 hour. Click View, to view the details of the event",
         alertType: constants.ALERT_TYPE_CONFIRMATION,
         alertTitle: "Reminder",
         yesLabel: "View",
@@ -49,7 +49,7 @@ function onlinenotification(notificationobject, actionid) {
   				//#ifdef iphone
   				kony.store.setItem("currentNotificationId", notificationobject.id);
       			//#endif
-                var nav = new kony.mvc.Navigation("frmmyAgenda");
+                var nav = new kony.mvc.Navigation("frmAgenda");
                 nav.navigate();
             }
         }
@@ -143,12 +143,12 @@ function createLocalnotification(date, session_id, session_name) {
   	date = date.split('T')[0] + ' ' + (dateObj.getUTCHours()?((dateObj.getUTCHours()-1)<10?'0'+(dateObj.getUTCHours()-1):(dateObj.getUTCHours()-1)):'23') + ':' + (dateObj.getUTCMinutes()<10?'0'+dateObj.getUTCMinutes(): dateObj.getUTCMinutes()) + ':' + (dateObj.getUTCSeconds()<10?'0' + dateObj.getUTCSeconds(): dateObj.getUTCSeconds()) + ' ' + timeZone;
   	//#endif
   //#ifdef iphone
-  	date = date.split('T')[0] + ' ' + (dateObj.getHours()?((dateObj.getHours()-1)<10?'0'+(dateObj.getHours()-1):(dateObj.getHours()-1)):'23') + ':' + (dateObj.getMinutes()<10?'0'+dateObj.getMinutes(): dateObj.getMinutes()) + ':' + (dateObj.getSeconds()<10?'0' + dateObj.getSeconds(): dateObj.getSeconds()) + ' ' + timeZone;
+  	date = dateObj.getFullYear() + '-' + (dateObj.getMonth()<10?'0' + dateObj.getMonth(): dateObj.getMonth()) + '-' + (dateObj.getDate()<10?'0'+dateObj.getDate(): dateObj.getDate()) + ' ' + (dateObj.getHours()?((dateObj.getHours()-1)<10?'0'+(dateObj.getHours()-1):(dateObj.getHours()-1)):'23') + ':' + (dateObj.getMinutes()<10?'0'+dateObj.getMinutes(): dateObj.getMinutes()) + ':' + (dateObj.getSeconds()<10?'0' + dateObj.getSeconds(): dateObj.getSeconds()) + ' ' + timeZone;
   	//#endif
     var format = "yyyy-MM-dd HH:mm:ss Z";
-    var message = session_name + " starts in 1hr";
+    var message = session_name + " starts in 1 hour.";
     var title = session_name;
-    var categoryId = "Event Reminder";
+    var categoryId = session_name;
   	registerActions();
     kony.localnotifications.create({
         "id": notificationId,

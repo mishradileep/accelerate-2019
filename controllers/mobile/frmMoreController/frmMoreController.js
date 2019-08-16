@@ -19,6 +19,11 @@ define({
     let leftAnimateTo = slideType == 'slideIn' ? '10%' : '-80%';
     let menuWidgets = this.view.flxMoreWrapper.widgets();
     let delayThrashold = 0;
+    if(eventObj && eventObj.id == "flxMenuExploreAustin")
+      {
+        self.exploreAustinOnClick()
+        return;
+      }
     menuWidgets.forEach(function(currentMenu, index){
       let currentItemIdex = index;
       if(currentMenu.isVisible)
@@ -52,8 +57,9 @@ define({
                 formName = "frmSocialFeed";
                 break;
               case "flxMenuExploreAustin":
-                self.exploreAustinOnClick()
-                formName="frmMore";
+                self.exploreAustinOnClick();
+                formName=0;
+                break;
               case "flxMenuAbout":
                 formName = "frmAboutApp";
                 break;
@@ -61,8 +67,6 @@ define({
             }
             if(formName) {
             	new kony.mvc.Navigation(formName).navigate();  
-            } else {
-               alert("This Feature is yet to be implemented!!");
             }
             
           }
