@@ -38,6 +38,7 @@
               let storeSpeakerData = kony.store.getItem("eventSpeakerData");
               let storeSponsorData = kony.store.getItem("eventSponsorData");
               let quantumData = kony.store.getItem("quantumQuestData");
+              let storeTeamData = kony.store.getItem("eventTeamData");
               assignStoreDataToLocal(quantumData, storeEventData, storeEventSessionData, storeSpeakerData,storeSponsorData,storeTeamData);
               var nav = new kony.mvc.Navigation("frmAgenda");
               nav.navigate();
