@@ -983,9 +983,7 @@ define({
           	this.allSessionTiles.push(sessionTile);
             this.view[id].setTitleData(sessionObj);
             this.view[id].callback = this.mySchedular;
-            if (!kony.sdk.isNullOrUndefined(sessionObj.presenter)) {
-                this.view[id].onClick = this.frmAgendaSessionSelect.bind(this);
-            }
+            this.view[id].onClick = this.frmAgendaSessionSelect.bind(this);
         }
         this.view.sessionTileAnim.callback = this.mySchedular;
       	if(!kony.sdk.isNullOrUndefined(this._previousForm) || !kony.sdk.isNullOrUndefined(this. navigateSessionId)){
@@ -1086,6 +1084,7 @@ define({
      * 	@private
      */
     setSpeakerProfile: function(eventObject) {
+        this.speakerIdMap = {};
       	var flxImageContainerwidthCalc = this.view.flxSpeaker0.frame.width * 1.1;
 		flxImageContainerwidthCalc = flxImageContainerwidthCalc.toFixed();
       	var imgHeight = flxImageContainerwidthCalc * 1.02;
@@ -1099,11 +1098,6 @@ define({
         var sessionObject = this.sessionsList[sessionIndex];
       	this.dismissRatingIfSubmitted(sessionObject);
         this.currentSessionObjectInDetailScreen = sessionObject;
-//         if (!kony.sdk.isNullOrUndefined(sessionObject.feedBackSubmit) && sessionObject.feedBackSubmit) {
-//             this.dismissRatingTiles();
-//         } else {
-//             this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
-//         }
         this.setSessionAttachments(sessionObject);
         var speakerList = sessionObject["presenter"];
         this.ratingLength = speakerList.length;
@@ -1118,26 +1112,26 @@ define({
         var speakerIndex;
         for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
             var speakerObject = speakerList[speakerIndex];
-            //var widthImageWidth = kony.os.deviceInfo().screenWidth - 72;
             for (var index = 0; index < speakers_master.length; index++) {
                 if (speakerObject.master_speaker_id == speakers_master[index].speaker_id) {
                     var speakerBio = speakers_master[index];
+                    this.speakerIdMap["flxSpeaker"+speakerIndex] = speakerObject.master_speaker_id;
                   	this.view["flxSpeaker"+speakerIndex].isVisible=true;
                     this.view["speakerName" + speakerIndex].text = speakerBio.speaker_name;
                     var title = speakerBio.speaker_title.length > 20 ? speakerBio.speaker_title.substring(0, 16) + "..." : speakerBio.speaker_title;
                     this.view["speakerDesignation" + speakerIndex].text = title;
                     var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
                     this.view["speakerDescription" + speakerIndex].text = description;
-                    this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
                     this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
                     this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
-                  	this.view["flxSpeaker"+speakerIndex].speakerInfo=speakerBio;
-                  	this.view["flxSpeaker"+speakerIndex].onClick=this.onClickOfSpeaker.bind(this);
-                  	this.view["imgSpeaker" + speakerIndex].width = flxImageContainerwidthCalc + "dp";
-					this.view["imgSpeaker" + speakerIndex].height = imgHeight + "dp";
-                    //this.view["imgSpeaker"+speakerIndex].width = widthImageWidth+"dp";
-                    //this.view["imgSpeaker"+speakerIndex].height = (widthImageWidth * eventConstants.ASPECT_RATION_CONSTANT)+"dp";
-
+                  	this.view["flxSpeaker"+speakerIndex].onClick = function(eventobject) {
+                      this.onClickOfSpeaker(this.speakerIdMap[eventobject.id]);
+                    }.bind(this);
+                    if(flxImageContainerwidthCalc>0 && imgHeight>0){
+                      this.view["imgSpeaker" + speakerIndex].width = flxImageContainerwidthCalc + "dp";
+					  this.view["imgSpeaker" + speakerIndex].height = imgHeight + "dp";
+                    }
+                  	this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
                 }
             }
         }
@@ -1147,161 +1141,20 @@ define({
         }
         this.view["ratingTile"].setDefaultSelectedIndex();
     },
-  onClickOfSpeaker:function(eventObject){
+  onClickOfSpeaker:function(id){
     var naviInfo={
       "form":this.view.id,
-      "speakerId":eventObject.speakerInfo.speaker_id,
+      "speakerId":id,
     };
-    var navigateObj=new kony.mvc.Navigation("frmPresenters");
-    navigateObj.navigate(naviInfo);
-    
+    var ntf = new kony.mvc.Navigation("frmPresenters");
+    ntf.navigate(naviInfo);
   },
   dismissRatingIfSubmitted:function(sessionObject){
-    define(function() {
-
-    return {
-      
-        sessionData: null,
-      	sessionTrackId:null,
-      	startDate:null,
-      	endDate:null,
-      	isAddedToMySchedule:null,
-      	myScheduleIndicatorImage:"added.png",
-      	agendaIndicatorImage:"add.png",
-      	agendaContainerSkin:"sknGreenSelected",
-      	callback:null,
-      	deleteIcon:"delete.png",
-      	deleteCallback:null,
-        /**
-         *	@function setTitleData
-         * 	@description This function is used to set the data to the session tile
-         *	@param data {Object} -The data param contains the info of the session
-         * 	@private
-         */
-        setTitleData: function(data) {
-            this.sessionData = data;
-            var sessionNameLength = data.session_name.length;
-            this.view.sessionTitle.text = sessionNameLength > 28 ? data.session_name.substring(0, 25) + "..." : data.session_name;
-            this.view.sessionLocation.text = data.hasOwnProperty("session_location") ? data.session_location : "";
-          	this.startDate=data.session_start_date;
-          	this.endDate=data.session_end_date;
-          	this.sessionData.modifiedTime= this.formatDate(data.session_start_date) + " to " + this.formatDate(data.session_end_date);
-            this.view.sessionTime.text = this.sessionData.modifiedTime;
-            if (kony.sdk.isNullOrUndefined(data.session_track_id)) {
-                return;
-            }
-          	this.sessionTrackId= data.session_track_id;
-            switch (data.session_track_id) {
-                case 1:
-                    this.view.tilebg.skin = "agendaTileSkinQuantum";
-                    this.view.tileBGImageKony.src = "agendatilequantum.png";
-                    break;
-                case 2:
-                    this.view.tilebg.skin = "agendaTileSkinDBX";
-                    this.view.tileBGImageKony.src = "agendatiledbx.png";
-                    break;
-                case 3:
-                    this.view.tilebg.skin = "agendaTileSkinKony";
-                    this.view.tileBGImageKony.src = "agendatilekony.png";
-                    break;
-                default:
-                    this.view.tilebg.skin = "";
-                    this.view.tileBGImageKony.src = "";
-            }
-          if(data.isAddedToMySchedule===true){
-            this.view.imgStatus.src=this.myScheduleIndicatorImage;
-            //this.view.flxAddedToSchedule.isVisible=true;
-          }
-          else{
-            this.view.imgStatus.src=this.agendaIndicatorImage;
-            //this.view.flxAddedToSchedule.isVisible=false;
-          }
-        },
-        /**
-         *	@function formatDate
-         * 	@description This function is used to process the date and return it in human reable format
-         *  @param dateString {String} - date in string format
-         * 	@private
-         */
-        formatDate: function(dateString) {
-            var date = new Date(dateString);
-            var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
-            var am_pm = date.getHours() >= 12 ? "PM" : "AM";
-            hours = hours < 10 ? "0" + hours : hours;
-            var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-            return hours + ":" + minutes + am_pm;
-        },
-       /**
-         *	@function sessionToMySchedule
-         * 	@description This function is used to add sessions to strore in phone
-         * 	@private
-         */
-      sessionToMySchedule:function(){
-        if(this.view.imgStatus.src==this.deleteIcon){
-          this.deleteSessionFromMyAgenda();
-          return ;
-        }
-        this.isAddedToMySchedule=true;
-        this.sessionData.isAddedToMySchedule=true;
-        createLocalnotification(this.sessionData.session_start_date,this.sessionData.event_session_id,this.sessionData.session_name);
-        //this.view.flxAddedToSchedule.isVisible=true;
-        this.view.imgStatus.src=this.myScheduleIndicatorImage;
-        this.view.addAgendaContainer.skin=this.agendaContainerSkin;
-        var myAgendaData=kony.store.getItem("myAgendaData");
-        if(kony.sdk.isNullOrUndefined(myAgendaData)){
-          myAgendaData={};
-        }
-        myAgendaData[this.sessionData.event_session_id]=this.sessionData.event_session_id;
-        kony.store.setItem("myAgendaData", myAgendaData);
-        this.invokedCallback();
-      },
-      /**
-         *	@function invokedCallback
-         * 	@description This function is to invoke  the formlevel callback
-         * 	@private
-         */
-      invokedCallback:function(){
-        if(this.callback){
-			this.callback(this.view.id,this.sessionData);          
-        }
-      },
-      /**
-         *	@function setDeleteButtonValues
-         * 	@description This function is to set the delete icon when user opens myschedule form.
-         * 	@private
-         */
-      setDeleteButtonValues:function(){
-        this.view.imgStatus.src=this.deleteIcon;
-        this.view.flxAddedToSchedule.isVisible=false;
-      },
-      /**
-         *	@function deleteSessionFromMyAgenda
-         * 	@description This is to  delete the session_id keys from kony store.
-         * 	@private
-         */
-      deleteSessionFromMyAgenda:function(){
-        this.isAddedToMySchedule=false;
-        this.sessionData.isAddedToMySchedule=false;
-        var myScheduleMap=kony.store.getItem("myAgendaData");
-        var localNotificationIDs = [];
-        localNotificationIDs.push('0'+this.sessionData.event_session_id);
-        kony.localnotifications.cancel(localNotificationIDs);
-        if(kony.sdk.isNullOrUndefined(myScheduleMap)){
-          return;
-        }
-        if(myScheduleMap.hasOwnProperty(this.sessionData.event_session_id)){
-          delete myScheduleMap[this.sessionData.event_session_id];
-        }
-        kony.store.setItem("myAgendaData", myScheduleMap);
-		this.deleteCallback(this.view.id);
-      }
-    };
-});
-var currentTime=new Date();
+	var currentTime=new Date();
     var sessionEndTime=sessionObject.session_end_date;
     sessionEndTime=new Date(sessionEndTime);
     if(sessionEndTime-currentTime>=0){
-      this.view.flxRatingContainer.height="0dp";
+      this.view.flxRatingContainer.isVisible=false;
       this.view.lblFeedback.isVisible=false;
       this.view.lblPresentation.top="30dp";
       return;

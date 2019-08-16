@@ -8,6 +8,7 @@ define({
         * @private
     */
   onNavigate : function(param) {
+    debugger;
     if(param){
       this.formId = param.form;
       if(this.formId === "frmAgenda" || this.formId === "frmmyAgenda") {
@@ -34,6 +35,7 @@ define({
         * @private
     */
   setFilteronClick : function(){
+    this.view.preShow = this.formPreshowAction.bind(this);
     var self = this;
     this.view.flxFilterKeynote.onClick = function(eventobject) {
       self.speakerFilter(eventobject);
@@ -44,6 +46,11 @@ define({
     this.view.flxFilterDBX.onClick = function(eventobject) {
       self.speakerFilter(eventobject);
     };
+  },
+  
+  formPreshowAction : function(){
+   this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = "menuLabelSkinActive";
+   this.view.presenterScroll.showFadingEdges = false;
   },
   /**
        * @function processPresenterSessionData
