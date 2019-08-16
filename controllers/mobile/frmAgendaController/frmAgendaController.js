@@ -1033,6 +1033,9 @@ define({
        if(!kony.sdk.isNullOrUndefined(session_id) && myScheduledSession.hasOwnProperty(session_id)){
           sessions[index].isAddedToMySchedule=true;
         }
+        else{
+          sessions[index].isAddedToMySchedule=false;
+        }
       }
     },
     /**
