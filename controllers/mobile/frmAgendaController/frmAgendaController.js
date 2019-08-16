@@ -1793,6 +1793,7 @@ define({
     
   },
   showListPageDirectly:function(){
+    //this.view.buttonBack.zIndex=150;
     this.view.contentScroller.width="100%";
     this.view.contentScroller.left="0dp";
     this.view.contentScroller.top="0dp";
@@ -1817,7 +1818,7 @@ define({
     this.view.buttonBack.width="58dp";
     this.view.buttonBack.height="47dp";
     this.view.buttonBack.isVisible=false;
-    this.view.buttonBack.opacity=0;
+    this.view.buttonBack.opacity=100;
     this.view.menuMain.left="0dp";
     this.view.menuMain.bottom="0dp";
     this.view.menuMain.width="100%";
@@ -1838,7 +1839,7 @@ define({
     this.view.sessionTileAnim.height="152dp";
     this.view.sessionTileAnim.tilebg.height="130dp";
 	this.view.sessionTileAnim.tilebg.left="20dp";
-    this.view.sessionTileAnim.tilebg.top="12dp";
+    this.view.sessionTileAnim.tilebg.top="0dp";
     this.view.forceLayout();
     this.view.addAgendaContainer.isVisible=false;
     this.view.sessionContentContainer.top="100%";
