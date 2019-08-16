@@ -37,14 +37,12 @@
     "canUpdateUI": true,
     "children": [
         "CopyFlexContainer0a95fcd86c47e42",
-        "FlexContainer0fdd0ce2f316148",
-        "Image0a48001e7e05547",
         "Label0c15d6a3069eb44",
         "CopyLabel0f74c659ce7754e",
         "CopyLabel0he0b8d5a22fc4f",
-        "flxSpeaker1",
-        "flxSpeaker0",
-        "flxSpeaker2"
+        "flxSpeakerContainer1",
+        "flxSpeakerContainer2",
+        "FlexContainer0fdd0ce2f316148"
     ],
     "clipbounds": false,
     "containerweight": 100,
@@ -54,7 +52,7 @@
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "dd81f21cdabc4a0b8138fe2d038cd15e",
-    "layouttype": 2,
+    "layouttype": 4,
     "name": "kony.ui.FlexContainer",
     "parent": "detailsScroller",
     "pf": "frmAgenda",

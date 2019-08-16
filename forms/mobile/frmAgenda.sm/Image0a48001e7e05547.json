@@ -3,17 +3,9 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_base64_": null,
-    "_bottom_": {
-        "type": "number",
-        "value": "-32"
-    },
     "_height_": {
         "type": "string",
         "value": "20dp"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "127dp"
     },
     "_margin_": [
         0,
@@ -29,6 +21,10 @@
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
     "_src_": "teardrop.png",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_width_": {
         "type": "string",
         "value": "50dp"
@@ -54,7 +50,7 @@
     "isvisible": true,
     "kuid": "b1dec12653e64d3c90e607a67d5707e0",
     "name": "kony.ui.Image2",
-    "parent": "sessionContentContainer",
+    "parent": "flxCurvedArrow",
     "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

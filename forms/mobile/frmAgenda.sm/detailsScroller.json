@@ -39,6 +39,7 @@
     "canUpdateUI": true,
     "children": [
         "sessionContentContainer",
+        "flxCurvedArrow",
         "feedbackMaster"
     ],
     "clipbounds": true,
@@ -50,7 +51,7 @@
     "id": "detailsScroller",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": false,
+    "isvisible": true,
     "kuid": "ife28c26431749cf8732d9d72bde4862",
     "layouttype": 4,
     "name": "kony.ui.FlexScrollContainer",
