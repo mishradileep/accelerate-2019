@@ -426,9 +426,9 @@
     "mwhttpsportkey": "",
     "mwportkey": "",
     "nativeContainerProperties": {
-        "isEnableJSContainer": false,
+        "isEnableJSContainer": true,
         "isEnableJSContainerAndroid": false,
-        "isEnableJSContaineriOS": false,
+        "isEnableJSContaineriOS": true,
         "isModified": true
     },
     "objects3D": "false",

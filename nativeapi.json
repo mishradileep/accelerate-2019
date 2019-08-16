@@ -1,6 +1,18 @@
 {
     "NativeFunctionAPI": {
-        "iOS": {},
+        "iOS": {
+            "12.0": {
+                "UIKit-iOS-12.0": {
+                    "title": "UIKit",
+                    "platform": "iOS",
+                    "os": "12.0",
+                    "isDefault": false,
+                    "filepath": "KonyAccelerate/nativebindings/iOS/12.0/UIKit-iOS-12.0.zip",
+                    "nfiversion": "2.0",
+                    "enable": true
+                }
+            }
+        },
         "Android": {}
     },
     "Metadata": {

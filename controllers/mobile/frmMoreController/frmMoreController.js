@@ -2,6 +2,7 @@ define({
 
   // Animation duration in seconds.
   animationDuration : 0.2,
+  deepLinkConstant:"Deeplink",
 
   /** @function moreMenuAnimate
    *  @description Slide in menu items one by one. Called on form postShow
@@ -48,8 +49,11 @@ define({
               case "flxMenuSocialFeed":
                 formName = "frmSocialFeed";
                 break;
+              case "flxMenuExploreAustin":
+                self.view.openapp.open();
+                formName="frmMore";
+                break;
               default:
-                // code block
             }
             if(formName) {
             	new kony.mvc.Navigation(formName).navigate();  
