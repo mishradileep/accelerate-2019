@@ -8,7 +8,6 @@ define({
         * @private
     */
   onNavigate : function(param) {
-    debugger;
     if(param){
       this.formId = param.form;
       if(this.formId === "frmAgenda" || this.formId === "frmmyAgenda") {
@@ -335,11 +334,19 @@ define({
      */
   onClickOfSessionTile : function(eventobject){
     var param = {
-      "session_id" : this.view[eventobject.id].sessionData.event_session_id,
+      "session" : this.view[eventobject.id],
       "form" : "frmPresenters"
     };
     var navObj = new kony.mvc.Navigation("frmAgenda");
     navObj.navigate(param);
+  },
+  destroyForm:function(){
+    try{
+      kony.application.destroyForm("frmAgenda");
+    }
+    catch(exception){
+      kony.print(JSON.stringify(exception));
+    }
   }
 
 });

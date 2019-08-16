@@ -1,0 +1,24 @@
+{
+    "AS_Form_a1f8d2de650c467dbd73829221015cb4": {
+        "id": "AS_Form_a1f8d2de650c467dbd73829221015cb4",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmAboutApp",
+            "type": "forms",
+            "platform": null,
+            "KUID": "e398ebece41e4c63b59220656922db7f"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__fa8efba6cb5145b587d9893703af401b",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.animateAboutTheAppCard(\"4%\");",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}
