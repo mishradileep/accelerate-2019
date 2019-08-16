@@ -41,7 +41,8 @@
         "referenceSession",
         "referenceAgenda",
         "sessionTiles",
-        "scrollerTop"
+        "scrollerTop",
+        "lblNoEvents"
     ],
     "clipbounds": true,
     "containerweight": 100,
