@@ -59,6 +59,7 @@
     "_winphone10_": {},
     "_winphone8_": {},
     "areflexpropsreferenced": false,
+    "autogrowmode": 0,
     "canUpdateUI": true,
     "clipbounds": false,
     "containerweight": 0,
@@ -188,6 +189,15 @@
                 "kuid": "b8356b7ab8e94aafa472cd0a1ff1b706",
                 "srcKUID": "bec3b913cb82435197f76d64481cd4e8",
                 "wType": "FlexContainer"
+            },
+            "autogrowMode": {
+                "Default": 0
+            },
+            "height": {
+                "Default": {
+                    "type": "string",
+                    "value": "152dp"
+                }
             },
             "left": {
                 "Default": {

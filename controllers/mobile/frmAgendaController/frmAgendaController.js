@@ -120,6 +120,9 @@ define({
      * @private
      */
     frmAgendaSessionSelect: function(eventobject) {
+      	this.view.sessionTileAnim.left = "100%";
+      	this.view.sessionTileAnim.isVisible=true;
+      	this.view.forceLayout();
         this.view.detailsScroller.isVisible=true;
       	this.currentViewState=1;
         this.setSpeakerProfile(eventobject);
@@ -322,7 +325,10 @@ define({
                             fillMode: kony.anim.FILL_MODE_FORWARDS,
                             duration: animDuration * 0.5
                         }, {
-                            animationEnd: function() {}
+                            animationEnd: function() {
+                              this.scaledWidth=self.view.sessionTileAnim.tileBGImageKony.frame.width;
+                              this.scaledHeight=self.view.sessionTileAnim.tileBGImageKony.frame.height;
+                            }
                         });
         this.view.sessionTileAnim.animate(
             kony.ui.createAnimation({
@@ -493,6 +499,7 @@ define({
                 animationEnd: function() {
                    this.view.addAgendaContainer.isVisible=true;
                   this.view.sessionLocation.isVisible=true;
+                  this.view.buttonBack.isVisible=true;
                 }.bind(this)
             });
         this.view.animate(
@@ -510,8 +517,11 @@ define({
                 animationEnd: function() {
                  this.view.addAgendaContainer.isVisible=true;
                  this.view.sessionLocation.isVisible=true;
+                  this.view.buttonBack.isVisible=true;
                 }.bind(this)
             });
+      debugger;
+      
     },
 	openFloorMap:function(session){
       if(kony.sdk.isNullOrUndefined(session.event_inner_location)){
@@ -538,12 +548,11 @@ define({
      * @private
      */
     frmAgendaSessionClose: function() {
-      	//this.setData(accelerateSessionData.eventSessionData.records);
-      	//this.view.txtArea.setEnabled(true);
       	this.view.txtArea.text="";
       	if(this.isNavigatedFrmOtherForm){
           this.isNavigatedFrmOtherForm=false;
           this.navigateToOtherForm();
+          return;
         }
         var self = this;
         egLogger("this.thisCard = " + this.thisCard.id);
@@ -714,7 +723,7 @@ define({
                 duration: animDuration
             }, {
                 animationEnd: function() {
-                    self.view.buttonBack.isVisible = true;
+                    self.view.buttonBack.isVisible = false;
                 }
             });
       this.view.addAgendaContainer.animate(
@@ -730,7 +739,7 @@ define({
                 duration: animDuration
             }, {
                 animationEnd: function() {
-                    self.view.buttonBack.isVisible = true;
+                    self.view.buttonBack.isVisible = false;
                 }
             });
       	this.view.sessionLocation.animate(
@@ -746,7 +755,7 @@ define({
                 duration: animDuration
             }, {
                 animationEnd: function() {
-                    self.view.buttonBack.isVisible = true;
+                    self.view.buttonBack.isVisible = false;
                 }
             });
         this.view.sessionTileAnim.tilebg.animate(
@@ -986,10 +995,10 @@ define({
             this.view[id].onClick = this.frmAgendaSessionSelect.bind(this);
         }
         this.view.sessionTileAnim.callback = this.mySchedular;
-      	if(!kony.sdk.isNullOrUndefined(this._previousForm) || !kony.sdk.isNullOrUndefined(this. navigateSessionId)){
-          this.naviateToSessionDetail();
-          this. navigateSessionId=null;
-        }
+//       	if(!kony.sdk.isNullOrUndefined(this._previousForm) || !kony.sdk.isNullOrUndefined(this. navigateSessionId)){
+//           this.naviateToSessionDetail();
+//           this. navigateSessionId=null;
+//         }
     },
   	findTimeDifference:function(t1,t2){
       var d1=new Date(t1).getTime();
@@ -1606,6 +1615,7 @@ define({
   onNavigate:function(naviInfo){
     this.navigateSessionId=null;
     if(kony.sdk.isNullOrUndefined(naviInfo)){
+      this. showListPageDirectly();
        this.navigateSessionId=kony.store.getItem("currentNotificationId");
        if(this.navigateSessionId==-999999999){
          return;
@@ -1614,8 +1624,9 @@ define({
     }
     else{
        this._previousForm=naviInfo.form;
-        this.navigateSessionId=naviInfo.session_id;
+        this.navigateSession=naviInfo.session;
         this.isNavigatedFrmOtherForm=true;
+      	this.showSessionDetailPageDirectly(this.navigateSession);
     }
     
   },
@@ -1625,7 +1636,7 @@ define({
     };
     (new kony.mvc.Navigation(this._previousForm)).navigate(param);
   },
-  naviateToSessionDetail:function(){
+  naviateToSessionDetail:function(session){
     var sessionId=this.navigateSessionId;
     var tiles=this.allSessionTiles;
        for(var index=0;index<tiles.length;index++){
@@ -1635,6 +1646,186 @@ define({
            this.view[tileObject.id].onClick(this.view[tileObject.id]);
          }
        }
+  },
+  showSessionDetailPageDirectly:function(eventObject){
+    this.speakerIdMap = {};
+    this.view.detailsScroller.isVisible=true;
+    this.currentViewState=1;
+    this.view.contentScroller.isVisible=false;
+    this.view.sessionTileAnim.isVisible = true;
+    this.view.sessionContentContainer.isVisible=true;
+    this.view.feedbackMaster.isVisible=true;
+    this.view.buttonBack.isVisible=true;
+    this.view.buttonBack.opacity=100;
+    this.view.buttonBack.left="2dp";
+    this.view.buttonBack.top="3dp";
+    this.view.buttonBack.width="58dp";
+    this.view.buttonBack.height="47dp";
+    this.view.menuMain.isVisible=true;
+    this.view.addAgendaContainer.isVisible=true;
+    this.view.addAgendaContainer.left="82.6%";
+    this.view.addAgendaContainer.top="39dp";
+    this.view.sessionLocation.isVisible=true;
+    this.view.detailsScroller.left="0%";
+	this.view.sessionTileAnim.addAgendaContainer.left = "82.6%";
+    this.view.sessionTileAnim.addAgendaContainer.top = "39dp";
+    this.view.sessionTileAnim.tilebg.height =this.devHeight+"dp";
+    this.view.sessionTileAnim.left = "0%";
+    this.view.headerContainer.top="-131dp";
+    this.view.sessionTileAnim.addAgendaContainer.opacity=100;
+    this.view.sessionTileAnim.animationElements.isVisible=false;
+    this.view.sessionTileAnim.quantumDotsBlur.isVisible=false;
+    this.view.sessionTileAnim.quantumDotsClear.left="-966dp";
+    this.view.sessionTileAnim.sessionLocationIcon.opacity=0;
+    this.view.sessionTileAnim.sessionTimeIcon.opacity=0;
+    this.view.sessionTileAnim.top="0dp";
+    this.view.sessionContentContainer.top="28%";
+    this.view.sessionTileAnim.tilebg.left="-16dp";
+    this.view.sessionTileAnim.tilebg.right="-16dp";
+    this. view.feedbackMaster.opacity=100;
+    this. view.imageBack.opacity=100;
+    this. view.addAgendaContainer.opacity=100;
+    this. view.sessionLocation.opacity=100;
+    this.view.sessionTileAnim.sessionTitle.left="24dp";
+    this.view.sessionTileAnim.sessionTitle.top="59dp";
+    this.view.sessionTileAnim.sessionLocation.left="60%";
+    this.view.sessionTileAnim.sessionLocation.top="105dp";
+    this.view.sessionLocation.top="105dp";
+    this.view.sessionLocation.left="60%";
+    this.view.sessionTileAnim.sessionTime.left="24dp";
+    this.view.sessionTileAnim.sessionTime.top="105dp";
+    this.view.addAgendaContainer.isVisible=true;
+    this.view.sessionLocation.isVisible=true;
+    var scaledWidth=(parseInt(this.view.sessionTileAnim.tileBGImageKony.width)*1.47);
+    var scaledHeight=(parseInt(this.view.sessionTileAnim.tileBGImageKony.height)*1.47);
+    this.view.sessionTileAnim.tileBGImageKony.width=scaledWidth;
+    this.view.sessionTileAnim.tileBGColorKony.height=scaledHeight;
+    this.thisCard=eventObject;
+     this.view.sessionTileAnim.tilebg.skin = eventObject.tilebg.skin;
+    	this.view.sessionTileAnim.addAgendaContainer.isVisible=true;
+        this.view.sessionTileAnim.sessionTitle.text = eventObject.sessionData.session_name;
+        this.view.sessionTileAnim.sessionTime.text = eventObject.sessionData.modifiedTime;
+        this.view.CopyLabel0f74c659ce7754e.text = eventObject.sessionData.session_desc;
+        this.view.sessionTileAnim.imgStatus.src =eventObject.imgStatus.src;
+      	this.view.addAgendaContainer.imgStatus.src = eventObject.imgStatus.src;
+        this.view.sessionTileAnim.callback = eventObject.callback;
+        this.view.sessionTileAnim.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, eventObject);
+      	this.view.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, eventObject);
+        this.view.sessionTileAnim.addAgendaContainer.skin =eventObject.addAgendaContainer.skin;
+      	this.view.addAgendaContainer.skin =eventObject.addAgendaContainer.skin;
+        this.view.sessionTileAnim.sessionLocation.text = "<u>"+eventObject.sessionData.session_location+"</u>";
+      	this.view.sessionLocation.text = "<u>"+eventObject.sessionData.session_location+"</u>";
+      	this.view.sessionLocation.onTouchEnd=this.openFloorMap.bind(this,eventObject.sessionData);
+        this.view.sessionTileAnim.tileBGImageKony.src = eventObject.tileBGImageKony.src;
+//     	var flxImageContainerwidthCalc = this.view.flxSpeaker0.frame.width * 1.1;
+// 		flxImageContainerwidthCalc = flxImageContainerwidthCalc.toFixed();
+//       	var imgHeight = flxImageContainerwidthCalc * 1.02;
+    	var sessionObject=eventObject.sessionData;
+    this.dismissRatingIfSubmitted(sessionObject);
+        this.currentSessionObjectInDetailScreen = sessionObject;
+        this.setSessionAttachments(sessionObject);
+        var speakerList = sessionObject["presenter"];
+        this.ratingLength = speakerList.length;
+        var speakers_master = accelerateSpeakerData.eventSpeakerData.records;
+        if (kony.sdk.isNullOrUndefined(speakerList)) {
+            this.view.CopyLabel0he0b8d5a22fc4f.isVisible = false;
+            this.view.flxSpeaker0.isVisible = false;
+            this.view.flxSpeaker1.isVisible = false;
+            this.view.flxSpeaker2.isVisible = false;
+            return;
+        }
+        var speakerIndex;
+        for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
+            var speakerObject = speakerList[speakerIndex];
+            for (var index = 0; index < speakers_master.length; index++) {
+                if (speakerObject.master_speaker_id == speakers_master[index].speaker_id) {
+                    var speakerBio = speakers_master[index];
+                    this.speakerIdMap["flxSpeaker"+speakerIndex] = speakerObject.master_speaker_id;
+                  	this.view["flxSpeaker"+speakerIndex].isVisible=true;
+                    this.view["speakerName" + speakerIndex].text = speakerBio.speaker_name;
+                    var title = speakerBio.speaker_title.length > 20 ? speakerBio.speaker_title.substring(0, 16) + "..." : speakerBio.speaker_title;
+                    this.view["speakerDesignation" + speakerIndex].text = title;
+                    var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
+                    this.view["speakerDescription" + speakerIndex].text = description;
+                    this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
+                    this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
+                  	this.view["flxSpeaker"+speakerIndex].onClick = function(eventobject) {
+                      this.onClickOfSpeaker(this.speakerIdMap[eventobject.id]);
+                    }.bind(this);
+//                     if(flxImageContainerwidthCalc>0 && imgHeight>0){
+//                       this.view["imgSpeaker" + speakerIndex].width = flxImageContainerwidthCalc + "dp";
+// 					  this.view["imgSpeaker" + speakerIndex].height = imgHeight + "dp";
+//                     }
+                  	this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
+                }
+            }
+        }
+        for (speakerIndex; speakerIndex < 3; speakerIndex++) {
+            this.view["flxSpeaker" + speakerIndex].isVisible = false;
+            this.view["ratingTile" + speakerIndex].isVisible = false;
+        }
+        this.view["ratingTile"].setDefaultSelectedIndex();
+    this.setSessionAttachments(sessionObject);
+    
+  },
+  showListPageDirectly:function(){
+    this.view.contentScroller.width="100%";
+    this.view.contentScroller.left="0dp";
+    this.view.contentScroller.top="0dp";
+    this.view.contentScroller.isVisible=true;
+    this.view.headerContainer.isVisible=true;
+    this.view.headerContainer.left="0dp";
+    this.view.headerContainer.top="0dp";
+    this.view.headerContainer.width="100%";
+    this.view.headerContainer.height="131dp";
+    this.view.detailsScroller.left="100%";
+    this.view.detailsScroller.top="0%";
+    this.view.detailsScroller.width="100%";
+    this.view.detailsScroller.bottom="60dp";
+    this.view.sessionTileAnim.isVisible = false;
+    this.view.imageBack.left="15dp";
+    this.view.imageBack.top="16dp";
+    this.view.imageBack.width="24dp";
+    this.view.imageBack.height="20dp";
+    this.view.imageBack.opacity=0;
+    this.view.buttonBack.left="2dp";
+    this.view.buttonBack.top="3dp";
+    this.view.buttonBack.width="58dp";
+    this.view.buttonBack.height="47dp";
+    this.view.buttonBack.isVisible=false;
+    this.view.buttonBack.opacity=0;
+    this.view.menuMain.left="0dp";
+    this.view.menuMain.bottom="0dp";
+    this.view.menuMain.width="100%";
+    this.view.menuMain.height="60dp";
+    this.view.menuMain.isVisible=true;
+    this.view.addAgendaContainer.left="82.6%";
+    this.view.addAgendaContainer.top="39dp";
+    this.view.addAgendaContainer.width="43dp";
+    this.view.addAgendaContainer.height="43dp";
+    this.view.sessionLocation.left="60%";
+    this.view.sessionLocation.top="105dp"; 
+    this.view.sessionLocation.zIndex=200;
+    this.view.sessionLocation.isVisible=false;
+    this.view.sessionTileAnim.left="100%";
+    this.view.sessionTileAnim.top="-40dp";
+    this.view.sessionTileAnim.width="100%";
+    this.view.sessionTileAnim.height="152dp";
+    this.view.sessionTileAnim.tilebg.height="130dp";
+	this.view.sessionTileAnim.tilebg.left="20dp";
+    this.view.sessionTileAnim.tilebg.top="12dp";
+    this.view.forceLayout();
+    this.view.addAgendaContainer.isVisible=false;
+    this.view.sessionContentContainer.top="100%";
+    debugger;
+    if(kony.sdk.isNullOrUndefined(this.normalWidth)){
+      this.normalWidth= this.view.sessionTileAnim.tileBGImageKony.width;
+      this.normalHeight=this.view.sessionTileAnim.tileBGImageKony.height;
+    }
+    else{
+      this.view.sessionTileAnim.tileBGImageKony.width= this.normalWidth;
+      this.view.sessionTileAnim.tileBGImageKony.height= this.normalHeight;
+    }
   }
   
 });
