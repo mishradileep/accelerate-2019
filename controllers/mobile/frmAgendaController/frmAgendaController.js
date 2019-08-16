@@ -136,6 +136,8 @@ define({
         this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
       	var desc= this.view[eventobject.id].sessionData.session_desc;
       	if(!kony.sdk.isNullOrUndefined(desc) && desc.length>0 ){
+          this.view.CopyLabel0f74c659ce7754e.isVisible=true;
+        this.view.Label0c15d6a3069eb44.isVisible=true;
           this.view.CopyLabel0f74c659ce7754e.text = desc;
         }
       else{
