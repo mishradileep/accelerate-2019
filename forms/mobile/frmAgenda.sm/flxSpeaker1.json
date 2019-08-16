@@ -30,7 +30,7 @@
     "_skin_": "s7e0e0b8157442868d6f801fe4e71b94",
     "_top_": {
         "type": "string",
-        "value": "206dp"
+        "value": "0dp"
     },
     "allboxes": [],
     "autogrowmode": 0,
@@ -49,7 +49,7 @@
     "kuid": "eb025b54083945f687f9a1abe7cb5a32",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "sessionContentContainer",
+    "parent": "flxSpeakerContainer1",
     "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

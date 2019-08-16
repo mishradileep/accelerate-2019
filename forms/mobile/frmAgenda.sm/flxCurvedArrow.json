@@ -23,36 +23,38 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s6badf3f67ab427fbb3cdff138083b79",
+    "_skin_": "s8cfed1dd1554bce93596b5c3af28ea0",
     "_top_": {
         "type": "string",
-        "value": "10dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
         "value": "100%"
     },
     "allboxes": [],
-    "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [],
+    "children": [
+        "Image0a48001e7e05547"
+    ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "FlexContainer0fdd0ce2f316148",
+    "id": "flxCurvedArrow",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "bf9c89e17ffe4d18a22530134904f81d",
+    "kuid": "d44773a6dd7a46508a9b0e9a6e309123",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "sessionContentContainer",
+    "parent": "detailsScroller",
     "pf": "frmAgenda",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,
     "snapgridsize": 10,
     "snaptogrid": true,
+    "vizProps": {},
     "wType": "FlexContainer",
     "widgetalignment": 1,
     "zindex": 1

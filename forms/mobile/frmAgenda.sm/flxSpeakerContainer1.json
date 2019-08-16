@@ -2,8 +2,8 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "string",
-        "value": "20dp"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
@@ -23,7 +23,7 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s6badf3f67ab427fbb3cdff138083b79",
+    "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
     "_top_": {
         "type": "string",
         "value": "10dp"
@@ -33,17 +33,20 @@
         "value": "100%"
     },
     "allboxes": [],
-    "autogrowmode": 0,
+    "autogrowmode": 1,
     "canUpdateUI": true,
-    "children": [],
+    "children": [
+        "flxSpeaker1",
+        "flxSpeaker0"
+    ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "FlexContainer0fdd0ce2f316148",
+    "id": "flxSpeakerContainer1",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "bf9c89e17ffe4d18a22530134904f81d",
+    "kuid": "h25283c51fcc4f4ea8cb740f4e2f71c5",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
     "parent": "sessionContentContainer",
