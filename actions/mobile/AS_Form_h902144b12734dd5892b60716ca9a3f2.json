@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__f0a69a01cac243d3bed9d7efcea3e86e",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.view.menuMain.menuContainerMore.menuLabelMore.skin = \"menuLabelSkinActive\";\nthis.menuBindOnClick();\nthis.slideMenusBVR();",
+            "codeSnippet": "if(!quantumQuestData.status)\n  {\n    this.view.flxMenuExploreAustin.setVisibility(false);\n  }\nelse\n  {\n    this.view.flxMenuExploreAustin.setVisibility(true);\n  }\nthis.view.menuMain.menuContainerMore.menuLabelMore.skin = \"menuLabelSkinActive\";\nthis.menuBindOnClick();\nthis.slideMenusBVR();",
             "parentId": null,
             "callbackType": null
         }]

@@ -4,6 +4,7 @@ var eventConstants = {
   EVENT_SESSIONS_OBJECT_NAME : "event_sessions",
   EVENT_LOCATION_OBJECT_NAME : "location",
   EVENT_OBJECT_NAME : "event",
+  QUANTUM_OBJECT_NAME : "quantum_quest",
   CONNECTION_ERROR_TYPE : "ConnectionError",
   CONNECTION_MESSAGE_STRING : "Please make sure your device is connected to a WiFi / Cellular Network",
   NETWORK_ERROR_TYPE : "NETWORK_ERROR_TYPE",

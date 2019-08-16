@@ -37,8 +37,8 @@
               let storeEventSessionData = kony.store.getItem("eventSessionData");
               let storeSpeakerData = kony.store.getItem("eventSpeakerData");
               let storeSponsorData = kony.store.getItem("eventSponsorData");
-              let storeTeamData = kony.store.getItem("eventTeamData");
-              assignStoreDataToLocal(storeEventData, storeEventSessionData, storeSpeakerData, storeSponsorData, storeTeamData);
+              let quantumData = kony.store.getItem("quantumQuestData");
+              assignStoreDataToLocal(quantumData, storeEventData, storeEventSessionData, storeSpeakerData,storeSponsorData,storeTeamData);
               var nav = new kony.mvc.Navigation("frmAgenda");
               nav.navigate();
           }
@@ -52,7 +52,9 @@
    * @param eventSpeakerData Event Speaker data
    * @public
    */
-  function assignStoreDataToLocal(eventData, eventSessionData, eventSpeakerData, eventSponsorData, eventTeamData) {
+  function assignStoreDataToLocal(quantumData, eventData, eventSessionData, eventSpeakerData, eventSponsorData, eventTeamData) {
+       if (quantumData !== null && quantumData !== undefined)
+      	  quantumQuestData = quantumData;
       if (eventData !== null && eventData !== undefined)
           accelerateEventData.eventdata = eventData;
       if (eventSessionData !== null && eventSessionData !== undefined)
@@ -224,8 +226,7 @@
           kony.store.setItem("eventSpeakerData", successResponse);
           kony.store.setItem("clientLastUpdatedTime", latestTimeStamp);
           kony.store.setItem("isTimeStampUpdated", true);
-          var nav = new kony.mvc.Navigation("frmAgenda");
-          nav.navigate();
+          fetchQuantumQuestData();
       }
   }
 
@@ -241,6 +242,52 @@
   }
 
   /**
+   * @function fetchQuantumQuestData
+   * @description This function is used to fetch the QuantumQuest app store urls and required data to navigate to the QuantumQuest app
+   * @public
+   */
+  function fetchQuantumQuestData() {
+      var queryParams = {
+          "$filter": "((SoftDeleteFlag ne true) or (SoftDeleteFlag eq null))"
+      };
+      fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.QUANTUM_OBJECT_NAME, queryParams, quantumQuestDataFetchSuccess, quantumQuestDataFetchFailure);
+  }
+
+  /**
+   * @function quantumQuestDataFetchSuccess
+   * @description This function is invoked in the success response of quantum quest app data fetch service
+   * @param successResponse The success response of quantum quest app data fetch service
+   * @public
+   */
+  function quantumQuestDataFetchSuccess(successResponse) {
+    if(successResponse.records.length)
+      {
+        quantumQuestData = {
+    	"id": 1,
+        "deeplink_url_android": successResponse.records[0].deeplink_url_android,
+        "status": successResponse.records[0].status,
+        "deeplink_url_ios": successResponse.records[0].deeplink_url_ios,
+        "andrdoid_scheme": successResponse.records[0].andrdoid_scheme,
+        "ios_scheme": successResponse.records[0].ios_scheme,
+        "bundle_identifier": successResponse.records[0].bundle_identifier,
+        "android_host": successResponse.records[0].android_host
+        };
+      }
+    kony.store.setItem("quantumQuestData", quantumQuestData);
+    var nav = new kony.mvc.Navigation("frmAgenda");
+    nav.navigate();
+  }
+
+  /**
+   * @function quantumQuestDataFetchFailure
+   * @description This function is invoked in the failure response of quantum quest app data fetch service
+   * @param failure The failure response of quantum quest app data fetch service
+   * @public
+   */
+  function quantumQuestDataFetchFailure(failureResponse) {
+      kony.print("Error occured in fetching the event data");
+  }
+   /**
    * @function fetchTeamData
    * @description This function is used to fetch the event team data
    * @public

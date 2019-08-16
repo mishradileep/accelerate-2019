@@ -21,6 +21,8 @@ define({
     let delayThrashold = 0;
     menuWidgets.forEach(function(currentMenu, index){
       let currentItemIdex = index;
+      if(currentMenu.isVisible)
+        {
       currentMenu.animate(
         kony.ui.createAnimation({
           100:{left:leftAnimateTo,"stepConfig":{}}}),
@@ -50,7 +52,7 @@ define({
                 formName = "frmSocialFeed";
                 break;
               case "flxMenuExploreAustin":
-                self.view.openapp.open();
+                self.exploreAustinOnClick()
                 formName="frmMore";
               case "flxMenuAbout":
                 formName = "frmAboutApp";
@@ -66,10 +68,29 @@ define({
           }
         }}
       );
+        }
       delayThrashold = delayThrashold + 0.05;
     });
   },
-
+  
+  /** @function exploreAustinOnClick
+   *  @description Slide Out menu items one by one and navigate to eventObj form.
+   *  @param eventObj
+   *	Menu item object. So that we can get clicked item and navigate to target form.
+   *
+   *  @return
+   *	void
+   */
+  exploreAustinOnClick: function() {
+    this.view.openapp.iosStoreUrl = quantumQuestData.deeplink_url_ios;
+    this.view.openapp.androidStoreUrl = quantumQuestData.deeplink_url_android;
+    this.view.openapp.androidHost = quantumQuestData.android_host;
+    this.view.openapp.androidScheme = quantumQuestData.andrdoid_scheme;
+    this.view.openapp.iosUrlScheme = quantumQuestData.ios_scheme;
+    this.view.openapp.bundleId = quantumQuestData.bundle_identifier;
+    this.view.openapp.open();
+  },
+  
   /** @function menuAnimateSlideOut
    *  @description Slide Out menu items one by one and navigate to eventObj form.
    *  @param eventObj

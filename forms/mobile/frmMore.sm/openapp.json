@@ -38,7 +38,14 @@
     "canUpdateUI": true,
     "clipbounds": true,
     "containerweight": 0,
-    "data": {},
+    "data": {
+        "androidHost": "",
+        "androidScheme": "",
+        "androidStoreUrl": "",
+        "bundleId": "",
+        "iosStoreUrl": "",
+        "iosUrlScheme": ""
+    },
     "enablescrolling": true,
     "id": "openapp",
     "info": null,
