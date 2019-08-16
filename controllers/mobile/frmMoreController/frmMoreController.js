@@ -52,6 +52,8 @@ define({
               case "flxMenuExploreAustin":
                 self.view.openapp.open();
                 formName="frmMore";
+              case "flxMenuAbout":
+                formName = "frmAboutApp";
                 break;
               default:
             }
