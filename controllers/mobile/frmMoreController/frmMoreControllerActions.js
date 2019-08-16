@@ -29,6 +29,11 @@ define({
     /** preShow defined for frmMore **/
     AS_Form_h902144b12734dd5892b60716ca9a3f2: function AS_Form_h902144b12734dd5892b60716ca9a3f2(eventobject) {
         var self = this;
+        if (!quantumQuestData.status) {
+            this.view.flxMenuExploreAustin.setVisibility(false);
+        } else {
+            this.view.flxMenuExploreAustin.setVisibility(true);
+        }
         this.view.menuMain.menuContainerMore.menuLabelMore.skin = "menuLabelSkinActive";
         this.menuBindOnClick();
         this.slideMenusBVR();

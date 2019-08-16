@@ -4,6 +4,7 @@ var eventConstants = {
   EVENT_SESSIONS_OBJECT_NAME : "event_sessions",
   EVENT_LOCATION_OBJECT_NAME : "location",
   EVENT_OBJECT_NAME : "event",
+  QUANTUM_OBJECT_NAME : "quantum_quest",
   CONNECTION_ERROR_TYPE : "ConnectionError",
   CONNECTION_MESSAGE_STRING : "Please make sure your device is connected to a WiFi / Cellular Network",
   NETWORK_ERROR_TYPE : "NETWORK_ERROR_TYPE",
@@ -20,5 +21,6 @@ var eventConstants = {
   SPONSOR_MASTER_OBJECT_NAME : "sponsor_category_master",
   DATA_SYNC_OBJECT : "data_sync_info",
   DATA_MODEL_SESSION_FEEDBACK:"session_feedback",
+  TEAM_OBJECT : "team",
   EVENT_TWITTER_HANDLE : "https://twitter.com/hashtag/KonyAccelerate2019?src=hash"
 };

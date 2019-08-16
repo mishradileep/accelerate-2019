@@ -8,10 +8,12 @@
       if (isTimeStamp === null || isTimeStamp === undefined)
           kony.store.setItem("clientLastUpdatedTime", "2019-08-04T15:27:26Z");
       else {
-              let storeEventData = kony.store.getItem("eventData");
-              let storeEventSessionData = kony.store.getItem("eventSessionData");
-              let storeSpeakerData = kony.store.getItem("eventSpeakerData");
-              assignStoreDataToLocal(storeEventData, storeEventSessionData, storeSpeakerData);
+          let storeEventData = kony.store.getItem("eventData");
+          let storeEventSessionData = kony.store.getItem("eventSessionData");
+          let storeSpeakerData = kony.store.getItem("eventSpeakerData");
+          let storeSponsorData = kony.store.getItem("eventSponsorData");
+          let storeTeamData = kony.store.getItem("eventTeamData");
+          assignStoreDataToLocal(storeEventData, storeEventSessionData, storeSpeakerData, storeSponsorData, storeTeamData);
       }
       fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.DATA_SYNC_OBJECT, {}, dataSyncFetchSuccess, dataSyncFetchFailure);
   }
@@ -35,9 +37,10 @@
               let storeEventSessionData = kony.store.getItem("eventSessionData");
               let storeSpeakerData = kony.store.getItem("eventSpeakerData");
               let storeSponsorData = kony.store.getItem("eventSponsorData");
-              assignStoreDataToLocal(storeEventData, storeEventSessionData, storeSpeakerData,storeSponsorData);
+              let quantumData = kony.store.getItem("quantumQuestData");
+              assignStoreDataToLocal(quantumData, storeEventData, storeEventSessionData, storeSpeakerData,storeSponsorData,storeTeamData);
               var nav = new kony.mvc.Navigation("frmAgenda");
-   			  nav.navigate();
+              nav.navigate();
           }
       }
   }
@@ -49,15 +52,19 @@
    * @param eventSpeakerData Event Speaker data
    * @public
    */
-  function assignStoreDataToLocal(eventData, eventSessionData, eventSpeakerData, eventSponsorData) {
+  function assignStoreDataToLocal(quantumData, eventData, eventSessionData, eventSpeakerData, eventSponsorData, eventTeamData) {
+       if (quantumData !== null && quantumData !== undefined)
+      	  quantumQuestData = quantumData;
       if (eventData !== null && eventData !== undefined)
           accelerateEventData.eventdata = eventData;
       if (eventSessionData !== null && eventSessionData !== undefined)
           accelerateSessionData.eventSessionData = eventSessionData;
       if (eventSpeakerData !== null && eventSpeakerData !== undefined)
           accelerateSpeakerData.eventSpeakerData = eventSpeakerData;
-      if(eventSponsorData !== null && eventSponsorData !== undefined)
+      if (eventSponsorData !== null && eventSponsorData !== undefined)
           accelerateSponsorData.sponsorData = eventSponsorData;
+      if (eventTeamData !== null && eventTeamData !== undefined)
+          accelerateTeamData.eventTeamData = eventTeamData;
   }
   /**
    * @function dataSyncFetchFailure
@@ -67,7 +74,7 @@
    */
   function dataSyncFetchFailure(failureResponse) {
       kony.print("Error occured in fetching the event data");
-     kony.print("Error occured is" + JSON.stringify(failureResponse));
+      kony.print("Error occured is" + JSON.stringify(failureResponse));
   }
 
   /**
@@ -151,7 +158,7 @@
       kony.print("Error occured is" + JSON.stringify(failureResponse));
   }
 
-   /**
+  /**
    * @function fetchEventSponsorData
    * @description This function is used to fetch the event sponsor data
    * @public
@@ -176,7 +183,7 @@
           kony.store.setItem("eventSponsorData", successResponse);
           accelerateSponsorData.sponsorData = successResponse;
           kony.print(accelerateSponsorData.sponsorData);
-          fetchSpeakersData();
+          fetchTeamData();
       }
   }
 
@@ -219,8 +226,7 @@
           kony.store.setItem("eventSpeakerData", successResponse);
           kony.store.setItem("clientLastUpdatedTime", latestTimeStamp);
           kony.store.setItem("isTimeStampUpdated", true);
-          var nav = new kony.mvc.Navigation("frmAgenda");
-    	  nav.navigate();
+          fetchQuantumQuestData();
       }
   }
 
@@ -235,6 +241,92 @@
       kony.print("Error occured is" + JSON.stringify(failureResponse));
   }
 
+  /**
+   * @function fetchQuantumQuestData
+   * @description This function is used to fetch the QuantumQuest app store urls and required data to navigate to the QuantumQuest app
+   * @public
+   */
+  function fetchQuantumQuestData() {
+      var queryParams = {
+          "$filter": "((SoftDeleteFlag ne true) or (SoftDeleteFlag eq null))"
+      };
+      fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.QUANTUM_OBJECT_NAME, queryParams, quantumQuestDataFetchSuccess, quantumQuestDataFetchFailure);
+  }
+
+  /**
+   * @function quantumQuestDataFetchSuccess
+   * @description This function is invoked in the success response of quantum quest app data fetch service
+   * @param successResponse The success response of quantum quest app data fetch service
+   * @public
+   */
+  function quantumQuestDataFetchSuccess(successResponse) {
+    if(successResponse.records.length)
+      {
+        quantumQuestData = {
+    	"id": 1,
+        "deeplink_url_android": successResponse.records[0].deeplink_url_android,
+        "status": successResponse.records[0].status,
+        "deeplink_url_ios": successResponse.records[0].deeplink_url_ios,
+        "andrdoid_scheme": successResponse.records[0].andrdoid_scheme,
+        "ios_scheme": successResponse.records[0].ios_scheme,
+        "bundle_identifier": successResponse.records[0].bundle_identifier,
+        "android_host": successResponse.records[0].android_host
+        };
+      }
+    kony.store.setItem("quantumQuestData", quantumQuestData);
+    var nav = new kony.mvc.Navigation("frmAgenda");
+    nav.navigate();
+  }
+
+  /**
+   * @function quantumQuestDataFetchFailure
+   * @description This function is invoked in the failure response of quantum quest app data fetch service
+   * @param failure The failure response of quantum quest app data fetch service
+   * @public
+   */
+  function quantumQuestDataFetchFailure(failureResponse) {
+      kony.print("Error occured in fetching the event data");
+  }
+   /**
+   * @function fetchTeamData
+   * @description This function is used to fetch the event team data
+   * @public
+   */
+  function fetchTeamData() {
+      var queryParams = {
+          "$filter": "((SoftDeleteFlag ne true) or (SoftDeleteFlag eq null))",
+          "$orderby": "order"
+      };
+      fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.TEAM_OBJECT,
+          queryParams, teamDataFetchSuccess, teamDataFetchFailure);
+  }
+
+  /**
+   * @function teamDataFetchSuccess
+   * @description This function is invoked in the success response of event team data fetch service
+   * @param successResponse The success response of event speaker data fetch service
+   * @public
+   */
+  function teamDataFetchSuccess(successResponse) {
+      let records = successResponse.hasOwnProperty("records") ? successResponse.records : null;
+      if (records !== null) {
+          accelerateTeamData.eventTeamData = successResponse;
+          kony.store.setItem("eventTeamData", successResponse);
+          kony.print(accelerateTeamData.eventTeamData);
+          fetchSpeakersData();
+      }
+  }
+
+  /**
+   * @function teamDataFetchFailure
+   * @description This function is invoked in the failure response of event team data fetch service
+   * @param failure The failure response of event speaker data fetch service
+   * @public
+   */
+  function teamDataFetchFailure() {
+      kony.print("Exception occured while fetching the team data");
+      kony.print("Error occured is" + JSON.stringify(failureResponse));
+  }
   /**
    * @function parseJSONResponse
    * @description This function is used to convert the stringified JSON objects into JSON Objects

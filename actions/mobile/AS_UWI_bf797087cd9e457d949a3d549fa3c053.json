@@ -1,0 +1,31 @@
+{
+    "AS_UWI_bf797087cd9e457d949a3d549fa3c053": {
+        "id": "AS_UWI_bf797087cd9e457d949a3d549fa3c053",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmTeam",
+            "type": "forms",
+            "platform": null,
+            "KUID": "ec2750f2827541349b77ac60db3ab4b9"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM___i46c377653144c68be2704d92154a69e",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmAboutApp",
+            "formKUID": "e398ebece41e4c63b59220656922db7f",
+            "mappings": {},
+            "mappingsOrder": [],
+            "parentId": "",
+            "callbackType": null,
+            "enableMappingEditor": true,
+            "package": "",
+            "navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"onCloseClick\",\n        \"widgetId\": \"mobileheader\"\n    }\n}",
+            "isCustomInput": false
+        }]
+    }
+}
