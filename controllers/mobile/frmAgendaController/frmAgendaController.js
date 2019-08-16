@@ -157,6 +157,7 @@ define({
       	this.view.sessionLocation.onTouchEnd=this.openFloorMap.bind(this,this.view[eventobject.id]. sessionData);
         this.view.sessionTileAnim.tileBGImageKony.src = this.thisCard.tileBGImageKony.src;
         var cardFrame = this.thisCard.frame.y;
+      	this.sessionTileAnimBindedSession= this.view[eventobject.id].sessionData;
         egLogger("cardFrame = " + cardFrame);
         this.cardFrameRel = cardFrame - this.view.contentScroller.contentOffsetMeasured.y;
         egLogger("cardFrameRel = " + this.cardFrameRel);
@@ -483,7 +484,8 @@ define({
                 //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
                 100: {
                     left: "60%",
-                    top: "105dp",
+                   // top: "105dp",
+                  	 top: "125dp",
                     "stepConfig": {}
                 }
             }), {
@@ -498,7 +500,8 @@ define({
                 //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
                 100: {
                     left: "24dp",
-                    top: "105dp",
+                    top: "125dp",
+                  	// top: "105dp",
                     "stepConfig": {}
                 }
             }), {
@@ -510,6 +513,7 @@ define({
                    this.view.addAgendaContainer.isVisible=true;
                   this.view.sessionLocation.isVisible=true;
                   this.view.buttonBack.isVisible=true;
+                  this.view.sessionTileAnim.sessionTitle.text=this.view[eventobject.id].sessionData.session_name;
                 }.bind(this)
             });
         this.view.animate(
@@ -528,10 +532,10 @@ define({
                  this.view.addAgendaContainer.isVisible=true;
                  this.view.sessionLocation.isVisible=true;
                   this.view.buttonBack.isVisible=true;
+                  this.view.sessionTileAnim.sessionTitle.text=eventobject.sessionData.session_name;
                 }.bind(this)
             });
-      debugger;
-      
+		      
     },
 	openFloorMap:function(session){
       if(kony.sdk.isNullOrUndefined(session.event_inner_location)){
@@ -565,6 +569,7 @@ define({
           return;
         }
         var self = this;
+      	this.view.sessionTileAnim.sessionTitle.text= this.sessionTileAnimBindedSession.shortTitle;
         egLogger("this.thisCard = " + this.thisCard.id);
         var animDuration = 0.8;
         var animHalf = animDuration * 0.5;
@@ -834,7 +839,8 @@ define({
                 fillMode: kony.anim.FILL_MODE_FORWARDS,
                 duration: animDuration
             }, {
-                animationEnd: function() {}
+                animationEnd: function() {
+                }
             });
 
     },
@@ -1704,11 +1710,14 @@ define({
     this.view.sessionTileAnim.sessionTitle.left="24dp";
     this.view.sessionTileAnim.sessionTitle.top="59dp";
     this.view.sessionTileAnim.sessionLocation.left="60%";
-    this.view.sessionTileAnim.sessionLocation.top="105dp";
-    this.view.sessionLocation.top="105dp";
+//     this.view.sessionTileAnim.sessionLocation.top="105dp";
+//     this.view.sessionLocation.top="105dp";
+    this.view.sessionTileAnim.sessionLocation.top="125dp";
+    this.view.sessionLocation.top="125dp";
     this.view.sessionLocation.left="60%";
     this.view.sessionTileAnim.sessionTime.left="24dp";
-    this.view.sessionTileAnim.sessionTime.top="105dp";
+    //this.view.sessionTileAnim.sessionTime.top="105dp";
+    this.view.sessionTileAnim.sessionTime.top="125dp";
     this.view.addAgendaContainer.isVisible=true;
     this.view.sessionLocation.isVisible=true;
     var scaledWidth=(parseInt(this.view.sessionTileAnim.tileBGImageKony.width)*1.47);
@@ -1819,7 +1828,8 @@ define({
     this.view.addAgendaContainer.width="43dp";
     this.view.addAgendaContainer.height="43dp";
     this.view.sessionLocation.left="60%";
-    this.view.sessionLocation.top="105dp"; 
+    //this.view.sessionLocation.top="105dp"; 
+    this.view.sessionLocation.top="125dp"; 
     this.view.sessionLocation.zIndex=200;
     this.view.sessionLocation.isVisible=false;
     this.view.sessionTileAnim.left="100%";
