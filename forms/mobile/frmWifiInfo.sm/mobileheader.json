@@ -40,7 +40,7 @@
     "clipbounds": true,
     "containerweight": 0,
     "data": {
-        "headerTitle": "WIFI",
+        "headerTitle": "WiFi",
         "onCloseClick": "AS_UWI_af090f87e9594bd681c5634379a360bb"
     },
     "enablescrolling": true,

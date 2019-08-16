@@ -12,6 +12,10 @@ define({
      */
   frmAgendaPreshow: function() {
     var self = this;
+	let currentActiveDate = kony.store.getItem("currentActiveDate");
+    if(currentActiveDate === null || currentActiveDate === undefined)
+      kony.store.setItem("currentActiveDate",4);
+    this.view.lblNoEvents.isVisible = false;
     this.view.menuMain.menuContainerMySchedule.menuLabelMySchedule.skin = "menuLabelSkinActive";
     this.setData(accelerateSessionData.eventSessionData.records);
     //this.addActionToSessionTiles();
@@ -971,6 +975,8 @@ define({
         this.view[id].onClick = this.frmAgendaSessionSelect.bind(this);
       }
     }
+    if(this.myScheduleSession.length <= 0)
+      this.view.lblNoEvents.isVisible = true;
     this.view.sessionTileAnim.callback = this.mySchedular;
   },
   /**
@@ -1010,8 +1016,39 @@ define({
     else{
       this.view.sessionTiles.remove(this.view[id]);
     }
-
+	if(childrenCount == 1){
+      this.view.lblNoEvents.isVisible = true;
+    }
     this.view.forceLayout();
+  },
+  
+  checkIfSessionsArePresentForSelectedDate : function(){
+   
+    let mSessionsList = this.sessionsList;
+    let currentActiveDate = kony.store.getItem("currentActiveDate");
+	let selectedSessions = kony.store.getItem("myAgendaData");
+    let count = 0;
+    for(let index = 0 ; index < selectedSessions.length ; index++){
+		let currentSessionId = selectedSessions[index];
+        for(let sessionIndex = 0 ; sessionIndex < mSessionsList.length ; sessionIndex++){
+          let currentSessionObject = mSessionsList[sessionIndex];
+          let sessionId = currentSessionObject.event_session_id;
+          if(sessionId == currentSessionId){
+            let sessionDate = new Date(currentSessionObject.session_start_date).getDate();
+            if(sessionDate == currentActiveDate){
+              count++;
+              break;
+            }
+          }
+        }
+    }
+    if(count === 0){
+      this.view.sessionTiles.isVisible = false;
+      this.view.lblNoEvents.isVisible = true;
+    }else{
+       this.view.sessionTiles.isVisible = true;
+       this.view.lblNoEvents.isVisible = false;
+    }
   },
   /**
      *	@function createSessionTile
@@ -1166,6 +1203,7 @@ define({
      */
   onClickOfEventDate: function(eventobject) {
     let buttonText = eventobject.text;
+	kony.store.setItem("currentActiveDate",parseInt(buttonText));
     this.changeButtonSkins(buttonText);
     this.onClickOfFilter(buttonText);
   },
@@ -1531,6 +1569,7 @@ define({
     });
     return animationObejct;
   },
+  
   onClickOfFilter:function(text){
     var startDate=parseInt(text);
     var sessions= this.filteredSession;
@@ -1545,9 +1584,12 @@ define({
     }
     if(found){
       this.view.contentScroller.scrollToWidget(sessions[index],true);
+      this.view.sessionTiles.isVisible = true;
+      this.view.lblNoEvents.isVisible = false;
     }
     else{
-      this.view.contentScroller.scrollToEnd();
+      this.view.sessionTiles.isVisible = false;
+      this.view.lblNoEvents.isVisible = true;
     }
   },
 
