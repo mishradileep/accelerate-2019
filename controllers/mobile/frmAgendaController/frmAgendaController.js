@@ -532,7 +532,6 @@ define({
                  this.view.addAgendaContainer.isVisible=true;
                  this.view.sessionLocation.isVisible=true;
                   this.view.buttonBack.isVisible=true;
-                  this.view.sessionTileAnim.sessionTitle.text=eventobject.sessionData.session_name;
                 }.bind(this)
             });
 		      
@@ -1188,6 +1187,8 @@ define({
       return;
     }
     this.view.lblFeedback.isVisible=true;
+    this.view.flxRatingContainer.isVisible = true;
+    this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
     var feedbackSubmittedSessions=kony.store.getItem("feedbackstore");
     if(kony.sdk.isNullOrUndefined(feedbackSubmittedSessions)){
       return;
@@ -1195,9 +1196,7 @@ define({
     if(feedbackSubmittedSessions.hasOwnProperty(sessionObject.event_session_id)){
       this.dismissRatingTiles();
     }
-    else{
-      this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
-    }
+    
   },
 
     /**
@@ -1793,6 +1792,7 @@ define({
     
   },
   showListPageDirectly:function(){
+    //this.view.buttonBack.zIndex=150;
     this.view.contentScroller.width="100%";
     this.view.contentScroller.left="0dp";
     this.view.contentScroller.top="0dp";
@@ -1817,7 +1817,7 @@ define({
     this.view.buttonBack.width="58dp";
     this.view.buttonBack.height="47dp";
     this.view.buttonBack.isVisible=false;
-    this.view.buttonBack.opacity=0;
+    this.view.buttonBack.opacity=100;
     this.view.menuMain.left="0dp";
     this.view.menuMain.bottom="0dp";
     this.view.menuMain.width="100%";

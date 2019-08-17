@@ -12,7 +12,7 @@ define({
      */
   frmAgendaPreshow: function() {
     var self = this;
-	let currentActiveDate = kony.store.getItem("currentActiveDate");
+    let currentActiveDate = kony.store.getItem("currentActiveDate");
     if(currentActiveDate === null || currentActiveDate === undefined)
       kony.store.setItem("currentActiveDate",4);
     this.view.lblNoEvents.isVisible = false;
@@ -135,15 +135,15 @@ define({
     this.view.sessionTileAnim.sessionTitle.text = this.thisCard.sessionTitle.text;
     this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
     var desc= this.view[eventobject.id].sessionData.session_desc;
-      	if(!kony.sdk.isNullOrUndefined(desc) && desc.length>0 ){
-          this.view.CopyLabel0f74c659ce7754e.isVisible=true;
-        this.view.Label0c15d6a3069eb44.isVisible=true;
-          this.view.CopyLabel0f74c659ce7754e.text = desc;
-        }
-      else{
-        this.view.CopyLabel0f74c659ce7754e.isVisible=false;
-        this.view.Label0c15d6a3069eb44.isVisible=false;
-      }
+    if(!kony.sdk.isNullOrUndefined(desc) && desc.length>0 ){
+      this.view.CopyLabel0f74c659ce7754e.isVisible=true;
+      this.view.Label0c15d6a3069eb44.isVisible=true;
+      this.view.CopyLabel0f74c659ce7754e.text = desc;
+    }
+    else{
+      this.view.CopyLabel0f74c659ce7754e.isVisible=false;
+      this.view.Label0c15d6a3069eb44.isVisible=false;
+    }
     this.view.sessionTileAnim.imgStatus.src = this.view[eventobject.id].imgStatus.src;
     this.view.addAgendaContainer.imgStatus.src = this.view[eventobject.id].imgStatus.src;
     this.view.sessionTileAnim.callback = this.view[eventobject.id].callback;
@@ -156,6 +156,7 @@ define({
     this.view.sessionLocation.text = "<u>"+this.thisCard.sessionLocation.text+"</u>";
     this.view.sessionLocation.onTouchEnd=this.openFloorMap.bind(this,this.view[eventobject.id]. sessionData);
     var cardFrame = this.thisCard.frame.y;
+    this.sessionTileAnimBindedSession= this.view[eventobject.id].sessionData;
     egLogger("cardFrame = " + cardFrame);
     this.cardFrameRel = cardFrame - this.view.contentScroller.contentOffsetMeasured.y;
     egLogger("cardFrameRel = " + this.cardFrameRel);
@@ -479,7 +480,8 @@ define({
         //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
         100: {
           left: "60%",
-          top: "105dp",
+          top: "125dp",
+          //top: "105dp",
           "stepConfig": {}
         }
       }), {
@@ -494,7 +496,8 @@ define({
         //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
         100: {
           left: "24dp",
-          top: "105dp",
+          top: "125dp",
+          //top: "105dp",
           "stepConfig": {}
         }
       }), {
@@ -505,6 +508,7 @@ define({
         animationEnd: function() {
           this.view.addAgendaContainer.isVisible=true;
           this.view.sessionLocation.isVisible=true;
+          this.view.sessionTileAnim.sessionTitle.text=this.view[eventobject.id].sessionData.session_name;
         }.bind(this)
       });
     this.view.animate(
@@ -555,6 +559,7 @@ define({
     this.view.txtArea.text="";
     this.currentViewState=0;
     var self = this;
+    this.view.sessionTileAnim.sessionTitle.text= this.sessionTileAnimBindedSession.shortTitle;
     egLogger("this.thisCard = " + this.thisCard.id);
     var animDuration = 0.8;
     var animHalf = animDuration * 0.5;
@@ -1025,38 +1030,38 @@ define({
     else{
       this.view.sessionTiles.remove(this.view[id]);
     }
-	if(childrenCount == 1){
+    if(childrenCount == 1){
       this.view.lblNoEvents.isVisible = true;
     }
     this.view.forceLayout();
   },
-  
+
   checkIfSessionsArePresentForSelectedDate : function(){
-   
+
     let mSessionsList = this.sessionsList;
     let currentActiveDate = kony.store.getItem("currentActiveDate");
-	let selectedSessions = kony.store.getItem("myAgendaData");
+    let selectedSessions = kony.store.getItem("myAgendaData");
     let count = 0;
     for(let index = 0 ; index < selectedSessions.length ; index++){
-		let currentSessionId = selectedSessions[index];
-        for(let sessionIndex = 0 ; sessionIndex < mSessionsList.length ; sessionIndex++){
-          let currentSessionObject = mSessionsList[sessionIndex];
-          let sessionId = currentSessionObject.event_session_id;
-          if(sessionId == currentSessionId){
-            let sessionDate = new Date(currentSessionObject.session_start_date).getDate();
-            if(sessionDate == currentActiveDate){
-              count++;
-              break;
-            }
+      let currentSessionId = selectedSessions[index];
+      for(let sessionIndex = 0 ; sessionIndex < mSessionsList.length ; sessionIndex++){
+        let currentSessionObject = mSessionsList[sessionIndex];
+        let sessionId = currentSessionObject.event_session_id;
+        if(sessionId == currentSessionId){
+          let sessionDate = new Date(currentSessionObject.session_start_date).getDate();
+          if(sessionDate == currentActiveDate){
+            count++;
+            break;
           }
         }
+      }
     }
     if(count === 0){
       this.view.sessionTiles.isVisible = false;
       this.view.lblNoEvents.isVisible = true;
     }else{
-       this.view.sessionTiles.isVisible = true;
-       this.view.lblNoEvents.isVisible = false;
+      this.view.sessionTiles.isVisible = true;
+      this.view.lblNoEvents.isVisible = false;
     }
   },
   /**
@@ -1122,7 +1127,7 @@ define({
     flxImageContainerwidthCalc = flxImageContainerwidthCalc.toFixed();
     var imgHeight = flxImageContainerwidthCalc * 1.02;
     imgHeight = imgHeight.toFixed();
- 
+
     this.view.imgThanks.isVisible = false;
     this.view.lblThankyou.isVisible = false;
     var id = eventObject.id;
@@ -1160,8 +1165,10 @@ define({
           this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
           this.view["flxSpeaker"+speakerIndex].speakerInfo=speakerBio;
           this.view["flxSpeaker"+speakerIndex].onClick=this.onClickOfSpeaker.bind(this);
-          this.view["imgSpeaker" + speakerIndex].width = flxImageContainerwidthCalc + "dp";
-		  this.view["imgSpeaker" + speakerIndex].height = imgHeight + "dp";
+          if(flxImageContainerwidthCalc>0 && imgHeight>0){
+            this.view["imgSpeaker" + speakerIndex].width = flxImageContainerwidthCalc + "dp";
+            this.view["imgSpeaker" + speakerIndex].height = imgHeight + "dp";
+          }
           this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
         }
       }
@@ -1192,15 +1199,14 @@ define({
       return;
     }
     this.view.lblFeedback.isVisible=true;
+    this.view.flxRatingContainer.isVisible = true;
+    this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
     var feedbackSubmittedSessions=kony.store.getItem("feedbackstore");
     if(kony.sdk.isNullOrUndefined(feedbackSubmittedSessions)){
       return;
     }
     if(feedbackSubmittedSessions.hasOwnProperty(sessionObject.event_session_id)){
       this.dismissRatingTiles();
-    }
-    else{
-      this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
     }
   },
 
@@ -1212,7 +1218,7 @@ define({
      */
   onClickOfEventDate: function(eventobject) {
     let buttonText = eventobject.text;
-	kony.store.setItem("currentActiveDate",parseInt(buttonText));
+    kony.store.setItem("currentActiveDate",parseInt(buttonText));
     this.changeButtonSkins(buttonText);
     this.onClickOfFilter(buttonText);
   },
@@ -1578,7 +1584,7 @@ define({
     });
     return animationObejct;
   },
-  
+
   onClickOfFilter:function(text){
     var startDate=parseInt(text);
     var sessions= this.filteredSession;

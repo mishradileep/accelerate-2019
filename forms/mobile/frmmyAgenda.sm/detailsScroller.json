@@ -35,7 +35,8 @@
     "allboxes": [],
     "allowhorizontalbounce": false,
     "allowverticalbounce": true,
-    "bounces": true,
+    "bounces": false,
+    "bouncesZoom": false,
     "canUpdateUI": true,
     "children": [
         "sessionContentContainer",
@@ -50,6 +51,11 @@
     "horizontalscrollindicator": true,
     "id": "detailsScroller",
     "info": null,
+    "iphone": {
+        "psp": {
+            "bouncesZoom": false
+        }
+    },
     "iscustomlayout": false,
     "isvisible": false,
     "kuid": "d85c8966ae674b558fb8083adf83aa6c",
