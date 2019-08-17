@@ -35,7 +35,7 @@
     "allboxes": [],
     "allowhorizontalbounce": false,
     "allowverticalbounce": true,
-    "bounces": true,
+    "bounces": false,
     "bouncesZoom": false,
     "canUpdateUI": true,
     "children": [

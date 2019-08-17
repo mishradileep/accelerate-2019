@@ -532,7 +532,6 @@ define({
                  this.view.addAgendaContainer.isVisible=true;
                  this.view.sessionLocation.isVisible=true;
                   this.view.buttonBack.isVisible=true;
-                  this.view.sessionTileAnim.sessionTitle.text=eventobject.sessionData.session_name;
                 }.bind(this)
             });
 		      
@@ -1188,6 +1187,8 @@ define({
       return;
     }
     this.view.lblFeedback.isVisible=true;
+    this.view.flxRatingContainer.isVisible = true;
+    this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
     var feedbackSubmittedSessions=kony.store.getItem("feedbackstore");
     if(kony.sdk.isNullOrUndefined(feedbackSubmittedSessions)){
       return;
@@ -1195,9 +1196,7 @@ define({
     if(feedbackSubmittedSessions.hasOwnProperty(sessionObject.event_session_id)){
       this.dismissRatingTiles();
     }
-    else{
-      this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
-    }
+    
   },
 
     /**
