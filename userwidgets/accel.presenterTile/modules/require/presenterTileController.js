@@ -22,8 +22,22 @@ define(function() {
       var speakerImgWidth = deviceWidth - 90;
       var speakerImgHeight = speakerImgWidth * 1.02;
       speakerImgHeight = speakerImgHeight.toFixed();
+      var screenHeight = kony.os.deviceInfo().screenHeight;
+      var flexHeight = screenHeight - 271;
+      var imageHeight = parseInt(speakerImgHeight) + 150;
+      this.view.speakerImage.height = parseInt(speakerImgHeight) + "dp";
+      if(imageHeight>flexHeight) {
+        this.view.FlexGroup0b8c01e2d521f41.layoutType = kony.flex.FREE_FORM;
+        this.view.speakerDetails.bottom = 0 +"dp";
+        this.view.speakerDetails.height = "110dp";
+        this.view.speakerInfo.isVisible = false;
+      } else {
+        this.view.FlexGroup0b8c01e2d521f41.layoutType = kony.flex.FLOW_VERTICAL;
+        this.view.speakerDetails.top = "0dp";
+        this.view.speakerDetails.height = "150dp";
+        this.view.speakerInfo.isVisible = true;
+      }
       this.view.speakerImage.width = speakerImgWidth + "dp";
-      this.view.speakerImage.height = speakerImgHeight + "dp";
     },
 
 

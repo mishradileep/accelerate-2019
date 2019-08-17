@@ -1818,7 +1818,7 @@ define({
     this.view.sessionTileAnim.height="152dp";
     this.view.sessionTileAnim.tilebg.height="130dp";
 	this.view.sessionTileAnim.tilebg.left="20dp";
-    this.view.sessionTileAnim.tilebg.top="12dp";
+    this.view.sessionTileAnim.tilebg.top="0dp";
     this.view.forceLayout();
     this.view.addAgendaContainer.isVisible=false;
     this.view.sessionContentContainer.top="100%";

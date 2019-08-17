@@ -96,7 +96,7 @@
     "appiniteventkey": "None",
     "applepushfunc": "None",
     "apploadeventkey": "None",
-    "applogokey": "",
+    "applogokey": "0=icon.png",
     "appmenu": {
         "desktop": {
             "data": [
@@ -271,7 +271,7 @@
     },
     "createdVizVersion": "8.4.21",
     "createdgaversion": "8.4.21",
-    "currentgaversion": "8.4.28",
+    "currentgaversion": "8.4.31",
     "deeplinkkey": "None",
     "defaultlocalekey": "en_US",
     "defaulttheme": "defaultTheme",
@@ -355,17 +355,17 @@
     "ipadlandscapemodekey": "false",
     "ipadlaunchmodekey": "Portrait",
     "ipadportraitmodekey": "true",
-    "iphone_appicon_2x_60": "kony_120.png",
-    "iphone_appicon_3x_60": "kony_180.png",
-    "iphone_notificationicon_2x_20": "",
-    "iphone_notificationicon_3x_20": "",
-    "iphone_spotlighticon_2x_29": "",
-    "iphone_spotlighticon_2x_40": "",
-    "iphone_spotlighticon_3x_29": "",
-    "iphone_spotlighticon_3x_40": "",
+    "iphone_appicon_2x_60": "icon_120.png",
+    "iphone_appicon_3x_60": "icon_180.png",
+    "iphone_notificationicon_2x_20": "icon_40.png",
+    "iphone_notificationicon_3x_20": "icon_60.png",
+    "iphone_spotlighticon_2x_29": "icon_58.png",
+    "iphone_spotlighticon_2x_40": "icon_80.png",
+    "iphone_spotlighticon_3x_29": "icon_87.png",
+    "iphone_spotlighticon_3x_40": "icon_120.png",
     "iphonebundleidentifierkey": "com.kony.KonyAccelerateQA",
     "iphonebundleversionkey": "1.0",
-    "iphoneipad_appstoreicon_1x_1024": "",
+    "iphoneipad_appstoreicon_1x_1024": "icon_1024.png",
     "iphoneipadglossyeffectkey": "false",
     "iphoneloadindicatorkey": "true",
     "iphoneurlscheme": "googlelogin",
@@ -410,7 +410,7 @@
             "version": "1.0"
         }
     },
-    "konyVizVersion": "8.4.28",
+    "konyVizVersion": "8.4.31",
     "lastmodifiedtime": "1562231476148",
     "location": "false",
     "mangoapptitlekey": ",,,,,,",
@@ -748,7 +748,7 @@
         "android": {
             "activity_child_tags": "",
             "activityattrs": "",
-            "andapplicationattrs": "",
+            "andapplicationattrs": "android:roundIcon=\"@drawable/round_icon\"",
             "andapplicationtags": "",
             "andmanifesttags": "",
             "manifest_tag_attrs": ""

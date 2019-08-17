@@ -35,7 +35,7 @@
     "_wrapping_": 2,
     "canUpdateUI": true,
     "containerweight": 100,
-    "contentalignment": 4,
+    "contentalignment": 1,
     "id": "rtAboutTheApp",
     "info": null,
     "iscustomlayout": false,

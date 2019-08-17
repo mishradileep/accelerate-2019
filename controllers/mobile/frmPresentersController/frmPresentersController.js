@@ -61,7 +61,7 @@ define({
   processPresenterSessionData: function(presenterSessionData) {
     for (var index = 0; index < presenterSessionData.length; index++) {
       var presenterObject = presenterSessionData[index];
-      var presenterShortBio = presenterObject.hasOwnProperty("speaker_bio") ? presenterObject.speaker_bio.slice(0, 70) + "..." : "";
+      var presenterShortBio = presenterObject.hasOwnProperty("speaker_bio") ? presenterObject.speaker_bio.slice(0, 50) + "..." : "";
       presenterObject.shortBio = presenterShortBio;
       this.setPresenterList(presenterObject);
     }
@@ -197,7 +197,7 @@ define({
     this.view.flexSessions.add(sessionTile);
     this.view[id].onClick = this.onClickOfSessionTile.bind(this);
   },
-
+  
   /**
      * @function spekerFilter
      * @description The function is used to switch the skins from unselected to selected and vice versa

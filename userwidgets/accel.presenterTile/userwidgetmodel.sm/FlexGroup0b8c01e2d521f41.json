@@ -27,7 +27,7 @@
         "type": "number",
         "value": "15"
     },
-    "_skin_": "s4c6731868ce4e4eb2cf49c305e9ba12",
+    "_skin_": "s3bdb2a1979646549f620f6ea34547fd",
     "_top_": {
         "type": "string",
         "value": "40dp"
@@ -37,7 +37,6 @@
     "canUpdateUI": true,
     "children": [
         "speakerImage",
-        "FlexContainer0a7b42ace73704d",
         "speakerDetails"
     ],
     "clipbounds": true,
@@ -48,7 +47,7 @@
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "j7c9ebd001f64933904d0679929df0f0",
-    "layouttype": 2,
+    "layouttype": 4,
     "name": "kony.ui.FlexContainer",
     "parent": "presenterTile",
     "pf": "userwidgetmodel",
