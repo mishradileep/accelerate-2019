@@ -941,7 +941,6 @@ define({
      * @private
      */
     agendaFilter: function(eventobject) {
-      	this.view.contentScroller.setContentOffset({"y":0}, true);
       	this.changeButtonSkins("4TH SEP");
         var self = this;
         var leftPos = "0%";
@@ -1327,6 +1326,7 @@ define({
                 this.view[id].top = "0dp";
             }
         }
+      this.view.contentScroller.setContentOffset({"y":0}, true);
       this.view.forceLayout();
     },
     /**
@@ -1816,15 +1816,15 @@ define({
         this.currentSessionObjectInDetailScreen = sessionObject;
         this.setSessionAttachments(sessionObject);
         var speakerList = sessionObject["presenter"];
-        this.ratingLength = speakerList.length;
-        var speakers_master = accelerateSpeakerData.eventSpeakerData.records;
-        if (kony.sdk.isNullOrUndefined(speakerList)) {
+    	if (kony.sdk.isNullOrUndefined(speakerList)) {
             this.view.CopyLabel0he0b8d5a22fc4f.isVisible = false;
             this.view.flxSpeaker0.isVisible = false;
             this.view.flxSpeaker1.isVisible = false;
             this.view.flxSpeaker2.isVisible = false;
             return;
         }
+        this.ratingLength = speakerList.length;
+        var speakers_master = accelerateSpeakerData.eventSpeakerData.records;
         var speakerIndex;
         for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
             var speakerObject = speakerList[speakerIndex];
@@ -1860,7 +1860,6 @@ define({
     
   },
   showListPageDirectly:function(){
-    //this.view.buttonBack.zIndex=150;
     this.view.sessionTileAnim.quantumDotsClear.opacity=0;
     this.view.contentScroller.width="100%";
     this.view.contentScroller.left="0dp";
