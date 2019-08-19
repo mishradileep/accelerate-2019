@@ -17,11 +17,11 @@ define({
             if (eventInnerLocation !== null) {
                 var segmentWidgetDataMap = {
                     "lblListItem": "name",
-                  	"lblSeparator":"separatorVisibility"
+                    "lblSeparator": "separatorVisibility"
                 };
                 this.view.sgmntFloorMap.widgetDataMap = segmentWidgetDataMap;
                 this.segmentData = eventInnerLocation;
-              	let updatedData = this.formatData(eventInnerLocation);
+                let updatedData = this.formatData(eventInnerLocation);
                 this.view.sgmntFloorMap.setData(updatedData);
             }
         }
@@ -39,13 +39,32 @@ define({
             this.animatePDFContainer("180dp");
         this.view.sgmntFloorMap.isVisible = false;
         let floorMapItem = this.segmentData[rowNumber];
-        let floorMapURL = floorMapItem.hasOwnProperty("inner_location") ? floorMapItem.inner_location : "";
-        let floorMapName = floorMapItem.hasOwnProperty("name") ? floorMapItem.name : "";
-        this.view.brwsrInnerLocation.requestURLConfig = {
-            URL: "https://docs.google.com/gview?embedded=true&url=" + floorMapURL,
-            requestMethod: constants.BROWSER_REQUEST_METHOD_GET
-        };
-        this.view.lblSelectedFloorMapName.text = floorMapName;
+        floorMapURL = floorMapItem.hasOwnProperty("inner_location") ? floorMapItem.inner_location : "";
+        floorMapName = floorMapItem.hasOwnProperty("name") ? floorMapItem.name : "";
+        let isNetworkAvailable = false;
+        httpclient = new kony.net.HttpRequest();
+        httpclient.open(constants.HTTP_METHOD_GET, "http://www.google.com");
+        httpclient.onReadyStateChange = this.httpSuccessCallback;
+        httpclient.send();
+    },
+
+    httpSuccessCallback: function() {
+        if (httpclient.readyState == 4) {
+            if (httpclient.status == 200) {
+                isNetworkAvailable = true;
+                this.view.brwsrInnerLocation.requestURLConfig = {
+                    URL: "https://docs.google.com/gview?embedded=true&url=" + floorMapURL,
+                    requestMethod: constants.BROWSER_REQUEST_METHOD_GET
+                };
+                this.view.lblSelectedFloorMapName.text = floorMapName;
+            } else {
+                this.view.brwsrInnerLocation.requestURLConfig = {
+                    URL: "error.html",
+                    requestMethod: constants.BROWSER_REQUEST_METHOD_GET
+                };
+                this.view.lblSelectedFloorMapName.text = floorMapName;
+            }
+        }
     },
 
     /**
@@ -73,21 +92,21 @@ define({
                 }
             });
     },
-  
-  	formatData : function(eventInnerLocation){
-      let recordsLength = eventInnerLocation.length;
-      for(let index = 0 ; index < recordsLength -1 ; index++){
-        eventInnerLocation[index].name = eventInnerLocation[index].name.replace('.pdf', '');
-        eventInnerLocation[index].separatorVisibility = {
-          "isVisible" :true
+
+    formatData: function(eventInnerLocation) {
+        let recordsLength = eventInnerLocation.length;
+        for (let index = 0; index < recordsLength - 1; index++) {
+            eventInnerLocation[index].name = eventInnerLocation[index].name.replace('.pdf', '');
+            eventInnerLocation[index].separatorVisibility = {
+                "isVisible": true
+            };
+        }
+        eventInnerLocation[recordsLength - 1].name = eventInnerLocation[recordsLength - 1].name.replace('.pdf', '');
+        eventInnerLocation[recordsLength - 1].separatorVisibility = {
+            "isVisible": false
         };
-      }
-      eventInnerLocation[recordsLength-1].name = eventInnerLocation[recordsLength-1].name.replace('.pdf', '');
-      eventInnerLocation[recordsLength-1].separatorVisibility = {
-        "isVisible" :false
-      };
-      return eventInnerLocation;
+        return eventInnerLocation;
     },
-  
-   
+
+
 });
