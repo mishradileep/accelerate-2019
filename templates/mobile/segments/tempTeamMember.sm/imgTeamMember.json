@@ -42,7 +42,7 @@
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "tempTeamMember",
+        "platform": "iphone",
         "templateType": "segments",
         "topLevelBox": null
     },

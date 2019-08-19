@@ -92,15 +92,18 @@ define({
                 "width": width,
                 "top": "5dp",
             };
-            var dummyTemplate = {
-                "itemTemplate": "flxDummySponsor",
+        }
+      	var dummyTemplate = {
+                "itemTemplate": "flxDummySponsor1",
                 "flxSponsor": {
                     "width": "49%"
+                },
+          		"imgSponsorIcon":{
+                  "src":null
                 }
             };
-            if (length % 2 === 1 && length > 1) {
+      	if (length % 2 === 1 && length > 1) {
                 categoryData[length] = dummyTemplate
-            }
         }
         return categoryData;
     },
