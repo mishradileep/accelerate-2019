@@ -48,6 +48,8 @@
     },
     "id": "ratingSpeakerImage",
     "imagescalemode": 1,
+    "imagewhenfailed": "defaultimg.png",
+    "imagewhiledownloading": "defaultimg.png",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

@@ -4,7 +4,7 @@ define({
     thisCardIndex: null,
     cardFrameRel: null,
   	currentViewState:0,
-  	currentSelectedTab:0,
+  	currentSelectedTab:null,
     /**
      * @function frmAgendaPreshow
      * @description The function is invoked in the form preshow action which is used to setup the UI
@@ -69,9 +69,30 @@ define({
      * @private
      */
     frmAgendaPostshow: function() {
-      	if(this. currentSelectedTab===0){
+      	if(kony.sdk.isNullOrUndefined(this.currentSelectedTab)){
          this.setData(accelerateSessionData.eventSessionData.records); 
         }
+      else{
+        var isFirst=true;
+        var filterid=this.currentSelectedTab;
+        var sessionTiles= this.sessionListTiles;
+        for(var index=0;index<sessionTiles.length;index++){
+          	var tileObject=sessionTiles[index];
+         if (!kony.sdk.isNullOrUndefined(tileObject.sessionData)) {
+                    if (tileObject.sessionData.session_track_id === filterid) {
+                        if(isFirst){
+                            this.view[tileObject.id].top="131dp";
+                            isFirst=!isFirst;
+                        }
+                        else{
+                            this.view[tileObject.id].top="0dp"; 
+                        }
+                        this.view[tileObject.id].isVisible = true;
+                        this.view[tileObject.id].opacity = 100;
+                    }
+                }
+      }
+      }
         this.devHeight = this.view.masterContainer.frame.height;
         egLogger("devHeight = " + this.devHeight);
       	var dotsblurwidth=this.view.sessionTileAnim.quantumDotsBlur.frame.height*10.7388+"dp";
@@ -168,6 +189,7 @@ define({
         var bgImageScale = kony.ui.makeAffineTransform();
         bgImageScale.scale(1.47, 1.47);
         var allCards = this.view.sessionTiles.widgets();
+      	this.sessionListTiles=this.view.sessionTiles.widgets();
         var cardDelay = 0;
         var cardIndexFound = false;
         for (i = 0; i < allCards.length; i++) {
@@ -890,21 +912,21 @@ define({
         var destColor = "";
         var sessionTrack = null;
         if (eventobject.id == "filterAll") {
-          	this.currentSelectedTab=0;
+          	this.currentSelectedTab=eventConstants.KEYNOTE;
             leftPos = "0%";
             buttonText = "ALL";
             targetSkin = "filterSkinAll";
             destColor = "1F232900";
             sessionTrack = eventConstants.KEYNOTE;
         } else if (eventobject.id == "filterDBX") {
-          	this.currentSelectedTab=1;
+          	this.currentSelectedTab=eventConstants.DBX;
             leftPos = "33.33%";
             buttonText = "DBX";
             targetSkin = "filterSkinDBX";
             destColor = "4B3A6600";
             sessionTrack = eventConstants.DBX;
         } else {
-          	this.currentSelectedTab=2;
+          	this.currentSelectedTab=eventConstants.QUANTUM;
             leftPos = "66.66%";
             buttonText = "QUANTUM";
             targetSkin = "filterSkinQuantum";
@@ -1244,6 +1266,7 @@ define({
             var id = eventConstants.SESSION_TILE_ID + index;
             if (sessionTrackId === eventConstants.KEYNOTE) {
                 this.view[id].isVisible = true;
+              	this.view[id].opacity=100;
               	this.filteredSession.push(this.view[id]);
                 if (!isFirstTile) {
                     this.view[id].top = "131dp";
@@ -1253,8 +1276,10 @@ define({
                 this.view[id].top = "0dp";
             } else if (this.view[id].sessionTrackId !== sessionTrackId) {
                 this.view[id].isVisible = false;
+              	this.view[id].opacity=0;
             } else {
                 this.view[id].isVisible = true;
+              	this.view[id].opacity=100;
               	this.filteredSession.push(this.view[id]);
                 if (!isFirstTile) {
                     this.view[id].top = "131dp";
@@ -1264,6 +1289,7 @@ define({
                 this.view[id].top = "0dp";
             }
         }
+      this.view.forceLayout();
     },
     /**
      *	@function filterSessionTiles
@@ -1642,7 +1668,10 @@ define({
        }
       kony.store.setItem("currentNotificationId",-999999999);
     }
-    else{
+    else if(!kony.sdk.isNullOrUndefined(naviInfo.transferCode) && naviInfo.transferCode===100){
+      return;
+    }
+      else {
        this._previousForm=naviInfo.form;
         this.navigateSession=naviInfo.session;
         this.isNavigatedFrmOtherForm=true;
