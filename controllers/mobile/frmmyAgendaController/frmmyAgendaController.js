@@ -133,15 +133,15 @@ define({
     this.view.detailsScroller.left = "0%";
     this.view.sessionTileAnim.tilebg.skin = this.thisCard.tilebg.skin;
     var thisBGSkin=this.thisCard.tilebg.skin.replace("agendaTileSkin","");
-     	if (thisBGSkin=="Quantum"){
-          self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayQuantum";
-       }
-       else if (thisBGSkin=="DBX"){
-          self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayDBX";
-       }
-       else{
-          self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayKony";
-       }
+    if (thisBGSkin=="Quantum"){
+      self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayQuantum";
+    }
+    else if (thisBGSkin=="DBX"){
+      self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayDBX";
+    }
+    else{
+      self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayKony";
+    }
     this.view.sessionTileAnim.sessionTitle.text = this.thisCard.sessionTitle.text;
     this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
     var desc= this.view[eventobject.id].sessionData.session_desc;
@@ -261,7 +261,7 @@ define({
                 animationEnd: function() {}
             });
             */
-   /* this.view.sessionTileAnim.animationElements.animate(
+    /* this.view.sessionTileAnim.animationElements.animate(
       kony.ui.createAnimation({
         //0:{left:0,"stepConfig":{}},
         100: {
@@ -522,19 +522,19 @@ define({
         }.bind(this)
       });
     this.view.sessionTileAnim.quantumDotsClear.animate(
-           kony.ui.createAnimation({
-               0:{opacity:0,"stepConfig":{}},
-               100: {
-                   opacity: 1,
-                   "stepConfig": {}
-               }
-           }), {
-               delay: 0,
-               fillMode: kony.anim.FILL_MODE_FORWARDS,
-               duration: animDuration
-           }, {
-               animationEnd: function() {}
-           });
+      kony.ui.createAnimation({
+        0:{opacity:0,"stepConfig":{}},
+        100: {
+          opacity: 1,
+          "stepConfig": {}
+        }
+      }), {
+        delay: 0,
+        fillMode: kony.anim.FILL_MODE_FORWARDS,
+        duration: animDuration
+      }, {
+        animationEnd: function() {}
+      });
     this.view.animate(
       kony.ui.createAnimation({
         //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
@@ -841,19 +841,19 @@ define({
         animationEnd: function() {}
       });
     this.view.sessionTileAnim.quantumDotsClear.animate(
-           kony.ui.createAnimation({
-               0:{opacity:1,"stepConfig":{}},
-               100: {
-                   opacity: 0,
-                   "stepConfig": {}
-               }
-           }), {
-               delay: 0,
-               fillMode: kony.anim.FILL_MODE_FORWARDS,
-               duration: animDuration
-           }, {
-               animationEnd: function() {}
-           });
+      kony.ui.createAnimation({
+        0:{opacity:1,"stepConfig":{}},
+        100: {
+          opacity: 0,
+          "stepConfig": {}
+        }
+      }), {
+        delay: 0,
+        fillMode: kony.anim.FILL_MODE_FORWARDS,
+        duration: animDuration
+      }, {
+        animationEnd: function() {}
+      });
     this.view.sessionTileAnim.sessionTime.animate(
       kony.ui.createAnimation({
         100: {
@@ -1191,9 +1191,18 @@ define({
     this.ratingLength = 0;
     var speakers_master = accelerateSpeakerData.eventSpeakerData.records;
     var speakerIndex;
+    var presenters =[];
     for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
-      if(speakerList[speakerIndex].softDeleteFlag !== undefined && speakerList[speakerIndex].softDeleteFlag === true){
-          continue;
+      if(speakerList[speakerIndex].SoftDeleteFlag !== undefined && speakerList[speakerIndex].SoftDeleteFlag === true){
+        continue;
+      }else{
+        presenters.push(speakerList[speakerIndex]);
+      }
+    }
+    speakerList = presenters;
+    for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
+      if(speakerList[speakerIndex].SoftDeleteFlag !== undefined && speakerList[speakerIndex].SoftDeleteFlag === true){
+        continue;
       }
       this.ratingLength++;
       var speakerObject = speakerList[speakerIndex];
@@ -1206,7 +1215,7 @@ define({
           var title = speakerBio.speaker_title.length > 20 ? speakerBio.speaker_title.substring(0, 16) + "..." : speakerBio.speaker_title;
           this.view["speakerDesignation" + speakerIndex].text = title;
           if(speakerBio.speaker_bio === undefined) {
-                 speakerBio.speaker_bio = "";
+            speakerBio.speaker_bio = "";
           }
           var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
           this.view["speakerDescription" + speakerIndex].text = description;
