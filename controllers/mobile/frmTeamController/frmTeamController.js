@@ -9,6 +9,7 @@ define({
         let memberData = accelerateTeamData.eventTeamData.records;
         let formattedData = this.formatData(memberData);
         let collectionViewData = [{}, formattedData, {}];
+      	this.view.flxMainContainer.remove(this.view["teamCollectionView"]);
         this.createCollectionView(formattedData);
     },
 
