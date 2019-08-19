@@ -92,16 +92,19 @@ define({
                 "width": width,
                 "top": "5dp",
             };
-            var dummyTemplate = {
-                "itemTemplate": "flxDummySponsor",
-                "flxSponsor": {
-                    "width": "49%"
-                }
-            };
-            if (length % 2 === 1 && length > 1) {
-                categoryData[length] = dummyTemplate
-            }
         }
+//       	var dummyTemplate = {
+//                 "itemTemplate": "flxSponsor",
+//                 "flxSponsor": {
+//                     "width": "49%"
+//                 },
+//           		"imgSponsorIcon":{
+//                   "src":"konymp_imagedownload.png"
+//                 }
+//             };
+//       	if (length % 2 === 1 && length > 1) {
+//                 categoryData[length] = dummyTemplate
+//         }
         return categoryData;
     },
 

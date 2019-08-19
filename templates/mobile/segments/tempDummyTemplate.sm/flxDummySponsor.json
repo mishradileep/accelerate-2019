@@ -34,7 +34,9 @@
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [],
+    "children": [
+        "imgSponsorIcon"
+    ],
     "clipbounds": true,
     "containerId": true,
     "containerweight": 100,
