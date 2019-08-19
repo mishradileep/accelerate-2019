@@ -38,7 +38,7 @@
     "children": [
         "quantumDotsBlur",
         "quantumDotsClear",
-        "FlexContainer0b93ee7efb53b46"
+        "gradientOverlay"
     ],
     "clipbounds": true,
     "containerweight": 100,

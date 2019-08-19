@@ -24,7 +24,7 @@ define({
         this.view.imageBack.opacity = 0;
         this.view.buttonBack.onClick = this.frmAgendaSessionClose;
         this.view.detailsScroller.onScrolling = this.detailsScrollerOnScrolling;
-      	this.view.sessionTileAnim.animationElements.opacity=0;
+      	this.view.sessionTileAnim.quantumDotsClear.opacity=0;
         this.view.filterAll.onClick = function(eventobject) {
             self.agendaFilter(eventobject);
         };
@@ -153,6 +153,16 @@ define({
         egLogger("this.thisCard = " + this.thisCard.id);
         this.view.detailsScroller.left = "0%";
         this.view.sessionTileAnim.tilebg.skin = this.thisCard.tilebg.skin;
+      	var thisBGSkin=this.thisCard.tilebg.skin.replace("agendaTileSkin","");
+     	if (thisBGSkin=="Quantum"){
+          self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayQuantum";
+       }
+       else if (thisBGSkin=="DBX"){
+          self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayDBX";
+       }
+       else{
+          self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayKony";
+       }
         this.view.sessionTileAnim.sessionTitle.text = this.thisCard.sessionTitle.text;
         this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
       	var desc= this.view[eventobject.id].sessionData.session_desc;
@@ -274,51 +284,51 @@ define({
                 animationEnd: function() {}
             });
             */
-      	this.view.sessionTileAnim.animationElements.animate(
-           kony.ui.createAnimation({
-               //0:{left:0,"stepConfig":{}},
-               100: {
-                   opacity: 1,
-                   "stepConfig": {}
-               }
-           }), {
-               delay: animDuration,
-               iterationCount:1,
-               fillMode: kony.anim.FILL_MODE_FORWARDS,
-               duration: animDuration
-           }, {
-               animationEnd: function() {}
-           });
-     this.view.sessionTileAnim.quantumDotsBlur.animate(
-                     kony.ui.createAnimation({
-                         //0:{left:0,"stepConfig":{}},
-                         100: {
-                             left: "-1465dp",
-                             "stepConfig": {"timingFunction": kony.anim.LINEAR}
-                         }
-                     }), {
-                         delay: 0,
-                         iterationCount:0,
-                         fillMode: kony.anim.FILL_MODE_FORWARDS,
-                         duration: 90
-                     }, {
-                         animationEnd: function() {}
-                     });
-       this.view.sessionTileAnim.quantumDotsClear.animate(
-                     kony.ui.createAnimation({
-                         //0:{left:0,"stepConfig":{}},
-                         100: {
-                             left: "-966dp",
-                             "stepConfig": {"timingFunction": kony.anim.LINEAR}
-                         }
-                     }), {
-                         delay: 0,
-                         iterationCount:0,
-                         fillMode: kony.anim.FILL_MODE_FORWARDS,
-                         duration: 40
-                     }, {
-                         animationEnd: function() {}
-                     });
+//       	this.view.sessionTileAnim.animationElements.animate(
+//            kony.ui.createAnimation({
+//                //0:{left:0,"stepConfig":{}},
+//                100: {
+//                    opacity: 1,
+//                    "stepConfig": {}
+//                }
+//            }), {
+//                delay: animDuration,
+//                iterationCount:1,
+//                fillMode: kony.anim.FILL_MODE_FORWARDS,
+//                duration: animDuration
+//            }, {
+//                animationEnd: function() {}
+//            });
+//      this.view.sessionTileAnim.quantumDotsBlur.animate(
+//                      kony.ui.createAnimation({
+//                          //0:{left:0,"stepConfig":{}},
+//                          100: {
+//                              left: "-1465dp",
+//                              "stepConfig": {"timingFunction": kony.anim.LINEAR}
+//                          }
+//                      }), {
+//                          delay: 0,
+//                          iterationCount:0,
+//                          fillMode: kony.anim.FILL_MODE_FORWARDS,
+//                          duration: 90
+//                      }, {
+//                          animationEnd: function() {}
+//                      });
+//        this.view.sessionTileAnim.quantumDotsClear.animate(
+//                      kony.ui.createAnimation({
+//                          //0:{left:0,"stepConfig":{}},
+//                          100: {
+//                              left: "-966dp",
+//                              "stepConfig": {"timingFunction": kony.anim.LINEAR}
+//                          }
+//                      }), {
+//                          delay: 0,
+//                          iterationCount:0,
+//                          fillMode: kony.anim.FILL_MODE_FORWARDS,
+//                          duration: 40
+//                      }, {
+//                          animationEnd: function() {}
+//                      });
 
         this.view.sessionTileAnim.sessionLocationIcon.animate(
             kony.ui.createAnimation({
@@ -356,7 +366,7 @@ define({
                         }), {
                             delay: 0,
                             fillMode: kony.anim.FILL_MODE_FORWARDS,
-                            duration: animDuration * 0.5
+                            duration: animDuration
                         }, {
                             animationEnd: function() {
                               this.scaledWidth=self.view.sessionTileAnim.tileBGImageKony.frame.width;
@@ -538,6 +548,20 @@ define({
                   this.view.sessionTileAnim.sessionTitle.text=this.view[eventobject.id].sessionData.session_name;
                 }.bind(this)
             });
+      	this.view.sessionTileAnim.quantumDotsClear.animate(
+           kony.ui.createAnimation({
+               0:{opacity:0,"stepConfig":{}},
+               100: {
+                   opacity: 1,
+                   "stepConfig": {}
+               }
+           }), {
+               delay: 0,
+               fillMode: kony.anim.FILL_MODE_FORWARDS,
+               duration: animDuration
+           }, {
+               animationEnd: function() {}
+           });
         this.view.animate(
             kony.ui.createAnimation({
                 //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
@@ -847,6 +871,20 @@ define({
             }, {
                 animationEnd: function() {}
             });
+      	this.view.sessionTileAnim.quantumDotsClear.animate(
+           kony.ui.createAnimation({
+               0:{opacity:1,"stepConfig":{}},
+               100: {
+                   opacity: 0,
+                   "stepConfig": {}
+               }
+           }), {
+               delay: 0,
+               fillMode: kony.anim.FILL_MODE_FORWARDS,
+               duration: animDuration
+           }, {
+               animationEnd: function() {}
+           });
         this.view.sessionTileAnim.sessionTime.animate(
             kony.ui.createAnimation({
                 //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
@@ -1722,9 +1760,9 @@ define({
     this.view.sessionTileAnim.left = "0%";
     this.view.headerContainer.top="-131dp";
     this.view.sessionTileAnim.addAgendaContainer.opacity=100;
-    this.view.sessionTileAnim.animationElements.isVisible=false;
-    this.view.sessionTileAnim.quantumDotsBlur.isVisible=false;
-    this.view.sessionTileAnim.quantumDotsClear.left="-966dp";
+    this.view.sessionTileAnim.animationElements.isVisible=true;
+    this.view.sessionTileAnim.quantumDotsBlur.isVisible=true;
+    //this.view.sessionTileAnim.quantumDotsClear.left="-966dp";
     this.view.sessionTileAnim.sessionLocationIcon.opacity=0;
     this.view.sessionTileAnim.sessionTimeIcon.opacity=0;
     this.view.sessionTileAnim.top="0dp";
@@ -1738,6 +1776,7 @@ define({
     this.view.sessionTileAnim.sessionTitle.left="24dp";
     this.view.sessionTileAnim.sessionTitle.top="59dp";
     this.view.sessionTileAnim.sessionLocation.left="60%";
+    this.view.sessionTileAnim.quantumDotsClear.opacity=100;
 //     this.view.sessionTileAnim.sessionLocation.top="105dp";
 //     this.view.sessionLocation.top="105dp";
     this.view.sessionTileAnim.sessionLocation.top="125dp";
@@ -1822,6 +1861,7 @@ define({
   },
   showListPageDirectly:function(){
     //this.view.buttonBack.zIndex=150;
+    this.view.sessionTileAnim.quantumDotsClear.opacity=0;
     this.view.contentScroller.width="100%";
     this.view.contentScroller.left="0dp";
     this.view.contentScroller.top="0dp";

@@ -24,7 +24,7 @@
         0
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "dotsblurfullcanvas.png",
+    "_src_": "dotsclearfullcanvasb.png",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -50,7 +50,7 @@
     "imagescalemode": 1,
     "info": null,
     "iscustomlayout": false,
-    "isvisible": false,
+    "isvisible": true,
     "kuid": "fa92b6f72c514abaa704da318ac1cc56",
     "name": "kony.ui.Image2",
     "parent": "animationElements",

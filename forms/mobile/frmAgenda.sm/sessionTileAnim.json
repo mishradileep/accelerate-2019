@@ -82,14 +82,6 @@
             },
             "isVisible": false
         },
-        "FlexContainer0b93ee7efb53b46": {
-            "__events__": {},
-            "__info__": {
-                "kuid": "iaa34b4bd6634850aa5d0008672b64f1",
-                "srcKUID": "c0af4b43c7a04cd38caecbf573ad9ce1",
-                "wType": "FlexContainer"
-            }
-        },
         "addAgendaContainer": {
             "__events__": {},
             "__info__": {
@@ -119,6 +111,14 @@
             "__info__": {
                 "kuid": "c2f2643e748640248c096d7ac883cb03",
                 "srcKUID": "f9a786f6ce9f49b4be10f0117cde301b",
+                "wType": "FlexContainer"
+            }
+        },
+        "gradientOverlay": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "iaa34b4bd6634850aa5d0008672b64f1",
+                "srcKUID": "c0af4b43c7a04cd38caecbf573ad9ce1",
                 "wType": "FlexContainer"
             }
         },

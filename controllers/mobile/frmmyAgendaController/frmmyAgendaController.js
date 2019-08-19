@@ -28,7 +28,7 @@ define({
     this.view.imageBack.opacity = 0;
     this.view.buttonBack.onClick = this.frmAgendaSessionClose;
     this.view.detailsScroller.onScrolling = this.detailsScrollerOnScrolling;
-    this.view.sessionTileAnim.animationElements.opacity=0;
+    this.view.sessionTileAnim.quantumDotsClear.opacity=0;
     this.view.filterAll.onClick = function(eventobject) {
       self.agendaFilter(eventobject);
     };
@@ -132,6 +132,16 @@ define({
     egLogger("this.thisCard = " + this.thisCard.id);
     this.view.detailsScroller.left = "0%";
     this.view.sessionTileAnim.tilebg.skin = this.thisCard.tilebg.skin;
+    var thisBGSkin=this.thisCard.tilebg.skin.replace("agendaTileSkin","");
+     	if (thisBGSkin=="Quantum"){
+          self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayQuantum";
+       }
+       else if (thisBGSkin=="DBX"){
+          self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayDBX";
+       }
+       else{
+          self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayKony";
+       }
     this.view.sessionTileAnim.sessionTitle.text = this.thisCard.sessionTitle.text;
     this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
     var desc= this.view[eventobject.id].sessionData.session_desc;
@@ -251,7 +261,7 @@ define({
                 animationEnd: function() {}
             });
             */
-    this.view.sessionTileAnim.animationElements.animate(
+   /* this.view.sessionTileAnim.animationElements.animate(
       kony.ui.createAnimation({
         //0:{left:0,"stepConfig":{}},
         100: {
@@ -296,7 +306,7 @@ define({
       }, {
         animationEnd: function() {}
       });
-
+	*/
     this.view.sessionTileAnim.sessionLocationIcon.animate(
       kony.ui.createAnimation({
         100: {
@@ -511,6 +521,20 @@ define({
           this.view.sessionTileAnim.sessionTitle.text=this.view[eventobject.id].sessionData.session_name;
         }.bind(this)
       });
+    this.view.sessionTileAnim.quantumDotsClear.animate(
+           kony.ui.createAnimation({
+               0:{opacity:0,"stepConfig":{}},
+               100: {
+                   opacity: 1,
+                   "stepConfig": {}
+               }
+           }), {
+               delay: 0,
+               fillMode: kony.anim.FILL_MODE_FORWARDS,
+               duration: animDuration
+           }, {
+               animationEnd: function() {}
+           });
     this.view.animate(
       kony.ui.createAnimation({
         //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
@@ -816,6 +840,20 @@ define({
       }, {
         animationEnd: function() {}
       });
+    this.view.sessionTileAnim.quantumDotsClear.animate(
+           kony.ui.createAnimation({
+               0:{opacity:1,"stepConfig":{}},
+               100: {
+                   opacity: 0,
+                   "stepConfig": {}
+               }
+           }), {
+               delay: 0,
+               fillMode: kony.anim.FILL_MODE_FORWARDS,
+               duration: animDuration
+           }, {
+               animationEnd: function() {}
+           });
     this.view.sessionTileAnim.sessionTime.animate(
       kony.ui.createAnimation({
         100: {
