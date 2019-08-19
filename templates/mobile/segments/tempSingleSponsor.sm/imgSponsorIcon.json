@@ -24,7 +24,7 @@
         0
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "imagedrag.png",
+    "_src_": "konymp_imagedownload.png",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -46,7 +46,7 @@
     "imagescalemode": 1,
     "imagewhiledownloading": "konymp_imagedownload.png",
     "info": null,
-    "invokedProperty": "imageWhileDownloading",
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "h1fb1f0c48824f698bf6240b86494af6",

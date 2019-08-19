@@ -41,19 +41,19 @@
     "controllerInfo": {
         "default": {
             "channel": "mobile",
-            "name": "flxDummySponsorController"
+            "name": "flxDummySponsor1Controller"
         }
     },
     "enablescrolling": true,
-    "id": "flxDummySponsor",
+    "id": "flxDummySponsor1",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "dd40a177ea764096992b251cf563ddf4",
+    "kuid": "d5d25b07618e4a99ba8a6fb1f971d2fb",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "tempDummyTemplate",
-    "pf": "tempDummyTemplate",
+    "parent": "tempDummyTemplate1",
+    "pf": "tempDummyTemplate1",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,

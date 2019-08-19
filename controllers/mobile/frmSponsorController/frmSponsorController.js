@@ -93,18 +93,18 @@ define({
                 "top": "5dp",
             };
         }
-//       	var dummyTemplate = {
-//                 "itemTemplate": "flxSponsor",
-//                 "flxSponsor": {
-//                     "width": "49%"
-//                 },
-//           		"imgSponsorIcon":{
-//                   "src":"konymp_imagedownload.png"
-//                 }
-//             };
-//       	if (length % 2 === 1 && length > 1) {
-//                 categoryData[length] = dummyTemplate
-//         }
+      	var dummyTemplate = {
+                "itemTemplate": "flxDummySponsor1",
+                "flxSponsor": {
+                    "width": "49%"
+                },
+          		"imgSponsorIcon":{
+                  "src":null
+                }
+            };
+      	if (length % 2 === 1 && length > 1) {
+                categoryData[length] = dummyTemplate
+        }
         return categoryData;
     },
 
