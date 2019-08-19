@@ -1186,15 +1186,19 @@ define({
         this.currentSessionObjectInDetailScreen = sessionObject;
         this.setSessionAttachments(sessionObject);
         var speakerList = sessionObject["presenter"];
-        this.ratingLength = speakerList.length;
-        var speakers_master = accelerateSpeakerData.eventSpeakerData.records;
-        if (kony.sdk.isNullOrUndefined(speakerList)) {
+      	if (kony.sdk.isNullOrUndefined(speakerList)) {
             this.view.CopyLabel0he0b8d5a22fc4f.isVisible = false;
             this.view.flxSpeaker0.isVisible = false;
             this.view.flxSpeaker1.isVisible = false;
             this.view.flxSpeaker2.isVisible = false;
+          	this.view.flxCurvedArrow.isVisible=false;
+          	this.view.feedbackMaster.isVisible=false;
             return;
         }
+      	this.view.flxCurvedArrow.isVisible=true;
+          	this.view.feedbackMaster.isVisible=true;
+        this.ratingLength = speakerList.length;
+        var speakers_master = accelerateSpeakerData.eventSpeakerData.records;
         var speakerIndex;
         for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
             var speakerObject = speakerList[speakerIndex];
