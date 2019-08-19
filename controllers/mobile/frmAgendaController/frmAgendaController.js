@@ -1210,6 +1210,9 @@ define({
                     this.view["speakerName" + speakerIndex].text = speakerBio.speaker_name;
                     var title = speakerBio.speaker_title.length > 20 ? speakerBio.speaker_title.substring(0, 16) + "..." : speakerBio.speaker_title;
                     this.view["speakerDesignation" + speakerIndex].text = title;
+                    if(speakerBio.speaker_bio === undefined) {
+                      speakerBio.speaker_bio = "";
+                    }
                     var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
                     this.view["speakerDescription" + speakerIndex].text = description;
                     this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);

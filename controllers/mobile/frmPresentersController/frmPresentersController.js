@@ -106,7 +106,11 @@ define({
     this.view.speakerName.text = presenter.speaker_name;
     this.view.speakerTitle.text = presenter.speaker_title;
     this.view.speakerInfo.text = presenter.speaker_bio;
-    this.view.imgProfileLarge.src = presenter.speaker_profile_pic;
+    if(presenter.speaker_profile_pic) {
+		this.view.imgProfileLarge.src = presenter.speaker_profile_pic;      
+    }else {
+       this.view.imgProfileLarge.src = "defaultimg.png";      
+    }
     var imgWidth = kony.os.deviceInfo().screenWidth;
     imgWidth = imgWidth * eventConstants.ASPECT_RATION_CONSTANT;
     this.view.imgProfileLarge.height = imgWidth + "dp";

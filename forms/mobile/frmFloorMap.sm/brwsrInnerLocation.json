@@ -26,7 +26,7 @@
         "type": "string",
         "value": "0dp"
     },
-    "_type_": 3,
+    "_type_": 5,
     "_width_": {
         "type": "string",
         "value": "100%"
@@ -44,6 +44,7 @@
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "b104b02260cb4154a8e5a99185abbc32",
+    "localurl": "w0093e631d6244188b0b47d534c16628",
     "margininpixel": false,
     "method": "get",
     "name": "kony.ui.Browser",

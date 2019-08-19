@@ -38,7 +38,7 @@
     }, {
       "id" : "$expand",
       "dataType" : "string",
-      "defaultValue" : "event_sessions",
+      "defaultValue" : "wifi_info,event_inner_location,location",
       "encode" : true,
       "accessType" : "readonly"
     } ],
@@ -95,11 +95,13 @@
       }, {
         "actionsAllSelected" : true,
         "children" : [ {
+          "actionsAllSelected" : true,
           "children" : [ ],
           "name" : "event_inner_location",
           "actions" : {
             "get" : true
           },
+          "actionsPartiallySelected" : false,
           "selected" : true
         }, {
           "actionsAllSelected" : true,

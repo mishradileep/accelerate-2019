@@ -20,8 +20,8 @@ define({
                     "lblSeparator": "separatorVisibility"
                 };
                 this.view.sgmntFloorMap.widgetDataMap = segmentWidgetDataMap;
-                this.segmentData = eventInnerLocation;
                 let updatedData = this.formatData(eventInnerLocation);
+              	this.segmentData = updatedData;
                 this.view.sgmntFloorMap.setData(updatedData);
             }
         }
@@ -43,12 +43,12 @@ define({
         floorMapName = floorMapItem.hasOwnProperty("name") ? floorMapItem.name : "";
         let isNetworkAvailable = false;
         httpclient = new kony.net.HttpRequest();
-        httpclient.open(constants.HTTP_METHOD_GET, "http://www.google.com");
+        httpclient.open(constants.HTTP_METHOD_GET, "https://www.google.com");
         httpclient.onReadyStateChange = this.httpSuccessCallback;
         httpclient.send();
     },
 
-	/**
+    /**
     	* @function httpSuccessCallback
         * @descriptioon Invoked when the ready state of the http request is changed for the http request in onSegmentRowClick method.
         * @param 
@@ -58,7 +58,6 @@ define({
     httpSuccessCallback: function() {
         if (httpclient.readyState == 4) {
             if (httpclient.status == 200) {
-                isNetworkAvailable = true;
                 this.view.brwsrInnerLocation.requestURLConfig = {
                     URL: "https://docs.google.com/gview?embedded=true&url=" + floorMapURL,
                     requestMethod: constants.BROWSER_REQUEST_METHOD_GET
@@ -102,17 +101,22 @@ define({
 
     formatData: function(eventInnerLocation) {
         let recordsLength = eventInnerLocation.length;
+        let processedFloorData = [];
         for (let index = 0; index < recordsLength - 1; index++) {
+            if (eventInnerLocation[index].SoftDeleteFlag !== undefined && eventInnerLocation[index].SoftDeleteFlag === true)
+                continue;
             eventInnerLocation[index].name = eventInnerLocation[index].name.replace('.pdf', '');
             eventInnerLocation[index].separatorVisibility = {
                 "isVisible": true
             };
+            processedFloorData.push(eventInnerLocation[index]);
+
         }
-        eventInnerLocation[recordsLength - 1].name = eventInnerLocation[recordsLength - 1].name.replace('.pdf', '');
-        eventInnerLocation[recordsLength - 1].separatorVisibility = {
+        processedFloorData[processedFloorData.length - 1].name = processedFloorData[processedFloorData.length - 1].name.replace('.pdf', '');
+        processedFloorData[processedFloorData.length - 1].separatorVisibility = {
             "isVisible": false
         };
-        return eventInnerLocation;
+        return processedFloorData;
     },
 
 

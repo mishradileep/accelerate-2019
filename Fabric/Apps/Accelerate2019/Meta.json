@@ -1,0 +1,33 @@
+{
+  "subType" : "customapp",
+  "description" : "Accelerate2019",
+  "version" : "1.0",
+  "intSvcs" : [ {
+    "name" : "EventsKMSService",
+    "version" : "1.0",
+    "etag" : "be8d5b78-0c05-41e6-a3a9-a321ea459766"
+  }, {
+    "name" : "FabricAccountLogin",
+    "version" : "1.0",
+    "etag" : "3e7159cc-20e3-4356-92f0-d35c2bbc3fb5"
+  }, {
+    "name" : "getLatLang",
+    "version" : "1.0",
+    "etag" : "319757fc-0c79-4837-85cd-81ac2ca9416f"
+  }, {
+    "name" : "LinkedinProfileService",
+    "version" : "1.0",
+    "etag" : "bed3b92b-0bdd-4e95-af28-cde84e1e2ee2"
+  } ],
+  "orchSvcs" : [ {
+    "name" : "EventPushNotificationService",
+    "version" : "1.0",
+    "etag" : "e03349d1-286f-476d-ac9c-8c7e0a136caf"
+  } ],
+  "objectSvcs" : [ {
+    "name" : "KonyAccelerateStorageService",
+    "version" : "1.0",
+    "etag" : "b63584b5-ce51-4b15-9760-7abedd15c0ed"
+  } ],
+  "identity" : [ "konyEventsUsers", "LinkedinLogin" ]
+}

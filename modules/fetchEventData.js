@@ -6,7 +6,7 @@
   function syncEventData() {
       let isTimeStamp = kony.store.getItem("isTimeStampUpdated");
       if (isTimeStamp === null || isTimeStamp === undefined)
-          kony.store.setItem("clientLastUpdatedTime", "2019-08-04T15:27:26Z");
+          kony.store.setItem("clientLastUpdatedTime", "2019-08-19T16:18:21Z");
       else {
           let storeEventData = kony.store.getItem("eventData");
           let storeEventSessionData = kony.store.getItem("eventSessionData");
@@ -16,6 +16,8 @@
           assignStoreDataToLocal(storeEventData, storeEventSessionData, storeSpeakerData, storeSponsorData, storeTeamData);
       }
       fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.DATA_SYNC_OBJECT, {}, dataSyncFetchSuccess, dataSyncFetchFailure);
+      var nav = new kony.mvc.Navigation("frmAgenda");
+      nav.navigate();
   }
 
   /**
@@ -40,8 +42,6 @@
               let quantumData = kony.store.getItem("quantumQuestData");
               let storeTeamData = kony.store.getItem("eventTeamData");
               assignStoreDataToLocal(quantumData, storeEventData, storeEventSessionData, storeSpeakerData,storeSponsorData,storeTeamData);
-              var nav = new kony.mvc.Navigation("frmAgenda");
-              nav.navigate();
           }
       }
   }
@@ -275,8 +275,6 @@
         };
       }
     kony.store.setItem("quantumQuestData", quantumQuestData);
-    var nav = new kony.mvc.Navigation("frmAgenda");
-    nav.navigate();
   }
 
   /**

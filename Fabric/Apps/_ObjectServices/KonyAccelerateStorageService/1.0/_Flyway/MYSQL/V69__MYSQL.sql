@@ -1,0 +1,10 @@
+ALTER TABLE `presenter`
+	DROP FOREIGN KEY `2a9d4aea53009432257fec0964fc6a`;
+ALTER TABLE `speakers_master`
+	DROP INDEX `b16b839aef19e7db9a117bc19e9af5`,
+	MODIFY `speaker_id` BIGINT NOT NULL AUTO_INCREMENT,
+	ADD CONSTRAINT `b16b839aef19e7db9a117bc19e9af5` UNIQUE KEY(`speaker_id`),
+	DROP PRIMARY KEY,
+	ADD PRIMARY KEY(`speaker_id`);
+ALTER TABLE `presenter`
+	ADD CONSTRAINT `2a9d4aea53009432257fec0964fc6a` FOREIGN KEY(`master_speaker_id`) REFERENCES `speakers_master`(`speaker_id`) ON DELETE CASCADE;

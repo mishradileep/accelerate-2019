@@ -1,0 +1,29 @@
+{
+  "operationConfig" : {
+    "name" : "createdata_sync_info6886",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "referencingEndpoint" : "default",
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "opcode" : "create",
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "data_sync_info",
+      "actions" : {
+        "create" : true,
+        "update" : true,
+        "partialupdate" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

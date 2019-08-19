@@ -7,7 +7,7 @@
     "type" : "MappedToBackend",
     "cachable" : false,
     "smsEnabled" : false,
-    "security" : "authorized_app_user",
+    "security" : "public",
     "responseEncoding" : "UTF-8",
     "httpMethod" : "GET",
     "decodeResponseBody" : false,
@@ -42,7 +42,6 @@
     }, {
       "id" : "$expand",
       "dataType" : "string",
-      "defaultValue" : "presenter,session_material",
       "encode" : true,
       "accessType" : "readonly"
     } ],

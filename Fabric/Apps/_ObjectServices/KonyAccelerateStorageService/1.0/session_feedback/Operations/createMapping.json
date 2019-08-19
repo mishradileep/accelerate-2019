@@ -1,0 +1,29 @@
+{
+  "operationConfig" : {
+    "name" : "createsession_feedback3905",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "public",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "referencingEndpoint" : "default",
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "opcode" : "create",
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "session_feedback",
+      "actions" : {
+        "create" : true,
+        "update" : true,
+        "partialupdate" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

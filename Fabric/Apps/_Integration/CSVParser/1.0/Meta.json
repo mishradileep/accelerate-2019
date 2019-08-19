@@ -1,7 +1,0 @@
-{
-  "serviceType" : "integration",
-  "jars" : [ {
-    "name" : "EventsJavaService.jar",
-    "type" : "servicejar"
-  } ]
-}

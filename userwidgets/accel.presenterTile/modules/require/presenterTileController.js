@@ -15,7 +15,12 @@ define(function() {
       this.view.speakerName.text = presenterObject.speaker_name;
       this.view.speakerTitle.text = presenterObject.speaker_title;
       this.view.speakerInfo.text = presenterObject.shortBio;
-      this.view.speakerImage.src = presenterObject.speaker_profile_pic;
+      if(presenterObject.speaker_profile_pic) {
+        this.view.speakerImage.src = presenterObject.speaker_profile_pic;
+      }else {
+        this.view.speakerImage.src = "defaultimg.png";
+      }
+      
       var tracks = presenterObject.tracks ? (presenterObject.tracks) : [];
       this.setTracks(tracks);
       var deviceWidth = kony.os.deviceInfo().screenWidth;

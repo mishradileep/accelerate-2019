@@ -8,7 +8,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "20px"
+        "value": "20dp"
     },
     "_margin_": [
         0,
@@ -24,7 +24,7 @@
     ],
     "_right_": {
         "type": "string",
-        "value": "20px"
+        "value": "20dp"
     },
     "_skin_": "s0edae532ad54afd906e07d074e6822d",
     "_text_": "This is the official Kony Accelerate 2019 conference app. Here, you have access to all of Kony Accelerate 2019 conference content offline, with features including, Conference Info, Personal Agenda, Push Notifications on your Personal Agenda, Daily News and Updates and More.",

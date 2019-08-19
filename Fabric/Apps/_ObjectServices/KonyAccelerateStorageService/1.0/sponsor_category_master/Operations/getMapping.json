@@ -4,7 +4,7 @@
     "type" : "MappedToBackend",
     "cachable" : false,
     "smsEnabled" : false,
-    "security" : "authorized_app_user",
+    "security" : "public",
     "responseEncoding" : "UTF-8",
     "httpMethod" : "GET",
     "decodeResponseBody" : false,
@@ -38,16 +38,7 @@
     }, {
       "id" : "$expand",
       "dataType" : "string",
-      "encode" : true,
-      "accessType" : "readonly"
-    }, {
-      "id" : "$batchsize",
-      "dataType" : "string",
-      "encode" : true,
-      "accessType" : "readonly"
-    }, {
-      "id" : "$batchid",
-      "dataType" : "string",
+      "defaultValue" : "sponsors",
       "encode" : true,
       "accessType" : "readonly"
     } ],
@@ -57,11 +48,13 @@
     "opcode" : "query",
     "relationshipHierarchyMapping" : {
       "children" : [ {
+        "actionsAllSelected" : true,
         "children" : [ ],
         "name" : "sponsors",
         "actions" : {
           "get" : true
         },
+        "actionsPartiallySelected" : false,
         "selected" : true
       } ],
       "name" : "sponsor_category_master",
