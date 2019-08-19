@@ -9,8 +9,7 @@ accelerateSessionData = {
         "session_track_id":4,"CreatedDateTime":"2019-05-16T09:47:45Z",
         "LastUpdatedDateTime":"2019-08-19T08:50:17Z",
         "SoftDeleteFlag":false
-    }
-,
+    },
     {
         "event_id":3,"event_session_id":3,"session_desc":"",
         "session_end_date":"2019-09-04T04:25:00Z",

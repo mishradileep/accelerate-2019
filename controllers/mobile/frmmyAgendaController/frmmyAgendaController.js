@@ -1188,10 +1188,14 @@ define({
     }
     this.view.flxCurvedArrow.isVisible=true;
     this.view.feedbackMaster.isVisible=true;
-    this.ratingLength = speakerList.length;
+    this.ratingLength = 0;
     var speakers_master = accelerateSpeakerData.eventSpeakerData.records;
     var speakerIndex;
     for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
+      if(speakerList[speakerIndex].softDeleteFlag !== undefined && speakerList[speakerIndex].softDeleteFlag === true){
+          continue;
+      }
+      this.ratingLength++;
       var speakerObject = speakerList[speakerIndex];
       for (var index = 0; index < speakers_master.length; index++) {
         if (speakerObject.master_speaker_id == speakers_master[index].speaker_id) {
@@ -1201,6 +1205,9 @@ define({
           this.view["speakerName" + speakerIndex].text = speakerBio.speaker_name;
           var title = speakerBio.speaker_title.length > 20 ? speakerBio.speaker_title.substring(0, 16) + "..." : speakerBio.speaker_title;
           this.view["speakerDesignation" + speakerIndex].text = title;
+          if(speakerBio.speaker_bio === undefined) {
+                 speakerBio.speaker_bio = "";
+          }
           var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
           this.view["speakerDescription" + speakerIndex].text = description;
           this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);

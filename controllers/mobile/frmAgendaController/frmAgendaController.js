@@ -1197,10 +1197,14 @@ define({
         }
       	this.view.flxCurvedArrow.isVisible=true;
           	this.view.feedbackMaster.isVisible=true;
-        this.ratingLength = speakerList.length;
+        this.ratingLength = 0;
         var speakers_master = accelerateSpeakerData.eventSpeakerData.records;
         var speakerIndex;
         for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
+            if(speakerList[speakerIndex].softDeleteFlag !== undefined && speakerList[speakerIndex].softDeleteFlag === true){
+              continue;
+            }
+            this.ratingLength++;
             var speakerObject = speakerList[speakerIndex];
             for (var index = 0; index < speakers_master.length; index++) {
                 if (speakerObject.master_speaker_id == speakers_master[index].speaker_id) {
