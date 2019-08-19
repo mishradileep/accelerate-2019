@@ -322,8 +322,11 @@ define({
      * @private
      */
   navigateBackToSessionListPage : function(){
+    var naviConfig={
+      "transferCode":100,
+    };
     var navObj = new kony.mvc.Navigation(this.formId);
-    navObj.navigate();
+    navObj.navigate(naviConfig);
   },
 
   /**

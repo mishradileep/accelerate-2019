@@ -4,7 +4,7 @@ define({
     thisCardIndex: null,
     cardFrameRel: null,
   	currentViewState:0,
-  	currentSelectedTab:0,
+  	currentSelectedTab:null,
     /**
      * @function frmAgendaPreshow
      * @description The function is invoked in the form preshow action which is used to setup the UI
@@ -24,7 +24,7 @@ define({
         this.view.imageBack.opacity = 0;
         this.view.buttonBack.onClick = this.frmAgendaSessionClose;
         this.view.detailsScroller.onScrolling = this.detailsScrollerOnScrolling;
-      	this.view.sessionTileAnim.animationElements.opacity=0;
+      	this.view.sessionTileAnim.quantumDotsClear.opacity=0;
         this.view.filterAll.onClick = function(eventobject) {
             self.agendaFilter(eventobject);
         };
@@ -69,9 +69,30 @@ define({
      * @private
      */
     frmAgendaPostshow: function() {
-      	if(this. currentSelectedTab===0){
+      	if(kony.sdk.isNullOrUndefined(this.currentSelectedTab)){
          this.setData(accelerateSessionData.eventSessionData.records); 
         }
+      else{
+        var isFirst=true;
+        var filterid=this.currentSelectedTab;
+        var sessionTiles= this.sessionListTiles;
+        for(var index=0;index<sessionTiles.length;index++){
+          	var tileObject=sessionTiles[index];
+         if (!kony.sdk.isNullOrUndefined(tileObject.sessionData)) {
+                    if (tileObject.sessionData.session_track_id === filterid) {
+                        if(isFirst){
+                            this.view[tileObject.id].top="131dp";
+                            isFirst=!isFirst;
+                        }
+                        else{
+                            this.view[tileObject.id].top="0dp"; 
+                        }
+                        this.view[tileObject.id].isVisible = true;
+                        this.view[tileObject.id].opacity = 100;
+                    }
+                }
+      }
+      }
         this.devHeight = this.view.masterContainer.frame.height;
         egLogger("devHeight = " + this.devHeight);
       	var dotsblurwidth=this.view.sessionTileAnim.quantumDotsBlur.frame.height*10.7388+"dp";
@@ -132,6 +153,16 @@ define({
         egLogger("this.thisCard = " + this.thisCard.id);
         this.view.detailsScroller.left = "0%";
         this.view.sessionTileAnim.tilebg.skin = this.thisCard.tilebg.skin;
+      	var thisBGSkin=this.thisCard.tilebg.skin.replace("agendaTileSkin","");
+     	if (thisBGSkin=="Quantum"){
+          self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayQuantum";
+       }
+       else if (thisBGSkin=="DBX"){
+          self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayDBX";
+       }
+       else{
+          self.view.sessionTileAnim.gradientOverlay.skin="gradientOverlayKony";
+       }
         this.view.sessionTileAnim.sessionTitle.text = this.thisCard.sessionTitle.text;
         this.view.sessionTileAnim.sessionTime.text = this.thisCard.sessionTime.text;
       	var desc= this.view[eventobject.id].sessionData.session_desc;
@@ -168,6 +199,7 @@ define({
         var bgImageScale = kony.ui.makeAffineTransform();
         bgImageScale.scale(1.47, 1.47);
         var allCards = this.view.sessionTiles.widgets();
+      	this.sessionListTiles=this.view.sessionTiles.widgets();
         var cardDelay = 0;
         var cardIndexFound = false;
         for (i = 0; i < allCards.length; i++) {
@@ -252,51 +284,51 @@ define({
                 animationEnd: function() {}
             });
             */
-      	this.view.sessionTileAnim.animationElements.animate(
-           kony.ui.createAnimation({
-               //0:{left:0,"stepConfig":{}},
-               100: {
-                   opacity: 1,
-                   "stepConfig": {}
-               }
-           }), {
-               delay: animDuration,
-               iterationCount:1,
-               fillMode: kony.anim.FILL_MODE_FORWARDS,
-               duration: animDuration
-           }, {
-               animationEnd: function() {}
-           });
-     this.view.sessionTileAnim.quantumDotsBlur.animate(
-                     kony.ui.createAnimation({
-                         //0:{left:0,"stepConfig":{}},
-                         100: {
-                             left: "-1465dp",
-                             "stepConfig": {"timingFunction": kony.anim.LINEAR}
-                         }
-                     }), {
-                         delay: 0,
-                         iterationCount:0,
-                         fillMode: kony.anim.FILL_MODE_FORWARDS,
-                         duration: 90
-                     }, {
-                         animationEnd: function() {}
-                     });
-       this.view.sessionTileAnim.quantumDotsClear.animate(
-                     kony.ui.createAnimation({
-                         //0:{left:0,"stepConfig":{}},
-                         100: {
-                             left: "-966dp",
-                             "stepConfig": {"timingFunction": kony.anim.LINEAR}
-                         }
-                     }), {
-                         delay: 0,
-                         iterationCount:0,
-                         fillMode: kony.anim.FILL_MODE_FORWARDS,
-                         duration: 40
-                     }, {
-                         animationEnd: function() {}
-                     });
+//       	this.view.sessionTileAnim.animationElements.animate(
+//            kony.ui.createAnimation({
+//                //0:{left:0,"stepConfig":{}},
+//                100: {
+//                    opacity: 1,
+//                    "stepConfig": {}
+//                }
+//            }), {
+//                delay: animDuration,
+//                iterationCount:1,
+//                fillMode: kony.anim.FILL_MODE_FORWARDS,
+//                duration: animDuration
+//            }, {
+//                animationEnd: function() {}
+//            });
+//      this.view.sessionTileAnim.quantumDotsBlur.animate(
+//                      kony.ui.createAnimation({
+//                          //0:{left:0,"stepConfig":{}},
+//                          100: {
+//                              left: "-1465dp",
+//                              "stepConfig": {"timingFunction": kony.anim.LINEAR}
+//                          }
+//                      }), {
+//                          delay: 0,
+//                          iterationCount:0,
+//                          fillMode: kony.anim.FILL_MODE_FORWARDS,
+//                          duration: 90
+//                      }, {
+//                          animationEnd: function() {}
+//                      });
+//        this.view.sessionTileAnim.quantumDotsClear.animate(
+//                      kony.ui.createAnimation({
+//                          //0:{left:0,"stepConfig":{}},
+//                          100: {
+//                              left: "-966dp",
+//                              "stepConfig": {"timingFunction": kony.anim.LINEAR}
+//                          }
+//                      }), {
+//                          delay: 0,
+//                          iterationCount:0,
+//                          fillMode: kony.anim.FILL_MODE_FORWARDS,
+//                          duration: 40
+//                      }, {
+//                          animationEnd: function() {}
+//                      });
 
         this.view.sessionTileAnim.sessionLocationIcon.animate(
             kony.ui.createAnimation({
@@ -334,7 +366,7 @@ define({
                         }), {
                             delay: 0,
                             fillMode: kony.anim.FILL_MODE_FORWARDS,
-                            duration: animDuration * 0.5
+                            duration: animDuration
                         }, {
                             animationEnd: function() {
                               this.scaledWidth=self.view.sessionTileAnim.tileBGImageKony.frame.width;
@@ -516,6 +548,20 @@ define({
                   this.view.sessionTileAnim.sessionTitle.text=this.view[eventobject.id].sessionData.session_name;
                 }.bind(this)
             });
+      	this.view.sessionTileAnim.quantumDotsClear.animate(
+           kony.ui.createAnimation({
+               0:{opacity:0,"stepConfig":{}},
+               100: {
+                   opacity: 1,
+                   "stepConfig": {}
+               }
+           }), {
+               delay: 0,
+               fillMode: kony.anim.FILL_MODE_FORWARDS,
+               duration: animDuration
+           }, {
+               animationEnd: function() {}
+           });
         this.view.animate(
             kony.ui.createAnimation({
                 //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
@@ -825,6 +871,20 @@ define({
             }, {
                 animationEnd: function() {}
             });
+      	this.view.sessionTileAnim.quantumDotsClear.animate(
+           kony.ui.createAnimation({
+               0:{opacity:1,"stepConfig":{}},
+               100: {
+                   opacity: 0,
+                   "stepConfig": {}
+               }
+           }), {
+               delay: 0,
+               fillMode: kony.anim.FILL_MODE_FORWARDS,
+               duration: animDuration
+           }, {
+               animationEnd: function() {}
+           });
         this.view.sessionTileAnim.sessionTime.animate(
             kony.ui.createAnimation({
                 //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
@@ -881,7 +941,6 @@ define({
      * @private
      */
     agendaFilter: function(eventobject) {
-      	this.view.contentScroller.setContentOffset({"y":0}, true);
       	this.changeButtonSkins("4TH SEP");
         var self = this;
         var leftPos = "0%";
@@ -890,21 +949,21 @@ define({
         var destColor = "";
         var sessionTrack = null;
         if (eventobject.id == "filterAll") {
-          	this.currentSelectedTab=0;
+          	this.currentSelectedTab=eventConstants.KEYNOTE;
             leftPos = "0%";
             buttonText = "ALL";
             targetSkin = "filterSkinAll";
             destColor = "1F232900";
             sessionTrack = eventConstants.KEYNOTE;
         } else if (eventobject.id == "filterDBX") {
-          	this.currentSelectedTab=1;
+          	this.currentSelectedTab=eventConstants.DBX;
             leftPos = "33.33%";
             buttonText = "DBX";
             targetSkin = "filterSkinDBX";
             destColor = "4B3A6600";
             sessionTrack = eventConstants.DBX;
         } else {
-          	this.currentSelectedTab=2;
+          	this.currentSelectedTab=eventConstants.QUANTUM;
             leftPos = "66.66%";
             buttonText = "QUANTUM";
             targetSkin = "filterSkinQuantum";
@@ -1244,6 +1303,7 @@ define({
             var id = eventConstants.SESSION_TILE_ID + index;
             if (sessionTrackId === eventConstants.KEYNOTE) {
                 this.view[id].isVisible = true;
+              	this.view[id].opacity=100;
               	this.filteredSession.push(this.view[id]);
                 if (!isFirstTile) {
                     this.view[id].top = "131dp";
@@ -1253,8 +1313,10 @@ define({
                 this.view[id].top = "0dp";
             } else if (this.view[id].sessionTrackId !== sessionTrackId) {
                 this.view[id].isVisible = false;
+              	this.view[id].opacity=0;
             } else {
                 this.view[id].isVisible = true;
+              	this.view[id].opacity=100;
               	this.filteredSession.push(this.view[id]);
                 if (!isFirstTile) {
                     this.view[id].top = "131dp";
@@ -1264,6 +1326,8 @@ define({
                 this.view[id].top = "0dp";
             }
         }
+      this.view.contentScroller.setContentOffset({"y":0}, true);
+      this.view.forceLayout();
     },
     /**
      *	@function filterSessionTiles
@@ -1642,7 +1706,10 @@ define({
        }
       kony.store.setItem("currentNotificationId",-999999999);
     }
-    else{
+    else if(!kony.sdk.isNullOrUndefined(naviInfo.transferCode) && naviInfo.transferCode===100){
+      return;
+    }
+      else {
        this._previousForm=naviInfo.form;
         this.navigateSession=naviInfo.session;
         this.isNavigatedFrmOtherForm=true;
@@ -1693,9 +1760,9 @@ define({
     this.view.sessionTileAnim.left = "0%";
     this.view.headerContainer.top="-131dp";
     this.view.sessionTileAnim.addAgendaContainer.opacity=100;
-    this.view.sessionTileAnim.animationElements.isVisible=false;
-    this.view.sessionTileAnim.quantumDotsBlur.isVisible=false;
-    this.view.sessionTileAnim.quantumDotsClear.left="-966dp";
+    this.view.sessionTileAnim.animationElements.isVisible=true;
+    this.view.sessionTileAnim.quantumDotsBlur.isVisible=true;
+    //this.view.sessionTileAnim.quantumDotsClear.left="-966dp";
     this.view.sessionTileAnim.sessionLocationIcon.opacity=0;
     this.view.sessionTileAnim.sessionTimeIcon.opacity=0;
     this.view.sessionTileAnim.top="0dp";
@@ -1709,6 +1776,7 @@ define({
     this.view.sessionTileAnim.sessionTitle.left="24dp";
     this.view.sessionTileAnim.sessionTitle.top="59dp";
     this.view.sessionTileAnim.sessionLocation.left="60%";
+    this.view.sessionTileAnim.quantumDotsClear.opacity=100;
 //     this.view.sessionTileAnim.sessionLocation.top="105dp";
 //     this.view.sessionLocation.top="105dp";
     this.view.sessionTileAnim.sessionLocation.top="125dp";
@@ -1748,15 +1816,15 @@ define({
         this.currentSessionObjectInDetailScreen = sessionObject;
         this.setSessionAttachments(sessionObject);
         var speakerList = sessionObject["presenter"];
-        this.ratingLength = speakerList.length;
-        var speakers_master = accelerateSpeakerData.eventSpeakerData.records;
-        if (kony.sdk.isNullOrUndefined(speakerList)) {
+    	if (kony.sdk.isNullOrUndefined(speakerList)) {
             this.view.CopyLabel0he0b8d5a22fc4f.isVisible = false;
             this.view.flxSpeaker0.isVisible = false;
             this.view.flxSpeaker1.isVisible = false;
             this.view.flxSpeaker2.isVisible = false;
             return;
         }
+        this.ratingLength = speakerList.length;
+        var speakers_master = accelerateSpeakerData.eventSpeakerData.records;
         var speakerIndex;
         for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
             var speakerObject = speakerList[speakerIndex];
@@ -1792,7 +1860,7 @@ define({
     
   },
   showListPageDirectly:function(){
-    //this.view.buttonBack.zIndex=150;
+    this.view.sessionTileAnim.quantumDotsClear.opacity=0;
     this.view.contentScroller.width="100%";
     this.view.contentScroller.left="0dp";
     this.view.contentScroller.top="0dp";
