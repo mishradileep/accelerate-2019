@@ -36,7 +36,7 @@ function offlinenotification(notificationobject, actionid) {
   */
 function onlinenotification(notificationobject, actionid) {
     var basicConf = {
-        message: "There is an event which starts in 1 hour. Click View, to view the details of the event",
+        message: notificationobject.categoryId+" starts in 1 hour. Click View, to view the details of the event",
         alertType: constants.ALERT_TYPE_CONFIRMATION,
         alertTitle: "Reminder",
         yesLabel: "View",
