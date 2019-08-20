@@ -24,7 +24,7 @@
         0
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "imagedrag.png",
+    "_src_": "konymp_imagedownload.png",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -48,7 +48,10 @@
     },
     "id": "imgTeamMember",
     "imagescalemode": 1,
+    "imagewhenfailed": "konymp_imagedownload.png",
+    "imagewhiledownloading": "konymp_imagedownload.png",
     "info": null,
+    "invokedProperty": "imageWhenFailed",
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "f86101e7d6a64ecd94716f09a14ddc5d",
