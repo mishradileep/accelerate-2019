@@ -11,7 +11,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "103dp"
+        "value": "28%"
     },
     "_margin_": [
         0,
@@ -45,7 +45,7 @@
     "id": "flxToast",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": false,
+    "isvisible": true,
     "kuid": "b06caca811c34af38b2d64ee5c83ea35",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",

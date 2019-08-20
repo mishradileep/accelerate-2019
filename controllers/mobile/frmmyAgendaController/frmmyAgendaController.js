@@ -1074,11 +1074,12 @@ define({
     if(childrenCount == 1){
       this.view.lblNoEvents.isVisible = true;
     }
+    this.filteredSession=this.view.sessionTiles.widgets();
+    this.onClickOfFilter(this.currentSelectedFilter);
     this.view.forceLayout();
   },
 
   checkIfSessionsArePresentForSelectedDate : function(){
-
     let mSessionsList = this.sessionsList;
     let currentActiveDate = kony.store.getItem("currentActiveDate");
     let selectedSessions = kony.store.getItem("myAgendaData");
@@ -1277,6 +1278,7 @@ define({
     let buttonText = eventobject.text;
     kony.store.setItem("currentActiveDate",parseInt(buttonText));
     this.changeButtonSkins(buttonText);
+    this.currentSelectedFilter= buttonText;
     this.onClickOfFilter(buttonText);
   },
 

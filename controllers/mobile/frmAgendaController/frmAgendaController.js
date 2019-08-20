@@ -4,7 +4,7 @@ define({
   thisCardIndex: null,
   cardFrameRel: null,
   currentViewState:0,
-  currentSelectedTab:null,
+  currentSelectedTab:eventConstants.KEYNOTE,
   /**
      * @function frmAgendaPreshow
      * @description The function is invoked in the form preshow action which is used to setup the UI
@@ -69,13 +69,15 @@ define({
      * @private
      */
   frmAgendaPostshow: function() {
-    if(kony.sdk.isNullOrUndefined(this.currentSelectedTab)){
+    if(this.currentSelectedTab==eventConstants.KEYNOTE){
+      this.changeButtonSkins("4TH SEP");
       this.setData(accelerateSessionData.eventSessionData.records); 
     }
     else{
       var isFirst=true;
       var filterid=this.currentSelectedTab;
-      var sessionTiles= this.sessionListTiles;
+      var sessionTiles= this.filteredSession;
+      var myAgendaData=kony.store.getItem("myAgendaData");
       for(var index=0;index<sessionTiles.length;index++){
         var tileObject=sessionTiles[index];
         if (!kony.sdk.isNullOrUndefined(tileObject.sessionData)) {
@@ -89,6 +91,10 @@ define({
             }
             this.view[tileObject.id].isVisible = true;
             this.view[tileObject.id].opacity = 100;
+            if(kony.sdk.isNullOrUndefined(myAgendaData[this.view[tileObject.id].sessionData.event_session_id])){
+              	this.view[tileObject.id].imgStatus.src=this.view[tileObject.id].agendaIndicatorImage;
+                this.view[tileObject.id].addAgendaContainer.skin=this.view[tileObject.id].agendaUnselectedSkin;
+            }
           }
         }
       }
@@ -97,7 +103,7 @@ define({
     egLogger("devHeight = " + this.devHeight);
     var dotsblurwidth=this.view.sessionTileAnim.quantumDotsBlur.frame.height*10.7388+"dp";
   },
-
+  
   /**
      * @function frmAgendaSetAgendaTiles
      * @description The function is used to set the skin and the image for the tiles
@@ -1032,6 +1038,8 @@ define({
      * 	@private
      */
   setData: function(sessions) {
+    this.breakTiles={};
+    var breakCount=0;
     this.view.sessionTiles.removeAll();
     this.filteredSession=[];
     this.allSessionTiles=[];
@@ -1048,10 +1056,13 @@ define({
           var breakTile=this.createBreakSession(id,"142dp","50dp",duration+" "+"BREAK");
           breakTile.sessionTrackId=4;
           this.view.sessionTiles.add(breakTile);
+          breakCount++;
+          this.breakTiles[index]=breakCount;
           continue;
         }
         else{
           sessionTile = this.createSessionTile(id, "131dp");
+          this.breakTiles[index]=breakCount;
         }
       } else {
         if(sessionObj.session_track_id==4){
@@ -1059,10 +1070,13 @@ define({
           var breakTile=this.createBreakSession(id,"0dp","50dp",duration+" BREAK");
           breakTile.sessionTrackId=4;
           this.view.sessionTiles.add(breakTile);
+           breakCount++;
+          this.breakTiles[index]=breakCount;
           continue;
         }
         else{
           sessionTile = this.createSessionTile(id, "0dp");
+          this.breakTiles[index]=breakCount;
         }
 
       }
@@ -1725,7 +1739,12 @@ define({
         this.view.contentScroller.setContentOffset({"y":0},true);
       }
       else{
-        this.view.contentScroller.scrollToWidget(sessions[index],true);
+        var extra=0;
+        if(this.currentSelectedTab===eventConstants.KEYNOTE){
+         extra=this.breakTiles[index+1+this.breakTiles[index]]*50;
+        }
+        var height=((index+1)*152)-131+ extra;
+        this.view.contentScroller.setContentOffset({"y":height+"dp"},true);
       }
     }
     else{
@@ -1840,8 +1859,12 @@ define({
     this.view.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, eventObject);
     this.view.sessionTileAnim.addAgendaContainer.skin =eventObject.addAgendaContainer.skin;
     this.view.addAgendaContainer.skin =eventObject.addAgendaContainer.skin;
-    this.view.sessionTileAnim.sessionLocation.text = "<u>"+eventObject.sessionData.session_location+"</u>";
-    this.view.sessionLocation.text = "<u>"+eventObject.sessionData.session_location+"</u>";
+    var location= eventObject.sessionData.session_location;
+    if(kony.sdk.isNullOrUndefined(location)){
+      location="";
+    }
+    this.view.sessionTileAnim.sessionLocation.text = "<u>"+location+"</u>";
+    this.view.sessionLocation.text = "<u>"+location+"</u>";
     this.view.sessionLocation.onTouchEnd=this.openFloorMap.bind(this,eventObject.sessionData);
     this.view.sessionTileAnim.tileBGImageKony.src = eventObject.tileBGImageKony.src;
     //     	var flxImageContainerwidthCalc = this.view.flxSpeaker0.frame.width * 1.1;
