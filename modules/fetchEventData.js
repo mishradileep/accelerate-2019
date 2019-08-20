@@ -13,7 +13,8 @@
           let storeSpeakerData = kony.store.getItem("eventSpeakerData");
           let storeSponsorData = kony.store.getItem("eventSponsorData");
           let storeTeamData = kony.store.getItem("eventTeamData");
-          assignStoreDataToLocal(storeEventData, storeEventSessionData, storeSpeakerData, storeSponsorData, storeTeamData);
+          let quantumData = kony.store.getItem("quantumQuestData");
+          assignStoreDataToLocal(quantumData,storeEventData, storeEventSessionData, storeSpeakerData, storeSponsorData, storeTeamData);
       }
       fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.DATA_SYNC_OBJECT, {}, dataSyncFetchSuccess, dataSyncFetchFailure);
       var nav = new kony.mvc.Navigation("frmAgenda");
