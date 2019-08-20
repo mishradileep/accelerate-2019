@@ -1950,6 +1950,9 @@ define({
           this.speakerIdMap["flxSpeaker"+speakerIndex] = speakerObject.master_speaker_id;
           this.view["flxSpeaker"+speakerIndex].isVisible=true;
           this.view["speakerName" + speakerIndex].text = speakerBio.speaker_name;
+          if(speakerBio.speaker_bio === undefined) {
+            speakerBio.speaker_bio = "";
+          }
           var title = speakerBio.speaker_title.length > 20 ? speakerBio.speaker_title.substring(0, 16) + "..." : speakerBio.speaker_title;
           this.view["speakerDesignation" + speakerIndex].text = title;
           var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
