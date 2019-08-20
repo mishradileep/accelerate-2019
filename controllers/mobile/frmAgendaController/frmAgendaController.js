@@ -1094,6 +1094,7 @@ define({
           var breakTile=this.createBreakSession(id,"142dp","50dp",duration+" "+"BREAK");
           breakTile.sessionTrackId=4;
           this.view.sessionTiles.add(breakTile);
+          this.filteredSession.push(breakTile);
           breakCount++;
           this.breakTiles[index]=breakCount;
           continue;
@@ -1108,6 +1109,7 @@ define({
           var breakTile=this.createBreakSession(id,"0dp","50dp",duration+" BREAK");
           breakTile.sessionTrackId=4;
           this.view.sessionTiles.add(breakTile);
+          this.filteredSession.push(breakTile);
            breakCount++;
           this.breakTiles[index]=breakCount;
           continue;
@@ -1396,7 +1398,10 @@ define({
         this.view[id].top = "0dp";
       }
     }
-    this.view.contentScroller.setContentOffset({"y":0}, true);
+    //#ifdef android
+    this.view.contentScroller.setContentOffset({"y":"0dp"}, true);
+    //#endif
+    this.view.contentScroller.forceLayout();
     this.view.forceLayout();
   },
   /**
@@ -1777,11 +1782,15 @@ define({
         this.view.contentScroller.setContentOffset({"y":0},true);
       }
       else{
-        var extra=0;
+        var extra=0,currentTileIndex =0;
         if(this.currentSelectedTab===eventConstants.KEYNOTE){
-         extra=this.breakTiles[index+1+this.breakTiles[index]]*50;
+        	 extra=this.breakTiles[index]*50;
+          	  currentTileIndex = index - this.breakTiles[index];
+        }else{
+          currentTileIndex = index;
         }
-        var height=((index+1)*152)-131+ extra;
+        
+        var height=((currentTileIndex+1)*152)-131+ extra;
         this.view.contentScroller.setContentOffset({"y":height+"dp"},true);
       }
     }
