@@ -23,6 +23,7 @@ konyplugins.xml
 !testng.xml
 !sgconfig.properties
 !pom.xml
+!androidbuild.properties
 
 
 # Exclude this file from ignoring
