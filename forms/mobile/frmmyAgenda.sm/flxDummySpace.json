@@ -46,7 +46,7 @@
     "id": "flxDummySpace",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "abd505cd802c4326b08a066f54ad2735",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",

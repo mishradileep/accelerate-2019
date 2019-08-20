@@ -17,8 +17,6 @@ define({
       kony.store.setItem("currentActiveDate",4);
     this.view.lblNoEvents.isVisible = false;
     this.view.menuMain.menuContainerMySchedule.menuLabelMySchedule.skin = "menuLabelSkinActive";
-    this.setData(accelerateSessionData.eventSessionData.records);
-    //this.addActionToSessionTiles();
     this.view.referenceAgenda.isVisible = false;
     this.view.referenceSession.isVisible = false;
     this.view.postShow = this.frmAgendaPostshow;
@@ -73,6 +71,7 @@ define({
      * @private
      */
   frmAgendaPostshow: function() {
+    this.changeButtonSkins("4TH SEP");
     this.setData(accelerateSessionData.eventSessionData.records); 
     this.devHeight = this.view.masterContainer.frame.height;
     egLogger("devHeight = " + this.devHeight);
@@ -153,6 +152,12 @@ define({
     else{
       this.view.CopyLabel0f74c659ce7754e.isVisible=false;
       this.view.Label0c15d6a3069eb44.isVisible=false;
+      if(kony.sdk.isNullOrUndefined(this.view[eventobject.id].sessionData.presenter) & kony.sdk.isNullOrUndefined(this.view[eventobject.id].sessionData.session_material)){
+        this.view.detailsScroller.isVisible=false;
+      }
+      else{
+        this.view.detailsScroller.isVisible=true;
+      }
     }
     this.view.sessionTileAnim.imgStatus.src = this.view[eventobject.id].imgStatus.src;
     this.view.addAgendaContainer.imgStatus.src = this.view[eventobject.id].imgStatus.src;
@@ -554,19 +559,18 @@ define({
       });
   },
   openFloorMap:function(session){
-    if(kony.sdk.isNullOrUndefined(session.event_inner_location)){
+    if(kony.sdk.isNullOrUndefined(session.room_no) || session.room_no.length<=0){
       return ;
     }
-    var floormap=session.event_inner_location;
+    var floormap=session.room_no;
+    var heading =session.session_location;
     if(!kony.sdk.isNullOrUndefined(floormap) && floormap.length>0){
       this.view.flxPdf.zIndex=300;
-      var url=floormap[0].inner_location;
-      var heading=floormap[0].text;
       this.view.flxPdf.mobileheader.headerTitle=heading;
       this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
       this.view.flxPdf.animate(this.animateTopForPdf("0dp"),this.getPlatformSpecific(), {"animationEnd":function(){
         this.view.pdfBrowser.requestURLConfig = {
-          URL: "https://docs.google.com/gview?embedded=true&url=" + url,
+          URL: "https://docs.google.com/gview?embedded=true&url=" + floormap,
           requestMethod: constants.BROWSER_REQUEST_METHOD_GET
         };
       }.bind(this)});
@@ -997,6 +1001,7 @@ define({
      * 	@private
      */
   setData: function(sessions) {
+    this.view.sessionTiles.isVisible = true;
     this.myScheduleSession=[];
     var isFirstTile=true;
     this.view.sessionTiles.removeAll();
@@ -1023,13 +1028,12 @@ define({
       this.view[id].setDeleteButtonValues();
       this.myScheduleSession.push(sessionTile);
       this.view[id].deleteCallback=this.resetData.bind(this);
-      if (!kony.sdk.isNullOrUndefined(sessionObj.presenter)) {
         this.view[id].onClick = this.frmAgendaSessionSelect.bind(this);
-      }
     }
     if(this.myScheduleSession.length <= 0)
       this.view.lblNoEvents.isVisible = true;
     this.view.sessionTileAnim.callback = this.mySchedular;
+    this.view.forceLayout();
   },
   /**
      *	@function checkIfSessionsAreMyScheduled
@@ -1071,11 +1075,12 @@ define({
     if(childrenCount == 1){
       this.view.lblNoEvents.isVisible = true;
     }
+    this.filteredSession=this.view.sessionTiles.widgets();
+    //this.onClickOfFilter(this.currentSelectedFilter);
     this.view.forceLayout();
   },
 
   checkIfSessionsArePresentForSelectedDate : function(){
-
     let mSessionsList = this.sessionsList;
     let currentActiveDate = kony.store.getItem("currentActiveDate");
     let selectedSessions = kony.store.getItem("myAgendaData");
@@ -1182,12 +1187,8 @@ define({
       this.view.flxSpeaker0.isVisible = false;
       this.view.flxSpeaker1.isVisible = false;
       this.view.flxSpeaker2.isVisible = false;
-      this.view.flxCurvedArrow.isVisible=false;
-      this.view.feedbackMaster.isVisible=false;
       return;
     }
-    this.view.flxCurvedArrow.isVisible=true;
-    this.view.feedbackMaster.isVisible=true;
     this.ratingLength = 0;
     var speakers_master = accelerateSpeakerData.eventSpeakerData.records;
     var speakerIndex;
@@ -1278,6 +1279,7 @@ define({
     let buttonText = eventobject.text;
     kony.store.setItem("currentActiveDate",parseInt(buttonText));
     this.changeButtonSkins(buttonText);
+    this.currentSelectedFilter= buttonText;
     this.onClickOfFilter(buttonText);
   },
 
@@ -1464,15 +1466,19 @@ define({
   setSessionAttachments: function(sessionObject) {
     this.view.flxMaterial.removeAll();
     var materials = sessionObject.session_material;
-    if (kony.sdk.isNullOrUndefined(materials)) {
+    var refinedMaterail=this.preProcessMaterials(materials);
+    sessionObject.session_material=refinedMaterail;
+    materials=refinedMaterail;
+    if (kony.sdk.isNullOrUndefined(materials) ||materials.length<=0 ) {
       this.view.lblPresentation.isVisible = false;
+      this.view.flxMaterial.isVisible=false;
+      if(!this.view.flxRatingContainer.isVisible ){
+        this.view.flxCurvedArrow.isVisible=false;
+      }
       return;
     }
     var materailsCount = materials.length;
-    if (materailsCount <= 0) {
-      this.view.lblPresentation.isVisible = false;
-      return;
-    }
+    this.view.flxCurvedArrow.isVisible=true;
     this.view.lblPresentation.isVisible = true;
     var flexInstance, materialInstance;
     if (materailsCount == 1) {
@@ -1504,6 +1510,20 @@ define({
       }
     }
 
+  },
+  preProcessMaterials:function(materials){
+    if(kony.sdk.isNullOrUndefined(materials)){
+      return ;
+    }
+    var refinedMateral=[];
+    var count=materials.length;
+    for(var index=0;index<count;index++){
+      var materialObj=materials[index];
+      if(!kony.sdk.isNullOrUndefined(materialObj.SoftDeleteFlag) &&  materialObj.SoftDeleteFlag==false){
+        refinedMateral.push(materialObj);
+      }
+    }
+    return refinedMateral;
   },
   /**
      *	@function doesSessionContainsMaterial

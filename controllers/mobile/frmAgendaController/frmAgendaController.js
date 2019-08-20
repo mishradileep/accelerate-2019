@@ -4,7 +4,7 @@ define({
   thisCardIndex: null,
   cardFrameRel: null,
   currentViewState:0,
-  currentSelectedTab:null,
+  currentSelectedTab:eventConstants.KEYNOTE,
   /**
      * @function frmAgendaPreshow
      * @description The function is invoked in the form preshow action which is used to setup the UI
@@ -69,13 +69,15 @@ define({
      * @private
      */
   frmAgendaPostshow: function() {
-    if(kony.sdk.isNullOrUndefined(this.currentSelectedTab)){
+    if(this.currentSelectedTab==eventConstants.KEYNOTE){
+      this.changeButtonSkins("4TH SEP");
       this.setData(accelerateSessionData.eventSessionData.records); 
     }
     else{
       var isFirst=true;
       var filterid=this.currentSelectedTab;
-      var sessionTiles= this.sessionListTiles;
+      var sessionTiles= this.filteredSession;
+      var myAgendaData=kony.store.getItem("myAgendaData");
       for(var index=0;index<sessionTiles.length;index++){
         var tileObject=sessionTiles[index];
         if (!kony.sdk.isNullOrUndefined(tileObject.sessionData)) {
@@ -89,6 +91,10 @@ define({
             }
             this.view[tileObject.id].isVisible = true;
             this.view[tileObject.id].opacity = 100;
+            if(kony.sdk.isNullOrUndefined(myAgendaData[this.view[tileObject.id].sessionData.event_session_id])){
+              	this.view[tileObject.id].imgStatus.src=this.view[tileObject.id].agendaIndicatorImage;
+                this.view[tileObject.id].addAgendaContainer.skin=this.view[tileObject.id].agendaUnselectedSkin;
+            }
           }
         }
       }
@@ -97,7 +103,7 @@ define({
     egLogger("devHeight = " + this.devHeight);
     var dotsblurwidth=this.view.sessionTileAnim.quantumDotsBlur.frame.height*10.7388+"dp";
   },
-
+  
   /**
      * @function frmAgendaSetAgendaTiles
      * @description The function is used to set the skin and the image for the tiles
@@ -174,6 +180,12 @@ define({
     else{
       this.view.CopyLabel0f74c659ce7754e.isVisible=false;
       this.view.Label0c15d6a3069eb44.isVisible=false;
+      if(kony.sdk.isNullOrUndefined(this.view[eventobject.id].sessionData.presenter) & kony.sdk.isNullOrUndefined(this.view[eventobject.id].sessionData.session_material)){
+        this.view.detailsScroller.isVisible=false;
+      }
+      else{
+        this.view.detailsScroller.isVisible=true;
+      }
     }
     this.view.CopyLabel0f74c659ce7754e.text = this.view[eventobject.id].sessionData.session_desc;
     this.view.sessionTileAnim.imgStatus.src = this.view[eventobject.id].imgStatus.src;
@@ -185,7 +197,7 @@ define({
     this.view.addAgendaContainer.skin = this.view[eventobject.id].addAgendaContainer.skin;
     this.view.sessionTileAnim.sessionLocation.text = "<u>"+this.thisCard.sessionLocation.text+"</u>";
     this.view.sessionLocation.text = "<u>"+this.thisCard.sessionLocation.text+"</u>";
-    this.view.sessionLocation.onTouchEnd=this.openFloorMap.bind(this,this.view[eventobject.id]. sessionData);
+    this.view.sessionLocation.onTouchEnd=this.openFloorMap.bind(this,this.view[eventobject.id].sessionData);
     this.view.sessionTileAnim.tileBGImageKony.src = this.thisCard.tileBGImageKony.src;
     var cardFrame = this.thisCard.frame.y;
     this.sessionTileAnimBindedSession= this.view[eventobject.id].sessionData;
@@ -582,24 +594,61 @@ define({
       });
 
   },
+  
+  checkInternet:function(session){
+    let isNetworkAvailable = false;
+        httpclient = new kony.net.HttpRequest();
+        httpclient.open(constants.HTTP_METHOD_GET, "https://www.google.com");
+        httpclient.onReadyStateChange = this.httpSuccessCallback;
+        httpclient.send();
+  },
+  httpSuccessCallback: function() {
+    if (httpclient.readyState == 4) {
+        if (httpclient.status == 200) {
+            this.view.flxPdf.zIndex = 300;
+            this.view.flxPdf.mobileheader.headerTitle = heading;
+            this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
+            this.view.flxPdf.animate(this.animateTopForPdf("0dp"), this.getPlatformSpecific(), {
+                "animationEnd": function() {
+                    this.view.pdfBrowser.requestURLConfig = {
+                        URL: "https://docs.google.com/gview?embedded=true&url=" + floormap,
+                        requestMethod: constants.BROWSER_REQUEST_METHOD_GET
+                    };
+                }.bind(this)
+            });
+        } else {
+          this.view.flxPdf.zIndex = 300;
+          this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
+          this.view.flxPdf.animate(this.animateTopForPdf("0dp"), this.getPlatformSpecific(), {
+                "animationEnd": function() {
+                    this.view.pdfBrowser.requestURLConfig = {
+                        URL: "error.html",
+                        requestMethod: constants.BROWSER_REQUEST_METHOD_GET
+                    };
+                }.bind(this)
+            });
+            this.view.flxPdf.mobileheader.headerTitle = heading;
+        }
+    }
+},
   openFloorMap:function(session){
-    if(kony.sdk.isNullOrUndefined(session.event_inner_location)){
+    if(kony.sdk.isNullOrUndefined(session.room_no) || session.room_no.length<=0){
       return ;
     }
-    var floormap=session.event_inner_location;
-    if(!kony.sdk.isNullOrUndefined(floormap) && floormap.length>0){
-      this.view.flxPdf.zIndex=300;
-      var url=floormap[0].inner_location;
-      var heading=floormap[0].text;
-      this.view.flxPdf.mobileheader.headerTitle=heading;
-      this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
-      this.view.flxPdf.animate(this.animateTopForPdf("0dp"),this.getPlatformSpecific(), {"animationEnd":function(){
-        this.view.pdfBrowser.requestURLConfig = {
-          URL: "https://docs.google.com/gview?embedded=true&url=" + url,
-          requestMethod: constants.BROWSER_REQUEST_METHOD_GET
-        };
-      }.bind(this)});
-    }
+    var floormap=session.room_no;
+    var heading =session.session_location;
+    this.view.flxPdf.zIndex = 300;
+    this.view.flxPdf.mobileheader.headerTitle = heading;
+	this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
+    this.view.flxPdf.animate(this.animateTopForPdf("0dp"), this.getPlatformSpecific(), {
+                "animationEnd": function() {
+                    this.view.pdfBrowser.requestURLConfig = {
+                        URL: "https://docs.google.com/gview?embedded=true&url=" + floormap,
+                        requestMethod: constants.BROWSER_REQUEST_METHOD_GET
+                    };
+                }.bind(this)
+            });
+    //this.checkInternet();
   },
   /**
      * @function frmAgendaSessionClose
@@ -1027,6 +1076,8 @@ define({
      * 	@private
      */
   setData: function(sessions) {
+    this.breakTiles={};
+    var breakCount=0;
     this.view.sessionTiles.removeAll();
     this.filteredSession=[];
     this.allSessionTiles=[];
@@ -1043,10 +1094,13 @@ define({
           var breakTile=this.createBreakSession(id,"142dp","50dp",duration+" "+"BREAK");
           breakTile.sessionTrackId=4;
           this.view.sessionTiles.add(breakTile);
+          breakCount++;
+          this.breakTiles[index]=breakCount;
           continue;
         }
         else{
           sessionTile = this.createSessionTile(id, "131dp");
+          this.breakTiles[index]=breakCount;
         }
       } else {
         if(sessionObj.session_track_id==4){
@@ -1054,10 +1108,13 @@ define({
           var breakTile=this.createBreakSession(id,"0dp","50dp",duration+" BREAK");
           breakTile.sessionTrackId=4;
           this.view.sessionTiles.add(breakTile);
+           breakCount++;
+          this.breakTiles[index]=breakCount;
           continue;
         }
         else{
           sessionTile = this.createSessionTile(id, "0dp");
+          this.breakTiles[index]=breakCount;
         }
 
       }
@@ -1191,12 +1248,8 @@ define({
       this.view.flxSpeaker0.isVisible = false;
       this.view.flxSpeaker1.isVisible = false;
       this.view.flxSpeaker2.isVisible = false;
-      this.view.flxCurvedArrow.isVisible=false;
-      this.view.feedbackMaster.isVisible=false;
       return;
     }
-    this.view.flxCurvedArrow.isVisible=true;
-    this.view.feedbackMaster.isVisible=true;
     this.ratingLength = 0;
     var presenters = [];
     var speakers_master = accelerateSpeakerData.eventSpeakerData.records;
@@ -1209,7 +1262,7 @@ define({
       }
     }
     speakerList = presenters;
-    for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
+    for (speakerIndex = 0; speakerIndex < speakerList.length && speakerIndex<3; speakerIndex++) {
       this.ratingLength++;
       var speakerObject = speakerList[speakerIndex];
       for (var index = 0; index < speakers_master.length; index++) {
@@ -1487,18 +1540,21 @@ define({
   setSessionAttachments: function(sessionObject) {
     this.view.flxMaterial.removeAll();
     var materials = sessionObject.session_material;
-    if (kony.sdk.isNullOrUndefined(materials)) {
+     var refinedMaterail=this.preProcessMaterials(materials);
+    	sessionObject.session_material=refinedMaterail;
+    	materials=refinedMaterail;
+    if (kony.sdk.isNullOrUndefined(materials) ||materials.length<=0 ) {
       this.view.lblPresentation.isVisible = false;
-      this.view.flxMaterial.removeAll();
+      this.view.flxMaterial.isVisible=false;
+      if(!this.view.flxRatingContainer.isVisible ){
+        this.view.flxCurvedArrow.isVisible=false;
+      }
       return;
     }
-    var materailsCount = materials.length;
-    if (materailsCount <= 0) {
-      this.view.lblPresentation.isVisible = false;
-      this.view.flxMaterial.removeAll();
-      return;
-    }
+    this.view.flxCurvedArrow.isVisible=true;
+    this.view.flxMaterial.isVisible=true;
     var flexInstance, materialInstance;
+    var materailsCount= materials.length;
     if (materailsCount == 1) {
       var id = "flex";
       flexInstance = this.createFlexInstace(id);
@@ -1530,6 +1586,21 @@ define({
       }
     }
 
+  },
+  
+  preProcessMaterials:function(materials){
+    if(kony.sdk.isNullOrUndefined(materials)){
+      return ;
+    }
+    var refinedMateral=[];
+    var count=materials.length;
+    for(var index=0;index<count;index++){
+      var materialObj=materials[index];
+      if(!kony.sdk.isNullOrUndefined(materialObj.SoftDeleteFlag) &&  materialObj.SoftDeleteFlag==false){
+        refinedMateral.push(materialObj);
+      }
+    }
+    return refinedMateral;
   },
   /**
      *	@function doesSessionContainsMaterial
@@ -1706,7 +1777,12 @@ define({
         this.view.contentScroller.setContentOffset({"y":0},true);
       }
       else{
-        this.view.contentScroller.scrollToWidget(sessions[index],true);
+        var extra=0;
+        if(this.currentSelectedTab===eventConstants.KEYNOTE){
+         extra=this.breakTiles[index+1+this.breakTiles[index]]*50;
+        }
+        var height=((index+1)*152)-131+ extra;
+        this.view.contentScroller.setContentOffset({"y":height+"dp"},true);
       }
     }
     else{
@@ -1821,8 +1897,12 @@ define({
     this.view.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, eventObject);
     this.view.sessionTileAnim.addAgendaContainer.skin =eventObject.addAgendaContainer.skin;
     this.view.addAgendaContainer.skin =eventObject.addAgendaContainer.skin;
-    this.view.sessionTileAnim.sessionLocation.text = "<u>"+eventObject.sessionData.session_location+"</u>";
-    this.view.sessionLocation.text = "<u>"+eventObject.sessionData.session_location+"</u>";
+    var location= eventObject.sessionData.session_location;
+    if(kony.sdk.isNullOrUndefined(location)){
+      location="";
+    }
+    this.view.sessionTileAnim.sessionLocation.text = "<u>"+location+"</u>";
+    this.view.sessionLocation.text = "<u>"+location+"</u>";
     this.view.sessionLocation.onTouchEnd=this.openFloorMap.bind(this,eventObject.sessionData);
     this.view.sessionTileAnim.tileBGImageKony.src = eventObject.tileBGImageKony.src;
     //     	var flxImageContainerwidthCalc = this.view.flxSpeaker0.frame.width * 1.1;
