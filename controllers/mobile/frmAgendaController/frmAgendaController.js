@@ -1398,7 +1398,10 @@ define({
         this.view[id].top = "0dp";
       }
     }
-    this.view.contentScroller.setContentOffset({"y":0}, true);
+    //#ifdef android
+    this.view.contentScroller.setContentOffset({"y":"0dp"}, true);
+    //#endif
+    this.view.contentScroller.forceLayout();
     this.view.forceLayout();
   },
   /**
