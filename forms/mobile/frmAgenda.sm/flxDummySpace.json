@@ -27,14 +27,14 @@
         "type": "string",
         "value": "25dp"
     },
-    "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
+    "_skin_": "s9a6291b0bb143398ca64c1e1c5e8d17",
     "_top_": {
         "type": "string",
         "value": "10dp"
     },
     "_width_": {
         "type": "string",
-        "value": "80%"
+        "value": "100%"
     },
     "allboxes": [],
     "autogrowmode": 0,
@@ -46,7 +46,7 @@
     "id": "flxDummySpace",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "f705ff4bf8284098bb406b3c881f9bba",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
