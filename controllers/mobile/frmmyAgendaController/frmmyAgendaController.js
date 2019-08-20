@@ -17,8 +17,6 @@ define({
       kony.store.setItem("currentActiveDate",4);
     this.view.lblNoEvents.isVisible = false;
     this.view.menuMain.menuContainerMySchedule.menuLabelMySchedule.skin = "menuLabelSkinActive";
-    this.setData(accelerateSessionData.eventSessionData.records);
-    //this.addActionToSessionTiles();
     this.view.referenceAgenda.isVisible = false;
     this.view.referenceSession.isVisible = false;
     this.view.postShow = this.frmAgendaPostshow;
@@ -73,6 +71,7 @@ define({
      * @private
      */
   frmAgendaPostshow: function() {
+    this.changeButtonSkins("4TH SEP");
     this.setData(accelerateSessionData.eventSessionData.records); 
     this.devHeight = this.view.masterContainer.frame.height;
     egLogger("devHeight = " + this.devHeight);
@@ -1002,6 +1001,7 @@ define({
      * 	@private
      */
   setData: function(sessions) {
+    this.view.sessionTiles.isVisible = true;
     this.myScheduleSession=[];
     var isFirstTile=true;
     this.view.sessionTiles.removeAll();
@@ -1033,6 +1033,7 @@ define({
     if(this.myScheduleSession.length <= 0)
       this.view.lblNoEvents.isVisible = true;
     this.view.sessionTileAnim.callback = this.mySchedular;
+    this.view.forceLayout();
   },
   /**
      *	@function checkIfSessionsAreMyScheduled
@@ -1075,7 +1076,7 @@ define({
       this.view.lblNoEvents.isVisible = true;
     }
     this.filteredSession=this.view.sessionTiles.widgets();
-    this.onClickOfFilter(this.currentSelectedFilter);
+    //this.onClickOfFilter(this.currentSelectedFilter);
     this.view.forceLayout();
   },
 

@@ -594,23 +594,61 @@ define({
       });
 
   },
+  
+  checkInternet:function(session){
+    let isNetworkAvailable = false;
+        httpclient = new kony.net.HttpRequest();
+        httpclient.open(constants.HTTP_METHOD_GET, "https://www.google.com");
+        httpclient.onReadyStateChange = this.httpSuccessCallback;
+        httpclient.send();
+  },
+  httpSuccessCallback: function() {
+    if (httpclient.readyState == 4) {
+        if (httpclient.status == 200) {
+            this.view.flxPdf.zIndex = 300;
+            this.view.flxPdf.mobileheader.headerTitle = heading;
+            this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
+            this.view.flxPdf.animate(this.animateTopForPdf("0dp"), this.getPlatformSpecific(), {
+                "animationEnd": function() {
+                    this.view.pdfBrowser.requestURLConfig = {
+                        URL: "https://docs.google.com/gview?embedded=true&url=" + floormap,
+                        requestMethod: constants.BROWSER_REQUEST_METHOD_GET
+                    };
+                }.bind(this)
+            });
+        } else {
+          this.view.flxPdf.zIndex = 300;
+          this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
+          this.view.flxPdf.animate(this.animateTopForPdf("0dp"), this.getPlatformSpecific(), {
+                "animationEnd": function() {
+                    this.view.pdfBrowser.requestURLConfig = {
+                        URL: "error.html",
+                        requestMethod: constants.BROWSER_REQUEST_METHOD_GET
+                    };
+                }.bind(this)
+            });
+            this.view.flxPdf.mobileheader.headerTitle = heading;
+        }
+    }
+},
   openFloorMap:function(session){
     if(kony.sdk.isNullOrUndefined(session.room_no) || session.room_no.length<=0){
       return ;
     }
     var floormap=session.room_no;
     var heading =session.session_location;
-    if(!kony.sdk.isNullOrUndefined(floormap) && floormap.length>0){
-      this.view.flxPdf.zIndex=300;
-      this.view.flxPdf.mobileheader.headerTitle=heading;
-      this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
-      this.view.flxPdf.animate(this.animateTopForPdf("0dp"),this.getPlatformSpecific(), {"animationEnd":function(){
-        this.view.pdfBrowser.requestURLConfig = {
-          URL: "https://docs.google.com/gview?embedded=true&url=" + floormap,
-          requestMethod: constants.BROWSER_REQUEST_METHOD_GET
-        };
-      }.bind(this)});
-    }
+    this.view.flxPdf.zIndex = 300;
+    this.view.flxPdf.mobileheader.headerTitle = heading;
+	this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
+    this.view.flxPdf.animate(this.animateTopForPdf("0dp"), this.getPlatformSpecific(), {
+                "animationEnd": function() {
+                    this.view.pdfBrowser.requestURLConfig = {
+                        URL: "https://docs.google.com/gview?embedded=true&url=" + floormap,
+                        requestMethod: constants.BROWSER_REQUEST_METHOD_GET
+                    };
+                }.bind(this)
+            });
+    //this.checkInternet();
   },
   /**
      * @function frmAgendaSessionClose
