@@ -1,6 +1,7 @@
 {
     "@class": "com.kony.gen.viz.model.container.KVizScrollFlexForm",
     "DNDConfig": null,
+    "_init_": "AS_Form_c2a5fa0efd5d42f79a25ae4fc98ad97f",
     "_margin_": [
         0,
         0,
@@ -34,10 +35,13 @@
     "androidwearos": {
         "needAppMenu": false
     },
+    "bounceszoom": false,
     "canUpdateUI": true,
     "children": [
         "flxMainContainer"
     ],
+    "configureExtendBottom": true,
+    "configureExtendTop": true,
     "containerweight": 100,
     "controllerInfo": {
         "default": {
@@ -52,6 +56,7 @@
     "device": "iPhoneXS",
     "displayorientation": 1,
     "enabledforidletimeout": false,
+    "extendtop": true,
     "id": "frmWifiInfo",
     "info": null,
     "initdone": false,
@@ -76,6 +81,10 @@
             "transitionEffect": "transitionFade"
         },
         "psp": {
+            "bouncesZoom": false,
+            "configureExtendBottom": true,
+            "configureExtendTop": true,
+            "extendTop": true,
             "inputAccessoryViewType": 4,
             "titleBarAttributes": {
                 "barStyle": 0,

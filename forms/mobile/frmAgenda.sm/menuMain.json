@@ -116,6 +116,15 @@
                 "kuid": "b897b82aea4345619a9fdfef1c562c4e",
                 "srcKUID": "fc2481a695734f90a103d417e2c40b67",
                 "wType": "FlexContainer"
+            },
+            "autogrowMode": {
+                "Default": 0
+            },
+            "height": {
+                "Default": {
+                    "type": "string",
+                    "value": "60dp"
+                }
             }
         },
         "menuContainerMore": {
@@ -124,6 +133,15 @@
                 "kuid": "c881d81c2f98455aaab7ec2b75f35004",
                 "srcKUID": "fab8eeff3d3a4978901edf64060316c6",
                 "wType": "FlexContainer"
+            },
+            "autogrowMode": {
+                "Default": 0
+            },
+            "height": {
+                "Default": {
+                    "type": "string",
+                    "value": "60dp"
+                }
             }
         },
         "menuContainerMySchedule": {
@@ -132,6 +150,15 @@
                 "kuid": "d4ce435d35eb476197e3b8b1bd970e54",
                 "srcKUID": "da4b1b3b965b437c9977b0cb6dce4d78",
                 "wType": "FlexContainer"
+            },
+            "autogrowMode": {
+                "Default": 0
+            },
+            "height": {
+                "Default": {
+                    "type": "string",
+                    "value": "60dp"
+                }
             }
         },
         "menuContainerPresenters": {
@@ -140,6 +167,15 @@
                 "kuid": "c5c7b9f714014312a4dc1e5ca6c4366d",
                 "srcKUID": "f7b7d76d9cbc4364958b6c2ef4f3eec4",
                 "wType": "FlexContainer"
+            },
+            "autogrowMode": {
+                "Default": 0
+            },
+            "height": {
+                "Default": {
+                    "type": "string",
+                    "value": "60dp"
+                }
             }
         },
         "menuImageAgenda": {

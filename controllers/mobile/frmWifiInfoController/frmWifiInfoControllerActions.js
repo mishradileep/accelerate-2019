@@ -11,5 +11,10 @@ define({
     AS_Form_cf489b0ecd8f47ffbea4f99593800e5c: function AS_Form_cf489b0ecd8f47ffbea4f99593800e5c(eventobject) {
         var self = this;
         this.formWifiInfoPostShowAction();
+    },
+    /** init defined for frmWifiInfo **/
+    AS_Form_c2a5fa0efd5d42f79a25ae4fc98ad97f: function AS_Form_c2a5fa0efd5d42f79a25ae4fc98ad97f(eventobject) {
+        var self = this;
+        this.formInit();
     }
 });

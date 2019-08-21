@@ -223,5 +223,10 @@ define({
     AS_Form_gdc7a27b1fde45bea31c1bf7860c0d0e: function AS_Form_gdc7a27b1fde45bea31c1bf7860c0d0e(eventobject) {
         var self = this;
         return;
+    },
+    /** init defined for frmmyAgenda **/
+    AS_Form_j9ddfc391f9f4a14af3fc6b5caff79af: function AS_Form_j9ddfc391f9f4a14af3fc6b5caff79af(eventobject) {
+        var self = this;
+        this.formInit();
     }
 });

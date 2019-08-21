@@ -26,7 +26,7 @@
     "_skin_": "s3d9be3915194c29bb64ca1dfb7961ad",
     "_top_": {
         "type": "string",
-        "value": "0%"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
@@ -43,7 +43,7 @@
         "imgTearDrop",
         "flexSessions"
     ],
-    "clipbounds": true,
+    "clipbounds": false,
     "containerweight": 100,
     "decelerat": false,
     "dragg": false,
@@ -70,5 +70,5 @@
     "vizProps": {},
     "wType": "FlexScrollContainer",
     "widgetalignment": 1,
-    "zindex": 30
+    "zindex": 3
 }
