@@ -1812,9 +1812,15 @@ define({
     var found=false;
     var index;
     for(index=0;index<len;index++){
-      if(new Date(sessions[index].startDate).getDate()==startDate){
-        found=true;
-        break;
+      var splitDate = null;
+      var splitCharecter = "";
+      if(sessions[index].startDate !== null && sessions[index].startDate !== undefined){
+          splitCharecter = (sessions[index].startDate.indexOf("T") > 0 ) ? "T" : " ";
+          splitDate = sessions[index].startDate.split(splitCharecter);
+          if(new Date(splitDate[0]).getDate() === startDate){
+            found = true;
+            break;
+          }
       }
     }
     if(found){
