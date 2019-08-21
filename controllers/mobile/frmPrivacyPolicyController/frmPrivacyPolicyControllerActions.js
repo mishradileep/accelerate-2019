@@ -7,5 +7,10 @@ define({
         var self = this;
         var ntf = new kony.mvc.Navigation("frmAboutApp");
         ntf.navigate();
+    },
+    /** preShow defined for frmPrivacyPolicy **/
+    AS_Form_aabf09d8cb2f467d92ce3b8844c5e814: function AS_Form_aabf09d8cb2f467d92ce3b8844c5e814(eventobject) {
+        var self = this;
+        this.view.brwsrPrivacyPolicy.enableParentScrollingWhenReachToBoundaries = false;;
     }
 });
