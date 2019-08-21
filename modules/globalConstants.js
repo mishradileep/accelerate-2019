@@ -22,5 +22,8 @@ var eventConstants = {
   DATA_SYNC_OBJECT : "data_sync_info",
   DATA_MODEL_SESSION_FEEDBACK:"session_feedback",
   TEAM_OBJECT : "team",
-  EVENT_TWITTER_HANDLE : "https://twitter.com/hashtag/KonyAccelerate2019?src=hash"
+  EVENT_TWITTER_HANDLE : "https://twitter.com/hashtag/KonyAccelerate2019?src=hash",
+  IPHONE_X:"iPhone X",
+  IPHONE_XR:"iPhone XS",
+  IPHONE_XS_MAX:"iPhone XS Max"
 };

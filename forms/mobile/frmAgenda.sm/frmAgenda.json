@@ -1,6 +1,7 @@
 {
     "@class": "com.kony.gen.viz.model.container.KVizScrollFlexForm",
     "DNDConfig": null,
+    "_init_": "AS_Form_b331cd5c70fc48a59bc315161747ee6b",
     "_margin_": [
         0,
         0,
@@ -54,6 +55,8 @@
         "sessionTileAnim",
         "flxToast"
     ],
+    "configureExtendBottom": true,
+    "configureExtendTop": true,
     "containerweight": 100,
     "controllerInfo": {
         "default": {
@@ -69,6 +72,7 @@
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "enablescrolling": false,
+    "extendtop": true,
     "id": "frmAgenda",
     "info": null,
     "initdone": false,
@@ -94,6 +98,9 @@
         },
         "psp": {
             "bouncesZoom": false,
+            "configureExtendBottom": true,
+            "configureExtendTop": true,
+            "extendTop": true,
             "inputAccessoryViewType": 4,
             "titleBarAttributes": {
                 "barStyle": 0,

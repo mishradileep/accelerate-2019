@@ -34,6 +34,11 @@ define({
         * @private
     */
   setFilteronClick : function(){
+    this.view.menuMain.height = "105dp";
+    this.view.menuMain.bottom = "0dp";
+    this.view.presenterScroll.bottom = "105dp";
+    this.view.presenterDetail.top = "-45dp";
+    this.view.flxImagelargeView.top = "45dp";
     this.view.preShow = this.formPreshowAction.bind(this);
     var self = this;
     this.view.flxFilterKeynote.onClick = function(eventobject) {

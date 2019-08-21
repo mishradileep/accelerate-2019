@@ -16,7 +16,7 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s7b5af4c4fb440e6877e25b21d5c2b77",
+    "_skin_": "s640c0f8ac8a428bafdac549efbdd471",
     "_title_": null,
     "addWidgetsdone": false,
     "allboxes": [],
@@ -53,9 +53,10 @@
     "desktopweb": {
         "needAppMenu": false
     },
-    "device": "Pixel3",
+    "device": "iPhoneXS",
     "displayorientation": 1,
     "enabledforidletimeout": false,
+    "enablescrolling": false,
     "id": "frmPresenters",
     "info": null,
     "initdone": false,
@@ -80,6 +81,10 @@
             "transitionEffect": "transitionFade"
         },
         "psp": {
+            "configureExtendBottom": true,
+            "configureExtendTop": true,
+            "extendBottom": false,
+            "extendTop": true,
             "inputAccessoryViewType": 4,
             "titleBarAttributes": {
                 "barStyle": 0,
@@ -117,13 +122,13 @@
     "name": "kony.ui.Form2",
     "needappmenu": false,
     "paddinginpixel": false,
-    "platform": "android",
-    "prevDevice": "iPhoneXS",
-    "prevPlatform": "iphone",
+    "platform": "iphone",
+    "prevDevice": "iPhoneX",
+    "prevPlatform": "android",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainscrollposition": false,
-    "shellCSS": "and_Pixel3",
+    "shellCSS": "iOS_iPhoneXS",
     "snapgridsize": 10,
     "snaptogrid": true,
     "spa": {

@@ -7,6 +7,13 @@ define({
                     result or else it will fetch the wifi info 
         * @private
     */
+   formInit:function(){
+    this.isIphoneXSeries= checkForIphoneXSeries();
+     if(this.isIphoneXSeries){
+       this.view.flxMainContainer.top="-45dp";
+       this.view.mobileheader.top="45dp";
+     }
+  },
   formWifiInfoPostShowAction: function() {
     let eventData = accelerateEventData.eventdata.records[0];
     if (!kony.sdk.isNullOrUndefined(eventData)) {

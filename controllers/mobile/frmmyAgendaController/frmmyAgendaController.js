@@ -5,6 +5,11 @@ define({
   cardFrameRel: null,
   currentViewState:0,
   myScheduleSession:[],
+  isNotchSet:false,
+  
+  formInit:function(){
+    this.isIphoneXSeries= checkForIphoneXSeries();
+  },
   /**
      * @function frmAgendaPreshow
      * @description The function is invoked in the form preshow action which is used to setup the UI
@@ -13,8 +18,20 @@ define({
   frmAgendaPreshow: function() {
     var self = this;
     let currentActiveDate = kony.store.getItem("currentActiveDate");
-    if(currentActiveDate === null || currentActiveDate === undefined)
+    if(currentActiveDate === null || currentActiveDate === undefined){
       kony.store.setItem("currentActiveDate",4);
+    }
+    if(this.isIphoneXSeries && !this.isNotchSet){
+      this.view.headerContainer.top="-45dp";
+      this.view.headerContainer.height="125dp";
+      this.view.agendaTitle.top=parseInt(this.view.agendaTitle.top)+45+"dp";
+      this.view.buttonDay1.top=parseInt(this.view.buttonDay1.top)+45+"dp";
+      this.view.buttonDay2.top=parseInt(this.view.buttonDay2.top)+45+"dp";
+      //this.view.filterSlider.top=parseInt(this.view.filterSlider.top)+45+"dp";
+       this.isNotchSet=!this.isNotchSet;
+       this.view.menuMain.bottom="0dp";
+       this.view.menuMain.height="105dp";
+    }
     this.view.lblNoEvents.isVisible = false;
     this.view.menuMain.menuContainerMySchedule.menuLabelMySchedule.skin = "menuLabelSkinActive";
     this.view.referenceAgenda.isVisible = false;
@@ -206,7 +223,7 @@ define({
     this.view.headerContainer.animate(
       kony.ui.createAnimation({
         100: {
-          top: "-131dp",
+          top: this.isIphoneXSeries ? "-206dp":"-131dp",
           "stepConfig": {}
         }
       }), {
@@ -233,7 +250,7 @@ define({
       }, {
         animationEnd: function() {
           self.view.sessionTileAnim.addAgendaContainer.left = "82.6%";
-          self.view.sessionTileAnim.addAgendaContainer.top = "39dp";
+          self.view.sessionTileAnim.addAgendaContainer.top = self.isIphoneXSeries?"85dp":"39dp";
 
           self.view.sessionTileAnim.addAgendaContainer.animate(
             kony.ui.createAnimation({
@@ -359,8 +376,8 @@ define({
           "stepConfig": {}
         },
         100: {
-          top: "0",
-          height: this.devHeight,
+          top:  this.isIphoneXSeries?"-45dp":"0",
+          height:this.isIphoneXSeries?this.devHeight+40:this.devHeight,
           "stepConfig": {}
         }
       }), {
@@ -480,7 +497,7 @@ define({
         //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
         100: {
           left: "24dp",
-          top: "59dp",
+          top: this.isIphoneXSeries?"104dp":"59dp",
           "stepConfig": {}
         }
       }), {
@@ -495,7 +512,7 @@ define({
         //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
         100: {
           left: "60%",
-          top: "125dp",
+          top: self.isIphoneXSeries?"170dp":"125dp",
           //top: "105dp",
           "stepConfig": {}
         }
@@ -511,7 +528,7 @@ define({
         //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
         100: {
           left: "24dp",
-          top: "125dp",
+          top: this.isIphoneXSeries?"170dp":"125dp",
           //top: "105dp",
           "stepConfig": {}
         }
@@ -522,6 +539,10 @@ define({
       }, {
         animationEnd: function() {
           this.view.addAgendaContainer.isVisible=true;
+           if(this.isIphoneXSeries){
+            this.view.sessionLocation.top="125dp";
+            this.view.addAgendaContainer.top="39dp";
+          }
           this.view.sessionLocation.isVisible=true;
           this.view.sessionTileAnim.sessionTitle.text=this.view[eventobject.id].sessionData.session_name;
         }.bind(this)
@@ -618,7 +639,7 @@ define({
       kony.ui.createAnimation({
         //0:{left:0,"stepConfig":{}},
         100: {
-          top: "0dp",
+          top:  this.isIphoneXSeries?"-45dp":"0dp",
           "stepConfig": {}
         }
       }), {

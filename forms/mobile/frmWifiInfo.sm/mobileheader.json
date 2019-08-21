@@ -60,5 +60,6 @@
     "snapgridsize": 10,
     "snaptogrid": true,
     "sourceUserWidget": "j49668e494dc4ed9a607f797e521cab9",
-    "wType": "UserWidgetInstance"
+    "wType": "UserWidgetInstance",
+    "zindex": 3
 }
