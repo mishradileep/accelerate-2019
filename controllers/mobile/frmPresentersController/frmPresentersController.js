@@ -34,11 +34,13 @@ define({
         * @private
     */
   setFilteronClick : function(){
-    this.view.menuMain.height = "105dp";
-    this.view.menuMain.bottom = "0dp";
-    this.view.presenterScroll.bottom = "105dp";
-    this.view.presenterDetail.top = "-45dp";
-    this.view.flxImagelargeView.top = "45dp";
+    if(checkForIphoneXSeries()){
+        this.view.menuMain.height = "105dp";
+        this.view.menuMain.bottom = "0dp";
+        this.view.presenterScroll.bottom = "105dp";
+        this.view.presenterDetail.top = "-45dp";
+        this.view.flxImagelargeView.top = "45dp";
+    }
     this.view.preShow = this.formPreshowAction.bind(this);
     var self = this;
     this.view.flxFilterKeynote.onClick = function(eventobject) {
@@ -72,6 +74,12 @@ define({
     }
   },
 
+  	sortPresenterDataByDate : function(sessionData){
+      if(sessionData !== null && sessionData !== undefined && sessionData.length >= 2){
+        sessionData.sort((a,b) => 
+                         new Date(a.session_start_date).getTime() - new Date(b.session_start_date).getTime());
+      }
+    },
   /**
      * @function setPresenterList
      * @description This function is used to create the PresenterTile dynamically
@@ -142,6 +150,7 @@ define({
      * @private
      */
   createSessions: function(sessions) {
+    this.sortPresenterDataByDate(sessions);
     this.view.flexSessions.removeAll();
     var isSessionPresent = null;
     var myScheduleData = kony.store.getItem("myAgendaData");

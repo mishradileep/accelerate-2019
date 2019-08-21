@@ -338,8 +338,10 @@
       if (recordsLength > 0) {
           for (let index = 0; index < recordsLength; index++) {
               let currentRecord = successResponse.records[index];
-              currentRecord.sessionsList = JSON.parse(currentRecord.sessionsList);
-              currentRecord.tracks = JSON.parse(currentRecord.tracks);
+              if(currentRecord.hasOwnProperty("sessionsList") && currentRecord.sessionsList !== undefined){
+              	currentRecord.sessionsList = JSON.parse(currentRecord.sessionsList);
+              	currentRecord.tracks = JSON.parse(currentRecord.tracks);
+              }
           }
       }
   }

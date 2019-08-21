@@ -657,6 +657,7 @@ define({
     if(kony.sdk.isNullOrUndefined(session.room_no) || session.room_no.length<=0){
       return ;
     }
+    this.view.flxPdf.isVisible=true;
     var floormap=session.room_no;
     var heading =session.session_location;
     this.view.flxPdf.zIndex = 300;
@@ -995,6 +996,8 @@ define({
       if(opacity>=1){
         self.view.addAgendaContainer.isVisible=true;
         self.view.sessionLocation.isVisible=true;
+        self.view.addAgendaContainer.top="39dp";
+        self.view.sessionLocation.top="125dp";
       }
       else{
         self.view.addAgendaContainer.isVisible=false;
@@ -1431,6 +1434,9 @@ define({
   
   toggleIconsOfAgendaContainer:function(tileObject){
     var myAgendaData=kony.store.getItem("myAgendaData");
+    if(kony.sdk.isNullOrUndefined(myAgendaData)){
+      return ;
+    }
     if(!kony.sdk.isNullOrUndefined(this.view[tileObject.id].sessionData) && kony.sdk.isNullOrUndefined(myAgendaData[this.view[tileObject.id].sessionData.event_session_id])){
               	this.view[tileObject.id].imgStatus.src=this.view[tileObject.id].agendaIndicatorImage;
                 this.view[tileObject.id].addAgendaContainer.skin=this.view[tileObject.id].agendaUnselectedSkin;
@@ -1758,6 +1764,7 @@ define({
      * 	@private
      */
   onClickOfPDF: function(eventObject) {
+    this.view.flxPdf.isVisible=true;
     this.view.flxPdf.zIndex=300;
     var url=this.view[eventObject.id].pdfUrl;
     this.view.flxPdf.mobileheader.headerTitle="PDF Material";
@@ -1778,6 +1785,7 @@ define({
     this.view.flxPdf.animate(this.animateTopForPdf("100%"),this.getPlatformSpecific(), {"animationEnd":function(){
       this.view.flxPdf.zIndex=1;
       this.view.txtArea.setEnabled(false);
+      this.view.flxPdf.isVisible=false;
     }.bind(this)});
 
   },
@@ -1804,9 +1812,15 @@ define({
     var found=false;
     var index;
     for(index=0;index<len;index++){
-      if(new Date(sessions[index].startDate).getDate()==startDate){
-        found=true;
-        break;
+      var splitDate = null;
+      var splitCharecter = "";
+      if(sessions[index].startDate !== null && sessions[index].startDate !== undefined){
+          splitCharecter = (sessions[index].startDate.indexOf("T") > 0 ) ? "T" : " ";
+          splitDate = sessions[index].startDate.split(splitCharecter);
+          if(new Date(splitDate[0]).getDate() === startDate){
+            found = true;
+            break;
+          }
       }
     }
     if(found){
