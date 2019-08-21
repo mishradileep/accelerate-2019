@@ -1,5 +1,6 @@
-
 {
-    "LSApplicationQueriesSchemes" : ["quantum"]
+   "LSApplicationQueriesSchemes" : ["quantum"],
+    "NSCameraUsageDescription" : "Allow to access device camera for augmented reality display",
+    "NSLocationAlwaysUsageDescription" :  "Allow to access device location for timezone conversation.",
+    "NSLocationWhenInUseUsageDescription" : "Allow to access ddevice location for local notification for subscribed agenda sessions."
 }
-
