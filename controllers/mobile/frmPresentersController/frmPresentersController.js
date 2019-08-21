@@ -72,6 +72,12 @@ define({
     }
   },
 
+  	sortPresenterDataByDate : function(sessionData){
+      if(sessionData !== null && sessionData !== undefined && sessionData.length >= 2){
+        sessionData.sort((a,b) => 
+                         new Date(a.session_start_date).getTime() - new Date(b.session_start_date).getTime());
+      }
+    },
   /**
      * @function setPresenterList
      * @description This function is used to create the PresenterTile dynamically
@@ -142,6 +148,7 @@ define({
      * @private
      */
   createSessions: function(sessions) {
+    this.sortPresenterDataByDate(sessions);
     this.view.flexSessions.removeAll();
     var isSessionPresent = null;
     var myScheduleData = kony.store.getItem("myAgendaData");
