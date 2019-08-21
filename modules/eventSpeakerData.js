@@ -2283,15 +2283,6 @@ accelerateSpeakerData = {
                     "sessionsList": []
                 },
                 {
-                    "speaker_id": 11,
-                    "speaker_name": "Alex Cobb",
-                    "speaker_title": "VP of Products  Kony, Inc.",
-                    "CreatedDateTime": "2019-08-19T12:21:49Z",
-                    "LastUpdatedDateTime": "2019-08-19T12:21:49Z",
-                    "tracks": [],
-                    "sessionsList": []
-                },
-                {
                     "speaker_id": 12,
                     "speaker_name": "Jennifer Wilson",
                     "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/jennifer_wilson_560x570.png",
