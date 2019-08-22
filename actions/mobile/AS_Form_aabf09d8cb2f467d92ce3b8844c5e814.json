@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__a29aca1fc0064e2c89fdf0de76dac51f",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.view.brwsrPrivacyPolicy.enableParentScrollingWhenReachToBoundaries = false;;",
+            "codeSnippet": "this.view.brwsrPrivacyPolicy.enableParentScrollingWhenReachToBoundaries = false;;\nthis.view.brwsrPrivacyPolicy.requestURLConfig = {\n                    URL: \"privacy-policy.html\",\n                    requestMethod: constants.BROWSER_REQUEST_METHOD_GET\n                };",
             "parentId": null,
             "callbackType": null
         }]
