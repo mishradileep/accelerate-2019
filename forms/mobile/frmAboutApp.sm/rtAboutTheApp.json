@@ -4,7 +4,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "30%"
+        "value": "145dp"
     },
     "_left_": {
         "type": "string",
@@ -30,7 +30,7 @@
     "_text_": "This is the official Kony Accelerate 2019 conference app. Here, you have access to all of Kony Accelerate 2019 conference content offline, with features including, Conference Info, Personal Agenda, Push Notifications on your Personal Agenda, Daily News and Updates and More.",
     "_top_": {
         "type": "string",
-        "value": "4%"
+        "value": "240dp"
     },
     "_wrapping_": 2,
     "canUpdateUI": true,
