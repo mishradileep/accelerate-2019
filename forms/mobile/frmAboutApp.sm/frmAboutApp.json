@@ -49,7 +49,7 @@
     "desktopweb": {
         "needAppMenu": false
     },
-    "device": "iPhoneXS",
+    "device": "Pixel3",
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmAboutApp",
@@ -113,14 +113,14 @@
     "name": "kony.ui.Form2",
     "needappmenu": false,
     "paddinginpixel": false,
-    "platform": "iphone",
+    "platform": "android",
     "postshow": "AS_Form_a1f8d2de650c467dbd73829221015cb4",
     "prevDevice": "iPhoneXS",
     "prevPlatform": "iphone",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainscrollposition": false,
-    "shellCSS": "iOS_iPhoneXS",
+    "shellCSS": "and_Pixel3",
     "snapgridsize": 10,
     "snaptogrid": true,
     "spa": {

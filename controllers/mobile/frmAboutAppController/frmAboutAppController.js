@@ -6,6 +6,7 @@ define({
      * @private
      */
     animateAboutTheAppCard: function(finalTop) {
+        this.setImageAspectRatio();
         this.view.flxContent.isVisible = true;
         this.view.flxContent.animate(
             kony.ui.createAnimation({
@@ -25,5 +26,10 @@ define({
                     }
                 }
             });
-    }
+    },
+  
+  setImageAspectRatio : function() {
+    var width = kony.os.deviceInfo().screenWidth;
+    this.view.imgQuantamHeader.height = width * 0.46;
+  }
 });

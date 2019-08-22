@@ -5,7 +5,11 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "70px"
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -19,21 +23,17 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "string",
-        "value": "10dp"
-    },
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "arwright.png",
+    "_src_": "quantum_header.png",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_width_": {
         "type": "string",
-        "value": "70px"
+        "value": "100%"
     },
     "canUpdateUI": true,
-    "centery": {
-        "type": "string",
-        "value": "50%"
-    },
     "containerweight": 100,
     "context": {
         "channel": "mobile",
@@ -42,14 +42,15 @@
         "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "imgPrivacyPolicyContinue",
-    "imagescalemode": 1,
+    "id": "imgQuantamHeader",
+    "imagescalemode": 0,
     "info": null,
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ga6ae4f5b096406393535f076b345d5c",
+    "kuid": "ca9c76411f0f444d8835a5696ac3ad71",
     "name": "kony.ui.Image2",
-    "parent": "flxPrivacyPolicy",
+    "parent": "flxQuantamHeader",
     "pf": "frmAboutApp",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

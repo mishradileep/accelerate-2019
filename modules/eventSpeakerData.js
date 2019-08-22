@@ -120,7 +120,7 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 3,
                     "speaker_name": "Jeffery Kendall",
-                    "speaker_bio": "John Janclaes has more than thirty  years of in the financial services  industry, spanning retail banking,  brokerage, and insurance. ",
+                    "speaker_bio": "",
                     "speaker_profile_pic": "jeffrey_k.png",
                     "speaker_title": "EVP & GM Kony DBX",
                     "CreatedDateTime": "2019-08-06T10:18:26Z",
