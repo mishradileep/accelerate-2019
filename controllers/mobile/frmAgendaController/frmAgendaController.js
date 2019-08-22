@@ -1818,7 +1818,8 @@ define({
       if(sessions[index].startDate !== null && sessions[index].startDate !== undefined){
           splitCharecter = (sessions[index].startDate.indexOf("T") > 0 ) ? "T" : " ";
           splitDate = sessions[index].startDate.split(splitCharecter);
-          if(new Date(splitDate[0]).getDate() === startDate){
+          var date = splitDate[0].split("-")[2];
+          if(parseInt(date) === startDate){
             found = true;
             break;
           }

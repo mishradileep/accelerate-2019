@@ -70,11 +70,5 @@ define({
     AS_Form_ce1c3ac567c14878a6d0115ae35f7155: function AS_Form_ce1c3ac567c14878a6d0115ae35f7155(eventobject) {
         var self = this;
         return;
-    },
-    /** onClick defined for flxRatingContainer **/
-    AS_FlexContainer_f0688ab857384716a6e560bb6f89d743: function AS_FlexContainer_f0688ab857384716a6e560bb6f89d743(eventobject) {
-        var self = this;
-        // this.txtAreaEnable=true;
-        // this.view.txtArea.setEnabled(true);
     }
 });
