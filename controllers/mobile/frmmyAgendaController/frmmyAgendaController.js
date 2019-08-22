@@ -139,6 +139,7 @@ define({
      * @private
      */
   frmAgendaSessionSelect: function(eventobject) {
+    this.view.txtArea.setEnabled(true);
     this.view.detailsScroller.isVisible= true;
     this.currentViewState=1;
     this.setSpeakerProfile(eventobject);
@@ -605,6 +606,7 @@ define({
      */
   frmAgendaSessionClose: function(callback) {
     //this.setData(accelerateSessionData.eventSessionData.records);
+    this.view.txtArea.setEnabled(false);
     this.view.txtArea.text="";
     this.currentViewState=0;
     var self = this;
@@ -1494,7 +1496,7 @@ define({
       this.view.lblPresentation.isVisible = false;
       this.view.flxMaterial.isVisible=false;
       if(!this.view.flxRatingContainer.isVisible ){
-        this.view.flxCurvedArrow.isVisible=false;
+        //this.view.flxCurvedArrow.isVisible=false;
       }
       return;
     }

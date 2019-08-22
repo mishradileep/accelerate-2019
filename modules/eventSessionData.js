@@ -15,7 +15,7 @@ accelerateSessionData = {
 		{
 			"event_id": 3,
 			"event_session_id": 3,
-			"session_end_date": "2019-09-04T14:25:00Z",
+			"session_end_date": "2019-08-04T14:25:00Z",
 			"session_name": "Welcome and Kony Vision",
 			"session_start_date": "2019-09-04T14:00:00Z",
 			"session_long_desc": "\n",
@@ -849,7 +849,7 @@ accelerateSessionData = {
 				"event_id": 3,
 				"presenter_id": 32,
 				"session_id": 28,
-				"master_speaker_id": 15,
+				"master_speaker_id": 32,
 				"CreatedDateTime": "2019-08-15T03:08:57Z",
 				"LastUpdatedDateTime": "2019-08-19T12:37:25Z",
 				"SoftDeleteFlag": false
