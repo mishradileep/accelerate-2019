@@ -9,14 +9,14 @@
           kony.store.setItem("clientLastUpdatedTime", "2019-08-21T08:57:09Z");
       else {
           let storeEventData = kony.store.getItem("eventData");
-          let storeEventSessionData = kony.store.getItem("eventSessionData");
+          let storeEventSessionData = null; //kony.store.getItem("eventSessionData");
           let storeSpeakerData = kony.store.getItem("eventSpeakerData");
           let storeSponsorData = kony.store.getItem("eventSponsorData");
           let storeTeamData = kony.store.getItem("eventTeamData");
           let quantumData = kony.store.getItem("quantumQuestData");
           assignStoreDataToLocal(quantumData,storeEventData, storeEventSessionData, storeSpeakerData, storeSponsorData, storeTeamData);
       }
-      fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.DATA_SYNC_OBJECT, {}, dataSyncFetchSuccess, dataSyncFetchFailure);
+     // fetchObjectData(eventConstants.OBJECT_SERVICE_NAME, eventConstants.DATA_SYNC_OBJECT, {}, dataSyncFetchSuccess, dataSyncFetchFailure);
       var nav = new kony.mvc.Navigation("frmAgenda");
       nav.navigate();
   }

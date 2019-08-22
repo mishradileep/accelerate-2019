@@ -50,12 +50,13 @@ function disableDefaultLoadingScreen(){
 
 
 function checkForIphoneXSeries(){
-  var deviceInfo=kony.os.deviceInfo();
-  if(deviceInfo.model===eventConstants.IPHONE_X || deviceInfo.model===eventConstants.IPHONE_XS || deviceInfo.model===eventConstants.IPHONE_XS_MAX ){
-    return true;
-  }
-  else{
-    return false;
-  }
+//   var deviceInfo=kony.os.deviceInfo();
+//   if(deviceInfo.model===eventConstants.IPHONE_X || deviceInfo.model===eventConstants.IPHONE_XS || deviceInfo.model===eventConstants.IPHONE_XS_MAX || deviceInfo.model===eventConstants.IPHONE_XR ){
+//     return true;
+//   }
+//   else{
+//     return false;
+//   }
+  return false;
 }
 

@@ -23,7 +23,7 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s153b0a81ced4a9ba8a59113bd351f38",
+    "_skin_": "s934d6b099054996b31cdfb64ebff927",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -40,6 +40,7 @@
     "canUpdateUI": true,
     "children": [
         "sessionContentContainer",
+        "flxRoundedCorner",
         "flxCurvedArrow",
         "feedbackMaster"
     ],
@@ -61,7 +62,6 @@
     "kuid": "ife28c26431749cf8732d9d72bde4862",
     "layouttype": 4,
     "name": "kony.ui.FlexScrollContainer",
-    "ontouchstart": "AS_FlexScrollContainer_c4a056b6f01a423093c598b34fd6c565",
     "pagingenabled": false,
     "parent": "frmAgenda",
     "pf": "frmAgenda",

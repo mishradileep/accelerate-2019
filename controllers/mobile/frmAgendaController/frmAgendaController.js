@@ -166,6 +166,7 @@ define({
      * @private
      */
   frmAgendaSessionSelect: function(eventobject) {
+    this.view.txtArea.setEnabled(true);
     this.view.sessionTileAnim.left = "100%";
     this.view.sessionTileAnim.isVisible=true;
     this.view.forceLayout();
@@ -679,6 +680,7 @@ define({
      * @private
      */
   frmAgendaSessionClose: function() {
+    this.view.txtArea.setEnabled(false);
     this.view.txtArea.text="";
     if(this.isNavigatedFrmOtherForm){
       this.isNavigatedFrmOtherForm=false;
@@ -982,6 +984,7 @@ define({
      * @private
      */
   detailsScrollerOnScrolling: function() {
+    
     var self = this;
     var scrollPosY = self.view.detailsScroller.contentOffsetMeasured.y;
     var tileScale = kony.ui.makeAffineTransform();
@@ -990,14 +993,12 @@ define({
       tileScale.scale(1 + (scrollPosY * -0.002), 1 + (scrollPosY * -0.002));
       self.view.sessionTileAnim.transform = tileScale;
     } else {
-      self.view.sessionTileAnim.top = scrollPosY * -0.3;
+      self.view.sessionTileAnim.top = (scrollPosY * -0.3);
       var opacity= (1 - (scrollPosY * 0.01));
       self.view.imageBack.opacity = opacity;
       if(opacity>=1){
         self.view.addAgendaContainer.isVisible=true;
         self.view.sessionLocation.isVisible=true;
-        self.view.addAgendaContainer.top="39dp";
-        self.view.sessionLocation.top="125dp";
       }
       else{
         self.view.addAgendaContainer.isVisible=false;
@@ -1590,7 +1591,7 @@ define({
       this.view.lblPresentation.isVisible = false;
       this.view.flxMaterial.isVisible=false;
       if(!this.view.flxRatingContainer.isVisible ){
-        this.view.flxCurvedArrow.isVisible=false;
+        //this.view.flxCurvedArrow.isVisible=false;
       }
       return;
     }

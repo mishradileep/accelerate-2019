@@ -24,6 +24,7 @@ var eventConstants = {
   TEAM_OBJECT : "team",
   EVENT_TWITTER_HANDLE : "https://twitter.com/hashtag/KonyAccelerate2019?src=hash",
   IPHONE_X:"iPhone X",
-  IPHONE_XR:"iPhone XS",
+  IPHONE_XR:"iPhone XR",
+  IPHONE_XS: "iPhone XS",
   IPHONE_XS_MAX:"iPhone XS Max"
 };

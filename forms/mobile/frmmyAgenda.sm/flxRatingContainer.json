@@ -54,7 +54,6 @@
     "kuid": "ge231f9907ce4d5289eac434eb95213b",
     "layouttype": 4,
     "name": "kony.ui.FlexContainer",
-    "onclick": "AS_FlexContainer_b7c7e5f0e881488f85d41256ffd04f43",
     "parent": "feedbackMaster",
     "pf": "frmmyAgenda",
     "retaincontentalignment": false,
