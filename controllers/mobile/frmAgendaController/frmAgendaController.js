@@ -6,6 +6,8 @@ define({
   currentViewState:0,
   currentSelectedTab:eventConstants.KEYNOTE,
   isNotchSet:false,
+  isSetDataInvoked:true,
+  
   
   
   formInit:function(){
@@ -88,35 +90,14 @@ define({
      * @private
      */
   frmAgendaPostshow: function() {
-    if(this.currentSelectedTab==eventConstants.KEYNOTE){
+    if(this.isSetDataInvoked){
+      this.currentSelectedDate=parseInt(this.view.buttonDay1.text);
       this.changeButtonSkins("4TH SEP");
       this.setData(accelerateSessionData.eventSessionData.records); 
+      this.isSetDataInvoked=!this.isSetDataInvoked;
     }
     else{
-      var isFirst=true;
-      var filterid=this.currentSelectedTab;
-      var sessionTiles= this.filteredSession;
-      var myAgendaData=kony.store.getItem("myAgendaData");
-      for(var index=0;index<sessionTiles.length;index++){
-        var tileObject=sessionTiles[index];
-        if (!kony.sdk.isNullOrUndefined(tileObject.sessionData)) {
-          if (tileObject.sessionData.session_track_id === filterid) {
-            if(isFirst){
-              this.view[tileObject.id].top="131dp";
-              isFirst=!isFirst;
-            }
-            else{
-              this.view[tileObject.id].top="0dp"; 
-            }
-            this.view[tileObject.id].isVisible = true;
-            this.view[tileObject.id].opacity = 100;
-            if(kony.sdk.isNullOrUndefined(myAgendaData[this.view[tileObject.id].sessionData.event_session_id])){
-              	this.view[tileObject.id].imgStatus.src=this.view[tileObject.id].agendaIndicatorImage;
-                this.view[tileObject.id].addAgendaContainer.skin=this.view[tileObject.id].agendaUnselectedSkin;
-            }
-          }
-        }
-      }
+      this.sortSessions();
     }
     this.devHeight = this.view.masterContainer.frame.height;
     egLogger("devHeight = " + this.devHeight);
@@ -1015,7 +996,6 @@ define({
      * @private
      */
   agendaFilter: function(eventobject) {
-    this.changeButtonSkins("4TH SEP");
     var self = this;
     var leftPos = "0%";
     var buttonText = "ALL";
@@ -1091,7 +1071,8 @@ define({
 
         }
       });
-    this.filterSessionTiles(sessionTrack);
+    
+    this.sortSessions();
   },
 
   /**
@@ -1101,63 +1082,152 @@ define({
      * 	@private
      */
   setData: function(sessions) {
-    this.breakTiles={};
-    var breakCount=0;
+    debugger;
     this.view.sessionTiles.removeAll();
+    var currentDate=this.currentSelectedDate;
+    var currentCategory=this.currentSelectedTab;
     this.filteredSession=[];
     this.allSessionTiles=[];
     this.sessionsList = sessions;
     this.checkIfSessionsAreMyScheduled(sessions);
     var sessionCount = sessions.length;
+    var isFirst=true,top;
     for (var index = 0; index < sessionCount; index++) {
       var id = eventConstants.SESSION_TILE_ID + index;
       var sessionObj = sessions[index];
       var sessionTile;
-      if (index === 0) {
+      
         if(sessionObj.session_track_id==4){
           var duration=this.findTimeDifference(sessionObj.session_start_date,sessionObj.session_end_date);
-          var breakTile=this.createBreakSession(id,"142dp","50dp",duration+" "+"BREAK");
+          if(isFirst){
+            top="142dp";
+            isFirst=!isFirst;
+          }
+          else{
+            top="0dp";
+          }
+          var breakTile=this.createBreakSession(id,top,"50dp",duration+" "+"BREAK");
           breakTile.sessionTrackId=4;
-          this.view.sessionTiles.add(breakTile);
+          breakTile.startDate=sessionObj.session_start_date;
+          this.allSessionTiles.push(breakTile);
           this.filteredSession.push(breakTile);
-          breakCount++;
-          this.breakTiles[index]=breakCount;
-          continue;
+          //breakTile.isVisible=false;
+          this.view.sessionTiles.add(breakTile);
         }
         else{
-          sessionTile = this.createSessionTile(id, "131dp");
-          this.breakTiles[index]=breakCount;
+          if(isFirst){
+            top="131dp";
+            isFirst=!isFirst;
+          }
+          else{
+            top="0dp";
+          }
+          sessionTile = this.createSessionTile(id, top);
+          sessionTile.setTitleData(sessionObj);
+          sessionTile.callback=this.mySchedular;
+          sessionTile.onClick=this.frmAgendaSessionSelect.bind(this);
+          this.allSessionTiles.push(sessionTile);
+          //sessionTile.isVisible=false;
+          this.view.sessionTiles.add(sessionTile);
+          
+          
         }
-      } else {
-        if(sessionObj.session_track_id==4){
-          var duration=this.findTimeDifference(sessionObj.session_start_date,sessionObj.session_end_date);
-          var breakTile=this.createBreakSession(id,"0dp","50dp",duration+" BREAK");
-          breakTile.sessionTrackId=4;
-          this.view.sessionTiles.add(breakTile);
-          this.filteredSession.push(breakTile);
-           breakCount++;
-          this.breakTiles[index]=breakCount;
-          continue;
-        }
-        else{
-          sessionTile = this.createSessionTile(id, "0dp");
-          this.breakTiles[index]=breakCount;
-        }
-
       }
-      this.view.sessionTiles.add(sessionTile);
-      this.filteredSession.push(sessionTile);
-      this.allSessionTiles.push(sessionTile);
-      this.view[id].setTitleData(sessionObj);
-      this.view[id].callback = this.mySchedular;
-      this.view[id].onClick = this.frmAgendaSessionSelect.bind(this);
-    }
     this.view.sessionTileAnim.callback = this.mySchedular;
-    //       	if(!kony.sdk.isNullOrUndefined(this._previousForm) || !kony.sdk.isNullOrUndefined(this. navigateSessionId)){
-    //           this.naviateToSessionDetail();
-    //           this. navigateSessionId=null;
-    //         }
+    this.sortSessions();
   },
+  sortSessions:function(){
+    var sessionTiles=this.allSessionTiles;
+    if(this.currentSelectedTab===eventConstants.KEYNOTE){
+      this.filterByDate(sessionTiles);
+    }
+    else{
+      this.filterByDateAndCategory(sessionTiles);
+    }
+  },
+  filterByDate:function(sessionTiles){
+    var myAgendaData=kony.store.getItem("myAgendaData");
+    var isFirst=true;
+    var currentDate=this.currentSelectedDate;
+    var tilesCount=sessionTiles.length;
+    for(var index=0;index<tilesCount;index++){
+      var tileObject=sessionTiles[index];
+      if(this.checkDate(tileObject.startDate,currentDate)){
+        this.view[tileObject.id].isVisible=true;
+        this.view[tileObject.id].opacity=100;
+        if(isFirst){
+          this.view[tileObject.id].top="142dp";
+          isFirst=! isFirst;
+        }
+        else{
+           this.view[tileObject.id].top="0dp";
+        }
+        
+      }
+      else{
+        this.view[tileObject.id].isVisible=false;
+      }
+      this.toggleAgendaIfBookmarked(tileObject, myAgendaData);
+    }
+  },
+  filterByDateAndCategory:function(sessionTiles){
+    var isFirst=true;
+    var myAgendaData=kony.store.getItem("myAgendaData");
+    var currentDate=this.currentSelectedDate;
+    var currentCategory=this.currentSelectedTab;
+     var tilesCount=sessionTiles.length;
+    for(var index=0;index<tilesCount;index++){
+      var tileObject=sessionTiles[index];
+      if(tileObject.sessionData === null && tileObject.sessionData === undefined){
+        continue;
+      }
+      if(this.checkDate(tileObject.startDate,currentDate) && tileObject.sessionTrackId==currentCategory){
+        this.view[tileObject.id].isVisible=true;
+        this.view[tileObject.id].opacity=100;
+       if(isFirst){
+         this.view[tileObject.id].top="131dp";
+         isFirst=! isFirst;
+       }
+        else{
+          this.view[tileObject.id].top="0dp";
+        }
+    }
+      else{
+        this.view[tileObject.id].isVisible=false;
+      }
+      this.toggleAgendaIfBookmarked(tileObject);
+    }
+  },
+  toggleAgendaIfBookmarked:function(tileObject, myAgendaData){
+    if(!kony.sdk.isNullOrUndefined(myAgendaData)){
+        if(!kony.sdk.isNullOrUndefined(tileObject.sessionData)){
+          if( myAgendaData.hasOwnProperty(tileObject.sessionData.event_session_id)){
+          this.view[tileObject.id].imgStatus.src=this.view[tileObject.id].myScheduleIndicatorImage;
+          this.view[tileObject.id].addAgendaContainer.skin=this.view[tileObject.id].agendaContainerSkin;
+        }
+        else{
+           this.view[tileObject.id].imgStatus.src=this.view[tileObject.id].agendaIndicatorImage;
+          this.view[tileObject.id].addAgendaContainer.skin=this.view[tileObject.id].agendaUnselectedSkin;
+        
+        }
+        }
+      }
+  },
+    checkDate:function(startDate,selectedDate){
+      var splitDate = null;
+     var splitCharecter = "";
+     if(startDate !== null && startDate !== undefined){
+         splitCharecter = startDate.indexOf("T") > 0  ? "T" : " ";
+         splitDate =startDate.split(splitCharecter);
+         if(new Date(splitDate[0]).getDate() === selectedDate){
+           return true;
+         }
+       else{
+         return false;
+       }
+     }
+    },
+  
   findTimeDifference:function(t1,t2){
     var d1=new Date(t1).getTime();
     var d2=new Date(t2).getTime();
@@ -1364,7 +1434,7 @@ define({
   onClickOfEventDate: function(eventobject) {
     let buttonText = eventobject.text;
     this.changeButtonSkins(buttonText);
-    this.onClickOfFilter(buttonText);
+    this.sortSessions();
   },
 
   /**
@@ -1385,6 +1455,8 @@ define({
       this.view.buttonDay1.skin = "sknButtonInActive";
       this.view.buttonDay1.focusSkin = "sknButtonActive";
     }
+    this.currentSelectedDate=parseInt(buttonText);
+     
   },
   /**
      *	@function filterSessionTiles
@@ -1393,7 +1465,6 @@ define({
      * 	@private
      */
   filterSessionTiles: function(sessionTrackId) {
-    this.filteredSession=[];
     var isFirstTile = false;
     var sessionCount = this.sessionsList.length;
     for (var index = 0; index < sessionCount; index++) {
@@ -1807,42 +1878,15 @@ define({
   },
   onClickOfFilter:function(text){
     var startDate=parseInt(text);
-    var sessions= this.filteredSession;
-    var len=sessions.length;
-    var found=false;
-    var index;
-    for(index=0;index<len;index++){
-      var splitDate = null;
-      var splitCharecter = "";
-      if(sessions[index].startDate !== null && sessions[index].startDate !== undefined){
-          splitCharecter = (sessions[index].startDate.indexOf("T") > 0 ) ? "T" : " ";
-          splitDate = sessions[index].startDate.split(splitCharecter);
-          if(new Date(splitDate[0]).getDate() === startDate){
-            found = true;
-            break;
-          }
-      }
-    }
-    if(found){
-      if(index===0){
-        this.view.contentScroller.setContentOffset({"y":0},true);
-      }
-      else{
-        var extra=0,currentTileIndex =0;
-        if(this.currentSelectedTab===eventConstants.KEYNOTE){
-        	 extra=this.breakTiles[index]*50;
-          	  currentTileIndex = index - this.breakTiles[index];
-        }else{
-          currentTileIndex = index;
-        }
-        
-        var height=((currentTileIndex+1)*152)-131+ extra;
-        this.view.contentScroller.setContentOffset({"y":height+"dp"},true);
-      }
+    var sessions;
+    if(startDate==4){
+      this.filterdSessions=this.fourthSessions;
     }
     else{
-      this.view.contentScroller.scrollToEnd();
+      sessions=this.fifthSessions;
     }
+   this.filterSessionTiles(this.currentSelectedTab);
+   
   },
   onNavigate:function(naviInfo){
     this.navigateSessionId=null;

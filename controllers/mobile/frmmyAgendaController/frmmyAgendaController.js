@@ -1027,8 +1027,9 @@ define({
     var isFirstTile=true;
     this.view.sessionTiles.removeAll();
     this.filteredSession=[];
+    this.allSessionTiles=[];
     this.sessionsList = sessions;
-    this.checkIfSessionsAreMyScheduled(sessions)
+    this.checkIfSessionsAreMyScheduled(sessions);
     var sessionCount = sessions.length;
     for (var index = 0; index < sessionCount; index++) {
       var id = eventConstants.SESSION_TILE_ID + index;
@@ -1043,13 +1044,18 @@ define({
       } else {
         sessionTile = this.createSessionTile(id, "0dp");
       }
+      sessionTile.setTitleData(sessionObj);
+      if(new Date(sessionTile.startDate).getDate()==5){
+        sessionTile.isVisible=false;
+      }
+      this.allSessionTiles.push(sessionTile);
       this.view.sessionTiles.add(sessionTile);
       this.filteredSession.push(sessionTile);
       this.view[id].setTitleData(sessionObj);
       this.view[id].setDeleteButtonValues();
       this.myScheduleSession.push(sessionTile);
       this.view[id].deleteCallback=this.resetData.bind(this);
-        this.view[id].onClick = this.frmAgendaSessionSelect.bind(this);
+      this.view[id].onClick = this.frmAgendaSessionSelect.bind(this);
     }
     if(this.myScheduleSession.length <= 0)
       this.view.lblNoEvents.isVisible = true;
@@ -1062,6 +1068,10 @@ define({
      *	@param sessions {Object} - list of sessions
      * 	@private
      */
+  
+  toggleVisibility:function(){
+    var sessions=this.allSessionTiles;
+  },
   checkIfSessionsAreMyScheduled:function(sessions){
     var myScheduledSession=kony.store.getItem("myAgendaData");
     if(kony.sdk.isNullOrUndefined(myScheduledSession)){
@@ -1075,6 +1085,7 @@ define({
     }
   },
   resetData:function(id){
+    this.view.lblNoEvents.isVisible = false;
     var sessions=this.myScheduleSession;
     var len=sessions.length;
     var index;
@@ -1093,11 +1104,17 @@ define({
     else{
       this.view.sessionTiles.remove(this.view[id]);
     }
-    if(childrenCount == 1){
-      this.view.lblNoEvents.isVisible = true;
+     var children=this.view.sessionTiles.widgets();
+    var len=children.length;
+    for(index=0;index<len;index++){
+      if(children[index].isVisible){
+        break;
+      }
+    }
+    if(index==len){
+      this.view.lblNoEvents.isVisible=true;
     }
     this.filteredSession=this.view.sessionTiles.widgets();
-    //this.onClickOfFilter(this.currentSelectedFilter);
     this.view.forceLayout();
   },
 
@@ -1685,25 +1702,49 @@ define({
   },
 
   onClickOfFilter:function(text){
+    this.view.lblNoEvents.isVisible=false;
+    var isFirst=true;
     var startDate=parseInt(text);
-    var sessions= this.filteredSession;
+    var sessions= this.allSessionTiles;
     var len=sessions.length;
     var found=false;
     var index;
     for(index=0;index<len;index++){
       if(new Date(sessions[index].startDate).getDate()==startDate){
-        found=true;
+        if(isFirst){
+          if(!kony.sdk.isNullOrUndefined(this.view[sessions[index].id])){
+            this.view[sessions[index].id].isVisible=true;
+            this.view[sessions[index].id].top="80dp";
+            isFirst=! isFirst;
+          }
+           
+        }
+        else{
+          if(!kony.sdk.isNullOrUndefined(this.view[sessions[index].id])){
+            this.view[sessions[index].id].top="0dp";
+            this.view[sessions[index].id].isVisible=true;
+          }
+           
+        }
+      }
+      else{
+        if(!kony.sdk.isNullOrUndefined(this.view[sessions[index].id])){
+         this.view[sessions[index].id].isVisible=false;
+        }
+      }
+    }
+    var children=this.view.sessionTiles.widgets();
+    var len=children.length;
+    for(index=0;index<len;index++){
+      if(children[index].isVisible){
         break;
       }
     }
-    if(found){
-      this.view.contentScroller.scrollToWidget(sessions[index],true);
-      this.view.sessionTiles.isVisible = true;
-      this.view.lblNoEvents.isVisible = false;
+    if(index==len){
+      this.view.lblNoEvents.isVisible=true;
     }
     else{
-      this.view.sessionTiles.isVisible = false;
-      this.view.lblNoEvents.isVisible = true;
+      this.view.lblNoEvents.isVisible=false
     }
   },
 

@@ -1,0 +1,24 @@
+{
+    "AS_Form_c7a1fc91074a456da0146f6ccba5b006": {
+        "id": "AS_Form_c7a1fc91074a456da0146f6ccba5b006",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmAgenda",
+            "type": "forms",
+            "platform": "",
+            "KUID": "g7d71a566dee45ffa15745fbce32e657"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__eaaddd68f58047a79533ebd38cae976f",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "if(this.currentViewState===0){\n  this.frmAgendaPreshow();\n}\nthis.view.flxToast.isVisible=false;\n",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}
