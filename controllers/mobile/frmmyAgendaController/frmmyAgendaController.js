@@ -18,6 +18,10 @@ define({
      */
     frmAgendaPreshow: function() {
         var self = this;
+      	this.view.pdfBrowser.requestURLConfig = {
+                    URL: "index.html",
+                    requestMethod: constants.BROWSER_REQUEST_METHOD_GET
+                };
         let currentActiveDate = kony.store.getItem("currentActiveDate");
         if (currentActiveDate === null || currentActiveDate === undefined) {
             kony.store.setItem("currentActiveDate", 4);
