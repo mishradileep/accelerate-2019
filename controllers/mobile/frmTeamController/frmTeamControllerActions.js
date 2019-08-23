@@ -12,5 +12,10 @@ define({
     AS_Form_j82f791b227d4cc590cfbbb6ab929f56: function AS_Form_j82f791b227d4cc590cfbbb6ab929f56(eventobject) {
         var self = this;
         this.formPostShowAction();
+    },
+    /** onDeviceBack defined for frmTeam **/
+    AS_Form_gf962e64eb1f48b5ab01a08afacc8d95: function AS_Form_gf962e64eb1f48b5ab01a08afacc8d95(eventobject) {
+        var self = this;
+        return;
     }
 });

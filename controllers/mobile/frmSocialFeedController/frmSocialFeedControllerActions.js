@@ -11,5 +11,10 @@ define({
     AS_Form_a7ef91fff87a4bada03398b8d9779865: function AS_Form_a7ef91fff87a4bada03398b8d9779865(eventobject) {
         var self = this;
         this.frmSocialFeedPreshowAction();
+    },
+    /** onDeviceBack defined for frmSocialFeed **/
+    AS_Form_f4b553fee256478a8348381aaa5bb2ae: function AS_Form_f4b553fee256478a8348381aaa5bb2ae(eventobject) {
+        var self = this;
+        return;
     }
 });

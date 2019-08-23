@@ -22,5 +22,10 @@ define({
     AS_Form_b656dff519014f869a281c28a38e7cb7: function AS_Form_b656dff519014f869a281c28a38e7cb7(eventobject) {
         var self = this;
         this.formFloorMapPreshowAction();
+    },
+    /** onDeviceBack defined for frmFloorMap **/
+    AS_Form_a18808e70a78446386864d0e03466a89: function AS_Form_a18808e70a78446386864d0e03466a89(eventobject) {
+        var self = this;
+        return;
     }
 });

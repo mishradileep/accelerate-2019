@@ -23,5 +23,10 @@ define({
     AS_Form_a1f8d2de650c467dbd73829221015cb4: function AS_Form_a1f8d2de650c467dbd73829221015cb4(eventobject) {
         var self = this;
         this.animateAboutTheAppCard("4%");
+    },
+    /** onDeviceBack defined for frmAboutApp **/
+    AS_Form_jbb459cc6f3143018238409b1b3bd4ec: function AS_Form_jbb459cc6f3143018238409b1b3bd4ec(eventobject) {
+        var self = this;
+        return;
     }
 });

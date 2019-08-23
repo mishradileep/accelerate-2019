@@ -47,5 +47,10 @@ define({
         } else {
             this.showThankyou();
         }
+    },
+    /** onDeviceBack defined for frmFeedback **/
+    AS_Form_ie4f957eac6543a1846de2eb6d71f1e0: function AS_Form_ie4f957eac6543a1846de2eb6d71f1e0(eventobject) {
+        var self = this;
+        return;
     }
 });

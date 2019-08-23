@@ -16,5 +16,10 @@ define({
     AS_Form_b18653162e8e4ddab72414fecad28f5a: function AS_Form_b18653162e8e4ddab72414fecad28f5a(eventobject) {
         var self = this;
         this.animateSponsorsFlex("10%");
+    },
+    /** onDeviceBack defined for frmSponsor **/
+    AS_Form_d7e820c737d648aca3d265c754acefb2: function AS_Form_d7e820c737d648aca3d265c754acefb2(eventobject) {
+        var self = this;
+        return;
     }
 });
