@@ -58,17 +58,17 @@ define({
         var self = this;
         this.formInit();
     },
+    /** onDeviceBack defined for frmAgenda **/
+    AS_Form_ce1c3ac567c14878a6d0115ae35f7155: function AS_Form_ce1c3ac567c14878a6d0115ae35f7155(eventobject) {
+        var self = this;
+        return;
+    },
     /** preShow defined for frmAgenda **/
-    AS_Form_ad02dde63f0e4c11bbea0ffa927943a6: function AS_Form_ad02dde63f0e4c11bbea0ffa927943a6(eventobject) {
+    AS_Form_c7a1fc91074a456da0146f6ccba5b006: function AS_Form_c7a1fc91074a456da0146f6ccba5b006(eventobject) {
         var self = this;
         if (this.currentViewState === 0) {
             this.frmAgendaPreshow();
         }
         this.view.flxToast.isVisible = false;
-    },
-    /** onDeviceBack defined for frmAgenda **/
-    AS_Form_ce1c3ac567c14878a6d0115ae35f7155: function AS_Form_ce1c3ac567c14878a6d0115ae35f7155(eventobject) {
-        var self = this;
-        return;
     }
 });
