@@ -1106,7 +1106,9 @@ define({
           else{
             top="0dp";
           }
-          var breakTile=this.createBreakSession(id,top,"50dp",duration+" "+"BREAK");
+          var breakTile=this.createBreakTile(id,top);
+          breakTile.lblTitle.text=sessionObj.session_name;
+          breakTile.setDuration(sessionObj.session_start_date, sessionObj. session_end_date);
           breakTile.sessionTrackId=4;
           breakTile.startDate=sessionObj.session_start_date;
           this.allSessionTiles.push(breakTile);
@@ -1763,6 +1765,31 @@ define({
     });
 
     return material;
+  },
+  
+  createBreakTile:function(id,top){
+    var breaktile = new com.konymp.breaktile({
+                "autogrowMode": kony.flex.AUTOGROW_NONE,
+                "clipBounds": true,
+                "height": "65dp",
+                "id": id,
+                "isVisible": true,
+                "layoutType": kony.flex.FREE_FORM,
+                "left": "0dp",
+                "masterType": constants.MASTER_TYPE_DEFAULT,
+                "isModalContainer": false,
+                "skin": "sknFlxBreak",
+                "top": top,
+                "width": "100%",
+                "overrides": {}
+            }, {
+                "retainFlowHorizontalAlignment": false,
+                "overrides": {}
+            }, {
+                "overrides": {}
+            });
+    return breaktile;
+    
   },
   createBreakSession:function(id,top,height,text){
     var flex=this.createFlexInstace(id);
