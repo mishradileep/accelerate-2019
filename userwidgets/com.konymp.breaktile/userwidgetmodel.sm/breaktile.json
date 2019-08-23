@@ -3,11 +3,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "36dp"
+        "value": "65dp"
     },
     "_left_": {
         "type": "string",
-        "value": "88dp"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -23,47 +23,42 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
+    "_skin_": "s86d296b380345fe8fd614fb1944f2c3",
     "_top_": {
         "type": "string",
-        "value": "10dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "83.11%"
+        "value": "100%"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "50%"
-    },
     "children": [
-        "ratingBubble4",
-        "ratingBubble5",
-        "ratingBubble1",
-        "ratingBubble2",
-        "ratingBubble3"
+        "lblTitle",
+        "lblDuration"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "ratingBubbles",
+    "id": "breaktile",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ga3983ff25394797945fdfdbeb501d81",
+    "kuid": "f932679c711b488ba29093310b558423",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "ratingTile",
+    "parent": "userwidgetmodel",
     "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,
     "snapgridsize": 10,
     "snaptogrid": true,
+    "vizProps": {
+        "hidewidgethierarchy": false
+    },
     "wType": "FlexContainer",
-    "widgetalignment": 1,
-    "zindex": 1
+    "widgetalignment": 1
 }

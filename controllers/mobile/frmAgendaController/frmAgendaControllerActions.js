@@ -12,14 +12,6 @@ define({
         var self = this;
         this.onClickOfEventDate(eventobject);
     },
-    /** onClick defined for ratingBubble3 **/
-    AS_Button_h7e2b86b987a4ab2b456a3d177861ddb: function AS_Button_h7e2b86b987a4ab2b456a3d177861ddb(eventobject) {
-        var self = this;
-    },
-    /** onClick defined for ratingBubble3 **/
-    AS_Button_iad8ac72475745688c1e522b0750446f: function AS_Button_iad8ac72475745688c1e522b0750446f(eventobject) {
-        var self = this;
-    },
     /** onClick defined for btnSubmit **/
     AS_Button_f2918332e78c437195c71db8976072cb: function AS_Button_f2918332e78c437195c71db8976072cb(eventobject) {
         var self = this;

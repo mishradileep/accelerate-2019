@@ -6,6 +6,7 @@ define({
     currentViewState: 0,
     myScheduleSession: [],
     isNotchSet: false,
+  	currentActiveDate :4,
 
     formInit: function() {
         this.isIphoneXSeries = checkForIphoneXSeries();
@@ -93,8 +94,27 @@ define({
         this.devHeight = this.view.masterContainer.frame.height;
         egLogger("devHeight = " + this.devHeight);
         var dotsblurwidth = this.view.sessionTileAnim.quantumDotsBlur.frame.height * 10.7388 + "dp";
+      	this.checkSessionsForSelectedDate();
         // add scrollToWidget functionality with the session id availble at kony store key 'currentNotificationId'
     },
+  	
+  	 checkSessionsForSelectedDate : function(){
+       let activeDate = this.currentActiveDate;
+       let children = this.view.sessionTiles.widgets();
+       let isDateSessionFound = false;
+       for(let index = 0 ; index < children.length ; index++){
+         let sessionObject = children[index];
+         let currentDate = sessionObject.sessionData.session_start_date;
+         if(currentDate === activeDate){
+           isDateSessionFound = true;
+         }
+       }
+       if(isDateSessionFound){
+         this.view.lblNoEvents.isVisible = false;
+       }else{
+         this.view.lblNoEvents.isVisible = true;
+       }
+     },
 
     /**
      * @function frmAgendaSetAgendaTiles
@@ -1292,12 +1312,6 @@ define({
         var currentTime = new Date();
         var sessionEndTime = sessionObject.session_end_date;
         sessionEndTime = new Date(sessionEndTime);
-        if (sessionEndTime - currentTime >= 0) {
-            this.view.flxRatingContainer.isVisible = false;
-            this.view.lblFeedback.isVisible = false;
-            this.view.lblPresentation.top = "30dp";
-            return;
-        }
         this.view.lblFeedback.isVisible = true;
         this.view.flxRatingContainer.isVisible = true;
         this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
@@ -1712,6 +1726,7 @@ define({
         this.view.lblNoEvents.isVisible = false;
         var isFirst = true;
         var startDate = parseInt(text);
+        this.currentActiveDate = startDate;
         var sessions = this.allSessionTiles;
         var len = sessions.length;
         var found = false;

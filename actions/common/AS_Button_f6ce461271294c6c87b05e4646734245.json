@@ -1,0 +1,30 @@
+{
+    "AS_Button_f6ce461271294c6c87b05e4646734245": {
+        "id": "AS_Button_f6ce461271294c6c87b05e4646734245",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "uwu832698bf85f49909353cdbc90b35eec",
+            "type": "userwidgets",
+            "KUID": "u832698bf85f49909353cdbc90b35eec"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___c4982e75882448e9a27140d896baee3e",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "setFocusOnClick",
+            "display": "setFocusOnClick",
+            "inputparams": [{
+                "name": "eventObject",
+                "value": " eventobject"
+            }],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}
