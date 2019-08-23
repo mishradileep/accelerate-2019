@@ -54,8 +54,8 @@
         "flxPdf",
         "sessionTileAnim"
     ],
-    "configureExtendBottom": true,
-    "configureExtendTop": true,
+    "configureExtendBottom": false,
+    "configureExtendTop": false,
     "containerweight": 100,
     "controllerInfo": {
         "default": {
@@ -71,7 +71,6 @@
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "enablescrolling": false,
-    "extendtop": true,
     "id": "frmmyAgenda",
     "info": null,
     "initdone": false,
@@ -97,9 +96,8 @@
         },
         "psp": {
             "bouncesZoom": false,
-            "configureExtendBottom": true,
-            "configureExtendTop": true,
-            "extendTop": true,
+            "configureExtendBottom": false,
+            "configureExtendTop": false,
             "inputAccessoryViewType": 4,
             "titleBarAttributes": {
                 "barStyle": 0,

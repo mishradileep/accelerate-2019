@@ -43,25 +43,28 @@
     "containerheightmode": 1,
     "containerweight": 100,
     "contentalignment": 1,
-    "disabledSkins": {
-        "focusSkin": "s7908e0e843944a4b26cea053a7f5239"
-    },
+    "disabledSkins": {},
+    "focusskin": "s300b5b6a2cd4e3f822c67bfdfec0562",
     "id": "txtArea",
     "info": null,
+    "inputAccessoryViewType": 1,
     "iphone": {
         "psp": {
-            "placeholderSkin": "s300b5b6a2cd4e3f822c67bfdfec0562"
+            "inputAccessoryViewType": 1,
+            "keyboardActionLabel": 1,
+            "placeholderSkin": "s300b5b6a2cd4e3f822c67bfdfec0562",
+            "showCloseButton": true
         }
     },
     "iscustomlayout": false,
     "isvisible": true,
+    "keyboardactionlabel": 1,
     "keyboardstyle": "A",
     "keyboardtype": "A",
     "kuid": "e1cd5b8940e94b898e4eaaa1bddec335",
     "mode": "A",
     "name": "kony.ui.TextArea2",
     "numberofvisiblelines": 3,
-    "ontouchend": "AS_TextArea_f31bf1de7e754eb88153204603fc6bd0",
     "parent": "flxRatingContainer",
     "pf": "frmAgenda",
     "placeholderskin": "s300b5b6a2cd4e3f822c67bfdfec0562",

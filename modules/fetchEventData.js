@@ -9,7 +9,7 @@
           kony.store.setItem("clientLastUpdatedTime", "2019-08-21T08:57:09Z");
       else {
           let storeEventData = kony.store.getItem("eventData");
-          let storeEventSessionData = kony.store.getItem("eventSessionData");
+          let storeEventSessionData =  kony.store.getItem("eventSessionData");
           let storeSpeakerData = kony.store.getItem("eventSpeakerData");
           let storeSponsorData = kony.store.getItem("eventSponsorData");
           let storeTeamData = kony.store.getItem("eventTeamData");

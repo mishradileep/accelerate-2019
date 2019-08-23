@@ -24,7 +24,7 @@
         0
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "dotsclearfullcanvasb.png",
+    "_src_": "dotsclr.png",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -36,7 +36,7 @@
     "canUpdateUI": true,
     "centery": {
         "type": "string",
-        "value": "53.33%"
+        "value": "53.30%"
     },
     "containerweight": 100,
     "context": {

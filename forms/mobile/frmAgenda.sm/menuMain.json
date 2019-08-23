@@ -253,6 +253,9 @@
                 "kuid": "e62a3e9eb0024ca09d1d344456936f83",
                 "srcKUID": "f5fdcbc491394b349bf721f20eac9eaa",
                 "wType": "FlexContainer"
+            },
+            "zIndex": {
+                "Default": 41
             }
         }
     },
@@ -275,5 +278,5 @@
     "snaptogrid": true,
     "sourceUserWidget": "f5fdcbc491394b349bf721f20eac9eaa",
     "wType": "UserWidgetInstance",
-    "zindex": 40
+    "zindex": 41
 }

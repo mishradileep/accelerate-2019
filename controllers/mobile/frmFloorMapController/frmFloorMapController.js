@@ -8,6 +8,10 @@ define({
      * @private
      */
     formFloorMapPreshowAction: function() {
+      this.view.brwsrInnerLocation.requestURLConfig = {
+                    URL: "index.html",
+                    requestMethod: constants.BROWSER_REQUEST_METHOD_GET
+                };
         this.view.lblSelectedFloorMapName.text = "Choose your room";
         this.view.sgmntFloorMap.isVisible = false;
         this.view.brwsrInnerLocation.enableParentScrollingWhenReachToBoundaries = false;

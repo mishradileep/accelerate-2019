@@ -11,21 +11,15 @@ define({
     if(param){
       this.formId = param.form;
       if(this.formId === "frmAgenda" || this.formId === "frmmyAgenda") {
-      	this.view.flxImageClose.onClick = this.navigateBackToSessionListPage;
-      	this.navigateToPresenterDetailsById(param.speakerId);
-      	return;
+        this.view.flxImageClose.onClick = this.navigateBackToSessionListPage;
+        this.navigateToPresenterDetailsById(param.speakerId);
+        return;
       } else if(this.formId === "frmPresenters") {
-      	return;
+        return;
       }
     }
     this.onClickOfCloseSpeakerDetails();
     this.view.flxImageClose.onClick = this.onClickOfCloseSpeakerDetails.bind(this);
-    this.filtersSelected = [];
-    this.initializeFilter();
-    var presenterSessionData = null;
-    this.view.presenterScroll.removeAll();   
-    this.processPresenterSessionData(accelerateSpeakerData.eventSpeakerData.records);
-
   },
 
   /**
@@ -34,15 +28,29 @@ define({
         * @private
     */
   setFilteronClick : function(){
+    
+    var self = this;    
+    this.filtersSelected = [];
+    
+    //setting postshow action
+    this.view.postShow = this.formPostShowAction.bind(this);
+    
+    //setting notch
     if(checkForIphoneXSeries()){
-        this.view.menuMain.height = "105dp";
-        this.view.menuMain.bottom = "0dp";
-        this.view.presenterScroll.bottom = "105dp";
-        this.view.presenterDetail.top = "-45dp";
-        this.view.flxImagelargeView.top = "45dp";
+      this.view.menuMain.height = "105dp";
+      this.view.menuMain.bottom = "0dp";
+      this.view.presenterScroll.bottom = "105dp";
+      this.view.presenterDetail.top = "-45dp";
+      this.view.flxImagelargeView.top = "45dp";
     }
-    this.view.preShow = this.formPreshowAction.bind(this);
-    var self = this;
+    
+    //setting presenter list
+    this.view.presenterScroll.removeAll();   
+    this.processPresenterSessionData(accelerateSpeakerData.eventSpeakerData.records);
+    this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = "menuLabelSkinActive";
+    this.view.presenterScroll.showFadingEdges = false;
+    
+    //setting filterOnClick
     this.view.flxFilterKeynote.onClick = function(eventobject) {
       self.speakerFilter(eventobject);
     };
@@ -53,10 +61,13 @@ define({
       self.speakerFilter(eventobject);
     };
   },
-  
-  formPreshowAction : function(){
-   this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = "menuLabelSkinActive";
-   this.view.presenterScroll.showFadingEdges = false;
+
+  formPostShowAction : function(){
+      if(this.filtersSelected.length>0){
+        this.initializeFilter();
+        this.showAllPresenters();
+        this.filtersSelected = [];
+      }
   },
   /**
        * @function processPresenterSessionData
@@ -74,12 +85,12 @@ define({
     }
   },
 
-  	sortPresenterDataByDate : function(sessionData){
-      if(sessionData !== null && sessionData !== undefined && sessionData.length >= 2){
-        sessionData.sort((a,b) => 
-                         new Date(a.session_start_date).getTime() - new Date(b.session_start_date).getTime());
-      }
-    },
+  sortPresenterDataByDate : function(sessionData){
+    if(sessionData !== null && sessionData !== undefined && sessionData.length >= 2){
+      sessionData.sort((a,b) => 
+                       new Date(a.session_start_date).getTime() - new Date(b.session_start_date).getTime());
+    }
+  },
   /**
      * @function setPresenterList
      * @description This function is used to create the PresenterTile dynamically
@@ -120,9 +131,9 @@ define({
     this.view.speakerTitle.text = presenter.speaker_title;
     this.view.speakerInfo.text = presenter.speaker_bio;
     if(presenter.speaker_profile_pic) {
-		this.view.imgProfileLarge.src = presenter.speaker_profile_pic;      
+      this.view.imgProfileLarge.src = presenter.speaker_profile_pic;      
     }else {
-       this.view.imgProfileLarge.src = "defaultimg.png";      
+      this.view.imgProfileLarge.src = "defaultimg.png";      
     }
     var imgWidth = kony.os.deviceInfo().screenWidth;
     imgWidth = imgWidth * eventConstants.ASPECT_RATION_CONSTANT;
@@ -155,11 +166,11 @@ define({
     var isSessionPresent = null;
     var myScheduleData = kony.store.getItem("myAgendaData");
     for (var index = 0; index < sessions.length; index++) {    
-      
-	  if(sessions[index].session_track_id === 4){
-      	continue;
+
+      if(sessions[index].session_track_id === 4){
+        continue;
       }
-      
+
       if(sessions[index].SoftDeleteFlag!==undefined && sessions[index].SoftDeleteFlag === true) {
         continue;
       }
@@ -215,7 +226,7 @@ define({
     this.view.flexSessions.add(sessionTile);
     this.view[id].onClick = this.onClickOfSessionTile.bind(this);
   },
-  
+
   /**
      * @function spekerFilter
      * @description The function is used to switch the skins from unselected to selected and vice versa
@@ -293,6 +304,7 @@ define({
     for(var index=0; index<presenters.length; index++) {
       this.view[presenters[index].id].isVisible = true;
     }
+    this.view.presenterScroll.scrollToWidget(this.view[presenters[0].id]);
   },
 
   /**

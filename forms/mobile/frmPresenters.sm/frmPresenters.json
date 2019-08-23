@@ -42,6 +42,8 @@
         "menuMain",
         "presenterDetail"
     ],
+    "configureExtendBottom": false,
+    "configureExtendTop": false,
     "containerweight": 100,
     "controllerInfo": {
         "default": {
@@ -81,10 +83,8 @@
             "transitionEffect": "transitionFade"
         },
         "psp": {
-            "configureExtendBottom": true,
-            "configureExtendTop": true,
-            "extendBottom": false,
-            "extendTop": true,
+            "configureExtendBottom": false,
+            "configureExtendTop": false,
             "inputAccessoryViewType": 4,
             "titleBarAttributes": {
                 "barStyle": 0,
