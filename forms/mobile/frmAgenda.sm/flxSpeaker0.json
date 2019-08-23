@@ -32,6 +32,10 @@
         "type": "string",
         "value": "0dp"
     },
+    "_width_": {
+        "type": "ref",
+        "value": "preferred"
+    },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,

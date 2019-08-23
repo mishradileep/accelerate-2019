@@ -35,11 +35,12 @@ define({
      */
     onClickOfSubmitButton: function() {
         kony.print("Entering frmFeedbackController : onClickOfSubmitButton function");
+        if (kony.sdk.isNullOrUndefined(this.index) || this.index === 0) {
+            alert("Please rate the event before submitting.");
+            return;
+        }
       	this.callback=this.showThankyou;
       	this.animateSubmitButton("100%", true);
-        if (kony.sdk.isNullOrUndefined(this.index)) {
-            this.index = 0;
-        }
         var feedback = this.view.txtAreaComments.text;
         var feedbacks = [];
         var rating = {
