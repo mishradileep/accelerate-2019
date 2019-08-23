@@ -20,6 +20,10 @@ define({
      */
   frmAgendaPreshow: function() {
     var self = this;
+    this.view.pdfBrowser.requestURLConfig = {
+                    URL: "index.html",
+                    requestMethod: constants.BROWSER_REQUEST_METHOD_GET
+                };
     this.view.menuMain.menuContainerAgenda.menuLabelAgenda.skin = "menuLabelSkinActive";
      if(this.isIphoneXSeries && !this.isNotchSet){
       this.view.headerContainer.top="-45dp";
