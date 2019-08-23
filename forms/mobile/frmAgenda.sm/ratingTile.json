@@ -90,12 +90,10 @@
             }
         },
         "ratingBubble3": {
-            "__events__": {
-                "onClick": "AS_Button_h7e2b86b987a4ab2b456a3d177861ddb"
-            },
+            "__events__": {},
             "__info__": {
-                "kuid": "g49ec007c4e64b1e89d182b8233f6417",
-                "srcKUID": "j835dc8d1f3f48ef8db270554caf4184",
+                "kuid": "e3bf57c5f0954013b16f4d4c9fdae518",
+                "srcKUID": "b4b1710872c1438cafed017fd698bac7",
                 "wType": "Button"
             }
         },
