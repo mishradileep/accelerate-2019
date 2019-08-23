@@ -90,23 +90,25 @@ define({
      */
     frmAgendaPostshow: function() {
         this.changeButtonSkins("4TH SEP");
+      	this.checkSessionsForSelectedDate(accelerateSessionData.eventSessionData.records);
         this.setData(accelerateSessionData.eventSessionData.records);
         this.devHeight = this.view.masterContainer.frame.height;
         egLogger("devHeight = " + this.devHeight);
         var dotsblurwidth = this.view.sessionTileAnim.quantumDotsBlur.frame.height * 10.7388 + "dp";
-      	this.checkSessionsForSelectedDate();
+      	
         // add scrollToWidget functionality with the session id availble at kony store key 'currentNotificationId'
     },
   	
-  	 checkSessionsForSelectedDate : function(){
+  	 checkSessionsForSelectedDate : function(sessions){
        let activeDate = this.currentActiveDate;
-       let children = this.view.sessionTiles.widgets();
+       this.checkIfSessionsAreMyScheduled(sessions);
        let isDateSessionFound = false;
-       for(let index = 0 ; index < children.length ; index++){
-         let sessionObject = children[index];
-         let currentDate = sessionObject.sessionData.session_start_date;
-         if(currentDate === activeDate){
+       for(let index = 0 ; index < sessions.length ; index++){
+         let sessionObject = sessions[index];
+         let currentDate = this.getCurrentDateInteger(sessionObject.session_start_date);
+         if(currentDate === activeDate && sessionObject.isAddedToMySchedule){
            isDateSessionFound = true;
+           break;
          }
        }
        if(isDateSessionFound){
@@ -1069,7 +1071,8 @@ define({
                 sessionTile = this.createSessionTile(id, "0dp");
             }
             sessionTile.setTitleData(sessionObj);
-            if (new Date(sessionTile.startDate).getDate() == 5) {
+             var currentDate = this.getCurrentDateInteger(sessionTile.startDate);
+            if (currentDate !== this.currentActiveDate) {
                 sessionTile.isVisible = false;
             }
             this.allSessionTiles.push(sessionTile);
@@ -1085,6 +1088,14 @@ define({
             this.view.lblNoEvents.isVisible = true;
         this.view.sessionTileAnim.callback = this.mySchedular;
         this.view.forceLayout();
+    },
+  
+  	 getCurrentDateInteger : function(dateObject){
+        var splitCharecter = "T";
+        splitCharecter = (dateObject.indexOf("T") > 0) ? "T" : "";
+        var splittedDate = dateObject.split(splitCharecter)[0];
+        var dateInteger = splittedDate.split("-")[2];
+        return parseInt(dateInteger);
     },
     /**
      *	@function checkIfSessionsAreMyScheduled
@@ -1732,7 +1743,8 @@ define({
         var found = false;
         var index;
         for (index = 0; index < len; index++) {
-            if (new Date(sessions[index].startDate).getDate() == startDate) {
+            let currentDate = this.getCurrentDateInteger(sessions[index].startDate);
+            if (currentDate == startDate) {
                 if (isFirst) {
                     if (!kony.sdk.isNullOrUndefined(this.view[sessions[index].id])) {
                         this.view[sessions[index].id].isVisible = true;
