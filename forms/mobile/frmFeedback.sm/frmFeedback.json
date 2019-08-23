@@ -24,6 +24,7 @@
             "formAnimation": 0
         },
         "needAppMenu": false,
+        "onDeviceBack": "AS_Form_ie4f957eac6543a1846de2eb6d71f1e0",
         "outTransitionConfig": {
             "formAnimation": 0
         },

@@ -16,5 +16,10 @@ define({
             URL: "privacy-policy.html",
             requestMethod: constants.BROWSER_REQUEST_METHOD_GET
         };
+    },
+    /** onDeviceBack defined for frmPrivacyPolicy **/
+    AS_Form_d3b426675fc949558e2dbcc78a41456b: function AS_Form_d3b426675fc949558e2dbcc78a41456b(eventobject) {
+        var self = this;
+        return;
     }
 });
