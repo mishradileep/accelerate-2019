@@ -1050,6 +1050,7 @@ define({
     setData: function(sessions) {
         this.view.sessionTiles.isVisible = true;
         this.myScheduleSession = [];
+      	this.sortSessionsByDate(sessions);
         var isFirstTile = true;
         this.view.sessionTiles.removeAll();
         this.filteredSession = [];
@@ -1089,6 +1090,13 @@ define({
         this.view.sessionTileAnim.callback = this.mySchedular;
         this.view.forceLayout();
     },
+  
+  sortSessionsByDate:function(sessionData){
+    if(sessionData !== null && sessionData !== undefined && sessionData.length >= 2){
+      sessionData.sort((a,b) => 
+                       new Date(a.session_start_date).getTime() - new Date(b.session_start_date).getTime());
+    }
+  },
   
   	 getCurrentDateInteger : function(dateObject){
         var splitCharecter = "T";
