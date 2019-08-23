@@ -1083,7 +1083,6 @@ define({
      * 	@private
      */
   setData: function(sessions) {
-    debugger;
     this.view.sessionTiles.removeAll();
     var currentDate=this.currentSelectedDate;
     var currentCategory=this.currentSelectedTab;
@@ -1113,6 +1112,7 @@ define({
           this.allSessionTiles.push(breakTile);
           this.filteredSession.push(breakTile);
           //breakTile.isVisible=false;
+          
           this.view.sessionTiles.add(breakTile);
         }
         else{
@@ -1220,7 +1220,8 @@ define({
      if(startDate !== null && startDate !== undefined){
          splitCharecter = startDate.indexOf("T") > 0  ? "T" : " ";
          splitDate =startDate.split(splitCharecter);
-         if(new Date(splitDate[0]).getDate() === selectedDate){
+       	 var currentDate = parseInt(splitDate[0].split("-")[2]);
+         if(currentDate === selectedDate){
            return true;
          }
        else{
@@ -1327,6 +1328,8 @@ define({
   setSpeakerProfile: function(eventObject) {
     this.speakerIdMap = {};
     var flxImageContainerwidthCalc = this.view.flxSpeaker0.frame.width * 1.1;
+    if(flxImageContainerwidthCalc == 0)
+      flxImageContainerwidthCalc = 185;
     flxImageContainerwidthCalc = flxImageContainerwidthCalc.toFixed();
     var imgHeight = flxImageContainerwidthCalc * 1.02;
     imgHeight = imgHeight.toFixed();
@@ -1403,16 +1406,8 @@ define({
     var ntf = new kony.mvc.Navigation("frmPresenters");
     ntf.navigate(naviInfo);
   },
+  
   dismissRatingIfSubmitted:function(sessionObject){
-    var currentTime=new Date();
-    var sessionEndTime=sessionObject.session_end_date;
-    sessionEndTime=new Date(sessionEndTime);
-    if(sessionEndTime-currentTime>=0){
-      this.view.flxRatingContainer.isVisible=false;
-      this.view.lblFeedback.isVisible=false;
-      this.view.lblPresentation.top="30dp";
-      return;
-    }
     this.view.lblFeedback.isVisible=true;
     this.view.flxRatingContainer.isVisible = true;
     this.view.flxRatingContainer.height = kony.flex.USE_PREFERRED_SIZE;
