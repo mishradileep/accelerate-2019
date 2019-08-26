@@ -164,7 +164,13 @@ define({
      * @private
      */
     frmAgendaSessionSelect: function(eventobject) {
-      	kony.application.showLoadingScreen("sknBlockLoading", "", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, {});
+      	this.view.buttonBack.isVisible=false;
+        kony.application.showLoadingScreen("sknBlockLoading", "", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, {});
+        kony.timer.schedule("sessionSelectTimer",()=>{
+          kony.application.dismissLoadingScreen();
+          kony.timer.cancel("sessionSelectTimer");
+          self.view.buttonBack.isVisible=true;
+        } ,2, false);
         this.view.txtArea.setEnabled(true);
         this.view.detailsScroller.isVisible = true;
         this.currentViewState = 1;
@@ -634,7 +640,20 @@ define({
      * @private
      */
     frmAgendaSessionClose: function(callback) {
-        kony.application.showLoadingScreen("sknBlockLoading", "", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, {});
+      	 var self = this;
+    	 self.view.buttonBack.setEnabled(false);
+     	 self.view.buttonBack.setVisibility(false);
+     	 kony.application.showLoadingScreen("sknBlockLoading", "", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, {});
+    	try{
+        	 kony.timer.schedule("sessionCloseTimer",()=>{
+          	 kony.application.dismissLoadingScreen();
+          	 kony.timer.cancel("sessionCloseTimer");
+          	 self.view.buttonBack.setEnabled(true);
+          	  self.view.buttonBack.setVisibility(true);
+        	} , 2, false);
+    	}catch(exception){
+			kony.print("Exception while animating");
+        }
         this.view.txtArea.setEnabled(false);
         this.view.txtArea.text = "";
         this.currentViewState = 0;
