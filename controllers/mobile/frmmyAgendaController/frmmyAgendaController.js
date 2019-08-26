@@ -1251,6 +1251,9 @@ define({
     setSpeakerProfile: function(eventObject) {
         this.speakerIdMap = {};
         var flxImageContainerwidthCalc = this.view.flxSpeaker0.frame.width * 1.1;
+      	 if(flxImageContainerwidthCalc == 0){
+      			flxImageContainerwidthCalc = 185;
+         }
         flxImageContainerwidthCalc = flxImageContainerwidthCalc.toFixed();
         var imgHeight = flxImageContainerwidthCalc * 1.02;
         imgHeight = imgHeight.toFixed();
