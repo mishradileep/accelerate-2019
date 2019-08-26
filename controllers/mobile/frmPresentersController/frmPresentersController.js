@@ -44,12 +44,6 @@ define({
       this.view.flxImagelargeView.top = "45dp";
     }
     
-    //setting presenter list
-    this.view.presenterScroll.removeAll();   
-    this.processPresenterSessionData(accelerateSpeakerData.eventSpeakerData.records);
-    this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = "menuLabelSkinActive";
-    this.view.presenterScroll.showFadingEdges = false;
-    
     //setting filterOnClick
     this.view.flxFilterKeynote.onClick = function(eventobject) {
       self.speakerFilter(eventobject);
@@ -67,6 +61,11 @@ define({
         this.initializeFilter();
         this.showAllPresenters();
         this.filtersSelected = [];
+      }else if(this.fitersSelected === undefined){
+        this.view.presenterScroll.removeAll();   
+        this.processPresenterSessionData(accelerateSpeakerData.eventSpeakerData.records);
+        this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = "menuLabelSkinActive";
+        this.view.presenterScroll.showFadingEdges = false;
       }
   },
   /**
