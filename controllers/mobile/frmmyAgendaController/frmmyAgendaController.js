@@ -99,7 +99,6 @@ define({
         this.devHeight = this.view.masterContainer.frame.height;
         egLogger("devHeight = " + this.devHeight);
         var dotsblurwidth = this.view.sessionTileAnim.quantumDotsBlur.frame.height * 10.7388 + "dp";
-      	
         // add scrollToWidget functionality with the session id availble at kony store key 'currentNotificationId'
     },
   	
@@ -165,6 +164,13 @@ define({
      * @private
      */
     frmAgendaSessionSelect: function(eventobject) {
+      	this.view.buttonBack.isVisible=false;
+        kony.application.showLoadingScreen("sknBlockLoading", "", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, {});
+        kony.timer.schedule("sessionSelectTimer",()=>{
+          kony.application.dismissLoadingScreen();
+          kony.timer.cancel("sessionSelectTimer");
+          self.view.buttonBack.isVisible=true;
+        } ,2, false);
         this.view.txtArea.setEnabled(true);
         this.view.detailsScroller.isVisible = true;
         this.currentViewState = 1;
@@ -584,7 +590,9 @@ define({
                 fillMode: kony.anim.FILL_MODE_FORWARDS,
                 duration: animDuration
             }, {
-                animationEnd: function() {}
+                animationEnd: function() {
+                  kony.application.dismissLoadingScreen();
+                }
             });
         this.view.animate(
             kony.ui.createAnimation({
@@ -612,6 +620,7 @@ define({
         var heading = session.session_location;
         if (!kony.sdk.isNullOrUndefined(floormap) && floormap.length > 0) {
             this.view.flxPdf.zIndex = 300;
+          	this.view.flxPdf.isVisible=true;
             this.view.flxPdf.mobileheader.headerTitle = heading;
             this.view.pdfBrowser.enableParentScrollingWhenReachToBoundaries = false;
             this.view.flxPdf.animate(this.animateTopForPdf("0dp"), this.getPlatformSpecific(), {
@@ -631,7 +640,20 @@ define({
      * @private
      */
     frmAgendaSessionClose: function(callback) {
-        //this.setData(accelerateSessionData.eventSessionData.records);
+      	 var self = this;
+    	 self.view.buttonBack.setEnabled(false);
+     	 self.view.buttonBack.setVisibility(false);
+     	 kony.application.showLoadingScreen("sknBlockLoading", "", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, {});
+    	try{
+        	 kony.timer.schedule("sessionCloseTimer",()=>{
+          	 kony.application.dismissLoadingScreen();
+          	 kony.timer.cancel("sessionCloseTimer");
+          	 self.view.buttonBack.setEnabled(true);
+          	  self.view.buttonBack.setVisibility(true);
+        	} , 2, false);
+    	}catch(exception){
+			kony.print("Exception while animating");
+        }
         this.view.txtArea.setEnabled(false);
         this.view.txtArea.text = "";
         this.currentViewState = 0;
@@ -926,6 +948,7 @@ define({
                     if (!kony.sdk.isNullOrUndefined(callback) && typeof(callback) == "function") {
                         callback();
                     }
+                  kony.application.dismissLoadingScreen();
 
                 }.bind(this)
             });
@@ -1308,7 +1331,7 @@ define({
                     var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
                     this.view["speakerDescription" + speakerIndex].text = description;
                     this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
-                    this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
+                    this.view["ratingTile" + speakerIndex].resetAllSkins();
                     this.view["flxSpeaker" + speakerIndex].speakerInfo = speakerBio;
                     this.view["flxSpeaker" + speakerIndex].onClick = this.onClickOfSpeaker.bind(this);
                     if (flxImageContainerwidthCalc > 0 && imgHeight > 0) {
@@ -1323,7 +1346,7 @@ define({
             this.view["flxSpeaker" + speakerIndex].isVisible = false;
             this.view["ratingTile" + speakerIndex].isVisible = false;
         }
-        this.view["ratingTile"].setDefaultSelectedIndex();
+        this.view["ratingTile"].resetAllSkins();
     },
     onClickOfSpeaker: function(eventObject) {
         var naviInfo = {
@@ -1425,6 +1448,10 @@ define({
      * 	@private
      */
     onClickOfSubmit: function() {
+      	if(kony.sdk.isNullOrUndefined(this.view.ratingTile.selectedIndex)){
+      alert("Please rate the session before submitting");
+      return ;
+    }
         var batch = [];
         var record;
         for (var index = 0; index < this.ratingLength; index++) {
@@ -1435,7 +1462,7 @@ define({
         }
         record = {};
         record.speaker_id = this.view.ratingTile.speakerId;
-        record.rating = this.view.ratingTile.selectedIndex;
+        record.rating = kony.sdk.isNullOrUndefined(this.view["ratingTile" + index].selectedIndex)===true?0:this.view["ratingTile" + index].selectedIndex;
         batch.push(record);
         record = {};
         record.speaker_id = -2;
@@ -1558,6 +1585,7 @@ define({
             }
             return;
         }
+      	this.view.flxMaterial.isVisible = true;
         var materailsCount = materials.length;
         this.view.flxCurvedArrow.isVisible = true;
         this.view.lblPresentation.isVisible = true;
@@ -1704,6 +1732,7 @@ define({
      * 	@private
      */
     onClickOfPDF: function(eventObject) {
+      	this.view.flxPdf.isVisible=true;
         this.view.flxPdf.zIndex = 300;
         var url = this.view[eventObject.id].pdfUrl;
         this.view.flxPdf.mobileheader.headerTitle = "PDF Material";
@@ -1727,6 +1756,7 @@ define({
             "animationEnd": function() {
                 this.view.flxPdf.zIndex = 1;
                 this.view.txtArea.setEnabled(false);
+              	this.view.flxPdf.isVisible=false;
             }.bind(this)
         });
 

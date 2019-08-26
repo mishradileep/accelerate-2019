@@ -18,7 +18,7 @@
         2,
         2
     ],
-    "_placeholder_": "Placeholder",
+    "_placeholder_": "",
     "_skin_": "s300b5b6a2cd4e3f822c67bfdfec0562",
     "_text_": "",
     "_top_": {
@@ -43,11 +43,15 @@
     "containerheightmode": 1,
     "containerweight": 100,
     "contentalignment": 1,
-    "disabledSkins": {
-        "focusSkin": "s7908e0e843944a4b26cea053a7f5239"
-    },
+    "disabledSkins": {},
+    "focusskin": "s300b5b6a2cd4e3f822c67bfdfec0562",
     "id": "txtArea",
     "info": null,
+    "iphone": {
+        "psp": {
+            "placeholderSkin": "s300b5b6a2cd4e3f822c67bfdfec0562"
+        }
+    },
     "iscustomlayout": false,
     "isvisible": true,
     "keyboardstyle": "A",
@@ -58,7 +62,7 @@
     "numberofvisiblelines": 3,
     "parent": "flxRatingContainer",
     "pf": "frmmyAgenda",
-    "placeholderskin": "s9986a2885af49f9ac826e84814a6009",
+    "placeholderskin": "s300b5b6a2cd4e3f822c67bfdfec0562",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "securetextentry": false,

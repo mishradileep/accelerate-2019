@@ -151,6 +151,14 @@ define({
      * @private
      */
   frmAgendaSessionSelect: function(eventobject) {
+    var self = this;
+    this.view.buttonBack.isVisible=false;
+     kony.application.showLoadingScreen("sknBlockLoading", "", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, {});
+    kony.timer.schedule("sessionSelectTimer",()=>{
+      kony.application.dismissLoadingScreen();
+      kony.timer.cancel("sessionSelectTimer");
+      self.view.buttonBack.isVisible=true;
+    } ,2, false);
     this.view.txtArea.setEnabled(true);
     this.view.sessionTileAnim.left = "100%";
     this.view.sessionTileAnim.isVisible=true;
@@ -405,7 +413,8 @@ define({
         fillMode: kony.anim.FILL_MODE_FORWARDS,
         duration: animDuration
       }, {
-        animationEnd: function() {}
+        animationEnd: function() {
+        }
       });
     this.view.sessionContentContainer.animate(
       kony.ui.createAnimation({
@@ -474,7 +483,7 @@ define({
               duration: animDuration
             }, {
               animationEnd: function() {
-                self.view.buttonBack.isVisible = true;
+                //self.view.buttonBack.isVisible = true;
               }
             });
           self.view.addAgendaContainer.animate(
@@ -490,7 +499,7 @@ define({
               duration: animDuration
             }, {
               animationEnd: function() {
-                self.view.buttonBack.isVisible = true;
+                //self.view.buttonBack.isVisible = true;
               }
             });
           self.view.sessionLocation.animate(
@@ -506,7 +515,7 @@ define({
               duration: animDuration
             }, {
               animationEnd: function() {
-                self.view.buttonBack.isVisible = true;
+                //self.view.buttonBack.isVisible = true;
               }
             });
 
@@ -564,7 +573,6 @@ define({
             this.view.addAgendaContainer.top="39dp";
           }
           this.view.sessionLocation.isVisible=true;
-          this.view.buttonBack.isVisible=true;
           this.view.sessionTileAnim.sessionTitle.text=this.view[eventobject.id].sessionData.session_name;
         }.bind(this)
       });
@@ -580,7 +588,9 @@ define({
         fillMode: kony.anim.FILL_MODE_FORWARDS,
         duration: animDuration
       }, {
-        animationEnd: function() {}
+        animationEnd: function() {
+         
+        }
       });
     this.view.animate(
       kony.ui.createAnimation({
@@ -597,7 +607,7 @@ define({
         animationEnd: function() {
           this.view.addAgendaContainer.isVisible=true;
           this.view.sessionLocation.isVisible=true;
-          this.view.buttonBack.isVisible=true;
+          //this.view.buttonBack.isVisible=true;
         }.bind(this)
       });
 
@@ -665,7 +675,21 @@ define({
      * @private
      */
   frmAgendaSessionClose: function() {
-    this.view.txtArea.setEnabled(false);
+     var self = this;
+     self.view.buttonBack.setEnabled(false);
+     self.view.buttonBack.setVisibility(false);
+     kony.application.showLoadingScreen("sknBlockLoading", "", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, {});
+    try{
+         kony.timer.schedule("sessionCloseTimer",()=>{
+          kony.application.dismissLoadingScreen();
+          kony.timer.cancel("sessionCloseTimer");
+          self.view.buttonBack.setEnabled(true);
+          self.view.buttonBack.setVisibility(true);
+        } , 2, false);
+    }catch(exception){
+      kony.print("Exception while animating");
+    }
+    //this.view.txtArea.setEnabled(false);
     this.view.txtArea.text="";
     if(this.isNavigatedFrmOtherForm){
       this.isNavigatedFrmOtherForm=false;
@@ -842,7 +866,7 @@ define({
         duration: animDuration
       }, {
         animationEnd: function() {
-          self.view.buttonBack.isVisible = false;
+          //self.view.buttonBack.isVisible = false;
         }
       });
     this.view.addAgendaContainer.animate(
@@ -858,7 +882,7 @@ define({
         duration: animDuration
       }, {
         animationEnd: function() {
-          self.view.buttonBack.isVisible = false;
+          //self.view.buttonBack.isVisible = false;
         }
       });
     this.view.sessionLocation.animate(
@@ -874,7 +898,7 @@ define({
         duration: animDuration
       }, {
         animationEnd: function() {
-          self.view.buttonBack.isVisible = false;
+          //self.view.buttonBack.isVisible = false;
         }
       });
     this.view.sessionTileAnim.tilebg.animate(
@@ -958,7 +982,7 @@ define({
         duration: animDuration
       }, {
         animationEnd: function() {
-        }
+        }.bind(this)
       });
 
   },
@@ -1386,7 +1410,7 @@ define({
           var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
           this.view["speakerDescription" + speakerIndex].text = description;
           this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
-          this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
+          this.view["ratingTile" + speakerIndex].resetAllSkins();
           this.view["flxSpeaker"+speakerIndex].onClick = function(eventobject) {
             this.onClickOfSpeaker(this.speakerIdMap[eventobject.id]);
           }.bind(this);
@@ -1402,7 +1426,7 @@ define({
       this.view["flxSpeaker" + speakerIndex].isVisible = false;
       this.view["ratingTile" + speakerIndex].isVisible = false;
     }
-    this.view["ratingTile"].setDefaultSelectedIndex();
+    this.view["ratingTile"].resetAllSkins();
   },
   onClickOfSpeaker:function(id){
     var naviInfo={
@@ -1522,12 +1546,16 @@ define({
      * 	@private
      */
   onClickOfSubmit: function() {
+    if(kony.sdk.isNullOrUndefined(this.view.ratingTile.selectedIndex)){
+      alert("Please rate the session before submitting");
+      return ;
+    }
     var batch = [];
     var record;
     for (var index = 0; index < this.ratingLength; index++) {
       record = {};
       record.speaker_id = this.view["ratingTile" + index].speakerId;
-      record.rating = this.view["ratingTile" + index].selectedIndex;
+      record.rating = kony.sdk.isNullOrUndefined(this.view["ratingTile" + index].selectedIndex)===true?0:this.view["ratingTile" + index].selectedIndex;
       batch.push(record);
     }
     record = {};
