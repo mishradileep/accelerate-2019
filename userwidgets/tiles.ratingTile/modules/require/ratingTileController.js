@@ -7,9 +7,11 @@ define(function() {
          *	@param speaker {Object} -traverses the Speaker_master data and fiiter the speaker from it.
          * 	@private
          */
-      	selectedIndex:3,
-      	previousSelectedIndex:3,
+      	selectedIndex:null,
+      	previousSelectedIndex:null,
       	speakerId:-1,
+      	ratingBubbleActive:"CopydefBtnNormal0ffe40ef31c054e",
+      	ratingBubbleInactive:"CopydefBtnNormal0daedd629f85e4d",
         setSpeakerProfileInRating: function(speaker) {
             this.view.ratingSpeakerImage.src = speaker.speaker_profile_pic;
             this.view.ratingSpeakerName.text = speaker.speaker_name;
@@ -24,13 +26,13 @@ define(function() {
          */
       setFocusOnClick:function(eventObject){
         var index=parseInt(eventObject.id.charAt(eventObject.id.length-1));
-        if(index!= this.previousSelectedIndex){
-          var skin=this.view["ratingBubble"+index].skin;
-          this.view["ratingBubble"+index].skin=this.view["ratingBubble"+this.previousSelectedIndex].skin;
-          this.view["ratingBubble"+this.previousSelectedIndex].skin=skin;
-          this.animateButton( this.view["ratingBubble"+index], this.view["ratingBubble"+this.previousSelectedIndex]);
-        }
-        
+        var unanimatedButton;
+          this.view["ratingBubble"+index].skin=this.ratingBubbleActive;
+        	if(!kony.sdk.isNullOrUndefined( this.view["ratingBubble"+this.previousSelectedIndex])){
+              this.view["ratingBubble"+this.previousSelectedIndex].skin=this.ratingBubbleInactive;
+              unanimatedButton=this.view["ratingBubble"+this.previousSelectedIndex];
+            }
+          this.animateButton( this.view["ratingBubble"+index],unanimatedButton);
         if(!kony.sdk.isNullOrUndefined(this.view["ratingLevel"+index])){
           this.view["ratingLevel"+index].skin="ratingSkinActive";
         }
@@ -53,7 +55,10 @@ define(function() {
     	transformUnSelectedButton.scale(1, 1);
     	transformSelectedButton.scale(1.125, 1.125);
         selectedButton.animate(this.createAnimationObject(transformSelectedButton),this.getPlatformSpecific(),null);
-        unSelecetedButton.animate(this.createAnimationObject(transformUnSelectedButton),this.getPlatformSpecific(),null);
+        if(!kony.sdk.isNullOrUndefined(unSelecetedButton)){
+          unSelecetedButton.animate(this.createAnimationObject(transformUnSelectedButton),this.getPlatformSpecific(),null);
+        }
+        
       },
       /**
          *	@function createAnimationObject
@@ -89,11 +94,11 @@ define(function() {
          * 	@description This generic function is to set default rating index as 3
          * 	@private
          */
-      setDefaultSelectedIndex:function(){
-        var eventObject={
-          id:"ratingBubble3"
-        };
-        this.setFocusOnClick(eventObject);
+      resetAllSkins:function(){
+       for(var index=1;index<=5;index++){
+         this.view["ratingBubble"+index].skin=this.ratingBubbleInactive;
+       }
+       this.selectedIndex=null;
       }
         
       

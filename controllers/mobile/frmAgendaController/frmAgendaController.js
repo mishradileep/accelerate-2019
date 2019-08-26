@@ -151,6 +151,7 @@ define({
      * @private
      */
   frmAgendaSessionSelect: function(eventobject) {
+     kony.application.showLoadingScreen("sknBlockLoading", "", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, {});
     this.view.txtArea.setEnabled(true);
     this.view.sessionTileAnim.left = "100%";
     this.view.sessionTileAnim.isVisible=true;
@@ -580,7 +581,9 @@ define({
         fillMode: kony.anim.FILL_MODE_FORWARDS,
         duration: animDuration
       }, {
-        animationEnd: function() {}
+        animationEnd: function() {
+         kony.application.dismissLoadingScreen();
+        }
       });
     this.view.animate(
       kony.ui.createAnimation({
@@ -665,7 +668,8 @@ define({
      * @private
      */
   frmAgendaSessionClose: function() {
-    this.view.txtArea.setEnabled(false);
+    kony.application.showLoadingScreen("sknBlockLoading", "", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, {});
+    //this.view.txtArea.setEnabled(false);
     this.view.txtArea.text="";
     if(this.isNavigatedFrmOtherForm){
       this.isNavigatedFrmOtherForm=false;
@@ -958,7 +962,8 @@ define({
         duration: animDuration
       }, {
         animationEnd: function() {
-        }
+           kony.application.dismissLoadingScreen();
+        }.bind(this)
       });
 
   },
@@ -1386,7 +1391,7 @@ define({
           var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
           this.view["speakerDescription" + speakerIndex].text = description;
           this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
-          this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
+          this.view["ratingTile" + speakerIndex].resetAllSkins();
           this.view["flxSpeaker"+speakerIndex].onClick = function(eventobject) {
             this.onClickOfSpeaker(this.speakerIdMap[eventobject.id]);
           }.bind(this);
@@ -1402,7 +1407,7 @@ define({
       this.view["flxSpeaker" + speakerIndex].isVisible = false;
       this.view["ratingTile" + speakerIndex].isVisible = false;
     }
-    this.view["ratingTile"].setDefaultSelectedIndex();
+    this.view["ratingTile"].resetAllSkins();
   },
   onClickOfSpeaker:function(id){
     var naviInfo={
@@ -1522,12 +1527,16 @@ define({
      * 	@private
      */
   onClickOfSubmit: function() {
+    if(kony.sdk.isNullOrUndefined(this.view.ratingTile.selectedIndex)){
+      alert("Please rate the session before submitting");
+      return ;
+    }
     var batch = [];
     var record;
     for (var index = 0; index < this.ratingLength; index++) {
       record = {};
       record.speaker_id = this.view["ratingTile" + index].speakerId;
-      record.rating = this.view["ratingTile" + index].selectedIndex;
+      record.rating = kony.sdk.isNullOrUndefined(this.view["ratingTile" + index].selectedIndex)===true?0:this.view["ratingTile" + index].selectedIndex;
       batch.push(record);
     }
     record = {};
