@@ -158,7 +158,7 @@ define({
       kony.application.dismissLoadingScreen();
       kony.timer.cancel("sessionSelectTimer");
       self.view.buttonBack.isVisible=true;
-    } ,2, false);
+    } ,1, false);
     this.view.txtArea.setEnabled(true);
     this.view.sessionTileAnim.left = "100%";
     this.view.sessionTileAnim.isVisible=true;

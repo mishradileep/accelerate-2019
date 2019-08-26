@@ -62,10 +62,5 @@ define({
     AS_Form_ce1c3ac567c14878a6d0115ae35f7155: function AS_Form_ce1c3ac567c14878a6d0115ae35f7155(eventobject) {
         var self = this;
         return;
-    },
-    /** onTouchStart defined for buttonBack **/
-    AS_Button_f88daa8ece6342d0a533a9ab8249395f: function AS_Button_f88daa8ece6342d0a533a9ab8249395f(eventobject, x, y) {
-        var self = this;
-        alert("Start Invoked");
     }
 });
