@@ -1824,7 +1824,28 @@ define({
         }
     },
 
-
+  onClickOfFilter:function(text){
+    var startDate=parseInt(text);
+    var sessions= this.filteredSession;
+    var len=sessions.length;
+    var found=false;
+    var index;
+    for(index=0;index<len;index++){
+      if(new Date(sessions[index].startDate).getDate()==startDate){
+        found=true;
+        break;
+      }
+    }
+    if(found){
+      this.view.contentScroller.scrollToWidget(sessions[index],true);
+      this.view.sessionTiles.isVisible = true;
+      this.view.lblNoEvents.isVisible = false;
+    }
+    else{
+      this.view.sessionTiles.isVisible = false;
+      this.view.lblNoEvents.isVisible = true;
+    }
+  },
 
 
 });

@@ -689,7 +689,7 @@ define({
     }catch(exception){
       kony.print("Exception while animating");
     }
-    //this.view.txtArea.setEnabled(false);
+    this.view.txtArea.setEnabled(false);
     this.view.txtArea.text="";
     if(this.isNavigatedFrmOtherForm){
       this.isNavigatedFrmOtherForm=false;
@@ -2102,7 +2102,7 @@ define({
           var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
           this.view["speakerDescription" + speakerIndex].text = description;
           this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
-          this.view["ratingTile" + speakerIndex].setDefaultSelectedIndex();
+          this.view["ratingTile" + speakerIndex].resetAllSkins();
           this.view["flxSpeaker"+speakerIndex].onClick = function(eventobject) {
             this.onClickOfSpeaker(this.speakerIdMap[eventobject.id]);
           }.bind(this);
@@ -2118,7 +2118,7 @@ define({
       this.view["flxSpeaker" + speakerIndex].isVisible = false;
       this.view["ratingTile" + speakerIndex].isVisible = false;
     }
-    this.view["ratingTile"].setDefaultSelectedIndex();
+    this.view["ratingTile"].resetAllSkins();
     this.setSessionAttachments(sessionObject);
 
   },
