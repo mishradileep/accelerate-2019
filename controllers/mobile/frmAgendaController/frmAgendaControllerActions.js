@@ -63,9 +63,4 @@ define({
         var self = this;
         return;
     },
-    /** onDone defined for txtArea **/
-    AS_TextArea_h1061b0c1b394e50ba8137b7b1fbffbb: function AS_TextArea_h1061b0c1b394e50ba8137b7b1fbffbb(eventobject) {
-        var self = this;
-        this.view.txtArea.setFocus(false);
-    }
 });
