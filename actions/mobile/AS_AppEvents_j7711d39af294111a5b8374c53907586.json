@@ -1,0 +1,18 @@
+{
+    "AS_AppEvents_j7711d39af294111a5b8374c53907586": {
+        "id": "AS_AppEvents_j7711d39af294111a5b8374c53907586",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__b095236f9f2c470884ac39403eb5439b",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "let isAppAlreadyLoaded = kony.store.getItem(\"isAppLoaded\");\nif(isAppAlreadyLoaded)\n\treturn \"frmAgenda\";\nelse\n  return \"frmWelcome\";",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

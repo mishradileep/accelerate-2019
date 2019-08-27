@@ -6,7 +6,6 @@ define({
     AS_FlexContainer_i2ce63ba146147b6b2a92aa64ee9c117: function AS_FlexContainer_i2ce63ba146147b6b2a92aa64ee9c117(eventobject, x, y) {
         var self = this;
         this.animateWelcomeArrow();
-        syncEventData();
     },
     /** preShow defined for frmWelcome **/
     AS_Form_f7ce60441e134913b705571f7d05316e: function AS_Form_f7ce60441e134913b705571f7d05316e(eventobject) {

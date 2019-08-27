@@ -22,7 +22,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__f5169e75dccb4e0c8ddcb7adb24aef85",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.animateWelcomeArrow();\nsyncEventData();",
+            "codeSnippet": "this.animateWelcomeArrow();\n",
             "parentId": null,
             "callbackType": null
         }]
