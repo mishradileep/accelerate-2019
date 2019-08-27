@@ -40,7 +40,7 @@ define(function() {
         this.view.FlexGroup0b8c01e2d521f41.layoutType = kony.flex.FLOW_VERTICAL;
         this.view.speakerDetails.top = "0dp";
         this.view.speakerDetails.height = "150dp";
-        this.view.speakerInfo.isVisible = true;
+        this.view.speakerInfo.isVisible = false;
       }
       this.view.speakerImage.width = speakerImgWidth + "dp";
     },
