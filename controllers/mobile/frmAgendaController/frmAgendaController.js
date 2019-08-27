@@ -1053,7 +1053,6 @@ define({
       destColor = "14334500";
       sessionTrack = eventConstants.QUANTUM;
     }
-
     this.view.filterWidget.animate(
       kony.ui.createAnimation({
         100: {
@@ -1069,6 +1068,9 @@ define({
       });
     this.view.filterButton.animate(
       kony.ui.createAnimation({
+        50:{
+          skin : targetSkin
+        },
         100: {
           opacity: 0,
           "stepConfig": {}
@@ -1082,7 +1084,7 @@ define({
 
           self.view.filterButton.text = buttonText;
           self.view.filterButton.skin = targetSkin;
-
+		  self.view.filterButton.focusSkin = targetSkin;
           self.view.filterButton.animate(
             kony.ui.createAnimation({
               //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
@@ -1550,6 +1552,7 @@ define({
       alert("Please rate the session before submitting");
       return ;
     }
+    this.dismissRatingTiles();
     var batch = [];
     var record;
     for (var index = 0; index < this.ratingLength; index++) {
@@ -1573,7 +1576,6 @@ define({
   },
   successInUpdateFeedback: function(response) {
     kony.print(" feedback saved successfully");
-    this.dismissRatingTiles();
     this.currentSessionObjectInDetailScreen.feedBackSubmit = true;
     this.addToKonyStore(this.currentSessionObjectInDetailScreen.event_session_id);
 
