@@ -1115,7 +1115,6 @@ define({
             }
             this.allSessionTiles.push(sessionTile);
             this.view.sessionTiles.add(sessionTile);
-            this.filteredSession.push(sessionTile);
             this.view[id].setTitleData(sessionObj);
             this.view[id].setDeleteButtonValues();
             this.myScheduleSession.push(sessionTile);
@@ -1169,12 +1168,13 @@ define({
     },
     resetData: function(id) {
         this.view.lblNoEvents.isVisible = false;
-        var sessions = this.myScheduleSession;
+        var sessions = this.filteredSession;
         var len = sessions.length;
         var index;
         this.view[id].sessionData.isAddedToMySchedule = false;
         this.view[id].isAddedToMySchedule = false;
         this.view[id].isVisible = false;
+      	this.deleteInAllSessionArray(id);
         var children = this.view.sessionTiles.widgets();
         var childrenCount = children.length;
         if (childrenCount <= 0) {
@@ -1183,8 +1183,7 @@ define({
         if (children[0].id == id && childrenCount > 1) {
           	children[1].top = "80dp";
             this.view.sessionTiles.remove(this.view[id]);
-            
-        } else {
+        } else{
             this.view.sessionTiles.remove(this.view[id]);
         }
         var children = this.view.sessionTiles.widgets();
@@ -1201,6 +1200,15 @@ define({
         this.filteredSession = this.view.sessionTiles.widgets();
         this.view.forceLayout();
     },
+  deleteInAllSessionArray:function(id){
+    var sessionsTiles=this.allSessionTiles;
+    for(var index=0;index<sessionsTiles.length;index++){
+      var sessionTileObject=sessionsTiles[index];
+      if(sessionTileObject.id===id){
+        sessionsTiles.splice(index,1);
+      }
+    }
+  },
 
     checkIfSessionsArePresentForSelectedDate: function() {
         let mSessionsList = this.sessionsList;
@@ -1797,6 +1805,7 @@ define({
     },
 
     onClickOfFilter: function(text) {
+      	this.filteredSession=[];
         this.view.lblNoEvents.isVisible = false;
         var isFirst = true;
         var startDate = parseInt(text);
@@ -1811,6 +1820,7 @@ define({
                 if (isFirst) {
                     if (!kony.sdk.isNullOrUndefined(this.view[sessions[index].id])) {
                         this.view[sessions[index].id].isVisible = true;
+                      	this.filteredSession.push(this.view[sessions[index].id]);
                         this.view[sessions[index].id].top = "80dp";
                         isFirst = !isFirst;
                     }
@@ -1818,6 +1828,7 @@ define({
                 } else {
                     if (!kony.sdk.isNullOrUndefined(this.view[sessions[index].id])) {
                         this.view[sessions[index].id].top = "0dp";
+                      	this.filteredSession.push(this.view[sessions[index].id]);
                         this.view[sessions[index].id].isVisible = true;
                     }
 
@@ -1828,7 +1839,7 @@ define({
                 }
             }
         }
-        var children = this.view.sessionTiles.widgets();
+        var children = this.filteredSession;
         var len = children.length;
         for (index = 0; index < len; index++) {
             if (children[index].isVisible) {
