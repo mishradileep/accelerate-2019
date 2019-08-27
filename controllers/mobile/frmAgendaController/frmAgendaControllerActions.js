@@ -62,5 +62,5 @@ define({
     AS_Form_ce1c3ac567c14878a6d0115ae35f7155: function AS_Form_ce1c3ac567c14878a6d0115ae35f7155(eventobject) {
         var self = this;
         return;
-    },
+    }
 });

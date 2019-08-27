@@ -2,6 +2,12 @@ define({
     /*
       This is an auto generated file and any modifications to it may result in corruption of the action sequence.
     */
+    /** onClick defined for flxContinue **/
+    AS_FlexContainer_e7d2feeeef604b5ba0ec88562a635812: function AS_FlexContainer_e7d2feeeef604b5ba0ec88562a635812(eventobject) {
+        var self = this;
+        this.animateWelcomeArrow();
+        syncEventData();
+    },
     /** preShow defined for frmWelcome **/
     AS_Form_f7ce60441e134913b705571f7d05316e: function AS_Form_f7ce60441e134913b705571f7d05316e(eventobject) {
         var self = this;
@@ -20,11 +26,5 @@ define({
             this.view.lblTimeAndVenue.skin = 'sknlblTimeVenuewhiteSmall';
         }
         this.view.lblDesc.text = "Thank you for joining us in Austin. We look to showing you first-hand how Kony accelerates digital success.";
-    },
-    /** onClick defined for flxContinue **/
-    AS_FlexContainer_e7d2feeeef604b5ba0ec88562a635812: function AS_FlexContainer_e7d2feeeef604b5ba0ec88562a635812(eventobject) {
-        var self = this;
-        this.animateWelcomeArrow();
-        syncEventData();
     }
 });
