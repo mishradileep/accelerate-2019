@@ -11,6 +11,23 @@ define(function() {
      * @private
      */
     setData : function(presenterObject) {
+      var speakerImgHeight = presenterObject.speakerImgHeight;
+      var flexHeight = presenterObject.flexHeight;
+      var imageHeight = presenterObject.imageHeight;
+      var speakerImgWidth = presenterObject.speakerImgWidth;
+       this.view.speakerImage.height = parseInt(speakerImgHeight) + "dp";
+      if(imageHeight>flexHeight) {
+        this.view.speakerDetails.bottom = 0 +"dp";
+        this.view.speakerDetails.height = "110dp";
+        this.view.speakerInfo.isVisible = false;
+        this.view.FlexGroup0b8c01e2d521f41.layoutType = kony.flex.FREE_FORM;
+      } else {
+        this.view.speakerDetails.top = "0dp";
+        this.view.speakerDetails.height = "150dp";
+        this.view.speakerInfo.isVisible = true;
+        this.view.FlexGroup0b8c01e2d521f41.layoutType = kony.flex.FLOW_VERTICAL;
+      }
+      this.view.speakerImage.width = speakerImgWidth + "dp";
       this.presenterObject = presenterObject;
       this.view.speakerName.text = presenterObject.speaker_name;
       this.view.speakerTitle.text = presenterObject.speaker_title;
@@ -23,26 +40,6 @@ define(function() {
       
       var tracks = presenterObject.tracks ? (presenterObject.tracks) : [];
       this.setTracks(tracks);
-      var deviceWidth = kony.os.deviceInfo().screenWidth;
-      var speakerImgWidth = deviceWidth - 90;
-      var speakerImgHeight = speakerImgWidth * 1.02;
-      speakerImgHeight = speakerImgHeight.toFixed();
-      var screenHeight = kony.os.deviceInfo().screenHeight;
-      var flexHeight = screenHeight - 271;
-      var imageHeight = parseInt(speakerImgHeight) + 150;
-      this.view.speakerImage.height = parseInt(speakerImgHeight) + "dp";
-      if(imageHeight>flexHeight) {
-        this.view.FlexGroup0b8c01e2d521f41.layoutType = kony.flex.FREE_FORM;
-        this.view.speakerDetails.bottom = 0 +"dp";
-        this.view.speakerDetails.height = "110dp";
-        this.view.speakerInfo.isVisible = false;
-      } else {
-        this.view.FlexGroup0b8c01e2d521f41.layoutType = kony.flex.FLOW_VERTICAL;
-        this.view.speakerDetails.top = "0dp";
-        this.view.speakerDetails.height = "150dp";
-        this.view.speakerInfo.isVisible = true;
-      }
-      this.view.speakerImage.width = speakerImgWidth + "dp";
     },
 
 
