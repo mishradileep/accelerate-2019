@@ -1878,7 +1878,6 @@ define({
      * 	@private
      */
   addToMyScheduleInAnimTile: function(tileObject, addAgendaButton) {
-    debugger;
     if(kony.sdk.isNullOrUndefined(tileObject.callback)){
       tileObject.callback=this.mySchedular.bind(this);
     }
