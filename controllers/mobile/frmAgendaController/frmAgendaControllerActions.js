@@ -62,5 +62,10 @@ define({
     AS_Form_ce1c3ac567c14878a6d0115ae35f7155: function AS_Form_ce1c3ac567c14878a6d0115ae35f7155(eventobject) {
         var self = this;
         return;
+    },
+    /** onDone defined for txtArea **/
+    AS_TextArea_h1061b0c1b394e50ba8137b7b1fbffbb: function AS_TextArea_h1061b0c1b394e50ba8137b7b1fbffbb(eventobject) {
+        var self = this;
+        this.view.txtArea.setFocus(false);
     }
 });

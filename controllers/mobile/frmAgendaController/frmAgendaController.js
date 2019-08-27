@@ -12,6 +12,7 @@ define({
   
   formInit:function(){
     this.isIphoneXSeries= checkForIphoneXSeries();
+    this.view.detailsScroller.showFadingEdges = false;
   },
   /**
      * @function frmAgendaPreshow
@@ -1409,6 +1410,7 @@ define({
           }
           var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
           this.view["speakerDescription" + speakerIndex].text = description;
+          this.view['ratingTile'+ speakerIndex].isVisible=true;
           this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
           this.view["ratingTile" + speakerIndex].resetAllSkins();
           this.view["flxSpeaker"+speakerIndex].onClick = function(eventobject) {
@@ -1876,6 +1878,10 @@ define({
      * 	@private
      */
   addToMyScheduleInAnimTile: function(tileObject, addAgendaButton) {
+    debugger;
+    if(kony.sdk.isNullOrUndefined(tileObject.callback)){
+      tileObject.callback=this.mySchedular.bind(this);
+    }
     tileObject.sessionToMySchedule();
     addAgendaButton.skin = tileObject.addAgendaContainer.skin;
     addAgendaButton.imgStatus.src = tileObject.imgStatus.src;
@@ -1953,6 +1959,22 @@ define({
       kony.store.setItem("currentNotificationId",-999999999);
     }
     else if(!kony.sdk.isNullOrUndefined(naviInfo.transferCode) && naviInfo.transferCode===100){
+      var myAgenda=kony.store.getItem("myAgendaData");
+      if(kony.sdk.isNullOrUndefined(myAgenda)){
+        return ;
+      }
+      if(myAgenda.hasOwnProperty(this.view[this.thisCard.id].sessionData.event_session_id)){
+        this.view.addAgendaContainer.imgStatus.src=this.view[this.thisCard.id].myScheduleIndicatorImage;
+        this.view.addAgendaContainer.skin=this.view[this.thisCard.id].agendaContainerSkin;
+        this.view.sessionTileAnim.addAgendaContainer.imgStatus.src=this.view[this.thisCard.id].myScheduleIndicatorImage;
+        this.view.sessionTileAnim.addAgendaContainer.skin=this.view[this.thisCard.id].agendaContainerSkin;
+      }
+      else{
+        this.view.addAgendaContainer.imgStatus.src=this.view[this.thisCard.id].agendaIndicatorImage;
+        this.view.addAgendaContainer.skin=this.view[this.thisCard.id].agendaUnselectedSkin;
+        this.view.sessionTileAnim.addAgendaContainer.imgStatus.src=this.view[this.thisCard.id].agendaIndicatorImage;
+        this.view.sessionTileAnim.addAgendaContainer.skin=this.view[this.thisCard.id].agendaUnselectedSkin;
+      }
       return;
     }
     else {
@@ -2120,6 +2142,7 @@ define({
     }
     this.view["ratingTile"].resetAllSkins();
     this.setSessionAttachments(sessionObject);
+    this.view.txtArea.setEnabled(true);
 
   },
   showListPageDirectly:function(){

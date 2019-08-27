@@ -10,6 +10,7 @@ define({
 
     formInit: function() {
         this.isIphoneXSeries = checkForIphoneXSeries();
+      	this.view.detailsScroller.showFadingEdges = false;
     },
     /**
      * @function frmAgendaPreshow
@@ -94,6 +95,7 @@ define({
      */
     frmAgendaPostshow: function() {
         this.changeButtonSkins("4TH SEP");
+      	this.currentActiveDate=4;
       	this.checkSessionsForSelectedDate(accelerateSessionData.eventSessionData.records);
         this.setData(accelerateSessionData.eventSessionData.records);
         this.devHeight = this.view.masterContainer.frame.height;
@@ -164,6 +166,7 @@ define({
      * @private
      */
     frmAgendaSessionSelect: function(eventobject) {
+      	this.view.sessionTileAnim.isVisible=true;
       	this.view.buttonBack.isVisible=false;
         kony.application.showLoadingScreen("sknBlockLoading", "", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, {});
         kony.timer.schedule("sessionSelectTimer",()=>{
@@ -653,6 +656,13 @@ define({
         	} , 2, false);
     	}catch(exception){
 			kony.print("Exception while animating");
+        }
+      	if(!kony.sdk.isNullOrUndefined(this.previousForm)){
+           var param = {
+      "form" : "frmPresenters"
+    };
+          (new kony.mvc.Navigation(this.previousForm)).navigate(param);
+          this.previousForm=null;
         }
         this.view.txtArea.setEnabled(false);
         this.view.txtArea.text = "";
@@ -1152,6 +1162,9 @@ define({
             if (!kony.sdk.isNullOrUndefined(session_id) && myScheduledSession.hasOwnProperty(session_id)) {
                 sessions[index].isAddedToMySchedule = true;
             }
+          else{
+            sessions[index].isAddedToMySchedule = false;
+          }
         }
     },
     resetData: function(id) {
@@ -1168,8 +1181,9 @@ define({
             return;
         }
         if (children[0].id == id && childrenCount > 1) {
+          	children[1].top = "80dp";
             this.view.sessionTiles.remove(this.view[id]);
-            children[1].top = "80dp";
+            
         } else {
             this.view.sessionTiles.remove(this.view[id]);
         }
@@ -1177,6 +1191,7 @@ define({
         var len = children.length;
         for (index = 0; index < len; index++) {
             if (children[index].isVisible) {
+              this.view[children[index].id].top="80dp";
                 break;
             }
         }
@@ -1330,6 +1345,7 @@ define({
                     }
                     var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
                     this.view["speakerDescription" + speakerIndex].text = description;
+                  	this.view['ratingTile'+ speakerIndex].isVisible=true;
                     this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
                     this.view["ratingTile" + speakerIndex].resetAllSkins();
                     this.view["flxSpeaker" + speakerIndex].speakerInfo = speakerBio;
@@ -1383,7 +1399,7 @@ define({
         let buttonText = eventobject.text;
         kony.store.setItem("currentActiveDate", parseInt(buttonText));
         this.changeButtonSkins(buttonText);
-        this.currentSelectedFilter = buttonText;
+      	this.currentSelectedFilter = buttonText;
         this.onClickOfFilter(buttonText);
     },
 
@@ -1405,6 +1421,8 @@ define({
             this.view.buttonDay1.skin = "sknButtonInActive";
             this.view.buttonDay1.focusSkin = "sknButtonActive";
         }
+      this.currentSelectedFilter = buttonText;
+      
     },
     /**
      *	@function filterSessionTiles
@@ -1820,32 +1838,84 @@ define({
         if (index == len) {
             this.view.lblNoEvents.isVisible = true;
         } else {
-            this.view.lblNoEvents.isVisible = false
+            this.view.lblNoEvents.isVisible = false;
         }
     },
-
-  onClickOfFilter:function(text){
-    var startDate=parseInt(text);
-    var sessions= this.filteredSession;
-    var len=sessions.length;
-    var found=false;
-    var index;
-    for(index=0;index<len;index++){
-      if(new Date(sessions[index].startDate).getDate()==startDate){
-        found=true;
-        break;
-      }
-    }
-    if(found){
-      this.view.contentScroller.scrollToWidget(sessions[index],true);
-      this.view.sessionTiles.isVisible = true;
-      this.view.lblNoEvents.isVisible = false;
+  
+  onNavigate:function(eventObject){
+    if(kony.sdk.isNullOrUndefined(eventObject)){
+      this.showListPageDirectly();
+      this.previousForm=null;
     }
     else{
-      this.view.sessionTiles.isVisible = false;
-      this.view.lblNoEvents.isVisible = true;
+      this.previousForm=eventObject.formId;
+      return;
     }
   },
+  
+  showListPageDirectly:function(){
+    this.view.sessionTileAnim.quantumDotsClear.opacity=0;
+    this.view.contentScroller.width="100%";
+    this.view.contentScroller.left="0dp";
+    this.view.contentScroller.top="0dp";
+    this.view.contentScroller.isVisible=true;
+    this.view.headerContainer.isVisible=true;
+    this.view.headerContainer.left="0dp";
+    this.view.headerContainer.opacity=100;
+    this.view.headerContainer.top="0dp";
+    this.view.headerContainer.width="100%";
+    this.view.headerContainer.height="80dp";
+    this.view.detailsScroller.left="100%";
+    this.view.detailsScroller.top="0%";
+    this.view.detailsScroller.width="100%";
+    this.view.detailsScroller.bottom="60dp";
+    this.view.sessionTileAnim.isVisible = false;
+    this.view.imageBack.left="15dp";
+    this.view.imageBack.top="16dp";
+    this.view.imageBack.width="24dp";
+    this.view.imageBack.height="20dp";
+    this.view.imageBack.opacity=0;
+    this.view.buttonBack.left="2dp";
+    this.view.buttonBack.top="3dp";
+    this.view.buttonBack.width="58dp";
+    this.view.buttonBack.height="47dp";
+    this.view.buttonBack.isVisible=false;
+    this.view.buttonBack.opacity=100;
+    this.view.menuMain.left="0dp";
+    this.view.menuMain.bottom="0dp";
+    this.view.menuMain.width="100%";
+    this.view.menuMain.height="60dp";
+    this.view.menuMain.isVisible=true;
+    this.view.addAgendaContainer.left="82.6%";
+    this.view.addAgendaContainer.top="39dp";
+    this.view.addAgendaContainer.width="43dp";
+    this.view.addAgendaContainer.height="43dp";
+    this.view.sessionLocation.left="60%";
+    //this.view.sessionLocation.top="105dp"; 
+    this.view.sessionLocation.top="125dp"; 
+    this.view.sessionLocation.zIndex=200;
+    this.view.sessionLocation.isVisible=false;
+    this.view.sessionTileAnim.left="100%";
+    this.view.sessionTileAnim.top="-40dp";
+    this.view.sessionTileAnim.width="100%";
+    this.view.sessionTileAnim.height="152dp";
+    this.view.sessionTileAnim.tilebg.height="130dp";
+    this.view.sessionTileAnim.tilebg.left="20dp";
+    this.view.sessionTileAnim.tilebg.top="0dp";
+    this.view.forceLayout();
+    this.view.addAgendaContainer.isVisible=false;
+    this.view.sessionContentContainer.top="100%";
+    if(kony.sdk.isNullOrUndefined(this.normalWidth)){
+      this.normalWidth= this.view.sessionTileAnim.tileBGImageKony.width;
+      this.normalHeight=this.view.sessionTileAnim.tileBGImageKony.height;
+    }
+    else{
+      this.view.sessionTileAnim.tileBGImageKony.width= this.normalWidth;
+      this.view.sessionTileAnim.tileBGImageKony.height= this.normalHeight;
+    }
+  }
+
+
 
 
 });
