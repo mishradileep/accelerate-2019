@@ -14,6 +14,7 @@ define({
        this.view.mobileheader.top="45dp";
      }
   },
+  
   formWifiInfoPostShowAction: function() {
     let eventData = accelerateEventData.eventdata.records[0];
     if (!kony.sdk.isNullOrUndefined(eventData)) {
