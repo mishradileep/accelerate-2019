@@ -50,6 +50,7 @@
     "inputAccessoryViewType": 1,
     "iphone": {
         "psp": {
+            "closeButtonText": "Close",
             "inputAccessoryViewType": 1,
             "keyboardActionLabel": 1,
             "placeholderSkin": "s300b5b6a2cd4e3f822c67bfdfec0562",

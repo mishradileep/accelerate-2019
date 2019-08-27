@@ -27,11 +27,13 @@ define(function() {
       setFocusOnClick:function(eventObject){
         var index=parseInt(eventObject.id.charAt(eventObject.id.length-1));
         var unanimatedButton;
+        if(index!=this.previousSelectedIndex){
           this.view["ratingBubble"+index].skin=this.ratingBubbleActive;
         	if(!kony.sdk.isNullOrUndefined( this.view["ratingBubble"+this.previousSelectedIndex])){
               this.view["ratingBubble"+this.previousSelectedIndex].skin=this.ratingBubbleInactive;
               unanimatedButton=this.view["ratingBubble"+this.previousSelectedIndex];
             }
+        }
           this.animateButton( this.view["ratingBubble"+index],unanimatedButton);
         if(!kony.sdk.isNullOrUndefined(this.view["ratingLevel"+index])){
           this.view["ratingLevel"+index].skin="ratingSkinActive";
@@ -99,6 +101,7 @@ define(function() {
          this.view["ratingBubble"+index].skin=this.ratingBubbleInactive;
        }
        this.selectedIndex=null;
+       this.previousSelectedIndex=null;
       }
         
       

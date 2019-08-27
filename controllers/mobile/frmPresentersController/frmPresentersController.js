@@ -369,6 +369,7 @@ define({
   navigateBackToSessionListPage : function(){
     var naviConfig={
       "transferCode":100,
+      "formId":this.view.id
     };
     var navObj = new kony.mvc.Navigation(this.formId);
     navObj.navigate(naviConfig);
