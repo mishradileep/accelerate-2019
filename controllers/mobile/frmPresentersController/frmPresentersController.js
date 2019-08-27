@@ -34,6 +34,7 @@ define({
     
     //setting postshow action
     this.view.postShow = this.formPostShowAction.bind(this);
+    this.view.presenterScroll.removeAll();   
     
     //setting notch
     if(checkForIphoneXSeries()){
@@ -43,6 +44,9 @@ define({
       this.view.presenterDetail.top = "-45dp";
       this.view.flxImagelargeView.top = "45dp";
     }
+    
+    this.view.presenterScroll.showFadingEdges = false;
+    this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = "menuLabelSkinActive";
     
     //setting filterOnClick
     this.view.flxFilterKeynote.onClick = function(eventobject) {
@@ -61,13 +65,14 @@ define({
         this.initializeFilter();
         this.showAllPresenters();
         this.filtersSelected = [];
-      }else if(this.fitersSelected === undefined){
-        this.view.presenterScroll.removeAll();   
+      }
+      if(this.isFirstTime === undefined){
         this.processPresenterSessionData(accelerateSpeakerData.eventSpeakerData.records);
-        this.view.menuMain.menuContainerPresenters.menuLabelPresenters.skin = "menuLabelSkinActive";
-        this.view.presenterScroll.showFadingEdges = false;
+        this.isFirstTime = false;
       }
   },
+  
+
   /**
        * @function processPresenterSessionData
        * @description This function is invoked from the presenter fetch success callback
@@ -76,10 +81,21 @@ define({
        * @private
        */
   processPresenterSessionData: function(presenterSessionData) {
+      var deviceWidth = kony.os.deviceInfo().screenWidth;
+      var speakerImgWidth = deviceWidth - 90;
+      var speakerImgHeight = speakerImgWidth * 1.02;
+      speakerImgHeight = speakerImgHeight.toFixed();
+      var screenHeight = kony.os.deviceInfo().screenHeight;
+      var flexHeight = screenHeight - 271;
+      var imageHeight = parseInt(speakerImgHeight) + 150;
     for (var index = 0; index < presenterSessionData.length; index++) {
       var presenterObject = presenterSessionData[index];
       var presenterShortBio = presenterObject.hasOwnProperty("speaker_bio") ? presenterObject.speaker_bio.slice(0, 50) + "..." : "";
       presenterObject.shortBio = presenterShortBio;
+      presenterObject.speakerImgHeight = speakerImgHeight;
+      presenterObject.flexHeight = flexHeight;
+      presenterObject.imageHeight = imageHeight;
+      presenterObject.speakerImgWidth = speakerImgWidth;
       this.setPresenterList(presenterObject);
     }
   },
