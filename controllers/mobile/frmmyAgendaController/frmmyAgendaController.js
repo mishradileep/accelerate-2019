@@ -1452,6 +1452,7 @@ define({
       alert("Please rate the session before submitting");
       return ;
     }
+        this.dismissRatingTiles();
         var batch = [];
         var record;
         for (var index = 0; index < this.ratingLength; index++) {
@@ -1475,7 +1476,6 @@ define({
     },
     successInUpdateFeedback: function(response) {
         kony.print(" feedback saved successfully");
-        this.dismissRatingTiles();
         this.currentSessionObjectInDetailScreen.feedBackSubmit = true;
         this.addToKonyStore(this.currentSessionObjectInDetailScreen.event_session_id);
     },
