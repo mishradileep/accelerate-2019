@@ -1,16 +1,10 @@
 {
-    "AS_FlexContainer_i2ce63ba146147b6b2a92aa64ee9c117": {
-        "id": "AS_FlexContainer_i2ce63ba146147b6b2a92aa64ee9c117",
+    "AS_FlexContainer_h695dd71383f4880bb1b6c22ca5e70e1": {
+        "id": "AS_FlexContainer_h695dd71383f4880bb1b6c22ca5e70e1",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
-        }, {
-            "datatype": "string",
-            "name": "x"
-        }, {
-            "datatype": "string",
-            "name": "y"
         }],
         "contextObj": {
             "name": "frmWelcome",
@@ -20,9 +14,9 @@
         },
         "language": "js",
         "actions": [{
-            "id": "ADD_SNIPPET__f5169e75dccb4e0c8ddcb7adb24aef85",
+            "id": "ADD_SNIPPET__gd04866c1b0e4ef5897d9546d148ca0b",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.animateWelcomeArrow();\n",
+            "codeSnippet": "this.animateWelcomeArrow();\nsyncEventData();",
             "parentId": null,
             "callbackType": null
         }]

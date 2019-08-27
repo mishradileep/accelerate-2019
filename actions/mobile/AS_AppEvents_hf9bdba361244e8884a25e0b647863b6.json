@@ -10,7 +10,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__b15e69f4e452460698131140e8cc38f8",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "//syncEventData();\nlocalNotificationCallBacks();\ndisableDefaultLoadingScreen();",
+            "codeSnippet": "//syncEventData();\nlocalNotificationCallBacks();\ndisableDefaultLoadingScreen();\nsyncEventData();",
             "parentId": null,
             "callbackType": null
         }]

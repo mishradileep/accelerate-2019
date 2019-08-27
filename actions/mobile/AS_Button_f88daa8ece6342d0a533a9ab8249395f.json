@@ -1,6 +1,6 @@
 {
-    "AS_FlexContainer_i2ce63ba146147b6b2a92aa64ee9c117": {
-        "id": "AS_FlexContainer_i2ce63ba146147b6b2a92aa64ee9c117",
+    "AS_Button_f88daa8ece6342d0a533a9ab8249395f": {
+        "id": "AS_Button_f88daa8ece6342d0a533a9ab8249395f",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -13,16 +13,16 @@
             "name": "y"
         }],
         "contextObj": {
-            "name": "frmWelcome",
+            "name": "frmAgenda",
             "type": "forms",
             "platform": "",
-            "KUID": "g575ec9bf24d4f3ab673b9f8806f456e"
+            "KUID": "g7d71a566dee45ffa15745fbce32e657"
         },
         "language": "js",
         "actions": [{
-            "id": "ADD_SNIPPET__f5169e75dccb4e0c8ddcb7adb24aef85",
+            "id": "ADD_SNIPPET__e82353587db94a66a2b7974229552178",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "this.animateWelcomeArrow();\n",
+            "codeSnippet": "alert(\"Start Invoked\");",
             "parentId": null,
             "callbackType": null
         }]

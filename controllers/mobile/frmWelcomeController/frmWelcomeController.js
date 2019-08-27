@@ -10,6 +10,14 @@ define({
    */
   animateWelcomeArrow: function() {
     this.view.imgContinue.src = "loadeing_circle_2.gif";
+    kony.store.setItem("isAppLoaded",true);
+    kony.timer.schedule("welcomeTimer", ()=>{
+       var nav = new kony.mvc.Navigation("frmAgenda");
+       nav.navigate();
+       kony.timer.cancel("welcomeTimer");
+    }, 1, false);
+   
+    
   },
 
  });

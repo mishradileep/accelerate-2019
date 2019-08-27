@@ -14,6 +14,7 @@ define({
        this.view.mobileheader.top="45dp";
      }
   },
+  
   formWifiInfoPostShowAction: function() {
     let eventData = accelerateEventData.eventdata.records[0];
     if (!kony.sdk.isNullOrUndefined(eventData)) {
@@ -64,11 +65,11 @@ define({
       0: {"transform": transformObject0, "opacity": 1},
       100: {"transform": transformObject100, "opacity": 0},
     };
-    animationConfig = {delay:startDelay, duration: animationDuration, fillMode: kony.anim.FILL_MODE_FORWARDS};
+    animationConfig = {delay:startDelay, duration: animationDuration, fillMode: kony.anim.FILL_MODE_FORWARDS,iterationCount:0};
     animationDefObject = kony.ui.createAnimation(animationDef);
     circleObj.animate(animationDefObject,
                       animationConfig,
-                      {animationEnd: function() { self.animateWifiCircles(circleObj, startDelay, animationDuration); }}
+                      {animationEnd: function() {}}
                      );
 
   },

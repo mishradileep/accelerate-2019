@@ -1,6 +1,6 @@
 {
-    "AS_FlexContainer_i2ce63ba146147b6b2a92aa64ee9c117": {
-        "id": "AS_FlexContainer_i2ce63ba146147b6b2a92aa64ee9c117",
+    "AS_FlexContainer_b44fc9cf72f6409da96e65466aca8d67": {
+        "id": "AS_FlexContainer_b44fc9cf72f6409da96e65466aca8d67",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -19,12 +19,6 @@
             "KUID": "g575ec9bf24d4f3ab673b9f8806f456e"
         },
         "language": "js",
-        "actions": [{
-            "id": "ADD_SNIPPET__f5169e75dccb4e0c8ddcb7adb24aef85",
-            "type": "ADD_SNIPPET",
-            "codeSnippet": "this.animateWelcomeArrow();\n",
-            "parentId": null,
-            "callbackType": null
-        }]
+        "actions": []
     }
 }
