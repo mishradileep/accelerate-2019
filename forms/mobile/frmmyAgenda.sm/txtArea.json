@@ -49,6 +49,7 @@
     "info": null,
     "iphone": {
         "psp": {
+            "closeButtonText": "Close",
             "placeholderSkin": "s300b5b6a2cd4e3f822c67bfdfec0562"
         }
     },

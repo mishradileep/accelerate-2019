@@ -46,6 +46,11 @@
     "focusskin": "s300b5b6a2cd4e3f822c67bfdfec0562",
     "id": "txtAreaComments",
     "info": null,
+    "iphone": {
+        "psp": {
+            "closeButtonText": "Close"
+        }
+    },
     "iscustomlayout": false,
     "isvisible": true,
     "keyboardstyle": "A",
