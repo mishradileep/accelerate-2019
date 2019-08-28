@@ -14,6 +14,7 @@ define({
     this.isIphoneXSeries= checkForIphoneXSeries();
     this.view.detailsScroller.showFadingEdges = false;
     this.view.txtArea.keyboardActionLabel = constants.TEXTAREA_KEYBOARD_LABEL_DEFAULT;
+    this.previousColor = "1F232900";
   },
   /**
      * @function frmAgendaPreshow
@@ -1038,7 +1039,7 @@ define({
       leftPos = "0%";
       buttonText = "ALL";
       targetSkin = "filterSkinAll";
-      destColor = "1F232900";
+      destColor = "606A7500";
       sessionTrack = eventConstants.KEYNOTE;
     } else if (eventobject.id == "filterDBX") {
       this.currentSelectedTab=eventConstants.DBX;
@@ -1057,6 +1058,9 @@ define({
     }
     this.view.filterWidget.animate(
       kony.ui.createAnimation({
+        0:{
+          "backgroundColor" : self.previousColor
+        },
         100: {
           left: leftPos,
           "stepConfig": {}
@@ -1066,7 +1070,9 @@ define({
         fillMode: kony.anim.FILL_MODE_FORWARDS,
         duration: 0.22
       }, {
-        animationEnd: function() {}
+        animationEnd: function() {
+          self.view.filterWidget.backgroundColor = destColor;
+        }
       });
     this.view.filterButton.animate(
       kony.ui.createAnimation({
@@ -1084,6 +1090,7 @@ define({
           self.view.filterButton.text = buttonText;
           self.view.filterButton.skin = targetSkin;
 		  self.view.filterButton.focusSkin = targetSkin;
+          self.previousColor = destColor;
           self.view.filterButton.animate(
             kony.ui.createAnimation({
               //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
