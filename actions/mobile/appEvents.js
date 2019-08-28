@@ -6,10 +6,10 @@ define({
         disableDefaultLoadingScreen();
         syncEventData();
     },
-    AS_AppEvents_j7711d39af294111a5b8374c53907586: function AS_AppEvents_j7711d39af294111a5b8374c53907586(eventobject) {
+    AS_AppEvents_a2f0a1a6236b4da39fa076fb2860abfb: function AS_AppEvents_a2f0a1a6236b4da39fa076fb2860abfb(eventobject) {
         var self = this;
-        let isAppAlreadyLoaded = kony.store.getItem("isAppLoaded");
-        if (isAppAlreadyLoaded) return "frmAgenda";
+        let isAppLaunchedFirstTime = kony.store.getItem("isAppLoaded");
+        if (isAppLaunchedFirstTime) return "frmAgenda";
         else return "frmWelcome";
     }
 });

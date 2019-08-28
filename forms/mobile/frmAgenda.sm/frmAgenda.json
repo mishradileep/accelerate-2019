@@ -75,7 +75,7 @@
     "id": "frmAgenda",
     "info": null,
     "initdone": false,
-    "inputaccessoryviewtype": 4,
+    "inputaccessoryviewtype": 1,
     "ipad": {
         "needAppMenu": false,
         "psp": {
@@ -100,7 +100,7 @@
             "configureExtendBottom": false,
             "configureExtendTop": false,
             "configureStatusBarStyle": false,
-            "inputAccessoryViewType": 4,
+            "inputAccessoryViewType": 1,
             "titleBarAttributes": {
                 "barStyle": 0,
                 "hidesBackButton": true,
