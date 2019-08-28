@@ -32,6 +32,8 @@ define({
     var self = this;    
     this.filtersSelected = [];
     
+    this.view.imgLoader.isVisible = true;
+    
     //setting postshow action
     this.view.postShow = this.formPostShowAction.bind(this);
     this.view.presenterScroll.removeAll();   
@@ -69,6 +71,7 @@ define({
       if(this.isFirstTime === undefined){
         this.processPresenterSessionData(accelerateSpeakerData.eventSpeakerData.records);
         this.isFirstTime = false;
+        this.view.imgLoader.isVisible = false;
       }
   },
   

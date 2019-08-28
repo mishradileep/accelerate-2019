@@ -1,13 +1,15 @@
 {
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_base64_": null,
     "_height_": {
         "type": "string",
         "value": "100%"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "0%"
     },
     "_margin_": [
         0,
@@ -15,49 +17,45 @@
         0,
         0
     ],
-    "_orientation_": 6,
     "_padding_": [
         0,
         0,
         0,
         0
     ],
-    "_percent_": true,
-    "_skin_": "sdac6382675c43688029d32f54562cdf",
+    "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
+    "_src_": "loader560x570.gif",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "0%"
     },
     "_width_": {
         "type": "string",
         "value": "100%"
     },
-    "allboxes": [],
-    "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [
-        "imgLoader",
-        "headerContainer",
-        "presenterScroll"
-    ],
-    "clipbounds": true,
     "containerweight": 100,
-    "enablescrolling": true,
-    "id": "masterContainer",
+    "context": {
+        "channel": "mobile",
+        "formID": "frmPresenters",
+        "platform": "iphone",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "id": "imgLoader",
+    "imagescalemode": 1,
     "info": null,
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "d1aec4c826364600b8857955441fac22",
-    "layouttype": 2,
-    "name": "kony.ui.FlexContainer",
-    "parent": "frmPresenters",
+    "kuid": "f837f8a4416e45569e3fef530f52b458",
+    "name": "kony.ui.Image2",
+    "parent": "masterContainer",
     "pf": "frmPresenters",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "retainflowhorizontalalignment": false,
-    "snapgridsize": 10,
-    "snaptogrid": true,
-    "wType": "FlexContainer",
-    "widgetalignment": 1,
-    "zindex": 1
+    "srcType": 1,
+    "wType": "Image",
+    "widgetalignment": 5,
+    "zindex": 30
 }
