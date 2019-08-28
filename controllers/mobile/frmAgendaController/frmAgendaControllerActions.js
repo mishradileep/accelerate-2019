@@ -62,27 +62,5 @@ define({
     AS_Form_ce1c3ac567c14878a6d0115ae35f7155: function AS_Form_ce1c3ac567c14878a6d0115ae35f7155(eventobject) {
         var self = this;
         return;
-    },
-    /** onClick defined for filterWidget **/
-    AS_FlexContainer_fefd39634f28457fab864ca9baf3c048: function AS_FlexContainer_fefd39634f28457fab864ca9baf3c048(eventobject) {
-        var self = this;
-
-        function STYLE_ACTION____f2614a71ac6848f7bfa3d6cbbd231ce2_Callback() {}
-        self.view.filterWidget.animate(
-        kony.ui.createAnimation({
-            "100": {
-                "stepConfig": {
-                    "timingFunction": kony.anim.EASE
-                },
-                "backgroundColor": "14355000"
-            }
-        }), {
-            "delay": 0,
-            "iterationCount": 1,
-            "fillMode": kony.anim.FILL_MODE_FORWARDS,
-            "duration": 0.25
-        }, {
-            "animationEnd": STYLE_ACTION____f2614a71ac6848f7bfa3d6cbbd231ce2_Callback
-        });
     }
 });
