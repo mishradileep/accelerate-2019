@@ -92,6 +92,7 @@ define({
                 "width": width,
                 "top": "5dp",
             };
+          	
         }
       	var dummyTemplate = {
                 "itemTemplate": "flxDummySponsor1",

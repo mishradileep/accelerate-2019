@@ -11,7 +11,7 @@ define({
     formInit: function() {
         this.isIphoneXSeries = checkForIphoneXSeries();
       	this.view.detailsScroller.showFadingEdges = false;
-      	this.view.txtArea.keyboardActionLabel = constants.TEXTAREA_KEYBOARD_LABEL_DEFAULT
+      	this.view.txtArea.keyboardActionLabel = constants.TEXTAREA_KEYBOARD_LABEL_DEFAULT;
     },
     /**
      * @function frmAgendaPreshow
