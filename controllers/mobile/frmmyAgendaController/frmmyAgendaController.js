@@ -1335,7 +1335,7 @@ define({
             }
         }
         speakerList = presenters;
-        for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
+        for (speakerIndex = 0; speakerIndex < speakerList.length  && speakerList.length<3; speakerIndex++) {
             if (speakerList[speakerIndex].SoftDeleteFlag !== undefined && speakerList[speakerIndex].SoftDeleteFlag === true) {
                 continue;
             }
