@@ -1224,7 +1224,7 @@ define({
       else{
         this.view[tileObject.id].isVisible=false;
       }
-      this.toggleAgendaIfBookmarked(tileObject);
+      this.toggleAgendaIfBookmarked(tileObject, myAgendaData);
     }
   },
   toggleAgendaIfBookmarked:function(tileObject, myAgendaData){
@@ -1241,6 +1241,12 @@ define({
         }
         }
       }
+    else{
+      if(!kony.sdk.isNullOrUndefined(tileObject.sessionData)){
+      this.view[tileObject.id].imgStatus.src=this.view[tileObject.id].agendaIndicatorImage;
+      this.view[tileObject.id].addAgendaContainer.skin=this.view[tileObject.id].agendaUnselectedSkin;
+      }
+    }
   },
     checkDate:function(startDate,selectedDate){
       var splitDate = null;
