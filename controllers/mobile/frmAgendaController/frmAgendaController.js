@@ -14,7 +14,7 @@ define({
     this.isIphoneXSeries= checkForIphoneXSeries();
     this.view.detailsScroller.showFadingEdges = false;
     this.view.txtArea.keyboardActionLabel = constants.TEXTAREA_KEYBOARD_LABEL_DEFAULT;
-    this.previousColor = "1F232900";
+    this.previousColor = "606A7500";
   },
   /**
      * @function frmAgendaPreshow
@@ -1021,7 +1021,7 @@ define({
     var self = this;
     var leftPos = "0%";
     var buttonText = "ALL";
-    var targetSkin = "filterSkinAll";
+    var targetSkin = "";
     var destColor = "";
     var sessionTrack = null;
     if (eventobject.id == "filterAll") {

@@ -59,6 +59,7 @@
     "_winphone10_": {},
     "_winphone8_": {},
     "areflexpropsreferenced": false,
+    "autogrowmode": 0,
     "canUpdateUI": true,
     "clipbounds": true,
     "containerweight": 0,
@@ -66,7 +67,7 @@
         "FlexGroup0b8c01e2d521f41": {
             "__events__": {},
             "__info__": {
-                "kuid": "bf7c4d84f5f245079247f9b777f44e5f",
+                "kuid": "be9e8a92d9fc41868e3196dbbd404264",
                 "srcKUID": "j7c9ebd001f64933904d0679929df0f0",
                 "wType": "FlexContainer"
             }
@@ -75,27 +76,15 @@
             "__events__": {},
             "__info__": {
                 "isRoot": true,
-                "kuid": "d28091ee545f448daa0afae45387886c",
+                "kuid": "e134c76f55344f9eaedd74cc59b4f1e6",
                 "srcKUID": "e04cdd42ffdc451189ebcb43a18c4669",
                 "wType": "FlexContainer"
-            },
-            "left": {
-                "Default": {
-                    "type": "string",
-                    "value": "0dp"
-                }
-            },
-            "top": {
-                "Default": {
-                    "type": "string",
-                    "value": "0dp"
-                }
             }
         },
         "speakerDetails": {
             "__events__": {},
             "__info__": {
-                "kuid": "f17a1d7aa57f47ad8d855a485aaabc9f",
+                "kuid": "c547f2a5fe90459895f9af5672d07628",
                 "srcKUID": "daf2822007b947869498ecc6c3067c93",
                 "wType": "FlexContainer"
             }
@@ -103,35 +92,15 @@
         "speakerImage": {
             "__events__": {},
             "__info__": {
-                "kuid": "c4df5d0b3fdf416f84c90be54ba69623",
+                "kuid": "d8395b211a794036b6bf2a9d67220452",
                 "srcKUID": "c61c8d81be734d32b1ecaa439c8ab6e1",
                 "wType": "Image"
-            },
-            "height": {
-                "Default": {
-                    "type": "string",
-                    "value": "486dp"
-                }
-            },
-            "imageScaleMode": 1,
-            "src": "https://s3.amazonaws.com/volumeplay/accelerate2019/speakerth.png?AWSAccessKeyId=AKIA3IFOPJKDSH7UIUYI&Expires=1573537999&Signature=LMuYdNOYvD0yQsZpYdmZ%2BrXrBEU%3D&0=0",
-            "top": {
-                "Default": {
-                    "type": "string",
-                    "value": "-10dp"
-                }
-            },
-            "width": {
-                "Default": {
-                    "type": "string",
-                    "value": "349dp"
-                }
             }
         },
         "speakerInfo": {
             "__events__": {},
             "__info__": {
-                "kuid": "gd1d09d28f5342fb9cd35ba89e0bcaa0",
+                "kuid": "b398854f822c4bcca8b847f062362ce3",
                 "srcKUID": "bf9188fb45d24f7eb2609fbf35911370",
                 "wType": "Label"
             }
@@ -139,7 +108,7 @@
         "speakerName": {
             "__events__": {},
             "__info__": {
-                "kuid": "c3d07238067648489a8171b613c1b0ac",
+                "kuid": "e94c63aeaa5446a6aabe318a1abf8a82",
                 "srcKUID": "edc5dfdc8609428ea6976f307fc8432d",
                 "wType": "Label"
             }
@@ -147,7 +116,7 @@
         "speakerTitle": {
             "__events__": {},
             "__info__": {
-                "kuid": "acb96fee056542518be4d6fe8a93ec1a",
+                "kuid": "cd2af8556086451fb3f0754049feb3f1",
                 "srcKUID": "f761505e956544ec8f257d523e350779",
                 "wType": "Label"
             }
@@ -158,12 +127,12 @@
     "info": null,
     "iscustomlayout": false,
     "isdatareferenced": false,
-    "issegmentchild": false,
     "isvisible": true,
-    "kuid": "d28091ee545f448daa0afae45387886c",
+    "kuid": "e134c76f55344f9eaedd74cc59b4f1e6",
     "layouttype": 2,
     "masterType": 0,
     "name": "kony.ui.UserWidgetInstance",
+    "onclick": "AS_FlexContainer_de1100125cea444597aede255634a1c5",
     "parent": "presenterScroll",
     "pf": "frmPresenters",
     "retaincontentalignment": false,
