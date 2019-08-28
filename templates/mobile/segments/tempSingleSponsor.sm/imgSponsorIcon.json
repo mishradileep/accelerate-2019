@@ -47,7 +47,7 @@
     "imagewhenfailed": "konymp_imagedownload.png",
     "imagewhiledownloading": "konymp_imagedownload.png",
     "info": null,
-    "invokedProperty": "imageWhenFailed",
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "h1fb1f0c48824f698bf6240b86494af6",
