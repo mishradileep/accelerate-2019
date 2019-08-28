@@ -155,13 +155,13 @@ define({
      */
   frmAgendaSessionSelect: function(eventobject) {
     var self = this;
-    this.view.buttonBack.isVisible=false;
+    this.view.buttonBack.isVisible=true;
      kony.application.showLoadingScreen("sknBlockLoading", "", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, {});
-    kony.timer.schedule("sessionSelectTimer",()=>{
-      kony.application.dismissLoadingScreen();
-      kony.timer.cancel("sessionSelectTimer");
-      self.view.buttonBack.isVisible=true;
-    } ,1, false);
+//     kony.timer.schedule("sessionSelectTimer",()=>{
+//       kony.application.dismissLoadingScreen();
+//       kony.timer.cancel("sessionSelectTimer");
+//       self.view.buttonBack.isVisible=true;
+//     } ,1, false);
     this.view.txtArea.setEnabled(true);
     this.view.sessionTileAnim.left = "100%";
     this.view.sessionTileAnim.isVisible=true;
@@ -417,6 +417,7 @@ define({
         duration: animDuration
       }, {
         animationEnd: function() {
+          kony.application.dismissLoadingScreen();
         }
       });
     this.view.sessionContentContainer.animate(
@@ -678,20 +679,7 @@ define({
      * @private
      */
   frmAgendaSessionClose: function() {
-     var self = this;
-     self.view.buttonBack.setEnabled(false);
-     self.view.buttonBack.setVisibility(false);
-     kony.application.showLoadingScreen("sknBlockLoading", "", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, {});
-    try{
-         kony.timer.schedule("sessionCloseTimer",()=>{
-          kony.application.dismissLoadingScreen();
-          kony.timer.cancel("sessionCloseTimer");
-          self.view.buttonBack.setEnabled(true);
-          self.view.buttonBack.setVisibility(true);
-        } , 2, false);
-    }catch(exception){
-      kony.print("Exception while animating");
-    }
+    var self = this;
     this.view.txtArea.setEnabled(false);
     this.view.txtArea.text="";
     if(this.isNavigatedFrmOtherForm){
@@ -699,6 +687,7 @@ define({
       this.navigateToOtherForm();
       return;
     }
+    kony.application.showLoadingScreen("sknBlockLoading", "", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, false, {});
     var self = this;
     this.view.sessionTileAnim.sessionTitle.text= this.sessionTileAnimBindedSession.shortTitle;
     egLogger("this.thisCard = " + this.thisCard.id);
@@ -818,6 +807,7 @@ define({
         duration: animDuration
       }, {
         animationEnd: function() {
+          kony.application.dismissLoadingScreen();
           self.view.detailsScroller.left = "100%";
           self.view.sessionTileAnim.left = "100%";
         }
@@ -1456,8 +1446,14 @@ define({
     }
     if(feedbackSubmittedSessions.hasOwnProperty(sessionObject.event_session_id)){
       this.dismissRatingTiles();
+       if (this.isNavigatedFrmOtherForm) {
+           this.view.flxRatingContainer.isVisible = false;
+        }
+    }else{
+      this.view.lblThankyou.isVisible = false;
+      this.view.imgThanks.isVisible = false;
+      this.view.flxRatingContainer.isVisible = true;
     }
-
   },
 
   /**
