@@ -16,7 +16,7 @@
         "actions": [{
             "id": "ADD_SNIPPET__e2ca89663d304b35999b5c03b7f52e71",
             "type": "ADD_SNIPPET",
-            "codeSnippet": "var feedbackSubmitStatus=kony.store.getItem(\"appfeedbackSubmit\");\nif(kony.sdk.isNullOrUndefined(feedbackSubmitStatus)){\nthis.animateFeedbackPrompt(\"100dp\", false);\n}\nelse{\n  this.showThankyou();\n}",
+            "codeSnippet": "this.view.txtAreaComments.keyboardActionLabel = constants.TEXTAREA_KEYBOARD_LABEL_DEFAULT;\nvar feedbackSubmitStatus=kony.store.getItem(\"appfeedbackSubmit\");\nif(kony.sdk.isNullOrUndefined(feedbackSubmitStatus)){\nthis.animateFeedbackPrompt(\"100dp\", false);\n}\nelse{\n  this.showThankyou();\n}",
             "parentId": null,
             "callbackType": null
         }]

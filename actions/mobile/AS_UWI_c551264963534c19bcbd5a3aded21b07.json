@@ -16,7 +16,6 @@
         "actions": [{
             "id": "NAVIGATE_TO_FORM___ef72dd9ef3934630b757c6a83648f9b1",
             "type": "NAVIGATE_TO_FORM",
-            "formId": "frmEventList",
             "formKUID": "a2ed5b03bdcb40658617c25c964f058f",
             "mappings": {},
             "mappingsOrder": [],

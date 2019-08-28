@@ -13,6 +13,7 @@ define({
   formInit:function(){
     this.isIphoneXSeries= checkForIphoneXSeries();
     this.view.detailsScroller.showFadingEdges = false;
+    this.view.txtArea.keyboardActionLabel = constants.TEXTAREA_KEYBOARD_LABEL_DEFAULT;
   },
   /**
      * @function frmAgendaPreshow
@@ -1069,12 +1070,9 @@ define({
       });
     this.view.filterButton.animate(
       kony.ui.createAnimation({
-        50:{
-          skin : targetSkin
-        },
         100: {
           opacity: 0,
-          "stepConfig": {}
+          "stepConfig": {},
         }
       }), {
         delay: 0,

@@ -88,6 +88,7 @@
     "apmtouchorclick": "",
     "appEvents": {
         "mobile": {
+            "appservice": "AS_AppEvents_a2f0a1a6236b4da39fa076fb2860abfb",
             "postappinit": "AS_AppEvents_hf9bdba361244e8884a25e0b647863b6"
         }
     },
