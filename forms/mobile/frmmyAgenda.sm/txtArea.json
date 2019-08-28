@@ -47,9 +47,12 @@
     "focusskin": "s300b5b6a2cd4e3f822c67bfdfec0562",
     "id": "txtArea",
     "info": null,
+    "inputAccessoryViewType": 1,
     "iphone": {
         "psp": {
             "closeButtonText": "Done",
+            "inputAccessoryViewType": 1,
+            "pasteboardType": 4,
             "placeholderSkin": "s300b5b6a2cd4e3f822c67bfdfec0562"
         }
     },
@@ -62,6 +65,7 @@
     "name": "kony.ui.TextArea2",
     "numberofvisiblelines": 3,
     "parent": "flxRatingContainer",
+    "pasteboardtype": 4,
     "pf": "frmmyAgenda",
     "placeholderskin": "s300b5b6a2cd4e3f822c67bfdfec0562",
     "retaincontentalignment": false,
