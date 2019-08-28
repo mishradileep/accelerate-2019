@@ -50,7 +50,7 @@
     "inputAccessoryViewType": 4,
     "iphone": {
         "psp": {
-            "closeButtonText": "Close",
+            "closeButtonText": "Done",
             "inputAccessoryViewType": 4,
             "keyboardActionLabel": 1,
             "pasteboardType": 5,
