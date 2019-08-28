@@ -3,11 +3,11 @@ accelerateSpeakerData = {
             "records": [{
                     "speaker_id": 1,
                     "speaker_name": "Tom E. Hogan",
-                    "speaker_bio": "Thomas E. Hogan has been at the forefront of innovation in the enterprise software market for more than three decades. Before joining Kony, Tom served as Executive Vice President of Software at HP, with responsibility for all software functions, including sales, marketing, engineering, product development, operations, and technical support. Prior to joining HP, Tom served as the President and Chief Executive Officer of Vignette.",
+                    "speaker_bio": "",
                     "speaker_profile_pic": "tom_hogan.png",
                     "speaker_title": "Chairman & CEO Kony, Inc.",
                     "CreatedDateTime": "2019-07-17T06:04:25Z",
-                    "LastUpdatedDateTime": "2019-08-13T06:18:57Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:43:02Z",
                     "SoftDeleteFlag": false,
                     "tracks": [3, 3],
                     "sessionsList": [{
@@ -55,7 +55,7 @@ accelerateSpeakerData = {
                             "session_start_date": "2019-09-04 14:00:00.0",
                             "session_code": "52Y1MX",
                             "event_session_id": 3,
-                            "LastUpdatedDateTime": "2019-08-21 11:56:56.0",
+                            "LastUpdatedDateTime": "2019-08-28 09:27:20.0",
                             "session_track_id": 3,
                             "session_material": [{
                                 "session_material_id": 1,
@@ -68,7 +68,7 @@ accelerateSpeakerData = {
                             }],
                             "event_id": 3,
                             "session_long_desc": "\\n",
-                            "session_end_date": "2019-09-04 14:25:00.0",
+                            "session_end_date": "2019-09-04 14:35:00.0",
                             "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
                             "SoftDeleteFlag": false,
                             "CreatedDateTime": "2019-05-16 09:49:59.0"
@@ -78,44 +78,14 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 2,
                     "speaker_name": "John Janclaes",
-                    "speaker_bio": "John Janclaes has more than thirty years of in the financial services industry, spanning retail banking, brokerage, and insurance.",
+                    "speaker_bio": "",
                     "speaker_profile_pic": "jj.png",
                     "speaker_title": "President & CEO Partners Federal Credit Union",
                     "CreatedDateTime": "2019-07-17T06:04:48Z",
-                    "LastUpdatedDateTime": "2019-08-13T06:20:18Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:43:17Z",
                     "SoftDeleteFlag": false,
-                    "tracks": [3],
-                    "sessionsList": [{
-                        "session_location": "Lady Bird Ballroom",
-                        "session_name": "Opening Keynotes - Jon Janclaes, Partners FCU + TBD",
-                        "session_track_id": 3,
-                        "event_id": 3,
-                        "presenter": [{
-                                "presenter_id": 56,
-                                "event_id": 3,
-                                "master_speaker_id": 2,
-                                "session_id": 22,
-                                "CreatedDateTime": "2019-08-19 13:16:23.0",
-                                "LastUpdatedDateTime": "2019-08-19 13:16:23.0"
-                            },
-                            {
-                                "presenter_id": 25,
-                                "event_id": 3,
-                                "master_speaker_id": 1,
-                                "session_id": 22,
-                                "SoftDeleteFlag": true,
-                                "CreatedDateTime": "2019-08-15 02:59:58.0",
-                                "LastUpdatedDateTime": "2019-08-19 13:16:27.0"
-                            }
-                        ],
-                        "session_start_date": "2019-09-04 14:45:00.0",
-                        "session_end_date": "2019-09-04 15:30:00.0",
-                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
-                        "SoftDeleteFlag": false,
-                        "event_session_id": 22,
-                        "CreatedDateTime": "2019-08-13 05:54:51.0",
-                        "LastUpdatedDateTime": "2019-08-21 11:28:06.0"
-                    }]
+                    "tracks": [],
+                    "sessionsList": []
                 },
                 {
                     "speaker_id": 3,
@@ -124,7 +94,7 @@ accelerateSpeakerData = {
                     "speaker_profile_pic": "jeffrey_k.png",
                     "speaker_title": "EVP & GM Kony DBX",
                     "CreatedDateTime": "2019-08-06T10:18:26Z",
-                    "LastUpdatedDateTime": "2019-08-13T06:20:41Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:43:43Z",
                     "SoftDeleteFlag": false,
                     "tracks": [2, 3, 2, 2, 4, 2],
                     "sessionsList": [{
@@ -203,7 +173,7 @@ accelerateSpeakerData = {
                             "CreatedDateTime": "2019-08-19 11:03:08.0"
                         },
                         {
-                            "session_location": "",
+                            "session_location": "Lady Bird Ballroom",
                             "session_name": "Setting the Stage for DBX Accelerate",
                             "presenter": [{
                                 "presenter_id": 107,
@@ -217,12 +187,13 @@ accelerateSpeakerData = {
                             "session_code": "0MVB4P",
                             "session_desc": "",
                             "event_session_id": 73,
-                            "LastUpdatedDateTime": "2019-08-21 13:17:48.044",
+                            "LastUpdatedDateTime": "2019-08-28 11:16:56.0",
                             "session_track_id": 2,
                             "event_id": 3,
                             "session_long_desc": "",
                             "session_end_date": "2019-09-04 16:15:00.0",
-                            "room_no": "",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+                            "SoftDeleteFlag": false,
                             "CreatedDateTime": "2019-08-21 13:17:48.044"
                         },
                         {
@@ -246,7 +217,7 @@ accelerateSpeakerData = {
                             "LastUpdatedDateTime": "2019-08-21 12:38:54.0"
                         },
                         {
-                            "session_location": "",
+                            "session_location": "Lady Bird Ballroom",
                             "session_name": "DBX Day 2 Introduction",
                             "presenter": [{
                                 "presenter_id": 109,
@@ -260,12 +231,13 @@ accelerateSpeakerData = {
                             "session_code": "TJEW2L",
                             "session_desc": "",
                             "event_session_id": 76,
-                            "LastUpdatedDateTime": "2019-08-21 13:31:47.89",
+                            "LastUpdatedDateTime": "2019-08-28 11:12:00.0",
                             "session_track_id": 2,
                             "event_id": 3,
                             "session_long_desc": "",
                             "session_end_date": "2019-09-05 15:45:00.0",
-                            "room_no": "",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+                            "SoftDeleteFlag": false,
                             "CreatedDateTime": "2019-08-21 13:31:47.89"
                         }
                     ]
@@ -273,16 +245,16 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 4,
                     "speaker_name": "Ben Crenshaw",
-                    "speaker_bio": "John Janclaes has more than thirty  years of in the financial services  industry, spanning retail banking,  brokerage, and insurance. ",
+                    "speaker_bio": "",
                     "speaker_profile_pic": "bencrenshaw.png",
                     "speaker_title": "Golf Hall of Fame Member",
                     "CreatedDateTime": "2019-08-06T10:19:20Z",
-                    "LastUpdatedDateTime": "2019-08-07T12:43:47Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:44:07Z",
                     "SoftDeleteFlag": false,
                     "tracks": [3],
                     "sessionsList": [{
                         "session_location": "Lady Bird Ballroom",
-                        "session_name": "Tom & Ben Crenshaw Fireside Chate",
+                        "session_name": "Tom & Ben Crenshaw Fireside Chat",
                         "presenter": [{
                                 "presenter_id": 4,
                                 "event_id": 3,
@@ -319,10 +291,10 @@ accelerateSpeakerData = {
                                 "LastUpdatedDateTime": "2019-08-19 13:15:21.0"
                             }
                         ],
-                        "session_start_date": "2019-09-04 14:25:00.0",
+                        "session_start_date": "2019-09-04 15:00:00.0",
                         "session_code": "H7ZGDT",
                         "event_session_id": 4,
-                        "LastUpdatedDateTime": "2019-08-21 11:57:44.0",
+                        "LastUpdatedDateTime": "2019-08-28 09:30:49.0",
                         "session_track_id": 3,
                         "session_material": [{
                             "session_material_id": 2,
@@ -334,7 +306,7 @@ accelerateSpeakerData = {
                             "LastUpdatedDateTime": "2019-08-19 08:50:42.0"
                         }],
                         "event_id": 3,
-                        "session_end_date": "2019-09-04 14:45:00.0",
+                        "session_end_date": "2019-09-04 15:15:00.0",
                         "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-05-16 09:52:19.0"
@@ -343,11 +315,11 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 5,
                     "speaker_name": "John Rymer",
-                    "speaker_bio": "Delivery  Professionals  Forrester",
+                    "speaker_bio": "",
                     "speaker_profile_pic": "john_rymer.png",
                     "speaker_title": "VP, Principal Analyst Serving  Application Development",
                     "CreatedDateTime": "2019-08-06T10:21:06Z",
-                    "LastUpdatedDateTime": "2019-08-13T06:22:57Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:44:30Z",
                     "SoftDeleteFlag": false,
                     "tracks": [1, 1],
                     "sessionsList": [{
@@ -416,7 +388,8 @@ accelerateSpeakerData = {
                     "speaker_profile_pic": "jim_marous.png",
                     "speaker_title": "Owner and CEO / Co-publisher  The Digital Banking Report / The Financial Brand",
                     "CreatedDateTime": "2019-08-19T12:17:28Z",
-                    "LastUpdatedDateTime": "2019-08-19T12:17:28Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:44:49Z",
+                    "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
                         "session_location": "Lady Bird Ballroom",
@@ -460,7 +433,7 @@ accelerateSpeakerData = {
                     "speaker_profile_pic": "burley.png",
                     "speaker_title": "EVP of Products  Kony, Inc.",
                     "CreatedDateTime": "2019-08-19T12:19:02Z",
-                    "LastUpdatedDateTime": "2019-08-21T09:19:37Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:45:04Z",
                     "SoftDeleteFlag": false,
                     "tracks": [],
                     "sessionsList": []
@@ -471,13 +444,21 @@ accelerateSpeakerData = {
                     "speaker_profile_pic": "bb.png",
                     "speaker_title": "CTO  Kony, Inc.",
                     "CreatedDateTime": "2019-08-19T12:19:16Z",
-                    "LastUpdatedDateTime": "2019-08-19T14:58:04Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:45:19Z",
                     "SoftDeleteFlag": false,
                     "tracks": [1, 1],
                     "sessionsList": [{
                             "session_location": "Meriwether I&II",
                             "session_name": "Technical: Technology Innovation with AR, AI, Conversational UI, and more",
                             "presenter": [{
+                                    "presenter_id": 101,
+                                    "event_id": 3,
+                                    "master_speaker_id": 8,
+                                    "session_id": 35,
+                                    "CreatedDateTime": "2019-08-19 14:20:00.0",
+                                    "LastUpdatedDateTime": "2019-08-19 14:20:00.0"
+                                },
+                                {
                                     "presenter_id": 30,
                                     "event_id": 3,
                                     "master_speaker_id": 10,
@@ -485,14 +466,6 @@ accelerateSpeakerData = {
                                     "SoftDeleteFlag": true,
                                     "CreatedDateTime": "2019-08-15 03:01:21.0",
                                     "LastUpdatedDateTime": "2019-08-19 14:20:03.0"
-                                },
-                                {
-                                    "presenter_id": 101,
-                                    "event_id": 3,
-                                    "master_speaker_id": 8,
-                                    "session_id": 35,
-                                    "CreatedDateTime": "2019-08-19 14:20:00.0",
-                                    "LastUpdatedDateTime": "2019-08-19 14:20:00.0"
                                 }
                             ],
                             "session_start_date": "2019-09-05 18:45:00.0",
@@ -539,7 +512,7 @@ accelerateSpeakerData = {
                     "speaker_profile_pic": "ganesh_kumar.png",
                     "speaker_title": "EVP & COO  Oriental",
                     "CreatedDateTime": "2019-08-19T12:19:31Z",
-                    "LastUpdatedDateTime": "2019-08-19T14:50:26Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:45:39Z",
                     "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
@@ -570,7 +543,7 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 10,
                     "speaker_name": "Don MacDonald",
-                    "speaker_profile_pic": "d_mcdonald.png",
+                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/d_mcdonald_560x570.png",
                     "speaker_title": "CMO  MX",
                     "CreatedDateTime": "2019-08-19T12:21:37Z",
                     "LastUpdatedDateTime": "2019-08-19T14:50:44Z",
@@ -581,10 +554,10 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 12,
                     "speaker_name": "Jennifer Wilson",
-                    "speaker_profile_pic": "jennifer_wilson.png",
+                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/jennifer-wilson.png",
                     "speaker_title": "Chief Digital Officer  Hancock Whitney",
                     "CreatedDateTime": "2019-08-19T12:22:02Z",
-                    "LastUpdatedDateTime": "2019-08-19T14:51:09Z",
+                    "LastUpdatedDateTime": "2019-08-26T14:38:35Z",
                     "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
@@ -602,7 +575,7 @@ accelerateSpeakerData = {
                         "session_code": "D9WLO3",
                         "session_desc": "Like most banks, the founders of Hancock Whitney Bank knew where they wanted to go and they started with Gulf South character and community. Looking far down the road from their own day, they cultivated a culture that would last\\u2014a way of thinking and doing rooted in uncompromising values.",
                         "event_session_id": 39,
-                        "LastUpdatedDateTime": "2019-08-21 12:09:26.0",
+                        "LastUpdatedDateTime": "2019-08-28 10:56:36.0",
                         "session_track_id": 2,
                         "event_id": 3,
                         "session_long_desc": "In this session, learn how Hancock Whitney continues the journey begun more than a century ago to help people and the places we serve succeed.",
@@ -658,12 +631,12 @@ accelerateSpeakerData = {
                                 "LastUpdatedDateTime": "2019-08-19 12:27:36.0"
                             }],
                             "session_start_date": "2019-09-05 15:00:00.0",
-                            "session_desc": "What\\u2019s next for the future of Kony Quantum? ",
+                            "session_desc": "What 2019s next for the future of Kony Quantum? ",
                             "event_session_id": 26,
                             "LastUpdatedDateTime": "2019-08-21 13:07:41.0",
                             "session_track_id": 1,
                             "event_id": 3,
-                            "session_long_desc": "Come to this session to hear directly from top product architects about some of the exciting new capabilities that will be released over the next 6-12 months. You\\u2019ll see a sneak peek of some of the new and never before seen breakthrough features on the roadmap around low-code development, DevOps ,and new modern web and digital experiences.",
+                            "session_long_desc": "Come to this session to hear directly from top product architects about some of the exciting new capabilities that will be released over the next 6-12 months. You 2019 see a sneak peek of some of the new and never before seen breakthrough features on the roadmap around low-code development, DevOps ,and new modern web and digital experiences.",
                             "session_end_date": "2019-09-05 15:45:00.0",
                             "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
                             "SoftDeleteFlag": false,
@@ -685,31 +658,31 @@ accelerateSpeakerData = {
                         "session_track_id": 2,
                         "event_id": 3,
                         "presenter": [{
-                                "presenter_id": 31,
-                                "event_id": 3,
-                                "master_speaker_id": 11,
-                                "session_id": 34,
-                                "SoftDeleteFlag": true,
-                                "CreatedDateTime": "2019-08-15 03:01:36.0",
-                                "LastUpdatedDateTime": "2019-08-19 14:19:05.0"
-                            },
-                            {
                                 "presenter_id": 100,
                                 "event_id": 3,
                                 "master_speaker_id": 14,
                                 "session_id": 34,
                                 "CreatedDateTime": "2019-08-19 14:19:01.0",
                                 "LastUpdatedDateTime": "2019-08-19 14:19:01.0"
+                            },
+                            {
+                                "presenter_id": 31,
+                                "event_id": 3,
+                                "master_speaker_id": 11,
+                                "session_id": 34,
+                                "SoftDeleteFlag": true,
+                                "CreatedDateTime": "2019-08-15 03:01:36.0",
+                                "LastUpdatedDateTime": "2019-08-21 15:44:49.0"
                             }
                         ],
                         "session_start_date": "2019-09-05 18:45:00.0",
-                        "session_long_desc": "This constrains a financial institution\\u2019s ability to innovate, deliver low-friction user experiences, and compete with the large banks and growing number of non-bank fintechs.  In this session, learn how to flip the script on money movement, regardless of your tech stack.",
+                        "session_long_desc": "This constrains a financial institution 2019s ability to innovate, deliver low-friction user experiences, and compete with the large banks and growing number of non-bank fintechs.  In this session, learn how to flip the script on money movement, regardless of your tech stack.",
                         "session_end_date": "2019-09-05 19:15:00.0",
                         "session_desc": "The banking industry\\u2019s legacy digital payment systems built over the last 30 years weren\\u2019t built for today\\u2019s digitally-connected consumers, digitally-integrated businesses, and the evolving faster-payment needs",
                         "SoftDeleteFlag": false,
                         "event_session_id": 34,
                         "CreatedDateTime": "2019-08-13 06:45:18.0",
-                        "LastUpdatedDateTime": "2019-08-21 13:06:16.0"
+                        "LastUpdatedDateTime": "2019-08-28 11:20:02.0"
                     }]
                 },
                 {
@@ -720,8 +693,32 @@ accelerateSpeakerData = {
                     "CreatedDateTime": "2019-08-19T12:31:01Z",
                     "LastUpdatedDateTime": "2019-08-19T14:53:09Z",
                     "SoftDeleteFlag": false,
-                    "tracks": [1, 1, 2],
+                    "tracks": [2, 1, 1, 2, 1, 2],
                     "sessionsList": [{
+                            "session_location": "Kony Back Stage Lab",
+                            "session_name": "Hands-on Learning with DBXperts",
+                            "presenter": [{
+                                "presenter_id": 123,
+                                "event_id": 3,
+                                "master_speaker_id": 15,
+                                "session_id": 79,
+                                "CreatedDateTime": "2019-08-28 10:09:52.843",
+                                "LastUpdatedDateTime": "2019-08-28 10:09:52.843"
+                            }],
+                            "session_start_date": "2019-09-04 17:45:00.0",
+                            "session_code": "NOJNIW",
+                            "session_desc": "The Kony DBX Labs model is different\\u2014we\\u2019re not a think tank and we\\u2019re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. ",
+                            "event_session_id": 79,
+                            "LastUpdatedDateTime": "2019-08-28 11:01:07.0",
+                            "session_track_id": 2,
+                            "event_id": 3,
+                            "session_long_desc": "Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
+                            "session_end_date": "2019-09-04 18:45:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                            "SoftDeleteFlag": false,
+                            "CreatedDateTime": "2019-08-28 10:09:52.839"
+                        },
+                        {
                             "session_location": "Meriwether I&II",
                             "session_name": "Business: Apps for Everyone: Citizen and Low Code Dev",
                             "presenter": [{
@@ -743,6 +740,54 @@ accelerateSpeakerData = {
                             "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
                             "SoftDeleteFlag": false,
                             "CreatedDateTime": "2019-08-19 11:30:06.0"
+                        },
+                        {
+                            "session_location": "Kony Back Stage Lab",
+                            "session_name": "Hands-on Learning with DBXperts",
+                            "presenter": [{
+                                "presenter_id": 124,
+                                "event_id": 3,
+                                "master_speaker_id": 15,
+                                "session_id": 80,
+                                "CreatedDateTime": "2019-08-28 10:12:48.043",
+                                "LastUpdatedDateTime": "2019-08-28 10:12:48.043"
+                            }],
+                            "session_start_date": "2019-09-04 20:15:00.0",
+                            "session_code": "X2BIYU",
+                            "session_desc": "The Kony DBX Labs model is different\\u2014we\\u2019re not a think tank and we\\u2019re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. ",
+                            "event_session_id": 80,
+                            "LastUpdatedDateTime": "2019-08-28 11:03:36.0",
+                            "session_track_id": 1,
+                            "event_id": 3,
+                            "session_long_desc": "Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
+                            "session_end_date": "2019-09-04 20:45:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                            "SoftDeleteFlag": false,
+                            "CreatedDateTime": "2019-08-28 10:12:48.042"
+                        },
+                        {
+                            "session_location": "Kony Back Stage Lab",
+                            "session_name": "Hands-on Learning with DBXperts",
+                            "presenter": [{
+                                "presenter_id": 126,
+                                "event_id": 3,
+                                "master_speaker_id": 15,
+                                "session_id": 83,
+                                "CreatedDateTime": "2019-08-28 10:39:03.092",
+                                "LastUpdatedDateTime": "2019-08-28 10:39:03.092"
+                            }],
+                            "session_start_date": "2019-09-05 15:45:00.0",
+                            "session_code": "UQYT02",
+                            "session_desc": "The Kony DBX Labs model is different\\u2014we\\u2019re not a think tank and we\\u2019re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. ",
+                            "event_session_id": 83,
+                            "LastUpdatedDateTime": "2019-08-28 11:13:00.0",
+                            "session_track_id": 2,
+                            "event_id": 3,
+                            "session_long_desc": "Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
+                            "session_end_date": "2019-09-05 16:15:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                            "SoftDeleteFlag": false,
+                            "CreatedDateTime": "2019-08-28 10:39:03.087"
                         },
                         {
                             "session_location": "Meriwether I&II",
@@ -769,26 +814,28 @@ accelerateSpeakerData = {
                             "CreatedDateTime": "2019-08-19 11:29:52.0"
                         },
                         {
-                            "session_name": "Bank Spotlight: /wiss_fiss/ = using intrigue to create impact and awareness",
-                            "session_track_id": 2,
-                            "event_id": 3,
+                            "session_location": "Kony Back Stage Lab",
+                            "session_name": "Lunch + Hands-on Learning with DBXperts",
                             "presenter": [{
-                                "presenter_id": 32,
+                                "presenter_id": 129,
                                 "event_id": 3,
                                 "master_speaker_id": 15,
-                                "session_id": 28,
-                                "SoftDeleteFlag": false,
-                                "CreatedDateTime": "2019-08-15 03:08:57.0",
-                                "LastUpdatedDateTime": "2019-08-19 12:37:25.0"
+                                "session_id": 84,
+                                "CreatedDateTime": "2019-08-28 10:50:38.984",
+                                "LastUpdatedDateTime": "2019-08-28 10:50:38.984"
                             }],
-                            "session_start_date": "2019-09-05 16:15:00.0",
-                            "session_long_desc": " In this session, learn how Vive la Diferencia (Live the Difference) is making banking Fácil, Rápido, Hecho (Easy, Fast, Done) by combining the best of brick-and-mortar and innovative technology to provide an unparalleled level of value-added service that enables our customers to achieve more.",
-                            "session_end_date": "2019-09-05 16:45:00.0",
-                            "session_desc": "Oriental has led the way in digital banking innovations in Puerto Rico, resulting in an expanding customer base. Innovations include FOTOdepósito, People Pay, Cardless Cash on ATMs, MyStatus loan application tracking, branch appointment scheduling, a mobile consumer loan app, and Interactive Teller Machines.",
+                            "session_start_date": "2019-09-05 18:00:00.0",
+                            "session_code": "9CQ4Z3",
+                            "session_desc": "The Kony DBX Labs model is different\\u2014we\\u2019re not a think tank and we\\u2019re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. ",
+                            "event_session_id": 84,
+                            "LastUpdatedDateTime": "2019-08-28 11:14:19.0",
+                            "session_track_id": 2,
+                            "event_id": 3,
+                            "session_long_desc": "Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
+                            "session_end_date": "2019-09-05 18:45:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
                             "SoftDeleteFlag": false,
-                            "event_session_id": 28,
-                            "CreatedDateTime": "2019-08-13 06:28:14.0",
-                            "LastUpdatedDateTime": "2019-08-21 13:11:58.0"
+                            "CreatedDateTime": "2019-08-28 10:50:38.983"
                         }
                     ]
                 },
@@ -800,74 +847,40 @@ accelerateSpeakerData = {
                     "CreatedDateTime": "2019-08-19T12:31:33Z",
                     "LastUpdatedDateTime": "2019-08-19T14:54:02Z",
                     "SoftDeleteFlag": false,
-                    "tracks": [1, 1],
+                    "tracks": [1],
                     "sessionsList": [{
-                            "session_location": "",
-                            "session_name": "Lunch + Hands on lab: Building a PWA app",
-                            "presenter": [{
-                                    "presenter_id": 111,
-                                    "event_id": 3,
-                                    "master_speaker_id": 45,
-                                    "session_id": 77,
-                                    "CreatedDateTime": "2019-08-21 13:42:57.886",
-                                    "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
-                                },
-                                {
-                                    "presenter_id": 110,
-                                    "event_id": 3,
-                                    "master_speaker_id": 16,
-                                    "session_id": 77,
-                                    "CreatedDateTime": "2019-08-21 13:42:57.886",
-                                    "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
-                                }
-                            ],
-                            "session_start_date": "2019-09-05 18:00:00.0",
-                            "session_code": "LQDFEL",
-                            "session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications.",
-                            "event_session_id": 77,
-                            "LastUpdatedDateTime": "2019-08-21 13:42:57.885",
-                            "session_track_id": 1,
-                            "event_id": 3,
-                            "session_long_desc": ".  In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps (PWA)",
-                            "session_end_date": "2019-09-05 18:45:00.0",
-                            "room_no": "",
-                            "CreatedDateTime": "2019-08-21 13:42:57.885"
-                        },
-                        {
-                            "session_location": "Kony Back Stage Lab",
-                            "session_name": "Lunch + Hands on Lab Build an App with Identity and Integration ",
-                            "presenter": [{
-                                    "presenter_id": 77,
-                                    "event_id": 3,
-                                    "master_speaker_id": 16,
-                                    "session_id": 38,
-                                    "CreatedDateTime": "2019-08-19 13:52:34.0",
-                                    "LastUpdatedDateTime": "2019-08-19 13:52:34.0"
-                                },
-                                {
-                                    "presenter_id": 33,
-                                    "event_id": 3,
-                                    "master_speaker_id": 6,
-                                    "session_id": 38,
-                                    "SoftDeleteFlag": true,
-                                    "CreatedDateTime": "2019-08-19 12:25:10.0",
-                                    "LastUpdatedDateTime": "2019-08-19 13:52:37.0"
-                                }
-                            ],
-                            "session_start_date": "2019-09-04 17:45:00.0",
-                            "session_code": "NHK8KL",
-                            "session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications.",
-                            "event_session_id": 38,
-                            "LastUpdatedDateTime": "2019-08-21 11:46:11.0",
-                            "session_track_id": 1,
-                            "event_id": 3,
-                            "session_long_desc": " In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps (PWA)",
-                            "session_end_date": "2019-09-04 18:45:00.0",
-                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
-                            "SoftDeleteFlag": false,
-                            "CreatedDateTime": "2019-08-19 09:14:42.0"
-                        }
-                    ]
+                        "session_location": "Kony Back Stage Lab",
+                        "session_name": "Lunch + Hands on lab: Building a PWA app",
+                        "presenter": [{
+                                "presenter_id": 111,
+                                "event_id": 3,
+                                "master_speaker_id": 45,
+                                "session_id": 77,
+                                "CreatedDateTime": "2019-08-21 13:42:57.886",
+                                "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
+                            },
+                            {
+                                "presenter_id": 110,
+                                "event_id": 3,
+                                "master_speaker_id": 16,
+                                "session_id": 77,
+                                "CreatedDateTime": "2019-08-21 13:42:57.886",
+                                "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
+                            }
+                        ],
+                        "session_start_date": "2019-09-05 18:00:00.0",
+                        "session_code": "LQDFEL",
+                        "session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications.",
+                        "event_session_id": 77,
+                        "LastUpdatedDateTime": "2019-08-26 14:27:10.0",
+                        "session_track_id": 1,
+                        "event_id": 3,
+                        "session_long_desc": ".  In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps (PWA)",
+                        "session_end_date": "2019-09-05 18:45:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-21 13:42:57.885"
+                    }]
                 },
                 {
                     "speaker_id": 17,
@@ -966,14 +979,14 @@ accelerateSpeakerData = {
                             "CreatedDateTime": "2019-08-19 14:12:18.0",
                             "LastUpdatedDateTime": "2019-08-19 14:12:18.0"
                         }],
-                        "session_start_date": "2019-09-04 21:15:00.0",
+                        "session_start_date": "2019-09-05 20:45:00.0",
                         "session_code": "CLMK2A",
                         "session_desc": "Everyone is an analyst: The future of data\\nIn this workshop session, we\\u2019ll discuss a new way of looking at the promises and pitfalls of data, and how it can transform your organization.",
                         "event_session_id": 51,
-                        "LastUpdatedDateTime": "2019-08-21 11:51:16.0",
+                        "LastUpdatedDateTime": "2019-08-26 13:28:20.0",
                         "session_track_id": 2,
                         "event_id": 3,
-                        "session_end_date": "2019-09-04 21:45:00.0",
+                        "session_end_date": "2019-09-05 21:15:00.0",
                         "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-08-19 10:59:26.0"
@@ -987,54 +1000,31 @@ accelerateSpeakerData = {
                     "CreatedDateTime": "2019-08-19T12:33:38Z",
                     "LastUpdatedDateTime": "2019-08-19T14:55:29Z",
                     "SoftDeleteFlag": false,
-                    "tracks": [2, 1],
+                    "tracks": [1],
                     "sessionsList": [{
-                            "session_location": "Meriwether I&II",
-                            "session_name": "Technical: Rapid App Dev with Workflow ",
-                            "presenter": [{
-                                "presenter_id": 88,
-                                "event_id": 3,
-                                "master_speaker_id": 20,
-                                "session_id": 50,
-                                "CreatedDateTime": "2019-08-19 14:08:59.0",
-                                "LastUpdatedDateTime": "2019-08-19 14:08:59.0"
-                            }],
-                            "session_start_date": "2019-09-05 16:45:00.0",
-                            "session_code": "Q8Y3H0",
-                            "session_desc": "The rapid application development capabilities of Kony Quantum enable teams to quickly release applications based on business needs. In many cases, the business processes and workflows associated to these applications change over time and teams are required to quickly update their applications to adapt to those changes.",
-                            "event_session_id": 50,
-                            "LastUpdatedDateTime": "2019-08-21 13:11:24.0",
-                            "session_track_id": 2,
+                        "session_location": "Meriwether I&II",
+                        "session_name": "Technical: Rapid App Dev with Workflow ",
+                        "presenter": [{
+                            "presenter_id": 88,
                             "event_id": 3,
-                            "session_long_desc": "In this session, you will learn about Kony\\u2019s new application workflow capabilities and how they enable teams to quickly configure both client and server-side business process and workflow logic that drive the behavior of the application. These workflow configurations can be easily modified as business rules change to keep applications current, maintain compliance with regulations, and minimize any downtime or loss in end-user productivity.",
-                            "session_end_date": "2019-09-05 17:15:00.0",
-                            "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
-                            "SoftDeleteFlag": false,
-                            "CreatedDateTime": "2019-08-19 10:58:38.0"
-                        },
-                        {
-                            "session_location": "Meriwether I&II",
-                            "session_name": "Customer Presentation - Hamad Medical: Turning Digital Challenges into Opportunities that Impact Results",
-                            "session_track_id": 1,
-                            "event_id": 3,
-                            "presenter": [{
-                                "presenter_id": 27,
-                                "event_id": 3,
-                                "master_speaker_id": 20,
-                                "session_id": 29,
-                                "SoftDeleteFlag": false,
-                                "CreatedDateTime": "2019-08-15 03:00:30.0",
-                                "LastUpdatedDateTime": "2019-08-19 12:38:31.0"
-                            }],
-                            "session_start_date": "2019-09-05 16:15:00.0",
-                            "session_end_date": "2019-09-05 16:45:00.0",
-                            "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
-                            "SoftDeleteFlag": false,
-                            "event_session_id": 29,
-                            "CreatedDateTime": "2019-08-13 06:29:49.0",
-                            "LastUpdatedDateTime": "2019-08-21 13:12:20.0"
-                        }
-                    ]
+                            "master_speaker_id": 20,
+                            "session_id": 50,
+                            "CreatedDateTime": "2019-08-19 14:08:59.0",
+                            "LastUpdatedDateTime": "2019-08-19 14:08:59.0"
+                        }],
+                        "session_start_date": "2019-09-05 16:45:00.0",
+                        "session_code": "Q8Y3H0",
+                        "session_desc": "The rapid application development capabilities of Kony Quantum enable teams to quickly release applications based on business needs. In many cases, the business processes and workflows associated to these applications change over time and teams are required to quickly update their applications to adapt to those changes.",
+                        "event_session_id": 50,
+                        "LastUpdatedDateTime": "2019-08-26 14:16:09.0",
+                        "session_track_id": 1,
+                        "event_id": 3,
+                        "session_long_desc": "In this session, you will learn about Kony\\u2019s new application workflow capabilities and how they enable teams to quickly configure both client and server-side business process and workflow logic that drive the behavior of the application. These workflow configurations can be easily modified as business rules change to keep applications current, maintain compliance with regulations, and minimize any downtime or loss in end-user productivity.",
+                        "session_end_date": "2019-09-05 17:15:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-19 10:58:38.0"
+                    }]
                 },
                 {
                     "speaker_id": 21,
@@ -1060,13 +1050,22 @@ accelerateSpeakerData = {
                         "session_location": "Lady Bird Ballroom",
                         "session_name": "Start with Best in Class - A Live Case Study with JD Power and Centric Digital",
                         "presenter": [{
-                            "presenter_id": 95,
-                            "event_id": 3,
-                            "master_speaker_id": 22,
-                            "session_id": 53,
-                            "CreatedDateTime": "2019-08-19 14:14:24.0",
-                            "LastUpdatedDateTime": "2019-08-19 14:14:24.0"
-                        }],
+                                "presenter_id": 119,
+                                "event_id": 3,
+                                "master_speaker_id": 46,
+                                "session_id": 53,
+                                "CreatedDateTime": "2019-08-26 14:50:55.051",
+                                "LastUpdatedDateTime": "2019-08-26 14:50:55.051"
+                            },
+                            {
+                                "presenter_id": 95,
+                                "event_id": 3,
+                                "master_speaker_id": 22,
+                                "session_id": 53,
+                                "CreatedDateTime": "2019-08-19 14:14:24.0",
+                                "LastUpdatedDateTime": "2019-08-19 14:14:24.0"
+                            }
+                        ],
                         "session_start_date": "2019-09-04 21:45:00.0",
                         "session_code": "1YGBC7",
                         "session_desc": "In the recent J.D. Power 2019 U.S. Banking Mobile App Satisfaction Study, it found that mid-size banks are increasingly vulnerable to digital competition from large banks. Where large banks have half or more of their customers being digitally centric, mid-size banks have a third or less of their customer base relying primarily on digital channels, which creates the imperative to start with best-in-class.",
@@ -1083,10 +1082,10 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 23,
                     "speaker_name": "Brian Abele",
-                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/brain-abele_560x570.png",
+                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/brian560x570.png",
                     "speaker_title": "SVP, Product Management  Kony DBX",
                     "CreatedDateTime": "2019-08-19T12:34:09Z",
-                    "LastUpdatedDateTime": "2019-08-19T14:56:36Z",
+                    "LastUpdatedDateTime": "2019-08-26T14:38:12Z",
                     "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
@@ -1103,13 +1102,13 @@ accelerateSpeakerData = {
                             "CreatedDateTime": "2019-08-13 06:24:41.0",
                             "LastUpdatedDateTime": "2019-08-19 13:28:34.0"
                         }],
-                        "session_start_date": "2019-09-05 16:15:00.0",
-                        "session_end_date": "2019-09-05 17:00:00.0",
+                        "session_start_date": "2019-09-04 16:15:00.0",
+                        "session_end_date": "2019-09-04 17:00:00.0",
                         "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
                         "SoftDeleteFlag": false,
                         "event_session_id": 25,
                         "CreatedDateTime": "2019-08-13 06:19:42.0",
-                        "LastUpdatedDateTime": "2019-08-21 13:09:12.0"
+                        "LastUpdatedDateTime": "2019-08-21 15:38:44.0"
                     }]
                 },
                 {
@@ -1120,8 +1119,38 @@ accelerateSpeakerData = {
                     "CreatedDateTime": "2019-08-19T12:34:20Z",
                     "LastUpdatedDateTime": "2019-08-19T14:57:03Z",
                     "SoftDeleteFlag": false,
-                    "tracks": [],
-                    "sessionsList": []
+                    "tracks": [2],
+                    "sessionsList": [{
+                        "session_name": "Bank Spotlight: /wiss_fiss/ = using intrigue to create impact and awareness",
+                        "session_track_id": 2,
+                        "event_id": 3,
+                        "presenter": [{
+                                "presenter_id": 116,
+                                "event_id": 3,
+                                "master_speaker_id": 24,
+                                "session_id": 28,
+                                "CreatedDateTime": "2019-08-26 14:12:02.031",
+                                "LastUpdatedDateTime": "2019-08-26 14:12:02.031"
+                            },
+                            {
+                                "presenter_id": 32,
+                                "event_id": 3,
+                                "master_speaker_id": 32,
+                                "session_id": 28,
+                                "SoftDeleteFlag": true,
+                                "CreatedDateTime": "2019-08-15 03:08:57.0",
+                                "LastUpdatedDateTime": "2019-08-26 14:12:06.0"
+                            }
+                        ],
+                        "session_start_date": "2019-09-05 16:15:00.0",
+                        "session_long_desc": " In this session, learn how Vive la Diferencia (Live the Difference) is making banking Fácil, Rápido, Hecho (Easy, Fast, Done) by combining the best of brick-and-mortar and innovative technology to provide an unparalleled level of value-added service that enables our customers to achieve more.",
+                        "session_end_date": "2019-09-05 16:45:00.0",
+                        "session_desc": "Oriental has led the way in digital banking innovations in Puerto Rico, resulting in an expanding customer base. Innovations include FOTOdepósito, People Pay, Cardless Cash on ATMs, MyStatus loan application tracking, branch appointment scheduling, a mobile consumer loan app, and Interactive Teller Machines.",
+                        "SoftDeleteFlag": false,
+                        "event_session_id": 28,
+                        "CreatedDateTime": "2019-08-13 06:28:14.0",
+                        "LastUpdatedDateTime": "2019-08-21 13:11:58.0"
+                    }]
                 },
                 {
                     "speaker_id": 25,
@@ -1143,13 +1172,13 @@ accelerateSpeakerData = {
                             "CreatedDateTime": "2019-08-19 14:05:29.0",
                             "LastUpdatedDateTime": "2019-08-19 14:05:29.0"
                         }],
-                        "session_start_date": "2019-09-05 20:45:00.0",
+                        "session_start_date": "2019-09-04 19:45:00.0",
                         "session_code": "YP7WVO",
                         "event_session_id": 71,
-                        "LastUpdatedDateTime": "2019-08-21 13:01:29.0",
+                        "LastUpdatedDateTime": "2019-08-26 13:32:15.0",
                         "session_track_id": 2,
                         "event_id": 3,
-                        "session_end_date": "2019-09-05 21:15:00.0",
+                        "session_end_date": "2019-09-04 20:15:00.0",
                         "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBird1.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-08-19 11:32:39.0"
@@ -1174,8 +1203,38 @@ accelerateSpeakerData = {
                     "CreatedDateTime": "2019-08-19T12:57:28Z",
                     "LastUpdatedDateTime": "2019-08-21T09:21:50Z",
                     "SoftDeleteFlag": false,
-                    "tracks": [],
-                    "sessionsList": []
+                    "tracks": [1],
+                    "sessionsList": [{
+                        "session_location": "Meriwether I&II",
+                        "session_name": "Customer Presentation - Hamad Medical: Turning Digital Challenges into Opportunities that Impact Results",
+                        "session_track_id": 1,
+                        "event_id": 3,
+                        "presenter": [{
+                                "presenter_id": 27,
+                                "event_id": 3,
+                                "master_speaker_id": 20,
+                                "session_id": 29,
+                                "SoftDeleteFlag": true,
+                                "CreatedDateTime": "2019-08-15 03:00:30.0",
+                                "LastUpdatedDateTime": "2019-08-26 14:14:39.0"
+                            },
+                            {
+                                "presenter_id": 117,
+                                "event_id": 3,
+                                "master_speaker_id": 27,
+                                "session_id": 29,
+                                "CreatedDateTime": "2019-08-26 14:14:35.013",
+                                "LastUpdatedDateTime": "2019-08-26 14:14:35.013"
+                            }
+                        ],
+                        "session_start_date": "2019-09-05 16:15:00.0",
+                        "session_end_date": "2019-09-05 16:45:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+                        "SoftDeleteFlag": false,
+                        "event_session_id": 29,
+                        "CreatedDateTime": "2019-08-13 06:29:49.0",
+                        "LastUpdatedDateTime": "2019-08-21 13:12:20.0"
+                    }]
                 },
                 {
                     "speaker_id": 28,
@@ -1249,21 +1308,21 @@ accelerateSpeakerData = {
                                     "LastUpdatedDateTime": "2019-08-19 14:22:33.0"
                                 }
                             ],
-                            "session_start_date": "2019-09-05 17:15:00.0",
+                            "session_start_date": "2019-09-05 17:45:00.0",
                             "session_code": "6V34QD",
                             "session_desc": "Kony Quantum includes powerful low-code tooling for back-end integration and rapid data mapping to the client application, including a virtual data model capability that reduces the impacts to an app when back-end systems change",
                             "event_session_id": 60,
-                            "LastUpdatedDateTime": "2019-08-21 13:08:38.0",
+                            "LastUpdatedDateTime": "2019-08-28 10:54:05.0",
                             "session_track_id": 1,
                             "event_id": 3,
                             "session_long_desc": " In this session, the Kony team will demonstrate these capabilities by integrating with an enterprise identity provider and back-end data using connectors. They will then show how the data is connected to the client application by using both a drag-and-drop user interface generation approach as well as quickly mapping the data to an existing component. Lastly, the team will create data visualizations from back-end data for scenarios that require charts or dashboards.",
-                            "session_end_date": "2019-09-05 17:45:00.0",
+                            "session_end_date": "2019-09-05 18:15:00.0",
                             "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
                             "SoftDeleteFlag": false,
                             "CreatedDateTime": "2019-08-19 11:28:20.0"
                         },
                         {
-                            "session_location": "",
+                            "session_location": "Kony Back Stage Lab",
                             "session_name": "Hands on lab: Using Data and Offline Objects",
                             "presenter": [{
                                 "presenter_id": 108,
@@ -1277,12 +1336,13 @@ accelerateSpeakerData = {
                             "session_code": "H771UA",
                             "session_desc": "Kony Quantum includes powerful low-code tooling for backend integration and rapid data mapping to the client application including a virtual application data model capability that reduces the impacts to an app when backend systems change, but did you know that you can easily extend this to include offline capability. ",
                             "event_session_id": 74,
-                            "LastUpdatedDateTime": "2019-08-21 13:22:19.92",
+                            "LastUpdatedDateTime": "2019-08-28 11:17:35.0",
                             "session_track_id": 1,
                             "event_id": 3,
                             "session_long_desc": "In this session, the Kony team will demonstrate how to create an offline enabled application utilizing Kony Fabric offline enabled object services and the flexibility of our application data model by connecting the application to another data source with minimal modifications to the application.",
                             "session_end_date": "2019-09-04 18:45:00.0",
-                            "room_no": "",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                            "SoftDeleteFlag": false,
                             "CreatedDateTime": "2019-08-21 13:22:19.92"
                         }
                     ]
@@ -1316,15 +1376,15 @@ accelerateSpeakerData = {
                                 "LastUpdatedDateTime": "2019-08-19 14:22:33.0"
                             }
                         ],
-                        "session_start_date": "2019-09-05 17:15:00.0",
+                        "session_start_date": "2019-09-05 17:45:00.0",
                         "session_code": "6V34QD",
                         "session_desc": "Kony Quantum includes powerful low-code tooling for back-end integration and rapid data mapping to the client application, including a virtual data model capability that reduces the impacts to an app when back-end systems change",
                         "event_session_id": 60,
-                        "LastUpdatedDateTime": "2019-08-21 13:08:38.0",
+                        "LastUpdatedDateTime": "2019-08-28 10:54:05.0",
                         "session_track_id": 1,
                         "event_id": 3,
                         "session_long_desc": " In this session, the Kony team will demonstrate these capabilities by integrating with an enterprise identity provider and back-end data using connectors. They will then show how the data is connected to the client application by using both a drag-and-drop user interface generation approach as well as quickly mapping the data to an existing component. Lastly, the team will create data visualizations from back-end data for scenarios that require charts or dashboards.",
-                        "session_end_date": "2019-09-05 17:45:00.0",
+                        "session_end_date": "2019-09-05 18:15:00.0",
                         "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-08-19 11:28:20.0"
@@ -1375,7 +1435,7 @@ accelerateSpeakerData = {
                     "tracks": [2],
                     "sessionsList": [{
                         "session_location": "Lady Bird Ballroom",
-                        "session_name": "Bank Spotlight: Selling Internal Change \\u2013 A Methodology That Works",
+                        "session_name": "Bank Spotlight: Selling Internal Change \\u2013 A Methodology That Works ",
                         "presenter": [{
                             "presenter_id": 99,
                             "event_id": 3,
@@ -1387,7 +1447,7 @@ accelerateSpeakerData = {
                         "session_start_date": "2019-09-05 19:15:00.0",
                         "session_code": "WQMIIA",
                         "event_session_id": 62,
-                        "LastUpdatedDateTime": "2019-08-21 13:05:08.0",
+                        "LastUpdatedDateTime": "2019-08-28 10:56:59.0",
                         "session_track_id": 2,
                         "event_id": 3,
                         "session_end_date": "2019-09-05 19:45:00.0",
@@ -1416,15 +1476,15 @@ accelerateSpeakerData = {
                             "CreatedDateTime": "2019-08-19 14:15:15.0",
                             "LastUpdatedDateTime": "2019-08-19 14:15:15.0"
                         }],
-                        "session_start_date": "2019-09-05 19:45:00.0",
+                        "session_start_date": "2019-09-05 21:15:00.0",
                         "session_code": "L4IB7I",
                         "session_desc": "Test what you build. It\\u2019s commonly mentioned in DevOps best practice articles. The most common open source testing platforms like TestNG require developers to write their test in Java and set a variety of different parameters to get their test to run across all their channels. If you are a web developer or an iOS developer, this means you\\u2019re writing Java code to test the application you wrote in JavaScript, Swift or Objective C. If a new version of an iOS or Android is released, you are beholden to the developer community to get updates to make their testing framework compatible.",
                         "event_session_id": 68,
-                        "LastUpdatedDateTime": "2019-08-21 13:02:55.0",
+                        "LastUpdatedDateTime": "2019-08-28 10:52:53.0",
                         "session_track_id": 1,
                         "event_id": 3,
                         "session_long_desc": "Developers need a better way to write, record and automate their functional test with the flexibility to easily test locally on their own devices or incorporate testing as part of their CI/CD process across web and native channels. Kony\\u2019s new testing framework planned for an upcoming release will quickly allow developers to create test cases using the Jasmine test framework to test their apps across Kony Visualizer\\u2019s supported channels. Come join us for a sneak peak at how to record test cases for existing apps, edit a test cases and incorporate Kony\\u2019s functional testing framework as part of your Ci/CD processes with Kony DevOps using both existing and upcoming capabilities..",
-                        "session_end_date": "2019-09-05 20:15:00.0",
+                        "session_end_date": "2019-09-05 21:45:00.0",
                         "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-08-19 11:31:34.0"
@@ -1440,7 +1500,7 @@ accelerateSpeakerData = {
                     "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
-                        "session_location": "Lady Bird 1",
+                        "session_location": "Lady Bird Ballroom",
                         "session_name": "Preventing Account Takeover: Dragging Criminals Out of the Shadows",
                         "presenter": [{
                             "presenter_id": 79,
@@ -1453,11 +1513,11 @@ accelerateSpeakerData = {
                         "session_start_date": "2019-09-04 19:45:00.0",
                         "session_code": "833X55",
                         "event_session_id": 48,
-                        "LastUpdatedDateTime": "2019-08-21 11:49:23.0",
+                        "LastUpdatedDateTime": "2019-08-28 11:02:46.0",
                         "session_track_id": 2,
                         "event_id": 3,
                         "session_end_date": "2019-09-04 20:15:00.0",
-                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBird1.pdf",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-08-19 10:57:14.0"
                     }]
@@ -1465,23 +1525,32 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 36,
                     "speaker_name": "Rick Long",
-                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/r_long_560x570.png",
+                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/RickLong560x570.png",
                     "speaker_title": "VP, Information Technology Services PSECU",
                     "CreatedDateTime": "2019-08-19T12:57:28Z",
-                    "LastUpdatedDateTime": "2019-08-19T14:59:44Z",
+                    "LastUpdatedDateTime": "2019-08-26T14:37:25Z",
                     "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
                         "session_location": "Lady Bird Ballroom",
                         "session_name": "Live Customer Case Study: Truly Digital First - Branchless Since 1934 and Still Innovating  ",
                         "presenter": [{
-                            "presenter_id": 89,
-                            "event_id": 3,
-                            "master_speaker_id": 36,
-                            "session_id": 47,
-                            "CreatedDateTime": "2019-08-19 14:09:58.0",
-                            "LastUpdatedDateTime": "2019-08-19 14:09:58.0"
-                        }],
+                                "presenter_id": 118,
+                                "event_id": 3,
+                                "master_speaker_id": 37,
+                                "session_id": 47,
+                                "CreatedDateTime": "2019-08-26 14:46:27.602",
+                                "LastUpdatedDateTime": "2019-08-26 14:46:27.602"
+                            },
+                            {
+                                "presenter_id": 89,
+                                "event_id": 3,
+                                "master_speaker_id": 36,
+                                "session_id": 47,
+                                "CreatedDateTime": "2019-08-19 14:09:58.0",
+                                "LastUpdatedDateTime": "2019-08-19 14:09:58.0"
+                            }
+                        ],
                         "session_start_date": "2019-09-04 20:45:00.0",
                         "session_code": "HNDJJ5",
                         "session_desc": "PSECU was born out of necessity in 1934 \\u2013 the 22 founders were state workers, struggling against low wages and a high cost of living. They had little control over their financial lives \\u2013 until they came together to form a Pennsylvania State Employees Credit Union, or PSECU. ",
@@ -1498,14 +1567,46 @@ accelerateSpeakerData = {
                 },
                 {
                     "speaker_id": 37,
-                    "speaker_name": "Jess Hutchinson",
-                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/jessica_hutchinson_560x570.png",
-                    "speaker_title": "Director, Digital Channels and Strategy PSECU",
+                    "speaker_name": "Bill Dale",
+                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/BillDale.png",
+                    "speaker_title": "Digital Banking Manager, PSECU",
                     "CreatedDateTime": "2019-08-19T12:57:28Z",
-                    "LastUpdatedDateTime": "2019-08-19T14:59:29Z",
+                    "LastUpdatedDateTime": "2019-08-26T14:42:53Z",
                     "SoftDeleteFlag": false,
-                    "tracks": [],
-                    "sessionsList": []
+                    "tracks": [2],
+                    "sessionsList": [{
+                        "session_location": "Lady Bird Ballroom",
+                        "session_name": "Live Customer Case Study: Truly Digital First - Branchless Since 1934 and Still Innovating  ",
+                        "presenter": [{
+                                "presenter_id": 118,
+                                "event_id": 3,
+                                "master_speaker_id": 37,
+                                "session_id": 47,
+                                "CreatedDateTime": "2019-08-26 14:46:27.602",
+                                "LastUpdatedDateTime": "2019-08-26 14:46:27.602"
+                            },
+                            {
+                                "presenter_id": 89,
+                                "event_id": 3,
+                                "master_speaker_id": 36,
+                                "session_id": 47,
+                                "CreatedDateTime": "2019-08-19 14:09:58.0",
+                                "LastUpdatedDateTime": "2019-08-19 14:09:58.0"
+                            }
+                        ],
+                        "session_start_date": "2019-09-04 20:45:00.0",
+                        "session_code": "HNDJJ5",
+                        "session_desc": "PSECU was born out of necessity in 1934 \\u2013 the 22 founders were state workers, struggling against low wages and a high cost of living. They had little control over their financial lives \\u2013 until they came together to form a Pennsylvania State Employees Credit Union, or PSECU. ",
+                        "event_session_id": 47,
+                        "LastUpdatedDateTime": "2019-08-21 11:50:47.0",
+                        "session_track_id": 2,
+                        "event_id": 3,
+                        "session_long_desc": "PSECU continues to evolve with each new decade \\u2013 instead of investing in branches on every corner, we\\u2019ve invested in our members. Through our digital-first model, our members enjoy banking where it is convenient for them. Learn more about the PSECU story in this interactive session.",
+                        "session_end_date": "2019-09-04 21:15:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-19 09:23:07.0"
+                    }]
                 },
                 {
                     "speaker_id": 38,
@@ -1517,7 +1618,7 @@ accelerateSpeakerData = {
                     "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
-                        "session_location": "Lady Bird Studio",
+                        "session_location": "Lady Bird Ballroom",
                         "session_name": "Think Like a Brand, Not a Bank (or Credit Union)",
                         "presenter": [{
                                 "presenter_id": 92,
@@ -1539,11 +1640,11 @@ accelerateSpeakerData = {
                         "session_start_date": "2019-09-05 19:45:00.0",
                         "session_code": "4H4KZX",
                         "event_session_id": 65,
-                        "LastUpdatedDateTime": "2019-08-21 13:03:27.0",
+                        "LastUpdatedDateTime": "2019-08-26 14:25:47.0",
                         "session_track_id": 2,
                         "event_id": 3,
                         "session_end_date": "2019-09-05 20:15:00.0",
-                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdStudio.pdf",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-08-19 11:30:26.0"
                     }]
@@ -1558,7 +1659,7 @@ accelerateSpeakerData = {
                     "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
-                        "session_location": "Lady Bird Studio",
+                        "session_location": "Lady Bird Ballroom",
                         "session_name": "Think Like a Brand, Not a Bank (or Credit Union)",
                         "presenter": [{
                                 "presenter_id": 92,
@@ -1580,11 +1681,11 @@ accelerateSpeakerData = {
                         "session_start_date": "2019-09-05 19:45:00.0",
                         "session_code": "4H4KZX",
                         "event_session_id": 65,
-                        "LastUpdatedDateTime": "2019-08-21 13:03:27.0",
+                        "LastUpdatedDateTime": "2019-08-26 14:25:47.0",
                         "session_track_id": 2,
                         "event_id": 3,
                         "session_end_date": "2019-09-05 20:15:00.0",
-                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdStudio.pdf",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-08-19 11:30:26.0"
                     }]
@@ -1640,10 +1741,42 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 42,
                     "speaker_name": "Jaan Leemet",
-                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/Jaan-Leeme.png",
+                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/JaanLeemet560x570.png",
                     "speaker_title": "CTO, Nesh Technologies",
                     "CreatedDateTime": "2019-08-21T09:26:47.619Z",
-                    "LastUpdatedDateTime": "2019-08-21T09:26:47.619Z"
+                    "LastUpdatedDateTime": "2019-08-26T14:57:52Z",
+                    "SoftDeleteFlag": false,
+                    "tracks": [1],
+                    "sessionsList": [{
+                        "session_location": "Meriwether I&II",
+                        "session_name": "Customer Presentation - Mercy + Nesh: A Better User Experience Drives Patient and Business Outcomes",
+                        "session_track_id": 1,
+                        "event_id": 3,
+                        "presenter": [{
+                                "presenter_id": 121,
+                                "event_id": 3,
+                                "master_speaker_id": 47,
+                                "session_id": 31,
+                                "CreatedDateTime": "2019-08-26 15:12:29.67",
+                                "LastUpdatedDateTime": "2019-08-26 15:12:29.67"
+                            },
+                            {
+                                "presenter_id": 120,
+                                "event_id": 3,
+                                "master_speaker_id": 42,
+                                "session_id": 31,
+                                "CreatedDateTime": "2019-08-26 15:08:46.377",
+                                "LastUpdatedDateTime": "2019-08-26 15:08:46.377"
+                            }
+                        ],
+                        "session_start_date": "2019-09-05 19:15:00.0",
+                        "session_end_date": "2019-09-05 19:45:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+                        "SoftDeleteFlag": false,
+                        "event_session_id": 31,
+                        "CreatedDateTime": "2019-08-13 06:33:50.0",
+                        "LastUpdatedDateTime": "2019-08-21 13:04:33.0"
+                    }]
                 },
                 {
                     "speaker_id": 43,
@@ -1651,7 +1784,32 @@ accelerateSpeakerData = {
                     "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/d_parker_560x570.png",
                     "speaker_title": "COO, MX",
                     "CreatedDateTime": "2019-08-21T09:27:50.091Z",
-                    "LastUpdatedDateTime": "2019-08-21T09:27:50.091Z"
+                    "LastUpdatedDateTime": "2019-08-21T09:27:50.091Z",
+                    "tracks": [2],
+                    "sessionsList": [{
+                        "session_location": "Lady Bird Ballroom",
+                        "session_name": "Empowering the World to Be Financially Strong",
+                        "presenter": [{
+                            "presenter_id": 114,
+                            "event_id": 3,
+                            "master_speaker_id": 43,
+                            "session_id": 41,
+                            "CreatedDateTime": "2019-08-26 13:13:34.033",
+                            "LastUpdatedDateTime": "2019-08-26 13:13:34.033"
+                        }],
+                        "session_start_date": "2019-09-04 19:15:00.0",
+                        "session_code": "031EQM",
+                        "session_desc": "At MX, we\\u2019re all about creating value. We believe finance can be simpler, more useful, and even enjoyable.  We value what we do and who we serve \\u2013 our values serve as a framework for empowering the world to be financially strong",
+                        "event_session_id": 41,
+                        "LastUpdatedDateTime": "2019-08-21 11:47:50.0",
+                        "session_track_id": 2,
+                        "event_id": 3,
+                        "session_long_desc": "and in this session, we\\u2019ll dig deeper into these along with practical examples of values in action.\\n  Purposeful Contribution/Exuberance for Life/Founder Mindset/Foundation of Trust/Objectivity in Discourse/Cognizance/Iterative Innovation",
+                        "session_end_date": "2019-09-04 19:45:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-19 09:17:55.0"
+                    }]
                 },
                 {
                     "speaker_id": 44,
@@ -1659,7 +1817,32 @@ accelerateSpeakerData = {
                     "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/Satish_560x570.png",
                     "speaker_title": "Manager Integration & Mobility, Oceaneering",
                     "CreatedDateTime": "2019-08-21T09:28:39.820Z",
-                    "LastUpdatedDateTime": "2019-08-21T09:28:39.820Z"
+                    "LastUpdatedDateTime": "2019-08-21T09:28:39.820Z",
+                    "tracks": [1],
+                    "sessionsList": [{
+                        "session_location": "Meriwether I&II",
+                        "session_name": "Customer Case Study - Oceaneering: Leveraging PWA to Accelerate Business Results",
+                        "presenter": [{
+                            "presenter_id": 115,
+                            "event_id": 3,
+                            "master_speaker_id": 44,
+                            "session_id": 42,
+                            "CreatedDateTime": "2019-08-26 13:14:25.56",
+                            "LastUpdatedDateTime": "2019-08-26 13:14:25.56"
+                        }],
+                        "session_start_date": "2019-09-04 19:15:00.0",
+                        "session_code": "STWFYI",
+                        "session_desc": "Oceaneering had already seen success at coordinating with and enabling their worldwide staff and customers leveraging native mobile technologies. When they looked at the capabilities and how quickly they could create or extend to Progressive Web App they decided to give it a try.",
+                        "event_session_id": 42,
+                        "LastUpdatedDateTime": "2019-08-21 11:48:08.0",
+                        "session_track_id": 1,
+                        "event_id": 3,
+                        "session_long_desc": "As a result, adoption and the corresponding business results have taken off. The session will provide an overview of the use cases and business challenges, how they implemented and the response they've had from internal and external stakeholders",
+                        "session_end_date": "2019-09-04 19:45:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-19 09:18:50.0"
+                    }]
                 },
                 {
                     "speaker_id": 45,
@@ -1667,39 +1850,266 @@ accelerateSpeakerData = {
                     "speaker_title": "Sr. Dir Prod Mgmt  Kony, Inc.",
                     "CreatedDateTime": "2019-08-21T09:33:21.763Z",
                     "LastUpdatedDateTime": "2019-08-21T09:33:21.763Z",
-                    "tracks": [1],
+                    "tracks": [1, 1],
                     "sessionsList": [{
-                        "session_location": "",
-                        "session_name": "Lunch + Hands on lab: Building a PWA app",
-                        "presenter": [{
-                                "presenter_id": 111,
+                            "session_location": "Kony Back Stage Lab",
+                            "session_name": "Lunch + Hands on lab: Building a PWA app",
+                            "presenter": [{
+                                    "presenter_id": 111,
+                                    "event_id": 3,
+                                    "master_speaker_id": 45,
+                                    "session_id": 77,
+                                    "CreatedDateTime": "2019-08-21 13:42:57.886",
+                                    "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
+                                },
+                                {
+                                    "presenter_id": 110,
+                                    "event_id": 3,
+                                    "master_speaker_id": 16,
+                                    "session_id": 77,
+                                    "CreatedDateTime": "2019-08-21 13:42:57.886",
+                                    "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
+                                }
+                            ],
+                            "session_start_date": "2019-09-05 18:00:00.0",
+                            "session_code": "LQDFEL",
+                            "session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications.",
+                            "event_session_id": 77,
+                            "LastUpdatedDateTime": "2019-08-26 14:27:10.0",
+                            "session_track_id": 1,
+                            "event_id": 3,
+                            "session_long_desc": "In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps (PWA)",
+                            "session_end_date": "2019-09-05 18:45:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                            "SoftDeleteFlag": false,
+                            "CreatedDateTime": "2019-08-21 13:42:57.885"
+                        },
+                        {
+                            "session_location": "Meriwether I&II",
+                            "session_name": "Technical:   Building Progressive Web Apps (PWA)",
+                            "presenter": [{
+                                "presenter_id": 113,
                                 "event_id": 3,
                                 "master_speaker_id": 45,
-                                "session_id": 77,
-                                "CreatedDateTime": "2019-08-21 13:42:57.886",
-                                "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
+                                "session_id": 40,
+                                "CreatedDateTime": "2019-08-26 13:10:59.819",
+                                "LastUpdatedDateTime": "2019-08-26 13:10:59.819"
+                            }],
+                            "session_start_date": "2019-09-04 18:45:00.0",
+                            "session_code": "O2EW8S",
+                            "session_desc": "Interested in building a Progressive Web Application (PWA), but don\\u2019t know where to start?",
+                            "event_session_id": 40,
+                            "LastUpdatedDateTime": "2019-08-21 11:47:19.0",
+                            "session_track_id": 1,
+                            "event_id": 3,
+                            "session_long_desc": "This session will provide a guided tour of PWA concepts and capabilities with a step-by-step walk-through of development and deployment of a PWA using Quantum. All of the tools and resources presented in the session will be made available, so you can build your own PWA.",
+                            "session_end_date": "2019-09-04 19:15:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+                            "SoftDeleteFlag": false,
+                            "CreatedDateTime": "2019-08-19 09:17:08.0"
+                        }
+                    ]
+                },
+                {
+                    "speaker_id": 46,
+                    "speaker_name": "Jon Sundberg",
+                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/jonsundberg560x570.png",
+                    "speaker_title": "JD Power",
+                    "CreatedDateTime": "2019-08-26T14:49:47.457Z",
+                    "LastUpdatedDateTime": "2019-08-26T14:49:47.457Z",
+                    "tracks": [2],
+                    "sessionsList": [{
+                        "session_location": "Lady Bird Ballroom",
+                        "session_name": "Start with Best in Class - A Live Case Study with JD Power and Centric Digital",
+                        "presenter": [{
+                                "presenter_id": 119,
+                                "event_id": 3,
+                                "master_speaker_id": 46,
+                                "session_id": 53,
+                                "CreatedDateTime": "2019-08-26 14:50:55.051",
+                                "LastUpdatedDateTime": "2019-08-26 14:50:55.051"
                             },
                             {
-                                "presenter_id": 110,
+                                "presenter_id": 95,
                                 "event_id": 3,
-                                "master_speaker_id": 16,
-                                "session_id": 77,
-                                "CreatedDateTime": "2019-08-21 13:42:57.886",
-                                "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
+                                "master_speaker_id": 22,
+                                "session_id": 53,
+                                "CreatedDateTime": "2019-08-19 14:14:24.0",
+                                "LastUpdatedDateTime": "2019-08-19 14:14:24.0"
                             }
                         ],
-                        "session_start_date": "2019-09-05 18:00:00.0",
-                        "session_code": "LQDFEL",
-                        "session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications.",
-                        "event_session_id": 77,
-                        "LastUpdatedDateTime": "2019-08-21 13:42:57.885",
+                        "session_start_date": "2019-09-04 21:45:00.0",
+                        "session_code": "1YGBC7",
+                        "session_desc": "In the recent J.D. Power 2019 U.S. Banking Mobile App Satisfaction Study, it found that mid-size banks are increasingly vulnerable to digital competition from large banks. Where large banks have half or more of their customers being digitally centric, mid-size banks have a third or less of their customer base relying primarily on digital channels, which creates the imperative to start with best-in-class.",
+                        "event_session_id": 53,
+                        "LastUpdatedDateTime": "2019-08-21 11:51:56.0",
+                        "session_track_id": 2,
+                        "event_id": 3,
+                        "session_end_date": "2019-09-04 22:30:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-19 11:01:03.0"
+                    }]
+                },
+                {
+                    "speaker_id": 47,
+                    "speaker_name": "Scott Hetland",
+                    "speaker_title": "Application Product Manager, Mercy Supply Collaborative",
+                    "CreatedDateTime": "2019-08-26T15:09:57.777Z",
+                    "LastUpdatedDateTime": "2019-08-26T15:09:57.777Z",
+                    "tracks": [1],
+                    "sessionsList": [{
+                        "session_location": "Meriwether I&II",
+                        "session_name": "Customer Presentation - Mercy + Nesh: A Better User Experience Drives Patient and Business Outcomes",
                         "session_track_id": 1,
                         "event_id": 3,
-                        "session_long_desc": ".  In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps (PWA)",
-                        "session_end_date": "2019-09-05 18:45:00.0",
-                        "room_no": "",
-                        "CreatedDateTime": "2019-08-21 13:42:57.885"
+                        "presenter": [{
+                                "presenter_id": 121,
+                                "event_id": 3,
+                                "master_speaker_id": 47,
+                                "session_id": 31,
+                                "CreatedDateTime": "2019-08-26 15:12:29.67",
+                                "LastUpdatedDateTime": "2019-08-26 15:12:29.67"
+                            },
+                            {
+                                "presenter_id": 120,
+                                "event_id": 3,
+                                "master_speaker_id": 42,
+                                "session_id": 31,
+                                "CreatedDateTime": "2019-08-26 15:08:46.377",
+                                "LastUpdatedDateTime": "2019-08-26 15:08:46.377"
+                            }
+                        ],
+                        "session_start_date": "2019-09-05 19:15:00.0",
+                        "session_end_date": "2019-09-05 19:45:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+                        "SoftDeleteFlag": false,
+                        "event_session_id": 31,
+                        "CreatedDateTime": "2019-08-13 06:33:50.0",
+                        "LastUpdatedDateTime": "2019-08-21 13:04:33.0"
                     }]
+                },
+                {
+                    "speaker_id": 48,
+                    "speaker_name": "Carlos Carvajal",
+                    "speaker_title": "CMO, Kony",
+                    "CreatedDateTime": "2019-08-28T10:02:58.584Z",
+                    "LastUpdatedDateTime": "2019-08-28T10:02:58.584Z",
+                    "tracks": [3],
+                    "sessionsList": [{
+                        "session_location": "Lady Bird Ballroom",
+                        "session_name": "Quantum Customer Panel with Carlos Carvajal",
+                        "presenter": [{
+                            "presenter_id": 122,
+                            "event_id": 3,
+                            "master_speaker_id": 48,
+                            "session_id": 78,
+                            "CreatedDateTime": "2019-08-28 10:05:06.733",
+                            "LastUpdatedDateTime": "2019-08-28 10:05:06.733"
+                        }],
+                        "session_start_date": "2019-09-04 15:15:00.0",
+                        "session_code": "80G1WQ",
+                        "session_desc": "",
+                        "event_session_id": 78,
+                        "LastUpdatedDateTime": "2019-08-28 10:58:18.0",
+                        "session_track_id": 3,
+                        "event_id": 3,
+                        "session_long_desc": "",
+                        "session_end_date": "2019-09-04 15:40:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-28 10:05:06.732"
+                    }]
+                },
+                {
+                    "speaker_id": 49,
+                    "speaker_name": "Brian Miller",
+                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/Brian_Miller-560x570.png",
+                    "speaker_title": "EVP & Chief Customer Officer, Kony",
+                    "CreatedDateTime": "2019-08-28T10:19:24.754Z",
+                    "LastUpdatedDateTime": "2019-08-28T10:19:24.754Z",
+                    "tracks": [1],
+                    "sessionsList": [{
+                        "session_location": "Meriwether I&II",
+                        "session_name": "Kony Customers for Life Program",
+                        "presenter": [{
+                            "presenter_id": 125,
+                            "event_id": 3,
+                            "master_speaker_id": 49,
+                            "session_id": 81,
+                            "CreatedDateTime": "2019-08-28 10:30:42.818",
+                            "LastUpdatedDateTime": "2019-08-28 10:30:42.818"
+                        }],
+                        "session_start_date": "2019-09-04 20:45:00.0",
+                        "session_code": "4JOXC7",
+                        "session_desc": "Kony is enhancing our Customers for Life Program involving elements of the entire company including Support, Services, Sales and Product Teams. Brian Miller, Kony's EVP of Services and Support and Chief Customer Officer will talk about the approaches Kony is taking to enhance the customer experience and help drive continued success for our customers.",
+                        "event_session_id": 81,
+                        "LastUpdatedDateTime": "2019-08-28 11:04:17.0",
+                        "session_track_id": 1,
+                        "event_id": 3,
+                        "session_long_desc": "",
+                        "session_end_date": "2019-09-04 21:15:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-28 10:19:41.767"
+                    }]
+                },
+                {
+                    "speaker_id": 50,
+                    "speaker_name": "Ray Williamson",
+                    "speaker_title": "Sr. Digital Architect",
+                    "CreatedDateTime": "2019-08-28T10:43:37.267Z",
+                    "LastUpdatedDateTime": "2019-08-28T10:43:37.267Z",
+                    "tracks": [1, 1],
+                    "sessionsList": [{
+                            "session_location": "Kony Back Stage Lab",
+                            "session_name": "Build an App in 20 minutes - Part 1",
+                            "presenter": [{
+                                "presenter_id": 127,
+                                "event_id": 3,
+                                "master_speaker_id": 50,
+                                "session_id": 75,
+                                "CreatedDateTime": "2019-08-28 10:47:18.63",
+                                "LastUpdatedDateTime": "2019-08-28 10:47:18.63"
+                            }],
+                            "session_start_date": "2019-09-04 20:15:00.0",
+                            "session_code": "FEQ6PL",
+                            "session_desc": "Build a quick no-code application in Kony Quantum in 20 minutes. Part 1 will walk you through building a functional four screen application. Part 2 (on Thursday) will address connecting to an identity service and a data source.",
+                            "event_session_id": 75,
+                            "LastUpdatedDateTime": "2019-08-28 11:18:38.0",
+                            "session_track_id": 1,
+                            "event_id": 3,
+                            "session_long_desc": "",
+                            "session_end_date": "2019-09-04 20:45:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                            "SoftDeleteFlag": false,
+                            "CreatedDateTime": "2019-08-21 13:24:31.299"
+                        },
+                        {
+                            "session_location": "Kony Back Stage Lab",
+                            "session_name": "Build an App in 20 minutes - Part 2",
+                            "presenter": [{
+                                "presenter_id": 128,
+                                "event_id": 3,
+                                "master_speaker_id": 50,
+                                "session_id": 82,
+                                "CreatedDateTime": "2019-08-28 10:48:41.223",
+                                "LastUpdatedDateTime": "2019-08-28 10:48:41.223"
+                            }],
+                            "session_start_date": "2019-09-05 15:45:00.0",
+                            "session_code": "O7LAYK",
+                            "session_desc": "Take the simple application built in part one and learn how to connect it to an identity service and a simple database.\\n",
+                            "event_session_id": 82,
+                            "LastUpdatedDateTime": "2019-08-28 11:12:32.0",
+                            "session_track_id": 1,
+                            "event_id": 3,
+                            "session_long_desc": "",
+                            "session_end_date": "2019-09-05 16:15:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                            "SoftDeleteFlag": false,
+                            "CreatedDateTime": "2019-08-28 10:34:10.743"
+                        }
+                    ]
                 }
             ],
             "opstatus": 0,
@@ -1707,11 +2117,11 @@ accelerateSpeakerData = {
             "speakerSessionInfo": [{
                     "speaker_id": 1,
                     "speaker_name": "Tom E. Hogan",
-                    "speaker_bio": "Thomas E. Hogan has been at the forefront of innovation in the enterprise software market for more than three decades. Before joining Kony, Tom served as Executive Vice President of Software at HP, with responsibility for all software functions, including sales, marketing, engineering, product development, operations, and technical support. Prior to joining HP, Tom served as the President and Chief Executive Officer of Vignette.",
-                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/tom_hogan_560x570.png",
+                    "speaker_bio": "",
+                    "speaker_profile_pic": "tom_hogan.png",
                     "speaker_title": "Chairman & CEO Kony, Inc.",
                     "CreatedDateTime": "2019-07-17T06:04:25Z",
-                    "LastUpdatedDateTime": "2019-08-13T06:18:57Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:43:02Z",
                     "SoftDeleteFlag": false,
                     "tracks": [3, 3],
                     "sessionsList": [{
@@ -1759,7 +2169,7 @@ accelerateSpeakerData = {
                             "session_start_date": "2019-09-04 14:00:00.0",
                             "session_code": "52Y1MX",
                             "event_session_id": 3,
-                            "LastUpdatedDateTime": "2019-08-21 11:56:56.0",
+                            "LastUpdatedDateTime": "2019-08-28 09:27:20.0",
                             "session_track_id": 3,
                             "session_material": [{
                                 "session_material_id": 1,
@@ -1772,7 +2182,7 @@ accelerateSpeakerData = {
                             }],
                             "event_id": 3,
                             "session_long_desc": "\\n",
-                            "session_end_date": "2019-09-04 14:25:00.0",
+                            "session_end_date": "2019-09-04 14:35:00.0",
                             "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
                             "SoftDeleteFlag": false,
                             "CreatedDateTime": "2019-05-16 09:49:59.0"
@@ -1782,53 +2192,23 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 2,
                     "speaker_name": "John Janclaes",
-                    "speaker_bio": "John Janclaes has more than thirty years of in the financial services industry, spanning retail banking, brokerage, and insurance.",
-                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/john_janclaes_560x570.png",
+                    "speaker_bio": "",
+                    "speaker_profile_pic": "jj.png",
                     "speaker_title": "President & CEO Partners Federal Credit Union",
                     "CreatedDateTime": "2019-07-17T06:04:48Z",
-                    "LastUpdatedDateTime": "2019-08-13T06:20:18Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:43:17Z",
                     "SoftDeleteFlag": false,
-                    "tracks": [3],
-                    "sessionsList": [{
-                        "session_location": "Lady Bird Ballroom",
-                        "session_name": "Opening Keynotes - Jon Janclaes, Partners FCU + TBD",
-                        "session_track_id": 3,
-                        "event_id": 3,
-                        "presenter": [{
-                                "presenter_id": 56,
-                                "event_id": 3,
-                                "master_speaker_id": 2,
-                                "session_id": 22,
-                                "CreatedDateTime": "2019-08-19 13:16:23.0",
-                                "LastUpdatedDateTime": "2019-08-19 13:16:23.0"
-                            },
-                            {
-                                "presenter_id": 25,
-                                "event_id": 3,
-                                "master_speaker_id": 1,
-                                "session_id": 22,
-                                "SoftDeleteFlag": true,
-                                "CreatedDateTime": "2019-08-15 02:59:58.0",
-                                "LastUpdatedDateTime": "2019-08-19 13:16:27.0"
-                            }
-                        ],
-                        "session_start_date": "2019-09-04 14:45:00.0",
-                        "session_end_date": "2019-09-04 15:30:00.0",
-                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
-                        "SoftDeleteFlag": false,
-                        "event_session_id": 22,
-                        "CreatedDateTime": "2019-08-13 05:54:51.0",
-                        "LastUpdatedDateTime": "2019-08-21 11:28:06.0"
-                    }]
+                    "tracks": [],
+                    "sessionsList": []
                 },
                 {
                     "speaker_id": 3,
                     "speaker_name": "Jeffery Kendall",
-                    "speaker_bio": "John Janclaes has more than thirty  years of in the financial services  industry, spanning retail banking,  brokerage, and insurance. ",
-                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/Jeffery_Kendall_560x570.png",
+                    "speaker_bio": "",
+                    "speaker_profile_pic": "jeffrey_k.png",
                     "speaker_title": "EVP & GM Kony DBX",
                     "CreatedDateTime": "2019-08-06T10:18:26Z",
-                    "LastUpdatedDateTime": "2019-08-13T06:20:41Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:43:43Z",
                     "SoftDeleteFlag": false,
                     "tracks": [2, 3, 2, 2, 4, 2],
                     "sessionsList": [{
@@ -1907,7 +2287,7 @@ accelerateSpeakerData = {
                             "CreatedDateTime": "2019-08-19 11:03:08.0"
                         },
                         {
-                            "session_location": "",
+                            "session_location": "Lady Bird Ballroom",
                             "session_name": "Setting the Stage for DBX Accelerate",
                             "presenter": [{
                                 "presenter_id": 107,
@@ -1921,12 +2301,13 @@ accelerateSpeakerData = {
                             "session_code": "0MVB4P",
                             "session_desc": "",
                             "event_session_id": 73,
-                            "LastUpdatedDateTime": "2019-08-21 13:17:48.044",
+                            "LastUpdatedDateTime": "2019-08-28 11:16:56.0",
                             "session_track_id": 2,
                             "event_id": 3,
                             "session_long_desc": "",
                             "session_end_date": "2019-09-04 16:15:00.0",
-                            "room_no": "",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+                            "SoftDeleteFlag": false,
                             "CreatedDateTime": "2019-08-21 13:17:48.044"
                         },
                         {
@@ -1950,7 +2331,7 @@ accelerateSpeakerData = {
                             "LastUpdatedDateTime": "2019-08-21 12:38:54.0"
                         },
                         {
-                            "session_location": "",
+                            "session_location": "Lady Bird Ballroom",
                             "session_name": "DBX Day 2 Introduction",
                             "presenter": [{
                                 "presenter_id": 109,
@@ -1964,12 +2345,13 @@ accelerateSpeakerData = {
                             "session_code": "TJEW2L",
                             "session_desc": "",
                             "event_session_id": 76,
-                            "LastUpdatedDateTime": "2019-08-21 13:31:47.89",
+                            "LastUpdatedDateTime": "2019-08-28 11:12:00.0",
                             "session_track_id": 2,
                             "event_id": 3,
                             "session_long_desc": "",
                             "session_end_date": "2019-09-05 15:45:00.0",
-                            "room_no": "",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+                            "SoftDeleteFlag": false,
                             "CreatedDateTime": "2019-08-21 13:31:47.89"
                         }
                     ]
@@ -1977,16 +2359,16 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 4,
                     "speaker_name": "Ben Crenshaw",
-                    "speaker_bio": "John Janclaes has more than thirty  years of in the financial services  industry, spanning retail banking,  brokerage, and insurance. ",
-                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/1565181720.png",
+                    "speaker_bio": "",
+                    "speaker_profile_pic": "bencrenshaw.png",
                     "speaker_title": "Golf Hall of Fame Member",
                     "CreatedDateTime": "2019-08-06T10:19:20Z",
-                    "LastUpdatedDateTime": "2019-08-07T12:43:47Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:44:07Z",
                     "SoftDeleteFlag": false,
                     "tracks": [3],
                     "sessionsList": [{
                         "session_location": "Lady Bird Ballroom",
-                        "session_name": "Tom & Ben Crenshaw Fireside Chate",
+                        "session_name": "Tom & Ben Crenshaw Fireside Chat",
                         "presenter": [{
                                 "presenter_id": 4,
                                 "event_id": 3,
@@ -2023,10 +2405,10 @@ accelerateSpeakerData = {
                                 "LastUpdatedDateTime": "2019-08-19 13:15:21.0"
                             }
                         ],
-                        "session_start_date": "2019-09-04 14:25:00.0",
+                        "session_start_date": "2019-09-04 15:00:00.0",
                         "session_code": "H7ZGDT",
                         "event_session_id": 4,
-                        "LastUpdatedDateTime": "2019-08-21 11:57:44.0",
+                        "LastUpdatedDateTime": "2019-08-28 09:30:49.0",
                         "session_track_id": 3,
                         "session_material": [{
                             "session_material_id": 2,
@@ -2038,7 +2420,7 @@ accelerateSpeakerData = {
                             "LastUpdatedDateTime": "2019-08-19 08:50:42.0"
                         }],
                         "event_id": 3,
-                        "session_end_date": "2019-09-04 14:45:00.0",
+                        "session_end_date": "2019-09-04 15:15:00.0",
                         "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-05-16 09:52:19.0"
@@ -2047,11 +2429,11 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 5,
                     "speaker_name": "John Rymer",
-                    "speaker_bio": "Delivery  Professionals  Forrester",
-                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/John_Rymer_PR_560x570.png",
+                    "speaker_bio": "",
+                    "speaker_profile_pic": "john_rymer.png",
                     "speaker_title": "VP, Principal Analyst Serving  Application Development",
                     "CreatedDateTime": "2019-08-06T10:21:06Z",
-                    "LastUpdatedDateTime": "2019-08-13T06:22:57Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:44:30Z",
                     "SoftDeleteFlag": false,
                     "tracks": [1, 1],
                     "sessionsList": [{
@@ -2117,10 +2499,11 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 6,
                     "speaker_name": "Jim Marous",
-                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/jim_marous_560x570.png",
+                    "speaker_profile_pic": "jim_marous.png",
                     "speaker_title": "Owner and CEO / Co-publisher  The Digital Banking Report / The Financial Brand",
                     "CreatedDateTime": "2019-08-19T12:17:28Z",
-                    "LastUpdatedDateTime": "2019-08-19T12:17:28Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:44:49Z",
+                    "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
                         "session_location": "Lady Bird Ballroom",
@@ -2161,10 +2544,10 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 7,
                     "speaker_name": "Burley Kawasaki",
-                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/Burley-560x570.png",
+                    "speaker_profile_pic": "burley.png",
                     "speaker_title": "EVP of Products  Kony, Inc.",
                     "CreatedDateTime": "2019-08-19T12:19:02Z",
-                    "LastUpdatedDateTime": "2019-08-21T09:19:37Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:45:04Z",
                     "SoftDeleteFlag": false,
                     "tracks": [],
                     "sessionsList": []
@@ -2172,16 +2555,24 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 8,
                     "speaker_name": "Bill Bodin",
-                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/Bodin_560x570.png",
+                    "speaker_profile_pic": "bb.png",
                     "speaker_title": "CTO  Kony, Inc.",
                     "CreatedDateTime": "2019-08-19T12:19:16Z",
-                    "LastUpdatedDateTime": "2019-08-19T14:58:04Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:45:19Z",
                     "SoftDeleteFlag": false,
                     "tracks": [1, 1],
                     "sessionsList": [{
                             "session_location": "Meriwether I&II",
                             "session_name": "Technical: Technology Innovation with AR, AI, Conversational UI, and more",
                             "presenter": [{
+                                    "presenter_id": 101,
+                                    "event_id": 3,
+                                    "master_speaker_id": 8,
+                                    "session_id": 35,
+                                    "CreatedDateTime": "2019-08-19 14:20:00.0",
+                                    "LastUpdatedDateTime": "2019-08-19 14:20:00.0"
+                                },
+                                {
                                     "presenter_id": 30,
                                     "event_id": 3,
                                     "master_speaker_id": 10,
@@ -2189,14 +2580,6 @@ accelerateSpeakerData = {
                                     "SoftDeleteFlag": true,
                                     "CreatedDateTime": "2019-08-15 03:01:21.0",
                                     "LastUpdatedDateTime": "2019-08-19 14:20:03.0"
-                                },
-                                {
-                                    "presenter_id": 101,
-                                    "event_id": 3,
-                                    "master_speaker_id": 8,
-                                    "session_id": 35,
-                                    "CreatedDateTime": "2019-08-19 14:20:00.0",
-                                    "LastUpdatedDateTime": "2019-08-19 14:20:00.0"
                                 }
                             ],
                             "session_start_date": "2019-09-05 18:45:00.0",
@@ -2240,10 +2623,10 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 9,
                     "speaker_name": "Ganesh Kumar",
-                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/ganesh_kumar_560x570.png",
+                    "speaker_profile_pic": "ganesh_kumar.png",
                     "speaker_title": "EVP & COO  Oriental",
                     "CreatedDateTime": "2019-08-19T12:19:31Z",
-                    "LastUpdatedDateTime": "2019-08-19T14:50:26Z",
+                    "LastUpdatedDateTime": "2019-08-28T14:45:39Z",
                     "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
@@ -2285,10 +2668,10 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 12,
                     "speaker_name": "Jennifer Wilson",
-                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/jennifer_wilson_560x570.png",
+                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/jennifer-wilson.png",
                     "speaker_title": "Chief Digital Officer  Hancock Whitney",
                     "CreatedDateTime": "2019-08-19T12:22:02Z",
-                    "LastUpdatedDateTime": "2019-08-19T14:51:09Z",
+                    "LastUpdatedDateTime": "2019-08-26T14:38:35Z",
                     "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
@@ -2306,7 +2689,7 @@ accelerateSpeakerData = {
                         "session_code": "D9WLO3",
                         "session_desc": "Like most banks, the founders of Hancock Whitney Bank knew where they wanted to go and they started with Gulf South character and community. Looking far down the road from their own day, they cultivated a culture that would last\\u2014a way of thinking and doing rooted in uncompromising values.",
                         "event_session_id": 39,
-                        "LastUpdatedDateTime": "2019-08-21 12:09:26.0",
+                        "LastUpdatedDateTime": "2019-08-28 10:56:36.0",
                         "session_track_id": 2,
                         "event_id": 3,
                         "session_long_desc": "In this session, learn how Hancock Whitney continues the journey begun more than a century ago to help people and the places we serve succeed.",
@@ -2389,21 +2772,21 @@ accelerateSpeakerData = {
                         "session_track_id": 2,
                         "event_id": 3,
                         "presenter": [{
-                                "presenter_id": 31,
-                                "event_id": 3,
-                                "master_speaker_id": 11,
-                                "session_id": 34,
-                                "SoftDeleteFlag": true,
-                                "CreatedDateTime": "2019-08-15 03:01:36.0",
-                                "LastUpdatedDateTime": "2019-08-19 14:19:05.0"
-                            },
-                            {
                                 "presenter_id": 100,
                                 "event_id": 3,
                                 "master_speaker_id": 14,
                                 "session_id": 34,
                                 "CreatedDateTime": "2019-08-19 14:19:01.0",
                                 "LastUpdatedDateTime": "2019-08-19 14:19:01.0"
+                            },
+                            {
+                                "presenter_id": 31,
+                                "event_id": 3,
+                                "master_speaker_id": 11,
+                                "session_id": 34,
+                                "SoftDeleteFlag": true,
+                                "CreatedDateTime": "2019-08-15 03:01:36.0",
+                                "LastUpdatedDateTime": "2019-08-21 15:44:49.0"
                             }
                         ],
                         "session_start_date": "2019-09-05 18:45:00.0",
@@ -2413,7 +2796,7 @@ accelerateSpeakerData = {
                         "SoftDeleteFlag": false,
                         "event_session_id": 34,
                         "CreatedDateTime": "2019-08-13 06:45:18.0",
-                        "LastUpdatedDateTime": "2019-08-21 13:06:16.0"
+                        "LastUpdatedDateTime": "2019-08-28 11:20:02.0"
                     }]
                 },
                 {
@@ -2424,8 +2807,32 @@ accelerateSpeakerData = {
                     "CreatedDateTime": "2019-08-19T12:31:01Z",
                     "LastUpdatedDateTime": "2019-08-19T14:53:09Z",
                     "SoftDeleteFlag": false,
-                    "tracks": [1, 1, 2],
+                    "tracks": [2, 1, 1, 2, 1, 2],
                     "sessionsList": [{
+                            "session_location": "Kony Back Stage Lab",
+                            "session_name": "Hands-on Learning with DBXperts",
+                            "presenter": [{
+                                "presenter_id": 123,
+                                "event_id": 3,
+                                "master_speaker_id": 15,
+                                "session_id": 79,
+                                "CreatedDateTime": "2019-08-28 10:09:52.843",
+                                "LastUpdatedDateTime": "2019-08-28 10:09:52.843"
+                            }],
+                            "session_start_date": "2019-09-04 17:45:00.0",
+                            "session_code": "NOJNIW",
+                            "session_desc": "The Kony DBX Labs model is different\\u2014we\\u2019re not a think tank and we\\u2019re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. ",
+                            "event_session_id": 79,
+                            "LastUpdatedDateTime": "2019-08-28 11:01:07.0",
+                            "session_track_id": 2,
+                            "event_id": 3,
+                            "session_long_desc": "Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
+                            "session_end_date": "2019-09-04 18:45:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                            "SoftDeleteFlag": false,
+                            "CreatedDateTime": "2019-08-28 10:09:52.839"
+                        },
+                        {
                             "session_location": "Meriwether I&II",
                             "session_name": "Business: Apps for Everyone: Citizen and Low Code Dev",
                             "presenter": [{
@@ -2447,6 +2854,54 @@ accelerateSpeakerData = {
                             "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
                             "SoftDeleteFlag": false,
                             "CreatedDateTime": "2019-08-19 11:30:06.0"
+                        },
+                        {
+                            "session_location": "Kony Back Stage Lab",
+                            "session_name": "Hands-on Learning with DBXperts",
+                            "presenter": [{
+                                "presenter_id": 124,
+                                "event_id": 3,
+                                "master_speaker_id": 15,
+                                "session_id": 80,
+                                "CreatedDateTime": "2019-08-28 10:12:48.043",
+                                "LastUpdatedDateTime": "2019-08-28 10:12:48.043"
+                            }],
+                            "session_start_date": "2019-09-04 20:15:00.0",
+                            "session_code": "X2BIYU",
+                            "session_desc": "The Kony DBX Labs model is different\\u2014we\\u2019re not a think tank and we\\u2019re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. ",
+                            "event_session_id": 80,
+                            "LastUpdatedDateTime": "2019-08-28 11:03:36.0",
+                            "session_track_id": 1,
+                            "event_id": 3,
+                            "session_long_desc": "Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
+                            "session_end_date": "2019-09-04 20:45:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                            "SoftDeleteFlag": false,
+                            "CreatedDateTime": "2019-08-28 10:12:48.042"
+                        },
+                        {
+                            "session_location": "Kony Back Stage Lab",
+                            "session_name": "Hands-on Learning with DBXperts",
+                            "presenter": [{
+                                "presenter_id": 126,
+                                "event_id": 3,
+                                "master_speaker_id": 15,
+                                "session_id": 83,
+                                "CreatedDateTime": "2019-08-28 10:39:03.092",
+                                "LastUpdatedDateTime": "2019-08-28 10:39:03.092"
+                            }],
+                            "session_start_date": "2019-09-05 15:45:00.0",
+                            "session_code": "UQYT02",
+                            "session_desc": "The Kony DBX Labs model is different\\u2014we\\u2019re not a think tank and we\\u2019re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. ",
+                            "event_session_id": 83,
+                            "LastUpdatedDateTime": "2019-08-28 11:13:00.0",
+                            "session_track_id": 2,
+                            "event_id": 3,
+                            "session_long_desc": "Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
+                            "session_end_date": "2019-09-05 16:15:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                            "SoftDeleteFlag": false,
+                            "CreatedDateTime": "2019-08-28 10:39:03.087"
                         },
                         {
                             "session_location": "Meriwether I&II",
@@ -2473,26 +2928,28 @@ accelerateSpeakerData = {
                             "CreatedDateTime": "2019-08-19 11:29:52.0"
                         },
                         {
-                            "session_name": "Bank Spotlight: /wiss_fiss/ = using intrigue to create impact and awareness",
-                            "session_track_id": 2,
-                            "event_id": 3,
+                            "session_location": "Kony Back Stage Lab",
+                            "session_name": "Lunch + Hands-on Learning with DBXperts",
                             "presenter": [{
-                                "presenter_id": 32,
+                                "presenter_id": 129,
                                 "event_id": 3,
                                 "master_speaker_id": 15,
-                                "session_id": 28,
-                                "SoftDeleteFlag": false,
-                                "CreatedDateTime": "2019-08-15 03:08:57.0",
-                                "LastUpdatedDateTime": "2019-08-19 12:37:25.0"
+                                "session_id": 84,
+                                "CreatedDateTime": "2019-08-28 10:50:38.984",
+                                "LastUpdatedDateTime": "2019-08-28 10:50:38.984"
                             }],
-                            "session_start_date": "2019-09-05 16:15:00.0",
-                            "session_long_desc": " In this session, learn how Vive la Diferencia (Live the Difference) is making banking Fácil, Rápido, Hecho (Easy, Fast, Done) by combining the best of brick-and-mortar and innovative technology to provide an unparalleled level of value-added service that enables our customers to achieve more.",
-                            "session_end_date": "2019-09-05 16:45:00.0",
-                            "session_desc": "Oriental has led the way in digital banking innovations in Puerto Rico, resulting in an expanding customer base. Innovations include FOTOdepósito, People Pay, Cardless Cash on ATMs, MyStatus loan application tracking, branch appointment scheduling, a mobile consumer loan app, and Interactive Teller Machines.",
+                            "session_start_date": "2019-09-05 18:00:00.0",
+                            "session_code": "9CQ4Z3",
+                            "session_desc": "The Kony DBX Labs model is different\\u2014we\\u2019re not a think tank and we\\u2019re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. ",
+                            "event_session_id": 84,
+                            "LastUpdatedDateTime": "2019-08-28 11:14:19.0",
+                            "session_track_id": 2,
+                            "event_id": 3,
+                            "session_long_desc": "Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
+                            "session_end_date": "2019-09-05 18:45:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
                             "SoftDeleteFlag": false,
-                            "event_session_id": 28,
-                            "CreatedDateTime": "2019-08-13 06:28:14.0",
-                            "LastUpdatedDateTime": "2019-08-21 13:11:58.0"
+                            "CreatedDateTime": "2019-08-28 10:50:38.983"
                         }
                     ]
                 },
@@ -2504,74 +2961,40 @@ accelerateSpeakerData = {
                     "CreatedDateTime": "2019-08-19T12:31:33Z",
                     "LastUpdatedDateTime": "2019-08-19T14:54:02Z",
                     "SoftDeleteFlag": false,
-                    "tracks": [1, 1],
+                    "tracks": [1],
                     "sessionsList": [{
-                            "session_location": "",
-                            "session_name": "Lunch + Hands on lab: Building a PWA app",
-                            "presenter": [{
-                                    "presenter_id": 111,
-                                    "event_id": 3,
-                                    "master_speaker_id": 45,
-                                    "session_id": 77,
-                                    "CreatedDateTime": "2019-08-21 13:42:57.886",
-                                    "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
-                                },
-                                {
-                                    "presenter_id": 110,
-                                    "event_id": 3,
-                                    "master_speaker_id": 16,
-                                    "session_id": 77,
-                                    "CreatedDateTime": "2019-08-21 13:42:57.886",
-                                    "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
-                                }
-                            ],
-                            "session_start_date": "2019-09-05 18:00:00.0",
-                            "session_code": "LQDFEL",
-                            "session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications.",
-                            "event_session_id": 77,
-                            "LastUpdatedDateTime": "2019-08-21 13:42:57.885",
-                            "session_track_id": 1,
-                            "event_id": 3,
-                            "session_long_desc": ".  In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps (PWA)",
-                            "session_end_date": "2019-09-05 18:45:00.0",
-                            "room_no": "",
-                            "CreatedDateTime": "2019-08-21 13:42:57.885"
-                        },
-                        {
-                            "session_location": "Kony Back Stage Lab",
-                            "session_name": "Lunch + Hands on Lab Build an App with Identity and Integration ",
-                            "presenter": [{
-                                    "presenter_id": 77,
-                                    "event_id": 3,
-                                    "master_speaker_id": 16,
-                                    "session_id": 38,
-                                    "CreatedDateTime": "2019-08-19 13:52:34.0",
-                                    "LastUpdatedDateTime": "2019-08-19 13:52:34.0"
-                                },
-                                {
-                                    "presenter_id": 33,
-                                    "event_id": 3,
-                                    "master_speaker_id": 6,
-                                    "session_id": 38,
-                                    "SoftDeleteFlag": true,
-                                    "CreatedDateTime": "2019-08-19 12:25:10.0",
-                                    "LastUpdatedDateTime": "2019-08-19 13:52:37.0"
-                                }
-                            ],
-                            "session_start_date": "2019-09-04 17:45:00.0",
-                            "session_code": "NHK8KL",
-                            "session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications.",
-                            "event_session_id": 38,
-                            "LastUpdatedDateTime": "2019-08-21 11:46:11.0",
-                            "session_track_id": 1,
-                            "event_id": 3,
-                            "session_long_desc": " In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps (PWA)",
-                            "session_end_date": "2019-09-04 18:45:00.0",
-                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
-                            "SoftDeleteFlag": false,
-                            "CreatedDateTime": "2019-08-19 09:14:42.0"
-                        }
-                    ]
+                        "session_location": "Kony Back Stage Lab",
+                        "session_name": "Lunch + Hands on lab: Building a PWA app",
+                        "presenter": [{
+                                "presenter_id": 111,
+                                "event_id": 3,
+                                "master_speaker_id": 45,
+                                "session_id": 77,
+                                "CreatedDateTime": "2019-08-21 13:42:57.886",
+                                "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
+                            },
+                            {
+                                "presenter_id": 110,
+                                "event_id": 3,
+                                "master_speaker_id": 16,
+                                "session_id": 77,
+                                "CreatedDateTime": "2019-08-21 13:42:57.886",
+                                "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
+                            }
+                        ],
+                        "session_start_date": "2019-09-05 18:00:00.0",
+                        "session_code": "LQDFEL",
+                        "session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications.",
+                        "event_session_id": 77,
+                        "LastUpdatedDateTime": "2019-08-26 14:27:10.0",
+                        "session_track_id": 1,
+                        "event_id": 3,
+                        "session_long_desc": ".  In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps (PWA)",
+                        "session_end_date": "2019-09-05 18:45:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-21 13:42:57.885"
+                    }]
                 },
                 {
                     "speaker_id": 17,
@@ -2670,14 +3093,14 @@ accelerateSpeakerData = {
                             "CreatedDateTime": "2019-08-19 14:12:18.0",
                             "LastUpdatedDateTime": "2019-08-19 14:12:18.0"
                         }],
-                        "session_start_date": "2019-09-04 21:15:00.0",
+                        "session_start_date": "2019-09-05 20:45:00.0",
                         "session_code": "CLMK2A",
                         "session_desc": "Everyone is an analyst: The future of data\\nIn this workshop session, we\\u2019ll discuss a new way of looking at the promises and pitfalls of data, and how it can transform your organization.",
                         "event_session_id": 51,
-                        "LastUpdatedDateTime": "2019-08-21 11:51:16.0",
+                        "LastUpdatedDateTime": "2019-08-26 13:28:20.0",
                         "session_track_id": 2,
                         "event_id": 3,
-                        "session_end_date": "2019-09-04 21:45:00.0",
+                        "session_end_date": "2019-09-05 21:15:00.0",
                         "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-08-19 10:59:26.0"
@@ -2691,54 +3114,31 @@ accelerateSpeakerData = {
                     "CreatedDateTime": "2019-08-19T12:33:38Z",
                     "LastUpdatedDateTime": "2019-08-19T14:55:29Z",
                     "SoftDeleteFlag": false,
-                    "tracks": [2, 1],
+                    "tracks": [1],
                     "sessionsList": [{
-                            "session_location": "Meriwether I&II",
-                            "session_name": "Technical: Rapid App Dev with Workflow ",
-                            "presenter": [{
-                                "presenter_id": 88,
-                                "event_id": 3,
-                                "master_speaker_id": 20,
-                                "session_id": 50,
-                                "CreatedDateTime": "2019-08-19 14:08:59.0",
-                                "LastUpdatedDateTime": "2019-08-19 14:08:59.0"
-                            }],
-                            "session_start_date": "2019-09-05 16:45:00.0",
-                            "session_code": "Q8Y3H0",
-                            "session_desc": "The rapid application development capabilities of Kony Quantum enable teams to quickly release applications based on business needs. In many cases, the business processes and workflows associated to these applications change over time and teams are required to quickly update their applications to adapt to those changes.",
-                            "event_session_id": 50,
-                            "LastUpdatedDateTime": "2019-08-21 13:11:24.0",
-                            "session_track_id": 2,
+                        "session_location": "Meriwether I&II",
+                        "session_name": "Technical: Rapid App Dev with Workflow ",
+                        "presenter": [{
+                            "presenter_id": 88,
                             "event_id": 3,
-                            "session_long_desc": "In this session, you will learn about Kony\\u2019s new application workflow capabilities and how they enable teams to quickly configure both client and server-side business process and workflow logic that drive the behavior of the application. These workflow configurations can be easily modified as business rules change to keep applications current, maintain compliance with regulations, and minimize any downtime or loss in end-user productivity.",
-                            "session_end_date": "2019-09-05 17:15:00.0",
-                            "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
-                            "SoftDeleteFlag": false,
-                            "CreatedDateTime": "2019-08-19 10:58:38.0"
-                        },
-                        {
-                            "session_location": "Meriwether I&II",
-                            "session_name": "Customer Presentation - Hamad Medical: Turning Digital Challenges into Opportunities that Impact Results",
-                            "session_track_id": 1,
-                            "event_id": 3,
-                            "presenter": [{
-                                "presenter_id": 27,
-                                "event_id": 3,
-                                "master_speaker_id": 20,
-                                "session_id": 29,
-                                "SoftDeleteFlag": false,
-                                "CreatedDateTime": "2019-08-15 03:00:30.0",
-                                "LastUpdatedDateTime": "2019-08-19 12:38:31.0"
-                            }],
-                            "session_start_date": "2019-09-05 16:15:00.0",
-                            "session_end_date": "2019-09-05 16:45:00.0",
-                            "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
-                            "SoftDeleteFlag": false,
-                            "event_session_id": 29,
-                            "CreatedDateTime": "2019-08-13 06:29:49.0",
-                            "LastUpdatedDateTime": "2019-08-21 13:12:20.0"
-                        }
-                    ]
+                            "master_speaker_id": 20,
+                            "session_id": 50,
+                            "CreatedDateTime": "2019-08-19 14:08:59.0",
+                            "LastUpdatedDateTime": "2019-08-19 14:08:59.0"
+                        }],
+                        "session_start_date": "2019-09-05 16:45:00.0",
+                        "session_code": "Q8Y3H0",
+                        "session_desc": "The rapid application development capabilities of Kony Quantum enable teams to quickly release applications based on business needs. In many cases, the business processes and workflows associated to these applications change over time and teams are required to quickly update their applications to adapt to those changes.",
+                        "event_session_id": 50,
+                        "LastUpdatedDateTime": "2019-08-26 14:16:09.0",
+                        "session_track_id": 1,
+                        "event_id": 3,
+                        "session_long_desc": "In this session, you will learn about Kony\\u2019s new application workflow capabilities and how they enable teams to quickly configure both client and server-side business process and workflow logic that drive the behavior of the application. These workflow configurations can be easily modified as business rules change to keep applications current, maintain compliance with regulations, and minimize any downtime or loss in end-user productivity.",
+                        "session_end_date": "2019-09-05 17:15:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-19 10:58:38.0"
+                    }]
                 },
                 {
                     "speaker_id": 21,
@@ -2764,13 +3164,22 @@ accelerateSpeakerData = {
                         "session_location": "Lady Bird Ballroom",
                         "session_name": "Start with Best in Class - A Live Case Study with JD Power and Centric Digital",
                         "presenter": [{
-                            "presenter_id": 95,
-                            "event_id": 3,
-                            "master_speaker_id": 22,
-                            "session_id": 53,
-                            "CreatedDateTime": "2019-08-19 14:14:24.0",
-                            "LastUpdatedDateTime": "2019-08-19 14:14:24.0"
-                        }],
+                                "presenter_id": 119,
+                                "event_id": 3,
+                                "master_speaker_id": 46,
+                                "session_id": 53,
+                                "CreatedDateTime": "2019-08-26 14:50:55.051",
+                                "LastUpdatedDateTime": "2019-08-26 14:50:55.051"
+                            },
+                            {
+                                "presenter_id": 95,
+                                "event_id": 3,
+                                "master_speaker_id": 22,
+                                "session_id": 53,
+                                "CreatedDateTime": "2019-08-19 14:14:24.0",
+                                "LastUpdatedDateTime": "2019-08-19 14:14:24.0"
+                            }
+                        ],
                         "session_start_date": "2019-09-04 21:45:00.0",
                         "session_code": "1YGBC7",
                         "session_desc": "In the recent J.D. Power 2019 U.S. Banking Mobile App Satisfaction Study, it found that mid-size banks are increasingly vulnerable to digital competition from large banks. Where large banks have half or more of their customers being digitally centric, mid-size banks have a third or less of their customer base relying primarily on digital channels, which creates the imperative to start with best-in-class.",
@@ -2787,10 +3196,10 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 23,
                     "speaker_name": "Brian Abele",
-                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/brain-abele_560x570.png",
+                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/brian560x570.png",
                     "speaker_title": "SVP, Product Management  Kony DBX",
                     "CreatedDateTime": "2019-08-19T12:34:09Z",
-                    "LastUpdatedDateTime": "2019-08-19T14:56:36Z",
+                    "LastUpdatedDateTime": "2019-08-26T14:38:12Z",
                     "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
@@ -2807,13 +3216,13 @@ accelerateSpeakerData = {
                             "CreatedDateTime": "2019-08-13 06:24:41.0",
                             "LastUpdatedDateTime": "2019-08-19 13:28:34.0"
                         }],
-                        "session_start_date": "2019-09-05 16:15:00.0",
-                        "session_end_date": "2019-09-05 17:00:00.0",
+                        "session_start_date": "2019-09-04 16:15:00.0",
+                        "session_end_date": "2019-09-04 17:00:00.0",
                         "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
                         "SoftDeleteFlag": false,
                         "event_session_id": 25,
                         "CreatedDateTime": "2019-08-13 06:19:42.0",
-                        "LastUpdatedDateTime": "2019-08-21 13:09:12.0"
+                        "LastUpdatedDateTime": "2019-08-21 15:38:44.0"
                     }]
                 },
                 {
@@ -2824,8 +3233,38 @@ accelerateSpeakerData = {
                     "CreatedDateTime": "2019-08-19T12:34:20Z",
                     "LastUpdatedDateTime": "2019-08-19T14:57:03Z",
                     "SoftDeleteFlag": false,
-                    "tracks": [],
-                    "sessionsList": []
+                    "tracks": [2],
+                    "sessionsList": [{
+                        "session_name": "Bank Spotlight: /wiss_fiss/ = using intrigue to create impact and awareness",
+                        "session_track_id": 2,
+                        "event_id": 3,
+                        "presenter": [{
+                                "presenter_id": 116,
+                                "event_id": 3,
+                                "master_speaker_id": 24,
+                                "session_id": 28,
+                                "CreatedDateTime": "2019-08-26 14:12:02.031",
+                                "LastUpdatedDateTime": "2019-08-26 14:12:02.031"
+                            },
+                            {
+                                "presenter_id": 32,
+                                "event_id": 3,
+                                "master_speaker_id": 32,
+                                "session_id": 28,
+                                "SoftDeleteFlag": true,
+                                "CreatedDateTime": "2019-08-15 03:08:57.0",
+                                "LastUpdatedDateTime": "2019-08-26 14:12:06.0"
+                            }
+                        ],
+                        "session_start_date": "2019-09-05 16:15:00.0",
+                        "session_long_desc": " In this session, learn how Vive la Diferencia (Live the Difference) is making banking Fácil, Rápido, Hecho (Easy, Fast, Done) by combining the best of brick-and-mortar and innovative technology to provide an unparalleled level of value-added service that enables our customers to achieve more.",
+                        "session_end_date": "2019-09-05 16:45:00.0",
+                        "session_desc": "Oriental has led the way in digital banking innovations in Puerto Rico, resulting in an expanding customer base. Innovations include FOTOdepósito, People Pay, Cardless Cash on ATMs, MyStatus loan application tracking, branch appointment scheduling, a mobile consumer loan app, and Interactive Teller Machines.",
+                        "SoftDeleteFlag": false,
+                        "event_session_id": 28,
+                        "CreatedDateTime": "2019-08-13 06:28:14.0",
+                        "LastUpdatedDateTime": "2019-08-21 13:11:58.0"
+                    }]
                 },
                 {
                     "speaker_id": 25,
@@ -2847,13 +3286,13 @@ accelerateSpeakerData = {
                             "CreatedDateTime": "2019-08-19 14:05:29.0",
                             "LastUpdatedDateTime": "2019-08-19 14:05:29.0"
                         }],
-                        "session_start_date": "2019-09-05 20:45:00.0",
+                        "session_start_date": "2019-09-04 19:45:00.0",
                         "session_code": "YP7WVO",
                         "event_session_id": 71,
-                        "LastUpdatedDateTime": "2019-08-21 13:01:29.0",
+                        "LastUpdatedDateTime": "2019-08-26 13:32:15.0",
                         "session_track_id": 2,
                         "event_id": 3,
-                        "session_end_date": "2019-09-05 21:15:00.0",
+                        "session_end_date": "2019-09-04 20:15:00.0",
                         "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBird1.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-08-19 11:32:39.0"
@@ -2878,8 +3317,38 @@ accelerateSpeakerData = {
                     "CreatedDateTime": "2019-08-19T12:57:28Z",
                     "LastUpdatedDateTime": "2019-08-21T09:21:50Z",
                     "SoftDeleteFlag": false,
-                    "tracks": [],
-                    "sessionsList": []
+                    "tracks": [1],
+                    "sessionsList": [{
+                        "session_location": "Meriwether I&II",
+                        "session_name": "Customer Presentation - Hamad Medical: Turning Digital Challenges into Opportunities that Impact Results",
+                        "session_track_id": 1,
+                        "event_id": 3,
+                        "presenter": [{
+                                "presenter_id": 27,
+                                "event_id": 3,
+                                "master_speaker_id": 20,
+                                "session_id": 29,
+                                "SoftDeleteFlag": true,
+                                "CreatedDateTime": "2019-08-15 03:00:30.0",
+                                "LastUpdatedDateTime": "2019-08-26 14:14:39.0"
+                            },
+                            {
+                                "presenter_id": 117,
+                                "event_id": 3,
+                                "master_speaker_id": 27,
+                                "session_id": 29,
+                                "CreatedDateTime": "2019-08-26 14:14:35.013",
+                                "LastUpdatedDateTime": "2019-08-26 14:14:35.013"
+                            }
+                        ],
+                        "session_start_date": "2019-09-05 16:15:00.0",
+                        "session_end_date": "2019-09-05 16:45:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+                        "SoftDeleteFlag": false,
+                        "event_session_id": 29,
+                        "CreatedDateTime": "2019-08-13 06:29:49.0",
+                        "LastUpdatedDateTime": "2019-08-21 13:12:20.0"
+                    }]
                 },
                 {
                     "speaker_id": 28,
@@ -2953,21 +3422,21 @@ accelerateSpeakerData = {
                                     "LastUpdatedDateTime": "2019-08-19 14:22:33.0"
                                 }
                             ],
-                            "session_start_date": "2019-09-05 17:15:00.0",
+                            "session_start_date": "2019-09-05 17:45:00.0",
                             "session_code": "6V34QD",
                             "session_desc": "Kony Quantum includes powerful low-code tooling for back-end integration and rapid data mapping to the client application, including a virtual data model capability that reduces the impacts to an app when back-end systems change",
                             "event_session_id": 60,
-                            "LastUpdatedDateTime": "2019-08-21 13:08:38.0",
+                            "LastUpdatedDateTime": "2019-08-28 10:54:05.0",
                             "session_track_id": 1,
                             "event_id": 3,
                             "session_long_desc": " In this session, the Kony team will demonstrate these capabilities by integrating with an enterprise identity provider and back-end data using connectors. They will then show how the data is connected to the client application by using both a drag-and-drop user interface generation approach as well as quickly mapping the data to an existing component. Lastly, the team will create data visualizations from back-end data for scenarios that require charts or dashboards.",
-                            "session_end_date": "2019-09-05 17:45:00.0",
+                            "session_end_date": "2019-09-05 18:15:00.0",
                             "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
                             "SoftDeleteFlag": false,
                             "CreatedDateTime": "2019-08-19 11:28:20.0"
                         },
                         {
-                            "session_location": "",
+                            "session_location": "Kony Back Stage Lab",
                             "session_name": "Hands on lab: Using Data and Offline Objects",
                             "presenter": [{
                                 "presenter_id": 108,
@@ -2981,12 +3450,13 @@ accelerateSpeakerData = {
                             "session_code": "H771UA",
                             "session_desc": "Kony Quantum includes powerful low-code tooling for backend integration and rapid data mapping to the client application including a virtual application data model capability that reduces the impacts to an app when backend systems change, but did you know that you can easily extend this to include offline capability. ",
                             "event_session_id": 74,
-                            "LastUpdatedDateTime": "2019-08-21 13:22:19.92",
+                            "LastUpdatedDateTime": "2019-08-28 11:17:35.0",
                             "session_track_id": 1,
                             "event_id": 3,
                             "session_long_desc": "In this session, the Kony team will demonstrate how to create an offline enabled application utilizing Kony Fabric offline enabled object services and the flexibility of our application data model by connecting the application to another data source with minimal modifications to the application.",
                             "session_end_date": "2019-09-04 18:45:00.0",
-                            "room_no": "",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                            "SoftDeleteFlag": false,
                             "CreatedDateTime": "2019-08-21 13:22:19.92"
                         }
                     ]
@@ -3020,15 +3490,15 @@ accelerateSpeakerData = {
                                 "LastUpdatedDateTime": "2019-08-19 14:22:33.0"
                             }
                         ],
-                        "session_start_date": "2019-09-05 17:15:00.0",
+                        "session_start_date": "2019-09-05 17:45:00.0",
                         "session_code": "6V34QD",
                         "session_desc": "Kony Quantum includes powerful low-code tooling for back-end integration and rapid data mapping to the client application, including a virtual data model capability that reduces the impacts to an app when back-end systems change",
                         "event_session_id": 60,
-                        "LastUpdatedDateTime": "2019-08-21 13:08:38.0",
+                        "LastUpdatedDateTime": "2019-08-28 10:54:05.0",
                         "session_track_id": 1,
                         "event_id": 3,
                         "session_long_desc": " In this session, the Kony team will demonstrate these capabilities by integrating with an enterprise identity provider and back-end data using connectors. They will then show how the data is connected to the client application by using both a drag-and-drop user interface generation approach as well as quickly mapping the data to an existing component. Lastly, the team will create data visualizations from back-end data for scenarios that require charts or dashboards.",
-                        "session_end_date": "2019-09-05 17:45:00.0",
+                        "session_end_date": "2019-09-05 18:15:00.0",
                         "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-08-19 11:28:20.0"
@@ -3079,7 +3549,7 @@ accelerateSpeakerData = {
                     "tracks": [2],
                     "sessionsList": [{
                         "session_location": "Lady Bird Ballroom",
-                        "session_name": "Bank Spotlight: Selling Internal Change 2013 A Methodology That Works",
+                        "session_name": "Bank Spotlight: Selling Internal Change \\u2013 A Methodology That Works ",
                         "presenter": [{
                             "presenter_id": 99,
                             "event_id": 3,
@@ -3091,7 +3561,7 @@ accelerateSpeakerData = {
                         "session_start_date": "2019-09-05 19:15:00.0",
                         "session_code": "WQMIIA",
                         "event_session_id": 62,
-                        "LastUpdatedDateTime": "2019-08-21 13:05:08.0",
+                        "LastUpdatedDateTime": "2019-08-28 10:56:59.0",
                         "session_track_id": 2,
                         "event_id": 3,
                         "session_end_date": "2019-09-05 19:45:00.0",
@@ -3120,15 +3590,15 @@ accelerateSpeakerData = {
                             "CreatedDateTime": "2019-08-19 14:15:15.0",
                             "LastUpdatedDateTime": "2019-08-19 14:15:15.0"
                         }],
-                        "session_start_date": "2019-09-05 19:45:00.0",
+                        "session_start_date": "2019-09-05 21:15:00.0",
                         "session_code": "L4IB7I",
                         "session_desc": "Test what you build. It\\u2019s commonly mentioned in DevOps best practice articles. The most common open source testing platforms like TestNG require developers to write their test in Java and set a variety of different parameters to get their test to run across all their channels. If you are a web developer or an iOS developer, this means you\\u2019re writing Java code to test the application you wrote in JavaScript, Swift or Objective C. If a new version of an iOS or Android is released, you are beholden to the developer community to get updates to make their testing framework compatible.",
                         "event_session_id": 68,
-                        "LastUpdatedDateTime": "2019-08-21 13:02:55.0",
+                        "LastUpdatedDateTime": "2019-08-28 10:52:53.0",
                         "session_track_id": 1,
                         "event_id": 3,
                         "session_long_desc": "Developers need a better way to write, record and automate their functional test with the flexibility to easily test locally on their own devices or incorporate testing as part of their CI/CD process across web and native channels. Kony\\u2019s new testing framework planned for an upcoming release will quickly allow developers to create test cases using the Jasmine test framework to test their apps across Kony Visualizer\\u2019s supported channels. Come join us for a sneak peak at how to record test cases for existing apps, edit a test cases and incorporate Kony\\u2019s functional testing framework as part of your Ci/CD processes with Kony DevOps using both existing and upcoming capabilities..",
-                        "session_end_date": "2019-09-05 20:15:00.0",
+                        "session_end_date": "2019-09-05 21:45:00.0",
                         "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-08-19 11:31:34.0"
@@ -3144,7 +3614,7 @@ accelerateSpeakerData = {
                     "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
-                        "session_location": "Lady Bird 1",
+                        "session_location": "Lady Bird Ballroom",
                         "session_name": "Preventing Account Takeover: Dragging Criminals Out of the Shadows",
                         "presenter": [{
                             "presenter_id": 79,
@@ -3157,11 +3627,11 @@ accelerateSpeakerData = {
                         "session_start_date": "2019-09-04 19:45:00.0",
                         "session_code": "833X55",
                         "event_session_id": 48,
-                        "LastUpdatedDateTime": "2019-08-21 11:49:23.0",
+                        "LastUpdatedDateTime": "2019-08-28 11:02:46.0",
                         "session_track_id": 2,
                         "event_id": 3,
                         "session_end_date": "2019-09-04 20:15:00.0",
-                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBird1.pdf",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-08-19 10:57:14.0"
                     }]
@@ -3169,23 +3639,32 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 36,
                     "speaker_name": "Rick Long",
-                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/r_long_560x570.png",
+                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/RickLong560x570.png",
                     "speaker_title": "VP, Information Technology Services PSECU",
                     "CreatedDateTime": "2019-08-19T12:57:28Z",
-                    "LastUpdatedDateTime": "2019-08-19T14:59:44Z",
+                    "LastUpdatedDateTime": "2019-08-26T14:37:25Z",
                     "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
                         "session_location": "Lady Bird Ballroom",
                         "session_name": "Live Customer Case Study: Truly Digital First - Branchless Since 1934 and Still Innovating  ",
                         "presenter": [{
-                            "presenter_id": 89,
-                            "event_id": 3,
-                            "master_speaker_id": 36,
-                            "session_id": 47,
-                            "CreatedDateTime": "2019-08-19 14:09:58.0",
-                            "LastUpdatedDateTime": "2019-08-19 14:09:58.0"
-                        }],
+                                "presenter_id": 118,
+                                "event_id": 3,
+                                "master_speaker_id": 37,
+                                "session_id": 47,
+                                "CreatedDateTime": "2019-08-26 14:46:27.602",
+                                "LastUpdatedDateTime": "2019-08-26 14:46:27.602"
+                            },
+                            {
+                                "presenter_id": 89,
+                                "event_id": 3,
+                                "master_speaker_id": 36,
+                                "session_id": 47,
+                                "CreatedDateTime": "2019-08-19 14:09:58.0",
+                                "LastUpdatedDateTime": "2019-08-19 14:09:58.0"
+                            }
+                        ],
                         "session_start_date": "2019-09-04 20:45:00.0",
                         "session_code": "HNDJJ5",
                         "session_desc": "PSECU was born out of necessity in 1934 \\u2013 the 22 founders were state workers, struggling against low wages and a high cost of living. They had little control over their financial lives \\u2013 until they came together to form a Pennsylvania State Employees Credit Union, or PSECU. ",
@@ -3202,14 +3681,46 @@ accelerateSpeakerData = {
                 },
                 {
                     "speaker_id": 37,
-                    "speaker_name": "Jess Hutchinson",
-                    "speaker_profile_pic": "https://volumeplay.s3.amazonaws.com/accelerate2019/presenters/jessica_hutchinson_560x570.png",
-                    "speaker_title": "Director, Digital Channels and Strategy PSECU",
+                    "speaker_name": "Bill Dale",
+                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/BillDale.png",
+                    "speaker_title": "Digital Banking Manager, PSECU",
                     "CreatedDateTime": "2019-08-19T12:57:28Z",
-                    "LastUpdatedDateTime": "2019-08-19T14:59:29Z",
+                    "LastUpdatedDateTime": "2019-08-26T14:42:53Z",
                     "SoftDeleteFlag": false,
-                    "tracks": [],
-                    "sessionsList": []
+                    "tracks": [2],
+                    "sessionsList": [{
+                        "session_location": "Lady Bird Ballroom",
+                        "session_name": "Live Customer Case Study: Truly Digital First - Branchless Since 1934 and Still Innovating  ",
+                        "presenter": [{
+                                "presenter_id": 118,
+                                "event_id": 3,
+                                "master_speaker_id": 37,
+                                "session_id": 47,
+                                "CreatedDateTime": "2019-08-26 14:46:27.602",
+                                "LastUpdatedDateTime": "2019-08-26 14:46:27.602"
+                            },
+                            {
+                                "presenter_id": 89,
+                                "event_id": 3,
+                                "master_speaker_id": 36,
+                                "session_id": 47,
+                                "CreatedDateTime": "2019-08-19 14:09:58.0",
+                                "LastUpdatedDateTime": "2019-08-19 14:09:58.0"
+                            }
+                        ],
+                        "session_start_date": "2019-09-04 20:45:00.0",
+                        "session_code": "HNDJJ5",
+                        "session_desc": "PSECU was born out of necessity in 1934 \\u2013 the 22 founders were state workers, struggling against low wages and a high cost of living. They had little control over their financial lives \\u2013 until they came together to form a Pennsylvania State Employees Credit Union, or PSECU. ",
+                        "event_session_id": 47,
+                        "LastUpdatedDateTime": "2019-08-21 11:50:47.0",
+                        "session_track_id": 2,
+                        "event_id": 3,
+                        "session_long_desc": "PSECU continues to evolve with each new decade \\u2013 instead of investing in branches on every corner, we\\u2019ve invested in our members. Through our digital-first model, our members enjoy banking where it is convenient for them. Learn more about the PSECU story in this interactive session.",
+                        "session_end_date": "2019-09-04 21:15:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-19 09:23:07.0"
+                    }]
                 },
                 {
                     "speaker_id": 38,
@@ -3221,7 +3732,7 @@ accelerateSpeakerData = {
                     "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
-                        "session_location": "Lady Bird Studio",
+                        "session_location": "Lady Bird Ballroom",
                         "session_name": "Think Like a Brand, Not a Bank (or Credit Union)",
                         "presenter": [{
                                 "presenter_id": 92,
@@ -3243,11 +3754,11 @@ accelerateSpeakerData = {
                         "session_start_date": "2019-09-05 19:45:00.0",
                         "session_code": "4H4KZX",
                         "event_session_id": 65,
-                        "LastUpdatedDateTime": "2019-08-21 13:03:27.0",
+                        "LastUpdatedDateTime": "2019-08-26 14:25:47.0",
                         "session_track_id": 2,
                         "event_id": 3,
                         "session_end_date": "2019-09-05 20:15:00.0",
-                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdStudio.pdf",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-08-19 11:30:26.0"
                     }]
@@ -3262,7 +3773,7 @@ accelerateSpeakerData = {
                     "SoftDeleteFlag": false,
                     "tracks": [2],
                     "sessionsList": [{
-                        "session_location": "Lady Bird Studio",
+                        "session_location": "Lady Bird Ballroom",
                         "session_name": "Think Like a Brand, Not a Bank (or Credit Union)",
                         "presenter": [{
                                 "presenter_id": 92,
@@ -3284,11 +3795,11 @@ accelerateSpeakerData = {
                         "session_start_date": "2019-09-05 19:45:00.0",
                         "session_code": "4H4KZX",
                         "event_session_id": 65,
-                        "LastUpdatedDateTime": "2019-08-21 13:03:27.0",
+                        "LastUpdatedDateTime": "2019-08-26 14:25:47.0",
                         "session_track_id": 2,
                         "event_id": 3,
                         "session_end_date": "2019-09-05 20:15:00.0",
-                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdStudio.pdf",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
                         "SoftDeleteFlag": false,
                         "CreatedDateTime": "2019-08-19 11:30:26.0"
                     }]
@@ -3344,10 +3855,42 @@ accelerateSpeakerData = {
                 {
                     "speaker_id": 42,
                     "speaker_name": "Jaan Leemet",
-                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/Jaan-Leeme.png",
+                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/JaanLeemet560x570.png",
                     "speaker_title": "CTO, Nesh Technologies",
                     "CreatedDateTime": "2019-08-21T09:26:47.619Z",
-                    "LastUpdatedDateTime": "2019-08-21T09:26:47.619Z"
+                    "LastUpdatedDateTime": "2019-08-26T14:57:52Z",
+                    "SoftDeleteFlag": false,
+                    "tracks": [1],
+                    "sessionsList": [{
+                        "session_location": "Meriwether I&II",
+                        "session_name": "Customer Presentation - Mercy + Nesh: A Better User Experience Drives Patient and Business Outcomes",
+                        "session_track_id": 1,
+                        "event_id": 3,
+                        "presenter": [{
+                                "presenter_id": 121,
+                                "event_id": 3,
+                                "master_speaker_id": 47,
+                                "session_id": 31,
+                                "CreatedDateTime": "2019-08-26 15:12:29.67",
+                                "LastUpdatedDateTime": "2019-08-26 15:12:29.67"
+                            },
+                            {
+                                "presenter_id": 120,
+                                "event_id": 3,
+                                "master_speaker_id": 42,
+                                "session_id": 31,
+                                "CreatedDateTime": "2019-08-26 15:08:46.377",
+                                "LastUpdatedDateTime": "2019-08-26 15:08:46.377"
+                            }
+                        ],
+                        "session_start_date": "2019-09-05 19:15:00.0",
+                        "session_end_date": "2019-09-05 19:45:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+                        "SoftDeleteFlag": false,
+                        "event_session_id": 31,
+                        "CreatedDateTime": "2019-08-13 06:33:50.0",
+                        "LastUpdatedDateTime": "2019-08-21 13:04:33.0"
+                    }]
                 },
                 {
                     "speaker_id": 43,
@@ -3355,7 +3898,32 @@ accelerateSpeakerData = {
                     "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/d_parker_560x570.png",
                     "speaker_title": "COO, MX",
                     "CreatedDateTime": "2019-08-21T09:27:50.091Z",
-                    "LastUpdatedDateTime": "2019-08-21T09:27:50.091Z"
+                    "LastUpdatedDateTime": "2019-08-21T09:27:50.091Z",
+                    "tracks": [2],
+                    "sessionsList": [{
+                        "session_location": "Lady Bird Ballroom",
+                        "session_name": "Empowering the World to Be Financially Strong",
+                        "presenter": [{
+                            "presenter_id": 114,
+                            "event_id": 3,
+                            "master_speaker_id": 43,
+                            "session_id": 41,
+                            "CreatedDateTime": "2019-08-26 13:13:34.033",
+                            "LastUpdatedDateTime": "2019-08-26 13:13:34.033"
+                        }],
+                        "session_start_date": "2019-09-04 19:15:00.0",
+                        "session_code": "031EQM",
+                        "session_desc": "At MX, we\\u2019re all about creating value. We believe finance can be simpler, more useful, and even enjoyable.  We value what we do and who we serve \\u2013 our values serve as a framework for empowering the world to be financially strong",
+                        "event_session_id": 41,
+                        "LastUpdatedDateTime": "2019-08-21 11:47:50.0",
+                        "session_track_id": 2,
+                        "event_id": 3,
+                        "session_long_desc": "and in this session, we\\u2019ll dig deeper into these along with practical examples of values in action.\\n  Purposeful Contribution/Exuberance for Life/Founder Mindset/Foundation of Trust/Objectivity in Discourse/Cognizance/Iterative Innovation",
+                        "session_end_date": "2019-09-04 19:45:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-19 09:17:55.0"
+                    }]
                 },
                 {
                     "speaker_id": 44,
@@ -3363,7 +3931,32 @@ accelerateSpeakerData = {
                     "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/Satish_560x570.png",
                     "speaker_title": "Manager Integration & Mobility, Oceaneering",
                     "CreatedDateTime": "2019-08-21T09:28:39.820Z",
-                    "LastUpdatedDateTime": "2019-08-21T09:28:39.820Z"
+                    "LastUpdatedDateTime": "2019-08-21T09:28:39.820Z",
+                    "tracks": [1],
+                    "sessionsList": [{
+                        "session_location": "Meriwether I&II",
+                        "session_name": "Customer Case Study - Oceaneering: Leveraging PWA to Accelerate Business Results",
+                        "presenter": [{
+                            "presenter_id": 115,
+                            "event_id": 3,
+                            "master_speaker_id": 44,
+                            "session_id": 42,
+                            "CreatedDateTime": "2019-08-26 13:14:25.56",
+                            "LastUpdatedDateTime": "2019-08-26 13:14:25.56"
+                        }],
+                        "session_start_date": "2019-09-04 19:15:00.0",
+                        "session_code": "STWFYI",
+                        "session_desc": "Oceaneering had already seen success at coordinating with and enabling their worldwide staff and customers leveraging native mobile technologies. When they looked at the capabilities and how quickly they could create or extend to Progressive Web App they decided to give it a try.",
+                        "event_session_id": 42,
+                        "LastUpdatedDateTime": "2019-08-21 11:48:08.0",
+                        "session_track_id": 1,
+                        "event_id": 3,
+                        "session_long_desc": "As a result, adoption and the corresponding business results have taken off. The session will provide an overview of the use cases and business challenges, how they implemented and the response they've had from internal and external stakeholders",
+                        "session_end_date": "2019-09-04 19:45:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-19 09:18:50.0"
+                    }]
                 },
                 {
                     "speaker_id": 45,
@@ -3371,39 +3964,266 @@ accelerateSpeakerData = {
                     "speaker_title": "Sr. Dir Prod Mgmt  Kony, Inc.",
                     "CreatedDateTime": "2019-08-21T09:33:21.763Z",
                     "LastUpdatedDateTime": "2019-08-21T09:33:21.763Z",
-                    "tracks": [1],
+                    "tracks": [1, 1],
                     "sessionsList": [{
-                        "session_location": "",
-                        "session_name": "Lunch + Hands on lab: Building a PWA app",
-                        "presenter": [{
-                                "presenter_id": 111,
+                            "session_location": "Kony Back Stage Lab",
+                            "session_name": "Lunch + Hands on lab: Building a PWA app",
+                            "presenter": [{
+                                    "presenter_id": 111,
+                                    "event_id": 3,
+                                    "master_speaker_id": 45,
+                                    "session_id": 77,
+                                    "CreatedDateTime": "2019-08-21 13:42:57.886",
+                                    "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
+                                },
+                                {
+                                    "presenter_id": 110,
+                                    "event_id": 3,
+                                    "master_speaker_id": 16,
+                                    "session_id": 77,
+                                    "CreatedDateTime": "2019-08-21 13:42:57.886",
+                                    "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
+                                }
+                            ],
+                            "session_start_date": "2019-09-05 18:00:00.0",
+                            "session_code": "LQDFEL",
+                            "session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications.",
+                            "event_session_id": 77,
+                            "LastUpdatedDateTime": "2019-08-26 14:27:10.0",
+                            "session_track_id": 1,
+                            "event_id": 3,
+                            "session_long_desc": ".  In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps (PWA)",
+                            "session_end_date": "2019-09-05 18:45:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                            "SoftDeleteFlag": false,
+                            "CreatedDateTime": "2019-08-21 13:42:57.885"
+                        },
+                        {
+                            "session_location": "Meriwether I&II",
+                            "session_name": "Technical:   Building Progressive Web Apps (PWA)",
+                            "presenter": [{
+                                "presenter_id": 113,
                                 "event_id": 3,
                                 "master_speaker_id": 45,
-                                "session_id": 77,
-                                "CreatedDateTime": "2019-08-21 13:42:57.886",
-                                "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
+                                "session_id": 40,
+                                "CreatedDateTime": "2019-08-26 13:10:59.819",
+                                "LastUpdatedDateTime": "2019-08-26 13:10:59.819"
+                            }],
+                            "session_start_date": "2019-09-04 18:45:00.0",
+                            "session_code": "O2EW8S",
+                            "session_desc": "Interested in building a Progressive Web Application (PWA), but don\\u2019t know where to start?",
+                            "event_session_id": 40,
+                            "LastUpdatedDateTime": "2019-08-21 11:47:19.0",
+                            "session_track_id": 1,
+                            "event_id": 3,
+                            "session_long_desc": "This session will provide a guided tour of PWA concepts and capabilities with a step-by-step walk-through of development and deployment of a PWA using Quantum. All of the tools and resources presented in the session will be made available, so you can build your own PWA.",
+                            "session_end_date": "2019-09-04 19:15:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+                            "SoftDeleteFlag": false,
+                            "CreatedDateTime": "2019-08-19 09:17:08.0"
+                        }
+                    ]
+                },
+                {
+                    "speaker_id": 46,
+                    "speaker_name": "Jon Sundberg",
+                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/jonsundberg560x570.png",
+                    "speaker_title": "JD Power",
+                    "CreatedDateTime": "2019-08-26T14:49:47.457Z",
+                    "LastUpdatedDateTime": "2019-08-26T14:49:47.457Z",
+                    "tracks": [2],
+                    "sessionsList": [{
+                        "session_location": "Lady Bird Ballroom",
+                        "session_name": "Start with Best in Class - A Live Case Study with JD Power and Centric Digital",
+                        "presenter": [{
+                                "presenter_id": 119,
+                                "event_id": 3,
+                                "master_speaker_id": 46,
+                                "session_id": 53,
+                                "CreatedDateTime": "2019-08-26 14:50:55.051",
+                                "LastUpdatedDateTime": "2019-08-26 14:50:55.051"
                             },
                             {
-                                "presenter_id": 110,
+                                "presenter_id": 95,
                                 "event_id": 3,
-                                "master_speaker_id": 16,
-                                "session_id": 77,
-                                "CreatedDateTime": "2019-08-21 13:42:57.886",
-                                "LastUpdatedDateTime": "2019-08-21 13:42:57.886"
+                                "master_speaker_id": 22,
+                                "session_id": 53,
+                                "CreatedDateTime": "2019-08-19 14:14:24.0",
+                                "LastUpdatedDateTime": "2019-08-19 14:14:24.0"
                             }
                         ],
-                        "session_start_date": "2019-09-05 18:00:00.0",
-                        "session_code": "LQDFEL",
-                        "session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications.",
-                        "event_session_id": 77,
-                        "LastUpdatedDateTime": "2019-08-21 13:42:57.885",
+                        "session_start_date": "2019-09-04 21:45:00.0",
+                        "session_code": "1YGBC7",
+                        "session_desc": "In the recent J.D. Power 2019 U.S. Banking Mobile App Satisfaction Study, it found that mid-size banks are increasingly vulnerable to digital competition from large banks. Where large banks have half or more of their customers being digitally centric, mid-size banks have a third or less of their customer base relying primarily on digital channels, which creates the imperative to start with best-in-class.",
+                        "event_session_id": 53,
+                        "LastUpdatedDateTime": "2019-08-21 11:51:56.0",
+                        "session_track_id": 2,
+                        "event_id": 3,
+                        "session_end_date": "2019-09-04 22:30:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-19 11:01:03.0"
+                    }]
+                },
+                {
+                    "speaker_id": 47,
+                    "speaker_name": "Scott Hetland",
+                    "speaker_title": "Application Product Manager, Mercy Supply Collaborative",
+                    "CreatedDateTime": "2019-08-26T15:09:57.777Z",
+                    "LastUpdatedDateTime": "2019-08-26T15:09:57.777Z",
+                    "tracks": [1],
+                    "sessionsList": [{
+                        "session_location": "Meriwether I&II",
+                        "session_name": "Customer Presentation - Mercy + Nesh: A Better User Experience Drives Patient and Business Outcomes",
                         "session_track_id": 1,
                         "event_id": 3,
-                        "session_long_desc": ".  In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps (PWA)",
-                        "session_end_date": "2019-09-05 18:45:00.0",
-                        "room_no": "",
-                        "CreatedDateTime": "2019-08-21 13:42:57.885"
+                        "presenter": [{
+                                "presenter_id": 121,
+                                "event_id": 3,
+                                "master_speaker_id": 47,
+                                "session_id": 31,
+                                "CreatedDateTime": "2019-08-26 15:12:29.67",
+                                "LastUpdatedDateTime": "2019-08-26 15:12:29.67"
+                            },
+                            {
+                                "presenter_id": 120,
+                                "event_id": 3,
+                                "master_speaker_id": 42,
+                                "session_id": 31,
+                                "CreatedDateTime": "2019-08-26 15:08:46.377",
+                                "LastUpdatedDateTime": "2019-08-26 15:08:46.377"
+                            }
+                        ],
+                        "session_start_date": "2019-09-05 19:15:00.0",
+                        "session_end_date": "2019-09-05 19:45:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+                        "SoftDeleteFlag": false,
+                        "event_session_id": 31,
+                        "CreatedDateTime": "2019-08-13 06:33:50.0",
+                        "LastUpdatedDateTime": "2019-08-21 13:04:33.0"
                     }]
+                },
+                {
+                    "speaker_id": 48,
+                    "speaker_name": "Carlos Carvajal",
+                    "speaker_title": "CMO, Kony",
+                    "CreatedDateTime": "2019-08-28T10:02:58.584Z",
+                    "LastUpdatedDateTime": "2019-08-28T10:02:58.584Z",
+                    "tracks": [3],
+                    "sessionsList": [{
+                        "session_location": "Lady Bird Ballroom",
+                        "session_name": "Quantum Customer Panel with Carlos Carvajal",
+                        "presenter": [{
+                            "presenter_id": 122,
+                            "event_id": 3,
+                            "master_speaker_id": 48,
+                            "session_id": 78,
+                            "CreatedDateTime": "2019-08-28 10:05:06.733",
+                            "LastUpdatedDateTime": "2019-08-28 10:05:06.733"
+                        }],
+                        "session_start_date": "2019-09-04 15:15:00.0",
+                        "session_code": "80G1WQ",
+                        "session_desc": "",
+                        "event_session_id": 78,
+                        "LastUpdatedDateTime": "2019-08-28 10:58:18.0",
+                        "session_track_id": 3,
+                        "event_id": 3,
+                        "session_long_desc": "",
+                        "session_end_date": "2019-09-04 15:40:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-28 10:05:06.732"
+                    }]
+                },
+                {
+                    "speaker_id": 49,
+                    "speaker_name": "Brian Miller",
+                    "speaker_profile_pic": "https://s3.amazonaws.com/volumeplay/1/Brian_Miller-560x570.png",
+                    "speaker_title": "EVP & Chief Customer Officer, Kony",
+                    "CreatedDateTime": "2019-08-28T10:19:24.754Z",
+                    "LastUpdatedDateTime": "2019-08-28T10:19:24.754Z",
+                    "tracks": [1],
+                    "sessionsList": [{
+                        "session_location": "Meriwether I&II",
+                        "session_name": "Kony Customers for Life Program",
+                        "presenter": [{
+                            "presenter_id": 125,
+                            "event_id": 3,
+                            "master_speaker_id": 49,
+                            "session_id": 81,
+                            "CreatedDateTime": "2019-08-28 10:30:42.818",
+                            "LastUpdatedDateTime": "2019-08-28 10:30:42.818"
+                        }],
+                        "session_start_date": "2019-09-04 20:45:00.0",
+                        "session_code": "4JOXC7",
+                        "session_desc": "Kony is enhancing our Customers for Life Program involving elements of the entire company including Support, Services, Sales and Product Teams. Brian Miller, Kony's EVP of Services and Support and Chief Customer Officer will talk about the approaches Kony is taking to enhance the customer experience and help drive continued success for our customers.",
+                        "event_session_id": 81,
+                        "LastUpdatedDateTime": "2019-08-28 11:04:17.0",
+                        "session_track_id": 1,
+                        "event_id": 3,
+                        "session_long_desc": "",
+                        "session_end_date": "2019-09-04 21:15:00.0",
+                        "room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+                        "SoftDeleteFlag": false,
+                        "CreatedDateTime": "2019-08-28 10:19:41.767"
+                    }]
+                },
+                {
+                    "speaker_id": 50,
+                    "speaker_name": "Ray Williamson",
+                    "speaker_title": "Sr. Digital Architect",
+                    "CreatedDateTime": "2019-08-28T10:43:37.267Z",
+                    "LastUpdatedDateTime": "2019-08-28T10:43:37.267Z",
+                    "tracks": [1, 1],
+                    "sessionsList": [{
+                            "session_location": "Kony Back Stage Lab",
+                            "session_name": "Build an App in 20 minutes - Part 1",
+                            "presenter": [{
+                                "presenter_id": 127,
+                                "event_id": 3,
+                                "master_speaker_id": 50,
+                                "session_id": 75,
+                                "CreatedDateTime": "2019-08-28 10:47:18.63",
+                                "LastUpdatedDateTime": "2019-08-28 10:47:18.63"
+                            }],
+                            "session_start_date": "2019-09-04 20:15:00.0",
+                            "session_code": "FEQ6PL",
+                            "session_desc": "Build a quick no-code application in Kony Quantum in 20 minutes. Part 1 will walk you through building a functional four screen application. Part 2 (on Thursday) will address connecting to an identity service and a data source.",
+                            "event_session_id": 75,
+                            "LastUpdatedDateTime": "2019-08-28 11:18:38.0",
+                            "session_track_id": 1,
+                            "event_id": 3,
+                            "session_long_desc": "",
+                            "session_end_date": "2019-09-04 20:45:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                            "SoftDeleteFlag": false,
+                            "CreatedDateTime": "2019-08-21 13:24:31.299"
+                        },
+                        {
+                            "session_location": "Kony Back Stage Lab",
+                            "session_name": "Build an App in 20 minutes - Part 2",
+                            "presenter": [{
+                                "presenter_id": 128,
+                                "event_id": 3,
+                                "master_speaker_id": 50,
+                                "session_id": 82,
+                                "CreatedDateTime": "2019-08-28 10:48:41.223",
+                                "LastUpdatedDateTime": "2019-08-28 10:48:41.223"
+                            }],
+                            "session_start_date": "2019-09-05 15:45:00.0",
+                            "session_code": "O7LAYK",
+                            "session_desc": "Take the simple application built in part one and learn how to connect it to an identity service and a simple database.\\n",
+                            "event_session_id": 82,
+                            "LastUpdatedDateTime": "2019-08-28 11:12:32.0",
+                            "session_track_id": 1,
+                            "event_id": 3,
+                            "session_long_desc": "",
+                            "session_end_date": "2019-09-05 16:15:00.0",
+                            "room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
+                            "SoftDeleteFlag": false,
+                            "CreatedDateTime": "2019-08-28 10:34:10.743"
+                        }
+                    ]
                 }
             ]
         }
