@@ -34,7 +34,7 @@ define(function() {
       this.presenterObject = presenterObject;
       this.view.speakerName.text = presenterObject.speaker_name;
       this.view.speakerTitle.text = presenterObject.speaker_title;
-      this.view.speakerInfo.text = presenterObject.shortBio;
+   //   this.view.speakerInfo.text = presenterObject.shortBio;
       if(presenterObject.speaker_profile_pic) {
         this.view.speakerImage.src = presenterObject.speaker_profile_pic;
       }else {

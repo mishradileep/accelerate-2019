@@ -1,0 +1,24 @@
+{
+    "AS_Button_iededfffb17342fdb9c23c1d0075dc9c": {
+        "id": "AS_Button_iededfffb17342fdb9c23c1d0075dc9c",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmPresenters",
+            "type": "forms",
+            "platform": "",
+            "KUID": "f71813fcab8e4a75a0d3dc5c4e23b966"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET__acfab3c1a358437ab8934fe5a8725ef9",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "this.onClickOfLinkedInLink();",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

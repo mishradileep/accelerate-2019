@@ -29,5 +29,10 @@ define({
     AS_Form_hbd56c17ef8740b69d6b9924a02f1d5f: function AS_Form_hbd56c17ef8740b69d6b9924a02f1d5f(eventobject) {
         var self = this;
         return;
+    },
+    /** onClick defined for btnLinkedIn **/
+    AS_Button_iededfffb17342fdb9c23c1d0075dc9c: function AS_Button_iededfffb17342fdb9c23c1d0075dc9c(eventobject) {
+        var self = this;
+        this.onClickOfLinkedInLink();
     }
 });
