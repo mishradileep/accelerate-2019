@@ -48,7 +48,7 @@
     "horizontalscrollindicator": true,
     "id": "consoleScroll",
     "info": null,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "c7e534db9291467aa4dccd73b43e491a",
     "layouttype": 2,
     "masterType": 1,
