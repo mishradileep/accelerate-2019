@@ -1470,8 +1470,17 @@ define({
     }
     if(feedbackSubmittedSessions.hasOwnProperty(sessionObject.event_session_id)){
       this.dismissRatingTiles();
+       if (this.isNavigatedFrmOtherForm) {
+           this.view.flxRatingContainer.isVisible = false;
+        }
+      else if(this.isPushNotificationFlow){
+        this.view.flxRatingContainer.isVisible = false;
+      }
+    }else{
+      this.view.lblThankyou.isVisible = false;
+      this.view.imgThanks.isVisible = false;
+      this.view.flxRatingContainer.isVisible = true;
     }
-
   },
 
   /**
@@ -1969,6 +1978,7 @@ define({
    this.filterSessionTiles(this.currentSelectedTab);   
   },
   onNavigate:function(naviInfo){
+    debugger;
     this.navigateSessionId=kony.store.getItem("currentNotificationId");
     if(kony.sdk.isNullOrUndefined(naviInfo) && this.navigateSessionId==-999999999){
       this.showListPageDirectly();
@@ -2137,6 +2147,7 @@ define({
     // 		flxImageContainerwidthCalc = flxImageContainerwidthCalc.toFixed();
     //       	var imgHeight = flxImageContainerwidthCalc * 1.02;
     var sessionObject=session;
+    debugger;
     this.dismissRatingIfSubmitted(sessionObject);
     this.currentSessionObjectInDetailScreen = sessionObject;
     this.setSessionAttachments(sessionObject);
