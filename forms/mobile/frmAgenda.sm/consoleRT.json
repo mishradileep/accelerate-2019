@@ -38,7 +38,7 @@
     "contentalignment": 4,
     "id": "consoleRT",
     "info": null,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "d794303ccdbc4b7fbb4fd9aacfdcfc62",
     "masterType": 1,
     "name": "kony.ui.RichText",

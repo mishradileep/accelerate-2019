@@ -22,7 +22,6 @@ define({
      * @private
      */
   frmAgendaPreshow: function() {
-    debugger;
     var self = this;
     this.view.pdfBrowser.requestURLConfig = {
                     URL: "index.html",
@@ -48,6 +47,7 @@ define({
     this.view.sessionTileAnim.left="100%";
     this.view.buttonBack.isVisible = false;
     this.view.imageBack.opacity = 0;
+      this.view.feedbackMaster.opacity = 0;
       this.view.sessionTileAnim.quantumDotsClear.opacity=0;
     }
     this.view.buttonBack.onClick = this.frmAgendaSessionClose;
@@ -76,7 +76,6 @@ define({
     //this.view.sessionTile.tileBGImageKony.anchorPoint={"x":1,"y":.5};
    //globalPreshow();
     //this.frmAgendaSetAgendaTiles();
-    this.view.feedbackMaster.opacity = 0;
   },
 
   /**
@@ -172,10 +171,10 @@ define({
     this.view.detailsScroller.isVisible=true;
     this.currentViewState=1;
     this.setSpeakerProfile(eventobject);
-    egLoggerClear();
+    //egLoggerClear();
     var self = this;
     this.thisCard = eventobject;
-    egLogger("this.thisCard = " + this.thisCard.id);
+    //egLogger("this.thisCard = " + this.thisCard.id);
     this.view.detailsScroller.left = "0%";
     this.view.sessionTileAnim.tilebg.skin = this.thisCard.tilebg.skin;
     var thisBGSkin=this.thisCard.tilebg.skin.replace("agendaTileSkin","");
@@ -698,7 +697,10 @@ define({
     this.view.txtArea.setEnabled(false);
     this.view.txtArea.text="";
     if(this. isPushNotificationFlow){
-      this.showshowListPageDirectly();
+      this.isPushNotificationFlow=false;
+      this.showListPageDirectly();
+      this.sortSessions();
+      return;
     }
     if(this.isNavigatedFrmOtherForm){
       this.isNavigatedFrmOtherForm=false;
@@ -1967,7 +1969,6 @@ define({
    this.filterSessionTiles(this.currentSelectedTab);   
   },
   onNavigate:function(naviInfo){
-    debugger;
     this.navigateSessionId=kony.store.getItem("currentNotificationId");
     if(kony.sdk.isNullOrUndefined(naviInfo) && this.navigateSessionId==-999999999){
       this.showListPageDirectly();
@@ -1979,12 +1980,13 @@ define({
       }
       this.isPushNotificationFlow=true;
       this.showUpdatedSessionInfo(updatedSession);
+      this. frmAgendaPreshow();
       kony.store.setItem("currentNotificationId",-999999999);
     }
     else if(!kony.sdk.isNullOrUndefined(naviInfo.transferCode) && naviInfo.transferCode===100){
       var myAgenda=kony.store.getItem("myAgendaData");
       if(kony.sdk.isNullOrUndefined(myAgenda) || this.isPushNotificationFlow){
-        return ;
+        return;
       }
       if(myAgenda.hasOwnProperty(this.view[this.thisCard.id].sessionData.event_session_id)){
         this.view.addAgendaContainer.imgStatus.src=this.view[this.thisCard.id].myScheduleIndicatorImage;
@@ -2174,6 +2176,7 @@ define({
           this.view["speakerDesignation" + speakerIndex].text = title;
           var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
           this.view["speakerDescription" + speakerIndex].text = description;
+          this.view['ratingTile'+ speakerIndex].isVisible=true;
           this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
           this.view["ratingTile" + speakerIndex].resetAllSkins();
           this.view["flxSpeaker"+speakerIndex].onClick = function(eventobject) {
@@ -2196,12 +2199,20 @@ define({
     this.view.txtArea.setEnabled(true);
   },
   toggleAgendaImages:function(session){
+    var myAgendaData=kony.store.getItem("myAgendaData");
+    if(kony.sdk.isNullOrUndefined(session.isAddedToMySchedule)){
+      session.isAddedToMySchedule=false;
+    }
     if(session.isAddedToMySchedule){
       this.view.addAgendaContainer.imgStatus.src="add.png";
       this.view.addAgendaContainer.skin="sknGreyUnselected";
       this.view.sessionTileAnim.addAgendaContainer.skin="sknGreyUnselected";
       this.view.sessionTileAnim.addAgendaContainer.imgStatus.src="add.png";
       session.isAddedToMySchedule=false;
+      if(myAgendaData.hasOwnProperty(session.event_session_id)){
+        delete myAgendaData[session.event_session_id];
+      }
+      
     }
     else{
       this.view.addAgendaContainer.imgStatus.src="added.png";
@@ -2209,8 +2220,9 @@ define({
       this.view.addAgendaContainer.skin="sknGreenSelected";
       this.view.sessionTileAnim.addAgendaContainer.skin="sknGreenSelected";
       session.isAddedToMySchedule=true;
+      myAgendaData[session.event_session_id]= session.event_session_id;
     }
-    
+    kony.store.setItem("myAgendaData", myAgendaData);
   },
   showSessionDetailPageDirectly:function(eventObject){
     this.speakerIdMap = {};
@@ -2334,6 +2346,7 @@ define({
           this.view["speakerDesignation" + speakerIndex].text = title;
           var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
           this.view["speakerDescription" + speakerIndex].text = description;
+          this.view['ratingTile'+ speakerIndex].isVisible=true;
           this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
           this.view["ratingTile" + speakerIndex].resetAllSkins();
           this.view["flxSpeaker"+speakerIndex].onClick = function(eventobject) {
