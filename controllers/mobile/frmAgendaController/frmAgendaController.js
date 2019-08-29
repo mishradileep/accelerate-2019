@@ -22,6 +22,7 @@ define({
      * @private
      */
   frmAgendaPreshow: function() {
+    debugger;
     var self = this;
     this.view.pdfBrowser.requestURLConfig = {
                     URL: "index.html",
@@ -42,17 +43,19 @@ define({
     this.view.referenceAgenda.isVisible = false;
     this.view.referenceSession.isVisible = false;
     this.view.postShow = this.frmAgendaPostshow;
+    if(!this.isPushNotificationFlow){
     this.view.sessionContentContainer.top = "100%";
     this.view.sessionTileAnim.left="100%";
     this.view.buttonBack.isVisible = false;
     this.view.imageBack.opacity = 0;
+      this.view.sessionTileAnim.quantumDotsClear.opacity=0;
+    }
     this.view.buttonBack.onClick = this.frmAgendaSessionClose;
     this.view.detailsScroller.onScrolling = this.detailsScrollerOnScrolling;
     if(this.isIphoneXSeries){
       this.view.menuMain.bottom="0dp";
        this.view.menuMain.height="105dp";
     }
-    this.view.sessionTileAnim.quantumDotsClear.opacity=0;
     this.view.filterAll.onClick = function(eventobject) {
       self.agendaFilter(eventobject);
     };
@@ -71,7 +74,7 @@ define({
       "y": -0.2
     };
     //this.view.sessionTile.tileBGImageKony.anchorPoint={"x":1,"y":.5};
-    globalPreshow();
+   //globalPreshow();
     //this.frmAgendaSetAgendaTiles();
     this.view.feedbackMaster.opacity = 0;
   },
@@ -694,6 +697,9 @@ define({
     }
     this.view.txtArea.setEnabled(false);
     this.view.txtArea.text="";
+    if(this. isPushNotificationFlow){
+      this.showshowListPageDirectly();
+    }
     if(this.isNavigatedFrmOtherForm){
       this.isNavigatedFrmOtherForm=false;
       this.navigateToOtherForm();
@@ -1961,18 +1967,23 @@ define({
    this.filterSessionTiles(this.currentSelectedTab);   
   },
   onNavigate:function(naviInfo){
-    this.navigateSessionId=null;
-    if(kony.sdk.isNullOrUndefined(naviInfo)){
-      this. showListPageDirectly();
-      this.navigateSessionId=kony.store.getItem("currentNotificationId");
-      if(this.navigateSessionId==-999999999){
+    debugger;
+    this.navigateSessionId=kony.store.getItem("currentNotificationId");
+    if(kony.sdk.isNullOrUndefined(naviInfo) && this.navigateSessionId==-999999999){
+      this.showListPageDirectly();
+    }
+    else if((this.navigateSessionId!==-999999999)){
+      var updatedSession=this.findSessionObject(this.navigateSessionId);
+      if(kony.sdk.isNullOrUndefined(updatedSession)){
         return;
       }
+      this.isPushNotificationFlow=true;
+      this.showUpdatedSessionInfo(updatedSession);
       kony.store.setItem("currentNotificationId",-999999999);
     }
     else if(!kony.sdk.isNullOrUndefined(naviInfo.transferCode) && naviInfo.transferCode===100){
       var myAgenda=kony.store.getItem("myAgendaData");
-      if(kony.sdk.isNullOrUndefined(myAgenda)){
+      if(kony.sdk.isNullOrUndefined(myAgenda) || this.isPushNotificationFlow){
         return ;
       }
       if(myAgenda.hasOwnProperty(this.view[this.thisCard.id].sessionData.event_session_id)){
@@ -1997,6 +2008,35 @@ define({
     }
 
   },
+  returnSkinBasedOnCategoryId:function(track){
+    var skinJson={};
+    switch (track) {
+                case 1:
+                    skinJson.skin = "agendaTileSkinQuantum";
+                    skinJson.src = "agendatilequantum.png";
+                    break;
+                case 2:
+                    skinJson.skin = "agendaTileSkinDBX";
+                    skinJson.src = "agendatiledbx.png";
+                    break;
+                case 3:
+                    skinJson.skin = "agendaTileSkinKony";
+                    skinJson.src = "agendatilekony.png";
+                    break;
+                default:
+                    this.view.tilebg.skin = "";
+                    this.view.tileBGImageKony.src = "";
+            }
+    return skinJson;
+  },
+  findSessionObject:function(sessionId){
+    var sessionsList= accelerateSessionData.eventSessionData.records;
+    for(var index=0;index<sessionsList.length;index++){
+      if(sessionsList[index].event_session_id==sessionId){
+        return sessionsList[index];
+      }
+    }
+  },
   navigateToOtherForm:function(){
     var param = {
       "form" : "frmPresenters"
@@ -2014,6 +2054,164 @@ define({
       }
     }
   },
+  showUpdatedSessionInfo(session){
+    this.speakerIdMap = {};
+    this.view.detailsScroller.isVisible=true;
+    this.currentViewState=1;
+    this.view.contentScroller.isVisible=false;
+    this.view.sessionTileAnim.isVisible = true;
+    this.view.sessionContentContainer.isVisible=true;
+    this.view.feedbackMaster.isVisible=true;
+    this.view.buttonBack.isVisible=true;
+    this.view.buttonBack.opacity=100;
+    this.view.buttonBack.left="2dp";
+    this.view.buttonBack.top="3dp";
+    this.view.buttonBack.width="58dp";
+    this.view.buttonBack.height="47dp";
+    this.view.menuMain.isVisible=true;
+    this.view.addAgendaContainer.isVisible=true;
+    this.view.addAgendaContainer.left="82.6%";
+    this.view.addAgendaContainer.top="39dp";
+    this.view.sessionLocation.isVisible=true;
+    this.view.detailsScroller.left="0%";
+    this.view.sessionTileAnim.addAgendaContainer.left = "82.6%";
+    this.view.sessionTileAnim.addAgendaContainer.top = this.isIphoneXSeries?"85dp":"39dp";
+    this.view.sessionTileAnim.tilebg.height =this.devHeight+"dp";
+    this.view.sessionTileAnim.left = "0%";
+    this.view.headerContainer.top=this.isIphoneXSeries ? "-206dp":"-131dp";
+    this.view.sessionTileAnim.addAgendaContainer.opacity=100;
+    this.view.sessionTileAnim.animationElements.isVisible=true;
+    this.view.sessionTileAnim.quantumDotsBlur.isVisible=true;
+    //this.view.sessionTileAnim.quantumDotsClear.left="-966dp";
+    this.view.sessionTileAnim.sessionLocationIcon.opacity=0;
+    this.view.sessionTileAnim.sessionTimeIcon.opacity=0;
+    this.view.sessionTileAnim.top=this.isIphoneXSeries?"-45dp":"0dp";
+    this.view.sessionContentContainer.top="28%";
+    this.view.sessionTileAnim.tilebg.left="-16dp";
+    this.view.sessionTileAnim.tilebg.right="-16dp";
+    this. view.feedbackMaster.opacity=100;
+    this. view.imageBack.opacity=100;
+    this. view.addAgendaContainer.opacity=100;
+    this. view.sessionLocation.opacity=100;
+    this.view.sessionTileAnim.sessionTitle.left="24dp";
+    this.view.sessionTileAnim.sessionTitle.top=this.isIphoneXSeries?"104dp":"59dp";
+    this.view.sessionTileAnim.sessionLocation.left="60%";
+    this.view.sessionTileAnim.quantumDotsClear.opacity=100;
+    //     this.view.sessionTileAnim.sessionLocation.top="105dp";
+    //     this.view.sessionLocation.top="105dp";
+    this.view.sessionTileAnim.sessionLocation.top=this.isIphoneXSeries?"170dp":"125dp";
+    this.view.sessionLocation.top="125dp";
+    this.view.sessionLocation.left="60%";
+    this.view.sessionTileAnim.sessionTime.left="24dp";
+    //this.view.sessionTileAnim.sessionTime.top="105dp";
+    this.view.sessionTileAnim.sessionTime.top=this.isIphoneXSeries?"170dp":"125dp"
+    this.view.addAgendaContainer.isVisible=true;
+    this.view.sessionLocation.isVisible=true;
+    var scaledWidth=(parseInt(this.view.sessionTileAnim.tileBGImageKony.width)*1.47);
+    var scaledHeight=(parseInt(this.view.sessionTileAnim.tileBGImageKony.height)*1.47);
+    this.view.sessionTileAnim.tileBGImageKony.width=scaledWidth;
+    this.view.sessionTileAnim.tileBGColorKony.height=scaledHeight;
+    //this.thisCard=eventObject;
+    this.view.sessionTileAnim.tilebg.skin = this.returnSkinBasedOnCategoryId(session.session_track_id).skin;
+    this.view.sessionTileAnim.addAgendaContainer.isVisible=true;
+    this.view.sessionTileAnim.sessionTitle.text = session.session_name;
+    this.view.sessionTileAnim.sessionTime.text = session.modifiedTime;
+    this.view.CopyLabel0f74c659ce7754e.text = session.session_desc;
+    this.view.sessionTileAnim.imgStatus.src =kony.sdk.isNullOrUndefined(session.isAddedToMySchedule)?"add.png":session.isAddedToMySchedule?"added.png":"add.png";
+    this.view.addAgendaContainer.imgStatus.src = kony.sdk.isNullOrUndefined(session.isAddedToMySchedule)?"add.png":session.isAddedToMySchedule?"added.png":"add.png";
+    //this.view.sessionTileAnim.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, eventObject);
+    this.view.addAgendaContainer.onClick = this.toggleAgendaImages.bind(this,session);
+    this.view.sessionTileAnim.addAgendaContainer.skin =kony.sdk.isNullOrUndefined(session.isAddedToMySchedule)?"agendaUnselectedSkin":session.isAddedToMySchedule?"agendaContainerSkin":"agendaUnselectedSkin";
+    this.view.addAgendaContainer.skin =kony.sdk.isNullOrUndefined(session.isAddedToMySchedule)?"agendaUnselectedSkin":session.isAddedToMySchedule?"agendaContainerSkin":"agendaUnselectedSkin";
+    var location= session.session_location;
+    if(kony.sdk.isNullOrUndefined(location)){
+      location="";
+    }
+    this.view.sessionTileAnim.sessionLocation.text = "<u>"+location+"</u>";
+    this.view.sessionLocation.text = "<u>"+location+"</u>";
+    this.view.sessionLocation.onTouchEnd=this.openFloorMap.bind(this,session);
+    this.view.sessionTileAnim.tileBGImageKony.src = this. returnSkinBasedOnCategoryId(session. session_track_id).src;
+    //     	var flxImageContainerwidthCalc = this.view.flxSpeaker0.frame.width * 1.1;
+    // 		flxImageContainerwidthCalc = flxImageContainerwidthCalc.toFixed();
+    //       	var imgHeight = flxImageContainerwidthCalc * 1.02;
+    var sessionObject=session;
+    this.dismissRatingIfSubmitted(sessionObject);
+    this.currentSessionObjectInDetailScreen = sessionObject;
+    this.setSessionAttachments(sessionObject);
+    var speakerList = sessionObject["presenter"];
+    if (kony.sdk.isNullOrUndefined(speakerList)) {
+      this.view.CopyLabel0he0b8d5a22fc4f.isVisible = false;
+      this.view.flxSpeaker0.isVisible = false;
+      this.view.flxSpeaker1.isVisible = false;
+      this.view.flxSpeaker2.isVisible = false;
+      return;
+    }
+    this.ratingLength = 0;
+    var presenters = [];
+    var speakers_master = accelerateSpeakerData.eventSpeakerData.records;
+    var speakerIndex;
+    for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
+      if(speakerList[speakerIndex].SoftDeleteFlag !== undefined && speakerList[speakerIndex].SoftDeleteFlag === true){
+        continue;
+      }else{
+        presenters.push(speakerList[speakerIndex]);
+      }
+    }
+    speakerList = presenters;
+    for (speakerIndex = 0; speakerIndex < speakerList.length; speakerIndex++) {
+      this.ratingLength++;
+      var speakerObject = speakerList[speakerIndex];
+      for (var index = 0; index < speakers_master.length; index++) {
+        if (speakerObject.master_speaker_id == speakers_master[index].speaker_id) {
+          var speakerBio = speakers_master[index];
+          this.speakerIdMap["flxSpeaker"+speakerIndex] = speakerObject.master_speaker_id;
+          this.view["flxSpeaker"+speakerIndex].isVisible=true;
+          this.view["speakerName" + speakerIndex].text = speakerBio.speaker_name;
+          if(speakerBio.speaker_bio === undefined) {
+            speakerBio.speaker_bio = "";
+          }
+          var title = speakerBio.speaker_title.length > 20 ? speakerBio.speaker_title.substring(0, 16) + "..." : speakerBio.speaker_title;
+          this.view["speakerDesignation" + speakerIndex].text = title;
+          var description = speakerBio.speaker_bio.length > 50 ? speakerBio.speaker_bio.substring(0, 47) + "..." : speakerBio.speaker_bio;
+          this.view["speakerDescription" + speakerIndex].text = description;
+          this.view["ratingTile" + speakerIndex].setSpeakerProfileInRating(speakerBio);
+          this.view["ratingTile" + speakerIndex].resetAllSkins();
+          this.view["flxSpeaker"+speakerIndex].onClick = function(eventobject) {
+            this.onClickOfSpeaker(this.speakerIdMap[eventobject.id]);
+          }.bind(this);
+          //                     if(flxImageContainerwidthCalc>0 && imgHeight>0){
+          //                       this.view["imgSpeaker" + speakerIndex].width = flxImageContainerwidthCalc + "dp";
+          // 					  this.view["imgSpeaker" + speakerIndex].height = imgHeight + "dp";
+          //                     }
+          this.view["imgSpeaker" + speakerIndex].src = speakerBio.speaker_profile_pic;
+        }
+      }
+    }
+    for (speakerIndex; speakerIndex < 3; speakerIndex++) {
+      this.view["flxSpeaker" + speakerIndex].isVisible = false;
+      this.view["ratingTile" + speakerIndex].isVisible = false;
+    }
+    this.view["ratingTile"].resetAllSkins();
+    this.setSessionAttachments(sessionObject);
+    this.view.txtArea.setEnabled(true);
+  },
+  toggleAgendaImages:function(session){
+    if(session.isAddedToMySchedule){
+      this.view.addAgendaContainer.imgStatus.src="add.png";
+      this.view.addAgendaContainer.skin="sknGreyUnselected";
+      this.view.sessionTileAnim.addAgendaContainer.skin="sknGreyUnselected";
+      this.view.sessionTileAnim.addAgendaContainer.imgStatus.src="add.png";
+      session.isAddedToMySchedule=false;
+    }
+    else{
+      this.view.addAgendaContainer.imgStatus.src="added.png";
+      this.view.sessionTileAnim.addAgendaContainer.imgStatus.src="added.png";
+      this.view.addAgendaContainer.skin="sknGreenSelected";
+      this.view.sessionTileAnim.addAgendaContainer.skin="sknGreenSelected";
+      session.isAddedToMySchedule=true;
+    }
+    
+  },
   showSessionDetailPageDirectly:function(eventObject){
     this.speakerIdMap = {};
     this.view.detailsScroller.isVisible=true;
@@ -2028,6 +2226,7 @@ define({
     this.view.buttonBack.top="3dp";
     this.view.buttonBack.width="58dp";
     this.view.buttonBack.height="47dp";
+    this.view.buttonBack.zIndex="300";
     this.view.menuMain.isVisible=true;
     this.view.addAgendaContainer.isVisible=true;
     this.view.addAgendaContainer.left="82.6%";
