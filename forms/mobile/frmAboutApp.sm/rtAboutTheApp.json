@@ -30,7 +30,7 @@
     "_text_": "This is the official Kony Accelerate 2019 conference app. Here, you have access to all of Kony Accelerate 2019 conference content offline, with features including, Conference Info, Personal Agenda, Push Notifications on your Personal Agenda, Daily News and Updates and More.",
     "_top_": {
         "type": "string",
-        "value": "240dp"
+        "value": "20dp"
     },
     "_wrapping_": 2,
     "canUpdateUI": true,
@@ -43,7 +43,7 @@
     "kuid": "acb5e395d8994717bfb4f6d8462848f7",
     "linkskin": "s0d7974023eb449381a5ae8e7fea1fe3",
     "name": "kony.ui.RichText",
-    "parent": "flxContent",
+    "parent": "flxOtherContent",
     "pf": "frmAboutApp",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

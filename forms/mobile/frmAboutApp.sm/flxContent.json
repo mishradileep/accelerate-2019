@@ -39,9 +39,7 @@
     "canUpdateUI": true,
     "children": [
         "flxQuantamHeader",
-        "rtAboutTheApp",
-        "flxTeam",
-        "flxPrivacyPolicy"
+        "flxOtherContent"
     ],
     "clipbounds": true,
     "containerweight": 100,
@@ -54,7 +52,7 @@
     "iscustomlayout": false,
     "isvisible": false,
     "kuid": "j160e3beb2204b16a30030cb22d8a46b",
-    "layouttype": 2,
+    "layouttype": 4,
     "name": "kony.ui.FlexScrollContainer",
     "pagingenabled": false,
     "parent": "flxMainContainer",

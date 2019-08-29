@@ -30,7 +30,7 @@
     "_skin_": "s365b20460d44d4585f4dded7d3cea5c",
     "_top_": {
         "type": "string",
-        "value": "420dp"
+        "value": "240dp"
     },
     "allboxes": [],
     "autogrowmode": 0,
@@ -50,8 +50,8 @@
     "kuid": "ibe1f82e68d042e9b10669db5537e458",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "onclick": "AS_FlexContainer_bc88c458bafb44468437f0767b63a678",
-    "parent": "flxContent",
+    "onclick": "AS_FlexContainer_i116669756f24f20929be966745c590f",
+    "parent": "flxOtherContent",
     "pf": "frmAboutApp",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

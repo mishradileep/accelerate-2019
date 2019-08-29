@@ -1,20 +1,14 @@
 {
-    "AS_FlexContainer_j6befae9738e4ce483d9cdc5158083ba": {
-        "id": "AS_FlexContainer_j6befae9738e4ce483d9cdc5158083ba",
+    "AS_FlexContainer_a1afe8d45f714612931092bab7ff950a": {
+        "id": "AS_FlexContainer_a1afe8d45f714612931092bab7ff950a",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }],
-        "contextObj": {
-            "name": "frmAboutApp",
-            "type": "forms",
-            "platform": null,
-            "KUID": "e398ebece41e4c63b59220656922db7f"
-        },
         "language": "js",
         "actions": [{
-            "id": "NAVIGATE_TO_FORM___d3dbe39a11ed4791bd4117e503e962e1",
+            "id": "NAVIGATE_TO_FORM__onClick_d74ea69beba04f5fb7f4e4f6add9a04d",
             "type": "NAVIGATE_TO_FORM",
             "formId": "frmPrivacyPolicy",
             "formKUID": "g3eed58a18164e84966b5e28256e71c9",
@@ -24,7 +18,7 @@
             "callbackType": null,
             "enableMappingEditor": true,
             "package": "",
-            "navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"\",\n        \"widgetId\": \"\"\n    }\n}",
+            "navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"onClick\",\n        \"widgetId\": \"flxPrivacyPolicy\"\n    }\n}",
             "isCustomInput": false
         }]
     }
