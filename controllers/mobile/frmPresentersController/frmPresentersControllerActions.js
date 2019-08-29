@@ -20,6 +20,11 @@ define({
         var ntf = new kony.mvc.Navigation("frmMore");
         ntf.navigate();
     },
+    /** onClick defined for btnLinkedIn **/
+    AS_Button_iededfffb17342fdb9c23c1d0075dc9c: function AS_Button_iededfffb17342fdb9c23c1d0075dc9c(eventobject) {
+        var self = this;
+        this.onClickOfLinkedInLink();
+    },
     /** init defined for frmPresenters **/
     AS_Form_aa402fd47759406593de6f69a7fb821c: function AS_Form_aa402fd47759406593de6f69a7fb821c(eventobject) {
         var self = this;
@@ -29,10 +34,5 @@ define({
     AS_Form_hbd56c17ef8740b69d6b9924a02f1d5f: function AS_Form_hbd56c17ef8740b69d6b9924a02f1d5f(eventobject) {
         var self = this;
         return;
-    },
-    /** onClick defined for btnLinkedIn **/
-    AS_Button_iededfffb17342fdb9c23c1d0075dc9c: function AS_Button_iededfffb17342fdb9c23c1d0075dc9c(eventobject) {
-        var self = this;
-        this.onClickOfLinkedInLink();
     }
 });

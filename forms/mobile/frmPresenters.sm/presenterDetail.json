@@ -52,7 +52,7 @@
     "id": "presenterDetail",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "j0935d7f92304038a2cd0062856c2493",
     "layouttype": 4,
     "name": "kony.ui.FlexScrollContainer",

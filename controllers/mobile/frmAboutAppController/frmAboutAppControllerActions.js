@@ -8,13 +8,13 @@ define({
         this.animateAboutTheAppCard("100%");
     },
     /** onClick defined for flxTeam **/
-    AS_FlexContainer_bc88c458bafb44468437f0767b63a678: function AS_FlexContainer_bc88c458bafb44468437f0767b63a678(eventobject) {
+    AS_FlexContainer_i116669756f24f20929be966745c590f: function AS_FlexContainer_i116669756f24f20929be966745c590f(eventobject) {
         var self = this;
         var ntf = new kony.mvc.Navigation("frmTeam");
         ntf.navigate();
     },
     /** onClick defined for flxPrivacyPolicy **/
-    AS_FlexContainer_j6befae9738e4ce483d9cdc5158083ba: function AS_FlexContainer_j6befae9738e4ce483d9cdc5158083ba(eventobject) {
+    AS_FlexContainer_a1afe8d45f714612931092bab7ff950a: function AS_FlexContainer_a1afe8d45f714612931092bab7ff950a(eventobject) {
         var self = this;
         var ntf = new kony.mvc.Navigation("frmPrivacyPolicy");
         ntf.navigate();

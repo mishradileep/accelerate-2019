@@ -1970,7 +1970,6 @@ define({
    this.filterSessionTiles(this.currentSelectedTab);   
   },
   onNavigate:function(naviInfo){
-    debugger;
     this.navigateSessionId=kony.store.getItem("currentNotificationId");
     if(kony.sdk.isNullOrUndefined(naviInfo) && kony.sdk.isNullOrUndefined(this.navigateSessionId)){
       this.showListPageDirectly();
@@ -1983,7 +1982,7 @@ define({
       this.isPushNotificationFlow=true;
       this.showUpdatedSessionInfo(updatedSession);
       this. frmAgendaPreshow();
-      kony.store.setItem("currentNotificationId",null);
+      kony.store.removeItem("currentNotificationId");
     }
     else if(!kony.sdk.isNullOrUndefined(naviInfo.transferCode) && naviInfo.transferCode===100){
       var myAgenda=kony.store.getItem("myAgendaData");
@@ -2139,7 +2138,6 @@ define({
     // 		flxImageContainerwidthCalc = flxImageContainerwidthCalc.toFixed();
     //       	var imgHeight = flxImageContainerwidthCalc * 1.02;
     var sessionObject=session;
-    debugger;
     this.dismissRatingIfSubmitted(sessionObject);
     this.currentSessionObjectInDetailScreen = sessionObject;
     this.setSessionAttachments(sessionObject);
