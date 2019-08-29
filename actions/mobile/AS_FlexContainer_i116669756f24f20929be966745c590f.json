@@ -1,20 +1,14 @@
 {
-    "AS_FlexContainer_bc88c458bafb44468437f0767b63a678": {
-        "id": "AS_FlexContainer_bc88c458bafb44468437f0767b63a678",
+    "AS_FlexContainer_i116669756f24f20929be966745c590f": {
+        "id": "AS_FlexContainer_i116669756f24f20929be966745c590f",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }],
-        "contextObj": {
-            "name": "frmAboutApp",
-            "type": "forms",
-            "platform": null,
-            "KUID": "e398ebece41e4c63b59220656922db7f"
-        },
         "language": "js",
         "actions": [{
-            "id": "NAVIGATE_TO_FORM___b96485a308fd47e0906a5cec89e04abc",
+            "id": "NAVIGATE_TO_FORM__onClick_b214d190d9ad45f79994b54e3783a321",
             "type": "NAVIGATE_TO_FORM",
             "formId": "frmTeam",
             "formKUID": "ec2750f2827541349b77ac60db3ab4b9",
@@ -24,7 +18,7 @@
             "callbackType": null,
             "enableMappingEditor": true,
             "package": "",
-            "navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"\",\n        \"widgetId\": \"\"\n    }\n}",
+            "navigationObj": "{\n    \"_meta_\": {\n        \"eventName\": \"onClick\",\n        \"widgetId\": \"flxTeam\"\n    }\n}",
             "isCustomInput": false
         }]
     }

@@ -1,23 +1,17 @@
 {
-    "AS_FlexContainer_j6befae9738e4ce483d9cdc5158083ba": {
-        "id": "AS_FlexContainer_j6befae9738e4ce483d9cdc5158083ba",
+    "AS_FlexContainer_b4c237d8fcf340eeb97261ee5b17e352": {
+        "id": "AS_FlexContainer_b4c237d8fcf340eeb97261ee5b17e352",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }],
-        "contextObj": {
-            "name": "frmAboutApp",
-            "type": "forms",
-            "platform": null,
-            "KUID": "e398ebece41e4c63b59220656922db7f"
-        },
         "language": "js",
         "actions": [{
-            "id": "NAVIGATE_TO_FORM___d3dbe39a11ed4791bd4117e503e962e1",
+            "id": "NAVIGATE_TO_FORM__onClick_e66c5897eea44931ba42fce464269f9e",
             "type": "NAVIGATE_TO_FORM",
-            "formId": "frmPrivacyPolicy",
-            "formKUID": "g3eed58a18164e84966b5e28256e71c9",
+            "formId": "frmTeam",
+            "formKUID": "ec2750f2827541349b77ac60db3ab4b9",
             "mappings": {},
             "mappingsOrder": [],
             "parentId": "",
