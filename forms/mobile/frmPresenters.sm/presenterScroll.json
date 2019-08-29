@@ -38,10 +38,7 @@
     "bounces": true,
     "canUpdateUI": true,
     "children": [
-        "presenterTile",
-        "CopypresenterTile0fa01edf4a8ca47",
-        "CopypresenterTile0gbcccc445cc049",
-        "CopypresenterTile0d49cd1f311e648"
+        "presenterTile"
     ],
     "clipbounds": false,
     "containerweight": 100,

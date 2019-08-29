@@ -24,14 +24,17 @@ define(function() {
       } else {
         this.view.speakerDetails.top = "0dp";
         this.view.speakerDetails.height = "150dp";
-        this.view.speakerInfo.isVisible = true;
+        this.view.speakerInfo.isVisible = false;
         this.view.FlexGroup0b8c01e2d521f41.layoutType = kony.flex.FLOW_VERTICAL;
       }
+      //#ifdef iphone
+      this.view.speakerImage.imageWhileDownloading = "loader560x570.gif";
+      //#endif
       this.view.speakerImage.width = speakerImgWidth + "dp";
       this.presenterObject = presenterObject;
       this.view.speakerName.text = presenterObject.speaker_name;
       this.view.speakerTitle.text = presenterObject.speaker_title;
-      this.view.speakerInfo.text = presenterObject.shortBio;
+   //   this.view.speakerInfo.text = presenterObject.shortBio;
       if(presenterObject.speaker_profile_pic) {
         this.view.speakerImage.src = presenterObject.speaker_profile_pic;
       }else {

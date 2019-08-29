@@ -85,13 +85,13 @@
     "iphone": {
         "inTransitionConfig": {
             "transitionDirection": "none",
-            "transitionDuration": 0.2,
+            "transitionDuration": 0.1,
             "transitionEffect": "transitionFade"
         },
         "needAppMenu": false,
         "outTransitionConfig": {
             "transitionDirection": "none",
-            "transitionDuration": 0.2,
+            "transitionDuration": 0.1,
             "transitionEffect": "transitionFade"
         },
         "psp": {

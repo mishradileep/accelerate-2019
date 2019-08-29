@@ -9,7 +9,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "0%"
     },
     "_margin_": [
         0,
@@ -24,40 +24,38 @@
         0
     ],
     "_skin_": "sb4147b62d704022a7b0565c1304c1d1",
-    "_src_": "konymp_imagedownload.png",
+    "_src_": "loader560x570.gif",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "0%"
     },
     "_width_": {
         "type": "string",
         "value": "100%"
     },
     "canUpdateUI": true,
-    "containerId": true,
     "containerweight": 100,
     "context": {
         "channel": "mobile",
+        "formID": "frmPresenters",
         "platform": "iphone",
-        "templateType": "segments",
+        "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "imgSponsorIcon",
+    "id": "imgLoader",
     "imagescalemode": 1,
-    "imagewhenfailed": "konymp_imagedownload.png",
-    "imagewhiledownloading": "konymp_imagedownload.png",
     "info": null,
     "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "h1fb1f0c48824f698bf6240b86494af6",
+    "kuid": "f837f8a4416e45569e3fef530f52b458",
     "name": "kony.ui.Image2",
-    "parent": "flxSponsor",
-    "pf": "tempSingleSponsor",
+    "parent": "masterContainer",
+    "pf": "frmPresenters",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,
     "wType": "Image",
     "widgetalignment": 5,
-    "zindex": 1
+    "zindex": 30
 }
