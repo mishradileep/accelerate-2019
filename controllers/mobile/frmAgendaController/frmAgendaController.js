@@ -1987,7 +1987,7 @@ define({
     }
     else if(!kony.sdk.isNullOrUndefined(naviInfo.transferCode) && naviInfo.transferCode===100){
       var myAgenda=kony.store.getItem("myAgendaData");
-      if(kony.sdk.isNullOrUndefined(myAgenda) || this.isPushNotificationFlow){
+      if((kony.sdk.isNullOrUndefined(myAgenda) ||  Object.keys(myAgenda).length===0 )|| this.isPushNotificationFlow){
         return;
       }
       if(myAgenda.hasOwnProperty(this.view[this.thisCard.id].sessionData.event_session_id)){
