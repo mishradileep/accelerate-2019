@@ -147,7 +147,13 @@ define({
   onClickOfPresenter: function(presenter) {
     this.view.speakerName.text = presenter.speaker_name;
     this.view.speakerTitle.text = presenter.speaker_title;
-    this.view.speakerInfo.text = presenter.speaker_bio;
+    //this.view.speakerInfo.text = presenter.speaker_bio;
+    if(presenter.speaker_bio!==undefined && presenter.speaker_bio!== ""){
+      this.currentPresenterLinkedInLink = presenter.speaker_bio;
+      this.view.btnLinkedIn.isVisible = true;
+    }else{
+      this.view.btnLinkedIn.isVisible = false;
+    }
     if(presenter.speaker_profile_pic) {
       this.view.imgProfileLarge.src = presenter.speaker_profile_pic;      
     }else {
@@ -161,6 +167,10 @@ define({
       this.createSessions(presenter.sessionsList);
     }
     this.view.presenterDetail.isVisible = true;
+  },
+  
+  onClickOfLinkedInLink : function() {
+    kony.application.openURL(this.currentPresenterLinkedInLink);
   },
 
   /**

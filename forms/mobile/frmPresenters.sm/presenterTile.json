@@ -95,7 +95,8 @@
                 "kuid": "d8395b211a794036b6bf2a9d67220452",
                 "srcKUID": "c61c8d81be734d32b1ecaa439c8ab6e1",
                 "wType": "Image"
-            }
+            },
+            "src": "loader560x570.gif"
         },
         "speakerInfo": {
             "__events__": {},

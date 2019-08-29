@@ -39,6 +39,7 @@
         "speakerName",
         "speakerTitle",
         "speakerInfo",
+        "btnLinkedIn",
         "speakerDummy"
     ],
     "clipbounds": true,
