@@ -26,7 +26,7 @@
     "_skin_": "s8cfed1dd1554bce93596b5c3af28ea0",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "-50dp"
     },
     "_width_": {
         "type": "string",
@@ -63,5 +63,5 @@
     "snaptogrid": true,
     "wType": "FlexContainer",
     "widgetalignment": 1,
-    "zindex": 10
+    "zindex": 1
 }

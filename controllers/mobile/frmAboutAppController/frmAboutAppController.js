@@ -1,3 +1,4 @@
+
 define({
   
     /**
@@ -31,5 +32,6 @@ define({
   setImageAspectRatio : function() {
     var width = kony.os.deviceInfo().screenWidth;
     this.view.imgQuantamHeader.height = width * 0.46;
+    this.view.flxQuantamHeader.height = width * 0.46;
   }
 });

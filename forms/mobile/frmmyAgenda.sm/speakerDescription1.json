@@ -55,7 +55,7 @@
         }
     },
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "j36c053d9111424ca7d8ecfeb892521c",
     "name": "kony.ui.Label",
     "parent": "speaker2Bio",

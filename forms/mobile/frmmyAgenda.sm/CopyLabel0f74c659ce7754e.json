@@ -22,15 +22,15 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "number",
-        "value": "27"
-    },
     "_skin_": "sc9230a95e6942568b50d9f03a2ed427",
     "_text_": "Explore emerging trends in software development – Low-Code, PWA, VR/AI, Cloud, DevOps and more. See how to leverage the full potential of Kony with hands-on  platform workshops, ",
     "_top_": {
         "type": "string",
         "value": "10dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "85%"
     },
     "_wrapping_": 2,
     "android": {
