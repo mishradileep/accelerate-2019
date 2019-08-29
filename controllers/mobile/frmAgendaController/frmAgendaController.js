@@ -1972,10 +1972,10 @@ define({
   onNavigate:function(naviInfo){
     debugger;
     this.navigateSessionId=kony.store.getItem("currentNotificationId");
-    if(kony.sdk.isNullOrUndefined(naviInfo) && this.navigateSessionId==-999999999){
+    if(kony.sdk.isNullOrUndefined(naviInfo) && kony.sdk.isNullOrUndefined(this.navigateSessionId)){
       this.showListPageDirectly();
     }
-    else if((this.navigateSessionId!==-999999999)){
+    else if(!kony.sdk.isNullOrUndefined(this.navigateSessionId)){
       var updatedSession=this.findSessionObject(this.navigateSessionId);
       if(kony.sdk.isNullOrUndefined(updatedSession)){
         return;
@@ -1983,7 +1983,7 @@ define({
       this.isPushNotificationFlow=true;
       this.showUpdatedSessionInfo(updatedSession);
       this. frmAgendaPreshow();
-      kony.store.setItem("currentNotificationId",-999999999);
+      kony.store.setItem("currentNotificationId",null);
     }
     else if(!kony.sdk.isNullOrUndefined(naviInfo.transferCode) && naviInfo.transferCode===100){
       var myAgenda=kony.store.getItem("myAgendaData");
