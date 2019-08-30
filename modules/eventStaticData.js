@@ -101,7 +101,7 @@ accelerateEventData = {
 ],"wifi_info":[
         {
             "wifi_name":"Accelerate2019",
-            "id":1,"wifi_password":"KONY@Accelerate2019",
+            "id":1,"wifi_password":"Kony2019",
             "event_id":3,"CreatedBy":"",
             "LastUpdatedBy":"",
             "CreatedDateTime":"2019-07-26T07:51:45.518Z",
