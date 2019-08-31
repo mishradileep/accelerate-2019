@@ -901,7 +901,7 @@ define({
                 //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
                 100: {
                     left: "111dp",
-                    top: "52dp",
+                    top: "70dp",
                     "stepConfig": {}
                 }
             }), {
@@ -932,7 +932,7 @@ define({
             kony.ui.createAnimation({
                 100: {
                     left: "111dp",
-                    top: "74dp",
+                    top: "92dp",
                     "stepConfig": {}
                 }
             }), {
