@@ -24,8 +24,8 @@ accelerateSessionData = {
 		{
 			"event_id": 3,
 			"event_session_id": 3,
-			"session_end_date": "2019-09-04T14:35:00Z",
-			"session_name": "Welcome and Kony Vision",
+			"session_end_date": "2019-09-04T15:40:00Z",
+			"session_name": "Welcome",
 			"session_start_date": "2019-09-04T14:00:00Z",
 			"session_long_desc": "\n",
 			"session_code": "52Y1MX",
@@ -33,7 +33,7 @@ accelerateSessionData = {
 			"room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
 			"session_track_id": 3,
 			"CreatedDateTime": "2019-05-16T09:49:59Z",
-			"LastUpdatedDateTime": "2019-08-28T09:27:20Z",
+			"LastUpdatedDateTime": "2019-08-31T11:53:32Z",
 			"SoftDeleteFlag": false,
 			"presenter": [{
 					"event_id": 3,
@@ -46,12 +46,20 @@ accelerateSessionData = {
 				},
 				{
 					"event_id": 3,
+					"presenter_id": 147,
+					"session_id": 3,
+					"master_speaker_id": 48,
+					"CreatedDateTime": "2019-08-31T11:53:32.431Z",
+					"LastUpdatedDateTime": "2019-08-31T11:53:32.431Z"
+				},
+				{
+					"event_id": 3,
 					"presenter_id": 2,
 					"session_id": 3,
 					"master_speaker_id": 1,
 					"CreatedDateTime": "2019-05-16T09:50:02Z",
-					"LastUpdatedDateTime": "2019-07-17T06:05:31Z",
-					"SoftDeleteFlag": false
+					"LastUpdatedDateTime": "2019-08-31T11:53:33Z",
+					"SoftDeleteFlag": true
 				}
 			],
 			"session_material": [{
@@ -66,18 +74,75 @@ accelerateSessionData = {
 		},
 		{
 			"event_id": 3,
+			"event_session_id": 87,
+			"session_desc": "",
+			"session_end_date": "2019-09-04T15:40:00Z",
+			"session_name": "Accelerating Digital Success",
+			"session_start_date": "2019-09-04T14:00:01Z",
+			"session_long_desc": "",
+			"session_code": "WBQ5ZU",
+			"session_location": "Lady Bird Ballroom",
+			"room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+			"session_track_id": 3,
+			"CreatedDateTime": "2019-08-31T11:55:05.196Z",
+			"LastUpdatedDateTime": "2019-08-31T12:42:32Z",
+			"SoftDeleteFlag": false,
+			"presenter": [{
+				"event_id": 3,
+				"presenter_id": 148,
+				"session_id": 87,
+				"master_speaker_id": 1,
+				"CreatedDateTime": "2019-08-31T11:55:05.198Z",
+				"LastUpdatedDateTime": "2019-08-31T11:55:05.198Z"
+			}]
+		},
+		{
+			"event_id": 3,
+			"event_session_id": 88,
+			"session_desc": "",
+			"session_end_date": "2019-09-04T15:40:00Z",
+			"session_name": "Tom Hogan and Temenos CEO, Max Chuard Fireside Chat",
+			"session_start_date": "2019-09-04T14:00:03Z",
+			"session_long_desc": "",
+			"session_code": "64BXUY",
+			"session_location": "Lady Bird Ballroom",
+			"room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+			"session_track_id": 3,
+			"CreatedDateTime": "2019-08-31T11:57:38.199Z",
+			"LastUpdatedDateTime": "2019-08-31T12:42:51Z",
+			"SoftDeleteFlag": false,
+			"presenter": [{
+					"event_id": 3,
+					"presenter_id": 149,
+					"session_id": 88,
+					"master_speaker_id": 1,
+					"CreatedDateTime": "2019-08-31T11:57:38.200Z",
+					"LastUpdatedDateTime": "2019-08-31T11:57:38.200Z"
+				},
+				{
+					"event_id": 3,
+					"presenter_id": 152,
+					"session_id": 88,
+					"master_speaker_id": 56,
+					"CreatedDateTime": "2019-08-31T13:21:05.622Z",
+					"LastUpdatedDateTime": "2019-08-31T13:21:05.622Z"
+				}
+			]
+		},
+		{
+			"event_id": 3,
 			"event_session_id": 85,
 			"session_desc": "",
-			"session_end_date": "2019-09-04T15:00:00Z",
-			"session_name": "Opening Keynote - John Janclaes, Partners FCU + TBD",
-			"session_start_date": "2019-09-04T14:35:00Z",
+			"session_end_date": "2019-09-04T15:40:00Z",
+			"session_name": "Accelerating Digital Initiatives",
+			"session_start_date": "2019-09-04T14:00:05Z",
 			"session_long_desc": "",
 			"session_code": "UC4I0M",
 			"session_location": "Lady Bird Ballroom",
 			"room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
 			"session_track_id": 3,
 			"CreatedDateTime": "2019-08-28T16:28:31.069Z",
-			"LastUpdatedDateTime": "2019-08-28T16:29:53Z",
+			"LastUpdatedDateTime": "2019-08-31T12:43:07Z",
 			"SoftDeleteFlag": false,
 			"presenter": [{
 				"event_id": 3,
@@ -91,15 +156,15 @@ accelerateSessionData = {
 		{
 			"event_id": 3,
 			"event_session_id": 4,
-			"session_end_date": "2019-09-04T15:15:00Z",
-			"session_name": "Tom & Ben Crenshaw Fireside Chat",
-			"session_start_date": "2019-09-04T15:00:00Z",
+			"session_end_date": "2019-09-04T15:40:00Z",
+			"session_name": "Tom Hogan and Ben Crenshaw Fireside Chat",
+			"session_start_date": "2019-09-04T14:00:07Z",
 			"session_code": "H7ZGDT",
 			"session_location": "Lady Bird Ballroom",
 			"room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
 			"session_track_id": 3,
 			"CreatedDateTime": "2019-05-16T09:52:19Z",
-			"LastUpdatedDateTime": "2019-08-28T09:30:49Z",
+			"LastUpdatedDateTime": "2019-08-31T12:43:26Z",
 			"SoftDeleteFlag": false,
 			"presenter": [{
 					"event_id": 3,
@@ -135,6 +200,14 @@ accelerateSessionData = {
 					"master_speaker_id": 4,
 					"CreatedDateTime": "2019-08-19T13:15:21Z",
 					"LastUpdatedDateTime": "2019-08-19T13:15:21Z"
+				},
+				{
+					"event_id": 3,
+					"presenter_id": 151,
+					"session_id": 4,
+					"master_speaker_id": 1,
+					"CreatedDateTime": "2019-08-31T12:14:40.145Z",
+					"LastUpdatedDateTime": "2019-08-31T12:14:40.145Z"
 				}
 			],
 			"session_material": [{
@@ -152,24 +225,34 @@ accelerateSessionData = {
 			"event_session_id": 78,
 			"session_desc": "",
 			"session_end_date": "2019-09-04T15:40:00Z",
-			"session_name": "Quantum Customer Panel with Carlos Carvajal",
-			"session_start_date": "2019-09-04T15:15:00Z",
+			"session_name": "Customer Panel on Digital Transformation",
+			"session_start_date": "2019-09-04T14:00:09Z",
 			"session_long_desc": "",
 			"session_code": "80G1WQ",
 			"session_location": "Lady Bird Ballroom",
 			"room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
 			"session_track_id": 3,
 			"CreatedDateTime": "2019-08-28T10:05:06.732Z",
-			"LastUpdatedDateTime": "2019-08-28T10:58:18Z",
+			"LastUpdatedDateTime": "2019-08-31T12:43:41Z",
 			"SoftDeleteFlag": false,
 			"presenter": [{
-				"event_id": 3,
-				"presenter_id": 122,
-				"session_id": 78,
-				"master_speaker_id": 48,
-				"CreatedDateTime": "2019-08-28T10:05:06.733Z",
-				"LastUpdatedDateTime": "2019-08-28T10:05:06.733Z"
-			}]
+					"event_id": 3,
+					"presenter_id": 122,
+					"session_id": 78,
+					"master_speaker_id": 48,
+					"CreatedDateTime": "2019-08-28T10:05:06.733Z",
+					"LastUpdatedDateTime": "2019-08-31T12:13:33Z",
+					"SoftDeleteFlag": true
+				},
+				{
+					"event_id": 3,
+					"presenter_id": 150,
+					"session_id": 78,
+					"master_speaker_id": 5,
+					"CreatedDateTime": "2019-08-31T12:13:31.506Z",
+					"LastUpdatedDateTime": "2019-08-31T12:13:31.506Z"
+				}
+			]
 		},
 		{
 			"event_id": 3,
@@ -577,18 +660,30 @@ accelerateSessionData = {
 		},
 		{
 			"event_id": 3,
+			"event_session_id": 45,
+			"session_end_date": "2019-09-04T20:45:00Z",
+			"session_name": "Break",
+			"session_start_date": "2019-09-04T20:15:00Z",
+			"session_code": "I9BHM3",
+			"session_track_id": 4,
+			"CreatedDateTime": "2019-08-19T09:20:39Z",
+			"LastUpdatedDateTime": "2019-08-21T11:49:52Z",
+			"SoftDeleteFlag": false
+		},
+		{
+			"event_id": 3,
 			"event_session_id": 75,
 			"session_desc": "Build a quick no-code application in Kony Quantum in 20 minutes. Part 1 will walk you through building a functional four screen application. Part 2 (on Thursday) will address connecting to an identity service and a data source.",
 			"session_end_date": "2019-09-04T20:45:00Z",
 			"session_name": "Build an App in 20 minutes - Part 1",
-			"session_start_date": "2019-09-04T20:15:00Z",
+			"session_start_date": "2019-09-04T20:15:02Z",
 			"session_long_desc": "",
 			"session_code": "FEQ6PL",
 			"session_location": "Kony Back Stage Lab",
 			"room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
 			"session_track_id": 1,
 			"CreatedDateTime": "2019-08-21T13:24:31.299Z",
-			"LastUpdatedDateTime": "2019-08-28T11:18:38Z",
+			"LastUpdatedDateTime": "2019-08-31T12:55:40Z",
 			"SoftDeleteFlag": false,
 			"presenter": [{
 				"event_id": 3,
@@ -605,14 +700,14 @@ accelerateSessionData = {
 			"session_desc": "The Kony DBX Labs model is different—we’re not a think tank and we’re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
 			"session_end_date": "2019-09-04T20:45:00Z",
 			"session_name": "Hands-on Learning with DBXperts",
-			"session_start_date": "2019-09-04T20:15:00Z",
+			"session_start_date": "2019-09-04T20:15:04Z",
 			"session_long_desc": "",
 			"session_code": "X2BIYU",
 			"session_location": "Kony Back Stage Lab",
 			"room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
 			"session_track_id": 2,
 			"CreatedDateTime": "2019-08-28T10:12:48.042Z",
-			"LastUpdatedDateTime": "2019-08-28T23:00:40Z",
+			"LastUpdatedDateTime": "2019-08-31T12:56:08Z",
 			"SoftDeleteFlag": false,
 			"presenter": [{
 				"event_id": 3,
@@ -622,18 +717,6 @@ accelerateSessionData = {
 				"CreatedDateTime": "2019-08-28T10:12:48.043Z",
 				"LastUpdatedDateTime": "2019-08-28T10:12:48.043Z"
 			}]
-		},
-		{
-			"event_id": 3,
-			"event_session_id": 45,
-			"session_end_date": "2019-09-04T20:45:00Z",
-			"session_name": "Break",
-			"session_start_date": "2019-09-04T20:15:00Z",
-			"session_code": "I9BHM3",
-			"session_track_id": 4,
-			"CreatedDateTime": "2019-08-19T09:20:39Z",
-			"LastUpdatedDateTime": "2019-08-21T11:49:52Z",
-			"SoftDeleteFlag": false
 		},
 		{
 			"event_id": 3,
@@ -1015,6 +1098,18 @@ accelerateSessionData = {
 		},
 		{
 			"event_id": 3,
+			"event_session_id": 49,
+			"session_end_date": "2019-09-05T16:15:00Z",
+			"session_name": "Break",
+			"session_start_date": "2019-09-05T15:45:00Z",
+			"session_code": "XH4J2X",
+			"session_track_id": 4,
+			"CreatedDateTime": "2019-08-19T10:57:32Z",
+			"LastUpdatedDateTime": "2019-08-21T13:11:25Z",
+			"SoftDeleteFlag": false
+		},
+		{
+			"event_id": 3,
 			"event_session_id": 83,
 			"session_desc": "The Kony DBX Labs model is different—we’re not a think tank and we’re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
 			"session_end_date": "2019-09-05T16:15:00Z",
@@ -1026,7 +1121,7 @@ accelerateSessionData = {
 			"room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
 			"session_track_id": 2,
 			"CreatedDateTime": "2019-08-28T10:39:03.087Z",
-			"LastUpdatedDateTime": "2019-08-29T01:29:00Z",
+			"LastUpdatedDateTime": "2019-08-31T13:07:34Z",
 			"SoftDeleteFlag": false,
 			"presenter": [{
 				"event_id": 3,
@@ -1036,18 +1131,6 @@ accelerateSessionData = {
 				"CreatedDateTime": "2019-08-28T10:39:03.092Z",
 				"LastUpdatedDateTime": "2019-08-28T10:39:03.092Z"
 			}]
-		},
-		{
-			"event_id": 3,
-			"event_session_id": 49,
-			"session_end_date": "2019-09-05T16:15:00Z",
-			"session_name": "Break",
-			"session_start_date": "2019-09-05T15:45:00Z",
-			"session_code": "XH4J2X",
-			"session_track_id": 4,
-			"CreatedDateTime": "2019-08-19T10:57:32Z",
-			"LastUpdatedDateTime": "2019-08-21T13:11:25Z",
-			"SoftDeleteFlag": false
 		},
 		{
 			"event_id": 3,
@@ -1336,6 +1419,39 @@ accelerateSessionData = {
 		},
 		{
 			"event_id": 3,
+			"event_session_id": 35,
+			"session_desc": "New technologies such as Augmented Reality, Artificial Intelligence, and Conversational UIs offer deeper possibilities for integration while providing transformational user experiences. Kony has done much of the work to make these technologies easily accessible through Kony Quantum. Learn more about our pre-built resources and how to use them in your next project.",
+			"session_end_date": "2019-09-05T19:15:00Z",
+			"session_name": "Technology Innovation with AR, AI, Conversational UI, and more - Technical",
+			"session_start_date": "2019-09-05T18:45:00Z",
+			"session_long_desc": "",
+			"session_location": "Meriwether I&II",
+			"room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+			"session_track_id": 1,
+			"CreatedDateTime": "2019-08-13T06:50:17Z",
+			"LastUpdatedDateTime": "2019-08-30T06:23:06Z",
+			"SoftDeleteFlag": false,
+			"presenter": [{
+					"event_id": 3,
+					"presenter_id": 30,
+					"session_id": 35,
+					"master_speaker_id": 10,
+					"CreatedDateTime": "2019-08-15T03:01:21Z",
+					"LastUpdatedDateTime": "2019-08-19T14:20:03Z",
+					"SoftDeleteFlag": true
+				},
+				{
+					"event_id": 3,
+					"presenter_id": 101,
+					"session_id": 35,
+					"master_speaker_id": 8,
+					"CreatedDateTime": "2019-08-19T14:20:00Z",
+					"LastUpdatedDateTime": "2019-08-19T14:20:00Z"
+				}
+			]
+		},
+		{
+			"event_id": 3,
 			"event_session_id": 34,
 			"session_desc": "The banking industry’s legacy digital payment systems built over the last 30 years weren’t built for today’s digitally-connected consumers, digitally-integrated businesses, and the evolving faster-payment needs. This constrains a financial institution’s ability to innovate, deliver low-friction user experiences, and compete with the large banks and growing number of non-bank fintechs.  In this session, learn how to flip the script on money movement, regardless of your tech stack.",
 			"session_end_date": "2019-09-05T19:15:00Z",
@@ -1363,39 +1479,6 @@ accelerateSessionData = {
 					"master_speaker_id": 11,
 					"CreatedDateTime": "2019-08-15T03:01:36Z",
 					"LastUpdatedDateTime": "2019-08-21T15:44:49Z",
-					"SoftDeleteFlag": true
-				}
-			]
-		},
-		{
-			"event_id": 3,
-			"event_session_id": 35,
-			"session_desc": "New technologies such as Augmented Reality, Artificial Intelligence, and Conversational UIs offer deeper possibilities for integration while providing transformational user experiences. Kony has done much of the work to make these technologies easily accessible through Kony Quantum. Learn more about our pre-built resources and how to use them in your next project.",
-			"session_end_date": "2019-09-05T19:15:00Z",
-			"session_name": "Technology Innovation with AR, AI, Conversational UI, and more - Technical",
-			"session_start_date": "2019-09-05T18:45:00Z",
-			"session_long_desc": "",
-			"session_location": "Meriwether I&II",
-			"room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
-			"session_track_id": 1,
-			"CreatedDateTime": "2019-08-13T06:50:17Z",
-			"LastUpdatedDateTime": "2019-08-30T06:23:06Z",
-			"SoftDeleteFlag": false,
-			"presenter": [{
-					"event_id": 3,
-					"presenter_id": 101,
-					"session_id": 35,
-					"master_speaker_id": 8,
-					"CreatedDateTime": "2019-08-19T14:20:00Z",
-					"LastUpdatedDateTime": "2019-08-19T14:20:00Z"
-				},
-				{
-					"event_id": 3,
-					"presenter_id": 30,
-					"session_id": 35,
-					"master_speaker_id": 10,
-					"CreatedDateTime": "2019-08-15T03:01:21Z",
-					"LastUpdatedDateTime": "2019-08-19T14:20:03Z",
 					"SoftDeleteFlag": true
 				}
 			]
@@ -1565,6 +1648,30 @@ accelerateSessionData = {
 		},
 		{
 			"event_id": 3,
+			"event_session_id": 67,
+			"session_desc": "Kony delivers easy to use, built-in security for both mobile and web applications. While these features are a top priority within Kony, many customers and developers aren't fully aware of our comprehensive security capabilities. Learn more about protecting your end-to-end applications, and gain an understanding of the best practices required to ensure the highest levels of security in your projects.",
+			"session_end_date": "2019-09-05T21:15:00Z",
+			"session_name": "Kony Web and Mobile Security - Technical",
+			"session_start_date": "2019-09-05T20:45:00Z",
+			"session_long_desc": "",
+			"session_code": "J8LFB7",
+			"session_location": "Meriwether I&II",
+			"room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
+			"session_track_id": 1,
+			"CreatedDateTime": "2019-08-19T11:31:29Z",
+			"LastUpdatedDateTime": "2019-08-30T06:33:39Z",
+			"SoftDeleteFlag": false,
+			"presenter": [{
+				"event_id": 3,
+				"presenter_id": 85,
+				"session_id": 67,
+				"master_speaker_id": 8,
+				"CreatedDateTime": "2019-08-19T14:06:24Z",
+				"LastUpdatedDateTime": "2019-08-19T14:06:24Z"
+			}]
+		},
+		{
+			"event_id": 3,
 			"event_session_id": 43,
 			"session_desc": "The JetBlue mission, “Inspire humanity,” drives its leaders to create more personal, helpful, and simple customer experiences. Its crewmembers are one of JetBlue’s biggest advantages, but the technology behind the scenes that supports them is also critical. JetBlue runs 500 customer and crewmember support applications. Okta makes sure that, in JetBlue’s multi-layered customer, partner, and crewmember ecosystem, the right people always have secure but effortless access to the right information. Learn more and take away practical steps you can leverage at your bank or credit union during this session.",
 			"session_end_date": "2019-09-05T21:15:00Z",
@@ -1595,30 +1702,6 @@ accelerateSessionData = {
 					"LastUpdatedDateTime": "2019-08-19T14:06:57Z"
 				}
 			]
-		},
-		{
-			"event_id": 3,
-			"event_session_id": 67,
-			"session_desc": "Kony delivers easy to use, built-in security for both mobile and web applications. While these features are a top priority within Kony, many customers and developers aren't fully aware of our comprehensive security capabilities. Learn more about protecting your end-to-end applications, and gain an understanding of the best practices required to ensure the highest levels of security in your projects.",
-			"session_end_date": "2019-09-05T21:15:00Z",
-			"session_name": "Kony Web and Mobile Security - Technical",
-			"session_start_date": "2019-09-05T20:45:00Z",
-			"session_long_desc": "",
-			"session_code": "J8LFB7",
-			"session_location": "Meriwether I&II",
-			"room_no": "https://s3.amazonaws.com/volumeplay/1/Merriweather1n2.pdf",
-			"session_track_id": 1,
-			"CreatedDateTime": "2019-08-19T11:31:29Z",
-			"LastUpdatedDateTime": "2019-08-30T06:33:39Z",
-			"SoftDeleteFlag": false,
-			"presenter": [{
-				"event_id": 3,
-				"presenter_id": 85,
-				"session_id": 67,
-				"master_speaker_id": 8,
-				"CreatedDateTime": "2019-08-19T14:06:24Z",
-				"LastUpdatedDateTime": "2019-08-19T14:06:24Z"
-			}]
 		},
 		{
 			"event_id": 3,

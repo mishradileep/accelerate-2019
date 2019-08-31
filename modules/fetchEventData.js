@@ -6,7 +6,7 @@
   function syncEventData() {
       let isTimeStamp = kony.store.getItem("isTimeStampUpdated");
       if (isTimeStamp === null || isTimeStamp === undefined)
-          kony.store.setItem("clientLastUpdatedTime", "2019-08-30T11:03:58Z");
+          kony.store.setItem("clientLastUpdatedTime", "2019-08-31T13:31:15Z");
       else {
           let storeEventData = kony.store.getItem("eventData");
           let storeEventSessionData =  kony.store.getItem("eventSessionData");
