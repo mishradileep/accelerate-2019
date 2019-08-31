@@ -60,13 +60,22 @@ accelerateSpeakerData = {
 					"session_location": "Lady Bird Ballroom",
 					"session_name": "Tom Hogan and Temenos CEO, Max Chuard Fireside Chat",
 					"presenter": [{
-						"presenter_id": 149,
-						"event_id": 3,
-						"master_speaker_id": 1,
-						"session_id": 88,
-						"CreatedDateTime": "2019-08-31 11:57:38.2",
-						"LastUpdatedDateTime": "2019-08-31 11:57:38.2"
-					}],
+							"presenter_id": 149,
+							"event_id": 3,
+							"master_speaker_id": 1,
+							"session_id": 88,
+							"CreatedDateTime": "2019-08-31 11:57:38.2",
+							"LastUpdatedDateTime": "2019-08-31 11:57:38.2"
+						},
+						{
+							"presenter_id": 152,
+							"event_id": 3,
+							"master_speaker_id": 56,
+							"session_id": 88,
+							"CreatedDateTime": "2019-08-31 13:21:05.622",
+							"LastUpdatedDateTime": "2019-08-31 13:21:05.622"
+						}
+					],
 					"session_start_date": "2019-09-04 14:00:03.0",
 					"session_code": "64BXUY",
 					"session_desc": "",
@@ -682,7 +691,7 @@ accelerateSpeakerData = {
 					],
 					"session_start_date": "2019-09-04 16:45:00.0",
 					"session_code": "FTKQ4U",
-					"session_desc": "Michaels has aggressively grown their business in the digital channel with a massive focus on customers engagement. Leveraging full native mobile capabilities, with a focus on UI/UX design, they have used their application to address real customer problems. Geolocation, in-store product location and wayfinding, an AI-enhanced conversational interface with Natural Language Processing (NLP), product image recognition, barcode scanning and more, convert technology into a seamless and sticky user experience. Varun Puri will discuss the approach for driving digital customer engagement. He will be joined by Bill Bodin, Kony 2019's CTO.",
+					"session_desc": "Michaels has aggressively grown their business in the digital channel with a massive focus on customers engagement. Leveraging full native mobile capabilities, with a focus on UI/UX design, they have used their application to address real customer problems. Geolocation, in-store product location and wayfinding, an AI-enhanced conversational interface with Natural Language Processing (NLP), product image recognition, barcode scanning and more, convert technology into a seamless and sticky user experience. Varun Puri will discuss the approach for driving digital customer engagement. He will be joined by Bill Bodin, Kony 2019s CTO.",
 					"event_session_id": 37,
 					"LastUpdatedDateTime": "2019-08-30 07:18:56.0",
 					"session_track_id": 1,
@@ -920,7 +929,7 @@ accelerateSpeakerData = {
 					}],
 					"session_start_date": "2019-09-04 17:45:00.0",
 					"session_code": "NOJNIW",
-					"session_desc": "The Kony DBX Labs model is different—we’re not a think tank and we’re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
+					"session_desc": "The Kony DBX Labs model is different 2014we 2019re not a think tank and we 2019re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
 					"event_session_id": 79,
 					"LastUpdatedDateTime": "2019-08-28 22:38:39.0",
 					"session_track_id": 2,
@@ -944,7 +953,7 @@ accelerateSpeakerData = {
 					}],
 					"session_start_date": "2019-09-04 20:15:04.0",
 					"session_code": "X2BIYU",
-					"session_desc": "The Kony DBX Labs model is different—we’re not a think tank and we’re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
+					"session_desc": "The Kony DBX Labs model is different 2014we 2019re not a think tank and we 2019re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
 					"event_session_id": 80,
 					"LastUpdatedDateTime": "2019-08-31 12:56:08.0",
 					"session_track_id": 2,
@@ -968,9 +977,9 @@ accelerateSpeakerData = {
 					}],
 					"session_start_date": "2019-09-05 15:45:00.0",
 					"session_code": "UQYT02",
-					"session_desc": "The Kony DBX Labs model is different—we’re not a think tank and we’re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
+					"session_desc": "The Kony DBX Labs model is different 2014we 2019re not a think tank and we 2019re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
 					"event_session_id": 83,
-					"LastUpdatedDateTime": "2019-08-29 01:29:00.0",
+					"LastUpdatedDateTime": "2019-08-31 13:07:34.0",
 					"session_track_id": 2,
 					"event_id": 3,
 					"session_long_desc": "",
@@ -1057,7 +1066,7 @@ accelerateSpeakerData = {
 					}],
 					"session_start_date": "2019-09-05 18:00:01.0",
 					"session_code": "9CQ4Z3",
-					"session_desc": "The Kony DBX Labs model is different—we’re not a think tank and we’re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
+					"session_desc": "The Kony DBX Labs model is different 2014we 2019re not a think tank and we 2019re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
 					"event_session_id": 84,
 					"LastUpdatedDateTime": "2019-08-30 07:40:01.0",
 					"session_track_id": 2,
@@ -1102,7 +1111,7 @@ accelerateSpeakerData = {
 				],
 				"session_start_date": "2019-09-05 18:00:02.0",
 				"session_code": "LQDFEL",
-				"session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications. In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps (PWA)",
+				"session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications. In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps PWA)",
 				"event_session_id": 77,
 				"LastUpdatedDateTime": "2019-08-30 07:40:45.0",
 				"session_track_id": 1,
@@ -2232,7 +2241,7 @@ accelerateSpeakerData = {
 					],
 					"session_start_date": "2019-09-05 18:00:02.0",
 					"session_code": "LQDFEL",
-					"session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications. In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps (PWA)",
+					"session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications. In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps PWA)",
 					"event_session_id": 77,
 					"LastUpdatedDateTime": "2019-08-30 07:40:45.0",
 					"session_track_id": 1,
@@ -2886,7 +2895,41 @@ accelerateSpeakerData = {
 			"speaker_title": "CEO, Temenos",
 			"CreatedDateTime": "2019-08-31T11:56:45.806Z",
 			"LastUpdatedDateTime": "2019-08-31T11:57:27Z",
-			"SoftDeleteFlag": false
+			"SoftDeleteFlag": false,
+			"tracks": [3],
+			"sessionsList": [{
+				"session_location": "Lady Bird Ballroom",
+				"session_name": "Tom Hogan and Temenos CEO, Max Chuard Fireside Chat",
+				"presenter": [{
+						"presenter_id": 149,
+						"event_id": 3,
+						"master_speaker_id": 1,
+						"session_id": 88,
+						"CreatedDateTime": "2019-08-31 11:57:38.2",
+						"LastUpdatedDateTime": "2019-08-31 11:57:38.2"
+					},
+					{
+						"presenter_id": 152,
+						"event_id": 3,
+						"master_speaker_id": 56,
+						"session_id": 88,
+						"CreatedDateTime": "2019-08-31 13:21:05.622",
+						"LastUpdatedDateTime": "2019-08-31 13:21:05.622"
+					}
+				],
+				"session_start_date": "2019-09-04 14:00:03.0",
+				"session_code": "64BXUY",
+				"session_desc": "",
+				"event_session_id": 88,
+				"LastUpdatedDateTime": "2019-08-31 12:42:51.0",
+				"session_track_id": 3,
+				"event_id": 3,
+				"session_long_desc": "",
+				"session_end_date": "2019-09-04 15:40:00.0",
+				"room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+				"SoftDeleteFlag": false,
+				"CreatedDateTime": "2019-08-31 11:57:38.199"
+			}]
 		}
 	],
 	"opstatus": 0,
@@ -2951,13 +2994,22 @@ accelerateSpeakerData = {
 					"session_location": "Lady Bird Ballroom",
 					"session_name": "Tom Hogan and Temenos CEO, Max Chuard Fireside Chat",
 					"presenter": [{
-						"presenter_id": 149,
-						"event_id": 3,
-						"master_speaker_id": 1,
-						"session_id": 88,
-						"CreatedDateTime": "2019-08-31 11:57:38.2",
-						"LastUpdatedDateTime": "2019-08-31 11:57:38.2"
-					}],
+							"presenter_id": 149,
+							"event_id": 3,
+							"master_speaker_id": 1,
+							"session_id": 88,
+							"CreatedDateTime": "2019-08-31 11:57:38.2",
+							"LastUpdatedDateTime": "2019-08-31 11:57:38.2"
+						},
+						{
+							"presenter_id": 152,
+							"event_id": 3,
+							"master_speaker_id": 56,
+							"session_id": 88,
+							"CreatedDateTime": "2019-08-31 13:21:05.622",
+							"LastUpdatedDateTime": "2019-08-31 13:21:05.622"
+						}
+					],
 					"session_start_date": "2019-09-04 14:00:03.0",
 					"session_code": "64BXUY",
 					"session_desc": "",
@@ -3861,7 +3913,7 @@ accelerateSpeakerData = {
 					"session_code": "UQYT02",
 					"session_desc": "The Kony DBX Labs model is different 2014we 2019re not a think tank and we 2019re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
 					"event_session_id": 83,
-					"LastUpdatedDateTime": "2019-08-29 01:29:00.0",
+					"LastUpdatedDateTime": "2019-08-31 13:07:34.0",
 					"session_track_id": 2,
 					"event_id": 3,
 					"session_long_desc": "",
@@ -3993,7 +4045,7 @@ accelerateSpeakerData = {
 				],
 				"session_start_date": "2019-09-05 18:00:02.0",
 				"session_code": "LQDFEL",
-				"session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications. In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps (PWA)",
+				"session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications. In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps PWA)",
 				"event_session_id": 77,
 				"LastUpdatedDateTime": "2019-08-30 07:40:45.0",
 				"session_track_id": 1,
@@ -4088,7 +4140,7 @@ accelerateSpeakerData = {
 				}],
 				"session_start_date": "2019-09-04 21:15:00.0",
 				"session_code": "TN8OZH",
-				"session_desc": "Vermont Electric Power Co., Inc. (VELCO), a small transmission utility serving the entire state of Vermont, had 7 custom desktop web and mobile web applications built on a platform that was no longer supported.  VELCO selected Kony Quantum with the hope that Kony 2019s Fabric middleware software would become a key component in its data integration strategy. Over the first 15 months, VELCO converted the 7 existing applications, created 3 new applications, deployed them and retired the old apps using a combination of its own application development team, Kony Professional Services and a 3rd party developer. VELCO 2019s presentation will detail the development process it utilized, how Fabric has become a key component to its data integration strategy and a demonstration of a couple of its apps.",
+				"session_desc": "Vermont Electric Power Co., Inc. (VELCO), a small transmission utility serving the entire state of Vermont, had 7 custom desktop web and mobile web applications built on a platform that was no longer supported.  VELCO selected Kony Quantum with the hope that Kony 2019s Fabric middleware software would become a key component in its data integration strategy.    Over the first 15 months, VELCO converted the 7 existing applications, created 3 new applications, deployed them and retired the old apps using a combination of its own application development team, Kony Professional Services and a 3rd party developer.    VELCO 2019s presentation will detail the development process it utilized, how Fabric has become a key component to its data integration strategy and a demonstration of a couple of its apps.",
 				"event_session_id": 52,
 				"LastUpdatedDateTime": "2019-08-30 06:01:45.0",
 				"session_track_id": 1,
@@ -5123,7 +5175,7 @@ accelerateSpeakerData = {
 					],
 					"session_start_date": "2019-09-05 18:00:02.0",
 					"session_code": "LQDFEL",
-					"session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications. In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps (PWA)",
+					"session_desc": "Progressive web applications (PWAs) are rich web applications that can receive push messages, work offline, and perform like native applications.  Kony Quantum has the most comprehensive toolset for developing modern web and progressive web applications. In this session, attendees will learn how to rapidly create and build a progressive web application (PWA) using Kony Visualizer and learn how the Kony Quantum platform makes developing progressive web applications easier through its low-code and component-based approach. This will be a hands-on companion session to for the Technical session Building Progressive Web Apps PWA)",
 					"event_session_id": 77,
 					"LastUpdatedDateTime": "2019-08-30 07:40:45.0",
 					"session_track_id": 1,
@@ -5777,7 +5829,41 @@ accelerateSpeakerData = {
 			"speaker_title": "CEO, Temenos",
 			"CreatedDateTime": "2019-08-31T11:56:45.806Z",
 			"LastUpdatedDateTime": "2019-08-31T11:57:27Z",
-			"SoftDeleteFlag": false
+			"SoftDeleteFlag": false,
+			"tracks": [3],
+			"sessionsList": [{
+				"session_location": "Lady Bird Ballroom",
+				"session_name": "Tom Hogan and Temenos CEO, Max Chuard Fireside Chat",
+				"presenter": [{
+						"presenter_id": 149,
+						"event_id": 3,
+						"master_speaker_id": 1,
+						"session_id": 88,
+						"CreatedDateTime": "2019-08-31 11:57:38.2",
+						"LastUpdatedDateTime": "2019-08-31 11:57:38.2"
+					},
+					{
+						"presenter_id": 152,
+						"event_id": 3,
+						"master_speaker_id": 56,
+						"session_id": 88,
+						"CreatedDateTime": "2019-08-31 13:21:05.622",
+						"LastUpdatedDateTime": "2019-08-31 13:21:05.622"
+					}
+				],
+				"session_start_date": "2019-09-04 14:00:03.0",
+				"session_code": "64BXUY",
+				"session_desc": "",
+				"event_session_id": 88,
+				"LastUpdatedDateTime": "2019-08-31 12:42:51.0",
+				"session_track_id": 3,
+				"event_id": 3,
+				"session_long_desc": "",
+				"session_end_date": "2019-09-04 15:40:00.0",
+				"room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+				"SoftDeleteFlag": false,
+				"CreatedDateTime": "2019-08-31 11:57:38.199"
+			}]
 		}
 	]
 }

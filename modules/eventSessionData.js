@@ -112,13 +112,22 @@ accelerateSessionData = {
 			"LastUpdatedDateTime": "2019-08-31T12:42:51Z",
 			"SoftDeleteFlag": false,
 			"presenter": [{
-				"event_id": 3,
-				"presenter_id": 149,
-				"session_id": 88,
-				"master_speaker_id": 1,
-				"CreatedDateTime": "2019-08-31T11:57:38.200Z",
-				"LastUpdatedDateTime": "2019-08-31T11:57:38.200Z"
-			}]
+					"event_id": 3,
+					"presenter_id": 149,
+					"session_id": 88,
+					"master_speaker_id": 1,
+					"CreatedDateTime": "2019-08-31T11:57:38.200Z",
+					"LastUpdatedDateTime": "2019-08-31T11:57:38.200Z"
+				},
+				{
+					"event_id": 3,
+					"presenter_id": 152,
+					"session_id": 88,
+					"master_speaker_id": 56,
+					"CreatedDateTime": "2019-08-31T13:21:05.622Z",
+					"LastUpdatedDateTime": "2019-08-31T13:21:05.622Z"
+				}
+			]
 		},
 		{
 			"event_id": 3,
@@ -1089,6 +1098,18 @@ accelerateSessionData = {
 		},
 		{
 			"event_id": 3,
+			"event_session_id": 49,
+			"session_end_date": "2019-09-05T16:15:00Z",
+			"session_name": "Break",
+			"session_start_date": "2019-09-05T15:45:00Z",
+			"session_code": "XH4J2X",
+			"session_track_id": 4,
+			"CreatedDateTime": "2019-08-19T10:57:32Z",
+			"LastUpdatedDateTime": "2019-08-21T13:11:25Z",
+			"SoftDeleteFlag": false
+		},
+		{
+			"event_id": 3,
 			"event_session_id": 83,
 			"session_desc": "The Kony DBX Labs model is different—we’re not a think tank and we’re not just a team of coders. Together, our 25+ digital professionals cross strategy, design, testing and development disciplines to create a new operating model of innovation for your institution. Join us in the Lab at any time during DBX Accelerate for custom demos, product walk-throughs and, of course, our art of the possible work.",
 			"session_end_date": "2019-09-05T16:15:00Z",
@@ -1100,7 +1121,7 @@ accelerateSessionData = {
 			"room_no": "https://s3.amazonaws.com/volumeplay/1/RedRiverBackStageLabMap.pdf",
 			"session_track_id": 2,
 			"CreatedDateTime": "2019-08-28T10:39:03.087Z",
-			"LastUpdatedDateTime": "2019-08-29T01:29:00Z",
+			"LastUpdatedDateTime": "2019-08-31T13:07:34Z",
 			"SoftDeleteFlag": false,
 			"presenter": [{
 				"event_id": 3,
@@ -1110,18 +1131,6 @@ accelerateSessionData = {
 				"CreatedDateTime": "2019-08-28T10:39:03.092Z",
 				"LastUpdatedDateTime": "2019-08-28T10:39:03.092Z"
 			}]
-		},
-		{
-			"event_id": 3,
-			"event_session_id": 49,
-			"session_end_date": "2019-09-05T16:15:00Z",
-			"session_name": "Break",
-			"session_start_date": "2019-09-05T15:45:00Z",
-			"session_code": "XH4J2X",
-			"session_track_id": 4,
-			"CreatedDateTime": "2019-08-19T10:57:32Z",
-			"LastUpdatedDateTime": "2019-08-21T13:11:25Z",
-			"SoftDeleteFlag": false
 		},
 		{
 			"event_id": 3,
