@@ -2127,7 +2127,7 @@ define({
     this.view.sessionTileAnim.addAgendaContainer.isVisible=true;
     this.view.sessionTileAnim.sessionTitle.text = session.session_name;
     this.view.sessionTileAnim.sessionTime.text = session.modifiedTime;
-    let sessionDescription = session.sessionData.session_desc;
+    let sessionDescription = session.session_desc;
     if(!kony.sdk.isNullOrUndefined(sessionDescription)){
        sessionDescription = sessionDescription.replace("\\u", " ");
        sessionDescription = sessionDescription.replace("\\n", " ");
