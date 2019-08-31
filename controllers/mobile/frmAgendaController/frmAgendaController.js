@@ -206,8 +206,13 @@ define({
       }
     }
     let sessionDesc = this.view[eventobject.id].sessionData.session_desc;
-    sessionDesc = sessionDesc.replace("\\u", " ");
-    sessionDesc = sessionDesc.replace("\\n", " ");
+    if(!kony.sdk.isNullOrUndefined(sessionDesc)){
+       sessionDesc = sessionDesc.replace("\\u", " ");
+       sessionDesc = sessionDesc.replace("\\n", " ");
+    }
+    else{
+      sessionDesc="";
+    }
     this.view.CopyLabel0f74c659ce7754e.text = sessionDesc;
     this.view.sessionTileAnim.imgStatus.src = this.view[eventobject.id].imgStatus.src;
     this.view.addAgendaContainer.imgStatus.src = this.view[eventobject.id].imgStatus.src;
@@ -2293,8 +2298,14 @@ define({
     this.view.sessionTileAnim.addAgendaContainer.isVisible=true;
     this.view.sessionTileAnim.sessionTitle.text = eventObject.sessionData.session_name;
     this.view.sessionTileAnim.sessionTime.text = eventObject.sessionData.modifiedTime;
-    let sessionDescription = eventObject.sessionData.session_desc.replace("\\u", " ");
-    sessionDescription = sessionDescription.replace("\\n"," ");
+    let sessionDescription = eventObject.sessionData.session_desc;
+    if(!kony.sdk.isNullOrUndefined(sessionDescription)){
+       sessionDescription = sessionDescription.replace("\\u", " ");
+       sessionDescription = sessionDescription.replace("\\n", " ");
+    }
+    else{
+      sessionDescription="";
+    }
     this.view.CopyLabel0f74c659ce7754e.text = sessionDescription;
     this.view.sessionTileAnim.imgStatus.src =eventObject.imgStatus.src;
     this.view.addAgendaContainer.imgStatus.src = eventObject.imgStatus.src;
