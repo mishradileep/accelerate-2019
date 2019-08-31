@@ -145,6 +145,7 @@ define({
      */
 
   onClickOfPresenter: function(presenter) {
+    var self = this;
     this.view.speakerName.text = presenter.speaker_name;
     this.view.speakerTitle.text = presenter.speaker_title;
     //this.view.speakerInfo.text = presenter.speaker_bio;
@@ -166,7 +167,7 @@ define({
     if (!kony.sdk.isNullOrUndefined(presenter.sessionsList)) {
       this.createSessions(presenter.sessionsList);
     }
-    this.view.presenterDetail.isVisible = true;
+	this.view.presenterDetail.isVisible = true;  
   },
   
   onClickOfLinkedInLink : function() {
