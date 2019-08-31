@@ -2127,8 +2127,14 @@ define({
     this.view.sessionTileAnim.addAgendaContainer.isVisible=true;
     this.view.sessionTileAnim.sessionTitle.text = session.session_name;
     this.view.sessionTileAnim.sessionTime.text = session.modifiedTime;
-    let sessionDescription = session.sessionData.session_desc.replace("\\u", " ");
-    sessionDescription = sessionDescription.replace("\\n"," ");
+    let sessionDescription = session.sessionData.session_desc;
+    if(!kony.sdk.isNullOrUndefined(sessionDescription)){
+       sessionDescription = sessionDescription.replace("\\u", " ");
+       sessionDescription = sessionDescription.replace("\\n", " ");
+    }
+    else{
+      sessionDescription="";
+    }
     this.view.CopyLabel0f74c659ce7754e.text = sessionDescription;
     this.view.sessionTileAnim.imgStatus.src =kony.sdk.isNullOrUndefined(session.isAddedToMySchedule)?"add.png":session.isAddedToMySchedule?"added.png":"add.png";
     this.view.addAgendaContainer.imgStatus.src = kony.sdk.isNullOrUndefined(session.isAddedToMySchedule)?"add.png":session.isAddedToMySchedule?"added.png":"add.png";
