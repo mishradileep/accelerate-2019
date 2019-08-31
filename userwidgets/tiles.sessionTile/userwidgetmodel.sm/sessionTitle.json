@@ -57,7 +57,7 @@
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "ec3db3f4fd634f85b0b4ff30a9d36c93",
-    "maxnumberoflines": 3,
+    "maxnumberoflines": 2,
     "name": "kony.ui.Label",
     "parent": "sessionTile",
     "pf": "userwidgetmodel",
