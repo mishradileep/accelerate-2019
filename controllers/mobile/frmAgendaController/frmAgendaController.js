@@ -205,7 +205,10 @@ define({
         this.view.detailsScroller.isVisible=true;
       }
     }
-    this.view.CopyLabel0f74c659ce7754e.text = this.view[eventobject.id].sessionData.session_desc;
+    let sessionDesc = this.view[eventobject.id].sessionData.session_desc;
+    sessionDesc = sessionDesc.replace("\\u", " ");
+    sessionDesc = sessionDesc.replace("\\n", " ");
+    this.view.CopyLabel0f74c659ce7754e.text = sessionDesc;
     this.view.sessionTileAnim.imgStatus.src = this.view[eventobject.id].imgStatus.src;
     this.view.addAgendaContainer.imgStatus.src = this.view[eventobject.id].imgStatus.src;
     this.view.sessionTileAnim.callback = this.view[eventobject.id].callback;
@@ -2119,7 +2122,9 @@ define({
     this.view.sessionTileAnim.addAgendaContainer.isVisible=true;
     this.view.sessionTileAnim.sessionTitle.text = session.session_name;
     this.view.sessionTileAnim.sessionTime.text = session.modifiedTime;
-    this.view.CopyLabel0f74c659ce7754e.text = session.session_desc;
+    let sessionDescription = session.sessionData.session_desc.replace("\\u", " ");
+    sessionDescription = sessionDescription.replace("\\n"," ");
+    this.view.CopyLabel0f74c659ce7754e.text = sessionDescription;
     this.view.sessionTileAnim.imgStatus.src =kony.sdk.isNullOrUndefined(session.isAddedToMySchedule)?"add.png":session.isAddedToMySchedule?"added.png":"add.png";
     this.view.addAgendaContainer.imgStatus.src = kony.sdk.isNullOrUndefined(session.isAddedToMySchedule)?"add.png":session.isAddedToMySchedule?"added.png":"add.png";
     //this.view.sessionTileAnim.addAgendaContainer.onClick = this.addToMyScheduleInAnimTile.bind(this, eventObject);
@@ -2288,7 +2293,9 @@ define({
     this.view.sessionTileAnim.addAgendaContainer.isVisible=true;
     this.view.sessionTileAnim.sessionTitle.text = eventObject.sessionData.session_name;
     this.view.sessionTileAnim.sessionTime.text = eventObject.sessionData.modifiedTime;
-    this.view.CopyLabel0f74c659ce7754e.text = eventObject.sessionData.session_desc;
+    let sessionDescription = eventObject.sessionData.session_desc.replace("\\u", " ");
+    sessionDescription = sessionDescription.replace("\\n"," ");
+    this.view.CopyLabel0f74c659ce7754e.text = sessionDescription;
     this.view.sessionTileAnim.imgStatus.src =eventObject.imgStatus.src;
     this.view.addAgendaContainer.imgStatus.src = eventObject.imgStatus.src;
     this.view.sessionTileAnim.callback = eventObject.callback;
