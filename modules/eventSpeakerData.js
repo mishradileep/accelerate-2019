@@ -158,6 +158,50 @@ accelerateSpeakerData = {
 				}
 			]
 		},
+        {
+			"speaker_id": 56,
+			"speaker_name": "Max Chuard",
+          	"speaker_profile_pic": "maxchuard.png",
+			"speaker_bio": "https://www.linkedin.com/in/max-chuard-1a027b/",
+			"speaker_title": "CEO, Temenos",
+			"CreatedDateTime": "2019-08-31T11:56:45.806Z",
+			"LastUpdatedDateTime": "2019-08-31T11:57:27Z",
+			"SoftDeleteFlag": false,
+			"tracks": [3],
+			"sessionsList": [{
+				"session_location": "Lady Bird Ballroom",
+				"session_name": "Tom Hogan and Temenos CEO, Max Chuard Fireside Chat",
+				"presenter": [{
+						"presenter_id": 149,
+						"event_id": 3,
+						"master_speaker_id": 1,
+						"session_id": 88,
+						"CreatedDateTime": "2019-08-31 11:57:38.2",
+						"LastUpdatedDateTime": "2019-08-31 11:57:38.2"
+					},
+					{
+						"presenter_id": 152,
+						"event_id": 3,
+						"master_speaker_id": 56,
+						"session_id": 88,
+						"CreatedDateTime": "2019-08-31 13:21:05.622",
+						"LastUpdatedDateTime": "2019-08-31 13:21:05.622"
+					}
+				],
+				"session_start_date": "2019-09-04 14:00:03.0",
+				"session_code": "64BXUY",
+				"session_desc": "",
+				"event_session_id": 88,
+				"LastUpdatedDateTime": "2019-08-31 12:42:51.0",
+				"session_track_id": 3,
+				"event_id": 3,
+				"session_long_desc": "",
+				"session_end_date": "2019-09-04 15:40:00.0",
+				"room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
+				"SoftDeleteFlag": false,
+				"CreatedDateTime": "2019-08-31 11:57:38.199"
+			}]
+		},
 		{
 			"speaker_id": 2,
 			"speaker_name": "John Janclaes",
@@ -2887,49 +2931,6 @@ accelerateSpeakerData = {
 					"CreatedDateTime": "2019-08-13 06:39:36.0"
 				}
 			]
-		},
-		{
-			"speaker_id": 56,
-			"speaker_name": "Max Chuard",
-			"speaker_bio": "https://www.linkedin.com/in/max-chuard-1a027b/",
-			"speaker_title": "CEO, Temenos",
-			"CreatedDateTime": "2019-08-31T11:56:45.806Z",
-			"LastUpdatedDateTime": "2019-08-31T11:57:27Z",
-			"SoftDeleteFlag": false,
-			"tracks": [3],
-			"sessionsList": [{
-				"session_location": "Lady Bird Ballroom",
-				"session_name": "Tom Hogan and Temenos CEO, Max Chuard Fireside Chat",
-				"presenter": [{
-						"presenter_id": 149,
-						"event_id": 3,
-						"master_speaker_id": 1,
-						"session_id": 88,
-						"CreatedDateTime": "2019-08-31 11:57:38.2",
-						"LastUpdatedDateTime": "2019-08-31 11:57:38.2"
-					},
-					{
-						"presenter_id": 152,
-						"event_id": 3,
-						"master_speaker_id": 56,
-						"session_id": 88,
-						"CreatedDateTime": "2019-08-31 13:21:05.622",
-						"LastUpdatedDateTime": "2019-08-31 13:21:05.622"
-					}
-				],
-				"session_start_date": "2019-09-04 14:00:03.0",
-				"session_code": "64BXUY",
-				"session_desc": "",
-				"event_session_id": 88,
-				"LastUpdatedDateTime": "2019-08-31 12:42:51.0",
-				"session_track_id": 3,
-				"event_id": 3,
-				"session_long_desc": "",
-				"session_end_date": "2019-09-04 15:40:00.0",
-				"room_no": "https://s3.amazonaws.com/volumeplay/1/LadyBirdBallroom.pdf",
-				"SoftDeleteFlag": false,
-				"CreatedDateTime": "2019-08-31 11:57:38.199"
-			}]
 		}
 	],
 	"opstatus": 0,

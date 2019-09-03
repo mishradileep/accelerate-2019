@@ -540,7 +540,7 @@ define({
         //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
         100: {
           left: "24dp",
-          top: this.isIphoneXSeries?"104dp":"59dp",
+          top: this.isIphoneXSeries?"104dp":"45dp",
           "stepConfig": {}
         }
       }), {
@@ -548,7 +548,9 @@ define({
         fillMode: kony.anim.FILL_MODE_FORWARDS,
         duration: animDuration
       }, {
-        animationEnd: function() {}
+        animationEnd: function() {
+          self.view.sessionTileAnim.sessionTitle.maxNumberOfLines = 3;
+        }
       });
     this.view.sessionTileAnim.sessionLocation.animate(
       kony.ui.createAnimation({
@@ -556,7 +558,7 @@ define({
         100: {
           left: "60%",
           // top: "105dp",
-          top: self.isIphoneXSeries?"170dp":"125dp",
+          top: self.isIphoneXSeries?"170dp":"135dp",
           "stepConfig": {}
         }
       }), {
@@ -571,7 +573,7 @@ define({
         //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
         100: {
           left: "24dp",
-          top: this.isIphoneXSeries?"170dp":"125dp",
+          top: this.isIphoneXSeries?"170dp":"135dp",
           // top: "105dp",
           "stepConfig": {}
         }
@@ -583,7 +585,7 @@ define({
         animationEnd: function() {
           this.view.addAgendaContainer.isVisible=true;
           if(this.isIphoneXSeries){
-            this.view.sessionLocation.top="125dp";
+            this.view.sessionLocation.top="135dp";
             this.view.addAgendaContainer.top="39dp";
           }
           this.view.sessionLocation.isVisible=true;
@@ -690,6 +692,7 @@ define({
      */
   frmAgendaSessionClose: function() {
     var self = this;
+    self.view.sessionTileAnim.sessionTitle.maxNumberOfLines = 2;
     this.view.txtArea.setEnabled(false);
     this.view.txtArea.text="";
     if(this. isPushNotificationFlow){
@@ -2105,17 +2108,17 @@ define({
     this. view.addAgendaContainer.opacity=100;
     this. view.sessionLocation.opacity=100;
     this.view.sessionTileAnim.sessionTitle.left="24dp";
-    this.view.sessionTileAnim.sessionTitle.top=this.isIphoneXSeries?"104dp":"59dp";
+    this.view.sessionTileAnim.sessionTitle.top=this.isIphoneXSeries?"104dp":"45dp";
     this.view.sessionTileAnim.sessionLocation.left="60%";
     this.view.sessionTileAnim.quantumDotsClear.opacity=100;
     //     this.view.sessionTileAnim.sessionLocation.top="105dp";
     //     this.view.sessionLocation.top="105dp";
-    this.view.sessionTileAnim.sessionLocation.top=this.isIphoneXSeries?"170dp":"125dp";
-    this.view.sessionLocation.top="125dp";
+    this.view.sessionTileAnim.sessionLocation.top=this.isIphoneXSeries?"170dp":"135dp";
+    this.view.sessionLocation.top="135dp";
     this.view.sessionLocation.left="60%";
     this.view.sessionTileAnim.sessionTime.left="24dp";
     //this.view.sessionTileAnim.sessionTime.top="105dp";
-    this.view.sessionTileAnim.sessionTime.top=this.isIphoneXSeries?"170dp":"125dp"
+    this.view.sessionTileAnim.sessionTime.top=this.isIphoneXSeries?"170dp":"135dp"
     this.view.addAgendaContainer.isVisible=true;
     this.view.sessionLocation.isVisible=true;
     var scaledWidth=(parseInt(this.view.sessionTileAnim.tileBGImageKony.width)*1.47);
@@ -2242,6 +2245,7 @@ define({
     kony.store.setItem("myAgendaData", myAgendaData);
   },
   showSessionDetailPageDirectly:function(eventObject){
+    this.view.sessionTileAnim.sessionTitle.maxNumberOfLines = 3;
     this.speakerIdMap = {};
     this.view.detailsScroller.isVisible=true;
     this.currentViewState=1;
@@ -2282,17 +2286,17 @@ define({
     this. view.addAgendaContainer.opacity=100;
     this. view.sessionLocation.opacity=100;
     this.view.sessionTileAnim.sessionTitle.left="24dp";
-    this.view.sessionTileAnim.sessionTitle.top=this.isIphoneXSeries?"104dp":"59dp";
+    this.view.sessionTileAnim.sessionTitle.top=this.isIphoneXSeries?"104dp":"45dp";
     this.view.sessionTileAnim.sessionLocation.left="60%";
     this.view.sessionTileAnim.quantumDotsClear.opacity=100;
     //     this.view.sessionTileAnim.sessionLocation.top="105dp";
     //     this.view.sessionLocation.top="105dp";
-    this.view.sessionTileAnim.sessionLocation.top=this.isIphoneXSeries?"170dp":"125dp";
-    this.view.sessionLocation.top="125dp";
+    this.view.sessionTileAnim.sessionLocation.top=this.isIphoneXSeries?"170dp":"135dp";
+    this.view.sessionLocation.top="135dp";
     this.view.sessionLocation.left="60%";
     this.view.sessionTileAnim.sessionTime.left="24dp";
     //this.view.sessionTileAnim.sessionTime.top="105dp";
-    this.view.sessionTileAnim.sessionTime.top=this.isIphoneXSeries?"170dp":"125dp"
+    this.view.sessionTileAnim.sessionTime.top=this.isIphoneXSeries?"170dp":"135dp"
     this.view.addAgendaContainer.isVisible=true;
     this.view.sessionLocation.isVisible=true;
     var scaledWidth=(parseInt(this.view.sessionTileAnim.tileBGImageKony.width)*1.47);
@@ -2433,7 +2437,7 @@ define({
     this.view.addAgendaContainer.height="43dp";
     this.view.sessionLocation.left="60%";
     //this.view.sessionLocation.top="105dp"; 
-    this.view.sessionLocation.top="125dp"; 
+    this.view.sessionLocation.top="135dp"; 
     this.view.sessionLocation.zIndex=200;
     this.view.sessionLocation.isVisible=false;
     this.view.sessionTileAnim.left="100%";
