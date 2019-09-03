@@ -2000,6 +2000,9 @@ define({
       if((kony.sdk.isNullOrUndefined(myAgenda) ||  Object.keys(myAgenda).length===0 )|| this.isPushNotificationFlow){
         return;
       }
+      if(this.view[this.thisCard.id] === null){
+        return;
+      }
       if(myAgenda.hasOwnProperty(this.view[this.thisCard.id].sessionData.event_session_id)){
         this.view.addAgendaContainer.imgStatus.src=this.view[this.thisCard.id].myScheduleIndicatorImage;
         this.view.addAgendaContainer.skin=this.view[this.thisCard.id].agendaContainerSkin;
