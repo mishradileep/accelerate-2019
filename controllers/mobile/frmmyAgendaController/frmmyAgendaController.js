@@ -532,7 +532,7 @@ define({
                 //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
                 100: {
                     left: "24dp",
-                    top: this.isIphoneXSeries ? "104dp" : "59dp",
+                    top: this.isIphoneXSeries ? "104dp" : "45dp",
                     "stepConfig": {}
                 }
             }), {
@@ -540,14 +540,16 @@ define({
                 fillMode: kony.anim.FILL_MODE_FORWARDS,
                 duration: animDuration
             }, {
-                animationEnd: function() {}
+                animationEnd: function() {
+                  self.view.sessionTileAnim.sessionTitle.maxNumberOfLines = 3;
+                }
             });
         this.view.sessionTileAnim.sessionLocation.animate(
             kony.ui.createAnimation({
                 //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
                 100: {
                     left: "60%",
-                    top: self.isIphoneXSeries ? "170dp" : "125dp",
+                    top: self.isIphoneXSeries ? "170dp" : "135dp",
                     //top: "105dp",
                     "stepConfig": {}
                 }
@@ -563,7 +565,7 @@ define({
                 //50:{left:"-16dp",right:"-16dp",top:"12dp","stepConfig":{}},
                 100: {
                     left: "24dp",
-                    top: this.isIphoneXSeries ? "170dp" : "125dp",
+                    top: this.isIphoneXSeries ? "170dp" : "135dp",
                     //top: "105dp",
                     "stepConfig": {}
                 }
@@ -575,7 +577,7 @@ define({
                 animationEnd: function() {
                     this.view.addAgendaContainer.isVisible = true;
                     if (this.isIphoneXSeries) {
-                        this.view.sessionLocation.top = "125dp";
+                        this.view.sessionLocation.top = "135dp";
                         this.view.addAgendaContainer.top = "39dp";
                     }
                     this.view.sessionLocation.isVisible = true;
@@ -647,7 +649,8 @@ define({
      * @private
      */
     frmAgendaSessionClose: function(callback) {
-      	 var self = this;
+      	var self = this;
+        self.view.sessionTileAnim.sessionTitle.maxNumberOfLines = 2;
       	if(!kony.sdk.isNullOrUndefined(this.previousForm)){
            var param = {
            "form" : "frmPresenters"
@@ -1857,6 +1860,7 @@ define({
   },
   
   showListPageDirectly:function(){
+    this.view.sessionTileAnim.sessionTitle.maxNumberOfLines = 2;
     this.view.sessionTileAnim.quantumDotsClear.opacity=0;
     this.view.contentScroller.width="100%";
     this.view.contentScroller.left="0dp";
@@ -1895,7 +1899,7 @@ define({
     this.view.addAgendaContainer.height="43dp";
     this.view.sessionLocation.left="60%";
     //this.view.sessionLocation.top="105dp"; 
-    this.view.sessionLocation.top="125dp"; 
+    this.view.sessionLocation.top="135dp"; 
     this.view.sessionLocation.zIndex=200;
     this.view.sessionLocation.isVisible=false;
     this.view.sessionTileAnim.left="100%";
