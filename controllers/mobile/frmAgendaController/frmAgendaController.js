@@ -108,9 +108,10 @@ define({
     else{
       this.sortSessions();
     }
-    this.devHeight = this.view.masterContainer.frame.height;
+    if(this.view.masterContainer && this.view.masterContainer.frame)
+    	this.devHeight = this.view.masterContainer.frame.height;
     egLogger("devHeight = " + this.devHeight);
-    var dotsblurwidth=this.view.sessionTileAnim.quantumDotsBlur.frame.height*10.7388+"dp";
+    //var dotsblurwidth=this.view.sessionTileAnim.quantumDotsBlur.frame.height*10.7388+"dp";
   },
   
   /**

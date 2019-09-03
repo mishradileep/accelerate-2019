@@ -2139,6 +2139,7 @@ accelerateSpeakerData = {
 		{
 			"speaker_id": 41,
 			"speaker_name": "Varun Puri",
+          	"speaker_profile_pic":"https://s3.amazonaws.com/volumeplay/1/VarunPuri.png",
 			"speaker_title": "Director, IT - eCommerce & Mobile at The Michaels Companies",
 			"CreatedDateTime": "2019-08-20T13:13:06.041Z",
 			"LastUpdatedDateTime": "2019-08-20T13:13:06.041Z",
