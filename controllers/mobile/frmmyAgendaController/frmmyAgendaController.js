@@ -99,9 +99,10 @@ define({
       	this.currentActiveDate=4;
       	this.checkSessionsForSelectedDate(accelerateSessionData.eventSessionData.records);
         this.setData(accelerateSessionData.eventSessionData.records);
-        this.devHeight = this.view.masterContainer.frame.height;
+        if(this.view.masterContainer && this.view.masterContainer.frame)
+  		      this.devHeight = this.view.masterContainer.frame.height;
         egLogger("devHeight = " + this.devHeight);
-        var dotsblurwidth = this.view.sessionTileAnim.quantumDotsBlur.frame.height * 10.7388 + "dp";
+        //var dotsblurwidth = this.view.sessionTileAnim.quantumDotsBlur.frame.height * 10.7388 + "dp";
         // add scrollToWidget functionality with the session id availble at kony store key 'currentNotificationId'
     },
   	
